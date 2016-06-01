@@ -40,6 +40,11 @@ Knitr es un paquete de R que permite integrar código R en archivos de distintos
 ```r
 install.packages('knitr', dependencies = TRUE)
 ```
+Se puede verificar que se ha instalado correctamente escribiendo
+
+```r
+library('knitr')
+```
 
 ## Temas de exposición 
 
