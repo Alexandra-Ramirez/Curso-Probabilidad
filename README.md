@@ -57,12 +57,12 @@ Las fechas  de presentación serán a partir de este viernes a partir de las 3:p
 	* Algoritmo de Karmarkar
 	* Método del elipsoide.
 
-*Descomposiciones de valores singulares.
+* Descomposiciones de valores singulares.
 	* SVD
 	* PCA
 
 * Las librerias plyr y dplyr. La estrategia `split-apply-combine`.
-*  Solver lineales iterativos
+* Solver lineales iterativos
 	* Descenso del gradiente
 	* Gradiente conjugados
-	*Precondicionado
+	* Precondicionado
