@@ -1,7 +1,5 @@
 R y Knitr
 ========================================================
-author: Reportes dinámicos en R
-date: 
 
 
  R
