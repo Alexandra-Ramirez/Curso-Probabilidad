@@ -33,7 +33,6 @@
 - [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
 - [Notas de Teoria de la Probabilidad de Terence Tao](https://terrytao.wordpress.com/2015/09/29/275a-notes-0-foundations-of-probability-theory/).
 
-Las fechas  de presentación serán a partir de este viernes a partir de las 3:pm 
 
 ## Temas de exposición 
 
