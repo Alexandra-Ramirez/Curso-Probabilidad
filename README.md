@@ -33,6 +33,13 @@
 - [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
 - [Notas de Teoria de la Probabilidad de Terence Tao](https://terrytao.wordpress.com/2015/09/29/275a-notes-0-foundations-of-probability-theory/).
 
+## Knitr
+
+Knitr es un paquete de R que permite integrar código R en archivos de distintos formatos.
+
+```r
+install.packages('knitr', dependencies = TRUE)
+```
 
 ## Temas de exposición 
 
