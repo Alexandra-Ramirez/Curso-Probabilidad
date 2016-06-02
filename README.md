@@ -45,7 +45,7 @@ Se puede verificar que se ha instalado correctamente escribiendo
 ```r
 library('knitr')
 ```
-Knitr soporta gráficos y frameworks  [www.jimhester.com/knitrBoostrap](Knitrboostrap) a crear boostrap para reportes en HTML via Rmarkdown. 
+Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoostrap) a crear boostrap para reportes en HTML via Rmarkdown. 
 
 
 ## Temas de exposición 
