@@ -64,6 +64,7 @@ Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoo
 	- Aprendizaje no supervisados
 
 * shiny: Framework web para R. 
+* Clasificación de géneros de la música.
 * Introducción básica al paralelismo en R
 * Algoritmos de programación lineal
 	* Simplex
