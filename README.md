@@ -19,10 +19,17 @@
   * Cadenas de Markov
   * Martingalas
 9. Introducción a la Estadística
-10. Inferencia estadística
+10. Inferencia estadística I
   * Estimación de paramétros
   * Intervalos de confianza
-  * Estimación de máxima probabilidad
+  * Desviación estándar no conocida
+  * Prueba  de hipótesis
+  * Inferencia acerca de la varianza
+11. Inferencia estadística II
+  *  Test chi-cuadrado
+  *  Estadística no parámetrica
+  *  Bootstrap
+  *  Inferencia Bayesiana
 
 ## Libros y artículos
 
