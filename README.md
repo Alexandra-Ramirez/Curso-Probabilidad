@@ -5,7 +5,7 @@
 1. Álgebra Lineal
    * Linear algebra done right, S. Axler  Undergraduate Texts in Mathematics, Springer 2015.
 2. Cálculo multivariado
-   * Multivariate Calculus, Denis Aroux OpenCourse Mit 2007.
+   * Multivariate Calculus, Denis Aroux OCW MIT 2007.
 
 ## Temas
 
