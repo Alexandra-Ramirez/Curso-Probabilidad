@@ -1,5 +1,10 @@
 # Curso de Probabilidad y Estadística
 
+## Prerrequisitos
+
+* Álgebra Lineal
+* Cálculo multivariado
+
 ## Temas
 
 1. Propiedades de la probabilidad.
