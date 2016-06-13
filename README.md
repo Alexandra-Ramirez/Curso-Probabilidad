@@ -2,8 +2,9 @@
 
 ## Prerrequisitos
 
-* Álgebra Lineal
-* Cálculo multivariado
+1. Álgebra Lineal
+   * Linear algebra done right, S. Axler  Undergraduate Texts in Mathematics, Springer 2015
+2. Cálculo multivariado
 
 ## Temas
 
