@@ -33,13 +33,15 @@ options(formatR.arrow=TRUE,width=90)
 \date{}
 \maketitle
 
-\vspace{0.3cm}
-
-{\Large Notas de mat\'ematicas }
 
 \vspace{0.5cm}
 
 
+{\Large C\'alculo}
 
+\vspace{0.3cm}
+
+
+{\Large {\'Algebra Lineal }}
 
  \end{document}
