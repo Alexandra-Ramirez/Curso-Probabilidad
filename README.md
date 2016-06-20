@@ -37,6 +37,14 @@
   *  Estadística no parámetrica
   *  Bootstrap
   *  Inferencia Bayesiana
+12. Regresión 
+  * Estimación de mínimos cuadrados
+  * Analizando la varianza, predicción.
+  * Boostrap
+13. Regresión multivariada
+  * Introducción y ejemplos
+  * Estimación de mínimos cuadrados y análisis matricial
+  * Análisis de varianza, pruebas y predicción.
 
 ## Libros y artículos
 
