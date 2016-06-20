@@ -53,8 +53,209 @@ options(formatR.arrow=TRUE,width=90)
 \vspace{0.5cm}
 
 
+\begin{enumerate}
+\item Una poblaci\'on se compone de cinco n\'umeros $2,3,6,8,11$. Considera todas las muestras posibles de tama\~no dos que pueden extraerse con reemplazamiento de esta poblaci\'on. Halla
+\begin{enumerate}
+\item la media de la poblaci\'on.
+\item la desviaci\'on est\'andar de la poblaci\'on.
+\item la media de la distribuci\'on muestral de medias.
+\item la desviaci\'on est\'andar de la distribuci\'on muestral de las medias, es decir el error t\'ipico de las muestras.
+\end{enumerate}
+\item Calcula lo mismo que en el problema anterior, pero en el caso de un muestreo sin remplazamiento.
+
+\item Las puntuaciones obtenidas en un test de cultura general  por los alumnos de sexto curso  de primaria, se \mbox{distribuyen} normalmente con media $100$ y desviaci\'on est\'andar $14.2$
+\begin{enumerate}
+\item ?` Cu\'al es la probabilidad de que un alumno de sexto curso de primaria elegido aleatoriamente obtenga una puntuaci\'on mayor que $130$ en el citado test?.
+\item  ?` Cu\'al es la probabilidad de que el alumno seleccionado obtenga una puntuaci\'on comprendida entre $90$ y $115$.
+\end{enumerate}
 
 
+\item Los datos del Departamento de Agricultura indican que el consumo de manzanas de una mujer elegida \mbox{aleatoriamente} se distribuye seg\'un una normal de media de $19.9$ libras y una desviaci\'on t\'ipica de $3.2$ libras, mientras que el \mbox{consumo} de manzanas de un hombre elegido aleatoriamente sigue una normal con media $20.7$ libras y \mbox{desviaci\'on} est\'andar $3.4$ libras. Supongamos que se elige aleatoriamente a un hombre y a una mujer. ?` Cu\'al es la probabilidad de que el consumo de manzanas de la mujer sea mayor que el del hombre?.
+
+\item Un auditor toma una muestra aleatoria de $100$ cuentas por cobrar de una poblaci\'on de $500$ cuentas por cobrar. El auditor sabe que las $500$ cuentas por cobrar constituyen  una poblaci\'on finita cuya desviaci\'on est\'andar es $\sigma = \$145$. ?` Cu\'al es la probabilidad de que la media muestral difiera de la media poblacional en m\'as de $\$26$?. 
+
+\item Las calificaciones de un examen se distribuyen de acuerdo a una distribuci\'on normal de media $100$ y desviaci\'on \mbox{est\'andar} $14.2$. 
+
+?` En qu\'e rango de valores se encuentran el $1\%$ m\'as alto de las puntuaciones?.
+
+\item Un productor de tabaco mantiene que el contenido medio de nicotina de sus cigarrillos es de $2.4$ miligramos con una desviaci\'on est\'andar $0.2$ miligramos. Si se acepta que estas cifras son correctas, calcule el valor esperado y la varianza del contenido medio muestral en nicotina de $36, 64, 100, 900 $ cigarrillos seleccionados aleatoriamente.
+
+\item Una compa\~nia aseguradora de autom\'oviles tiene $10000$ aseguradores. Si el gasto anual que un asegurado le \mbox{ocasiona} a la compa\~nia tiene por media $260$ dolares con una desviaci\'on est\'andar de $800$ dolares, aproxima la probabilidad de que el gasto total que la compa\~nia debe afrontar en un a\~no sobrepase los $2.8$ millones de \mbox{dolares}.
+
+\item En el problema anterior, calcula la probabilidad de que el pago anual al que debe hacer frente la compa\~nia  de seguros est\'e comprendido entre $2.5$ y $2.7$ millones de d\'olares.
+
+\item Los niveles de colesterol en la sangre de una poblaci\'on de trabajadores tiene media $202$ y desviaci\'on est\'andar $14$.
+
+\begin{enumerate}
+\item Si se selecciona una muestra de $36$ de trabajadores, aproxime la probabilidad de que la media muestral de sus niveles de colesterol est\'e comprendida entre $198$ y $206$.
+\item Repite lo anterior para un tama\~no muestral igual a $164$.
+\end{enumerate}
+
+\item Una astr\'onoma pretende medir, en unidades de a\~nos luz, la distancia existente entre su laboratorio y una estrella muy alejada. Sin embargo, la astr\'onoma sabe que, debido a las distintas condiciones atmosf\'ericas y a los errores normales, cada vez que realiza una medida no obtiene la distancia exacta, sino s\'olo una estimaci\'on de ella. Como resultado, ha decidido realizar $10$ mediciones distintas y utilizar la media de todas ellas como un valor estimado de la distancia real. Si los valores de las $10$ mediciones realizadas constituyen una muestra extra\'ida de la poblaci\'on de todas las posibles mediciones y esta poblaci\'on tiene media $d$ (distancia real) y desviaci\'on est\'andar $3$ a\~nos luz, calcule la probabilidad de que el valor estimado por la astr\'onoma difiera de la distancia real en menos de $0.5$ a\~nos luz.
+
+
+\item En el ejercicio anterior, calcula la probabilidad de que la estimaci\'on de la astr\'onoma difiera de la distancia real en menos de $0.5$ a\~nos luz, si
+
+\begin{enumerate}
+\item Realiza $100$ observaciones.
+\item Lleva a cabo $10$ observaciones tras descubrir un m\'etodo para mejorar las mediciones, de forma que la desviaci\'on est\'andar de cada observaci\'on se reduzca de $3$ a $2$ a\~nos luz.
+\end{enumerate}
+
+\item Supongamos que las bater\'ias de un coche el\'ectrico funcionan durante un numero de millas que tiene media $\mu$ y desviaci\'on est\'andar $100$. Mediante el teorema del l\'imite central , aproxima la probabilidad de que el n\'umero medio de millas recorridas por bater\'ia, para un conjunto de $n$ \'estas difiera de $\mu$ en m\'as de $20$ si : $n = 10, 20, 40, 100$.
+
+
+\item Un semiconductor de circ\'on es un elemento esencial para el funcionamiento de un superconductor y debe ser reemplazado inmediatamente cuando falle. Su duraci\'on esperada es de $100$ horas y su desviaci\'on est\'andar es de $34$ horas. Si se dispone de $22$ de dichos semiconductores, calcule la probabilidad de que el semiconductor est\'e operativo durante las pr\'oximas $2000$ horas.(Este es, calcula la probabilidad de que la suma de las duraciones de los $22$ semiconductores supere las $2000$ horas).
+
+\item Supongamos que exactamente un $46\%$ de la poblaci\'on est\'a a favor de un determinado candidato. Si se extrae una muestra aleatoria de tama\~no $200$. ?` Cu\'al es la probabilidad de que al menos  $100$ de ellos este a favor del candidato?.
+
+
+\item Una compa\~nia \'area, el porcentaje de pasajeros que tienen reserva y no se presentan es del $6\%$. Si existen $260$ personas con reserva en un determinado vuelo que puede admitir un m\'aximo de $250$ pasajeros, aproxime la probabilidad de que la compa\~nia sea capaz de acomodar a todos los pasajeros con reserva que aparezcan.
+\item Halla la probabilidad de que  en $120$ lanzamientos de una moneda el n\'umero de caras
+\begin{enumerate}
+\item est\'e comprendido entre el $40 \%$ y el $60\%$.
+\item sea $\frac{5}{8}$ m\'as del n\'umero de lanzamientos.
+\end{enumerate}
+\item Cada persona de un grupo de $500$ lanza una moneda $120$ veces.?` En cu\'antos individuos cabe esperar que 
+\begin{enumerate}
+\item el n\'umero de caras se encuentra entre el $40 \%$ y el $60\%$ de sus lanzamientos.
+\item $\frac{5}{8}$ m\'as del n\'umero de lanzamientos resulten cara.
+\end{enumerate}
+\item Se ha encontrado que el $\%2$ de las piezas producidas por cierta m\'aquina. ?` Cu\'al es la probabilidad de que en una partida de $400$ piezas sean defectuosas
+\begin{enumerate}
+\item $3\%$ o m\'as?.
+\item $2\%$ o menos?.
+\end{enumerate}
+\item Las bombillas el\'ectricas de un fabricante $A$ tienen una duraci\'on media de $1,400$ horas, con una desviaci\'on t\'ipica de $200$ horas, mientras que la del otro fabricante $B$ tienen una duraci\'on media de $1200$ horas con una desviaci\'on est\'andar de $100$ horas. Si se toma una muestra al azar de $125$ bombillas de cada fabricante. ?` Cu\'al es la probabilidad de que las bombillas de $A$ tengan una duraci\'on media que sea al menos $250 $ horas m\'as que las bombillas de $B$?.
+\item Mili y C\'esar juegan \texttt{cara y sello}, lanzando cada uno $50$ monedas. Mili ganar\'a el juego si consigue $5$ o m\'as caras que C\'esar, de otro modo gana C\'esar. Determina la proporci\'on contra Mili de que gane un juego determinado.
+
+\item La siguiente tabla muestra los porcentaje de individuos, por sexo, que tienen ciertos h\'abitos de conducta perjudiciales para la salud.
+
+\vspace{0.3cm}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c c c c c}
+\hline
+        & \begin{tabular}[c]{@{}c@{}}Duermen  6 o \\ menos horas al dia\end{tabular} & Fuman & \begin{tabular}[c]{@{}c@{}}Nunca \\ desayunan\end{tabular} & \begin{tabular}[c]{@{}c@{}}Tienen un sobrepeso  \\ superior al 30\%\end{tabular} \\ \hline
+Hombres & 22.7                                                                       & 32.6  & 25.2                                                       & 12.1                                                                             \\ \hline
+Mujeres & 21.4                                                                       & 27.8  & 23.6                                                       & 13.7                                                                             \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{enumerate}
+\item Supongamos que se elige una muestra aleatoria de $300$ hombres. Aproxima la probabilidad de que 
+\begin{itemize}
+\item Al menos $75$ nunca desayunen.
+\item Fumen menos de $100$.
+\end{itemize}
+\item Supongamos que se extrae una muestra aleatoria de $300$ mujeres. Aproxima la probabilidad de que
+\begin{itemize}
+\item Al menos $25$ de ellas tengan un sobrepeso superior al $30\%$.
+\item Menos de $50$ duerman $6$ horas como m\'aximo.
+\end{itemize}
+\item Supongamos que se extraen dos muestran de $300$ hombres y de $300$ mujeres, respectivamente. Calcula la probabilidad aproximada de que haya m\'as fumadores en la muestra de hombres que en el de las mujeres.
+
+\textbf{Sugerencia} Denota por $X$ y $Y$, respectivamente, el n\'umero de hombres y de mujeres que fuman en cada una de las muestras. Escriba la probabilidad pedida como $\mathbb{P}\{X - Y\} > 0$.
+\end{enumerate}
+\item Consideramos el siguiente modelo simple referido a los cambios diarios en el precio de una acci\'on. Supongamos que cada d\'ia el precio de la acci\'on pueda subir una unidad con una probabilidad de $0.52$ o bajar una unidad con una probabilidad de $0.48$. Si el precio de la acci\'on en el d\'ia de hoy es de $200$ y se denota $X$ el precio que tendra al cabo de $100$ d\'ias,
+
+\begin{enumerate}
+\item Defina las variables $X_1, X_2, \dots, X_{100}$, tales que
+\[
+X = 200 + \sum_{i = 1}^{100}X_i
+\]
+\item Obtenga $\mathbb{E}[X_i]$.
+\item Calcula el valor de $\mathbb{V}(X_i)$.
+\item Utilice el teorema central del l\'imite para calcular  $\mathbb{P}\{X \geq 0\}$.
+\end{enumerate}
+\item Una empresa estima que el $4\%$ el porcentaje  de clientes cuyos cr\'editos han pasado a cobranza dudosa. Un auditor revisa peri\'odicamente las cuentas por cobrar para efectivizar la cobranza. 
+
+\begin{enumerate}
+\item Calcule aproximadamente la probabilidad de que en una muestra aleatoria de $150$ clientes con cuentas por cobrar, el $6\%$ haya pasado a cobranza dudosa.
+\item El auditor acepta que el $4\%$ el porcentaje de clientes cuyo cr\'editos han pasado a cobranza dudosa, si cada vez que se revisa una muestra de $100$ cuentas por cobrar encuentra menos de $5$ cuentas que han pasado a cobranza dudosa. ?` Cu\'al es la probabilidad de que el auditor acepte que es  $4\%$ el porcentaje de clientes cuyos cr\'editos han pasado a cobranza dudosa si realmente el porcentaje es $6\%$?.
+\end{enumerate} 
+\item Los siguientes datos representan el n\'umero de cuentas registrados durante $10$ dias 
+
+\[
+43, 37, 50, 51, 58, 105, 52, 45, 45, 10
+\]
+
+\begin{enumerate}
+\item Calcula la media, mediana, quartiles y desviaci\'on est\'andar.
+\item Verifica si existe \texttt{outliers} usando la regla $1.5(IQR)$.
+\item Elimina los \texttt{outliers} si es que los hay y calcula la  media, mediana, quartiles y desviaci\'on est\'andar otra vez.
+\item Realiza una conclusi\'on acerca de los \texttt{outliers} en estad\'istica descriptiva.
+\end{enumerate}
+\item Un proveedor de la red investiga la carga de su red. El número de usuarios al mismo tiempo se registra en cincuenta lugares.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c c c c c c c c c c}
+17.2 & 22.1 &  18.5 &  17.2 & 18.6 & 14.8 & 21.7 & 15.8 & 16.3 &  22.8 \\
+24.1 & 13.3 &  16.2 &  17.5 & 19.0 & 23.9 & 14.8 & 22.2 & 21.7 &  20.7 \\
+13.5 & 15.8 &  13.1 &  16.1 & 21.9 & 23.9 & 19.3 & 12.0 & 19.9 &  19.4 \\
+15.4 & 16.7 &  19.5 &  16.2 & 16.9 & 17.1 & 20.2 & 13.4 & 19.8 &  17.7 \\
+19.7 & 18.7 &  17.6 &  15.9 & 15.2 & 17.1 & 15.0 & 18.8 & 21.6 &  11.9
+\end{tabular}
+\end{table}
+
+\begin{enumerate}
+\item Calcula la media muestral, varianza y desviaci\'on est\'andar del n\'umero de usuarios.
+\item Estima el error est\'andar de la media muestral.
+\item Calcula el rango intercuartil. Existe alg\'un outliers?.
+\item Es reportado que el n\'umero de usuarios  sigue aproximadamente una distribuci\'on normal. Apoya un histograma esta afirmaci\'on?.
+\end{enumerate}
+\item   Para evaluar la efectividad de un procesador, para un cierto tipo de tareas, recogemos el tiempo del CPU de manera aleatoria para determinados trabajos  (en segundos) con  $n = 30$:  
+
+\vspace{0.3cm}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c c c c c c c c c c}
+70 & 36 & 43 & 69 & 82& 48 & 34 & 62 & 35 & 15 \\ 
+59 & 139 & 46 & 37 & 42 & 30 & 55 & 56 & 36 & 82 \\ 
+38 & 89 & 54 & 25 & 35& 24 & 22 & 9 & 56 & 19 \\ 
+\end{tabular}
+\end{table}
+
+\vspace{0.2cm}
+
+ Para estos datos tenemos que  si la media muestral $\overline{X}$ y la desviaci\'on est\'andar $s$, prueba usando  la desigualdad de Chebishev  que al menos $8/9$ de todas las tareas requiere menos que
+
+\[
+\overline{X} + 3s = 127.78 \text{sec}
+\]
+
+\vspace{0.2cm}
+
+de tiempo del CPU.
+\item Estima la el par\'ametro $\theta$ desde una muestra 
+
+\[
+3, 3, 3, 3, 7, 7, 7
+\]
+
+\vspace{0.2cm}
+
+desde una distribuci\'on discreta con un \texttt{pmf}
+
+\vspace{0.3cm}
+
+\[
+\begin{cases}
+\mathbb{P}(3) = \theta \\
+\mathbb{P}(7) = 1 - \theta
+\end{cases}
+\]
+
+Calcula dos estimadores de $\theta$
+
+\begin{enumerate}
+\item Por el m\'etodo de estimadores de momentos.
+\item Desde  el estimador de  m\'axima probabilidad.
+\item Estima el error est\'andar para cada estimador.
+\end{enumerate}
+\end{enumerate}
 \end{document} 
 
 
