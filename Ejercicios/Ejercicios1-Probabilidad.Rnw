@@ -55,7 +55,6 @@ options(formatR.arrow=TRUE,width=90)
 
 \vspace{0.5cm}
 
-
 \begin{enumerate}
 \item Sea $p_1, p_2, \dots, p_N$ n\'umeros no negativos tal que $p_1 + p_2 + \cdots p_N = 1$ y sea $\Omega = \{\omega_1, \omega_2, \cdots, \omega_N \}$ y sea $F$ el conjunto potencia de $\Omega$. Muestra que la funci\'on $\mathbb{Q}$ dada por
 
