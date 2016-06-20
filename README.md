@@ -70,7 +70,7 @@ library('knitr')
 Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoostrap) a crear boostrap para reportes en HTML via Rmarkdown. 
 
 
-## Temas de exposición 
+## Otros temas de aplicación 
 
 * Apache Spark y BigData en la secuencia de ADN.
 * Regresión Polinomial y la Regularización de Tikhonov.
