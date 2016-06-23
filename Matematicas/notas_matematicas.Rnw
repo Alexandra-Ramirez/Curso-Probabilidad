@@ -263,14 +263,100 @@ Sea $A\in\mathbb{R}^{n\times m}$, se define el rango de $A$, denotado como el n\
 
 \vspace{0.5cm}
 
-Sea $A\in\mathbb{R}^{n\times n}$, se dice que $A$ es diagonalizable si y solo si $A$ puede ser descompuesta como 
+Sea $A\in\mathbb{R}^{n\times n}$, se dice que $A$ es diagonalizable si y solo si $A$ puede ser descompuesta como
+
+\vspace{0.3cm}
+
 	\begin{eqnarray*}
 	A = UDU^{-1} & \mbox{ donde } U = \begin{bmatrix}
 	u_1 &\ldots & u_n
 	\end{bmatrix} \mbox{ y }D=diag(\lambda_1,\ldots,\lambda_n).
 	\end{eqnarray*}
-	donde $u_1,\ldots,u_n$ son eigenvectores de $A$, asociados a los eigenvectores $\lambda_1,\ldots,\lambda_n\in\mathbb{R}$.
+	donde $u_1,\ldots,u_n$ son autovectores de $A$, asociados a los autovectores $\lambda_1,\ldots,\lambda_n\in\mathbb{R}$.
 	Se dice que $A$ es ortogonalmente diagonalizable si $A = UDU^{T}$.	
 
+\vspace{0.3cm}
+
+	Sea la matriz $A\in\mathbb{R}^{n\times n}$ con autovalores $\lambda_1,\lambda_2,\ldots,\lambda_n\in\mathbb{R}$ entonces
+
+\vspace{0.2cm}
+
+\begin{eqnarray*}
+	\sum_{i=1}^{n}\lambda_i = Tr(A).
+	\end{eqnarray*}
+
+\vspace{0.5cm}
+
+	Como $A=UDU^{-1}$, usando las propiedades de la traza tenemos que
+
+\vspace{0.2cm}
+
+
+	\begin{eqnarray*}
+	Tr(A)=Tr(UDU^{-1})=Tr(U^{-1}UD)=Tr(D)=\sum_{i=1}^{n}\lambda_i
+	\end{eqnarray*}
+
+\vspace{0.3cm}
+
+
+\textbf{Teorema Espectral}
+
+\vspace{0.2cm}
+
+	Si $A\in\mathbb{R}^{n\times n}$ es sim\'etrica, entonces existe una base ortonormal  formada por autovectores de $A$.
+
+\vspace{0.3cm}
+
+	Sea $A\in\mathbb{R}^{n\times n}$ sim\'etrica, entonces es ortogonalmente diagonalizable.
+	
+\vspace{0.5cm}
+	
+Sea $v\in\mathbb{R}^n$ y $P$ un subespacio de $\mathbb{R}^n$, se define la proyecci\'on ortogonal de $v$ sobre $P$ como $w=proy_{\;P}(v)\in S$  tal que
+
+	\begin{eqnarray*}
+	\vert w-v\vert \leq \vert z-v\vert  & \mbox{ para todo }z\in S.
+	\end{eqnarray*}
+
+\vspace{0.3cm}
+
+\textbf{Matriz de proyecci\'on}
+
+\vspace{0.3cm}
+
+	Dado $\{u_1,u_2,\ldots,u_m\}$ base de un subespacio $S\subset\mathbb{R}^n$ y sea $ v\in \mathbb{R}^n$, entonces la proyecci\'on ortogonal de $v$ sobre $S$ es
+	
+	\vspace{0.3cm}
+	
+	\begin{eqnarray*}
+	proy_{\;S}(v)= U(U^TU)^{-1}U^Tv & \mbox{ donde }U=\begin{bmatrix}
+	u_1 & \ldots & u_m.
+	\end{bmatrix}
+	\end{eqnarray*}
+	
+	\vspace{0.2cm}
+	
+	$P=U(U^TU)^{-1}U^T$ se conoce como la matriz de proyecci\'on.
+	
+	\vspace{0.3cm}
+	
+\textbf{Descomposici\'on Ortogonal} 
+
+Dado $\{u_1,u_2,\ldots,u_m\}$ base ortogonal de un subespacio $S\subset\mathbb{R}^n$ y sea $ v\in \mathbb{R}^n$, entonces la proyecci\'on ortogonal de $v$ sobre $S$ es
+
+\vspace{0.3cm}
+
+	\begin{eqnarray*}
+	\displaystyle {proy}_{\;S}(v)=\dfrac{v\cdot u_1}{\vert u_1\vert ^2}u_1+\dfrac{v\cdot u_2}{\vert u_2\vert ^2}u_2+\ldots + \dfrac{v\cdot u_m}{\vert u_m\vert ^2}u_m.
+	\end{eqnarray*}
+	
+\vspace{0.3cm}
+
+Si $\{u_1,u_2,\ldots,u_m\}$ es una base ortonormal entonces:
+\vspace{0.3cm}
+
+
+\begin{eqnarray*}
+\displaystyle {proy}_{\;S}(v)=(v\cdot u_1)u_1+(v\cdot u_2)u_2+\ldots + (v\cdot u_m)u_m
+\end{eqnarray*}
 
 \end{document}
