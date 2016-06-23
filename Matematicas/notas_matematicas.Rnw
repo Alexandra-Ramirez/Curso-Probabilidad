@@ -359,4 +359,117 @@ Si $\{u_1,u_2,\ldots,u_m\}$ es una base ortonormal entonces:
 \displaystyle {proy}_{\;S}(v)=(v\cdot u_1)u_1+(v\cdot u_2)u_2+\ldots + (v\cdot u_m)u_m
 \end{eqnarray*}
 
+\vspace{0.3cm}
+
+	Por propiedad  $proy_{\;S}(v)=U(U^TU)^{-1}U^Tv$, donde $U=\begin{bmatrix}
+	u_1 &\ldots & u_m
+	\end{bmatrix}$. Dado que el conjunto $\{u_1,u_2,\ldots,u_m\}$ es ortogonal entonces $u_i^Tu_j=0$ para todo $i\neq j$, luego
+	\begin{eqnarray*}
+	(U^TU)^{-1} = \left(\begin{bmatrix}
+	u_1^T\\
+	\vdots\\
+	u_m^T
+	\end{bmatrix}\begin{bmatrix}
+	u_1 & \ldots & u_m
+	\end{bmatrix}\right)^{\!\!\!\!\!-1} = \left(\begin{bmatrix}
+	 \vert u_1\vert ^2 & \ldots &0\\
+	 \vdots & \ddots & \vdots\\
+	 0 & \ldots & \vert u_m\vert ^2
+	\end{bmatrix}\right)^{\!\!\!\!\!-1} = \begin{bmatrix}
+	\dfrac{1}{\vert u_1\vert ^2} & \ldots &0\\
+	\vdots & \ddots & \vdots\\
+	0 & \ldots & \dfrac{1}{\vert u_m\vert ^2}
+	\end{bmatrix}
+	\end{eqnarray*}
+	Luego,
+	\begin{eqnarray*}
+	proy_{\;S}(v) &= & \begin{bmatrix}
+	u_1 & \ldots & u_m
+	\end{bmatrix}\begin{bmatrix}
+	\dfrac{1}{\vert u_1\vert ^2} & \ldots &0\\
+	\vdots & \ddots & \vdots\\
+ 	0 & \ldots & \dfrac{1}{\vert u_m\vert ^2}
+	\end{bmatrix}\begin{bmatrix}
+	u_1^T\\
+	\vdots\\
+	u_m^T\\
+	\end{bmatrix}v
+	=  \begin{bmatrix}
+	u_1 & \ldots & u_m
+	\end{bmatrix}\begin{bmatrix}
+	\dfrac{u_1^Tv}{\vert u_1\vert ^2} \\
+	\vdots\\
+	\dfrac{u_m^Tv}{\vert u_m\vert ^2}
+	\end{bmatrix}\nonumber
+	\end{eqnarray*}
+	Por tanto $\displaystyle {proy}_{\;S}(v)=\sum_{i=1}^{m}\dfrac{v\cdot u_i}{\vert u_i\vert ^2}u_i$. Si $\{u_1,\ldots,u_m\}$ es un conjunto ortogonal entonces $\vert u_i\vert=1$, por lo que $\displaystyle {proy}_{\;S}(v)=\sum_{i=1}^{m}(v\cdot u_i)u_i$.
+	
+	
+	\vspace{0.3cm}
+
+
+\textbf{Ley de Variaci\'on de los Componentes}
+
+\vspace{0.3cm}
+
+	Dado $\{u_1,u_2,\ldots,u_n\}$ una base ortonormal de $\mathbb{R}^n$  y sea $p\in\mathbb{R}^n$. Si los vectores unitarios $e_i$, del sistema de coordenadas, se desplazan hacia los vectores $u_i$ respectivamente, formando un nuevo sistema, entonces $p$ en este nuevo sistema de coordenadas viene dado por
+
+\vspace{0.3cm}
+
+
+	\begin{eqnarray*}
+	p_2 = Up & \mbox{ donde }U=\begin{bmatrix}
+	u_1 & \ldots & u_n
+	\end{bmatrix} \mbox{ se denomina matriz de rotaci\'on.}
+	\end{eqnarray*}
+
+\vspace{0.3cm}
+
+Ahora si $S$ es el subespacio generado por $\{u_1,\ldots,u_m\}$, extendiendola  a una  base ortonormal de $R^n$, sea $\{u_1,\ldots,u_n\}$ entonces la proyecci\'on de $v\in\mathbb{R}^n$ sobre S, por propiedad , se tiene que 
+	
+	\vspace{0.3cm}
+	
+	\begin{eqnarray*}
+	\displaystyle {proy}_{\;S}(v)&=&(v\cdot u_1)u_1+\ldots + (v\cdot u_n)u_m + 0u_{m+1}\ldots + 0u_{n}\\
+	 & = &\begin{bmatrix}
+	 u_1&\ldots &u_m & u_{m+1} &\ldots &u_n
+	 \end{bmatrix}\begin{bmatrix}
+	 u_1^Tv \\
+	 \vdots\\
+	 u_m^Tv \\
+	 0\\
+	 \vdots\\
+	 0
+	 \end{bmatrix}
+	\end{eqnarray*}
+	
+	
+	Por esta propiedad el vector $(u_1^Tv,\ldots,u_m^Tv,0,\ldots,0)\in\mathbb{R}^n$ representa el vector $proy_{\;S}(v)$ en otro sistema de coordenadas y se puede  incorporarse en un sistema de menor dimensi\'on
+	
+	\vspace{0.3cm}
+	
+	\begin{eqnarray*}
+	proy_{\; S}(v)\in\mathbb{R}^n\equiv (u_1^Tv,\ldots,u_m^Tv,0,\ldots,0)\in\mathbb{R}^n \equiv (u_1^Tv,\ldots,u_m^Tv)\in\mathbb{R}^m  
+	\end{eqnarray*}
+	
+	\vspace{0.3cm}
+	
+	Como la  $proy_{\;S}(v)$ puede ser representado en un espacio $\mathbb{R}^{m}$ como $U^Tv$ donde $U=\begin{bmatrix}
+	u_1&\ldots&u_m
+	\end{bmatrix}$, se tiene la siguiente propiedad
+	
+	\vspace{0.3cm}
+	
+	
+		Sea $S$ subespacio de $\mathbb{R}^n$ con una base ortonormal $u_1,\ldots,u_m$ que la genere y sea $v\in\mathbb{R}^n$, entonces $proy_{\;S}(v)$ puede ser incorporado en $\mathbb{R}^n$, mediante una rotaci\'on de su sistema de coordenadas, como el vector
+		
+		\vspace{0.2cm}
+		
+		\begin{eqnarray*}
+		\begin{bmatrix}
+		u_1^T\\
+		\vdots\\
+		u_m^T
+		\end{bmatrix}v
+		\end{eqnarray*}.
 \end{document}
