@@ -1,0 +1,217 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage[sc]{mathpazo}
+%\usepackage[light,firsttwo,outline,bottomafter]{draftcopy}
+%\usepackage{srcltx}
+\usepackage{anysize} % Soporte para el comando \marginsize
+\marginsize{1.2cm}{1.2cm}{1cm}{1cm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage[english,spanish]{babel}
+\usepackage{amsmath}
+\usepackage{multicol} 
+\columnsep=7mm
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{enumitem}
+%\usepackage{hyperref}
+
+\usepackage{times}
+
+
+
+%\usepackage{xcolor}
+%\usepackage{pgfplots}
+%\usepackage{tikz}
+
+% Define bar chart colors
+%
+%\definecolor{bblue}{HTML}{4F81BD}
+%\definecolor{rred}{HTML}{C0504D}
+%\definecolor{ggreen}{HTML}{9BBB59}
+%\definecolor{ppurple}{HTML}{9F4C7C}
+
+
+
+
+
+\setlength{\paperwidth}{216mm} \setlength{\paperheight}{230mm}
+\setlength{\textwidth}{39pc} \setlength{\textheight}{57.5pc}
+\setlength{\topmargin}{-1.5cm} \setlength{\oddsidemargin}{-0.5cm}
+\setlength{\evensidemargin}{0.9cm}
+%\setlength{\footskip}{-0.3cm}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\normal}{\triangleleft \,}
+\newcommand{\tx}{\textrm}
+% \linespread{1.2} \sloppy
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\PR}{\mathbb{P}}
+\newcommand{\e}{\rightarrow}
+\newcommand{\bi}{\Leftrightarrow}
+\newcommand{\com}{\mathbb{N} \bi}
+\newcommand{\fu}{f:\N \e \R}
+\newcommand{\ba}{\backslash}
+\newcommand{\Q}{\mathbb{Q}}
+
+
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calL}{\mathcal{L}}
+
+
+\newcommand{\ovl}{\overline}
+\newcommand{\ora}{\overrightarrow}
+\newcommand{\ola}{\overleftarrow}
+\newcommand{\olra}{\overleftrightarrow}
+\newcommand{\ula}{\underleftarrow}
+\newcommand{\ura}{\underrightarrow}
+
+
+\newcommand{\inner}[2]{\langle{#1},{#2}\rangle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\cabecera}[1]{\begin{figure}[h]
+ \begin{minipage}[c]{0.05\columnwidth}
+\centering\includegraphics[width=2cm]{escudo.pdf}% tb escudouni.bmp
+\end{minipage}
+\hfill{}
+\begin{minipage}[c]{0.86\columnwidth}
+\centering\flushleft {Universidad Nacional de Ingenier\'ia\\
+Facultad de Ciencias\\
+Escuela Profesional de Matem\'atica \hfill #1}
+\end{minipage}
+\end{figure}\vspace{-0.5cm}
+}
+
+
+\begin{document}
+\cabecera{Ciclo 2016-I}
+\begin{center}
+{\bf Examen Parcial de Introducci\'on a la Estad\'istica y Probabilidades-CM 274
+}
+\end{center}
+
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+ 
+
+\renewcommand{\arraystretch}{2}
+
+\vskip.25in
+
+\noindent {\Large \textbf{Problemas}} 
+
+\vskip.25in
+
+\begin{enumerate}
+\item (3 ptos.) Responde y resuelve  las siguientes preguntas
+
+\begin{enumerate}
+	\item ?` Qu\'e es un camino aleatorio?
+	
+	 Si $S_0, S_1, S_n$ es un camino aleatorio sobre los enteros en el cual $p (= 1-q)$ es la probabilidad que un paso es dado, encuentra  que para $S_0 = 0$ un punto de tiempo $n$ y una localizaci\'on $k$,  la probabilidad de que  $S_n = k$, cuando $n $ es impar. Analiza para el caso en que $n$ es par.
+	 \item Si una moneda es lanzada $n$ veces con una probabilidad de salir cara $P$ y escribimos $Y$ como el n\'umero de caras obtenidas, entonces , ?`cu\'al es el \texttt{pmf} de Y?.  
+	 \item Un punto $A$ se elige en el disco unitario $\{ (x,y): x^2 + y^2 \leq 1\}$. Sea $R$ la distancia desde el origen a $A$. Encuentra $f_{R}$ y explica el sentido de la respuesta.
+\end{enumerate}
+\item (3 ptos)
+\begin{enumerate}
+	\item Muestra que, si $X$ y $Y$ son variables aleatorias  entonces  $X + Y$, $XY$ y $\min\{X,Y\} $, son tambi\'en variables aleatorias.
+	\item Prueba que el conjunto de todas las variables aleatorias  forman un espacio vectorial sobre los reales. Si el espacio muestral es finito, escribe una base  para este espacio.
+\end{enumerate}
+\item(2ptos) Un nuevo programa de computador consiste de dos m\'odulos. El primer m\'odulo contiene un error con una probabilidad de $0.3$. El segundo m\'odulo, tiene una probabilidad de $0.35$ de tener un error independientemente del primer m\'odulo. Un error en el primer m\'odulo  causa al programa fallar con probabilidad $0.6$. Para el segundo m\'odulo, esta probabilidad es $0.75$. Si hay errores en ambos m\'odulos, el programa falla con probabilidad de $0.9$. Suponiendo que el programa ha fallado, determina la probabilidad de errores en ambos m\'odulos.
+
+\item (4ptos) Resuelve
+\begin{enumerate}
+	\item  Ocho peones se colocan aleatoriamente en un tablero de ajedrez (no m\'as de uno en un cuadrado del tablero de ajedrez). ?` Cu\'al es la probabilidad que
+	\begin{enumerate}
+		\item ellos est\'en en  l\'inea recta (cuenta  las diagonales).
+		\item no hay dos en la misma columna o fila.
+	\end{enumerate}
+	\item Sean $X$ y $Y$ variables aleatorias independientes con varianzas finitas y sea $U = X + Y$ y $V = XY$. Bajo que condiciones $U$ y $V$ son no correlacionadas.
+	
+	\item Sea $X_1, X_2, \dots X_n$ variables aleatorias independientes y supongase que $X_k$ es una variable aleatoria Bernoulli con par\'ametro $p_k$. Muestra que $Y = X_1  +X_2 + \cdots + X_n$ cuya esperanza y varianza es dada por
+	
+	\[
+	E(Y) = \sum_{1}^{n}p_k \qquad var(Y) = \sum_{1}^{n}p_k(1 - p_k).
+	\]
+	\item Sea $X$ una variable aleatoria continua no negativa, con una funci\'on densidad $f$. Muestra que
+	
+	\[
+	E(X^r) = \int_{0}^{\infty}rx^{r-1}\PR(X > x)dx \qquad \mbox{para } \ \ r\geq 1.
+	\]
+\end{enumerate}
+
+\item (3 ptos) 
+
+\begin{enumerate}
+\item Encuentra la funci\'on densidad de $Y = aX$ con $a > 0$ en t\'erminos de la funci\'on densidad de $X$. Muestra que las variables aleatorias continuas $X$ y $-X$ tienen la misma funci\'on de distribuci\'on si y s\'olo si $f_{X}(x) = f_{-X}(x)$ para todo $x \in \mathbb{R}$.
+\item Se traza una l\'inea por el punto (1, 0) en una direcci\'on elegida al azar. Sea $(0,Y)$ un punto  que corta el eje $Y$. Muestra que $Y$  tiene la densidad est\'andar de Cauchy:
+
+\[
+f_{Y}(y) = \dfrac{1}{\pi(1 + y^2)} \ \ (y \in \mathbb{R}).
+\]
+
+Prueba que $1/Y$ tiene la misma distribuci\'on  de $Y$. Explica geom\'etricamente. (En este ejercicio se puede ignorar la posibilidad que la l\'inea sea paralela a uno de los ejes, ya que la probabilidad ser\'ia $0$).
+
+
+\end{enumerate}
+\item (3ptos) Calcula 
+
+\begin{enumerate}
+	
+\item El \texttt{cdf} de una variable aleatoria discreta $N$ es dado por
+\[
+F_{N}(x) = 1 - \dfrac{1}{2^n} \ \ \text{si }\ \ x\in[n, n +1)\ \ \text{para} \ \ n =1,2,\dots
+\]	
+
+y tiene el valor de $0$ si $x <1$.
+
+\begin{itemize}
+	\item ?` Cu\'al es el \texttt{pdf} de $N$?.
+	\item Calcula $P(4 \leq N \leq 10)$.
+\end{itemize}
+\item Sea \texttt{cdf} de una variable aleatoria continua $X$ dada por
+
+\[
+F_{X} (x) = \begin{cases}
+0 \ \ \ \ \ \ \ \ \ \ \ \ \ x <  0\\
+x^2/4 \ \ \ \ \ \  0 \leq x \leq 2 \\
+1 \ \ \ \ \ \ \ \ \ \ \ \  x > 2
+\end{cases}
+\]
+
+Encuentra el \texttt{pdf} de $X$.
+\item Sea $X$ una variable aleatoria continua cuyo \texttt{pdf} es dado por:
+
+\[
+f_{X}(x) = \begin{cases}
+\alpha (1 + x)^{-3}\ \  x> 0\\
+0 \ \ \ \ \ \ \ \ \ \ \ \ \text{en otros casos}
+\end{cases}
+\]
+
+
+encuentra la funci\'on de densidad condicional $f_{X|0.25 \leq X \leq 0.5}(x)$. Comprueba tu respuesta integrando $f_{X|0.25 \leq X \leq 0.5}(x)$ entre $0.25$ y $0.5$ y mostrando que sale $1$.
+
+\end{enumerate}
+
+\item (2ptos)  Resuelve
+
+\begin{enumerate}
+\item La probabilidad de que un evento ocurra en un experimento es $0.5$. Usa la desigualdad de Chebyshev para mostrar que la probabilidad de que este evento ocurra entre $450$ y $550$  en $1000$ experimentos indepedientes excede de $0.9$. 
+\item Una moneda muestra  una cara  cada cinco intentos, es lanzada  $100$ veces. Sea $X$ la variable aleatoria que denota el n\'umero de caras  obtenidas. Demuestra  que $E(X) = 20$ y que $Var(X)$ = 16. Ahora encuentra una cota  superior de la probabilidad  que $X \geq 60$, usando la desigualdad de Markov y la desigualdad de Chebyshev.
+\end{enumerate}
+\end{enumerate}
+\end{document}
