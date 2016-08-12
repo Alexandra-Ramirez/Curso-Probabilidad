@@ -60,6 +60,8 @@
 - [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
 - [Notas de Teoria de la Probabilidad de Terence Tao](https://terrytao.wordpress.com/2015/09/29/275a-notes-0-foundations-of-probability-theory/).
 - [Notas de Probabilidad y Estadística de KC. Border CALTECH](http://www.math.caltech.edu/%7E2015-16/2term/ma003/).
+-  Algunos canales de YouTube para aprender Estadistica:
+  * [Brandon Foltz](https://www.youtube.com/user/BCFoltz).
 
 ## Knitr
 
