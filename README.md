@@ -83,33 +83,8 @@ Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoo
 
 ## Otros temas de aplicación 
 
-* Apache Spark y BigData en la secuencia de ADN.
-* Regresión Polinomial y la Regularización de Tikhonov.
-* Recuperación de datos utilizando redes neuronales.
-* Cadenas de Markov y simulación
-* Curvas fractales.
-* Algoritmos genéticos.
+* Cadenas de Markov y simulación.
 * Bootstrap y Jacknife.
 * Probabilidad y grafos.
 * Introducción a la Inferencia Bayesiana.
-* Machine Learning en R:
-	- Aprendizaje supervisado
-	- Aprendizaje no supervisados
-
-* shiny: Framework web para R. 
-* Clasificación de géneros de la música.
-* Introducción básica al paralelismo en R
-* Algoritmos de programación lineal
-	* Simplex
-	* Algoritmo de Karmarkar
-	* Método del elipsoide.
-
-* Descomposiciones de valores singulares.
-	* SVD
-	* PCA
-
-* Las librerias plyr y dplyr. La estrategia `split-apply-combine`.
-* Solver lineales iterativos
-	* Descenso del gradiente
-	* Gradiente conjugados
-	* Precondicionado
+* Procesos esocásticos.
