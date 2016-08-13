@@ -87,4 +87,4 @@ Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoo
 * Bootstrap y Jacknife.
 * Probabilidad y grafos.
 * Introducción a la Inferencia Bayesiana.
-* Procesos esocásticos.
+* Procesos estocásticos.
