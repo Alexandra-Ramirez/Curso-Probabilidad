@@ -88,3 +88,4 @@ Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoo
 * Probabilidad y grafos.
 * Introducción a la Inferencia Bayesiana.
 * Procesos estocásticos.
+* Matemática actuarial (Introducción).
