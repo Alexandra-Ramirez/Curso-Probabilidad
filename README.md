@@ -80,9 +80,12 @@ library('knitr')
 ```
 Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoostrap) a crear boostrap para reportes en HTML via Rmarkdown. 
 
+- Referencia: Dynamics Documents with R and Knitr, Yihui Xie, CRC Press, 2014.
+
 ### Introducción a los Procesos Estocásticos
 
 * [Stochastic Processes in Python ](http://www.turingfinance.com/random-walks-down-wall-street-stochastic-processes-in-python/).
+* Basic Stochastic Processes, Tomasz Zastawniak, Zdzislaw Brzezniak, Springer Undergraduate Mathematics Series, 2000.
 
 
 ## Otros temas de aplicación 
