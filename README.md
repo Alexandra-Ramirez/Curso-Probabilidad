@@ -51,6 +51,7 @@
 - Probability and Statistics for Computer Scientists (CRC Press) Michael Baron (2014).
 - Probability, Markov Chains, Queues, and Simulation (Princeton University Press) William J. Stewart (2009).
 - Mathematical Statistics and Data Analysis (Duxbury Resource Center) John A. Rice (2006).
+- Teaching Statistics: A Bag of Tricks, Andrew Gelman y Deborah Nolan,  Oxford University Press; 1 edition 2002.
 - Weighing the Odds: A course in Probability and Statistics, David Williams, Cambridge University Press-2001.
 - All of Statistics  A Concise Course in Statistical Inference Larry Wasserman (Springer Texts in Statistics) (2003).
 - [Introduction to Probability ](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html).
@@ -90,6 +91,7 @@ Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoo
 * Probability, Markov Chains, Queues, and Simulation (Princeton University Press) William J. Stewart (2009).
 
 ### Introducción a la Inferencia Bayesiana.
+* Bayes' Rule: A Tutorial Introduction to Bayesian Analysis, James V. Stone, Sebtel Press  2013.
 
 ### Introducción a los Procesos Estocásticos
 
@@ -99,6 +101,10 @@ Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoo
 * Introduction to Stochastic Processes - Lecture Notes, Gordan Žitković Department of Mathematics The University of Texas at Austin.
 
 ### Matemática actuarial (Introducción)
+
+* Actuarial Models, The mathematics of Insurance, Second Edition, Vladimir I. Rotar, CRC Press, 2015.
+* [What do actuaries do?](https://www.quora.com/What-do-actuaries-do).
+* Computational Actuarial Science with R, Arthur Charpentier,  2014 Chapman and Hall/CRC .
 
 ### Estadística Computacional
 * Computational Statistics, Geof H. Givens y Jennifer A. Hoeting, Second Editions, Wiley, 2013.
