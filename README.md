@@ -86,10 +86,10 @@ Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoo
 
 ## Otros temas de aplicación 
 
-* Cadenas de Markov y simulación.
-* Bootstrap y Jacknife.
-* Probabilidad y grafos.
-* Introducción a la Inferencia Bayesiana.
+### Cadenas de Markov y simulación
+* Probability, Markov Chains, Queues, and Simulation (Princeton University Press) William J. Stewart (2009).
+
+### Introducción a la Inferencia Bayesiana.
 
 ### Introducción a los Procesos Estocásticos
 
@@ -97,5 +97,8 @@ Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoo
 * Basic Stochastic Processes, Tomasz Zastawniak, Zdzislaw Brzezniak, Springer Undergraduate Mathematics Series, 2000.
 * Basic Stochastic Processes, Pierre Devolder, Jacques Janssen, Raimondo Manca, Wiley, 2015.
 * Introduction to Stochastic Processes - Lecture Notes, Gordan Žitković Department of Mathematics The University of Texas at Austin.
-* 
-* Matemática actuarial (Introducción).
+
+### Matemática actuarial (Introducción)
+
+## Estadística Computacional
+
