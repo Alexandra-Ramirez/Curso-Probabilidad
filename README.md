@@ -100,5 +100,5 @@ Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoo
 
 ### Matemática actuarial (Introducción)
 
-## Estadística Computacional
-
+### Estadística Computacional
+* Computational Statistics, Geof H. Givens y Jennifer A. Hoeting, Second Editions, Wiley, 2013.
