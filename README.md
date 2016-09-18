@@ -1,4 +1,4 @@
-# Curso de Probabilidad y Estadística
+# Curso de Probabilidad y Estadística + Introducción a los Procesos Estocásticos
 
 ## Prerrequisitos
 
@@ -86,7 +86,8 @@ Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoo
 
 * [Stochastic Processes in Python ](http://www.turingfinance.com/random-walks-down-wall-street-stochastic-processes-in-python/).
 * Basic Stochastic Processes, Tomasz Zastawniak, Zdzislaw Brzezniak, Springer Undergraduate Mathematics Series, 2000.
-
+* Basic Stochastic Processes, Pierre Devolder, Jacques Janssen, Raimondo Manca, Wiley, 2015.
+* Introduction to Stochastic Processes - Lecture Notes, Gordan Žitković Department of Mathematics The University of Texas at Austin.
 
 ## Otros temas de aplicación 
 
