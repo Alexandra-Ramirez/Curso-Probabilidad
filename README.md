@@ -108,3 +108,15 @@ Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoo
 
 ### Estadística Computacional
 * Computational Statistics, Geof H. Givens y Jennifer A. Hoeting, Second Editions, Wiley, 2013.
+
+
+## Presentaciones
+
+- Soluciones Númericos para las Cadenas de Markov, que involucre matrices estocásticas, métodos discretos , iterativos para distribuciones estacionarias, descomposición y métodos de agregación.
+- Elemento básicos de la Teoria de Colas, eso incluye la notación de Kendall, representaciones gráficas de colas, las colas M/M/c, M/M,1.
+- Integración estocastica, con respeto a un camino aleatorio ,  movimiento browniano, fórmula de Ito y simulación.
+- Características globales de los procesos SURPLUS
+- Modelos de seguros de vida
+- Procesos de Poisson, que se tome en cuenta, procesos no homogeneos, ley de los evento raros o procesos de Poisson marcado.
+- Funciones caracteristicas y sus aplicaciones, que incluya por ejemplo las fórmulas de inversión de Fourier e identidad de Parseval.
+- Programación entera estocástica, que incluya LP-relaxation y el modelado.
