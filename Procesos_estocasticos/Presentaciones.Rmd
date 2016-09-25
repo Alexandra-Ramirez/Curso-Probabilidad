@@ -26,8 +26,10 @@
   - Comportamiento transitorio
 * Sistemas multiservidores
   - Colas M/M/c
-  - Colas M/M/
+  - Colas M/M/ ∞
 * Sistemas de capacidad finita
+
+
 ### Integración estocastica
 
 ### Características globales de los procesos SURPLUS
