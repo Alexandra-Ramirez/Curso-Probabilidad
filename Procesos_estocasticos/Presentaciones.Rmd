@@ -1,6 +1,6 @@
-# Lista de temas de Investigación
+## Lista de temas de Investigación
 
-## Soluciones Númericos para las Cadenas de Markov
+### Soluciones Númericos para las Cadenas de Markov
 
 * Matrices estocáticas y efectos de la discretización.
 * Métodos directos para distribuciones estacionarias
@@ -13,12 +13,25 @@
  * Métodos iterativos de Bloques.
  * Método de agregación y descomposición.
  
-## Elemento básicos de la Teoria de Colas
+### Elemento básicos de la Teoria de Colas
 
-## Integración estocastica
+* Definiciones básicas
+  - Servicios y llegadas.
+  - Notación Kendall 
+  - Representación gráfica de colas.
+  - Medidas de efectividad y rendimiento.
+* Colas M/M1/1 
+  - Descripción y solución de estado estable.
+  - Medidas de rendimiento.
+  - Comportamiento transitorio
+* Sistemas multiservidores
+  - Colas M/M/c
+  - Colas M/M/∞
+* Sistemas de capacidad finita
+### Integración estocastica
 
-## Características globales de los procesos SURPLUS
-##  Modelos de seguros de vida
-## Procesos de Poisson
-##  Funciones caracteristicas y sus aplicaciones
-## Programación entera estocástica
+### Características globales de los procesos SURPLUS
+###  Modelos de seguros de vida
+### Procesos de Poisson
+###  Funciones caracteristicas y sus aplicaciones
+### Programación entera estocástica
