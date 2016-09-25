@@ -102,9 +102,15 @@ Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoo
 
 ### Matemática actuarial (Introducción)
 
-* Actuarial Models, The mathematics of Insurance, Second Edition, Vladimir I. Rotar, CRC Press, 2015.
+Notas Online
+
 * [What do actuaries do?](https://www.quora.com/What-do-actuaries-do).
+
+Textos 
+
+* Actuarial Models, The mathematics of Insurance, Second Edition, Vladimir I. Rotar, CRC Press, 2015.
 * Computational Actuarial Science with R, Arthur Charpentier,  2014 Chapman and Hall/CRC .
+* [An Introductory Guide in the Construction of Actuarial Models](http://faculty.atu.edu/mfinan/actuarieshall/CGUIDE.pdf) Marcel B. Finan, Arkansas Tech University, 2016.
 
 ### Estadística Computacional
 * Computational Statistics, Geof H. Givens y Jennifer A. Hoeting, Second Editions, Wiley, 2013.
