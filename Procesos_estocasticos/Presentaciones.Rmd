@@ -36,4 +36,16 @@
 ###  Modelos de seguros de vida
 ### Procesos de Poisson
 ###  Funciones caracteristicas y sus aplicaciones
+
+* Definición de la función característica
+  - Propiedades
+* Fórmulas de inversión para funciones características
+  - Reciprocidad de Fourier y no Unicidad Local.
+  - Inversión de Fourier y identidad de Parseval
+* Fórmulas de Inversión general para variables aleatorias
+* Teorema de Continuidad
+ - Prueba del teorema de Continuidad
+ - Prueba del teorema de L\'imite Central
+* Fórmula de Stirling y sus aplicaciones
+
 ### Programación entera estocástica
