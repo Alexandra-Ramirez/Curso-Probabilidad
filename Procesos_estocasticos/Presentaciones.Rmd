@@ -34,6 +34,20 @@
 
 ### Características globales de los procesos SURPLUS
 ###  Modelos de seguros de vida
+
+* Un modelo general
+  - El valor actual de un pago futuro. 
+  - El valor actual de los pagos para una cartera de muchas normas.
+* Algunos tipos particulares de contratos
+  - Seguro de vidas.
+  - Seguro de vida entera diferido.
+  - Seguro temporal.
+  - Dotaciones
+* Variación de Beneficios
+* Decrementos múltiples y múltiples modelos de vida
+  - Múltiples decrementos.
+  - Seguro de modelos de vida
+  
 ### Procesos de Poisson
 ###  Funciones caracteristicas y sus aplicaciones
 
