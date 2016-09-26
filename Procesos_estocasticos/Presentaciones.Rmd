@@ -33,6 +33,20 @@
 ### Integración estocastica
 
 ### Características globales de los procesos SURPLUS
+
+* Marco general.
+* Modelos de Riesgo
+  - Coeficientes de ajuste y probabilidad de riesgo.
+    * Desigualdad de Lundberg.
+  - Calculando los coeficientes de ajuste.
+  - Encontrando un inicial Superplus
+  - Intercambio entre la prima y un inicial Superplus.
+  - Casos donde la probabilidad de riesgo puede ser calculada: Camino aleatorio simple y movimiento Browniano.
+ * Criterios conectado con el pago de dividendos
+  - Modelo general.
+  - El caso de un camino aleatorio simple.
+  - Estrategias optimales.
+  
 ###  Modelos de seguros de vida
 
 * Un modelo general
