@@ -42,7 +42,7 @@
   
 ### Soluciones Numéricas para las Cadenas de Markov
 
-* Matrices estocáticas y efectos de la discretización
+* Matrices estocásticas y efectos de la discretización
 * Métodos directos para distribuciones estacionarias
   - Métodos de solución directa y iterativos
   - Eliminación Gaussiana y factorización LU
