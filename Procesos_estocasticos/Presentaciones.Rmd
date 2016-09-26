@@ -40,7 +40,7 @@
   - Procesos de  línea
   - Procesos de línea de Cox
   
-### Soluciones Númericos para las Cadenas de Markov
+### Soluciones Numéricas para las Cadenas de Markov
 
 * Matrices estocáticas y efectos de la discretización
 * Métodos directos para distribuciones estacionarias
