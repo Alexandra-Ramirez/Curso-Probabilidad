@@ -142,3 +142,11 @@
   - Múltiples decrementos
   - Seguro de modelos de vida
  
+ ## Referencias
+ 
+ * René L. Schilling, Lothar Partzsch, Brownian Motion: An Introduction to Stochastic Process, 2012 Walter de Gruyter GmbH & Co. KG, Berlin/Boston.
+ * Poisson Processes, J.F.C.Kingman, University of Bristol, 2002.
+ * The Mathematics of Insurance, Vladimir I. Rotar,  2015 -Taylor & Francis Group, LLC.
+ * An Introduction to Stochastic Modeling, Mark A. Pinsky, Samuel Karlin, 2011.
+ * Introduction to Probability Models, Sheldon Ross, Academic Press,  2014.
+ * Stochastic Processes: Theory for Applications, Robert G. Gallager Cambridge University Press,  2014).
