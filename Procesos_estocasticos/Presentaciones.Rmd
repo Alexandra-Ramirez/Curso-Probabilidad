@@ -1,69 +1,19 @@
 ## Lista de temas
 
-### Soluciones Númericos para las Cadenas de Markov
+###  Funciones caracteristicas y sus aplicaciones
 
-* Matrices estocáticas y efectos de la discretización.
-* Métodos directos para distribuciones estacionarias
-  - Métodos de solución directa y iterativos.
-  - Eliminación Gaussiana y factorización LU.
-* Métodos básicos iterativos para distribuciones estacionarias 
-  - Método potencia.
-  - Método iterativo de Jacobi y Gauss-Seidel.
-  - Aproximaciones iniciales, normalización y Convergencia.
- * Métodos iterativos de Bloques.
- * Método de agregación y descomposición.
- 
-### Elemento básicos de la Teoria de Colas
-
-* Definiciones básicas
-  - Servicios y llegadas.
-  - Notación Kendall 
-  - Representación gráfica de colas.
-  - Medidas de efectividad y rendimiento.
-* Colas M/M1/1 
-  - Descripción y solución de estado estable.
-  - Medidas de rendimiento.
-  - Comportamiento transitorio
-* Sistemas multiservidores
-  - Colas M/M/c
-  - Colas M/M/ ∞
-* Sistemas de capacidad finita
+* Definición de la función característica
+  - Propiedades
+* Fórmulas de inversión para funciones características
+  - Reciprocidad de Fourier y no Unicidad Local.
+  - Inversión de Fourier y identidad de Parseval
+* Fórmulas de Inversión general para variables aleatorias
+* Teorema de Continuidad
+ - Prueba del teorema de Continuidad
+ - Prueba del teorema de Límite Central
+* Fórmula de Stirling y sus aplicaciones
 
 
-### Integración estocástica
-
-### Características globales de los procesos SURPLUS
-
-* Marco general.
-* Modelos de Riesgo
-  - Coeficientes de ajuste y probabilidad de riesgo.
-    * Desigualdad de Lundberg.
-  - Calculando los coeficientes de ajuste.
-  - Encontrando un inicial Superplus
-  - Intercambio entre la prima y un inicial Superplus.
-  - Casos donde la probabilidad de riesgo puede ser calculada:
-      * Camino aleatorio simple 
-      * Movimiento Browniano.
- * Criterios conectado con el pago de dividendos
-  - Modelo general.
-  - El caso de un camino aleatorio simple.
-  - Estrategias optimales.
-  
-###  Modelos de seguros de vida
-
-* Un modelo general
-  - El valor actual de un pago futuro. 
-  - El valor actual de los pagos para una cartera de muchas normas.
-* Algunos tipos particulares de contratos
-  - Seguro de vidas.
-  - Seguro de vida entera diferido.
-  - Seguro temporal.
-  - Dotaciones
-* Variación de Beneficios
-* Decrementos múltiples y múltiples modelos de vida
-  - Múltiples decrementos.
-  - Seguro de modelos de vida
-  
 ### Procesos de Poisson
 
 * Modelos estocásticos para un conjunto aleatorio de punto
@@ -80,27 +30,115 @@
   - Ley de los grandes números
   - Colas
   - Teorema de Bartlett
-  - Procesos de Poisson no-homogéneos.
+  - Procesos de Poisson no-homogéneos
 * Procesos de Cox
-  - Definición y propiedades básicas.
-  - Procesos de Cox en ecología.
-  - La distribución Borel-Tanner.
+  - Definición y propiedades básicas
+  - Procesos de Cox en ecología
+  - La distribución Borel-Tanner
 * Geometria Estocástica
-  - Procesos de Poisson de objetos geométricos.
-  - Procesos de  línea.
+  - Procesos de Poisson de objetos geométricos
+  - Procesos de  línea
   - Procesos de línea de Cox
+  
+### Soluciones Númericos para las Cadenas de Markov
 
-###  Funciones caracteristicas y sus aplicaciones
+* Matrices estocáticas y efectos de la discretización
+* Métodos directos para distribuciones estacionarias
+  - Métodos de solución directa y iterativos
+  - Eliminación Gaussiana y factorización LU
+* Métodos básicos iterativos para distribuciones estacionarias 
+  - Método potencia
+  - Método iterativo de Jacobi y Gauss-Seidel
+  - Aproximaciones iniciales, normalización y Convergencia
+ * Métodos iterativos de Bloques
+ * Método de agregación y descomposición
+ 
+### Elemento básicos de la Teoria de Colas
 
-* Definición de la función característica
-  - Propiedades
-* Fórmulas de inversión para funciones características
-  - Reciprocidad de Fourier y no Unicidad Local.
-  - Inversión de Fourier y identidad de Parseval
-* Fórmulas de Inversión general para variables aleatorias
-* Teorema de Continuidad
- - Prueba del teorema de Continuidad
- - Prueba del teorema de Límite Central
-* Fórmula de Stirling y sus aplicaciones
+* Definiciones básicas
+  - Servicios y llegadas
+  - Notación Kendall 
+  - Representación gráfica de colas
+  - Medidas de efectividad y rendimiento
+* Colas M/M1/1 
+  - Descripción y solución de estado estable
+  - Medidas de rendimiento
+  - Comportamiento transitorio
+* Sistemas multiservidores
+  - Colas M/M/c
+  - Colas M/M/ ∞
+* Sistemas de capacidad finita
 
-### Programación entera estocástica
+### Movimiento Browniano
+
+* El movimiento Browniano como un Proceso Gaussiano
+* Construcción del movimiento Browniano
+  - Construcción de Levy-Ciesielski
+  - Argumento original de Levy
+  - Construcción de Wiener
+  - Contrucción de Donsker 
+  - Argumento de Bachieler-Kolmogorov
+* Modelo canónico
+  - Medida de Wiener
+  - Construcción  de Kolmogorov
+ * Movimiento Browniano como una martingala
+ * Movimiento Browniano como un proceso de Markov
+  - Propiedad de Markov
+  - Propiedad fuerte de Markov
+  - Principio de Reflexión de André
+  - Ley triple de Levy
+
+
+### Integración estocástica
+
+* Propiedades básicas
+  - Integrales estocásticas discretas
+  - Construcción de la Integral de Ito
+  - Evaluando las integrales de Ito
+  - Integrales estócasticas de martingalas
+  
+* Fórmula de Ito
+  - Procesos de Ito y diferenciales estocásticos
+  - Heurística de la fórmula de Ito
+  - Fórmula de Ito para diferenciales estocásticos  y movimiento Browniano.
+  - Fórmula de Tanaka y tiempo Local.
+ 
+* Aplicaciones de la fórmula de Ito
+  - Exponenciales Doleans-Dade
+  - Caracterización de Levy del movimiento Browniano
+  - Teorema de Girsanov
+  - Representación de Martingalas
+  - Desigualdades de Burkholder-Davis-Gundy
+  
+### Características globales de los procesos SURPLUS
+
+* Marco general
+* Modelos de Riesgo
+  - Coeficientes de ajuste y probabilidad de riesgo.
+    * Desigualdad de Lundberg
+  - Calculando los coeficientes de ajuste
+  - Encontrando un inicial Superplus
+  - Intercambio entre la prima y un inicial Superplus
+  - Casos donde la probabilidad de riesgo puede ser calculada:
+      * Camino aleatorio simple 
+      * Movimiento Browniano
+ * Criterios conectado con el pago de dividendos
+  - Modelo general.
+  - El caso de un camino aleatorio simple.
+  - Estrategias optimales
+  
+###  Modelos de seguros de vida
+
+* Un modelo general
+  - El valor actual de un pago futuro 
+  - El valor actual de los pagos para una cartera de muchas normas
+* Algunos tipos particulares de contratos
+  - Seguro de vidas.
+  - Seguro de vida entera diferido
+  - Seguro temporal
+  - Dotaciones
+* Variación de Beneficios
+* Decrementos múltiples y múltiples modelos de vida
+  - Múltiples decrementos
+  - Seguro de modelos de vida
+ 
