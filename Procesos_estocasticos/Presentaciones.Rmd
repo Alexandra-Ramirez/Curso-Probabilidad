@@ -5,7 +5,7 @@
 * Definición de la función característica
   - Propiedades
 * Fórmulas de inversión para funciones características
-  - Reciprocidad de Fourier y no Unicidad Local.
+  - Reciprocidad de Fourier y no Unicidad Local
   - Inversión de Fourier y identidad de Parseval
 * Fórmulas de Inversión general para variables aleatorias
 * Teorema de Continuidad
@@ -114,7 +114,7 @@
 
 * Marco general
 * Modelos de Riesgo
-  - Coeficientes de ajuste y probabilidad de riesgo.
+  - Coeficientes de ajuste y probabilidad de riesgo
     * Desigualdad de Lundberg
   - Calculando los coeficientes de ajuste
   - Encontrando un inicial Superplus
@@ -124,7 +124,7 @@
       * Movimiento Browniano
  * Criterios conectado con el pago de dividendos
   - Modelo general.
-  - El caso de un camino aleatorio simple.
+  - El caso de un camino aleatorio simple
   - Estrategias optimales
   
 ###  Modelos de seguros de vida
