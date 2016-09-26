@@ -1,4 +1,4 @@
-## Lista de temas de Investigación
+## Lista de temas
 
 ### Soluciones Númericos para las Cadenas de Markov
 
@@ -30,7 +30,7 @@
 * Sistemas de capacidad finita
 
 
-### Integración estocastica
+### Integración estocástica
 
 ### Características globales de los procesos SURPLUS
 
@@ -41,7 +41,9 @@
   - Calculando los coeficientes de ajuste.
   - Encontrando un inicial Superplus
   - Intercambio entre la prima y un inicial Superplus.
-  - Casos donde la probabilidad de riesgo puede ser calculada: Camino aleatorio simple y movimiento Browniano.
+  - Casos donde la probabilidad de riesgo puede ser calculada:
+      * Camino aleatorio simple 
+      * Movimiento Browniano.
  * Criterios conectado con el pago de dividendos
   - Modelo general.
   - El caso de un camino aleatorio simple.
@@ -63,6 +65,31 @@
   - Seguro de modelos de vida
   
 ### Procesos de Poisson
+
+* Modelos estocásticos para un conjunto aleatorio de punto
+  - Modelos de Poisson.
+  - La distribución de Poisson
+  - Definición y propiedades básicas
+  - El teorema de la superposición
+  - El proceso de Bernoulli y teorema de Existencia
+* Sumas en los procesos de Poisson
+  - Medias, varianzas y disribuciones
+  - Teorema de Campbell y Rényi
+* Procesos de Poisson en la recta
+  - Intervalos de un proceso homogéneo
+  - Ley de los grandes números
+  - Colas
+  - Teorema de Bartlett
+  - Procesos de Poisson no-homogéneos.
+* Procesos de Cox
+  - Definición y propiedades básicas.
+  - Procesos de Cox en ecología.
+  - La distribución Borel-Tanner.
+* Geometria Estocástica
+  - Procesos de Poisson de objetos geométricos.
+  - Procesos de  línea.
+  - Procesos de línea de Cox
+
 ###  Funciones caracteristicas y sus aplicaciones
 
 * Definición de la función característica
@@ -73,7 +100,7 @@
 * Fórmulas de Inversión general para variables aleatorias
 * Teorema de Continuidad
  - Prueba del teorema de Continuidad
- - Prueba del teorema de L\'imite Central
+ - Prueba del teorema de Límite Central
 * Fórmula de Stirling y sus aplicaciones
 
 ### Programación entera estocástica
