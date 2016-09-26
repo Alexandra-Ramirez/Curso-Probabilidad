@@ -144,6 +144,7 @@
  
  ## Referencias
  
+ * Probability, Markov Chains, Queues and Simulation, William J. Stewart, Princeton University Press,  2009.
  * René L. Schilling, Lothar Partzsch, Brownian Motion: An Introduction to Stochastic Process, 2012 Walter de Gruyter GmbH & Co. KG, Berlin/Boston.
  * Poisson Processes, J.F.C.Kingman, University of Bristol, 2002.
  * The Mathematics of Insurance, Vladimir I. Rotar,  2015 -Taylor & Francis Group, LLC.
