@@ -1,4 +1,4 @@
-# Temas de exposición para el curso de Introducción a los Procesos Estocásticos
+## Temas de exposición para el curso de Introducción a los Procesos Estocásticos
 
 
 ## Acerca de las presentaciones
