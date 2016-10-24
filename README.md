@@ -67,54 +67,6 @@
   * [Analytics University](https://www.youtube.com/channel/UC2XO4HDxzfMOZIV1l795g1Q).
   * [NPTEL HRD](https://www.youtube.com/user/nptelhrd).
   
-## Software
-
-
-### R y Rstudio
-
-[R](https://www.cran.r-project.org/) y [RStudio](https://www.rstudio.com/) . RStudio es un IDE para R. Es software libre con licencia GPLv3 y se puede ejecutar sobre distintas plataformas  o incluso desde la web usando [RStudio Server](https://support.rstudio.com/hc/en-us/articles/200552306-Getting-Started).
-
-
-```bash
-c-lara@Lara:~$ wget https://download1.rstudio.org/rstudio-0.99.893-amd64.deb
-c-lara@Lara:~$sudo dpkg -i *.deb
-c-lara@Lara:~$rm *.deb
-``` 
-- [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
-- Using R and Rstudio for Data Management, Statistical and Graphics, Nicholas J. Horton and Ken Kleinman, CRC Press, 2015.
-
-
-### R Markdown 
-
-[R Markdown](http://rmarkdown.rstudio.com/index.html) es un framework para ciencia de datos de manera que puede crear reportes dinámicos con R, además de ejecutar y guardar código.
-
-R Markdown soporta formatos de salida estáticos y dinámicos que incluye  hTML, pdf,  beamer-latex, html5T, shiny,etc.
-
-Más información:
-
-* [Lecciones de R Markdown ](http://rmarkdown.rstudio.com/lesson-1.html).
-
-### R Notebooks
-Un R Notebooks es un documento R Markdown, que permite mostrar independientemente e interactivamente , código R y sintaxis de  otros lenguajes. Es una manera fácil de generar reportes, análisis estadísticos, visualización de datos.
-
-Más información en  la página [http://rmarkdown.rstudio.com/r_notebooks.html](http://rmarkdown.rstudio.com/r_notebooks.html).
-
-### Knitr
-
-Knitr es un paquete de R que permite integrar código R en archivos de distintos formatos.
-
-```r
-install.packages('knitr', dependencies = TRUE)
-```
-Se puede verificar que se ha instalado correctamente escribiendo
-
-```r
-library('knitr')
-```
-Knitr soporta gráficos y frameworks  [Knitrbootsrap](www.jimhester.com/knitrBoostrap) a crear boostrap para reportes en HTML via Rmarkdown. 
-
-- Referencia: Dynamics Documents with R and Knitr, Yihui Xie, CRC Press, 2014.
-
 
 
 ## Otros temas de aplicación 
