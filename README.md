@@ -72,6 +72,7 @@
 ## Otros temas de aplicación 
 
 ### Cadenas de Markov y simulación
+* [Beautiful Markov Chains ](http://setosa.io/blog/2014/07/26/markov-chains/index.html)
 * Probability, Markov Chains, Queues, and Simulation (Princeton University Press) William J. Stewart (2009).
 
 ### Introducción a la Inferencia Bayesiana.
