@@ -5,7 +5,7 @@
 *  Cada uno de los estudiantes matriculados escogerá un tema de su preferencia.
 *  La fecha de presentación para todos es el 13 de noviembre del 2016.
 * Todas las presentaciones deben ser escritas en Beamer Latex y deberán abarcar en su totalidad los ítem descritos para cada tema.
-*  En la semana de presentación se empezará con la exposición de los temas.
+
 
 ## Temas 
 
