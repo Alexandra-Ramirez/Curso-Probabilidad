@@ -1,0 +1,395 @@
+\documentclass{beamer}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usefonttheme{professionalfonts} % fuentes de LaTeX
+\usetheme{Boadilla} % Tema escogido en este ejemplo
+\setbeamercovered{transparent} % Velos
+\newcommand{\limite }[2]{\lim_{ #1 \rightarrow #2}}
+\newcommand{\noin}{\in \!\!\!\!\! / }
+\newcommand{\ds}{\displaystyle}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rd}{\R^{d}}
+\newcommand{\Sr}{\mathcal{S}(\mathbb{R}^{d})}
+\newcommand{\Rt}{\R^{3}}
+\newcommand{\vp}{\varphi}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathscr{C}}
+\newcommand{\E}{\mathbf{E}}
+\newcommand{\V}{\mathbf{V}}
+\newcommand{\pro}{\mathbf{P}}
+\newcommand{\A}{\mathscr{A}}
+\newcommand{\B}{\mathscr{B}}
+\newcommand{\Po}{\mathcal{P}(\Omega)}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Rn}{\mathbb{\R}^{n}}
+\newcommand{\Rna}{(\R^{n})^{*}}
+\newtheorem{ejer}{Ejercicio:}
+\newtheorem{defi}{Definición:}
+\newtheorem{teo}{Teorema:}
+\newtheorem{prop}{Proposición:}
+
+\begin{document}
+	
+\title{Funciones características y sus aplicaciones}
+\author{Abraham Rojas Vega\\
+		{Introducción a los Procesos Estocásticos}\\
+		{FC-UNI}}
+\date{12-11-2016} 
+\frame{\titlepage}
+	
+
+\section{Definiciones y propiedades}
+
+\begin{frame}{Definición y propiedades}
+	Dada una variable aleatoria $X$ con valores en $\R^{d}$, su {\bf función característica} $\vp: \R^{d} \rightarrow \mathbb{C} $ se define por: 
+	 \begin{align*}
+	\vp_{X}(t)  &= \E [e^{i \langle t,X \rangle }] \\
+				&= \ds \int _{\R^{d} }e^{i \langle t,X \rangle} \pro_{X} (dx) =\ds \int _{\R^{d} }e^{i \langle t,X \rangle} dF_{X} \\			
+				&=  \ds \int_{\Rd} e^{i \langle t, X \rangle} f_{X}(x) dx \\
+	\end{align*}
+	donde  $\pro_{X}= \pro \circ X^{-1} $ (medida de probabilidad inducida por $X$) \\
+	La última igualdad es válida cuando $X$ admite función de densidad $f_{X}$. \\
+	También se puede definir la función característica de cualquier función de distribución, usando la tercera igualdad
+
+\end{frame}
+
+\begin{frame}{Propiedades}
+		\begin{teo}
+		Sean $X,Y$ variables aleatorias que toman valores en $R^{d}$. Se cumple: 
+		\begin{itemize}
+			\item $ |\vp_{X}| \leq 1 $ y $ \vp_{X}(0) =1 $.
+			\item $\vp_{X}(-t)= \overline{\vp_{x}(t)}$ ($\vp$ es hermitiana)
+			\item $\vp _{aX+b}= \vp_{X} (at) e^{i \langle b,t \rangle} $
+			\item Si $X$ e $Y$ son independientes entonces $\vp_{X+Y}=\vp_{X}\vp_{Y}$
+			\item $0 \leq 1- \Re[\vp_{X}(2t)] \leq 4 (1- \Re[\vp_{X}(t)] ) $ para todo $t \in \R^{d}$
+		\end{itemize}
+	\end{teo}
+\begin{proof} [Demostración (para no perder la costumbre)]
+	El primer y segundo ítem son consecuencia directa de la definición.\\
+	
+	En el tercer ítem, observamos que $e^i {\langle t,X \rangle}$ y $e^i {\langle t,y \rangle}$ son independientes, se tiene: 
+	$ \vp_{X+Y} (t)= \E [ e^i {\langle t,X \rangle} \cdot e^i {\langle t,Y \rangle}]= \E [ e^i {\langle t,X \rangle}] \cdot \E [e^i {\langle t,Y \rangle}] = \vp_{X } \vp _{Y} $\\
+	
+	Para el cuarto ítem, basta ver que: $ 1-\cos (\langle 2t,X \rangle ) = 2( 1- \cos ( \langle t,X \rangle ) ) \leq 4 (1-\cos (\langle t,X \rangle)) $
+\end{proof}
+\end{frame}
+
+
+	
+	
+\section{Fórmulas de inversión (transformada de Fourier)}
+
+\begin{frame}{Notación con multi-índices}
+	
+	Consideremos $\alpha= (\alpha_{1}, \ldots , \alpha_{d}), \beta= (\beta_{1} \ldots, \beta_{d}) \in \N_{0}^{d}$ (denominados \textbf{multi-índices}), pongamos $|\beta|=\beta_{1}+ \ldots + \beta_{d}$.\\
+	 Dado $x=(x_{1}, \ldots, x_{d}) \in\Rd$ y $\phi: \Rd \rightarrow \R $, definimos:
+	 $$ x^{\alpha}= x_{1}^{\alpha_{1}}\ldots x_{d}^{\alpha_{d}} $$
+	 $$ D^{\beta} \phi = \frac{\partial ^{| \beta|} \phi } {\partial x_{1}^{\beta_{1}}\ldots \partial x_{d}^{\beta_{d}}  } $$
+\end{frame}
+
+\begin{frame}{Espacio de Schwartz ($\Sr$)}
+	Es el conjunto de funciones $\phi: \Rd \rightarrow \R$ infinitamente derivables tales que $$ |\sup _{x\in \Rd}   x^{\alpha} D^{\beta} \phi (x)| < \infty $$
+	para cualquier $\alpha, \beta \in (\N _{0})^{d}$.\\
+	
+	Puede probarse que la transformada de Fourier se torna en un homeomorfismo lineal del espacio de Schwartz sobre sí mismo. 
+	Hay que tener en cuenta que la transformada de Fourier no siempre está definida en $L^{1}(\Rd) $
+\end{frame}
+
+\begin{frame}{Transformadas de Fourier}
+	Sea $\phi \in L^{1}(\Rd)$. Se define la: 
+	\begin{itemize}
+		\item \textbf{transformada de Fourier} mediante:
+		$$ \F[\phi](y)= \int_{\Rd} \phi (x) e ^{-i \langle x, y \rangle} dx  $$
+		
+		\item \textbf{transformada inversa de Fourier} mediante:
+		$$ \F^{-1}[\phi](y) = \frac{1}{(2 \pi )^{d}} \int_{\Rd} \phi (x) e ^{i \langle x, y \rangle} dx  $$
+	\end{itemize}
+
+Observamos que, salvo constantes, la función característica coincide con la transformada inversa de Fourier de $f_{X}$ (función de densidad). 
+\end{frame}
+
+\begin{frame}{Algunas propiedades}
+	\begin{teo}
+		Sean $\phi \in \Sr, a, \alpha \in \Rd, \alpha \neq 0 $; se cumple:
+		\begin{equation} \label{c}
+		\F[ \phi \circ (I-a) ] = e^{-i \langle a ,y \rangle} \F [\phi]
+		\end{equation}
+		
+		\begin{equation} \label{e}
+		\F [ \phi \circ (\lambda I ) ] = \frac{1}{|\lambda|^{d}} \F [\phi] \left( \frac{y}{\lambda} \right)
+		\end{equation}
+		Donde $I$ es la función identidad
+		
+		\begin{equation} \label{f}
+		\int_{\R^{d}} \F[\phi ](y) \psi(y) dy =  \int_{\R^{d}} \F[\phi ](y) \psi (y) dy 
+		\end{equation}
+		
+	\end{teo}
+\end{frame}
+
+
+\begin{frame}{Fórmula de inversión de Fourier}
+	\begin{teo}
+		Si $\phi \in \Sr$ entonces, para todo $x\in \Rd$: $$ \phi (x) = \F^{-1}[ \F[\phi]  ] $$
+		De hecho, $\F:\Sr  \rightarrow \Sr $ es un isomorfismo lineal.
+	\end{teo}
+
+\begin{teo} [Identidad de Parseval]
+	Dados $ g, h  \in \Sr $, se cumple 
+
+	$$\langle g,h  \rangle =  \frac{1}{(2 \pi)^{d}} \langle \F[g] \F[h] \rangle $$
+	donde se ha considerado el producto interno de $L^{2}(\R^{d})$
+\end{teo}
+
+
+Veremos que si la f.c es integrable entonces el pdf existe y es la transformada inversa de la f.c.
+
+\end{frame}
+
+
+
+\begin{frame}{Fórmula de inversión para variables aleatorias (reales)}
+	\begin{teo}\label{caract}
+		Sea $\vp$ la f.c de la v.a. $X$ con función de distribución $F$. Si $a< b$: 
+		$$\begin{array}{l}
+		\lim\limits_{T\uparrow \infty} \ds \frac{1}{2\pi} \ds \int_{-T}^{T} \frac{e^{-i \theta a} - e^{i\theta b}}{i\theta} \vp(\theta) d\theta  \\
+		=  \ds \frac{1}{2} \pro_{X} (\{a\}) + \pro_{X} (<a,b>) + \frac{1}{2}\pro_{X}(\{b\}) \\
+		= \ds \frac{1}{2} [ F(b) + F(b-) ] - \frac{1}{2}[F(a)+F(a-)]
+		\end{array}$$
+		
+		Es más, si se aumenta la condición $ \ds \int_{-\infty}^{\infty} | \vp (\theta) | < \infty $ entonces $X$ tiene función de densidad continua, dada por:
+		$$ f(x)= \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{i\theta x} \vp (\theta) d \theta  $$
+	\end{teo}
+
+
+\end{frame}
+
+
+
+\section{Teorema de continuidad}
+
+\begin{frame}{Teorema de Continuidad (de Lévy)}
+\begin{defi}
+	Una sucesión $(F_{n})$ de funciones de distribución reales \textbf{converge débilmente} a la función de distribución real $F$ cuando $ \lim F_{n} (x) =F(x) $ en todo punto de continuidad $x $ de $F$.
+\end{defi}
+
+	\begin{teo} \label{cont}
+		Sea $(F_{n})$ una sucesión de funciones de distribución reales y $\vp_{n}$ la función características de $F_{n}$. \\
+		Supongamos que $(\vp_{n})$ converge puntualmente a cierta función $\vp$, siendo esta continua en $0$. \\
+		Entonces existe una función de distribución $F$ tal que $F_{n} \longrightarrow F$ débilmente y $\vp_{F}=\vp $.
+	\end{teo}
+
+\end{frame}
+
+\begin{frame}{Demostración Teor. de Continuidad}
+	Primero algunos preliminares:
+	\begin{teo}[Lema de Helly-Bray]
+		Sea $ (F_{n}) $ una sucesión de p.d.f. Entonces existe una función $F$ continua por la derecha y no decreciente tal que $0 \leqslant F \leqslant 1 $ y una subsucesión $(n_{i})$ tal que $$ \lim _{n \rightarrow \infty} F_{n_{i}} = F(x) \mbox{ cuando } F \mbox{ es continua en }x $$
+		
+	\end{teo}
+
+\begin{defi}
+	Una sucesión de p.d.f's $(F_{n})$ es \textbf{magra} si, dado $\varepsilon > 0$, existe $K>0$ tal que $$ F(K)- F(-K-) >1- \varepsilon $$ donde $F$ es la función que aparece en el lema anterior; la cual será una p.d.f. (podemos construir una v.a.)
+\end{defi}
+
+
+
+\end{frame}
+
+
+\begin{frame}
+	\textbf{AFIRMACIÓN}. La sucesión $(F_{n})$ del enunciado de nuestro teorema es magra. Vamos a asumir eso.\\
+	
+	Entonces por el lema de Helly-Bray, existe una subcesión $(F_{n_{k}})$ y una p.d.f. tal que $F_{n_{k}} \longrightarrow F  $ débilmente. \\
+	Sea $\theta \in \R$ tenemos: $ \vp_{n_{k}} (\theta) \longrightarrow \vp_{F} (\theta)   $. Por tanto $\vp= \vp_{F}$\\
+	
+	Ahora supongamos que $(F_{n})$ no converge débilmente a $F$. Entonces algún punto $x$ de continuidad de $F$ podemos encontrar la subsusceción $(\hat{F}_{n})  $ y $\eta >0$ tales que $ |(\hat{F}_{n} (x) - F(x)  | \geq \eta $ para todo $n$. \\
+	
+	Como $(\hat{F}_{n})  $ es magra entonces posee una subsucesión $(\hat{F}_{n_{j}})  $ tal que existe una p.d.f $\hat{F}  $ cumpliéndose:$(\hat{F}_{n}) \longrightarrow \hat{F}   $ débilmente. \\
+	
+	Luego $\hat{\vp}_{n_{j}} \longrightarrow \hat{\vp} $ puntualmente. Por tanto $ \hat{\vp} = \varphi _{\hat{F}}= \vp = \vp_{F} $. Por los teoremas de inversión concluimos que $ \hat{F}=F $, en particular: $\hat{F}_{n_{j}} (x) \longrightarrow \hat{F} (x) = F(x)  $.
+	\begin{flushright}
+		$ \square $
+	\end{flushright}
+\end{frame}
+
+
+\begin{frame}{Teorema del límite central}
+	\begin{teo}
+		Sea $(X_{n})$ una secuencia de v.a. reales i.i.d. donde $  \E[X_{1}] =0 $ y $\sigma^{2}:= \V[X_{1}] \in (0, \infty) $.\\ 
+		Si definimos $S_{n} := X_{1}+ \ldots + X_{n}$ y $$ G_{n} := \frac{S_{n}}{\sigma \sqrt{n}}  $$
+		Entonces, para todo $x \in \R$:
+		$$ \lim\limits_{n \rightarrow \infty} \pro [G_{n}  \leq x] = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{x} e^{-\frac{y^{2}}{2}} dx  $$
+	\end{teo}
+\end{frame}
+
+
+\begin{frame}{Demostración de Teor. del límite central}
+	Usaremos los siguientes resultados técnicos:
+	
+	\begin{prop}
+		Si $\vp$ es la f.c. de una v.a. con $ \E=0$ y $\V < \infty$  entonces: 
+		\begin{equation}\label{be}
+		\vp (t) =1 - \frac{1}{2} t^{2} \V   + o(t^{2}) \mbox{ cuando } t \longrightarrow 0
+		\end{equation}
+		
+		Si $z \in \mathbb{C}$ y $ |z| \leq 0.5 $ entonces 
+		\begin{equation}\label{ce}
+		|\log (1+z)-z| \leq |z|^{2}
+		\end{equation}
+		
+	\end{prop}
+		
+	Sea $t \in \R$. Entonces por \ref{be}:\\
+	$ \vp_{G_{n}}(t) = \vp _{S_{n}} \left( \frac{t}{\V \sqrt{n}} \right) = \vp \left( \frac{t}{\V \sqrt{n}} \right) = \left[ =1 - \frac{1}{2} \frac{t^{2} }{n} \V   + o(\frac{t^{2}}{n})  \right] ^{n}  $ cuando $n \longrightarrow \infty $
+	
+\end{frame}
+
+
+\begin{frame}
+	Por \ref{ce} tenemos:\\
+	$ \log \vp _{G{n}} (t) = n \log \left[ =1 - \frac{1}{2} \frac{t^{2} }{n} \V   + o(\frac{t^{2}}{n})  \right] = n \left[ = - \frac{1}{2} \frac{t^{2} }{n} \V   + o(\frac{t^{2}}{n})  \right] \longrightarrow \frac{1}{2} t^{2} $ cuando $n \longrightarrow \infty$
+	
+	Por tanto $\vp_{G_{n}}(t) \longrightarrow \exp \left(-\frac{1}{2} t^{2}\right) $. Observamos $t \mapsto \exp \left(-\frac{1}{2} t^{2}\right)$ es la función característica de la distribución normal con media $0$ y varianza $\V$. \\
+	Aplicando el teorema de continuidad a $G_{n}$... ¡ya esta!
+	\begin{flushright}
+		$ \square$
+	\end{flushright}
+\end{frame}
+
+
+\section{Aplicación al cálculo de momentos}
+	
+\begin{frame}{Aplicación al cálculo de momentos}
+	\begin{teo}
+		Sea $\vp$ la f.c de la v.a.r. $X$. Si $\E[ |X^{n}|] <\infty $ entonces $\vp$ es $n$ veces continuamente diferenciable, con derivadas: 
+		\begin{equation*}
+		\vp ^{(k)} (t) = \E [ (iX)^{k} e^{itX} ]
+		\end{equation*}
+	\end{teo}
+
+Otro interesante resultado: 
+
+	\begin{teo}
+	Sea $X$ una v.a.r. y $\vp$ su f.c. Si $\vp$ es $2n$ diferenciable en $0$, se tiene:$$ \E[X^{2n}] = (-1)^{n} \vp ^{(2n)} (0) < \infty $$
+\end{teo}
+
+Una aplicación de estos resultados es mostrar que la distribución de Cauchy no tiene esperanza, pues su función característica no es diferenciable en $t=0$.
+\end{frame}	
+	
+	
+\begin{frame}{Fórmula de Stirling}
+	La fórmula está dada por:
+	$$ \lim\limits_{n \rightarrow \infty} \frac{n!}{\sqrt{2 \pi n} \left( \frac{n}{e} \right)^{n} } =1 $$
+	Esta nos permite hacer la siguiente aproximación:
+	$$ \ln n! = n\ln n -n  +O (\ln n) $$
+	
+	Es útil para cuando se necesita hacer aproximaciones con factoriales, como en Mecánica Estadística. 
+	
+	
+	Una versión acotada de la fórmula es:
+	$$ \sqrt{2 \pi} n^{n +\frac{1}{2}} e ^{-n}\leq n!  \leq e n^{n +\frac{1}{2}} e ^{-n}$$
+	
+	Esta expresión es útil en aproximaciones que acarrean factoriales, pues las cotas son derivables.
+\end{frame}	
+
+\begin{frame}{Método de los momentos}
+	
+	\begin{teo}
+			Sea $X$ una v.a.r. donde $$ \alpha := \lim  \sup  \limits  _{n \rightarrow \infty} \frac{1}{n} \E [|X|^{n}] ^{1/n} < \infty $$
+		
+		Entonces la f.c. $\vp$ de $X$ es analítica y la distribución de $X$ está determinada por sus momentos $\E[X^{n}]$, siendo esta "representación" única\\
+		
+		En particular, esto se cumple cuando $\E[e^{t|X|}]  < \infty$ para algún $t>0$.
+	\end{teo}
+	
+	DEMOSTRACIÓN. Si $|h|<1/3 \alpha$, por la fórmula de Stirling :
+	$ \lim \sup \E[|X|^{n}] \cdot |h|^{n} \cdot /n! = \lim \sup \sqrt{2 \pi n} (\E[|X|^{n}]^{1/n} \cdot |h| \cdot e /n  )^{n} \leq \lim \sup \sqrt{2 \pi n } (e/3)^{n} =0  $\\
+	Es decir, la f.c. puede expandirse como serie de Taylor en cualquier $t \in \R$ con radio de convergencia $1/3 \alpha$. En particular, $\vp$ es analítica y determinada por los coeficientes de la serie, tomando $t=0$, estos coeficientes se tornan en los momentos. 
+	
+	
+	
+	
+\end{frame}
+
+
+
+\section{Otras apliaciones de la función característica}
+
+\begin{frame}{Más aplicaciones}
+	\begin{itemize}
+		\item Se usa en la definición de la \textbf{segunda función característica}: 
+		$$ H(t):=  \log \E[ e^{it X} ] \approx \sum_{n=1}^{\infty}  \kappa_{n} \frac{(it)^{n}}{n!} \approx \mu i t -\sigma^{2} \frac{t ^{2}}{2}+ \cdots   $$
+		Los \textbf{cumulantes} de la v.a. $X$ viene los coeficienes $\kappa_{n}$ de la expansión de Taylor (cuando existen). \\
+		La ventaja de trabajar de cumulantes radica en que la cumulantes de dos v.a. es el cumulante de la suma de estas, cuando son independientes.\\
+		En Física Estadística, muchas cantidades que son proporcionales al tamaño del sistema están relacionadas con cumulantes de v.a.'s. 
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\begin{itemize}
+		\item Puede usarse en el proceso de ajustar una distribución de probabilidad a un conjunto de datos. Existe el concepto de \textbf{función característica empírica}, la cual se calcula a partir de los datos. Para más información: http://www.utstat.toronto.edu/andrey/pubs/EmpiricalCF.pdf
+		
+		\item En la ``ida'' de la demostración del teorema de las tres series (de Kolmogorov): 
+		
+		\begin{teo}
+			Sean $(X_{n})$ v.a.i.i.d. Entonces $\sum X_{n}$ converge c.s. si y solo si para todo $k>0$ se cumplen las tres siguientes condiciones:
+			\begin{enumerate}
+				\item $ \sum \pro [ |X_{n}|> K )] < \infty$ 
+				\item $\sum \E[X_{n}^{K}] $ converge
+				\item $ \sum \V [X_{n}^{k}] < \infty  $
+			\end{enumerate}
+			donde \[
+			X_{n}^{K} (w) = \left\{ \begin{array}{rcl}
+			X_{n}(w) & \mbox{si} & |X_{n}(w)| \leq K\\
+			0 & \mbox{si} & |X_{n}(w)| > K\\
+			\end{array}
+			\right. \]
+		\end{teo}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item Estimar probabilidades de cola usando aproximaciones de punto silla. 
+		
+		\begin{teo}
+			Sea $X$ una variable aleatoria y $\vp$ su función característica. Entonces, para $\varepsilon  >0$ se tiene:
+			$$ \pro [ |X|> \frac{2}{\varepsilon} ]  \leq \frac{1}{\varepsilon} \int_{-\varepsilon}^{\varepsilon }  (1 - \vp(t)) dt  $$
+		\end{teo}
+		
+		\item Probar resultados como el siguiente:
+		
+		\begin{teo}
+				Si $X$ e $Y$ son independientes y $X+Y$ tienen distribución normal entonces tanto $X$ como $Y$ tienen distribución normal.
+		\end{teo}
+	
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Algunos ejemplos }
+	\begin{figure}[h!] % Ambiente ’figure’
+		\centering % imagen sin escalar
+		\includegraphics[width=6cm]{tabla.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Bibliografía}
+	\begin{itemize}
+		\item Achim Klenke. Probability Theory. Second Edition. Universitext. Springer.
+		
+		\item David Williams. Probability with Martingales. Cambridge Mathematical Textbooks. Cambrigde University Press.
+		
+	\end{itemize}
+\end{frame}
+
+
+
+\end{document}	
