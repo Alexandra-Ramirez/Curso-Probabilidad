@@ -21,30 +21,31 @@
   * Normal(Gausiana)
   * Exponencial, Poisson
   * Gamma, Beta, Chi-cuadrado
-8.  Introducción  a los Procesos estocásticos.
-  * Caminos aleatorios
-  * Cadenas de Markov
-  * Martingalas
-9. Introducción a la Estadística
-10. Inferencia estadística I
+
+8. Introducción a la Estadística
+9. Inferencia estadística I
   * Estimación de paramétros
   * Intervalos de confianza
   * Desviación estándar no conocida
   * Prueba  de hipótesis
   * Inferencia acerca de la varianza
-11. Inferencia estadística II
+10. Inferencia estadística II
   *  Test chi-cuadrado
   *  Estadística no parámetrica
   *  Bootstrap
   *  Inferencia Bayesiana
-12. Regresión 
+11. Regresión 
   * Estimación de mínimos cuadrados
   * Analizando la varianza, predicción.
   * Boostrap
-13. Regresión multivariada
+12. Regresión multivariada
   * Introducción y ejemplos
   * Estimación de mínimos cuadrados y análisis matricial
   * Análisis de varianza, pruebas y predicción.
+13.  Introducción  a los Procesos estocásticos.
+  * Caminos aleatorios
+  * Cadenas de Markov
+  * Martingalas
 
 ## Libros y artículos
 
