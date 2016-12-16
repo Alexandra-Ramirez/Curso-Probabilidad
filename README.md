@@ -100,6 +100,7 @@ Textos
 
 ### Estadística Computacional
 * Computational Statistics, Geof H. Givens y Jennifer A. Hoeting, Second Editions, Wiley, 2013.
+* [Computational Statistics in Python](http://people.duke.edu/~ccc14/sta-663/index.html)
 
 
 ## Presentaciones
