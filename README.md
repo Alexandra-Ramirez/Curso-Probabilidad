@@ -62,7 +62,8 @@
 - [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
 - [Notas de Teoria de la Probabilidad de Terence Tao](https://terrytao.wordpress.com/2015/09/29/275a-notes-0-foundations-of-probability-theory/).
 - [Notas de Probabilidad y Estadística de KC. Border CALTECH](http://www.math.caltech.edu/%7E2015-16/2term/ma003/).
--  Algunos canales de YouTube para aprender Estadistica:
+-  Algunos canales de YouTube para aprender Estadistica y Probabilidad:
+  * [Probability Spaces: An Illustrated Introduction](https://www.countbayesie.com/).
   * [Brandon Foltz](https://www.youtube.com/user/BCFoltz).
   * [jbstatistics](https://www.youtube.com/user/jbstatistics).
   * [Analytics University](https://www.youtube.com/channel/UC2XO4HDxzfMOZIV1l795g1Q).
@@ -100,7 +101,9 @@ Textos
 
 ### Estadística Computacional
 * Computational Statistics, Geof H. Givens y Jennifer A. Hoeting, Second Editions, Wiley, 2013.
-* [Computational Statistics in Python](http://people.duke.edu/~ccc14/sta-663/index.html)
+* [Computational Statistics in Python](http://people.duke.edu/~ccc14/sta-663/index.html).
+* [Exploratory computing with Python](http://mbakker7.github.io/exploratory_computing_with_python/).
+* [John Myles White "Who refuses to do arithmetic is doomed to talk nonsense."](http://www.johnmyleswhite.com/).
 
 
 ## Presentaciones
