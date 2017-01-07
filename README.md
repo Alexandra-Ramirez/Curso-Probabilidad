@@ -42,7 +42,7 @@
   * Introducción y ejemplos
   * Estimación de mínimos cuadrados y análisis matricial
   * Análisis de varianza, pruebas y predicción.
-13.  Introducción  a los Procesos estocásticos.
+13.  Introducción  a los Procesos estocásticos (Opcional).
   * Caminos aleatorios
   * Cadenas de Markov
   * Martingalas
@@ -51,7 +51,6 @@
 
 - Probability and Statistics for Computer Scientists (CRC Press) Michael Baron (2014).
 - Probability, Markov Chains, Queues, and Simulation (Princeton University Press) William J. Stewart (2009).
-- Mathematical Statistics and Data Analysis (Duxbury Resource Center) John A. Rice (2006).
 - Teaching Statistics: A Bag of Tricks, Andrew Gelman y Deborah Nolan,  Oxford University Press; 1 edition 2002.
 - Weighing the Odds: A course in Probability and Statistics, David Williams, Cambridge University Press-2001.
 - All of Statistics  A Concise Course in Statistical Inference Larry Wasserman (Springer Texts in Statistics) (2003).
