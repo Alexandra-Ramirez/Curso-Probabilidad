@@ -70,41 +70,6 @@
   
 
 
-## Otros temas de aplicación 
-
-### Cadenas de Markov y simulación
-* [Beautiful Markov Chains ](http://setosa.io/blog/2014/07/26/markov-chains/index.html)
-* Probability, Markov Chains, Queues, and Simulation (Princeton University Press) William J. Stewart (2009).
-
-### Introducción a la Inferencia Bayesiana.
-* Bayes' Rule: A Tutorial Introduction to Bayesian Analysis, James V. Stone, Sebtel Press  2013.
-
-### Introducción a los Procesos Estocásticos
-
-* [Stochastic Processes in Python ](http://www.turingfinance.com/random-walks-down-wall-street-stochastic-processes-in-python/).
-* Basic Stochastic Processes, Tomasz Zastawniak, Zdzislaw Brzezniak, Springer Undergraduate Mathematics Series, 2000.
-* Basic Stochastic Processes, Pierre Devolder, Jacques Janssen, Raimondo Manca, Wiley, 2015.
-* Introduction to Stochastic Processes - Lecture Notes, Gordan Žitković Department of Mathematics The University of Texas at Austin.
-
-### Matemática actuarial (Introducción)
-
-Notas Online
-
-* [What do actuaries do?](https://www.quora.com/What-do-actuaries-do).
-
-Textos 
-
-* Actuarial Models, The mathematics of Insurance, Second Edition, Vladimir I. Rotar, CRC Press, 2015.
-* Computational Actuarial Science with R, Arthur Charpentier,  2014 Chapman and Hall/CRC .
-* [An Introductory Guide in the Construction of Actuarial Models](http://faculty.atu.edu/mfinan/actuarieshall/CGUIDE.pdf) Marcel B. Finan, Arkansas Tech University, 2016.
-
-### Estadística Computacional
-* Computational Statistics, Geof H. Givens y Jennifer A. Hoeting, Second Editions, Wiley, 2013.
-* [Computational Statistics in Python](http://people.duke.edu/~ccc14/sta-663/index.html).
-* [Exploratory computing with Python](http://mbakker7.github.io/exploratory_computing_with_python/).
-* [John Myles White "Who refuses to do arithmetic is doomed to talk nonsense."](http://www.johnmyleswhite.com/).
-
-
 ## Presentaciones
 
 - Soluciones Númericos para las Cadenas de Markov, que involucre matrices estocásticas, métodos discretos , iterativos para distribuciones estacionarias, descomposición y métodos de agregación.
