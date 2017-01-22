@@ -49,10 +49,8 @@
 
 ## Libros y artículos
 
-- Probability and Statistics for Computer Scientists (CRC Press) Michael Baron (2014).
+- Introduction to Probability, Dimitri P. Bertsekas y John N. Tsitsiklis, Athena Scientific, 2008.
 - Probability, Markov Chains, Queues, and Simulation (Princeton University Press) William J. Stewart (2009).
-- Teaching Statistics: A Bag of Tricks, Andrew Gelman y Deborah Nolan,  Oxford University Press; 1 edition 2002.
-- Weighing the Odds: A course in Probability and Statistics, David Williams, Cambridge University Press-2001.
 - All of Statistics  A Concise Course in Statistical Inference Larry Wasserman (Springer Texts in Statistics) (2003).
 - [Introduction to Probability ](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html).
 - [Set Theory a primer](https://jeremykun.com/2011/07/09/set-theory-a-primer/).
