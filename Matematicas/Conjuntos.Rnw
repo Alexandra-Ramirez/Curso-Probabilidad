@@ -288,7 +288,7 @@ La generalizaci\'on  del tama\~no de un conjunto $A$ a conjuntos infinitos, pued
 
 
 \begin{defi}
-\normalfont Dos conjuntos $A$ y $B$ (finito o infinito ) tienen la misma \underline{cardinalidad}, denotado por $A \sim B$ si existe una biyecci\'on entre ellos.  La cardinalidad define una relaci\'on de equivalencia. La relaci\'on de cardinalidad divide as\'i el conjunto de todos los conjuntos en clases de equivalencia que contienen conjuntos con la misma cardinalidad. Para cada número natural $k \in \mathbb{N}$ tenemos una clase de equivalencia que contiene todos los conjuntos finitos de ese tama\~no. Pero tambi\'en hay otras clases de equivalencia que contienen conjuntos infinitos, la m\'as importante es la clase de equivalencia que contiene los n\'umeros naturales $\mathbb{N}$.
+\normalfont Dos conjuntos $A$ y $B$ (finito o infinito ) tienen la misma \underline{cardinalidad}, denotado por $A \sim B$ si existe una biyecci\'on entre ellos.  La cardinalidad define una relaci\'on de equivalencia. La relaci\'on de cardinalidad divide as\'i el conjunto de todos los conjuntos en clases de equivalencia que contienen conjuntos con la misma cardinalidad. Para cada n\'umero natural $k \in \mathbb{N}$ tenemos una clase de equivalencia que contiene todos los conjuntos finitos de ese tama\~no. Pero tambi\'en hay otras clases de equivalencia que contienen conjuntos infinitos, la m\'as importante es la clase de equivalencia que contiene los n\'umeros naturales $\mathbb{N}$.
 \end{defi}
 
 \begin{defi}
