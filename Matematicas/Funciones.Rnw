@@ -1,0 +1,242 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Notas de matem\'aticas \par
+\end{minipage}
+\vspace{0.5cm}
+
+
+\section{Funciones}
+
+\vspace{0.5cm}
+
+\begin{defi}
+\normalfont Sean $A, B$ dos conjuntos. Una \underline{funci\'on } $f: A \rightarrow B$ asigna un elemento $b \in B$ para cada elemento $a \in A$, denotado por $b = f(a)$.
+
+\end{defi}
+
+
+\begin{defi}
+\normalfont Para una funci\'on $f: A \rightarrow B$, definimos
+
+\begin{align*}
+\text{rango}\, f &= \{f(a):a\in A\}\\
+f^{-1}(b) &= \{a\in A: f(a)=b\}\\
+f^{-1}(H) &= \{a\in A: f(a)\in H\}.
+\end{align*}
+
+Si $\text{rango}\, f=B$, decimos que $f$ es sobreyectiva. Si para todo $b \in B$, $\vert f^{-1}(b) \vert \leq 1$, decimos que la funci\'on $f$ es inyectiva. Una funci\'on que es sobreyectiva y inyectiva se llama biyecci\'on.
+
+Si $f: A \rightarrow B$ es inyectiva, $f^{-1}$ es tambi\'en una funci\'on $f^{-1}: B^{'} \rightarrow A$ donde $B^{'} = \text{rango}\, f \subset B$. Si $f: A \rightarrow B$ es una biyecci\'on, entonces $f^{-1}: B \rightarrow A$ es tambi\'en una biyecci\'on.
+\end{defi}
+
+\begin{defi}
+\normalfont Sea $f: A \rightarrow B$ y $f: B \rightarrow C$ dos funciones. La composici\'on es un funci\'on $f \circ g : A \rightarrow C$ definido como $(f\circ g)(x)=f(g(x))$.
+\end{defi}
+
+\begin{pros}
+\normalfont Para alguna funci\'on  $f$ y una colecci\'on de conjuntos indexados $U_a, a \in A$, tenemos
+
+\begin{align*}
+f^{-1} \left(\bigcap_{a\in A} U_{a}\right) &= \bigcap_{a\in A} f^{-1}(U_{a}) \\
+f^{-1} \left(\bigcup_{a\in A} U_{a}\right) &= \bigcup_{a\in A} f^{-1}(U_{a}) \\
+f \left(\bigcup_{a\in A} U_{a}\right) &= \bigcup_{a\in A} f(U_{a}).
+\end{align*}
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Para $f:\mathbb{R} \rightarrow \mathbf{R}, f(x) = x^2 $, tenemos $f^{-1}(x) = \{\sqrt{x}, -\sqrt{x}\}$ implicando que $f$ no es inyectiva. Tambi\'en tenemos que $f^{-1}([1,2])=[-\sqrt{2},1]\cup [1,\sqrt{2}]$.
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont Sean las funciones $f, g: A \rightarrow \mathbb{R}$, denotamos $f \leq g$ si $f(x) \leq g(x)$ para todo $x \in A$, $f < g$ si $f(x) < g(x)$ para todo $x \in A$ y $ f \equiv g$ si $f(x) = g(x)$ para todo $x \in A$.
+\end{defi}
+
+\begin{defi}
+\normalfont Denotamos una sucesi\'on de funciones $f_n: A \rightarrow \mathbb{R}, n \in \mathbb{N}$, satisfaciendo $f_1\leq f_2\leq f_3\leq \cdots$ como $f_n\nearrow$.
+\end{defi}
+
+\vspace{0.3cm}
+
+\begin{defi}
+\normalfont Dado un conjunto $A \in \Omega$, definimos la \underline{funci\'on indicador} $I_A:\Omega\to\mathbb{R}$ como
+
+\[
+I_A(\omega)=\begin{cases} 1 & \omega\in A \\ 0 & \text{e otros casos}\end{cases}, \qquad \omega\in\Omega.
+\]
+\end{defi}
+
+
+
+\begin{pros}
+\normalfont La funci\'on indicador tiene algunas propiedades importantes
+ 
+\begin{enumerate}
+\item Para alg\'un conjunto $A$, tenemos $I_A=1-I_{A^c}$.
+\item Si $A \subset B$, se cumple que $I_A\leq I_B$.
+\item Para dos conjuntos $A$ y $B$, se cumple que $I_{A \cap B} = I_{A}I_{B}$ y
+\item Del mismo modo dado dos conjuntos $A$ y $B$, se cumple que $I_{A \cup B} = I_{A} + I_{B} - I_{A \cap B}$. 
+\end{enumerate}
+\end{pros}
+
+\vspace{0.2cm}
+
+
+\begin{ejemplo}
+\normalfont (Principio de inclusi\'on -exclusi\'on) Sean los conjuntos $A_1, A_2, \dots, A_n$ y sea $I_{A_i}$ la funci\'on indicador de $A_i$, la uni\'on $A = A_1 \cup A_2 \cup \cdots \cup A_n$ tiene como funci\'on indicador
+
+\[
+I_A = 1 - \prod_{i = 1}^n(1 - I_{A_i}).
+\]
+\end{ejemplo}
+
+\vspace{0.5cm}
+
+Existen algunas definiciones que son \'utiles en la comparaci\'on del \underline{comportamiento asint\'otico}.
+
+\begin{defi}
+\normalfont Sean las  funciones $f, g: \mathbb{R}\rightarrow \mathbb{R}$ definimos las siguientes notaciones
+
+\begin{align*}
+f=O(g) \qquad \text{ cuando}\qquad x\to L \qquad &\text{si} \qquad \limsup_{x\to L} \frac{|f(x)|}{|g(x)|} < \infty\\
+f=o(g) \qquad \text{cuando } \qquad x\to L \qquad &\text{si} \qquad
+\lim_{x\to L} \frac{f(x)}{g(x)} = 0\\
+f\sim g \qquad \text{ cuando }\qquad  x\to L \qquad &\text{si} \qquad
+\lim_{x\to L} \frac{f(x)}{g(x)} = 1\\
+f \ \Theta\   g \qquad \text{ cuando }\qquad  x\to L \qquad &\text{si} \qquad
+f=O(g)\text{ y  } g=O(f).
+\end{align*}
+
+A $L$  le puede  corresponder  un l\'imite finito o un l\'imite infinito: $+\infty , -\infty$. Si se omite $L$, normalmente se supone que es $+\infty$.
+
+Intuitivamente, $f = O(g)$ implica que $f$ crece tan r\'apido como $g$ o m\'as lento y $f = o(g)$ implica que $f$ crece m\'as lento que $g$ . Las definiciones anteriores suponen que $g(x)$ no es cero, o al menos no es cero cuando $x \rightarrow L$.
+\end{defi}
+
+\begin{ejemplo}
+\normalfont Se cumple $f = O(g)$ si y s\'olo si $f(x)/g(x) = O(1)$ y $f(x) = o(g(x))$ si y s\'olo si $f(x)/g(x) = o(1)$.
+\end{ejemplo}
+
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont
+\begin{enumerate}
+\item Se cumple que $x^a = o(x^b)$ para toda constante no negativa $a < b$.
+\item $\log x = o(x^{\epsilon})$ para todo $\epsilon > 0$ y $x > 1$.
+\item $x^b = o(a^x)$ para $a,b \in \mathbb{R}$ con $a > 1$.
+ \end{enumerate}
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Si tenemos $n , k > 0$, tenemos que $x^n = O(x^k)$ si y s\'olo si $k \geq n$ y $x^{-n} = o(x^{-k})$ si y s\'olo si $k < n$ (en ambos casos $x \rightarrow \infty$). Tambi\'en $x^n = O(\exp(x))$ y $\exp(-x) = o(x^{-n})$ cuando  $x \rightarrow \infty$, para todo $n > 0$. 
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Si $f = o(g)$ o se cumple  $f \sim g$, entonces $f = O(g)$.
+\end{pros}
+
+\vspace{0.2cm}
+
+Es importante notar que 
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Si $f = o(g)$, entonces no es verdad que $g = O(f)$.
+\end{pros}
+
+
+\[
+\lim_{x \rightarrow \infty}\frac{g(x)}{f(x)} = \dfrac{1}{\lim_{x \rightarrow \infty}f(x)/g(x)} = \dfrac{1}{0} = \infty,
+\]
+
+as\'i $g \neq O(f)$.
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Para $a_k \neq 0, a_kx^k + a_{k -1}x^{k -1} + \cdots + a_1x + a_0 = O(x^k) $.
+\end{pros}
+
+\vspace{0.2cm}
+
+
+\begin{defi}
+\normalfont Dado dos funciones $f, g: \mathbb{R} \rightarrow \mathbb{R}$, decimos que
+
+\[
+f = \Omega (g)
+\]
+
+si y s\'olo existe una constante $c$ y un $x_0$ tal que para todo $ x \geq x_0$, tenemos que $f(x) \geq c\vert g(x)\vert$.
+\end{defi}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont $f(x) = O(g(x))$ si y s\'olo si  $g(x) = \Omega(f(x))$.
+\end{pros}
+
+As\'i por ejemplo $x^2 = \Omega(x), 2^x = \Omega(x^2)$ y $x/100 = \Omega (100x + \sqrt{x})$.
+
+
+\section{Referencias}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item Mathematics for Computer Science, Eric Lehman F Thomson Leighton Albert R Meyer 2010.
+\item Book of Proof,  2013 by Richard Hammack Second Edition.
+\item Probability, The Analysis of Data, volumen 1 Guy Lebanon. 
+\end{enumerate}
+\end{document}
