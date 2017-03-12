@@ -9,43 +9,11 @@
 
 ## Temas
 
-1. Propiedades de la probabilidad.
-2. Independencia, probabilidad condicional, ley de Bayes.
-3. Variables aleatorias, distribuciones, densidades y esperanza.
-4. Distribuciones conjuntas, funciones marginales, covarianza, correlación.
-5. La ley de los grandes números.
-6. Teorema del límite central.
-7. Importantes distribuciones
-  * Bernoulli, Binomial
-  * Uniforme
-  * Normal(Gausiana)
-  * Exponencial, Poisson
-  * Gamma, Beta, Chi-cuadrado
-
-8. Introducción a la Estadística
-9. Inferencia estadística I
-  * Estimación de paramétros
-  * Intervalos de confianza
-  * Desviación estándar no conocida
-  * Prueba  de hipótesis
-  * Inferencia acerca de la varianza
-10. Inferencia estadística II
-  *  Test chi-cuadrado
-  *  Estadística no parámetrica
-  *  Bootstrap
-  *  Inferencia Bayesiana
-11. Regresión 
-  * Estimación de mínimos cuadrados
-  * Analizando la varianza, predicción.
-  * Boostrap
-12. Regresión multivariada
-  * Introducción y ejemplos
-  * Estimación de mínimos cuadrados y análisis matricial
-  * Análisis de varianza, pruebas y predicción.
-13.  Introducción  a los Procesos estocásticos (Opcional).
-  * Caminos aleatorios
-  * Cadenas de Markov
-  * Martingalas
+1. Probabilidad y combinatoria.
+2. Distribuciones discretas.
+3. Distribuciones continuas.
+4. Distribuciones bivariadas.
+5. Distribuciones de funciones de variables aleatorias.
 
 ## Libros y artículos
 
