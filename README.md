@@ -66,3 +66,18 @@
   * [Analytics University](https://www.youtube.com/channel/UC2XO4HDxzfMOZIV1l795g1Q).
   * [NPTEL HRD](https://www.youtube.com/user/nptelhrd).
   
+##Software
+
+### R y Rstudio
+
+[R](https://www.cran.r-project.org/) y [RStudio](https://www.rstudio.com/) . RStudio es un IDE para R. Es software libre con licencia GPLv3 y se puede ejecutar sobre distintas plataformas  o incluso desde la web usando [RStudio Server](https://support.rstudio.com/hc/en-us/articles/200552306-Getting-Started).
+
+
+```bash
+c-lara@Lara:~$ wget https://download1.rstudio.org/rstudio-0.99.893-amd64.deb
+c-lara@Lara:~$sudo dpkg -i *.deb
+c-lara@Lara:~$rm *.deb
+``` 
+- [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
+- Using R and Rstudio for Data Management, Statistical and Graphics, Nicholas J. Horton and Ken Kleinman, CRC Press, 2015.
+
