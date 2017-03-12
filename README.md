@@ -1,19 +1,14 @@
 # Curso de Probabilidad y Estadística 
 
-## Prerrequisitos
+## Lecturas previas
 
-1. Álgebra Lineal
-   * Linear algebra done right, S. Axler  Undergraduate Texts in Mathematics, Springer 2015.
-2. Cálculo multivariado
-   * Multivariate Calculus, Denis Aroux OCW MIT 2007.
+- [Set Theory a primer](https://jeremykun.com/2011/07/09/set-theory-a-primer/).
+- [Linear algebra a primer](https://jeremykun.com/2011/06/19/linear-algebra-a-primer/).
 
 ## Temas
 
 1. Probabilidad y combinatoria.
-2. Distribuciones discretas.
-3. Distribuciones continuas.
-4. Distribuciones bivariadas.
-5. Distribuciones de funciones de variables aleatorias.
+
 
 ## Libros y artículos
 
@@ -21,7 +16,6 @@
 - Probability, Markov Chains, Queues, and Simulation (Princeton University Press) William J. Stewart (2009).
 - All of Statistics  A Concise Course in Statistical Inference Larry Wasserman (Springer Texts in Statistics) (2003).
 - [Introduction to Probability ](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html).
-- [Set Theory a primer](https://jeremykun.com/2011/07/09/set-theory-a-primer/).
 - [Conditional probability a primer](https://jeremykun.com/2013/03/28/conditional-partitioned-probability-a-primer/).
 - [Probability Theory a primer](https://jeremykun.com/2013/01/04/probability-theory-a-primer/).
 - [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
