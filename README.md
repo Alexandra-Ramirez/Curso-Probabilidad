@@ -4,6 +4,7 @@
 
 - [Set Theory a primer](https://jeremykun.com/2011/07/09/set-theory-a-primer/).
 - [Linear algebra a primer](https://jeremykun.com/2011/06/19/linear-algebra-a-primer/).
+- [The Riemann integral](https://www.countbayesie.com/blog/2015/8/3/the-riemann-integral).
 
 ## Temas
 
