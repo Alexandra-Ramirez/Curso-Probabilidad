@@ -14,8 +14,11 @@
  - Modelo clásico sobre espacios continuos.
  
  Lecturas: 
- 
+
+    * [Notas elementales de teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
+    * [Probability Spaces: An Illustrated Introduction](https://www.countbayesie.com/blog/2015/8/30/picture-guide-to-probability-spaces)
     * [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
+
 
 
 ## Libros y artículos
