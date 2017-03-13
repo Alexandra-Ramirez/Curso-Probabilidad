@@ -13,7 +13,7 @@
  - Modelo clásico sobre espacios finitos
  - Modelo clásico sobre espacios continuos.
  
- Lectura: 
+ Lectura: [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
 
 
 ## Libros y artículos
