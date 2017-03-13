@@ -7,7 +7,13 @@
 
 ## Temas
 
-1. Probabilidad y combinatoria.
+1. Probabilidad 
+ - Espacio muestral y eventos.
+ - Función probabilidad.
+ - Modelo clásico sobre espacios finitos
+ - Modelo clásico sobre espacios continuos.
+ 
+ Lectura: 
 
 
 ## Libros y artículos
