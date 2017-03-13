@@ -1,0 +1,913 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bb}[1]{\textbf{#1}}
+\DeclareMathOperator{\rank}{\textbf{rango}}
+\DeclareMathOperator{\proy}{\textbf{proy}}
+\DeclareMathOperator{\nulll}{\textbf{nul}}
+\DeclareMathOperator{\diag}{\textbf{diag}}
+\DeclareMathOperator{\col}{\textbf{col}}
+\DeclareMathOperator{\fila}{\textbf{fila}}
+\DeclareMathOperator{\dimm}{dim}
+\DeclareMathOperator{\Traz}{Tr}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Probabilidad condicional, eventos independientes \par
+Regla de Bayes\par
+\end{minipage}
+
+
+\vspace {0.5cm}
+
+
+
+\section{Probabilidad condicional}
+
+\vspace{0.3cm}
+
+
+\begin{defi}
+\normalfont Asumiendo $P(B) > 0$, definimos la probabilidad condicional de $A$, dado que $B$ a ocurrido como sigue
+
+\[
+\mathbb{P}(A|B ) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}
+\]
+
+\vspace{0.3cm}
+
+Para cualquier evento $B$ fijo  tal que  $P (B)> 0, \mathbb{P} (\cdot| B)$ es una funci\'on de  probabilidad (es decir, que cumple los tres axiomas de probabilidad). En particular $\mathbb{P}(A|B) \geq 0, \mathbb{P}(\Omega|B) = 1$ y si $A_1,A_2, \dots $ son disjuntos, entonces $\mathbb{P}(\bigcup\limits_{i= 1}^{\infty}A_i|B)= \sum_{i = 1}^{\infty}\mathbb{P}(A_i|B)$. Pero esto no es cierto en general que $\mathbb{P}(A|B \cup C) = \mathbb{P}(A|B) + P(A|C)$.
+
+\end{defi}
+
+\vspace{0.2cm}
+
+Las reglas de la probabilidad se aplican a los eventos de la izquierda de la barra $|$. En general, no se cumple que $P(A|B) = P(B|A)$.
+
+\vspace{0.2cm}
+
+Hay mucha confusi\'on con esto todo el tiempo. Por ejemplo, la probabilidad de que tengas puntos (manchas) dado que tienes  sarampi\'on es $1$, pero la probabilidad de que tengas   sarampi\'on, dado que  tienes puntos (manchas) no es $1$. En este caso, la diferencia entre $\mathbb{P}(A|B)$  y $\mathbb{P}(B|A)$ es obvia, pero hay casos en los que es menos obvio. Este error sucede  con bastante frecuencia en los casos legales que a veces se llaman \textit{falacias del fiscal}.
+
+
+\vspace{0.2cm}
+
+Si $\mathbb{P}(A) > 0$ y $\mathbb{P}(B) > 0$, tenemos
+
+\[
+\mathbb{P}(A\cap B)=\mathbb{P}(A|B)\mathbb{P}(B)=\mathbb{P}(B|A)\mathbb{P}(A).
+\]
+
+\vspace{0.3cm}
+
+Intuitivamente, $\mathbb{P}(A | B)$ es la probabilidad de que $A$ ocurra suponiendo que ocurri\'o el evento $B$. De acuerdo con esa intuici\'on, la probabilidad condicional tiene las siguientes propiedades
+
+\begin{itemize}
+\item Si $B \subset A$ entonces $\mathbb{P}(A| B)=\mathbb{P}(B)/\mathbb{P}(B)=1$.
+\item Si $A \cap B = \emptyset$ entonces $\mathbb{P}(A | B)=0/\mathbb{P}(B)=0$.
+\item $A \subset B$ entonces $\mathbb{P}(A| B)=\mathbb{P}(A)/\mathbb{P}(B)$.
+\item La probabilidad condicional, puede ser vista como una funci\'on de probabilidad
+
+\[
+\mathbb{P}_A(E)  =  \mathbb{P}(E | A)
+\]
+y todas las propiedades y intuiciones que se aplican a la funci\'on probabilidad se aplican a $\mathbb{P}_A$ tambi\'en.
+
+\item Asumiendo que el evento $A$ ocurri\'o, $\mathbb{P}_A$ generalmente tiene mejores habilidades de pron\'ostico que $\mathbb{P}$.
+\end{itemize}
+
+
+\vspace{0.2cm}
+
+Como se mencion\'o anteriormente, las probabilidades condicionales son usualmente intuitivas. El siguiente ejemplo de (Feller, 1968), sin embargo, muestra una situaci\'on contra-intuitiva que implica probabilidades condicionales. Esto demuestra que la intuición no debe ser un sustituto de la computaci\'on rigurosa.
+
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Consideramos dos familias con dos hijos donde la probabilidad de g\'enero de cada ni\~no es sim\'etrica $(1/2)$. Seleccionamos una familia al azar y consideramos el espacio muestral que describe el g\'enero de los ni\~nos $\Omega=\{MM,MF,FM,FF\}$. Asumimos un modelo cl\'asico, implicando que las probabilidades de  todos los eventos elementales son $1/4$.
+
+\vspace{0.2cm}
+
+Definimos el evento  en que ambos hijos en la familia son ni\~nos como $A=\{MM\}$, el evento que una familia tiene un ni\~no es $B=\{MF,FM,MM\}$ y el evento que el primer hijo es un ni\~no como $C=\{MF,MM\}$.
+
+\vspace{0.2cm}
+
+Dado que el primer hijo  es un ni\~no, la probabilidad de que ambos hijos sean ni\~nos es
+
+\[
+\mathbb{P}(A | C)=\mathbb{P}(A\cap C)/\mathbb{P}(C)=\mathbb{P}(A)/\mathbb{P}(C)=(1/4)/(1/2)=1/2.
+\]
+
+\vspace{0.2cm}
+
+Esto coincide con nuestra intuici\'on. Dado que la familia tiene un ni\~no, la probabilidad de que ambos hijos sean ni\~nos es contraintuitiva
+
+\[
+\mathbb{P}(A| B)=\mathbb{P}(A\cap B)/\mathbb{P}(B)=\mathbb{P}(A)/\mathbb{P}(B)=(1/4)/(3/4)=1/3.
+\]
+\end{ejemplo}
+
+
+\vspace{0.2cm}
+
+
+\begin{ejemplo}
+\normalfont Observamos en la siguiente figura, que $\mathbb{P}(A \cap B) = 1/6$, que $\mathbb{P}(B) = 1/2$ y que $\mathbb{P}(A|B) = (1/6)/(1/2) = 1/3$, como se esperaba. Sabemos que $B$ ha ocurrido y que el evento $A$ ocurrir\'a si uno de los cuatro resultados en $A \cap B$ se elige entre los $12$ igualmente probable.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=6cm]{g1}
+\end{figure}
+\end{ejemplo}
+
+\vspace{0.5cm}
+
+Podemos generalizar la ecuaci\'on de la probabilidad condicional a m\'ultiples eventos. Sea $A_i, i = 1,2, \dots, k$ para $k$ eventos para el cual $\mathbb{P}(A_1 \cap A_2 \cap \cdots A_k) > 0$. Entonces
+
+\begin{align*}
+\mathbb{P}(A_1 \cap A_2 \cap \cdots A_k) = \mathbb{P}(A_1)\mathbb{P}(A_2|A_1)\mathbb{P_3}(A_3|A_1 \cap A_2)\cdots \mathbb{P}(A_k|A_1 \cap A_2 \cap \cdots \cap A_{k -1}).
+\end{align*}
+
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont En una clase de nivel de posgrado de primer a\~no de 60 estudiantes, diez estudiantes son estudiantes de pregrado.
+
+Calculemos la probabilidad de que tres estudiantes elegidos al azar sean estudiantes de pregrado. Para ello sea $A_1$ el evento en el cual el primer estudiante elegido es un estudiante de pregrado, $A_2$ el evento en que el segundo  estudiante sea de pregrado y as\'i sucesivamente. Luego de la ecuaci\'on anterior tenemos
+
+\[
+\mathbb{P}(A_1 \cap A_2 \cap A_3) = \mathbb{P}(A_1)\mathbb{P}(A_2|A_1)\mathbb{P}(A_3|A_1 \cap A_2)
+\]
+
+reemplazando obtenemos 
+
+\[
+\mathbb{P}(A_1 \cap A_2 \cap A_3) = \frac{10}{60}\times \frac{9}{59} \times \frac{8}{58} = 0.003507.
+\]
+
+
+\end{ejemplo}
+
+\vspace{0.5cm}
+
+\begin{ejemplo}
+\normalfont Un test m\'edico para una enfermedad $D$ tiene salidas + y -
+
+\vspace{0.3cm}
+
+\begin{tabular}{l|c  r}
+   Salidas           & D & $D^{c}$  \\
+\hline
++       & .009 & 0.099   \\
+-       & .001 & 0.891   \\
+\end{tabular}
+
+
+\vspace{0.3cm}
+
+Desde la definici\'on de probabilidad  condicional,
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(+| D) = \frac{\mathbb{P}(+ \cap D)}{\mathbb{P}(D)} = \frac{.009}{.009 + .001} = .9
+\]
+
+\vspace{0.2cm}
+
+y
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(-| D^{c}) = \frac{\mathbb{P}(- \cap D^{c})}{\mathbb{P}(D^{c})} = \frac{.891}{.891 + .099} \approx .9
+\]
+
+
+\vspace{0.2cm}
+
+Al parecer, la prueba es bastante exacta. Personas enfermas producen un positivo del $90$ por ciento de la veces y las personas sanas producen una negativa sobre 90 por ciento de las veces . Supongamos que una persona se  hace  una prueba y obtiene un resultado positivo. ?` Cu\'al es la probabilidad de que esa persona  tiene la enfermedad? Muchas personas responden que   $0,90$, sin embargo la  respuesta correcta es
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(D| +) = \frac{\mathbb{P}(+ \cap D)}{\mathbb{P}(+)} = \frac{.009}{.009 + .099} \approx .08
+\]
+
+
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+
+\normalfont Una peque\~na empresa de software emplea 4 programadores. El porcentaje de c\'odigo escrito por cada programador y el porcentaje de errores en su c\'odigo se muestran en la siguiente tabla.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Programador & \% de c\'odigo escrito & \% de errores en c\'odigo \\ \hline
+1           & 15                   & 5                       \\ \hline
+2           & 20                   & 3                       \\ \hline
+3           & 25                   & 2                       \\ \hline
+4           & 40                   & 1                       \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\vspace{0.3cm}
+
+
+Supongamos que se examina el c\'odigo y se encontr\'o que esta libre de errores. Despu\'es de esta prueba  ?` cu\'al es la probabilidad de que fue escrito por el programador 1?.
+
+\vspace{0.2cm}
+
+Aplicando  probabilidad condicional tenemos
+
+\vspace{0.2cm}
+
+
+\begin{align*}
+\mathbb{P}(\mbox{Prog1|no errores}) = \frac{\mathbb{P}(\mbox{Prog1} \cap \mbox{error})}{\mathbb{P}(\mbox{no errores})}\\
+\mathbb{P}(\mbox{Progr1} \cap \mbox{no errores}) = 0.15 *0.95 = 0.1425
+\end{align*}
+
+\vspace{0.2cm}
+
+$\mathbb{P}$(no errores)
+
+<<foo8w, comment = NA, prompt =TRUE, eval= TRUE>>=
+0.15*0.95 + 0.20 *0.97 + 0.25 * 0.98 + 0.40 * 0.99
+@
+
+
+$\mathbb{P}(\mbox{Progr1} \cap \mbox{no errores}) = 0.1425/0.9775 = 0.1457428$.
+
+\vspace{0.2cm}
+
+$\mathbb{P}(\mbox{Progr2} \cap \mbox{no errores})$
+
+
+<<foo8y, comment = NA, prompt =TRUE, eval= TRUE>>=
+0.20*0.97/0.97775
+@
+
+$\mathbb{P}(\mbox{Progr3} \cap \mbox{no errores})$
+
+<<foo8x, comment = NA, prompt =TRUE, eval= TRUE>>=
+0.25*0.98/0.97775
+@
+$\mathbb{P}(\mbox{Progr4} \cap \mbox{no errores})$
+<<foo8z, comment = NA, prompt =TRUE, eval= TRUE>>=
+0.40*0.99/0.97775
+@
+
+\end{ejemplo}
+
+
+\vspace{0.6cm}
+
+
+\section{ Eventos independientes}
+
+\vspace{0.3cm}
+
+\begin{defi}
+\normalfont Dos eventos  $A$ y $B$ son independientes si  $\mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B)$.  Para tres eventos, $A, B$ y $C$ definimos los eventos independientes si
+
+\begin{align*}
+\mathbb{P}(A \cap B) &= \mathbb{P}(A)\cdot \mathbb{P}(B)\\
+\mathbb{P}(A \cap C) &= \mathbb{P}(A)\cdot \mathbb{P}(C)\\
+\mathbb{P}(B \cap C) &= \mathbb{P}(A)\cdot \mathbb{P}(C)\ \ \text{y} \\
+\mathbb{P}(A \cap B \cap C) &= \mathbb{P}(A)\cdot \mathbb{P}(B) \cdot \mathbb{P}(C)
+\end{align*}
+
+
+
+\vspace{0.3cm}
+
+Las tres primeras de estas condiciones establecen que los eventos son independientes dos a dos , por lo que llamamos a estos eventos que satisfacen estas tres condiciones como \texttt{independientes por pares}. El ejemplo  siguiente  mostrar\'a que los eventos que satisfacen estas tres condiciones pueden no satisfacer la cuarta condici\'on, de modo que la independencia por pares no determina la independencia.
+
+
+\vspace{0.2cm}
+
+Para un n\'umero finito de eventos $A_1, A_2, \dots, A_n$ son independientes si
+
+\[
+\mathbb{P}(A_1\cap\cdots A_n)=\mathbb{P}(A_1)\cdots \mathbb{P}(A_n)
+\]
+
+
+\vspace{0.2cm}
+
+y son independientes por pares si cada par $A_i, A_j,  i \neq j$ son independientes. 
+
+\vspace{0.3cm}
+
+Si generalizamos un poco, dado un conjunto  de eventos $\{ A_i: i \in I \}$ estos  son independientes si
+
+
+
+\[
+\mathbb{P}\Bigl(  \bigcap\limits_{i \in J}A_i \Bigr)  = \prod_{i \in J}\mathbb{P}(A_i)  
+\]
+
+para cada subconjunto $J$ de $I$.
+
+
+
+\vspace{0.5cm}
+
+Existe cierta confusi\'on entre eventos independientes y eventos mutuamente exclusivos. A menudo se habla de estos como \texttt{no tener ningún efecto sobre el otro}, pero eso no es una caracterizaci\'on precisa en ambos casos. Debes tener  en cuenta que aunque los eventos mutuamente exclusivos no pueden ocurrir juntos, los eventos independientes deben ser capaces de ocurrir juntos.
+
+\vspace{0.2cm}
+
+Supongamos que ni $\mathbb{P}(A)$ ni $\mathbb{P}(B)$ es $0$ y que $A$ y $B$ son mutualmente exclusivos. Entonces $\mathbb{P}(A \cap B) = 0  \neq \mathbb{P}(A)\cdot \mathbb{P}(B)$. As\'i $A$ y $B$ no son independientes. Esto es equivalente  a la declaraci\'on que si $A$ y $B$ no pueden ser mutualmente exclusivos.
+
+\end{defi}
+
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Una moneda es lanzada $4$ veces. Consideremos los eventos $A$ donde la primera moneda muestra cara; $B$ la tercera moneda muestra sello; y $C$ hay un n\'umero igual de caras y sellos. ?` Esos son eventos independientes ?.
+
+\vspace{0.8cm}
+
+Supongamos que el espacio muestral consiste de $16$ puntos que muestran los lanzamientos. El espacio muestral, indicando los eventos que ocurren en cada punto, es como sigue
+
+\vspace{0.2cm}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ccc}
+Puntos & & Eventos \\
+\hline
+C C C C   & & A       \\
+C C C S   & & A       \\
+C C S C   & & A,B     \\
+S C C C   & &        \\
+C S C C   & & A       \\
+C C S S   & & A,B ,C  \\
+C S C S   & & A,C     \\
+S C C S   & & C       \\
+S C S C   & & B,C     \\
+C S S C   & & A,B,C   \\
+S S C C   & & C       \\
+S S S C   & & B       \\
+S S C S   & &       \\
+S C S S   & &B       \\
+C S S S   & &A,B     \\
+S S S S   & & B  \\
+\hline
+\end{tabular}
+\end{table}
+
+\vspace{0.2cm}
+
+Entonces $\mathbb{P}(A) = 1/2$ y $\mathbb{P}(B) = 1/2$, mientras que $C$ consiste de $6$ puntos con exactamente dos caras y dos sellos. As\'i $P(C) = 6/16 = 3/8$. Ahora $\mathbb{P}(A \cap B) =\frac{4}{16} = \frac{1}{4} = \mathbb{P}(A)\cdot \mathbb{P}(B); \mathbb{P}(A \cap C) = \frac{3}{16} = \mathbb{P}(A)\cdot \mathbb{P}(C)$ y $\mathbb{P}(B \cap C) = \frac{3}{16} =  \mathbb{P}(B)\cdot \mathbb{P}(C)$. Por tanto los eventos $A, B$ y $C$ son independientes por pares.
+
+\vspace{0.2cm}
+
+El evento $A \cap B \cap C$ consiste de dos puntos $CSSC$ y $CCSS$ con probabilidad $2/16 = 1/8$. As\'i $\mathbb{P}(A \cap B \cap C) \neq \mathbb{P}(A)\cdot \mathbb{P}(B)\cdot \mathbb{P}(B)$ y as\'i $A, B$ y $C$ no son independientes.
+\end{ejemplo}
+
+
+\vspace{0.3cm}
+
+La siguiente definici\'on generaliza la independencia de una colecci\'on arbitraria de eventos, indexados por un conjunto (potencialmente infinito) $\Theta$.
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont M\'ultiples eventos $A_{\theta}, \theta \in \Theta$ son independientes por pares si cada par de eventos es independiente.  M\'ultiples eventos $A_{\theta}, \theta \in \Theta$ son independientes si para cada $k > 0$ y para cada k-subconjunto de distintos eventos $A_{\theta_1},\ldots,A_{\theta_k}$, tenemos
+
+\[
+\mathbb{P}(A_{\theta_1}\cap\ldots\cap A_{\theta_k})=\mathbb{P}(A_{\theta_1})\cdots \mathbb{P}(A_{\theta})
+\]
+\end{defi}
+
+\vspace{0.3cm}
+
+La independencia puede surgir de dos maneras distintas. Por ejemplo al lanzar una moneda dos veces, asumimos que los lanzamientos son indepedientes, lo que se \texttt{traduce}, en que las monedas \texttt{no tienen memoria del primer lanzamiento}. En otro caso, derivamos la independencia verificando $\mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B)$. Por ejemplo, en el lanzamiento de un dado, sea $A = \{ 2, 4, 6 \}$ y sea $B = \{1, 2, 3, 4\}$, entonces $A \cap B = \{2, 4\},  \mathbb{P}(A\cap B) = 2/6 = \mathbb{P}(A)\mathbb{P}(B) = (1/2)\cdot(2/3)$ y as\'i $A$ y $B$ son independientes. En este casono asumimos que $A$ y $B$ son independientes.
+
+\vspace{0.2cm}
+
+Supongamos que $A$ y $B$ son eventos disjuntos, cada uno con probabilidad positiva. ?` Pueden ser independientes? No. Esto se debe a que $\mathbb{P}(A)\mathbb{P}(B)> 0$ y $\mathbb{P}(A\cap B) = \mathbb{P}(\infty) = 0$. Excepto en este caso especial, no hay manera de revisar  la independencia mirando los conjuntos en un diagrama de Venn .
+
+
+\vspace{0.5cm}
+
+\begin{ejemplo}
+\normalfont Lanzamos una moneda $10$ veces. Sea el evento $A = \texttt{al menos una cara}$. Sea $T_j$ el evento  que salga sello  en el  \mbox{j-\'esimo } lanzamiento. Entonces
+
+\begin{align*}
+\mathbb{P}(A) =& 1-\mathbb{P}(A^C)\\
+     =& 1 - \mathbb{P}(\mbox{todos los sellos})\\
+     =& 1 - \mathbb{P}(T_1T_2 \cdots T_{10})\\
+     =&  1- \mathbb{P}(T_1)\mathbb{P}(T_2)\cdots \mathbb{P}(T_{10})  \  \mbox {usando independencia}\\
+     =& 1 - (\frac{1}{2}^{10}) \approx .999.
+\end{align*}
+
+En R
+
+<<foo7, comment = NA, prompt =TRUE, eval= TRUE>>=
+round (1 -(1/2)^{10}, digits = 5)
+@
+
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont  Sean dos personas que se turnan para encestar una pelota de baloncesto. La persona $1$ tiene \'exito con probabilidad $1/3$, la  persona 2 tiene \'exito con probabilidad $1/4$. ?` Cu\'al es la probabilidad de que la persona $1$ tenga  \'exito antes de la  persona $2$?. Sea $E$  el evento de inter\'es. Sea $A_j$ el evento en  que el primer \'exito es de la  persona $1$ y que se produce en el n\'umero de lanzamiento $j$. Los conjuntos $A_i$ son disjuntos y forman una partici\'on para $E$, as\'i
+
+\[
+\mathbb{P}(E) = \sum_{j = 1}^{\infty}\mathbb{P}(A_j)
+\]
+
+\vspace{0.2cm}
+
+Ahora $\mathbb{P}(A_1) = 1/3$. $A_2$ ocurre si tenemos la secuencia persona 1 pierde, persona 2 pierde y la persona 1 tiene \'exito. Luego $\mathbb{P}(A_2) = (2/3)(3/4)(1/3) = (1/2)(1/3)$. Siguiendo esa l\'ogica tenemos que $\mathbb{P}(A_j) = (1/2)^{j -1}(1/3)$. As\'i
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(E) = \sum_{j  =1}^{\infty}\frac{1}{3}\Bigl(\frac{1}{2}\Bigr)^{j -1} = \frac{1}{3}\sum_{j = 1}^{\infty}\Bigl(\frac{1}{2}\Bigr)^{j -1} = \frac{2}{3}.
+\]
+
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+\begin{pros}
+\normalfont Si $A$ y $B$ son eventos independientes, entonces $\mathbb{P}(A|B) = \mathbb{P}(A)$. Tambi\'en para alg\'un par de eventos $A$ y $B$
+
+\[
+\mathbb{P}(A \cap B) = \mathbb{P}(A|B)\mathbb{P}(B) = \mathbb{P}(B|A)\mathbb{P}(A)
+\]
+
+\end{pros}
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Se lanza  dos cartas de una baraja, sin reemplazo. Sea $A$ el evento de que el primera carta  es el As de Tr\'eboles y sea $B$ el evento de que la segunda corta  es la Reina de Diamantes. Entonces $\mathbb{P}(A \cap B) = \mathbb{P}(A)\mathbb{P}(B|A) = (1/52) \times (1/51).$
+
+<<foo8, comment = NA, prompt =TRUE, eval= TRUE>>=
+(1/51) * (1/52)
+@
+
+\end{ejemplo}
+
+
+\vspace{0.3cm}
+
+
+\begin{pros}
+\normalfont Si $A, B$ son independientes, entonces son independientes los eventos $A^c, B$, los eventos $A, B^c$ y los eventos $A^c, B^c$. 
+\end{pros}
+
+\vspace{0.8cm}
+
+\section {Regla  de Bayes}
+
+\vspace{0.6cm}
+
+\subsection {Ley de la probabilidad total}
+
+\vspace{0.3cm}
+
+Sea $A$ un evento, entonces se sabe que la intersecci\'on de $A$ y el evento universal $\Omega$ es $B$. Se sabe adem\'as que $B$ y su complemento $B^c$ constituye una partici\'on. As\'i
+
+\vspace{0.2cm}
+
+\[
+A = A \cap \Omega \ \  \text{y}\ \  B \cup B^c = \Omega
+\]
+
+\vspace{0.2cm}
+
+Sustituyendo el segundo resultado en el primero en la ecuaci\'on anterior y aplicando la Ley de Morgan, tenemos
+
+\vspace{0.2cm}
+
+\begin{equation}
+A = A \cap ( B \cup B^c) = (A \cap B) \cup (A \cap  B^c).
+\end{equation}
+
+
+\vspace{0.2cm}
+
+Los eventos $(A \cap B)$ y  $ (A \cap B^c)$ son mutualmente exclusivos y de acuerdo al siguiente gr\'afico, se muestra que $B$ y $B^c$ no pueden tener salidas en com\'un, la intersecci\'on de $A$ y $B$ no puede tener salidas en com\'un con la intersecci\'on de $A$ y $B^c$
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=7cm]{g2}
+\end{figure}
+
+\vspace{0.2cm}
+
+Usando el hecho que  $(A \cap B)$ y  $ (A \cap B^c)$ son mutualmente exclusivos y por propiedad de la funci\'on probabilidad, se tiene
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(A) = \mathbb{P}(A \cap B) + \mathbb{P}(A \cap B^c).
+\]
+
+
+Esto significa que para evaluar la probabilidad de un evento $A$, es suficiente encontrar las probabilidades de la intersecci\'on de $A$ y $B$ y $A$ y $B^c$ y sumarlos. 
+
+\vspace{0.3cm}
+
+En general sean $n$ eventos $B_i, i = 1, 2, \dots, n$, una partici\'on del espacio muestral $\Omega$. Entonces para alg\'un evento $A$, podemos escribir
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(A) = \sum_{i  =1}^n \mathbb{P}(A \cap B_i), \ \  n \geq 1
+\]
+
+Esta es la \underline{ley  de la probabilidad total}. En efecto, los conjuntos $A \cap B_i, i = 1,2, \dots, n$ son mutualmente exclusivos (desde que los $B_i$ lo son) y el hecho que $B_i, i = 1,2, \dots$ es una partici\'on de $\Omega$ implica que
+
+\[
+A = \bigcup_{i =1}^{n}A \cap B_i,\ n \geq 1,
+\]
+
+y por propiedad de la funci\'on probabilidad (tercer axioma), se tiene
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(A) = \mathbb{P}\Biggl\{ \bigcup_{i = 1}^n A \cap B_i \Biggr\} = \sum_{i =1}^{n}\mathbb{P}(A \cap B_i).
+\]
+
+\vspace{0.2cm}
+
+
+\begin{ejemplo}
+\normalfont Consideramos la siguiente figura que muestra una partici\'on de un espacio muestral conteniendo $24$ equiprobables salidas en seis eventos $B_1$ hasta $B_6$.
+
+\vspace{0.2cm}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=6cm]{g3}
+\end{figure}
+
+Se sigue entonces que la probabilidad del evento $A$ es igual a $1/4$ ya que contiene seis de los puntos de muestreo. Debido a que los eventos $B_i$ constituyen una partici\'on, cada punto de $A$ est\'a en uno y s\'olo uno de los eventos $B_i$ y la probabilidad del evento $A$ se pueden encontrar sumando las probabilidades de los eventos $A \cap B_i$ para $i = 1,2, \dots,6$ .
+
+\vspace{0.2cm}
+
+Para este ejemplo particular se puede ver que estas seis probabilidades est\'an dadas por $0, 1/24, 1/12, 0, 1/24$  y $1/12$ que cuando se suman juntas da 1/4.
+
+\end{ejemplo}
+
+
+\vspace{0.2cm}
+
+La Ley de la probabilidad total, es frecuentemente presentado en otro contexto, uno que involucra la probabilidad condicional
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(A) = \sum_{i = 1}^{n}\mathbb{P}(A \cap B_i) = \sum_{i = 1}^{n}\mathbb{P}(A|B_i)\mathbb{P}(B_i)
+\]
+
+lo que significa que podemos encontrar $\mathbb{P}(A)$ al encontrar primero la probabilidad de $A$ dado $B _i$  para todo $i$  y luego calcular su promedio ponderado.
+
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Ma\~nana habr\'a lluvia o nieve, pero no ambos, la probabilidad de lluvia es $2/5$
+Y la probabilidad de nieve es $3/5$. Si llueve, la probabilidad de que llegue tarde a mi conferencia es $1/5$  mientras que la probabilidad correspondiente en el caso de nieve es $3/5$. ?`Cu\'al es la probabilidad de que llegue tarde?
+
+\vspace{0.2cm}
+
+Sea $A$ el evento en el que se  llega tarde y $B$ sea el evento que llueva. El par $B$ y $B^c$ es una partici\'on del espacio  muestral (ya que exactamente uno de ellos debe ocurrir). Por  la Ley de la probabilidad total
+
+\begin{align*}
+\mathbb{P}(A) &= \mathbb{P}(A | B)\mathbb{P}(B) + \mathbb{P}(A|B^c)\mathbb{P}(B^c)\\
+& = \frac{1}{5}\cdot \frac{2}{5} + \frac{3}{5}\cdot\frac{3}{5} = \frac{11}{25}.
+\end{align*}
+
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Supongamos que tres cajas contienen  bolas blancas y negras. La primera caja contiene $12$ bolas blancas y tres negras, la segunda contiene cuatro bolas blancas y $16$ negras y la tercera contiene seis bolas blancas y cuatro negras. Se selecciona una caja y se elige una sola bola. La elecci\'on de la caja se hace de acuerdo al lanzamiento de un dado. Si el n\'umero de puntos en el dado es $1$, se selecciona la primera caja, si el n\'umero de puntos es $2$ \'o $3$ se elige la segunda caja, de lo contrario (el n\'umero de puntos es igual a $4$, $5$ \'o $6$) se elige la tercera caja. Supongamos que queremos encontrar $\mathbb{P}(A)$ donde $A$ es el evento en la que una bola blanca es extraida.
+
+\vspace{0.2cm}
+
+En este caso basaremos la partici\'on en las tres cajas. Especificamente, sea $B_i, i = 1, 2, 3$ el evento en la que la caja $i$ es escogida. Entonces $\mathbb{P}(B_1) = 1/6, \mathbb{P}(B_2) = 2/6$ y $\mathbb{B_3} = 3/6$. Aplicando la Ley de la probabilidad total, tenemos
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(A) = \mathbb{P}(A|B_1)\mathbb{P}(B_1) + \mathbb{P}(A|B_2)\mathbb{P}(B_2) + \mathbb{P}(A|B_3)\mathbb{P}(B_3),
+\]
+
+\vspace{0.2cm}
+
+que es f\'acil calcular, usando
+
+\[
+\mathbb{P}(A|B_1)= 12/15, \ \ \mathbb{P}(A|B_2)= 4/20,\ \ \mathbb{P}(A|B_3)= 6/10.
+\]
+
+\vspace{0.2cm}
+
+as\'i
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(A) = 12/15 \times 1/6 + 4/20 \times 2/6 + 6/10 \times 3/6 = 1/2.
+\]
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+
+\begin{ejemplo}
+\normalfont Un mensaje de correo electr\'onico puede viajar a trav\'es de una de las tres rutas de un  servidor. La probabilidad de transmisi\'on de error en cada uno de los servidores y la proporci\'on de mensajes que viajan en  cada ruta se muestran en la siguiente tabla. Suponga que los servidores son independientes.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+           & \% mensajes & \% errores \\ \hline
+Servidor 1 & 40          & 1          \\ \hline
+Servidor 2 & 25          & 2          \\ \hline
+Servidor 3 & 35          & 1.5        \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Determina el porcentaje de mensajes que contienen error
+
+\vspace{0.2cm}
+
+<<foo8K, comment = NA, prompt =TRUE, eval= TRUE>>=
+# De la probabilidad total 
+0.4 * 0.01 + 0.25*0.02 + 0.35*0.15
+@
+
+\end{ejemplo}
+
+\vspace{0.5cm}
+
+
+\subsection{Regla de Bayes} 
+
+\vspace{0.3cm}
+
+Con frecuencia ocurre que se nos dice que ha ocurrido un cierto evento $A$ y nos gustar\'ia saber cu\'ales de los eventos mutuamente excluyentes y colectivamente exhaustivos $B_j$ han ocurrido, al menos probabil\'isticamente. En otras palabras, nos gustar\'ia conocer  $\mathbb{P}(B_j|A)$ para cualquier $j$. Consideremos algunos ejemplos.
+
+\vspace{0.2cm}
+
+En un escenario, se nos puede decir que entre una cierta poblaci\'on hay quienes tienen una enfermedad espec\'ifica y aquellos que no tienen  esa enfermedad. Esto  proporciona una partici\'on del espacio muestral (la poblaci\'on) en dos conjuntos disjuntos. Se puede realizar un cierto test, no totalmente fiable en pacientes,  con el objeto de detectar la presencia de esta enfermedad.
+
+\vspace{0.2cm}
+
+Si se conoce la proporci\'on de enfermos respecto de  los pacientes libres de enfermedad y la fiabilidad del procedimiento de prueba, entonces teniendo en cuenta que un paciente es declarado libre de la enfermedad  por este test, queremos  saber la probabilidad de que el paciente tiene en realidad la enfermedad (la probabilidad de que el paciente caiga en el primero (o segundo) de los dos conjuntos disjuntos).
+
+\vspace{0.2cm}
+
+El mismo escenario puede obtenerse sustituyendo chips de circuitos integrados por la poblaci\'on y particion\'andolos en chips defectuosos y no defectuosos, junto con un probador que a veces puede declarar un chip defectuoso bueno y viceversa. Dado que un chip se declara defectuoso por el probabdor, queremos conocer la probabilidad de que sea defectuoso. La transmisi\'on de datos a trav\'es de un canal de comunicaci\'on sujeto a ruido es todav\'ia un tercer ejemplo. En este caso, la partici\'on es la informaci\'on que se env\'ia (normalmente $0$ y $1$ s) y el ruido en el canal puede o no alterar los datos. Escenarios como estos se responden mejor, con la Regla  de Bayes.
+
+\vspace{0.2cm}
+
+Obtenemos la regla de Bayes de resultados anteriores sobre la probabilidad condicional y el teorema de la probabilidad total. As\'i tenemos
+
+\[
+\mathbb{P}(B_j|A) = \frac{\mathbb{P}(A \cap B_j)}{\mathbb{P}(A)} = \frac{\mathbb{P}(A|B_j)\mathbb{P}(B_j)}{\sum_{i}\mathbb{P}(A|B_i)\mathbb{P}(B_i)}
+\]
+
+\vspace{0.3cm}
+
+Aunque parezca que esto complica las cosas, lo que estamos haciendo es dividir el problema en piezas m\'as simples. Esto se hace obvio en el ejemplo siguiente donde elegimos un espacio de muestra dividido en tres eventos.
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Considere un profesor universitario que observa a los estudiantes que entran en su oficina con preguntas. Este profesor determina que el $60\%$ de los estudiantes son estudiantes de BSc, mientras que el $30\%$ son estudiantes de MS, $10\%$ son estudiantes de doctorado. El profesor tambi\'en indica que puede manejar las preguntas del $80\%$  de los estudiantes BSc en menos de cinco minutos, mientras que las preguntas de $50\%$ de los estudiantes de MS y el  $40\%$ de los estudiantes de doctorado en cinco minutos o menos. 
+
+El pr\'oximo estudiante en  ingresar a la oficina del  profesor  s\'olo necesitaba dos minutos del tiempo del profesor. ?`Cu\'al es la probabilidad de que el estudiante sea un estudiante de doctorado?.
+
+\vspace{0.3cm}
+
+Para responder, esta pregunta, sean los eventos $B_i, i =1,2,3$ \texttt{el estudiante es un BCs, MS y doctorado } respectivamente y sea el evento $A$ el evento \texttt{el estudiante requiere cinco minutos o menos}. 
+
+\vspace{0.2cm}
+
+Desde la ley de probabilidad total, tenemos
+
+\begin{align*}
+\mathbb{P}(A) &= \mathbb{P}(A|B_1)\mathbb{P}(B_1) +  \mathbb{P}(A|B_2)\mathbb{P}(B_2) +  \mathbb{P}(A|B_3)\mathbb{P}(B_3) \\
+& = 0.8 \times 0.6 + 0.5 \times 0.3 + 0.4\times 0.1 = 0.6700
+\end{align*}
+
+\vspace{0.2cm}
+
+Este c\'alculo nos da el denominador para la inserci\'on en la regla de Bayes. Esto nos dice que aproximadamente dos tercios de todas las preguntas de los estudiantes se pueden manejar en cinco minutos o menos.
+
+\vspace{0.2cm}
+
+Calculemos  $\mathbb{P}(B_3|A)$ usando la regla de Bayes, tenemos
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(B_3|A) = \frac{\mathbb{P}(A|B_3)\mathbb{P}(B_3)}{\mathbb{P}(A)} = \frac{0.4 \times 0.1}{0.6700} = 0.0597
+\]
+
+\vspace{0.2cm}
+
+O alrededor del $6\%$ y es la respuesta que buscamos.
+
+\vspace{0.3cm}
+
+El punto cr\'itico en la respuesta a preguntas como estas es determinar qu\'e conjunto de eventos constituye la partici\'on del espacio muestral. Las pistas se encuentran generalmente en la pregunta planteada.
+
+\vspace{0.2cm}
+
+Si recordamos que se nos pide calcular $\mathbb{P}(B_j|A)$ y relacionar esto con las palabras en la pregunta, entonces se hace evidente que las palabras \texttt{era un estudiante de doctorado} sugiere una partici\'on basada en el estatus del estudiante y  el evento $A$, la informaci\'on que se nos da, se refiere al tiempo que toma el estudiante.
+
+\vspace{0.2cm}
+
+La clave est\'a en entender que se nos da $\mathbb{P}(A|B_j)$ y se nos pide encontrar  $\mathbb{P}(B_j|A)$. En esta  forma  simple, la ley de Bayes se escribe como
+
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(B|A) = \frac{\mathbb{P}(A|B)\mathbb{B}}{\mathbb{P}(A)}.
+\]
+\end{ejemplo}
+
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Un experimentador tienes dos urnas A y B a su disposici\'on. La urna A (B) tiene ocho (diez) canicas verdes y doce(ocho) canicas azules, todas del mismo tama\~no y peso. El experimentador selecciona una urna con igual probabilidad y escoge una canica al azar. Se anuncia  que la canica seleccionada es azul. Encontremos la probabilidad de que esta canica provenga de la urna B.
+
+\vspace{0.3cm}
+
+Definamos los eventos
+
+\vspace{0.2cm}
+
+$A_i$: La urna $i $ es seleccionada, $i = 1,2$.
+
+$B$ : La canica escogida desde la urna seleccionada es azul.
+
+\vspace{0.2cm}
+
+Entonces $\mathbb{P}(A_i) = \frac{1}{2}$ para $i = 1, 2$, mientras que $\mathbb{P}(B|A_1) = \frac{12}{20}$ y $\mathbb{P}(B|A_2) = \frac{8}{18}$. 
+
+\vspace{0.2cm}
+
+Ahora apliquemos el teorema de Bayes,
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(A_2|B) = \mathbb{P}(A_2)P(B|A_2) /\{ \mathbb{P}(A_1)P(B|A_1) + \mathbb{P}(A_2)\mathbb{P}(B|A_2) \} 
+\]
+
+\vspace{0.2cm}
+
+Reemplazando en R
+
+\vspace{0.2cm}
+
+<<foo8v, comment = NA, prompt =TRUE, eval= TRUE>>=
+(1/2)*(8/18)/((1/2)*(12/20) + (1/2)*(8/18))
+@
+
+\end{ejemplo}
+
+\vspace{0.6cm}
+
+\section{Muestreo Aleatorio}
+
+
+
+\vspace{0.3cm}
+
+Uno de los conceptos importantes en probabilidades y estad\'istica, es el  de  \textit{muestra aleatoria}, que se presenta en diversos aspectos, como la extracci\'on de una carta desde una baraja. En R se puede simular esas situaciones con la funci\'on \texttt{sample}. 
+
+\vspace{0.2cm}
+
+Por ejemplo si se quiere obtener $5$ n\'umeros de manera aleatoria, de un conjunto \texttt{1:40}, entonces podemos escribir
+
+
+<<foo9, comment = NA, prompt =TRUE, eval= TRUE>>=
+sample(1:40, 5)
+@
+
+\vspace{0.2cm}
+
+Se debe  notar que el comportamiento predeterminado de \texttt{sample} es el de  \textit{muestreo sin reemplazo}. Es decir, las muestras no contienen el mismo n\'umero dos veces, y el tama\~no, obviamente, no puede ser m\'as grande que la longitud del vector a muestrear.
+
+\vspace{0.2cm}
+
+Si se desea que el muestreo sea con reemplazo, entonces debemos  agregar el argumento \texttt{replace = TRUE}.
+
+\vspace{0.3cm}
+
+El muestreo con reemplazo es adecuado para el modelado de lanzamientos de monedas o lanzamientos de un dado. As\'i,  para simular $12$ veces el  lanzamiento de una  moneda podr\'iamos escribir
+
+\vspace{0.2cm}
+
+<<foo10, comment = NA, prompt =TRUE, eval= TRUE>>=
+sample(c("H","T"), 12, replace=T)
+@
+
+\vspace{0.2cm}
+
+En el lanzamientos de monedas, la probabilidad de caras debe ser igual a la probabilidad de sellos, pero la idea de un evento al azar no se limita a  \underline{casos sim\'etricos}. Se podr\'ia igualmente aplicarse a otros casos, como el resultado exitoso de un procedimiento quir\'urgico.
+
+\vspace{0.2cm}
+
+Podemos  simular datos con probabilidades no iguales para los resultados (por ejemplo, un $90\%$ de probabilidades de \'exito) utilizando el argumento \texttt{prob} a \texttt{sample}
+
+<<foo11, comment = NA, prompt =TRUE, eval= TRUE>>=
+sample(c("exito", "fallo"), 10, replace=T, prob=c(0.9, 0.1))
+@
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Simular el lanzamiento de una moneda puede ser hecho usando la funci\'on \textit{rbinom} en lugar de \textit{sample}. En efecto
+
+<<foo12, comment = NA, prompt =TRUE, eval= TRUE>>=
+rbinom(10, 1, .5)
+@
+
+o de la siguiente manera
+
+
+<<foo13, comment = NA, prompt =TRUE, eval= TRUE>>=
+ifelse(rbinom(10, 1, .5) == 1, "H", "T")
+@
+
+<<foo14, comment = NA, prompt =TRUE, eval= TRUE>>=
+c("H", "T")[1 + rbinom(10, 1, .5)]
+@
+
+\end{ejemplo}
+
+\section{Referencias}
+
+\begin{enumerate}
+\item Introduction to Probability and Statistics, Lecture 4 Bayes Law KC Border 2016.
+\item Probability (chapter 1) All of Statistics A  concise course in Statistical Inference Larry Wassermann Springer 2004. 
+\end{enumerate}
+\end{document}
