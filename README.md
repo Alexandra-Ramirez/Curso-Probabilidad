@@ -8,11 +8,15 @@
 
 ## Temas
 
-1. Probabilidad 
+1. Probabilidad básica
  - Espacio muestral y eventos.
  - Función probabilidad.
  - Modelo clásico sobre espacios finitos
  - Modelo clásico sobre espacios continuos.
+ - Probabilidad condicional
+ - Eventos independientes
+ - Ley de la probabilidad total
+ - Regla de Bayes.
  
  Lecturas: 
 
