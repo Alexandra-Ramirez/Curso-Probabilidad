@@ -149,7 +149,7 @@ Un evento que describe un golpe en el tablero puede  puede ser
 A=\left\{(x,y)\, : \,x,y\in\mathbb{R}, \,\sqrt{x^2+y^2} < 0.1\right\}\subset\Omega.
 \]
 
-En ambos casos el espacio muestral $\Omega$ y el evento $A$ son infinitos contables.
+En ambos casos el espacio muestral $\Omega$ y el evento $A$ son infinitos incontables.
 \end{ejemplo}
 
 
@@ -348,7 +348,7 @@ En t\'erminos matem\'aticos, esto se afirma de la siguiente manera: Dado que la 
 
 Para cualquier  $\epsilon > 0$. En otras palabras, no importa lo peque\~no que elegimos $\epsilon$, la probabilidad de que la diferencia entre $n / N$ y $p$ sea mayor que $\epsilon$ tiende a cero cuando $N\rightarrow \infty$. El uso de frecuencias relativas como estimaciones de probabilidad puede justificarse matem\'aticamente
 
-El enfoque axiomático establece un peque\~o n\'umero de leyes o axiomas sobre los cuales se basa toda la teoria de la probabilidad. Fundamental a  este concepto es el hecho de que es posible manipular probabilidades usando la misma \'algebra l\'ogica con el cual los eventos mismos son manipulados, como se muestra en los axiomas mostrados anteriormente.
+El enfoque axiom?tico establece un peque\~o n\'umero de leyes o axiomas sobre los cuales se basa toda la teoria de la probabilidad. Fundamental a  este concepto es el hecho de que es posible manipular probabilidades usando la misma \'algebra l\'ogica con el cual los eventos mismos son manipulados, como se muestra en los axiomas mostrados anteriormente.
 
 \vspace{0.5cm}
 
