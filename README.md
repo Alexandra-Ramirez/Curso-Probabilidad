@@ -29,9 +29,9 @@
  * [The Monty Hall Problem A visual explanation by: Victor Powell](http://blog.vctr.me/monty-hall/).
  * [Bayes Rule Book: chapter 1](http://jim-stone.staff.shef.ac.uk/BookBayes2012/bookbayesch01WithR.pdf).
 
-## Métodos de conteo
+### Métodos de conteo
 
-### Lecturas
+#### Lecturas
 
 * [Books of proof : Counting ](http://www.people.vcu.edu/~rhammack/BookOfProof/Counting.pdf).
 
