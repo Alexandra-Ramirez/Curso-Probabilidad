@@ -9,7 +9,7 @@
 
 ## Temas
 
-1. **Probabilidad básica**
+### **Probabilidad básica**
  - Espacio muestral y eventos.
  - Función probabilidad.
  - Modelo clásico sobre espacios finitos
