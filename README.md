@@ -29,8 +29,8 @@
  * [The Monty Hall Problem A visual explanation by: Victor Powell](http://blog.vctr.me/monty-hall/).
  * [Bayes Rule Book: chapter 1](http://jim-stone.staff.shef.ac.uk/BookBayes2012/bookbayesch01WithR.pdf).
 
-### Métodos de conteo
- - Introducción a los métodos de conteo.
+### Combinatoria
+ - Principio del conteo.
  - Permutaciones.
  - Permutaciones con reemplazo.
  - Permutaciones sin reemplazo.
