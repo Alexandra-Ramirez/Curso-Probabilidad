@@ -1,0 +1,456 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Problemas 1 \par
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Lista de ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item Sea $p_1, p_2, \dots, p_N$ n\'umeros no negativos tal que $p_1 + p_2 + \cdots p_N = 1$ y sea $\Omega = \{\omega_1, \omega_2, \cdots, \omega_N \}$ y sea $F$ el conjunto potencia de $\Omega$. Muestra que la funci\'on $\mathbb{Q}$ dada por
+
+$$
+\mathbb{Q}(A) = \sum_{i:\omega_i \in A}p_i \ \ \ A \in F
+$$
+es una probabilidad en $(\Omega, F)$. Si $F$ no es el conjunto potencia, $\mathbb{Q}$ es una probabilidad.
+\item Sean $A$ y $B$ dos eventos con probabilidades $\mathbb{P}(A) = \frac{3}{4}$ y $\mathbb{P}(B) = \frac{1}{3}$. Muestra que $\frac{1}{12} \leq \mathbb{P}(A \cap B) \leq \frac{1}{3}$. Encuentra una cota para $\mathbb{P}(A \cup B)$.
+\item Una moneda es lanzada $2n$ veces. ?` Cu\'al es la probabilidad de obtener $n$ caras?. ?`Qu\'e sucede cuando $n \rightarrow \infty$?.
+
+\item Da un ejemplo concreto de una variable aleatorio que no es discreta ni continua.
+\item Considera una variables aleatoria $X$ con $f_{X}(x) = \exp(-x)$ para $x \geq 0$ y $0$ en otros casos. Calcula el la funci\'on de densidad de $Y=g(X) = \log(X)$. Concluye  que:
+
+$$
+f_{g(X)}(r) \neq g \circ f_{X}(r) = g(f_{X}(r)).
+$$
+
+\item Consideremos sobre $(a ,b)$ una variable $X$, tal que 
+
+$$
+F_{X}(x) = \begin{cases}
+(x -a)/(b -a ) & x\in (a,b) \\
+ 0				& x\leq a\\
+ 1			& 	x \geq b
+\end{cases}
+$$
+
+y 
+
+$$
+f_{X}(x) = \begin{cases}
+1/(b -a) & x \in (a, b)\\
+0 & \text{en otros casos}.
+\end{cases}
+$$
+
+Calcula la esperanza y varianza de $X$.
+\item Si $X$ es una variable aleatoria discreta y $g: \mathbb{R} \rightarrow \mathbb{R}$, prueba que 
+
+$$
+\mathbb{E}(g(X)) = \sum_{x \in Im\ X}g(x)\mathbb{P}(X =x).
+$$
+
+siempre que esta suma converga absolutamente.
+
+\item Definimos el tama\~no de soporte de una variable aleatoria  discreta $X$  como el n\'umero de valores que puede alcanzar  con una probabilidad distinta de cero (el n\'umero puede ser infinito). ?`Cu\'al es la relaci\'on entre los tama\~nos de soporte de una variable aleatoria  discreta  $X$  y de  $g(X)$?.
+\item Un dado es lanzado $n$ veces. Muestra que la probabilidad de que haya un  n\'umero par de \texttt{seis}  $\dfrac{1}{2}[1 + (\dfrac{2}{3})^n]$. Para este caso $0$ es un n\'umero par.
+\item Sea $A_r, r\geq 1$, los eventos tal que $\mathbb{P}(A_r) = 1$ para todo $r$. Muestra que $\mathbb{P}(\displaystyle\cap_{r =1}^{\infty}A_r) = 1$.
+\item Consideremos $\Omega = \{1, 2, \dots, p\}$ donde $p$ es primo. Sea $F$ el conjunto de todos los subconjuntos de $\Omega$ y $\mathbb{P}(A) = \vert A\vert/p$ para todo $A \in F$. Muestra que, si $A$ y $B$ son eventos independientes, entonces al menos unos de los conjuntos $A$ y $B$  es $\emptyset$ o $\Omega$.
+\item Si $m$ estudiantes  nacidos en en $1991$ est\'an asistiendo a una conferencia, muestra que la probabilidad de que al menos dos de ellos tengan el mismo  cumplea\~nos es $p = 1 -(365)!/{(365 -m)!365^m}$. Muestra que $p >1/2$ cuando $m = 23$.
+\item Si $A_1, A_2,\dots A_n$ es una partici\'on de $\Omega$, donde cada $A_i$ tiene una probabilidad positiva, entonces
+
+\[
+\mathbb{P}(A_j|B) = \dfrac{\mathbb{P}(B|A_j)\mathbb{P}(A_j)}{\displaystyle\sum_{1}^{n}\mathbb{P}(B|A_i)\mathbb{P}(A_i)}
+\]
+\item El evento $A$ se dice que es \texttt{repelido} por el evento $B$ si $\mathbb{P}(A|B) < \mathbb{P}(A)$ y es \texttt{atraido} por $B$ si $\mathbb{P}(A|B) > \mathbb{P}(A)$. Muestra que si $B$ atrae a $A$, entonces $A$ atrae a $B$ y $B^c$ repele a $A$.
+\item Para que valores de $c$ y $\alpha$ es la funci\'on $p$ definida por
+
+\[
+p(k) = \begin{cases}
+ck^{\alpha} & \text{para}\ \ k =1,2, \dots\\
+0 & \text{en otros casos}
+\end{cases}
+\]
+
+es una funci\'on de masa de probabilidad.
+
+\item Si $X$ tiene una distribuci\'on geom\'etrica con par\'ametro $p$, muestra que
+
+\[
+\mathbb{P}(X > m + n| X > m) = \mathbb{P}(X > n)
+\]
+
+para $m, n = 0,1,2, \dots$.
+
+\item Sea $X$ y $Y$ una variable aleatoria discreta, cada teniendo una funci\'on de masa dado por
+
+\[
+\mathbb{P}(X = k) = \mathbb{P}(Y = k) = pq^k \ \ \text{para}\ \ k =0,1,2,\dots
+\]
+donde $0 < p = 1 -q < 1$. Muestra que
+
+\[
+\mathbb{P}(X =k|X +Y = n) = \dfrac{1}{n +1}\ \ \text{para}\ \ k = 0,1, 2, \dots, n.
+\]
+\item Sea $X_1, X_2, \dots$ variables aleatoria independientes, identicamente distribuidas y sea $S_n = X_1 +X_2+ \cdots, +X_n$. Muestra que $\mathbb{E}(S_m/S_n) = m/n$ si $m \leq n$ y $\mathbb{E}(S_m/S_n) = 1 +(m -n)\mu \mathbb{E}(1/S_n)$ si $m > n$, donde $\mu =\mathbb{E}(X_1)$.
+\item Sean $F$ y $G$ funciones de distribuci\'on y sea la \texttt{m\'etrica de Levi}
+
+\[
+d_{L} = \inf\{\epsilon >0: G(x -\epsilon) -\epsilon\leq F(X)\leq G(x + \epsilon) + \epsilon \ \ \text{para todo}\ \ x \}
+\]
+
+Muestra que $d_{L}$ es efecto una m\'etrica sobre el espacio de las funciones de distribuci\'on. 
+\item Sea $X_r, 1\leq r\leq n$, variables aleatorias independientes, que son sim\'etricas alrededor del $0$; esto es, $X_r$ y $X_r$ tienen la misma distribuci\'on. Muestra que, para todo $x$, $\mathbb{P}(S_n \geq x) = \mathbb{P}(S_n \leq -x)$, donde $S_n = \displaystyle\sum_{r =1}^{n}X_r$.
+\item Sea $G(V,E)$ un grafo finito. Para un conjunto de v\'ertices y una arista $e \in E$, definimos la funci\'on indicador	
+
+\[
+I_{W}(e) = \begin{cases}
+1 & \text{si $e$ conecta $W$ y $W^{c}$}
+\end{cases}
+\]
+Sea $N_{W} = \displaystyle\sum_{e \in E}I_{W}(e)$. Muestra que existe un $W \subseteq N$ tal que $N_W \geq \frac{1}{2}\vert E\vert$.
+\item Sea $X$ con una funci\'on generadora de probabilidad $G_{X}(s)$ y sea $u_n = \mathbb{P}(X > n)$. Muestra que la funci\'on generadora $U(s)$ de la secuencia $u_0, u_1, \dots$ satisface
+\[
+(1 -s)U(s) = 1 -G_{X}(s)
+\]
+siempre que la serie definida, de esa funci\'on generadora converge.
+\item Sean $X$ e $Y$ variables aleatorias independientes, con una distribuci\'on de Poisson con par\'ametros $\mu$ y $\lambda$ respectivamente. Prueba que $X +Y$ tiene una distribuci\'on de Poisson y que $\mathbb{V}(X + Y) = \mathbb{V}(X) + \mathbb{V}(Y)$. Encuentra la probabilidad condicional $\mathbb{P}(X= k| X+y = n)$ para $0 \leq k \leq n$ y as\'i muestra que la esperanza condicional de $X$ dado $X +Y = n$, esto es
+
+\[
+\mathbb{E}(X| X +Y = n) = \displaystyle\sum_{k=0}^{\infty}k\mathbb{P}(X = k|X +Y =n).
+\]
+es $n\lambda/(\lambda + \mu)$.
+\item Una moneda muestra cara con probabilidad $p$. Sea $X_n$ el n\'umero de de lanzamientos requeridos para obtener $n$ caras consecutivas. Muestra que $\mathbb{E}(X_n) = \displaystyle\sum_{k =1}^{n}p^{-k}$.
+\item Si $\mathbb{V}(X) =0$, entonces, existe un $a \in \mathbb{R}$ tal que $\mathbb{P}(X = a) = 1$.
+\item Sean $X, Y$ variables aleatorias independientes con una funci\'on de distribuci\'on com\'un $F$ y una funci\'on densidad $f$. Muestra que $V = \max\{X ,Y\}$ tiene una funci\'on de distribuci\'on $\mathbb{P}(V \leq x) = F(x)^2$ y funci\'on densidad $f_{V}(x) = 2f(x)F(x), x\in \mathbb{R}$. Encuentra la funci\'on densidad de $U = \min\{X,Y\}$
+
+\item Sea $X$ una variable aleatoria con media $\mu$ y una funci\'on de distribuci\'on continua $F$. Muestra que
+	
+	\[
+	\bigintsss_{-\infty}^{a}F(x)dx = \bigintsss_{a}^{\infty}[1 -F(x)]dx
+\]
+\item Muestra que para la densidad normal est\'andar $\phi(x)$, muestra que $\phi^{'}(x) + x\phi(x) = 0$. 
+\item Sea $\{X_r: r\geq 1 \}$ variables aleatorias indepedientes, uniformemente distribuidas en $[0,1]$. Sea $0 < x < 1$ y definimos
+	
+	\[
+	N = \min\{n \geq 1: X_1 +X_2 + \cdots + X_n > x\}
+	\]
+	
+	Muestra que $\mathbb{P}(N > n) = x^n/n!$ y as\'i encuentra la media y la varianza de $N$.
+	\item Sea $X$ una variable aleatoria con una distribuci\'on binomial con par\'ametros $n$ y $p$, muestra que 
+	
+	\[
+	\mathbb{E}\Bigl( \dfrac{1}{1 + X}\Bigr) = \dfrac{1 -(1-p)^{n +1}}{(n+1)p}
+	\] 
+	
+	Encuentra el l\'imite de esta expresi\'on cuando $n \rightarrow \infty$ y $p \rightarrow \infty$.
+	\item La variable aleatoria $X$ tiene una funci\'on densidad proporcional a $g(x)$, donde $g$ es una funci\'on satisfaciendo
+	
+\[
+g(x) = \begin{cases}
+\vert x\vert^{-n} & \text{si} \vert x \vert \geq 1 \\
+0 & \text{en otros casos}
+\end{cases}
+\]
+y $n \geq 2$ es un entero. Encuentra la funci\'on de densidad de $X$ y determina los valores de $n$ para el cual la media y la varianza de $X$ existe.
+\item Si $X$ es una variable aleatoria que toma los valores no negativos, muestra que
+\[
+\mathbb{E}(X) = \bigintsss_{0}^{\infty}[1 -F_X(x)]dx
+\]
+siempre que la integral exista.
+\item Es la funci\'on $G$, definida por
+\[
+G(X,Y) = \begin{cases}
+1 & \text{if}\ \ x + y \leq 0, \\
+0 & \text{en otros casos}
+\end{cases}
+\]
+ una funci\'on de distribuci\'on conjunta de alg\'un par de variables aleatorias.
+ \item Sea $X$ y $Y$ variables aleatorias independientes, $X$ teniendo la distribuci\'on normal con media $0$ y la varianza $1$ y $Y$ teniendo la distribuci\'on $\chi^2$ con $n$ grados de libertad. Muestra que
+ 
+ \[
+ T = \dfrac{X}{\sqrt{Y/n}}
+ \]
+ tiene una funci\'on densidad
+ 
+ \[
+ f(t) = \dfrac{1}{\sqrt{\pi n}}\dfrac{\Gamma(\frac{1}{2}(n + 1))}{\Gamma(\frac{1}{2}n)}\Bigl(1 + \frac{t^2}{n} \Bigr)^{^{-\frac{1}{2}(n +1)}} \ \ \text{para}\ t \in  \mathbb{R}.
+ \]
+ \item Sea $X$ una funci\'on generadora de momentos $M(t)$.
+ \begin{itemize}
+ \item Muestra que $M(t)M(-t)$ es la funci\'on generadora de momentos de $X -Y$, donde $Y$ es independiente de $X$ , pero que tiene la misma distribuci\'on.
+ \item De manera similar, describe las variables aleatorias que tienen funciones generadoras de momentos
+ \[
+ \dfrac{1}{2 -M(t)}, \ \ \ \ \ \bigintss_{0}^{\infty}M(ut)e^{-u}du.
+ \]
+ \end{itemize}
+ 
+ \item Considera una secuencia de lanzamientos infinitos. La probabilidad de un \'exito en el i-\'esimo \mbox{lanzamiento} es alg\'un n\'umero positivo $p_i$. Sea $N$ el evento que no hay \'exitos y sea $I$ el evento donde hay un n\'umero infinito de \'exitos.
+
+\begin{itemize}
+\item Asumiendo que los lanzamientos son independientes y que $\displaystyle\sum_{i=1}^{\infty}p_i = \infty$. Muestra que $\mathbb{P}(N) =0$ y $\mathbb{P}(I) = 1$.
+\item Asumimos que $\displaystyle\sum_{i=1}^{\infty}p_i < \infty$. Muestra que $\mathbb{P}(I) = 0$.
+\end{itemize}
+\item Supongamos que $X$ e $Y$ son variables aleatorias geom\'etricas con par\'ametro $p$, independientes, \mbox{identicamente} distribuidas. Muestra que 
+
+\[
+\mathbb{P}(X = i| X +Y = n) = \dfrac{1}{n -1}, \ \ i = 1, \dots, n-1.
+\]
+\item Considera el siguiente \texttt{pdf}
+
+\[
+f_{X}(x) = \begin{cases}
+p\lambda e^{-\lambda x} & \text{si} \ \ x\geq 0, \\
+(1 - p)\lambda e^{\lambda x} & \text{si}\ \  x < 0
+\end{cases}
+\]
+donde $\lambda$ y $p$ son escalares con $\lambda > 0$ y $p \in [0,1]$. Encuentra la media y varianza de $X$ de dos maneras:
+
+\begin{itemize}
+\item calculando la esperanza asociada.
+\item usando la estrategia divide y vencer\'as y la media y varianza de la variable aleatoria exponencial.
+\end{itemize}
+\item Sean $X$ e $Y$ variablea aleatorias normales est\'andar indepedientes. El par $(X,Y)$ puede ser descrita en coordenadas polares de la siguiente forma
+
+\[
+X =R\cos\Theta, \ \ \ Y=R\sin \Theta
+\]
+
+para $R \leq 0$ y $\Theta \in [0, 2\pi]$.
+
+\begin{itemize}
+\item Muestra que $\Theta $ es uniformemente distribuida en $[0, 2\pi]$, que $R$ tiene un \texttt{pdf}
+
+\[
+f_{R}(r) = re^{-r^2/2}\ \ \ r \geq 0
+\]
+
+y que $R$ y $\Theta$ son independientes.
+\item Muestra que $R^2$ tiene una distribuci\'on exponencial con par\'ametro $1/2$.
+\end{itemize}
+\item Muestra que la media $\mu$ y mediana $m$ y la varianza $\sigma^2$ de una variable aleatoria continua $X$ satisface
+
+\[
+(\mu - m)^2 \leq \sigma^2
+\]
+
+\item Sea $\{ X_r: r \geq 1\}$ observaciones las cu\'ales son independientes y id\'enticamente distribuidas con una funci\'on de distribuci\'on $F$ desconocida. Describe y justifica el m\'etodo para estimar $F(x)$.
+\item Sea $\{X_r: r \geq 1\}$ variables aleatorias  id\'enticamente distribuidas e independientes con una funci\'on de distribuci\'on $F$ satisfaciendo $F(y) < 1$ para todo $y$ y sea $Y(y) = \min \{k:X_k > y \}$. Muestra que
+
+\[
+\lim_{y \rightarrow \infty}\mathbb{P}\bigr(Y(y)\leq \mathbb{E}Y(y) \bigl) = 1 -e^{-1}.
+\]
+\item Sean $X$ y $Y $ variables aleatorias discretas con funci\'on de masa conjunta 
+
+\[
+f(x, y) = \dfrac{C}{(x + y -1)(x + y)(x + y + 1)}, \ \ \ x, y= 1,2, 3, \dots
+\]
+
+Encuentra las funciones de masa marginal de $X$ e $Y$, calcula $C$ y la covarianza de $X$ y $Y$.
+
+
+\item Sea $\Omega = \{\omega_1, \omega_2, \omega_3 \}$, con $\mathbb{P}(\omega_1) = \mathbb{P}(\omega_2) = \mathbb{P}(\omega_3) = \frac{1}{3}$. Definimos $X, Y, Z: \Omega \rightarrow \mathbb{R}$
+
+\begin{align*}
+X(\omega_1)=1,   X(\omega_2)=2,  X(\omega_3)=3 \\
+Y(\omega_1)=2,   Y(\omega_2)=3,  Y(\omega_3)=1 \\
+Z(\omega_1)=2,   Z(\omega_2)=2,  Z(\omega_3)=1
+\end{align*}
+
+Muestra que $X$ e $Y$ tienen la misma funci\'on de masa. Encuentra las funciones de masa de $X +Y, XY $ y $X/Y$. Encuentra la funci\'on de masa condicional $f_{Y|Z}$ y $f_{Z|Y}$.
+\item Sean $G_1$ y $G_2$ funciones generadoras de probabilidad y $0 \leq \alpha \leq 1$. 
+
+Muestra  que $G_1G_2$ y $\alpha G_1 + (1 -\alpha)G_2$ son funciones generadoras de probabilidad. ?` Es $G(\alpha s)/G(\alpha)$ es una funci\'on generadora de momentos?.
+\item Sean $X$ y $Y$ variables aleatorias discretas con funci\'on de masa conjunta $f$.
+
+\begin{enumerate}
+\item Muestra que $\mathbb{E}(\log f_{X}(X)) \geq \mathbb{E}(\log f_{Y}(X))$.
+\item Muestra que \texttt{(mutual information)}
+
+\[
+I = \mathbb{E}\Bigr(\log \Bigl \{ \dfrac{f(X,Y)}{f_X(X)f_Y(Y)} \Bigr\} \Bigl)
+\]
+
+satisface $I \geq 0$. La igualdad se cumple si y s\'olo si $X$ y $Y$ son independientes.
+\end{enumerate}
+
+\item Supongamos que una variable aleatoria $X$ que satisface 
+
+\[
+\mathbb{E}(X) = 0, \mathbb{E}(X^2) =1, \mathbb{E}(X^3) =0, \mathbb{E}(X^4) =3
+\]
+
+y sea 
+
+\[
+Y = a +bX +cX^2
+\]
+
+Encuentra el coeficiente de correlaci\'on $\rho(X,Y)$.
+\item Supongamos que $X$ e $Y$ son variables aleatorias con la misma varianza. Muestra que $X -Y$ y $X + Y$ son no correlacionados.
+\item Construye un ejemplo de dos variables aleatorias aleatorias $X$ e $Y$ tal que $\mathbb{E}(Y) = \infty$, tal que $\mathbb{E}(Y|X) < \infty$.
+
+\item Sea $U$ una variable aleatoria uniforme en $[0, 1]$  y $0 < q < 1$. Muestra que 
+
+\[
+X = 1 + \lfloor \log U/\log q \rfloor
+\]
+
+tiene una distribuci\'on geom\'etrica.
+
+\item Sean $U_1$ y $U_2$ variables aleatorias independientes  y uniformemente distribuida sobre $[0, 1]$ y sea $T_i = 2U_i -1$. Muestra que condicionado al evento $R = \sqrt{T_1^2 + T_2^2} \leq 1$,
+
+\[
+X = \dfrac{T_1}{R}\sqrt{-2 \log R^2}, \ \   Y = \dfrac{T_2}{R}\sqrt{-2 \log R^2}
+\]
+
+las variables aleatorias son normal est\'andar e independientes. 
+\item Un dado es lanzado $10$ veces. Calcula la probabilidad de que la suma encontrada sea $27$.
+\item Sea $X_1, X_2, \dots$ variables aleatorias independientes que son distribuidas de manera uniforme en $[-1, 1]$. Muestra que la secuencia $Y_1, Y_2, \dots$ converge en probabilidad a alg\'un l\'imite, identifica el l\'imite, para cada uno de los siguientes casos:
+
+\begin{enumerate}
+\item $Y_n = X_n/n$.
+\item $Y_n = (X_n)^n$.
+\item $Y_n = X_1\cdot X_2\cdots X_n$.
+\item $Y_n = \max \{X_1, \dots, X_n \}$.
+\end{enumerate}
+
+\item Sea $X$ una variable aleatoria, que toma valores no negativos. Muestra que
+
+\[
+\displaystyle\sum_{i =1}^{\infty}(i -1)I_{A_i} \leq X \leq \displaystyle\sum_{i =1}^{\infty}iI_{A_i}, 
+\]
+
+donde $A_i = \{i -1 \leq X < i \}$. Deduce que
+
+\[
+\displaystyle\sum_{i =1}^{\infty}\mathbb{P}(X \geq i) \leq \mathbb{E}(X) \leq 1 +  \displaystyle\sum_{i =1}^{\infty}\mathbb{P}(X \geq i).
+\]
+\item Considera dos secuencias de variables aleatorias $X_1, X_2, \dots$ y $Y_1, Y_2, \dots$ que convergen en probabilidad a algunas constantes. Sea $c$ otra constante. Muestra que $cX_n, X_n + Y_n, \max \{0, X_n\}, \vert X_n \vert$ y $X_n Y_n$ convergen en probabilidad a alg\'un l\'imite.
+\item Una moneda es lanzada $n$ veces, mostrando caras $H_n$ veces y sellos $T_n$ veces. Sea $S_n = H_n - T_n$. Muestra que 
+
+\[
+\mathbb{P}(S_n > an)^{1/n} \rightarrow \dfrac{1}{\sqrt{(1 +a)^{1 +a}(1 -a)^{1 -a}}}\ \ \text{si}\ \ 0 < a < 1.
+\]
+
+?` Qu\'e ocurre si $a \geq 1$?.
+
+\item Sea $X$ una variable aleatoria que toma valores no negativos y est\'a asociado con un momento
+
+\[
+M_{X}(s) = c\cdot \frac{3 + 4e^{2s} + 2e^{3s}}{3 -e^s}
+\]
+
+donde $c$ es un escalar. Encuentra $\mathbb{E}(X), p_{X}(1)$ y $\mathbb{E}(X | X \neq 0)$.
+\item Problemas sobre la cota de Chernoff
+
+\begin{enumerate}
+\item Muestra que la desigualdad
+
+\[
+\mathbb{P}(X \geq a) \leq e^{-sa}M(s).
+\]
+ se cumple para cada $a$ y cada $s \geq 0$, donde $M(s) = \mathbb{E}(e^{sX})$ es el momento asociado con la variable aleatoria $X$ y es finita sobre un intervalo abierto conteniendo $s= 0$.
+\item Muestra que la desigualdad 
+
+\[
+\mathbb{P}(X \leq a) \leq e^{-sa}M(s)
+\]
+se cumple para cada $a$ y cada $s \geq 0$.
+\item Muestra que la desigualdad 
+
+\[
+\mathbb{P}(X \geq a)\leq e^{-\phi(a)}.
+\]
+
+se cumple para cada $a$, donde 
+
+\[
+\phi(a)= \max_{s \geq 0}\bigr(sa - \ln M(s)\bigl).
+\]
+\item Muestra que si $a > \mathbb{E}(X)$, entonces $\phi(a) > 0$.
+\end{enumerate}
+\item Sean $X_1, Y_1, X_2, Y_2, \dots$ variables aleatorias, uniformemente distribuido en el intervalo unitario $[0,1]$ y sea
+
+\[
+W = \dfrac{(X_1 + \cdots X_{16}) - (Y_1 + \cdots + Y_{16})}{16}
+\]
+
+Encuentra una aproximaci\'on num\'erica de la cantidad
+
+\[
+\mathbb{P}\bigl(\vert W - \mathbb{E}(W)\vert) < 0.001\bigr)
+\]
+
+\item Una f\'abrica produce $X_n$ dispositivos el\'ectricos en el dia $n$, donde $X_n$ son variables aleatorias ind\'enticamente distribuidas e independientes con media $5$ y varianza $9$.
+
+\begin{enumerate}
+\item Encuentra una aproximaci\'on a la probabilidad de que el n\'umero de dispositivos el\'ectricos producidos en $100$ dias es menor que $400$.
+\item Encuentra el mayor valor $n$ tal que
+
+\[
+\mathbb{P}(X_1 + \cdots + X_n \geq 200 + 5n) \leq 0.05
+\]
+\item Sea $N$ el primer dia en que el n\'umero de dispositivos el\'ectricos excede los $1000$. Calcula una aproximaci\'on a la probabilidad que $N \geq 220$.
+\end{enumerate}
+\item \textbf{Monte Carlo} Sean $X$ y $Y$ variables aleatorias independientes  con funci\'on densidad com\'un $f(x) =1$ si $0 < x  < 1$, $f(x) = 0$ en otros casos.
+
+Sea $U = I_{\{Y \leq g(X)\}}$, la funci\'on indicador del evento que $Y \leq g(X)$ y sea $V = g(X)$, $W(X) = \frac{1}{2}\{g(X) +g(1 -X)\}$. 
+
+Muestra que $\mathbb{E}(U) = \mathbb{E}(V) = \mathbb{E}(W) = J$ y que $\mathbb{V}(W) \leq \mathbb{V}(V) \leq \mathbb{V}(U)$. Prueba que $W$ es el estimador m\'as eficiente de $J$.
+\end{enumerate}
+
+
+\end{document} 
+
