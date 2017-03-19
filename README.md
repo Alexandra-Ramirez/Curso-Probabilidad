@@ -9,14 +9,14 @@
 
 ## Temas
 
-### **Probabilidad básica**
+###  Probabilidad básica
  - Espacio muestral y eventos.
  - Función probabilidad.
- - Modelo clásico sobre espacios finitos
+ - Modelo clásico sobre espacios finitos.
  - Modelo clásico sobre espacios continuos.
- - Probabilidad condicional
- - Eventos independientes
- - Ley de la probabilidad total
+ - Probabilidad condicional.
+ - Eventos independientes.
+ - Ley de la probabilidad total.
  - Regla de Bayes.
  
  ####  Lecturas: 
@@ -30,6 +30,13 @@
  * [Bayes Rule Book: chapter 1](http://jim-stone.staff.shef.ac.uk/BookBayes2012/bookbayesch01WithR.pdf).
 
 ### Métodos de conteo
+ - Introducción a los métodos de conteo.
+ - Permutaciones.
+ - Permutaciones con reemplazo.
+ - Permutaciones sin reemplazo.
+ - Combinaciones sin reemplazo.
+ - Combinaciones con reemplazo.
+ - Ensayos de Bernoulli.
 
 #### Lecturas
 
