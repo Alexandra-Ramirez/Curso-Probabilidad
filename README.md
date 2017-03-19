@@ -40,8 +40,8 @@
 
 #### Lecturas
 
-* [Notas sobre combinatoria](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf)
-* [Books of proof : Counting ](http://www.people.vcu.edu/~rhammack/BookOfProof/Counting.pdf).
+* [Notas elementales  de  combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
+* [Books of proof Richard Hammack: Counting ](http://www.people.vcu.edu/~rhammack/BookOfProof/Counting.pdf).
 * [Combinatorics problems](https://brilliant.org/math/combinatorics/).
 * [Combinatorics](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/Chapter3.pdf).
 
