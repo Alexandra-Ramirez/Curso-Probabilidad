@@ -62,7 +62,7 @@
   * [Analytics University](https://www.youtube.com/channel/UC2XO4HDxzfMOZIV1l795g1Q).
   * [NPTEL HRD](https://www.youtube.com/user/nptelhrd).
   
-##Software
+## Software
 
 ### R y Rstudio
 
