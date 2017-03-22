@@ -1,0 +1,149 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.35\linewidth}
+\begin{minipage}{0.8\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Pr\'actica dirigida 2 : Probabilidad condicional, eventos independientes\par 
+Regla de la probabilidad total, regla de Bayes
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Lista de ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item En una cierta regi\'on de Rusia, la probabilidad de que una persona viva por lo menos $80$ a\~nos es de $0.75$  y la probabilidad de que el o ella viva por lo menos $90$ a\~nos es de $0.63$.  ?` Cu\'al es la probabilidad de que una persona seleccionada al azar de $80$ a\~nos de edad de esta regi\'on sobreviva  hasta tener $90$ a\~nos?.
+
+\item Sacamos ocho cartas al azar de una baraja ordinaria de 52 cartas. Dado que tres de ellas son espadas. ?`Cu\'al es la probabilidad de que las cinco cartas  restantes sean tambi\'en espadas?.
+
+\item En un peque\~no lago, se estima que hay aproximadamente $105$ peces, de los cuales $40$ son truchas y $65$ son salmones. Un pescador cogi\'o ocho peces. ?`Cu\'al es la probabilidad de que exactamente dos de ellos sean truchas si sabemos que al menos tres de ellos no lo son?.
+
+\item Prueba que si $\mathbb{P}(A) = a$ y $\mathbb{P}(B) = b$  entonces  $\mathbb{P}(A|B) \geq  (a + b -1)/b$.
+
+\item Se selecciona aleatoriamente un n\'umero del conjunto $\{1, 2,\dots, 10.000\}$ y se observa que es impar. ?`Cu\'al es la probabilidad de que sea  divisible por $3$  y  que no sea divisible por $3$ y $5$?.
+
+\item Una persona  elige al azar uno de los seis parques de su ciudad todos los d\'ias y va all\'i por excursionismo. Se nos dice que fue visto en uno de estos parques, Lima1, una vez durante los \'ultimos $10$ d\'ias. ?`Cu\'al es la probabilidad de que durante ese periodo haya caminado en ese parque dos o m\'as veces?.
+
+\item En una escuela internacional, $60$ estudiantes, de los cuales $15$ son coreanos, $20$ son franceses, $8$ son griegos y el resto son chinos, se dividen al azar en cuatro clases de $15$ estudiantes  cada una. Si hay un total de ocho estudiantes franceses y seis coreanos en las clases $A$ y $B$. ?`Cu\'al es la probabilidad de que la clase $C$ tenga $4$ de los $12$ restantes estudiantes  franceses y $3$ de los restantes $9$ estudiantes coreanos?.
+
+\item Supongamos que se han mezclado cinco fusibles buenos y dos defectuosos. Para encontrar los defectuosos, los probamos uno por uno al azar y sin reemplazo. ?` Cu\'al es la probabilidad de que encontremos ambos fusibles defectuosos en exactamente tres pruebas?.
+\item En un juicio, el juez est\'a $65\%$ seguro de que Susana  ha cometido un crimen. Roberto es un testigo que sabe si Susan es inocente o culpable. Sin embargo, Robert es el amigo de Susan y mentiria con una  probabilidad de  $0.25$ si Susan es culpable. El dir\'a la verdad si ella  es inocente. ?` Cu\'al es la probabilidad de que Roberto cometa perjurio?.
+
+\item Hay $14$ empresas de mercadotecnia que contratan a nuevos graduados. Jessica encontr\'o al azar los anuncios de reclutamiento de seis de estas empresas y les envi\'o su curriculum vitae. Si tres de estas empresas de mercadotecnia  est\'an en Lima. ?`Cu\'al es la probabilidad de que Kate no se aplicara a una empresa de marcadotecnia en Lima?.
+
+\item En un juego de cartas, dos cartas del mismo color y denominaci\'on forman un \texttt{par}. Por ejemplo, $8$ de corazones y $8$ de diamantes es un par, un  rey de espadas y rey de clubes es otro. Si se seleccionan seis cartas al azar y sin reemplazo.?` Cu\'al es la probabilidad de que no haya pares?.
+
+\item Supongamos que el $75\%$ de todas las personas con un historial de cr\'edito mejoraran sus calificaciones de cr\'edito dentro de los tres a\~nos. Supongamos que el $18\%$ de la poblaci\'on en general tiene registros de cr\'edito deficientes y de ellos s\'olo el $30\%$ mejorar\'a su calificaci\'on crediticia dentro de tres a\~nos.
+
+?`Qu\'e porcentaje de las personas que mejorar\'an sus registros de cr\'edito dentro de los pr\'oximos tres a\~nos son los que actualmente tienen buenas calificaciones crediticias?.
+
+\item Una  cartas se sacan al azar de una baraja  ordinaria de $52$, una por una y sin reemplazo. ?`Cu\'al es la probabilidad de que no se extraiga ning\'un coraz\'on antes de que se saque un as de espadas?.
+
+
+\item En una serie de juegos, el n\'umero ganador del n-\'esimo juego  $n = 1, 2, 3,\dots$  es un n\'umero seleccionado al azar del conjunto de enteros $\{1, 2,\dots, n + 2\}$. Clau apuesta en $1$ en cada juego y dice que el dejar\'a  de jugar tan pronto como gane. ?` Cu\'al es la probabilidad de que tenga que jugar indefinidamente?.
+
+\item Dos jugadores juegan  \texttt{cara o sello } en el cual cada vez que una moneda es lanzada y  cae  cara, el jugador A gana $1$ sol  de B  y cada vez que cae sello,  el jugador B gana $1$ sol de A. Supongamos que el jugador A tiene inicialmente un sol y el jugador B tiene $b$ soleses. Si contin\'uan jugando este juego sucesivamente. ?`Cu\'al es la probabilidad de que  A se arruine y que el juego va para siempre con nadie ganando?,
+
+\item Supongamos que el $80\%$ de las estudiantes  de \'ultimo a\~no, el $70\%$ son jovenes, el $50\%$ de los estudiantes de segundo a\~no y el $30\%$ de los estudiantes de primer a\~no de una universidad usan frecuentemente la biblioteca de su campus. Si el $30\%$ de todos los estudiantes son estudiantes de primer a\~no, el $25\%$ son estudiantes de segundo a\~no, el $25\%$ son jovenes y el $20\%$ son estudiantes de \'ultimo a\~no, ?` qu\'e porcentaje de todos los estudiantes usan la biblioteca con frecuentemente?.
+\item Una urna contiene $10$ chips  blancos y $12$ chips rojas. Dos chips  se sacan  al azar y sin mirar sus  colores, se descartan. ?` Cu\'al es la probabilidad de que un tercer chip sacado sea rojo?.
+
+\item Si el $5\%$ de los hombres y el $0,25\%$ de las mujeres son dalt\'onicos.?` Cu\'al es la probabilidad que una  persona  seleccionada aleatoriamente sea dalt\'onico?.
+
+\item Supongamos que el $40\%$ de los estudiantes de un campus universitario son mujeres. Si el $20\%$ de las mujeres y el $16\%$ de los hombres de este campus son estudiantes A, ?` qu\'e porcentaje de todos ellos son estudiantes A?.
+
+
+\item Jessica tiene tres coches de diferentes modelos: $A$, $B$ y $C$. Las probabilidades de que los modelos $A, B$ y $C$ usen m\'as de 3 galones de gasolina de la casa de Jessica a su trabajo son $0.25,   0.32$ y $0.53$, respectivamente. En un cierto dia, los tres  coches de Jessica tienen $3$  galones de gasolina cada uno. Jessica elige uno de sus carros al azar y sin prestar atenci\'on a la cantidad de gasolina en el coche lo conduce hacia su oficina. ?` Cu\'al es la probabilidad de que llegue a la oficina?.
+
+\item Supongamos que existen $N$ familias en la tierra y que el n\'umero m\'aximo de hijos de una familia es $c$. Sea $\alpha_j (0 \leq j \leq c, \displaystyle \sum_{j = 0}^c \alpha_j = 1)$ la fracci\'on de familias con $j$ ni\~nos. Encuentra la fracci\'on de todos los ni\~nos en el mundo que son los k-nacidos  de sus familias ($k =1, 2,\dots, c$).
+
+\item Sea $B$ un evento del espacio muestral $S$ con $\mathbb{P}(B) >0$. Para un subconjunto $A$ de $S$, definimos $Q(A) = \mathbb{P}(A|B)$. Prueba que $Q$ es una funci\'on de probabilidad. Para eventos $E$ y $F$ de $S$  con $\mathbb{P}(F \cap B)> 0$ prueba que $Q(E|F) = \mathbb{P}(E|F \cap B)$.
+
+\item Supongamos que el $40\%$ de los estudiantes de un campus, que est\'an casados con estudiantes del mismo  campus, son mujeres. Adem\'as, supongamos que el $30\%$ de los que est\'an casados, pero no con  estudiantes de este  campus, tambi\'en son mujeres. Si un tercio de los estudiantes casados en este campus  est\'an casados con otros estudiantes en este campus. ?` Cu\'al es la probabilidad de que un estudiante casado seleccionado aleatoriamente de esta escuela sea una mujer?.
+
+
+\item De familias con tres hijos, un ni\~no es seleccionado al azar y encontramos que es un ni\~na. ?` Cu\'al es la probabilidad de que tenga una hermana mayor?.  Supongamos que en una familia de tres hijos todas las distribuciones de sexo son igualmente probables.
+
+\item Una caja contiene siete bolas rojas y 13 azules. Se seleccionan dos bolas al azar y se descartan sin que se vean sus colores. Si una tercera pelota es escogida aleatoriamente y se observa que es roja. ?` Cu\'al es la probabilidad de que las dos bolas descartadas sean azules?.
+
+\item En una transmisi\'on de se\~nales de punto y gui\'on, un sistema de comunicaci\'on cambia $1/4$ de los puntos a guiones y $1/3$ de los guiones a puntos. Si el $40\%$ de las se\~nales transmitidas son puntos y el $60\%$ son guiones. ?` Cu\'al es la probabilidad de que un punto recibido sea realmente un punto transmitido?.
+
+\item Un c\'ancer determinado se encuentra en una persona en $5000$. Si una persona tiene la enfermedad, en el $92\%$ de los casos el procedimiento de diagn\'ostico mostrar\'a que el o ella realmente lo tiene. Si una persona no tiene la enfermedad, el procedimiento de diagn\'ostico en uno de cada 500 casos da un resultado positivo falso. Determine la probabilidad de que una persona con un resultado positivo dado por el diagn\'ostico tenga c\'ancer.
+
+
+\item Las urnas $A$, $B$ y $C$ contienen tres peniques y cuatro monedas de diez centavos, dos peniques y cinco monedas de diez centavos, tres peniques y una moneda de diez centavos, respectivamente. Una moneda se selecciona al azar de cada urna. Si dos de las tres monedas son monedas de diez centavos. ?`  Cu\'al es la probabilidad de que la moneda seleccionada de la urna $A$ sea una moneda de diez centavos?.
+
+\item En un estudio se descubri\'o que el $25\%$ de las pinturas de  cierta galeria no son originales. Un coleccionista en el $15\%$ de los casos comete un error al juzgar si una pintura es aut\'entica o una copia. Si compra una pieza pensando que es original. ?` Cu\'al es la probabilidad de que no lo sea?.
+
+\item Hay tres tarjetas id\'enticas que difieren s\'olo en color. Ambos lados de la primera  son negros, ambos lados de la segunda son rojos y un lado de la tercera tarjeta es negro y el  otro lado es rojo. Estas cartas se mezclan y una de ellas se selecciona al azar. Si la parte superior de esta tarjeta es roja. ?` Cu\'al es la probabilidad de que el otro lado sea negro?.
+
+
+\item Con una  probabilidad de $1/6$ hay $i$ fusibles defectuosos entre $1000$ fusibles $(i = 0, 1, 2, 3, 4, 5)$. Si entre $100$ fusibles seleccionados al azar, ninguno era defectuoso. ?` Cu\'al es la probabilidad de que no existan fusibles defectuosos?.
+
+\item Hay dos establos en una granja, uno que contiene $20$ caballos y $13$ mulas, el otro con $25$ caballos y ocho mulas. Los animalitos  de vez en cuando dejan sus establos y luego regresan a sus establos. Supongamos que durante un periodo en que todos los animales est\'an en sus establos, un caballo sale de un establo y luego regresa. ?` Cu\'al es la probabilidad de que el siguiente animalito que salga del mismo establo sea tambi\'en un caballo?.
+
+\item Una urna contiene cinco chips rojos y tres azules. Supongamos que cuatro de estos chips son seleccionados al azar y transferidos a una segunda urna, que originalmente estaba vac\'ia. Si un chip aleatorio de esta segunda urna es azul. ?`Cu\'al es la probabilidad de que dos chips rojos y dos azules fueran transferidos de la primera urna a la segunda?.
+
+
+\item La ventaja de un cierto an\'alisis de sangre es que el $90\%$ de veces es positivo para los pacientes que tienen una cierta enfermedad. Su desventaja es que el $25\%$ de las veces tambi\'en es positivo en personas sanas. En un cierto lugar el $30\%$ de la gente tiene la enfermedad y cualquier persona con una prueba de sangre positiva se le da un medicamento que cure la enfermedad. Si el $20\%$ de veces el medicamento produce escocedura. ?`Cu\'al es la probabilidad de que una persona de este lugar que tiene escocedura tuvo la enfermedad en primer lugar?.
+
+\item Clau  lanza una moneda  $n + 1$ veces, Checha lanza la misma moneda $n$ veces. ?`Cu\'al es la probabilidad de que Clau tenga m\'as caras que Checha?.
+
+\item Un dado se lanza dos veces. Sea $A$ el evento que la suma de los resultados es impar y $B$  el evento en que sale un  $2$ en el primer lanzamiento. ?` Son A y B independientes?.?`Por qu\'e o por qu\'e no?.
+
+\item El matem\'atico italiano Giordano Cardano escribi\'o una vez que si las probabilidades en favor de un evento son de $3$ a $1$, entonces las probabilidades a favor de la ocurrencia de ese evento en dos experimentos independientes consecutivos son $9$ a $1$. ?` Es correcto lo que dice  Cardano?.
+
+\item Encuentra un ejemplo en el cual $\mathbb{P}(A \cap B) < \mathbb{P}(A)\mathbb{P}(B)$.
+\item En una comunidad de $M$ hombres y $w$ mujeres, $m$ hombres y $w$ mujeres fuman ($m \leq M , w \leq W $). Si una persona es seleccionada al azar y $A$ y $B$ son los eventos que indican que una  persona es  hombre y fuma, respectivamente.?` Bajo que condiciones  $A$ y $B$ son independientes?.
+\item Una moneda  se lanza $n$ veces. Demuestra que los eventos \texttt{al menos dos caras} y \texttt{una o dos sellos} son independientes si $n = 3$ pero dependientes si $n = 4$.
+\end{enumerate}
+
+\end{document} 
+
