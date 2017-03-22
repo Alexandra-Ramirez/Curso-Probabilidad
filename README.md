@@ -45,6 +45,9 @@
 * [Combinatorics problems](https://brilliant.org/math/combinatorics/).
 * [Combinatorics](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/Chapter3.pdf).
 
+### Variables aleatorias y funciones de distribución
+
+
 ## Libros y artículos
 
 - Introduction to Probability, Dimitri P. Bertsekas y John N. Tsitsiklis, Athena Scientific, 2008.
