@@ -118,7 +118,7 @@ y todas las propiedades y intuiciones que se aplican a la funci\'on probabilidad
 
 \vspace{0.2cm}
 
-Como se mencion\'o anteriormente, las probabilidades condicionales son usualmente intuitivas. El siguiente ejemplo de (Feller, 1968), sin embargo, muestra una situaci\'on contra-intuitiva que implica probabilidades condicionales. Esto demuestra que la intuición no debe ser un sustituto de la computaci\'on rigurosa.
+Como se mencion\'o anteriormente, las probabilidades condicionales son usualmente intuitivas. El siguiente ejemplo de (Feller, 1968), sin embargo, muestra una situaci\'on contra-intuitiva que implica probabilidades condicionales. Esto demuestra que la intuici?n no debe ser un sustituto de la computaci\'on rigurosa.
 
 
 \vspace{0.2cm}
@@ -242,7 +242,7 @@ Al parecer, la prueba es bastante exacta. Personas enfermas producen un positivo
 
 \begin{ejemplo}
 
-\normalfont Una peque\~na empresa de software emplea 4 programadores. El porcentaje de c\'odigo escrito por cada programador y el porcentaje de errores en su c\'odigo se muestran en la siguiente tabla.
+\normalfont Una peque\~na empresa de software emplea 4 programadores. El porcentaje de c\'odigo escrito por cada programador y el porcentaje de errores en su c\'odigo se muestran en la siguiente tabla. El c\'odigo es seleccionado al azar.
 
 \begin{table}[h]
 \begin{center}
@@ -259,56 +259,67 @@ Programador & \% de c\'odigo escrito & \% de errores en c\'odigo \\ \hline
 
 \vspace{0.3cm}
 
+\begin{enumerate}
+\item Antes de que el c\'odigo sea examinado, ?` cu\'al es la probabilidad de que fue escrito por el
 
-Supongamos que se examina el c\'odigo y se encontr\'o que esta libre de errores. Despu\'es de esta prueba  ?` cu\'al es la probabilidad de que fue escrito por el programador 1?.
+\begin{verbatim}
+  Programador 1? .15
+  Programador 2? .20
+  Programador 3? .25
+  Programador 4? .40
+\end{verbatim}
+\end{enumerate}
 
-\vspace{0.2cm}
+\vspace{0.3cm}
 
-Aplicando  probabilidad condicional tenemos
+Aplicando  la definici\'on de probabilidad condicional tenemos
 
 \vspace{0.2cm}
 
 
 \begin{align*}
-\mathbb{P}(\mbox{Prog1|no errores}) = \frac{\mathbb{P}(\mbox{Prog1} \cap \mbox{error})}{\mathbb{P}(\mbox{no errores})}\\
-\mathbb{P}(\mbox{Progr1} \cap \mbox{no errores}) = 0.15 *0.95 = 0.1425
+\mathbb{P}(\mbox{Prog1|no error}) = \frac{\mathbb{P}(\mbox{Prog1} \cap \mbox{no error})}{\mathbb{P}(\mbox{no error})}\\
+\mathbb{P}(\mbox{Progr1} \cap \mbox{no error}) = 0.15 *0.95 = 0.1425
 \end{align*}
 
-\vspace{0.2cm}
+\vspace{0.3cm}
 
-$\mathbb{P}$(no errores)
+$\mathbb{P}$(no error)
+
 
 <<foo8w, comment = NA, prompt =TRUE, eval= TRUE>>=
 0.15*0.95 + 0.20 *0.97 + 0.25 * 0.98 + 0.40 * 0.99
 @
 
+\vspace{0.2cm}
 
-$\mathbb{P}(\mbox{Progr1} \cap \mbox{no errores}) = 0.1425/0.9775 = 0.1457428$.
+$\mathbb{P}(\mbox{Progr1}|\mbox{no error}) = 0.1425/0.9775 = 0.1457428$.
+
 
 \vspace{0.2cm}
 
-$\mathbb{P}(\mbox{Progr2} \cap \mbox{no errores})$
-
+$\mathbb{P}(\mbox{Progr2}|\mbox{no error})$
 
 <<foo8y, comment = NA, prompt =TRUE, eval= TRUE>>=
 0.20*0.97/0.97775
 @
 
-$\mathbb{P}(\mbox{Progr3} \cap \mbox{no errores})$
+\vspace{0.2cm}
+
+$\mathbb{P}(\mbox{Progr3}|\mbox{no error})$
 
 <<foo8x, comment = NA, prompt =TRUE, eval= TRUE>>=
 0.25*0.98/0.97775
 @
-$\mathbb{P}(\mbox{Progr4} \cap \mbox{no errores})$
+
+\vspace{0.2cm}
+
+$\mathbb{P}(\mbox{Progr4} |\mbox{no error})$
 <<foo8z, comment = NA, prompt =TRUE, eval= TRUE>>=
 0.40*0.99/0.97775
 @
 
 \end{ejemplo}
-
-
-\vspace{0.6cm}
-
 
 \section{ Eventos independientes}
 
@@ -360,7 +371,7 @@ para cada subconjunto $J$ de $I$.
 
 \vspace{0.5cm}
 
-Existe cierta confusi\'on entre eventos independientes y eventos mutuamente exclusivos. A menudo se habla de estos como \texttt{no tener ningún efecto sobre el otro}, pero eso no es una caracterizaci\'on precisa en ambos casos. Debes tener  en cuenta que aunque los eventos mutuamente exclusivos no pueden ocurrir juntos, los eventos independientes deben ser capaces de ocurrir juntos.
+Existe cierta confusi\'on entre eventos independientes y eventos mutuamente exclusivos. A menudo se habla de estos como \texttt{no tener ning?n efecto sobre el otro}, pero eso no es una caracterizaci\'on precisa en ambos casos. Debes tener  en cuenta que aunque los eventos mutuamente exclusivos no pueden ocurrir juntos, los eventos independientes deben ser capaces de ocurrir juntos.
 
 \vspace{0.2cm}
 
