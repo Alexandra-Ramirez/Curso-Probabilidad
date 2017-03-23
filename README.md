@@ -28,6 +28,7 @@
  * [Conditional probability: A Visual explanation by Victor Powell ](http://setosa.io/conditional/).
  * [The Monty Hall Problem A visual explanation by: Victor Powell](http://blog.vctr.me/monty-hall/).
  * [Bayes Rule Book: chapter 1](http://jim-stone.staff.shef.ac.uk/BookBayes2012/bookbayesch01WithR.pdf).
+ * [Bayes Rule with Lego](https://www.countbayesie.com/blog/2015/2/18/bayes-theorem-with-lego).
 
 ### Combinatoria
  - Principio del conteo.
@@ -47,7 +48,21 @@
 
 ### Variables aleatorias y funciones de distribución
 
-
+ - Variables aleatorias discretas y continuas.
+ - Pmf de una variable aleatoria discreta.
+ - Función de distribución acumulativa.
+ - Función densidad de probabilidad para una variable aleatoria continua.
+ - Funciones de una variable aleatoria.
+ - Variables aleatorias condicionadas.
+ 
+ #### Lecturas
+ 
+ * [Random Variables and Expectation with Robots and Stuff!](https://www.countbayesie.com/blog/2015/2/20/random-variables-and-expectation).
+ * [Interrogating Probability Distributions](https://www.countbayesie.com/blog/2015/3/17/interrogating-probability-distributions).
+ * [The idea of a probability distribution](http://mathinsight.org/probability_distribution_idea).
+ * [The idea of a probability density function](http://mathinsight.org/probability_density_function_idea).
+ 
+ 
 ## Libros y artículos
 
 - Introduction to Probability, Dimitri P. Bertsekas y John N. Tsitsiklis, Athena Scientific, 2008.
