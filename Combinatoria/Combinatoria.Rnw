@@ -80,11 +80,11 @@ Esta primera forma  se llama \textbf{problema de selecci\'on}  y la  \'ultima fo
 
 \vspace{0.2cm}
 
-En el contexto del problema de selecci\'on, una vez que se ha elegido una de las bolas distinguibles de la caja  y antes de la selecci\'on de la bola siguiente, se debe tomar una decisi\'on sobre qu\'e se debe hacerse con la primera bola elegida. Si se vuelve a colocar en la caja, se dice que la selecci\'on se \underline{hace con reemplazo} \footnote{with replacement}. En este caso, la misma bola puede ser elegida una segunda vez, luego una tercera vez, y una cuarta vez, y as\'i sucesivamente. La segunda posibilidad es que la bola sea puesta a un lado y nunca vuelva a la caja. En este caso, la selecci\'on se \underline{hace sin reemplazo} \footnote{ without replacement}.
+En el contexto del problema de selecci\'on, una vez que se ha elegido una de las bolas distinguibles de la caja  y antes de la selecci\'on de la bola siguiente, se debe tomar una decisi\'on sobre qu\'e se debe hacer con la primera bola elegida. Si se vuelve a colocar en la caja, se dice que la selecci\'on se \underline{hace con reemplazo} \footnote{with replacement}. En este caso, la misma bola puede ser elegida una segunda vez, luego una tercera vez, y una cuarta vez, y as\'i sucesivamente. La segunda posibilidad es que la bola sea puesta a un lado y nunca vuelva a la caja. En este caso, la selecci\'on se \underline{hace sin reemplazo} \footnote{ without replacement}.
 
 \vspace{0.2cm}
 
-Un \'ultimo punto se refiere al \texttt{orden} en que se seleccionan las bolas. En algunos casos, este orden es importante. Por ejemplo, puede ser necesario saber si la bola negra fue elegida antes o despu\'es de la bola blanca. Cuando el orden es importante, el t\'ermino es de  \textbf{permutaci\'on}. En otros casos, todo lo que se necesita  saber es que  se eligi\'o una bola negra y una bola blanca y no el orden en que fueron elegidos. Esto se conoce como una \textbf{combinaci\'on}.
+Un \'ultimo punto se refiere al \texttt{orden} en que se seleccionan las bolas. En algunos casos, este orden es importante. Por ejemplo, puede ser necesario saber si una bola negra fue elegida antes o despu\'es de la bola blanca. Cuando el orden es importante, el t\'ermino es de  \textbf{permutaci\'on}. En otros casos, todo lo que se necesita  saber es que  se eligi\'o una bola negra y una bola blanca y no el orden en que fueron elegidos. Esto se conoce como una \textbf{combinaci\'on}.
 
 \vspace{0.5cm}
 
@@ -112,7 +112,7 @@ as\'i
 
 Con el fin de considerar  problemas que conducen a espacios muestrales con puntos igualmente probables, debemos  considerar algunas t\'ecnicas para contar conjuntos de puntos. Estas t\'ecnicas proporcionan algunos problemas desafiantes.
 
-Se advierte  que  se debe tener cuidado al concluir que s\'olo porque un espacio muestral tiene $n$ puntos, cada punto tiene probabilidad $1/n$. Por ejemplo, un viaje en avi\'on  se completa de forma segura o no, se hace evidente  que estos eventos no tienen cada uno una probabilidad $1/2!$ Las t\'ecnicas de conteo consideradas en este caso  se basan en dos principios de conteo fundamentales relativos a  eventos mutuamente exclusivos A y B
+Se advierte  que  se debe tener cuidado al concluir que s\'olo porque un espacio muestral tiene $n$ puntos, cada punto tiene probabilidad $1/n$. Por ejemplo, si un viaje en avi\'on  se completa de forma segura o no, se hace evidente  que estos eventos no tienen cada uno una probabilidad $1/2!$ Las t\'ecnicas de conteo consideradas en este caso  se basan en dos principios de conteo fundamentales relativos a  eventos mutuamente exclusivos A y B
 
 \begin{itemize}
 \item \texttt{Principio 1} Si los eventos $A$ y $B$ pueden ocurrir en $n$  y $m$ maneras respectivamente, entonces $A$ y $B$ pueden ocurrir juntos de $n\cdot m$ maneras.
@@ -190,7 +190,7 @@ una  N. El n\'umero de diferentes maneras en que los caracteres en esta palabra 
 
 \vspace{0.3cm}
 
-Por lo tanto, el n\'umero de permutaciones que se  pueden obtener de $n$ \'items, no todos los cuales son distintos, puede obtenerse asumiendo primero que son distintos (lo que nos da $n!$) y  luego, para cada elemento m\'ultiple se divide por el factorial de su multiplicidad.
+Por lo tanto, el n\'umero de permutaciones que se  pueden obtener de $n$ \'items, no todos los cuales son distintos, puede obtenerse asumiendo primero que todos los \'items son distintos (lo que nos da $n!$) y  luego  para cada elemento m\'ultiple se divide por el factorial de su multiplicidad.
 \end{ejemplo}
 
 \subsection{Permutaciones con reemplazos}
@@ -248,7 +248,7 @@ Decimos que $P(n, k)$ es el n\'umero de permutaciones de $n$ objetos tomados $k$
 
 \vspace{0.2cm}
 
-Si $k = 1$, entonces cualquier bola puede ser elegida y el n\'umero total de permutaciones  simplemente $n$. Si $k = 2$, entonces cualquiera de las $n$ bolas puede ser elegida como la primera, para cada una de estas $n$ elecciones posibles, quedan $n - 1$ bolas en la caja, cualquiera de las cuales puede ser elegida como la segunda. As\'i, el n\'umero total de permutaciones para $k = 2$ es igual a $n (n - 1)$. Con k = 3, hay $n$ posibilidades diferentes para la primera bola,  $n-1$ para la  segunda y $n-2$ para la  tercero, lo que da $P (n, 3) = n (n -1) (n -2 )$.
+Si $k = 1$, entonces cualquier bola puede ser elegida y el n\'umero total de permutaciones  simplemente es  $n$. Si $k = 2$, entonces cualquiera de las $n$ bolas puede ser elegida como la primera, para cada una de estas $n$ elecciones posibles, quedan $n - 1$ bolas en la caja, cualquiera de las cuales puede ser elegida como la segunda. As\'i, el n\'umero total de permutaciones para $k = 2$ es igual a $n (n - 1)$. Con k = 3, hay $n$ posibilidades diferentes para la primera bola,  $n-1$ para la  segunda y $n-2$ para la  tercero, lo que da $P (n, 3) = n (n -1) (n -2 )$.
 
 \vspace{0.2cm}
 
@@ -318,7 +318,7 @@ Tales preguntas nos obligan a encontrar el tama\~no del espacio muestral de perm
 \vspace{0.3cm}
 
 \begin{ejemplo}
-\normalfont  Si los passwords pueden consistir de $6$ letras, encuentra la probabilidad que aleatoriamente un password, pueda ser elegido, que no tenga letras repetidas. 
+\normalfont  Si los passwords pueden consistir de $6$ letras, encuentra la probabilidad que aleatoriamente un password, pueda ser elegido y que no tenga letras repetidas. 
  
  \vspace{0.3cm}
  
@@ -340,7 +340,7 @@ prod(26:21)/26^6
 
 \vspace{0.2cm}
 
-Sea $k_1$ el nido donde entra  la primera paloma, $k_2$ donde entra  la segunda paloma, y as\'i sucesivamente. Tenemos $1 \leq  k_i \leq n$, para $i = 1,2,\dots, r$. El n\'umero total de posibilidades disponibles para las palomas es igual a $N = n^r$, ya que la paloma n\'umero $1$ puede volar a cualquiera de los $n$ nidos y lo mismo para la paloma n\'umero $2$  y as\'i sucesivamente. Esta es la situaci\'on de las permutaciones con reemplazo. 
+Sea $k_1$ el nido donde entra  la primera paloma, $k_2$ donde entra  la segunda paloma  y as\'i sucesivamente. Tenemos $1 \leq  k_i \leq n$, para $i = 1,2,\dots, r$. El n\'umero total de posibilidades disponibles para las palomas es igual a $N = n^r$, ya que la paloma n\'umero $1$ puede volar a cualquiera de los $n$ nidos y lo mismo para la paloma n\'umero $2$  y as\'i sucesivamente. Esta es la situaci\'on de las permutaciones con reemplazo. 
 
 \vspace{0.2cm}
 
@@ -366,7 +366,7 @@ La primera paloma puede entrar en cualquiera de los $n$ nidos, la segunda puede 
 
 \vspace{0.2cm}
 
-Para encontrar la probabilidad de que al menos dos personas tengan el mismo cumplea\~nos, es m\'as f\'acil calcular el complemento de este evento, la probabilidad de que no haya dos individuos que tengan el mismo cumplea\~nos. Si asumimos que un a\~no tiene 365 dias, entonces el n\'umero de permutaciones con reemplazo es de  $365^k$ . Este es el tama\~o del espacio  muestral desde el cual se toman todas las posibles permutaciones de cumplea\~nos. El n\'umero de permutaciones sin reemplazo es $365!/ (365 - k)!$. Este es el n\'umero de salidas  en el espacio muestral en el que no hay dos cumplea\~nos en la permutación que sean los mismos. La probabilidad de no encontrar entre  $k$ personas  dos con el mismo cumplea\~nos esta dado por la siguiente proporci\'on entonces
+Para encontrar la probabilidad de que al menos dos personas tengan el mismo cumplea\~nos, es m\'as f\'acil calcular el complemento de este evento, la probabilidad de que no haya dos individuos que tengan el mismo cumplea\~nos. Si asumimos que un a\~no tiene 365 dias, entonces el n\'umero de permutaciones con reemplazo es de  $365^k$ . Este es el tama\~no del espacio  muestral desde el cual se toman todas las posibles permutaciones de cumplea\~nos. El n\'umero de permutaciones sin reemplazo es $365!/ (365 - k)!$. Este es el n\'umero de salidas  en el espacio muestral en el que no hay dos cumplea\~nos en la permutaci\'on que sean los mismos. La probabilidad de no encontrar entre  $k$ personas  dos con el mismo cumplea\~nos esta dado por la siguiente proporci\'on entonces
 
 \begin{align*}
 \frac{365!/(365 - k)!}{365^k} &= \frac{365}{365}\times \frac{364}{365} \times \frac{363}{365}\times \cdots \times \frac{365 -k + 1}{365}\\
@@ -384,7 +384,7 @@ Se puede notar que  en una clase con 23 estudiantes, la probabilidad de que  dos
 \normalfont Resolvamos los siguiente 
 
 \begin{itemize}
-\item En una fiesta de cinco estudiantes, calcular la probabilidad, que al menos dos tengan el mismo (dia/mes) de cumplea\~nos, asumiendo que el a\~no tiene $365$ dias.
+\item En una fiesta de cinco estudiantes, calcula  la probabilidad, que al menos dos tengan el mismo (dia/mes) de cumplea\~nos, asumiendo que el a\~no tiene $365$ dias.
 \item La probabilidad que dos estudiantes en una clase tengan el mismo cumplea\~nos es al menos el $75\%$. ?` Cu\'al es el m\'inimo tama\~no de la clase?. 
 \end{itemize}
 
@@ -436,7 +436,7 @@ Sea al caso en el que las bolas se seleccionan sin reemplazo, pero el orden en q
 
 \vspace{0.2cm}
 
-Por ejemplo, podemos haber elegido una bola verde, una bola roja y una bola negra, pero  no sabemos o nos preocupamos cu\'al de estas tres fue elegida primera, segunda o tercera. Sea  $C(n, k)$ que  denota  el n\'umero de maneras en que se pueden seleccionar $k$ bolas sin reemplazo e independientemente de su orden de una caja que contiene $n$ bolas. Este s\'imbolo se dice que es el n\'umero de combinaciones de $n$ elementos tomados $k$ a la vez  no teniendo en cuenta el orden.
+Por ejemplo, podemos haber elegido una bola verde, una bola roja y una bola negra, pero  no sabemos o no nos preocupamos cu\'al de estas tres fue elegida primera, segunda o tercera. Sea  $C(n, k)$ que  denota  el n\'umero de maneras en que se pueden seleccionar $k$ bolas sin reemplazo e independientemente de su orden de una caja que contiene $n$ bolas. Este s\'imbolo se dice que es el n\'umero de combinaciones de $n$ elementos tomados $k$ a la vez,  no teniendo en cuenta el orden.
 
 \vspace{0.2cm}
 
@@ -650,7 +650,7 @@ Como ejemplo, veamos el caso que  $n = 4$  y diferenciamos las bolas con las let
 
 \vspace{0.2cm}
 
-Debes de Observar  que, aunque las cuatro bolas se distinguen, la misma bola puede aparecer m\'as de una vez en una combinaci\'on dada. Esto se debe a que despu\'es de que una bola ha sido elegida, esta  se sustituye y se puede elegir una vez m\'as. Observa  tambi\'en que no incluimos combinaciones como BAA o CBA porque con combinaciones, el orden no es importante y estas son equivalentes a AAB y ABC, respectivamente.
+Debes de observar  que, aunque las cuatro bolas se distinguen, la misma bola puede aparecer m\'as de una vez en una combinaci\'on dada. Esto se debe a que despu\'es de que una bola ha sido elegida, esta  se sustituye y se puede elegir una vez m\'as. Observa  tambi\'en que no incluimos combinaciones como BAA o CBA porque con combinaciones, el orden no es importante y estas son equivalentes a AAB y ABC, respectivamente.
 
 \vspace{0.2cm}
 
@@ -695,7 +695,7 @@ es dado por
 \vspace{0.2cm}
 
 
-Resumimos las cuatro posibilidades a continuaci\'on, utilizando un ejemplo de cuatro elementos distinguibles, llamados A, B, C y D, tomados dos a la vez bajo las diversas posibilidades.
+Resumimos las cuatro posibilidades mencionadas a continuaci\'on, utilizando un ejemplo de cuatro elementos distinguibles, llamados A, B, C y D, tomados dos a la vez bajo las diversas posibilidades.
 
 \begin{itemize}
 
@@ -742,7 +742,7 @@ Un elemento del espacio  muestral se puede escribir como $(s_1, s_2,\dots, s_n)$
 \vspace{0.2cm}
 
 
-Sea A el evento en la que hay exactamente $k$ caras entre los $n$ lanzamientos. El n\'umero de salidas en el evento A es $C(n, k)$, que es el n\'umero de maneras  en que las $k$ posicionesconteniendo C pueden seleccionarse en una cadena de longitud n. La probabilidad de obtener exactamente $k$ caras en $n$ lanzamientos de la moneda se da por
+Sea A el evento en la que hay exactamente $k$ caras entre los $n$ lanzamientos. El n\'umero de salidas en el evento A es $C(n, k)$, que es el n\'umero de maneras  en que las $k$ posiciones conteniendo C pueden seleccionarse en una cadena de longitud n. La probabilidad de obtener exactamente $k$ caras en $n$ lanzamientos de la moneda se da por
 
 \[
 \binom{n}{k}2^{-n}.
@@ -788,7 +788,7 @@ Sea la probabilidad de \'exito denotada por $p$ y la probabilidad de fracaso por
 \vspace{0.2cm}
 
 \begin{ejemplo}
-\normalfont Consideremos un canal de comunicaci\'on binario que env\'ia palabras codificadas en n bits. La probabilidad de que un s\'olo bit sea recibido correctamente es p. La probabilidad de que se reciba eun error es  $q = 1- p$. Utilizando las funciones de correcci\'on de c\'odigo, es posible corregir tantos  $e$ errores por palabra enviada. Determinemos la probabilidad de que la transmisi\'on de cualquier palabra sea exitosa, suponiendo que la transmisi\'on de bits individuales es independiente.
+\normalfont Consideremos un canal de comunicaci\'on binario que env\'ia palabras codificadas en n bits. La probabilidad de que un s\'olo bit sea recibido correctamente es p. La probabilidad de que se reciba un error es  $q = 1- p$. Utilizando las funciones de correcci\'on de c\'odigo, es posible corregir tantos  $e$ errores por palabra enviada. Determinemos la probabilidad de que la transmisi\'on de cualquier palabra sea exitosa, suponiendo que la transmisi\'on de bits individuales es independiente.
 
 \vspace{0.2cm}
 
@@ -819,7 +819,7 @@ Obs\'ervese que en una secuencia de n ensayos independientes con probabilidad de
 
 \vspace{0.5cm}
 
-Los ensayos de Bernoulli aparecen a menudo en el contexto del \texttt{modelado de la confiabilidad}. Un sistema es  representado por un conjunto de componentes independientes, cada uno de los cuales tiene su propia probabilidad de \'exito. Los componentes pueden organizarse en series en las que la salida de un componente  se convierte en la entrada para el  siguiente. El \'exito se consigue si se obtiene un resultado exitoso con cada uno de los componentes de la serie. Si alguno de los componentes falla, entonces todo el sistema falla. 
+Los ensayos de Bernoulli aparecen a menudo en el contexto del \texttt{modelado de  confiabilidad}. Un sistema es  representado por un conjunto de componentes independientes, cada uno de los cuales tiene su propia probabilidad de \'exito. Los componentes pueden organizarse en series en las que la salida de un componente  se convierte en la entrada para el  siguiente. El \'exito se consigue si se obtiene un resultado exitoso con cada uno de los componentes de la serie. Si alguno de los componentes falla, entonces todo el sistema falla. 
 
 
 \vspace{0.2cm}
@@ -893,7 +893,7 @@ El n\'umero total de eventos elementales que tienen la propiedad de que $h_i$ oc
 
 \vspace{0.2cm}
 
-En general, el n\'umero de formas de colocar $h_1$ en $n_1$ ranuras, $h_2$ en $n_2$ ranuras y as\'i sucesivamente, con $\displaystyle \sum_{j =1}^m n_j = m$ es dado por el coeficiente multinomial. La probabilidad  de ocurrencia de alg\'un evento elemental es dado por $p_1^{n_1}, p_2^{n_2}, \cdots p_{m}^{n_m}$ y as\'i la probabilidad que $h_i$ ocurre $n_1$ veces, $h_2$ ocurre $n_2$ veces y as\'i es dado por
+En general, el n\'umero de formas de colocar $h_1$ en $n_1$ ranuras, $h_2$ en $n_2$ ranuras y as\'i sucesivamente, con $\displaystyle \sum_{j =1}^m n_j = m$ es dado por el coeficiente multinomial. La probabilidad  de ocurrencia de alg\'un evento elemental es dado por $p_1^{n_1}, p_2^{n_2}, \cdots p_{m}^{n_m}$ y as\'i la probabilidad que $h_i$ ocurre $n_1$ veces, $h_2$ ocurre $n_2$ veces y as\'i sucesivamente es dado por
 
 \vspace{0.2cm}
 
