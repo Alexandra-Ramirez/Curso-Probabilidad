@@ -63,6 +63,9 @@
  * [The idea of a probability density function](http://mathinsight.org/probability_density_function_idea).
  
  
+ ### Distribuciones conjuntas y condicionales
+ 
+ 
 ## Libros y artículos
 
 - Introduction to Probability, Dimitri P. Bertsekas y John N. Tsitsiklis, Athena Scientific, 2008.
