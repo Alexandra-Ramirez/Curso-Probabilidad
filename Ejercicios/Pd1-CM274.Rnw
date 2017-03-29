@@ -62,7 +62,7 @@ Probabilidad, propiedades de la funci\'on probabilidad\par
 \begin{enumerate}
 \item Define un espacio muestral para el experimento de elegir un n\'umero del intervalo
 $(0,20)$. Describe el evento de que dicho n\'umero es un entero.
-\item Se lanzan dos dados. Sea $E$ el evento en  que la suma de las salidad es impar y $F$ el evento de al menos uno $1$. Interpretar los eventos $E\cap F, E^c \cap F$ y $E^cF^c$.
+\item Se lanzan dos dados. Sea $E$ el evento en  que la suma de las salidad es impar y $F$ el evento de que al menos salga un  $1$. Interpretar los eventos $E\cap F, E^c \cap F$ y $E^cF^c$.
 \item Sea $P$ el conjunto de todos los subconjuntos de $A = \{1, 2\}$. Elegimos dos conjuntos distintos de forma aleatoria de $P$. Define un espacio  muestral para este experimento y describe los siguientes eventos
 
 
@@ -110,7 +110,7 @@ entonces $\mathbb{P}(A_1 \cap A_2 \cdots A_n) = 1$.
 \[
 \lim_{n \rightarrow \infty}\mathbb{P}(E_n) = \mathbb{P}(\lim_{n \rightarrow \infty}E_n).
 \]
-\item Supongamos que algunos individuos de una poblaci\'on producen descendientes del mismo tipo. Los descendientes de la poblaci\'on inicial son llamados de segunda generaci\'on, los \mbox{descendientes} de la segunda generaci\'on son llamados de tercera generaci\'on y as\'i sucesivamente. Si con \mbox{probabilidad} $\exp[-(2n^2 + 7)/(6n^2)]$ toda la poblaci\'on muere completamente por la n-\'esima generaci\'on  antes de producir cualquier descendencia ?`cu\'al es la probabilidad de que tal población sobreviva para siempre?.
+\item Supongamos que algunos individuos de una poblaci\'on producen descendientes del mismo tipo. Los descendientes de la poblaci\'on inicial son llamados de segunda generaci\'on, los \mbox{descendientes} de la segunda generaci\'on son llamados de tercera generaci\'on y as\'i sucesivamente. Si con \mbox{probabilidad} $\exp[-(2n^2 + 7)/(6n^2)]$ toda la poblaci\'on muere completamente por la n-\'esima generaci\'on  antes de producir cualquier descendencia ?`cu\'al es la probabilidad de que tal poblaci?n sobreviva para siempre?.
 \end{enumerate}
 
 \item Un punto es seleccionado al azar desde un intervalo $(0, 2000)$.?` Cu\'al es la probabilidad que este punto sea entero?.  
