@@ -66,6 +66,21 @@
  
  ### Distribuciones conjuntas y condicionales
  
+ * Distribuciones conjuntas.
+ * Funciones de distribución acumulativas conjuntas.
+ * Funciones de masa de probabilidad conjunta.
+ * Función densidad de probabilidad conjunta.
+ * Distribuciones conjuntas.
+ * Convolución y la suma de variables aleatorias.
+ 
+ ### Esperanza de variables aleatorias
+ 
+ * Definiciones
+ * Esperanza de funciones y variables aleatorias conjuntas.
+ * Funciones generadoras de probabilidad para variables aleatorias discretas.
+ * Funciones generadora de momentos.
+
+ 
  
 ## Libros y artículos
 
