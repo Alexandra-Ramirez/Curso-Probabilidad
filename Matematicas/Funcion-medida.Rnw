@@ -1,0 +1,188 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Notas de matem\'aticas \par
+\end{minipage}
+\vspace{0.5cm}
+
+
+\section{La funci\'on medida}
+
+\vspace{0.5cm}
+
+\begin{defi}
+\normalfont Sea $\mathcal{F}$ un \'algebra. Una medida es una funci\'on $\mu:\mathcal{F}\to [0,\infty) \cup \{+\infty\}$ que satisface:
+
+\begin{enumerate}
+\item Conjunto vac\'io: $\mu(\emptyset) = 0$.
+\item Aditividad contable: Si $E_n, n \in \mathbb{N}$ es una secuencia de eventos disjuntos $(E_i \cap E_j)$ cuando  $i \neq j$):
+
+\[
+\mu\left(\bigcup_{i=1}^{\infty} E_i\right) = \sum_{i=1}^{\infty} \mu(E_i).
+\]
+\end{enumerate} 
+
+\vspace{0.2cm}
+
+Si $\mathcal{F}$ es un $\sigma$ \'algebra, entonces $(\Omega,\mathcal{F},\mu)$  es llamado un \texttt{espacio de medida}. De acuerdo a la definici\'on de funci\'on probabilidad, esta es una funci\'on de probabilidad que satisface $\mu(\Omega)=1$.
+\end{defi}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont (continuidad de la medida) Una medida con $\mu(\Omega) < \infty$ satisface las siguientes propiedades:
+
+\begin{enumerate}
+\item Aditividad finita: para una secuencia de conjuntos disjuntos $E_1, \dots, E_k$,
+
+\[
+\mu\left(\sum_{i=1}^k E_k\right)=\sum_{i=1}^k \mu(E_i).
+\]
+
+\item Si $E_n\nearrow E, E \in \mathcal{F}$ y $E_n \in \mathcal{F}$ para todo $n \in \mathbf{N}$, entonces $\mu(E_n)\nearrow \mu(E)$.
+\item Si $E_n \searrow E, E \in \mathcal{F}, E_n \in \mathcal{F}$ para todo $n \in \mathbf{N}$ y $\mu(E_1) < \infty$, entonces $\mu(E_n)\searrow \mu(E)$.
+\item Sub-aditividad contable: Si $E \in \mathcal{F}$ y $\displaystyle \cup_n E_n\in\mathcal{F}$, entonces:
+
+\[
+\mu\left(\bigcup_{i=1}^{\infty} E_i\right) \leq \sum_{i=1}^{\infty} \mu(E_i).
+\]
+\end{enumerate}
+
+\vspace{0.2cm}
+
+\underline{La primera propiedad} sigue de la aditividad contable de la funci\'on medida y escribiendo $E_l = \emptyset$ para $l >k$.
+
+\vspace{0.2cm}
+
+Probamos a continuaci\'on la \underline{segunda propiedad}. Definimos la siguiente secuencia de conjuntos disjuntos $B_1 = E_1$ y $B_k=E_k\setminus E_{k-1}$, donde $\displaystyle E=\cup_{n\in\mathbb{N}} B_n$ y $\displaystyle E_n=\cup_{k=1}^n B_k$. 
+
+\vspace{0.3cm}
+
+Por contabilidad  y aditividad finita de $\mu$:
+
+\[
+\mu(E)=\sum_{n\in\mathbb{N}} \mu(B_n) =\lim_{n\to\infty}\, \sum_{k=1}^n \mu(B_k) = \lim_{n\to\infty} \mu(E_n)
+\]
+
+Lo que prueba, la segunda propiedad.
+
+\vspace{0.3cm}
+
+Para probar la siguiente propiedad, notemos que $E_1\setminus E_n\nearrow E_1 \setminus E$, junto con la propiedad anterior, implica que:
+
+\[
+\mu(E_1) -\mu(E_n) = \mu (E_1\setminus E_n)\nearrow \mu(E_1\setminus E) =\mu(E_1 )-\mu(E).
+\]
+
+\vspace{0.3cm}
+
+Para probar, la \'ultima propiedad $B=E_1$ y $B_n=E_n\cap E_1^c\cap\cdots\cap E_{n-1}^c$ para $n \in \mathbb{N}$. Nota que $B_k$ es una secuencia de conjuntos disjuntos y $\displaystyle\cup_{n=1}^k B_n=\cup_{n=1}^k E_n$, para todo $k \in \mathbb{N}$. Desde que $B_k \subset E_k$, tenemos:
+
+\[
+\mu\left(\bigcup_{n=1}^k E_k\right)  = \mu\left(\bigcup_{n=1}^k B_k\right)  = \sum_{n=1}^k \mu(B_k)   \leq \sum_{n=1}^k \mu(E_k).
+\]
+
+\vspace{0.3cm}
+
+Ahora, cuando $k \to \infty$ y usando la segunda propiedad, sobre el lado izquierdo aplicado a los conjuntos $E_{k}^{'}=\cup_{n=1}^k E_n\nearrow \cup_{n\in\mathbb{N}} E_k$ se tiene el resultado deseado.
+\end{pros}
+
+\subsection{Medida cero}
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont Decimos que $A$ es un conjunto de medida cero si $\mu(A) = 0$. 
+
+\vspace{0.3cm}
+
+Estos conjuntos actuan como un elemento \texttt{cero} con medida. Si tenemos un conjunto $B$, entonces resulta que si $A$  tiene medida cero, entonces se cumple que $\mu (B) = \mu (B \cup A)$. Esto es m\'as o menos como decir  la medida de  no se \texttt{interesa} por estos conjuntos. Algunos ejemplos importantes:
+
+\begin{enumerate}
+\item Un subconjunto de un conjunto de medida cero tambi\'en tiene medida cero.
+\item Cada subespacio $k$ dimensional de $\mathbb{R}^n$ tiene medida cero si $k < n$. En otras palabras, la l\'inea no tienen \'area y los planos no tienen volumen.
+\item La uni\'on contable de conjuntos de medida cero, tambi\'en tiene medidad cero.
+\end{enumerate}
+\end{defi}
+
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Un conjunto contable de puntos tiene medida cero.
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{cor}
+\normalfont Los n\'umeros racionales en el intervalo unidad, tienen medida cero.
+\end{cor}
+
+\vspace{0.2cm}
+
+
+\begin{defi}
+
+\normalfont Una proposici\'on $A(x)$ que dependen de un n\'umero real se dice que es verdadera \texttt{casi en todas partes} si $\{x : A(x)\  \text{es falso} \}$ tiene medida cero.
+\end{defi}
+
+
+\vspace{0.2cm}
+
+El siguiente resultado, determina si una funci\'on es Riemann integrable.
+
+\vspace{0.4cm}
+
+\begin{pros}
+\normalfont Una funci\'on acotada $f:[a,b] \rightarrow \mathbb{R}$ es Riemann integrable si y s\'olo si es continua en \texttt{casi todas partes } de $[a,b]$.
+\end{pros}
+
+\section{Referencias}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item Measure, integrals and martingales, Ren\'e Schilling Cambridge University Press  2005.
+\item Probability, The Analysis of Data, volumen 1 Guy Lebanon. 
+\end{enumerate}
+\end{document}
