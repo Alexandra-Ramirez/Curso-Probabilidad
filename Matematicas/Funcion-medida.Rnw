@@ -45,7 +45,6 @@ Notas de matem\'aticas \par
 \end{minipage}
 \vspace{0.5cm}
 
-
 \section{La funci\'on medida}
 
 \vspace{0.5cm}
