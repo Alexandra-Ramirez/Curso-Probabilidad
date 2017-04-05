@@ -57,7 +57,8 @@
  
  #### Lecturas
  
- * [Notas elementales  sobre  funciones](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funciones.pdf)
+ * [Notas elementales  sobre  funciones](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funciones.pdf).
+ * [Notas elementales de variables aleatorias (primera parte](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
  * [Random Variables and Expectation with Robots and Stuff!](https://www.countbayesie.com/blog/2015/2/20/random-variables-and-expectation).
  * [Interrogating Probability Distributions](https://www.countbayesie.com/blog/2015/3/17/interrogating-probability-distributions).
  * [The idea of a probability distribution](http://mathinsight.org/probability_distribution_idea).
