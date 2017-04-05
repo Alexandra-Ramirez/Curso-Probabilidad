@@ -63,6 +63,7 @@
  * [Interrogating Probability Distributions](https://www.countbayesie.com/blog/2015/3/17/interrogating-probability-distributions).
  * [The idea of a probability distribution](http://mathinsight.org/probability_distribution_idea).
  * [The idea of a probability density function](http://mathinsight.org/probability_density_function_idea).
+ * [Visualising random variables](https://terrytao.wordpress.com/2016/05/13/visualising-random-variables/).
  
  
  ### Distribuciones conjuntas y condicionales
@@ -81,7 +82,11 @@
  * Funciones generadoras de probabilidad para variables aleatorias discretas.
  * Funciones generadora de momentos.
 
- 
+ ####  Lecturas: 
+
+* [Expectation and Variance from High School to Grad School](https://www.countbayesie.com/blog/2015/3/19/expectation-and-variance-from-high-school-to-grad-school).
+* [Understanding Variance, Covariance, and Correlation](https://www.countbayesie.com/blog/2015/2/21/variance-co-variance-and-correlation).
+* [Moments of a Random Variable Explained](https://www.countbayesie.com/blog/2015/4/23/why-so-square-jensens-inequality-and-moments-of-a-random-variable).
  
 ## Libros y artículos
 
