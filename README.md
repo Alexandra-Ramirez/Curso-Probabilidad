@@ -72,7 +72,7 @@
  * Funciones de distribución acumulativas conjuntas.
  * Funciones de masa de probabilidad conjunta.
  * Función densidad de probabilidad conjunta.
- * Distribuciones conjuntas.
+ * Distribuciones condicionales conjuntas.
  * Convolución y la suma de variables aleatorias.
  
  ### Esperanza de variables aleatorias
