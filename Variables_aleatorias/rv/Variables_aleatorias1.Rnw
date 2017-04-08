@@ -85,7 +85,7 @@ Dado un experimento y el correspondiente conjunto de posibles respuestas o salid
 \vspace{0.2cm}
 
 \begin{defi}
-\normalfont Una variable aleatoria es una funci\'on $X : \Sigma \rightarrow \mathbb{R}$ que asigna un n\'umero real $X(\omega)$ a cada salida o respuesta $\omega$.
+\normalfont Una variable aleatoria es una funci\'on $X : \Omega \rightarrow \mathbb{R}$ que asigna un n\'umero real $X(\omega)$ a cada salida o respuesta $\omega$.
 
 \vspace{0.2cm}
 
@@ -656,10 +656,10 @@ La funci\'on de distribuci\'on acumulativa, no tienen derivada , excepto en $x =
  
  \vspace{0.2cm}
  
- La funci\'on de distribuci\'on tiene muschas propiedades matem\'aticas. Entre las m\'as importantes tenemos:
+ La funci\'on de distribuci\'on tiene muchas propiedades matem\'aticas. Entre las m\'as importantes tenemos:
  
  \begin{enumerate}
- \item $0 \leq F_X(x) \leq 1$ para $-\infty < x \infty$, desde que $F_X(x)$ es una probabilidad.
+ \item $0 \leq F_X(x) \leq 1$ para $-\infty < x < \infty$, desde que $F_X(x)$ es una probabilidad.
  \item Se cumple que $\displaystyle \lim_{x \rightarrow -\infty }F_X(x) = 0$ y  $\displaystyle \lim_{x \rightarrow \infty }F_X(x) = 1$.
  
  \item Si la variable aleatoria $X$ tiene una imagen finita, entonces
@@ -993,7 +993,7 @@ Llamamos $F_X^{-1}(1/4)$ el \texttt{ primer cuartil}, $F_X^{-}(1/2)$ la \texttt{
 
 \vspace{0.3cm}
 
-Dos variables aleatorias $X$ y $Y$ son \textbf{iguales en distribuci\'on} si $F_{X}(x) = F_{Y}(y)$ para todo $x$. Esto significa que las aseveraciones de probabilidad acerca de $X$ y $Y$ deben ser las mismas, pero de ninguna manera que $X$ e $Y$ sean iguales. Supongamos por ejemplo $\mathbb{P}(X = 1) = \mathbb{P}(X = -1) =1/2$. Sea $Y = -X$. Entonces  $\mathbb{P}(Y = 1) = \mathbb{P}(Y = -1) =-1/2$ y as\'i,  $X$ e $Y$ son iguales en distribuci\'on, pero no son iguales. En efecto $\mathbb{P}(X = Y) = 0$. 
+Dos variables aleatorias $X$ y $Y$ son \textbf{iguales en distribuci\'on} si $F_{X}(x) = F_{Y}(y)$ para todo $x$. Esto significa que las aseveraciones de probabilidad acerca de $X$ y $Y$ deben ser las mismas, pero de ninguna manera que $X$ e $Y$ sean iguales. Supongamos por ejemplo $\mathbb{P}(X = 1) = \mathbb{P}(X = -1) =1/2$. Sea $Y = -X$. Entonces  $\mathbb{P}(Y = 1) = \mathbb{P}(Y = -1) =1/2$ y as\'i,  $X$ e $Y$ son iguales en distribuci\'on, pero no son iguales. En efecto $\mathbb{P}(X = Y) = 0$. 
 
 
 \vspace{0.2cm}
