@@ -84,6 +84,7 @@
 
  ####  Lecturas: 
 
+* [Notas elementales sobre funciones generadores de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Funciones-generadoras/Funciones-generadoras_probabilidad.pdf).
 * [Expectation and Variance from High School to Grad School](https://www.countbayesie.com/blog/2015/3/19/expectation-and-variance-from-high-school-to-grad-school).
 * [Understanding Variance, Covariance, and Correlation](https://www.countbayesie.com/blog/2015/2/21/variance-co-variance-and-correlation).
 * [Moments of a Random Variable Explained](https://www.countbayesie.com/blog/2015/4/23/why-so-square-jensens-inequality-and-moments-of-a-random-variable).
