@@ -1,0 +1,1354 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bb}[1]{\textbf{#1}}
+\DeclareMathOperator{\rank}{\textbf{rango}}
+\DeclareMathOperator{\proy}{\textbf{proy}}
+\DeclareMathOperator{\nulll}{\textbf{nul}}
+\DeclareMathOperator{\diag}{\textbf{diag}}
+\DeclareMathOperator{\col}{\textbf{col}}
+\DeclareMathOperator{\fila}{\textbf{fila}}
+\DeclareMathOperator{\dimm}{dim}
+\DeclareMathOperator{\Traz}{Tr}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{teo}{{Teorema}}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Funciones generadoras probabilidad \par
+\end{minipage}
+
+
+\vspace {0.5cm}
+
+\section{Funciones generadoras de probabilidad}
+
+\vspace{0.2cm}
+
+Las \texttt{funci\'ones generadoras } son una herramienta \'util para variables aleatorias que toman valores enteros. Los momentos de una variable aleatoria son derivadas de las funciones generadoras. Las funciones generadoras son \'utiles en el entendimiento de la sum de variables aleatorias.
+
+\vspace{0.5cm}
+
+\subsection{Funciones generadoras}
+
+\vspace{0.5cm}
+
+Una manera de registrar una secuencia de n\'umeros reales $u_0, u_1, u_2, \dots$ es escribir una f\'ormula del $n$-\'esimo t\'ermino. Otra manera es escribir, la  funci\'on generadora de la secuencia, definida como  la suma de la serie de potencias:
+
+\vspace{0.2cm}
+
+\[
+u_0 + u_1s + u_2s^2 + \cdots
+\]
+
+\vspace{0.3cm}
+
+Por ejemplo la secuencia $1 ,2 , 4, 8, \dots$ tiene una funci\'on generadora :
+
+\vspace{0.2cm}
+
+\[
+1 + 2s + 4s^2 + \cdots = \displaystyle\sum_{n = 0}^{\infty}(2s)^n = \dfrac{1}{1 -2s}
+\]
+
+\vspace{0.3cm}
+
+v\'alida siempre que $\vert s \vert < \frac{1}{2}$. De manera similar, la secuencia $1, 2,3, \dots$ tiene una funci\'on generadora:
+
+\vspace{0.2cm}
+
+\begin{equation}
+1 + 2s + 3s^2 + \cdots = \displaystyle\sum_{n = 0}^{\infty}(n +1)s^n = \dfrac{1}{1 -s}^2
+\end{equation}
+
+\vspace{0.3cm}
+
+v\'alida siempre que $\vert s \vert < 1$. Tales funciones generadoras son \'utiles para tratar con secuencias reales desde que ellas especifican la secuencia de manera \'unica, es decir dada la secuencia $u_0, u_1, u_2, \dots$ podemos encontrar una funci\'on generadora y  viceversa,  si tenemos una funci\'on generadora $\mathbb{U}(s)$ con   una serie de Taylor convergente:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{U}(s) = u_0 + u_1s + u_2s^2 + \cdots
+\]
+
+\vspace{0.2cm}
+
+para todo $s$ peque\~no, entonces esta secuencia es \'unica y   $\mathbb{U}(s)$ genera la secuencia $u_0, u_1, u_2, \dots$ de manera \'unica.
+
+\vspace{0.2cm}
+
+Podemos definir otro tipos de funciones generadoras, como es el caso de la \texttt{funci\'on generadora exponencial} de la secuencia real $u_0, u_1, u_2, \dots$,  definida como la serie de potencia:
+
+
+\vspace{0.2cm}
+
+\[
+u_0 + u_1s + \frac{1}{2!}u_2s^2 + \frac{1}{3!}u_3s^3 + \cdots
+\]
+
+\vspace{0.3cm}
+
+siempre que la series converga. Cuando operamos con funciones generadoras de secuencias reales, es importante que la serie de potencia subyacente converja para cierto $s\neq 0$ y  mientras este sea el caso, normalmente no vamos a decir para qu\'e valores de $s$ la serie de potencia es absolutamente convergente.  Por ejemplo, decimos que $(1 - s)^{-2}$ es la funci\'on generadora de la secuencia $1, 2, 3, \dots$, sin referenciar expl\'icitamente  al hecho de que la serie que le corresponde (1) converge absolutamente  cuando $\vert s \vert < 1$.
+
+\vspace{0.5cm}
+
+\begin{ejemplo}
+
+\normalfont La secuencia dada por
+
+\vspace{0.3cm}
+
+\[
+u_n = \begin{dcases}
+{{N}\choose {n}} \ \ \text{si}\ \ n = 0,1,2, \dots, N \\
+  0 \ \ \ \ \ \ \ \text{en otros casos}.
+\end{dcases}
+\]
+
+\vspace{0.3cm}
+
+tiene una funci\'on generadora
+
+\vspace{0.3cm}
+
+\[
+\mathbb{U}(s) = \displaystyle\sum_{n = 0}^{N}{{N}\choose{n}}s^N = (1 +s)^N.
+\]
+
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+\subsection{Variables aleatorias de valor entero}
+
+\vspace{0.2cm}
+
+
+Muchas variables aleatorias toman valores en el conjunto de los enteros no negativos. Podemos escribir la funci\'on masa  de esta  variable $X$ como un secuencia $p_0, p_1, p_2, \dots$ de n\'umeros, donde
+
+\vspace{0.2cm}
+
+\[
+p_k = \mathbb{P}(X = k) \ \ \ \ \text{para todo}\ \ \ \ k = 0,1,2, \dots
+\]
+
+\vspace{0.2cm}
+
+satisfaciendo 
+
+\vspace{0.2cm}
+
+\[
+p_k \geq 0 \ \ \text{para} \ \  k, \ \ \ \text{y}\ \ \ \displaystyle\sum_{k =0}^{\infty}p_k = 1
+\]
+
+\vspace{0.5cm}
+
+\begin{defi}
+\normalfont  La \texttt{funci\'on generadora de probabilidad} o \texttt{pgf} de $X$ es la funci\'on $\mathbb{G}_{X}(s)$ definida por
+
+\vspace{0.2cm}
+
+\[
+\mathbb{G}_{X}(s) = p_0 + p_1s + p_2s^2 + \cdots,
+\]
+
+
+\vspace{0.2cm}
+
+para todo valor $s$ para el cual la sumatoria converge absolutamente.
+
+\end{defi}
+
+\vspace{0.2cm}
+
+En otras palabras la funci\'on generadora de probabilidad $\mathbb{G}_{X}(s)$ de $X$ es la funci\'on generadora de la secuencia $p_0, p_1, p_2, \dots$,  que cumple con ciertas propiedades:
+
+\begin{itemize}
+\item $\mathbb{G}_{X}(0) = p_0$ y $\mathbb{G}_{X}(1) = 1$
+\item $\mathbb{G}_{X}(s) = \mathbb{E}(s^X)$, siempre que la esperanza exista. 
+\end{itemize}
+
+
+\vspace{0.2cm}
+
+Desde este \'ultimo resultado $\mathbb{G}_X(s)$ existe para todos los valores de $s$ satisfaciendo $\vert s\vert \leq 1$, ya que en este caso, la serie $\mathbb{G}_X$ tiene radio de convergencia al menos $1$.
+
+\vspace{0.2cm}
+
+
+\[
+\displaystyle\sum_{k = 0}^{\infty}\vert p_ks^{k}\vert \leq \displaystyle\sum_{k = 0}^{\infty} p_k = 1
+\]
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Sea $X$ una variable aleatoria teniendo una distribuci\'on geom\'etrica con par\'ametro $p$. Entonces: $\mathbb{P}(X = k) = pq^{k - 1}$ para $k = 1, 2, 3, \dots$, con $p + q =1$. Entonces $X$ tiene un \texttt{pgf} dado por:
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{G}_{X}(s)& = \displaystyle\sum_{k =1}^{\infty}pq^{k -1}s^k \\
+&= ps\displaystyle\sum_{k = 0}^{\infty}(qs)^k = \dfrac{ps}{1 -qs} \ \ \ \text{si}\ \ \vert s \vert < q^{-1}.
+\end{align*}
+
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+\begin{pros}
+\normalfont Si $X$ e $Y$ tienen \texttt{pgf} $\mathbb{G}_X$ y $\mathbb{G}_Y$  respectivamente, entonces
+
+\vspace{0.2cm}
+
+\[
+\mathbb{G}_{X}(s) = \mathbb{G}_{Y}(s) \ \ \ \text{para todo } \ \ \ s
+\]
+
+\vspace{0.2cm}
+
+si y s\'olo si $\mathbb{P}(X = k) = \mathbb{P}(Y = k)$ para $k = 0,1,2, \dots$. En otras palabras, las variables aleatorias de valores enteros, tienen la misma funci\'on generadora de probabilidad si y s\'olo si tienen la misma funci\'on de masa de probabilidad.
+
+\end{pros}
+
+\vspace{0.2cm}
+
+Para probar esta proposici\'on, s\'olo se necesita probar que $\mathbb{G}_X = \mathbb{G}_Y$ implica que $\mathbb{P}(X =k) = \mathbb{P}(Y =k)$ para todo $k$. Como $\mathbb{G}_{X}$ y $\mathbb{G}_{Y}$ tienen radio de convergencia a lo m\'as  $1$ y por tanto tienen una \'unica expansi\'on alrededor del origen:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{G}_{X}(s) = \displaystyle\sum_{k = 0}^{\infty}s^{k}\mathbb{P}(X = k), \ \ \ \mathbb{G}_{Y}(s) = \displaystyle\sum_{k = 0}^{\infty}s^{k}\mathbb{P}(Y = k)
+\]
+
+\vspace{0.2cm}
+
+Si $\mathbb{G}_{X} = \mathbb{G}_{Y}$, esas dos series tienen id\'enticos coeficientes.
+
+
+\vspace{0.2cm}
+
+
+Por la proposici\'on anterior,  se puede deducir para el ejemplo anterior que: si $X$ tiene un \texttt{pgf} igual a $ps(1 -qs)^{-1}$, entonces $X$ tiene una distribuci\'on ge\'ometrica, de par\'ametro $p$.
+
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Sea $p = 1 -q \in [0,1]$ entonces los \texttt{pgf} de algunas distribuciones discretas son:
+
+\begin{enumerate}
+\item Si $X$ tiene una distribuci\'on Bernoulli con par\'ametro $p$ entonces $\mathbb{G}_{X}(s) =q + ps$.
+\item Si $X$ tiene una distribucio\'n Binomial con par\'ametros $n$ y $p$ entonces
+
+\[
+\mathbb{G}_{X}(s) = \displaystyle\sum_{k = 0}^{n}{{n}\choose{k}}p^kq^{n -k}s^k = (q + ps)^n.
+\]
+
+\item Si  $X$ tiene una distribucio\'n de Poisson con par\'ametro $\lambda$ entonces
+
+\[
+\mathbb{G}_{X}(s) = \displaystyle\sum_{k = 0}^{n}\frac{1}{k!}\lambda^ke^{-\lambda}s^k = e^{\lambda(s -1)}.
+\]
+
+\item Si $X$ tiene una distribuci\'on binomial negativa, con param\'etros $n$ y $p$, entonces
+
+\[
+\mathbb{G}_{X}(s) = \displaystyle\sum_{k = n}^{\infty}\binom{k -1}{n -1}p^nq^{k -n}s^k = \Biggl(\frac{ps}{1 -qs} \Biggr)^n \ \ \text{si}\ \vert s \vert < q^{-1}.
+\]
+\end{enumerate}
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+\subsection{Momentos}
+
+\vspace{0.2cm}
+
+Para una variable aleatoria discreta $X$, la esperanza $\mathbb{E}(X)$ indica el \texttt{centro} de la distribuci\'on de $X$. Este es el primer elemento de una secuencia de n\'umeros conteniendo informaci\'on acerca de la distribuci\'on de $X$. Esta secuencia de n\'umeros $\mathbb{E}(X), \mathbb{E}(X^2), \mathbb{E}(X^3), \dots$ es llamada \texttt{momentos} de $X$.
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont Sea $k \geq 1$. El \texttt{K-\'esimo momento} de la variable aleatoria discreta $X$ es el valor de $\mathbb{E}(X^k)$.
+
+\end{defi}
+
+\vspace{0.2cm}
+
+Posiblemente los valores m\'as importantes  que surgen a partir de la definici\'on de momentos es la esperanza $\mathbb{E}(X)$ de $X$ y la varianza de $X$ :
+
+\vspace{0.2cm}
+
+\[
+\mathbb{V}(X) = \mathbb{E}([X - \mathbb{E}(X)]^2)
+\]
+
+
+\vspace{0.2cm}
+
+Una relaci\'on importante  entre la varianza y el momento de  $X$, se puede distinguir a partir de los siguientes resultados:
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{V}(X) &= \mathbb{E}(X^2 -2X\mathbb{E}(X) + \mathbb{E}(X)^2)\\
+&= \mathbb{E}(X^2) -2\mathbb{E}(X)^2 + \mathbb{E}(X)^2 \\
+& = \mathbb{E}(X^2) -\mathbb{E}(X)^2.
+\end{align*}
+
+\vspace{0.2cm}
+
+Si $X$ es una variable aleatoria con valores enteros no negativos, los momentos de $X$ se pueden encontrar a partir de  de la funci\'on generadora de momentos de  $X$, calculando la derivada de la funci\'on en el punto $s =1$.
+
+\vspace{0.3cm}
+
+\begin{pros}
+\normalfont Sea $X$ una variable aleatoria con una funci\'on generadora de probabilidad,  $\mathbb{G}_{X}(s)$, la \texttt{r-\'esima} derivada e $\mathbb{G}_{X}(s)$ en el punto $s = 1$ es igual $\mathbb{E}(X[X -1] \cdots [X -r +1])$ para $r =1,2, \dots$. Es decir:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{G}_{X}^{(r)}(1) = \mathbb{E}(X[X -1] \cdots [X -r +1]).
+\]
+
+\end{pros}
+
+
+\vspace{0.3cm}
+
+
+De la proposici\'on  anterior, calcular los momentos de $X$ se pueden realizar de la siguientes maneras:
+
+\vspace{0.2cm}
+
+\begin{enumerate}
+\item $\mathbb{E}(X) = \mathbb{G}_{X}^{'}(1)$.
+\item $\mathbb{E}(X^2) = \mathbb{E}(X[X -1] +X) = \mathbb{E}(X[X -1]) + \mathbb{E}(X) = \mathbb{G}_{X}^{''}(1) + \mathbb{G}_{X}^{'}(1)$.
+\item $\mathbb{V}(X) =  \mathbb{G}_{X}^{''}(1) + \mathbb{G}_{X}^{'}(1) - \mathbb{G}_{X}(1)^2$.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Sea $X$ una variable aleatoria con una distribuci\'on ge\'ometrica con par\'ametro $p \in (0,1)$. El \texttt{pgf}  de $X$ es $\mathbb{G}_{X}(s) =ps(1 -qs)^{-1}$ para $\vert s \vert < q^{-1}$, cuando  $p + q = 1$. As\'i:
+
+\begin{align*}
+\mathbb{E}(X) = &\mathbb{G}_{X}^{'}(1) = \frac{1}{p}\\
+\mathbb{E}(X^2) = &\mathbb{G}_{X}^{''}(1) + \mathbb{G}_{X}^{'}(1) = \frac{q +1}{p^2}\\
+\mathbb{V}(X) = & \frac{q}{p^2}
+\end{align*}
+
+\end{ejemplo}
+
+\vspace{0.5cm}
+
+\subsection{Suma de variables aleatorias independientes}
+
+\vspace{0.2cm}
+
+Muchos de los problemas en Probabilidad, est\'an relacionados con la suma de variables aleatorias. La f\'ormula de convoluci\'on es inconveniente, desde que $n -1$ convoluciones son requeridas para encontrar la funci\'on de masa de probabilidad de la suma de $n$ variables aleatorias independientes y cada operaci\'on puede ser muy complicada.  En este aspecto las funciones generadoras de momentos son un herramienta importante.
+
+\vspace{0.3cm}
+
+\begin{pros}
+\normalfont Si $X$ y $Y$ son variables aleatorias independientes, cada una de ellas con valores en $\{0, 1, \dots \}$, entonces su suma tiene una funci\'on generadora de probabilidad:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{G}_{X + Y}(s) = \mathbb{G}_{X}(s)\mathbb{G}_{Y}(s)
+\]
+
+\end{pros}
+
+\vspace{0.2cm}
+
+En general, la suma $S_n = X_1 + X_2 + \cdots X_n$ de $n$ variables aleatorias independientes, cada una de ellas con valores en $\{0, 1, \dots \}$, tiene una funci\'on generadora de probabilidad:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{G}_{S_n}(s) = \mathbb{G}_{X_1}(s)G_{X_2}(s)\cdots \mathbb{G}_{X_n}(s)
+\]
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Sea $N$ y $X_1, X_2, \dots$ variables aleatorias identicamente distribuidas eindependientes, con valores en $\{0, 1, 2, \dots \}$ y un \texttt{pgf} com\'un $\mathbb{G}_X$, entonces la suma
+
+\vspace{0.2cm}
+
+\[
+S = X_1 + X_2 + \cdots + X_N
+\]
+
+\vspace{0.2cm}
+
+tienen una funci\'on generadora de probabilidad:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{G}_S(s) = \mathbb{G}_{N}(\mathbb{G}_X(s))
+\]
+
+\end{pros}
+
+\vspace{0.3cm}
+
+La f\'ormula anterior proporciona mucha informaci\'on acerca de la suma de variables aleatorias. Por ejemplo, para encontrar la esperanza  de $S$ en la notaci\'on del anterior  preposici\'on, calculamos $\mathbb{G}_{S}^{'}$ como sigue
+
+\vspace{0.2cm}
+
+
+\[
+\mathbb{G}_{S}^{'}(s)= \mathbb{G}_{N}^{'}(\mathbb{G}_{X}(s))\mathbb{G}_{X}^{'}(s)
+\]
+
+\vspace{0.2cm}
+
+Para $s = 1$ obtenemos:
+
+\vspace{0.2cm}
+
+
+\[
+\mathbb{G}_{S}^{'}(1)= \mathbb{G}_{N}^{'}(\mathbb{G}_{X}(1))\mathbb{G}_{X}^{'}(1) = \mathbb{G}_{N}^{'}(1)\mathbb{G}_{X}^{'}(1)
+\]
+
+\vspace{0.3cm}
+
+desde que $\mathbb{G}_{X}(1) =1$. Luego como $\mathbb{E}(X) = \mathbb{G}_{X}^{'}(1)$, se tiene:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(S) = \mathbb{G}_{S}^{'}(1) =\mathbb{E}(N)\mathbb{E}(X)
+\]
+
+\vspace{0.2cm}
+
+donde $\mathbb{E}(X)$ es la esperanza de una variable aleatoria  $X_i$.
+
+
+\vspace{0.5cm}
+
+\subsection{Caso general de momentos}
+
+\vspace{0.2cm}
+
+Para una variable aleatoria $X$ el \texttt{k-\'esimo momento} de $X$ es definido para $k = 0, 1,2, \cdots$ como el  n\'umero $\mathbb{E}(X^k)$ que es la esperanza de la \texttt{k-\'esima potencia } de $X$ siempre que la esperanza  exista.
+
+\vspace{0.2cm}
+
+La secuencia $\mathbb{E}(X), \mathbb{E}(X^2), \dots$ contiene mucha informaci\'on acerca de la distribuci\'on de $X$.
+
+\vspace{0.2cm}
+
+
+\begin{ejemplo}
+\normalfont Si $X$ tienen una distribuci\'on exponencial con param\'etro $\lambda$, entonces:
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{E}(X^k) &= \bigintsss_{0}^{\infty}x^k\lambda e^{-\lambda x}dx \\
+&= \frac{k}{\lambda}\mathbb{E}(X^{k -1})
+\end{align*}
+
+\vspace{0.2cm}
+
+Si $k \geq 1$, tenemos el siguiente resultado:
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{E}(X^k) = \frac{k}{\lambda}\mathbb{E}(X^{k -1}) &= \frac{k(k -1)}{\lambda^2}\mathbb{E}(X^{k -2}) = \cdots \\
+&= \frac{k!}{\lambda^k}\mathbb{E}(X^{0}) = \frac{k!}{\lambda^k}\mathbb{E}(1) = \frac{k!}{\lambda^k}
+\end{align*}
+
+\vspace{0.2cm}
+
+En particular, la distribuci\'on exponencial tienen momentos de todos los \'ordenes.
+
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Si $X$ tiene una distribuci\'on de Cauchy, entonces
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(X^k) = \bigintsss_{-\infty}^{\infty}\dfrac{x^k}{\pi(1 + x^2)}dx
+\]
+
+\vspace{0.2cm}
+
+para valores de $k$ para el cual, la integral converge absolutamente. Pero se cumple que:
+
+\vspace{0.2cm}
+
+\[
+\bigintsss_{-\infty}^{\infty}\Bigl\vert\dfrac{x^k}{\pi(1 + x^2)}\Bigr\vert dx = \infty
+\]
+
+\vspace{0.2cm}
+
+si $k \geq 1$. Entonces la distribuci\'on de Cauchy no tiene momentos.
+
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+Podemos adaptar este ejemplo para encontrar una funci\'on  densidad con algunos momentos, pero no con  todos. Considera la funci\'on de densidad:
+
+\[
+f_X(x) = \frac{c}{ 1 + \vert x \vert^m}\ \ \text{para}\ x \in \mathbb{R}.
+\]
+
+\vspace{0.2cm}
+
+donde $m(\geq 2)$ es un entero y $c$ es escogido de manera que, en efecto es una funci\'on densidad:
+
+\[
+c = \Biggl(\bigints_{-\infty}^{\infty} \frac{dx}{ 1 + \vert x \vert^m}\Biggr)^{-1}.
+\]
+
+Se puede verificar que esta funci\'on densidad tiene un k-\'esimo momento, para aquellos valores $k$ satisfaciendo $1 \leq k \leq m -2$ solamente.
+
+\vspace{0.2cm}
+
+Dada la funci\'on de distribuci\'on $F_X$ de la variable aleatoria $X$, podemos calcular los momento siempre y cuando esta funci\'on exista, ya sea $X$ discreta o continua. Lo contrario; es decir ?`dada una secuencia $\mathbb{E}(X), \mathbb{E}(X^2), \dots$ de momentos(finitos) de $X$ es posible reconstruir $X$?. La respuesta en general  no se cumple en general, salvo algunas condiciones extras.
+
+\vspace{0.3cm}
+
+\begin{pros}
+\normalfont Supongamos que todos los momentos $\mathbb{E}(X), \mathbb{E}(X^2)\dots$ de la variable aleatoria$X$ existen y que la serie
+
+\vspace{0.2cm}
+
+\[
+\sum_{k = 0}^{\infty}\dfrac{1}{k!}t^k\mathbb{E}(X^k)
+\]
+
+\vspace{0.2cm}
+
+ es absolutamente convergente para alg\'un $t > 0$. Entonces la secuencia de momentos determina \'unicamente la distribuci\'on de $X$.
+
+\end{pros}
+
+\vspace{0.3cm}
+
+La absoluta convergencia para alg\'un $t$ es una condici\'on suficiente m\'as no necesaria, para los momentos para  determinar una distribuci\'on subyacente. Mostremos que  una distribuci\'on que no es determinada por momentos de manera \'unica
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Si $X$ tiene una distribuci\'on normal con media $0$ y varianza $1$, entonces $Y = e^{X}$ tiene una distribuci\'on \texttt{log-normal}  con funci\'on densidad 
+
+\vspace{0.2cm}
+
+\[
+f_X(x) = \begin{cases}
+\dfrac{1}{x\sqrt{2\pi}}\exp[-\frac{1}{2}(\log x)^2] & \text{si} \ x > 0, \\
+0 & \text{en otros casos}
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+Suponiendo que $-1 \leq a \leq 1$, definimos:
+
+\vspace{0.2cm}
+
+\[
+f_a{x} = [1 + a\sin(2\pi \log x)]f(x)
+\]
+
+\vspace{0.2cm}
+
+entonces se cumple:
+
+\vspace{0.2cm}
+
+\begin{itemize}
+\item $f_a$ es una funci\'on densidad.
+\item $f$ tiene momentos finitos de todos los \'ordenes.
+\item Si $f_a$ y $f$ tienen momentos iguales de todos los \'ordenes, cuando
+
+\vspace{0.3cm}
+
+\[
+\bigintsss_{-\infty}^{\infty}x^kf(x)dx = \bigintsss_{-\infty}^{\infty}x^kf_a(x)dx \ \ \text{para}\ k =1, 2, \dots
+\]
+\end{itemize}
+
+\vspace{0.2cm}
+
+As\'i $\{f_a: -1 \leq a \leq 1 \}$ es una colecci\'on de distintas funciones densidad teniendo los mismos momentos. 
+
+\end{ejemplo}
+
+\vspace{0.5cm}
+
+
+\textbf{Varianza y covarianza}
+
+\vspace{0.2cm}
+
+La varianza de una variable aleatoria $X$ es definida como:
+
+\[
+\mathbb{V}(X) = \mathbb{E}([X- \mu]^2), 
+\]
+
+\vspace{0.2cm}
+
+donde $\mu = \mathbb{E}(X)$. La varianza es una medida de dispersi\'on con respecto a $\mu$, en el sentido de que si $X$ toma valores que difieren considerablemente de $\mu$, entonces el valor de $\vert X- \mu \vert$ es grande y por lo tanto  $\mathbb{E}([X- \mu]^2)$ tiene un valor grande, mientras que si $X$ es cercano al valor de $\mu$, entonces $\vert X- \mu \vert$ tiene un valor que usualmente peque\~no de la misma forma que $\mathbb{E}([X- \mu]^2)$.
+
+\vspace{0.2cm}
+
+En un caso extremo cuando $X$ es \texttt{concentrado} en alg\'un punto. En este caso, para una variable $Y$: 
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(Y^2) = 0 \ \ \text{si y s\'olo si} \ \ \mathbb{P}(Y = 0) =1 
+\]
+
+\vspace{0.2cm}
+
+si aplicamos la ecuaci\'on anterior a $Y = X - \mu$, tenemos el siguiente resultado:
+
+\[
+\mathbb{V}(X) \ \ \text{si s\'olo si} \ \ \mathbb{P}(X = \mu) =1 
+\]
+
+\vspace{0.2cm}
+
+de esta forma la varianza cero significa que \texttt{no hay dispersi\'on en lo absoluto}. Algunas propiedades  de la varianza son las siguientes:
+
+\begin{itemize}
+\item $\mathbb{V}(X) = \mathbb{E}([X- \mu]^2) = \mathbb{E}(X^2) - \mu^2$ donde $\mathbb{E}(X) = \mu$.
+\item $\mathbb{V}(aX + b) = a^2\mathbb{V}(X)$.
+\end{itemize}
+
+\vspace{0.2cm}
+
+La varianza como medida de dispersi\'on tiene una propiedad no deseable: no es lineal en el sentido de que la varianza de $aX$ es $a^2$ veces la varianza de $X$, por esta raz\'on es preferible trabajar con la \texttt{desviaci\'on est\'andar} de $X$, definido como $\sqrt{\mathbb{V}(X)}$.
+
+\vspace{0.2cm}
+
+En t\'erminos de $\mathbb{V}(X)$ y $\mathbb{V}(Y)$, la expresi\'on de $\mathbb{V}(X + Y) $ es de la forma:
+
+\[
+\mathbb{V}(X + Y) = \mathbb{V}(X) + 2\mathbb{E}([X -\mathbb{E}(X)][Y -\mathbb{E}(Y)]) +\mathbb{V}(Y)
+\]
+
+Es conveniente tener una palabra especial para el t\'ermino medio en la \'ultima expresi\'on y para ello definimos la \texttt{covarianza} de  $X$ e $Y$.
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont La \texttt{covarianza} de las variables aleatorias $X$ y $Y$ es la cantidad denotada por $cov(X,Y)$ y es dada por:
+
+\vspace{0.2cm}
+
+\[
+cov(X,Y) = \mathbb{E}([X -\mathbb{E}(X)][Y -\mathbb{E}(Y)]) = \mathbb{E}(XY) -\mathbb{E}(X)\mathbb{E}(Y)
+\]
+
+\vspace{0.2cm}
+
+siempre que las  esperanzas existan.
+\end{defi}
+
+\vspace{0.2cm}
+
+Podemos agregar algunas propiedades m\'as, de la varianza y covarianza:
+
+\vspace{0.2cm}
+
+\begin{itemize}
+\item $\mathbb{V}(X +Y) = \mathbb{V}(X) + 2cov(X,Y) + \mathbb{V}(Y)$
+\item Si $X$ y $Y$ son independientes : $cov(X,Y) = 0$ y $\mathbb{V}(X + Y) = \mathbb{V}(X) + \mathbb{V}(Y)$.
+\end{itemize}
+
+
+\vspace{0.2cm}
+
+La covarianza se utiliza a menudo como una medida de la dependencia de $X$ e $Y$  y la raz\'on de esto es que $cov(X, Y$) es un s\'olo un  n\'umero (en lugar de un objeto complicado como la funci\'on densidad conjunta) que contiene informaci\'on \'util sobre el comportamiento conjunto  de $X$ e $Y$. Por ejemplo, si $cov(X, Y)> 0$, entonces $X-\mathbb{E}(X)$ y  $Y-\mathbb{E}(Y)$ pueden tener una buena chance (en alg\'un sentido) de tener el mismo signo.
+
+La principal desventaja de la covarianza como medida de dependencia de $X$ e $Y$ es que no es invariante en la escala: Si $X$ y $Y$ esta\'an medidas en pulgadas y $U$ y $V$ tienen las misma medida en cent\'imetros (tal que $U = \alpha X$ y $V = \alpha Y$, donde $\alpha \sim 2.54$), entonces $cov(U,V) \sim 6cov(X,Y)$ a pesar del hecho de que el par $(X,Y)$ y $(U,V)$ miden la misma cantidad. Para tratar con esta \texttt{re-escala} en  la covarianza  se define lo siguiente:
+
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont \texttt{El coeficiente de correlaci\'on} de las variables aleatorias $X$ y $Y$ es la cantidad $\rho(X,Y)$ definida por:
+
+\vspace{0.2cm}
+
+\[
+\rho(X,Y) = \dfrac{cov(X ,Y)}{\sqrt{\mathbb{V}(X)\mathbb{V}(Y)}}
+\]
+
+\vspace{0.2cm}
+
+siempre que la \'ultima cantidad exista y $\mathbb{V}(X)\mathbb{V}(Y) \neq 0$.
+
+\end{defi}
+
+\vspace{0.2cm}
+
+
+Una propiedad del coeficiente de  correlaci\'on que se pueden deducir de la definici\'on es:  $\rho(aX +b, cY + d) = \rho(X,Y)$, para $a,b, c, d \in \mathbb{R}$ tal que $ac \neq 0$, es decir el coeficiente de correlaci\'on es invariante a escala.  La correlaci\'on tiene una propiedad importante como medida de dependencia:
+
+\begin{teo}
+\normalfont Si $X$ y $Y$ son variables aleatorias, entonces $-1 \leq \rho(X,Y) \leq 1$, siempre que la correlaci\'on exista. 
+\end{teo}
+
+\vspace{0.2cm}
+
+La prueba de este teorema, es una aplicaci\'on directa de la siguiente desigualdad:
+
+\vspace{0.2cm}
+
+\begin{teo}
+\normalfont (Teorema de Cauchy-Schwarz) Si $U$ y $V$ son variables aleatorias, entonces 
+
+\[
+[\mathbb{E}(UV)]^2 \leq \mathbb{E}(U^2)\mathbb{E}(V^2)
+\]
+
+\vspace{0.2cm}
+
+siempre que las esperanzas existan.
+
+\end{teo}
+
+\vspace{0.2cm}
+
+Para probar el \texttt{Teorema 1.1}, se coloca  $U = X - \mathbb{E}(X)$ y $V = Y - \mathbb{E}(Y)$, en la desigualdad de Cauchy-Schwarz, para hallar que:
+
+\[
+cov(X,Y)^2 \leq \mathbb{V}(X)\mathbb{V}(Y).
+\]
+
+Lo que concluye con el resultado.
+
+\vspace{0.3cm}
+
+Sea $a = \mathbb{V}(X)$, $b = 2cov(X,Y)$, $c = \mathbb{V}(Y)$  y supongamos que $\rho(X,Y) \pm 1$. Entonces tenemos que  $\mathbb{V}(X)\mathbb{V}(Y) \neq 0$ y 
+
+\vspace{0.2cm}
+
+\[
+b^2 - 4ac = 4\mathbb{V}(X)\mathbb{V}(Y)[\rho(X,Y)^2 - 1] = 0
+\]
+
+\vspace{0.2cm}
+
+y as\'i la ecuaci\'on cuadr\'atica: $as^2 + bs + c = 0$ tiene dos ra\'ices iguales en $s = \alpha$. Por tanto, $W = \alpha[X -\mathbb{E}(X)] + [Y -\mathbb{E}(Y)]$ satisface
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(W^2) = a\alpha^2 + b\alpha + c =0
+\]
+
+\vspace{0.2cm}
+
+dando que  $\mathbb{P}(W =0) = 1 $ y probando que $Y = -\alpha X + \beta$, donde $\beta = \alpha \mathbb{E}(X) + \mathbb{E}(Y)$.
+
+\vspace{0.3cm}
+
+Un tratamiento m\'as exahustivo distingue los valores de $\pm 1$:
+
+\begin{itemize}
+\item $\rho(X,Y) = 1$ si y s\'olo si $P(Y = \alpha X + \beta$) = 1 para alg\'un real $\alpha$ y $\beta$ con $\alpha > 0$.
+\item $\rho(X,Y) = -1$ si y s\'olo si $P(Y = \alpha X + \beta$) = 1 para alg\'un real $\alpha$ y $\beta$ con $\alpha < 0$.
+\end{itemize}
+
+\vspace{0.3cm}
+
+Se usa $\rho(X,Y)$ como una medida de las dependencias de $X$ y $Y$. Si $X$ y $Y$ tienen varianza distintas de cero, entonces $\rho(X,Y)$ toma alg\'un valor en el intervalo $[-1, 1]$ y este valor debe ser interpretado de la forma en que los valores $-1, 0, 1$ surgen:
+
+\begin{itemize}
+\item Si $X$ y $Y$ son independientes entonces $\rho(X,Y) = 0$.
+\item $Y $ es una funci\'on creciente de $X$ si y s\'olo si $\rho(X,Y) = 1$.
+\item $Y $ es una funci\'on decreciente de $X$ si y s\'olo si $\rho(X,Y) = -1$.
+\end{itemize}
+
+\vspace{0.2cm}
+
+Si $\rho(X,Y) = 0$  se dice que $X$ y $Y$ son \texttt{no correlacionados}.
+
+
+\vspace{0.5cm}
+
+\section{Funciones generadoras de momentos}
+
+\vspace{0.2cm}
+
+Si $X$ es una variable aleatoria tomando los valores en $\{ 0,1,2, \dots\}$, una  funci\'on generadora de probabilidad es definida como:
+
+\vspace{0.2cm}
+
+\begin{equation}
+\mathbb{G}_X(s) = \mathbb{E}(s^X) = \sum_{k = 0}^{\infty}s^{k}\mathbb{P}(X =k)
+\end{equation}
+
+\vspace{0.2cm}
+
+Las funciones generadoras de probabilidad son muy \'utiles, pero s\'olo cuando las variables aleatorias toman valores enteros no negativos. Para variables aleatorias mucho m\'as generales,  es necesario hacer una modificaci\'on de la ecuaci\'on anterior. 
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont {La funci\'on generadora de momentos (mgf)} de la variable aleatoria de $X$ es la funci\'on $\mathbb{M}_X$ definida como:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{M}_{X}(t) = \mathbb{E}(e^{tX})
+\]
+
+\vspace{0.2cm}
+
+para todo $t \in \mathbb{R}$ para el cual la esperanza existe.
+
+\end{defi}
+
+\vspace{0.3cm}
+
+Esta es una modificaci\'on de (2), en el sentido que, si $X$ toma valores en $\{0,1,2, \dots \}$, entonces
+
+\vspace{0.2cm}
+
+\[
+\mathbb{M}_{X}(t) = \mathbb{E}(e^{tX}) = \mathbb{G}_{X}(e^t)
+\]
+
+\vspace{0.2cm}
+
+con la sustituci\'on de $s = e^t$. En general:
+
+\vspace{0.3cm}
+
+\[
+\mathbb{M}_{X}(t) = \mathbb{E}(e^{tX}) = \begin{dcases}
+\sum_{x}e^{tx}\mathbb{P}(X =x) & \ \ \text{si}\ \ X \ \ \text{es discreta}\\
+\bigintsss_{-\infty}^{\infty}e^{tx}f_{X}(x)dx & \ \ \text{si}\ \ X \ \ \text{es continua}
+\end{dcases}
+\]
+
+\vspace{0.2cm}
+
+siempre que esta suma o integral converga absolutamente. En algunos casos, la existencia de $M_X(t)$ puede plantear un problema para valores $t$ distintos de cero.
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Si $X$ tiene una distribuci\'on normal con media $0$ y varianza $1$, entonces
+
+\vspace{0.2cm}
+
+
+\begin{align*}
+ \mathbb{M}_{X}(t) &= \bigintsss_{-\infty}^{\infty}e^{tx}\dfrac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}dx \\
+ &= e^{\frac{1}{2}t^2}\bigintsss_{-\infty}^{\infty}\dfrac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(x -t)^2}dx \\
+ & = e^{\frac{1}{2}t^2}
+\end{align*}
+
+\vspace{0.2cm}
+
+desde que el integrando en la \'ultima integral es la funci\'on densidad de la distribuci\'on normal con media $t$ y varianza $1$, la integral tiene que ser $1$. El momento $\mathbb{M}_{X}(t)$ existe para todo $t \in \mathbb{R}$.
+
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Si $X$ tiene una distribuci\'on de Poisson con par\'ametro $\lambda$: 
+
+\vspace{0.2cm}
+
+\[
+p_{X}(x) = \dfrac{\lambda^x e^{-\lambda}}{x!} \ \ x =0, 1,2, \dots
+\]
+
+\vspace{0.2cm}
+
+\[
+M_X(t) = \displaystyle\sum_{x = 0}^{\infty}e^{tx}\dfrac{\lambda^{x}e^{-\lambda}}{x!}
+\]
+
+Sea $a = e^t\lambda$ entonces obtenemos $M_X(s) = e^{\lambda(e^s -1)}$.
+
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Si $X$ tiene una distribuci\'on exponencial con param\'etro $\lambda$, entonces
+
+\vspace{0.3cm}
+
+\[
+M_{X}(t) = \bigintsss_{0}^{\infty}e^{tx}\lambda e^{-\lambda x}dx = \begin{cases}
+\dfrac{\lambda}{\lambda - t} & \ \text{si}\ \ t < \lambda\\
+\infty & \ \ \text{si}\ \ t\geq \lambda.
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+as\'i existe $M_X(t)$ existe s\'olo para valores $t$ satisfaciendo $t < \lambda $.
+
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Si $X$ tiene una distribuci\'on de Cauchy, entonces
+
+\vspace{0.2cm}
+
+\[
+M_{X}(t) = \bigintsss_{-\infty}^{\infty}e^{tx}\dfrac{1}{\pi(1 + x^2)} dx = \begin{cases}
+1 & \ \text{si}\ \ t = 0\\
+\infty & \ \ \text{si}\ \ t\neq 0.
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+as\'i $M_X(t)$ existe s\'olo cuando $t = 0$.
+
+\end{ejemplo}
+
+
+\vspace{0.5cm}
+
+La dificultad de la existencia de $\mathbb{E}(e^{tX})$ puede ser evitada usando la funci\'on de variable compleja $\phi_{X}(t) = \mathbb{E}(e^{itX})$ llamada \texttt{funci\'on caracter\'istica} de $X$ que existe para todo $t \in \mathbb{R}$.  Es importante decir que $\mathbb{E}(e^{tX})$ existe en alguna vecindad del origen y la raz\'on est\'a contenida en el teorema de unicidad de funciones generadores de momentos. Generalmente utilizaremos las funciones generadoras de momentos libremente, pero siempre sujetas a la asunci\'on impl\'icita de la existencia de una vecindad  del origen.
+
+\vspace{0.5cm}
+
+La  raz\'on del nombre de funci\'on generadora de momentos es la siguiente la expansi\'on que muestra que $\mathbb{M}_{X}(t)$ es la funci\'on generadora exponencial de los momentos de $X$:
+
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{M}_{X}(t) = \mathbb{E}(e^{tX}) = \mathbb{E}\Bigl(1 +tX + \dfrac{1}{2!}(tX)^2 + \cdots \Bigr) \\
+ = 1 + t\mathbb{E}(X) + \dfrac{1}{2!}t^2\mathbb{E}(X^2) + \cdots
+\end{align*}
+
+
+\vspace{0.2cm}
+
+\begin{teo}
+\normalfont Si $\mathbb{M}_{X}(t)$ existe en una vecindad de $0$, entonces para $k = 1, 2 \dots$
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(X^k) = \mathbb{M}_{X}^{(k)}(0)
+\]
+
+\vspace{0.2cm}
+
+la \texttt{k-\'esima} derivada de $\mathbb{M}_X(t)$ evaluada en $t = 0$.
+
+\end{teo}
+
+\vspace{0.6cm}
+
+Como se ha se\~nalado antes, mucho de la teoria se refiere a la suma de variables aleatorias, que puede ser dif\'icil en la pr\'actica calcular de la distribuci\'on de una suma a partir del conocimiento de las distribuciones de los sumandos y es aqu\'i donde las funciones generadoras de momentos  son muy \'utiles.
+
+\vspace{0.3cm}
+
+Consideremos primero  la funci\'on lineal $aX + b$ de la variable aleatoria $X$. Si $a ,b \in \mathbb{R}$
+
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{M}_{aX +b}(t) = \mathbb{E}(e^{t(aX + b)}) = \mathbb{E}(e^{atX}e^{tb}) \\
+= e^{tb}\mathbb{E}(e^{(at)X})
+\end{align*}
+
+\vspace{0.2cm}
+
+
+lo que produce que $\mathbb{M}_{aX + b}(t) = e^{tb}\mathbb{M}_{X}(at)$.
+
+
+\vspace{0.3cm}
+
+\begin{teo}
+\normalfont  Si $X$ e $Y$ son variables aleatorias independientes, entonces $X + Y$ tiene una funci\'on generadora de momentos:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{M}_{X +Y}(t) = \mathbb{M}_{X}(t)\mathbb{M}_{Y}(t)
+\]
+\end{teo}
+
+\vspace{0.3cm}
+
+Tenemos por independencia y propiedad de la esperanza para la variable aleatoria $X$ y $Y$:
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{M}_{X +Y}(t) = \mathbb{E}(e^{t(x + y)}) = \mathbb{E}(e^{tX}e^{tY}) \\
+= \mathbb{E}(e^{tX})\mathbb{E}(e^{tY})
+\end{align*}
+
+\vspace{0.2cm}
+
+En general la suma $S = X_1 + \cdots + X_n$ de $n$ variables aleatorias independientes tiene una funci\'on generadora de momentos de la forma:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{M}_{S}(t) = \mathbb{M}_{X_1}(t)\cdots \mathbb{M}_{X_n}(t)
+\]
+
+\vspace{0.5cm}
+
+\begin{teo}
+\normalfont (Unicidad) Si la funci\'on generadora de momentos $\mathbb{M}_{X}$ satisface $\mathbb{M}_{X}(t) = \mathbb{E}(e^{tX}) < \infty$ para todo $t$ satisfaciendo $-\delta < t < \delta$ para alg\'un $\delta > 0$, entonces existe una \'unica distribuci\'on con  funci\'on generadora de momentos $\mathbb{M}_{X}$. Adem\'as bajo esta condici\'on, se tiene que $\mathbb{E}(X^{k}) < \infty$ para $k = 1,2, \dots$ y
+
+\vspace{0.2cm}
+
+\[
+\mathbb{M}_{X}(t) = \displaystyle\sum_{k =0}^{\infty}\dfrac{1}{k!}\mathbb{E}(X^k) \ \ \text{para} \ \ \vert t\vert < \delta.
+\]
+\end{teo}
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Sean $X$ e $Y$ dos variables aleatorias independiendientes, teniendo $X$ una distribuci\'on normal con par\'ametros $\mu_1$ y $\sigma_1^2$ y $Y$  una distribuci\'on normal con par\'ametros $\mu_2$ y $\sigma_2^2$, veamos que propiedades tiene la suma $Z = X +Y$:
+
+\vspace{0.2cm}
+
+Sea $U$ una variable aleatoria que tiene una distribuci\'on normal con par\'ametros $\mu$ y $\sigma^2$. La funci\'on generadora de momentos de $U$ es:
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{M}_U(t) &= \bigintsss_{-\infty}^{\infty}e^{tu}\dfrac{1}{\sqrt{2\pi\sigma^2}}\exp{\Bigl(-\dfrac{1}{2\sigma^2}(u -\mu)^2}\Bigr)du \\
+=& e^{\mu t}\bigintsss_{-\infty}^{\infty}e^{x\sigma t}\dfrac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}dx \ \ \ \text{sustituyendo} \ \ \ x = \dfrac{u -\mu}{\sigma}\\
+=& \exp(\mu t + \frac{1}{2}\sigma^2t^2)
+\end{align*}
+
+\vspace{0.2cm}
+
+Por el teorema de unicidad:
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{M}_{Z}(t) &= \mathbb{M}_{X}(t)\mathbb{M}_{Y}(t) \\
+ &= \exp{(\mu_1 t + \frac{1}{2}\sigma_1^2t^2)}\exp{(\mu_2 t + \frac{1}{2}\sigma_2^2t^2)} \\
+ &=\exp\Bigl[ (\mu_1 + \mu_2)t + \frac{1}{2}(\sigma_1^2 + \sigma_2^2)t^2\Bigr]
+\end{align*}
+
+\vspace{0.3cm}
+
+Luego se deduce que es la funci\'on generadora de momentos  de la distribuci\'on normal con par\'ametros $\mu_1 + \mu_2$ y $\sigma_1^2 + \sigma_2^2$. As\'i $Z$ tiene esta distribuci\'on  apelando al teorema de unicidad.
+
+\end{ejemplo}
+\vspace{0.5cm}
+
+
+\subsection{Transformada de Laplace}
+
+\vspace{0.2cm}
+
+Una funci\'on que est\'a estrechamente relacionada con la funci\'on generadora de momentos es la transformada de Laplace. Para una funci\'on real valorada $h(t), t \geq 0$, la transformada de Laplace, denotada por $h^{*}(s)$, es definida como:
+
+\[
+h^{*}(s) = \bigints_{0}^{\infty}e^{-sx}h(x)dx
+\]
+
+\vspace{0.2cm}
+
+Si $h(t), t \geq 0$, es una funci\'on que corresponde a una funci\'on de densidad de una variable aleatoria no negativa $X$ entonces por la definici\'on de una funci\'on generadora de momentos,  la transformada de Laplace de la funci\'on $h^{*}(s)$ es igual a la funci\'on generadora de momentos de $X$ evaluado en $-s$, es decir:
+
+\vspace{0.2cm}
+
+\begin{equation}
+h^{*}(s) = \mathbb{M}_{X}(-s).
+\end{equation}
+
+\vspace{0.2cm}
+
+Para preservar la sem\'antica asociada con variables aleatorias utilizamos la notaci\'on $\mathcal{L}_X$  cuando se trata de la transformada de Laplace de una variable aleatoria $X$:
+
+\vspace{0.2cm}
+
+\[
+\mathcal{L}_X(s) = \bigints_{0}^{\infty}e^{-sx}f_X(x)dx.
+\]
+
+\vspace{0.2cm}
+
+Una interpretaci\'on de la transformada para el caso de una variable aleatoria es que es la esperanza de $\exp[-sX]$ y  por tanto, puede escribirse como:
+
+\[
+\mathcal{L}_X(s) = \mathbb{E}[e^{-sX}].
+\]
+
+
+\vspace{0.2cm}
+
+La transformada de Laplace es generalmente m\'as \'util que la funci\'on generadora de momentos, ya que puede aplicarse a funciones que no son densidades. La transformada de Laplace es la contrapartida continua de la funci\'on de generadora ordinaria que se vi\'o anteriormente. Para ver la relaci\'on entre estas dos funciones, supongamos que la funci\'on  $h(t)$ toma valores no nulos para el entero $t$, es decir, que $h(t)=h_i$, para $t=i$ e $i = 0,1, \dots$  y sea $H(x)$ la funci\'on generadora:
+
+\[
+H(x) = \sum_{i = 0}^{\infty}h_ix^i.
+\]
+
+\vspace{0.2cm}
+
+Entonces, se sigue que:
+
+\vspace{0.2cm}
+
+\begin{equation}
+h^{*}(s) = \bigints_{0}^{\infty}e^{-sx}h(x) dx = \sum_{j = 0}^{\infty}e^{-sj}h_j = H(e^{-s}).
+\end{equation}
+
+\vspace{0.2cm}
+
+Y as\'i la transformaci\'on de Laplace es igual a la funci\'on generadora evaluado en $e^{-s}$. Si $h_i$ representa, a funci\'on de densidad de probabilidad, entonces las ecuaciones (3) y (4) muestran que simplemente hemos establecido una forma diferente de relaci\'on entre las funciones generadoras de momentos y sus correspondientes funciones generadoras de probabilidad para variables aleatorias discretas.
+
+\vspace{0.2cm}
+
+Dado que las transformadas de Laplace son equivalentes a funciones generadoras de momentos cuando la funci\'on subyacente es una densidad, se sigue que ellas satisfacen propiedades an\'alogas a las que se dan para las funciones generadoras de momentos. Por ejemplo, se cumple lo siguiente:
+
+\[
+\mathcal{L}_{X}^{(n)}(0) = (-1)^n\mathbb{E}(X^n).
+\]
+
+\vspace{0.2cm}
+
+La transformada de Laplace se usa frecuentemente cuando se forma la \underline{convoluci\'on de dos variables aleatorias}. Para derivar la transformada de Laplace para una convoluci\'on, se $h(t)$  la funci\'on  densidad que resulta cuando convolucionamos dos funciones de densidad continuas $f$ y $g$. El operador de convoluci\'on para funciones de densidad se define como:
+
+\[
+h(t) = \bigints_{0}^{t}f(x -t)g(x)dx.
+\]
+
+\vspace{0.2cm}
+
+De manera equivalente, escribimos la notaci\'on de convoluci\'on como:
+
+\vspace{0.2cm}
+
+\[
+h(t) = f \odot g(t).
+\]
+
+\vspace{0.2cm}
+
+Para calcula $h^{*}(s)$ escribimos:
+
+\begin{align*}
+h^{*}(s)& = \bigints_{0}^{\infty}e^{-st}h(t)dt \\
+        & = \bigints_{0}^{\infty}e^{-st}dt\bigints_{0}^{t}f(t -x)g(x)dx \\
+        & =  \bigints_{0}^{\infty}e^{-sx}g(x)dx \bigints_{0}^{\infty}e^{-s(t -x)}f(t -x)dx \\
+        & = g^{*}(s)f^{*}(s).
+\end{align*}
+\vspace{0.5cm}
+
+
+\subsection{Algunos resultados}
+
+\vspace{0.2cm}
+
+Sea $-\infty \leq a < b < \infty$ una funci\'on $g: (a ,b) \rightarrow \mathbb{R}$ es \texttt{convexa} si
+
+\vspace{0.2cm}
+
+\[
+g([1 -t]u + tv) \geq (1 -t)g(u) + tg(v)
+\]
+
+\vspace{0.2cm}
+
+para $t \in [0,1]$ y $u, v \in (a,b)$.
+
+
+\vspace{0.5cm}
+
+
+Presentamos el teorema de soporte de hiperplanos que servir\'a para la desigualdad de Jensen, basado en el gr\'afico siguiente
+
+\vspace{0.2cm}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.55]{j1.png}
+\end{figure}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Sea $g:(a,b) \rightarrow \mathbb{R}$ convexa y sea $w \in (u,v)$. Entonces existe un $\alpha \in \mathbb{R}$ tal que 
+
+\vspace{0.2cm}
+
+\[
+g(x) \geq g(w) + \alpha(x -w)\ \ \text{para}\ \ \ x\in (a,b)
+\]
+
+\end{pros}
+
+\vspace{0.5cm}
+
+\begin{teo}
+\normalfont \texttt{(Desigualdad de Jensen)} Sea $X$ una variable aleatoria que toma valores en el intervalo (posiblemente infinito) $(a ,b)$ tal que $E(X)$ existe y sea $g:(a, b)\rightarrow \mathbb{R}$ una funci\'on convexa tal que $\mathbb{E}\vert g(X) \vert < \infty$. Entonces:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(g(X)) \geq g(\mathbb{E}(X)).
+\]
+\end{teo}
+  
+\vspace{0.3cm}
+
+Sea $X$ que toma valores en $(a ,b)$ con media $\mu = \mathbb{E}(X)$. Sea $g$ una funci\'on convexa sobre este intervalo satisfaciendo $\mathbb{E}\vert g(X) \vert < \infty$. Por la proposici\'on (2.1) con $w = \mu$ existe un $\alpha \in \mathbb{R}$ tal que $g(x) \geq g(\mu) + \alpha(x -\mu)$. Por tanto $g(X) \geq g(\mu) + \alpha(X -\mu)$. Tomando esperanza en ambos lados, obtenemos $\mathbb{E}(g(X) \geq g(\mu)$.
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont La funci\'on $g(x) = -\log x$ es convexa en el intervalo $(0, \infty)$. Por la desigualdad de Jensen aplicada a una variable aleatoria $X$ positiva con media finita,
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(\log X) \leq \log(\mathbb{E}(X))
+\]
+
+\vspace{0.2cm}
+
+Supongamos que $X$ es una variable aleatoria discreta que es igual de probable de tener los valores $x_1, x_2, \dots, x_n$. Entonces:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(\log X) =\dfrac{1}{n}\displaystyle\sum_{i = 1}^{n}\log x_i = \log \gamma, \ \ \ \mathbb{E}(X) = \overline{X}
+\]
+
+\vspace{0.2cm}
+
+donde 
+
+\vspace{0.2cm}
+
+\[
+\gamma = \Bigl( \prod_{i=1}^{n}x_i\Bigr)^{1/n}, \ \ \ \ \ \  \overline{x} = \dfrac{1}{n}\displaystyle\sum_{i=1}^{n}x_i
+\]
+
+\vspace{0.2cm}
+
+son la media geom\'etrica y aritm\'etica de los valores $x_i$ respectivamente, con la propiedad que $\log \gamma \leq \log \overline{X}$ que conduce a que  $\gamma \leq \overline{x}$.
+
+\end{ejemplo}
+
+
+La desigualdad de Markov se refiere a la siguiente pregunta: si sabes que la esperanza $\mathbb{E}(X)$ de una variable aleatoria no negativa $X$ es finita, ?`qu\'e dice esto acerca de la distribuci\'on de $X$?. Las llamadas \texttt{colas} derecha e izquierda de $X$ son las probabilidades de que $X$ sea grande y positiva (respectivamente, grande y negativa). M\'as espec\'ificamente, la \texttt{cola} (derecha) es la funci\'on $\mathbb{P}(X \geq  t)$ para $t$ grande, con una definici\'on correspondiente para la \texttt{cola} izquierda. Si $X$ es positiva y $\mathbb{E}(X) < \infty$, entonces la \texttt{cola} derecha de $X$ no puede ser demasiada 'grande'.
+
+
+\vspace{0.2cm}
+
+\begin{teo}
+\normalfont (\texttt{Desigualdad de Markov}) Para una variable no negativa $X$
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(X \geq t) \leq \frac{\mathbb{E}(X)}{t}\ \ \text{para}\ \ t > 0.
+\]
+\end{teo}
+
+\vspace{0.2cm}
+
+
+Sea $X$ una variable aleatoria no negativa y sea $t > 0$. Como $X$ es una funci\'on desde $\Omega $ a $[0, \infty)$, tenemos la desigualdad trivial:
+
+\[
+X(\omega) = \begin{cases}
+t & \text{Si}\ \ X(\omega) \geq t, \\
+0 & \text{Si}\ \  X(\omega) < t
+\end{cases}
+\]
+
+para $\omega \in \Omega$. Podemos escribir, esto como una desigualdad entre la funci\'on $X$ y la funci\'on indicador del evento $A = \{ X \geq t \}$:
+
+\[
+X \geq tI_A
+\]
+
+Ahora tomando, esperanza y recordando que $\mathbb{E}(I_A) = \mathbb{P}(A)$, tenemos la desigualdad requerida $\mathbb{E}(X) \geq t\mathbb{P}(X \geq t)$.
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Sea $X$ una variable aleatoria. El n\'umero $m$ es llamado una \texttt{mediana} de $X$, si
+
+\[
+\mathbb{P}(X < m)\leq \frac{1}{2} \leq \mathbb{P}(X \leq m)
+\]
+\end{ejemplo}
+
+
+ \end{document}
