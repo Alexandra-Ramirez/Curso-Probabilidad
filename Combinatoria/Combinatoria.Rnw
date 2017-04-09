@@ -274,7 +274,7 @@ P(n,k) = nP(n - 1,k - 1),\ \  k = 1,2,\dots,n,\ \  n = 1,2,\dots
 
 \vspace{0.2cm}
 
-Podemos explicar esta f\'ormula de la siguiente manera: La primera bola elegida puede ser cualquiera de las $n$ bolas distinguibles. Esto deja $n -1$ bolas a partir de las cuales $k- 1$  debe ser elegidas, el n\'umero de maneras en que $k-1$ bolas se pueden elegir de $n - 1$ es igual a $P(n- 1, k -1)$.
+Podemos explicar esta f\'ormula de la siguiente manera: La primera bola elegida puede ser cualquiera de las $n$ bolas distinguibles. Esto deja $n -1$ bolas a partir de las cuales $k- 1$  deben ser elegidas, el n\'umero de maneras en que $k-1$ bolas se pueden elegir de $n - 1$ es igual a $P(n- 1, k -1)$.
 
 \vspace{0.2cm}
 
@@ -448,7 +448,7 @@ Como vimos anteriormente, cualquier colecci\'on de k \'items distintos puede ser
 
 \vspace{0.2cm}
 
-Estas son todas diferentes permutaciones porque el orden es importante. Si el orden no es importante, entonces la única informaci\'on que necesitamos es que haya un A, un B y un C. Todas las $3!$ permutaciones producen entonces  una sola combinaci\'on. Esto nos proporciona un medio para relacionar permutaciones sin reemplazo a combinaciones sin reemplazo. 
+Estas son todas diferentes permutaciones porque el orden es importante. Si el orden no es importante, entonces la ?nica informaci\'on que necesitamos es que haya un A, un B y un C. Todas las $3!$ permutaciones producen entonces  una sola combinaci\'on. Esto nos proporciona un medio para relacionar permutaciones sin reemplazo a combinaciones sin reemplazo. 
 
 \vspace{0.2cm}
 
@@ -782,7 +782,7 @@ Secuencias de n repeticiones independientes de un experimento de probabilidad co
 
 \vspace{0.2cm}
 
-Sea la probabilidad de \'exito denotada por $p$ y la probabilidad de fracaso por $q = 1- p$. La probabilidad de obtener tres \'exitos y dos fracasos es igual a $p^3q^2 = 0,7^3 \times 0,3^ 2 = 0,03087$. El número de maneras en que esto puede suceder, esto es, el n\'umero de resultados con exactamente tres \'exitos, es $C(5,3) = 10$. As\'i, la respuesta que buscamos es igual a $0.3087$. 
+Sea la probabilidad de \'exito denotada por $p$ y la probabilidad de fracaso por $q = 1- p$. La probabilidad de obtener tres \'exitos y dos fracasos es igual a $p^3q^2 = 0,7^3 \times 0,3^ 2 = 0,03087$. El n?mero de maneras en que esto puede suceder, esto es, el n\'umero de resultados con exactamente tres \'exitos, es $C(5,3) = 10$. As\'i, la respuesta que buscamos es igual a $0.3087$. 
 \end{ejemplo}
 
 \vspace{0.2cm}
@@ -845,7 +845,7 @@ El uso de las t\'ecnicas de complementaci\'on y la ley de DeMorgan con frecuenci
 
 \vspace{0.2cm}
 
-La misión continuar\'a y se considerar\'a exitosa, siempre y cuando por lo menos una de las computadoras ejecute sus tareas correctamente. Considere un sistema en el cual tres computadoras realizan la misma secuencia de seis tareas una despu\'es de la otra. Las pruebas de consistencia se integran en cada tarea.
+La misi?n continuar\'a y se considerar\'a exitosa, siempre y cuando por lo menos una de las computadoras ejecute sus tareas correctamente. Considere un sistema en el cual tres computadoras realizan la misma secuencia de seis tareas una despu\'es de la otra. Las pruebas de consistencia se integran en cada tarea.
 
 \vspace{0.2cm}
 
