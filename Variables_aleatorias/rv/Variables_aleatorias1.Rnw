@@ -625,19 +625,19 @@ y el \texttt{CDF} es mostrado en la siguiente figura. Se debe notar que la funci
 \[
 F_X(x) = \begin{cases}
 0, &  x< 0 \\
-x, &  0 \leq 1,\\
-1 &   x \leq 1
+x, &  0 \leq x < 1,\\
+1 &   x \geq 1,
 \end{cases}
 \]
 
 \vspace{0.2cm}
 
-La funci\'on de distribuci\'on acumulativa, no tienen derivada , excepto en $x = 0$. y $x= 1$. Las funciones de distribuci\'on de variables aleatorias  deben ser \texttt{absolutamente  continuas}, esto es, que son continuas y que sus derivadas existen salvo por un conjunto finito de puntos.
+La funci\'on de distribuci\'on acumulativa, tienen derivada en todas partes, excepto en $x = 0$. y $x= 1$. Las funciones de distribuci\'on de variables aleatorias  deben ser \texttt{absolutamente  continuas}, esto es, que son continuas y que sus derivadas existen salvo por un conjunto finito de puntos.
  \end{ejemplo}
  
  
  \begin{ejemplo}
- \normalfont Consideramos una variable aleatoria $X$ definida como:
+ \normalfont Consideramos una variable aleatoria $X$, con una funci\'on de distribuci\'on definida como:
  
  \[
  F_{X}(x) = \begin{cases}
@@ -668,7 +668,7 @@ La funci\'on de distribuci\'on acumulativa, no tienen derivada , excepto en $x =
  \item $ F_X(x) = 0$ para todo $x$ suficientemente peque\~no.
  \item $F_X(x) =  1$ para todo $x$ suficientemente grande.
  \end{itemize}
- \item $F_X(x)$ es una funci\'on no decreciente en $x$. Como $(-\infty, x_1] \in (-\infty, x_2]$ para $x_1 \leq x_2$, se sigue que $F_X(x_1) \leq F_X(x_2)$ para $x_1 \leq x_2$.
+ \item $F_X(x)$ es una funci\'on no decreciente en $x$. Como $(-\infty, x_1] \subset (-\infty, x_2]$ para $x_1 \leq x_2$, se sigue que $F_X(x_1) \leq F_X(x_2)$ para $x_1 \leq x_2$.
  \item $F_X(x)$ es \texttt{continua por la derecha}. Esto significa que para alg\'un $x$ y una secuencia decreciente $x_k$ con $k \geq 1$ que converga a $x$, se cumple que $\displaystyle \lim_{k \rightarrow \infty}F_X(x_k) = F_X(x)$.
  \end{enumerate}
  
@@ -711,7 +711,7 @@ Para una variable aleatoria discreta, $F_X(x)$ tiene la apariencia de escalera. 
 \vspace{0.3cm}
 
 \begin{align*}
-F_X(x) &= F_X(x_i)\ \ \text{para}\ \ x_i \leq x \leq x_{i +1}\\
+F_X(x) &= F_X(x_i)\ \ \text{para}\ \ x_i \leq x < x_{i +1}\\
 F_X(x_{i + 1}) &= F_X(x_i) + p_{X}(x_{i + 1}).
 \end{align*}
 
