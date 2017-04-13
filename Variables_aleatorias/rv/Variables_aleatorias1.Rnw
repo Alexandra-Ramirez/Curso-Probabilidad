@@ -76,7 +76,7 @@ Dado un experimento y el correspondiente conjunto de posibles respuestas o salid
 \vspace{0.2cm}
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=11cm]{d1a}
 \end{figure}
@@ -187,7 +187,7 @@ En este caso observa  que la variable aleatoria $Y$ tiene el mismo dominio que $
 \vspace{0.2cm}
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=13cm]{d1}
 \end{figure}
@@ -201,7 +201,7 @@ Esta variable aleatoria divide el espacio muestral en seis subconjuntos: el prim
 \vspace{0.2cm}
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=15cm]{d2}
 \end{figure}
@@ -325,7 +325,7 @@ La notaci\'on $[X = x]$ define un evento: el evento que contiene todos los resul
 \vspace{0.2cm}
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=13cm]{d3}
 \end{figure}
@@ -337,7 +337,7 @@ La forma tabular correspondiente de este gr\'afico de barras se muestra a contin
 \vspace{0.2cm}
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=13cm]{d4}
 \end{figure}
@@ -377,7 +377,7 @@ y cada uno de los elementos tiene una probabilidad de $1/8 = 0.125$. Sea $Q$ la 
 \vspace{0.2cm}
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=8cm]{d5}
 \end{figure}
@@ -527,7 +527,7 @@ Esta es la probabilidad de que el n\'umero de puntos obtenidos sea $4$ o menos. 
 \vspace{0.2cm}
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=10cm]{d6}
 \end{figure}
@@ -540,7 +540,7 @@ Para la variable aleatoria $R$, que denota el n\'umero de caras  obtenidas en tr
 \vspace{0.2cm}
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=10cm]{d6a}
 \end{figure}
@@ -722,7 +722,7 @@ Como se muestra en la siguiente figura:
 
 \vspace{0.2cm}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[scale=.45]{d11.png}
 \end{figure}
@@ -905,7 +905,7 @@ x & 0 \leq x \leq 1\\
 
 y cuyo gr\'afico es 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[scale=.55]{d3a.png}
 %\caption{Modelo del problema}
@@ -1005,7 +1005,7 @@ Es tradicional escribir $X \sim  F$ para indicar que $X$ tiene una distribuci\'o
 \section{Ejemplos }
  
  
- Algunas de la m\'as importantes variables aleatorias discretas, se listan a continuaci\'on
+ Algunas de la m\'as importantes variables aleatorias discretas, se listan a continuaci\'on:
 
 
 \subsection{Distribuci\'on de masa puntual} $X$ tiene una distribuci\'on de masa puntual en $a$, $X \sim \delta_a$, si $\mathbb{P}(X =a) =1$, en el caso que 
@@ -1038,12 +1038,12 @@ Decimos que $X$ tiene una distribuci\'on uniforme sobre $\{1, \dots, k \}$.
 \subsection{Distribuci\'on de Bernoulli} Sea $X$ que representa una lanzamiento de una moneda. Entonces $\mathbb{P}(X = 1) = p$ y $\mathbb{P}(X= 0) = 1 - p$ para alg\'un $p \in [0,1]$, entonces decimos que $X$ tiene una distribuci\'on de Bernoulli, escrita como $X \sim\mbox{Bernoulli}(p)$. La funci\'on \mbox{probabilidad} es $p_X(x) = p^{x}(1 - p)^{1-x}$ para $x \in \{0,1\}$.
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[scale=.45]{p1.png}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[scale=.45]{p2.png}
 \end{figure}
@@ -1065,12 +1065,12 @@ p_X(x) = \begin{cases}
 Esta es la suma de $n$ variables aleatorias independientes de Bernoulli. Se denota como $X \sim\mbox{Binomial}(n, p)$.
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[scale=.45]{p3.png}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[scale=.45]{p4.png}
 \end{figure}
@@ -1187,12 +1187,12 @@ La distribuci\'on de Poisson es usado a menudo como un modelo para eventos, como
 
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[scale=.5]{p5.png}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[scale=.5]{p6.png}
 \end{figure}
