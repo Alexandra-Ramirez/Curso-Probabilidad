@@ -1,4 +1,4 @@
-# Curso de Probabilidad y Estadística 
+# Curso de elemental de teoria de probabilidades.
 
 ## Lecturas previas
 
