@@ -50,7 +50,7 @@
 ### Variables aleatorias y funciones de distribución
 
  - Variables aleatorias discretas y continuas.
- - Pmf de una variable aleatoria discreta.
+ - PMF de una variable aleatoria discreta.
  - Función de distribución acumulativa.
  - Función densidad de probabilidad para una variable aleatoria continua.
  - Funciones de una variable aleatoria.
