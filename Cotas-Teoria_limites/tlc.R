@@ -37,3 +37,13 @@ central_limite<- function (r=runif, m=.5, s=1/sqrt(12), n=c(1,3,10,30), N=1000) 
 op <- par(mfrow=c(2,2))
 central_limite()
 par(op)
+
+
+op <- par(mfrow=c(2,2))
+central_limite(rexp, m=1, s=1)
+par(op)
+
+op <- par(mfrow=c(2,2))
+central_limite(function (n) { rnorm(n, sample(c(-3,3),n,replace=T)) }, 
+                m=0, s=sqrt(10), n=c(1,2,3,10))
+par(op)
