@@ -143,7 +143,7 @@ Lo que conduce a una interesante f\'ormula:
 
 
 \[
-\mathbb{E}(X) = \sum_{i =1}^{\infty}\mathbb{P}(x \geq i)
+\mathbb{E}(X) = \sum_{i =1}^{\infty}\mathbb{P}(X \geq i)
 \]
 
 
@@ -177,9 +177,9 @@ Los primeros dos momentos son los m\'as importantes. El primero, es conocido com
 Los momentos centrales son tambi\'en importantes. Ellos son los momentos de la diferencia entre la variable aleatoria $X$ y el valor medio $\mathbb{E}(X)$. El n-\'esimo momento central es dado por:
 
 \[
-\mathbb{E}[(X - \mathbb{E}(x))^n] = \begin{cases}
-\bigints_{-\infty}^{\infty}(x - \mathbb{E}(X))^nf_X(x)dx &\ \text{si X es continua}\\
-\sum_{i}(x_i - \mathbb{E}(x))^np_i  &\ \ \text{si X es discreta}
+\mathbb{E}[(X - \mathbb{E}(X))^n] = \begin{cases}
+\bigints_{-\infty}^{\infty}(X - \mathbb{E}(X))^nf_X(x)dx &\ \text{si X es continua}\\
+\sum_{i}(x_i - \mathbb{E}(X))^np_i  &\ \ \text{si X es discreta}
 \end{cases}
 \]
 
@@ -189,9 +189,9 @@ Los momentos centrales son tambi\'en importantes. Ellos son los momentos de la d
 El segundo momento central es llamada \texttt{varianza} de la variable aleatoria $X$ y es escrita como:
 
 \[
-\mathbb{V}(X) = \mathbb{E}[(X - \mathbb{E}(x))^2] = \begin{cases}
+\mathbb{V}(X) = \mathbb{E}[(X - \mathbb{E}(X))^2] = \begin{cases}
 \bigints_{-\infty}^{\infty}(x - \mathbb{E}(X))^2f_X(x)dx &\ \text{si X es continua}\\
-\sum_{i}(x_i - \mathbb{E}(x))^2p_i  &\ \ \text{si X es discreta}
+\sum_{i}(x_i - \mathbb{E}(X))^2p_i  &\ \ \text{si X es discreta}
 \end{cases}
 \]
 
@@ -200,12 +200,12 @@ El segundo momento central es llamada \texttt{varianza} de la variable aleatoria
 Una f\'ormula usada para la varianza es:
 
 \[
-\mathbb{V}(x) = \mathbb{E}(X^2) - [\mathbb{E}(x)]^2.
+\mathbb{V}(x) = \mathbb{E}(X^2) - [\mathbb{E}(X)]^2.
 \]
 
 \vspace{0.2cm}
 
-De esta ecuaci\'on, se tiene que la varianza, no puede ser no negativa y caracteriza la dispersi\'on de la variable aleatoria $X$ con respecto a la media. La ra\'iz cuadrada de la varianza, es la \texttt{desviaci\'on est\'andar} de  $X$, denotada como $\sigma_X$. La desviaci\'on est\'andar produce un n\'umero cuyas unidades son iguales a la de la variable aleatoria y por esta raz\'on proporciona una imagen m\'as clara de la dispersi\'on de la variable aleatoria respecto de  su media. Una caracterizaci\'on final de una variable aleatoria  es el \texttt{coeficiente de variaci\'on}, escrito como $C_X$ y definido como:
+De esta ecuaci\'on, se tiene que la varianza, no puede ser negativa y caracteriza la dispersi\'on de la variable aleatoria $X$ con respecto a la media. La ra\'iz cuadrada de la varianza, es la \texttt{desviaci\'on est\'andar} de  $X$, denotada como $\sigma_X$. La desviaci\'on est\'andar produce un n\'umero cuyas unidades son iguales a la de la variable aleatoria y por esta raz\'on proporciona una imagen m\'as clara de la dispersi\'on de la variable aleatoria respecto de  su media. Una caracterizaci\'on final de una variable aleatoria  es el \texttt{coeficiente de variaci\'on}, escrito como $C_X$ y definido como:
 
 \[
 C_X = \frac{\sigma_X}{\mathbb{E}(X)},
@@ -301,13 +301,13 @@ El tiempo que tarda la persona que entrega la pizza en entregarla  es $X -12$. P
 Para responder a esta pregunta, sea $X$ la cantidad de dinero que el jugador gana. Entonces $X$ es una variable aleatoria con el conjunto de valores posibles $\{2, 4, 8, \dots, 2^k, \dots \}$ y
 
 \[
-\mathbb{P}(X = 2^k) = \biggl(\frac{1}{2}\biggr),\ \ k = 1, 2, 3,\dots
+\mathbb{P}(X = 2^k) = \biggl(\frac{1}{2}\biggr)^k,\ \ k = 1, 2, 3,\dots
 \]
 
 Por tanto,
 
 \[
-\mathbb{E}(X) = \sum_{k =1}^{\infty}2^k \biggl(\frac{1}{2}\biggr) = \sum_{k =1}^{\infty}1 = 1 + 1 +1 +\cdots = \infty.
+\mathbb{E}(X) = \sum_{k =1}^{\infty}2^k \biggl(\frac{1}{2}\biggr)^k = \sum_{k =1}^{\infty}1 = 1 + 1 +1 +\cdots = \infty.
 \]
 
 \vspace{0.2cm}
@@ -456,7 +456,7 @@ Note que:
 \vspace{0.2cm}
 
 Donde la \'ultima igualdad,  es obtenida cambiando el orden de la integraci\'on. El teorema sigue desde que :
-$\displaystyle\int_{-\infty}^{-t}f_X(x) dx = F_X(-t)$ y $\displaystyle\int_{t}^{\infty}f_X(x) dx = \mathbb{P}(X > t)=  1 -F(t)$. En general, para alguna variable aleatoria $X$,
+$\displaystyle\int_{-\infty}^{-t}f_X(x) dx = F_X(-t)$ y $\displaystyle\int_{t}^{\infty}f_X(x) dx = \mathbb{P}(X > t)=  1 -F_X(t)$. En general, para alguna variable aleatoria $X$,
 
 \[
 \mathbb{E}(X) = \bigints_{0}^{\infty}\mathbb{P}(X >t)dt - \bigints_{0}^{\infty}\mathbb{P}(X \leq -t)dt.
@@ -467,7 +467,7 @@ $\displaystyle\int_{-\infty}^{-t}f_X(x) dx = F_X(-t)$ y $\displaystyle\int_{t}^{
 En particular, si $X$ es no negativa, esto es $\mathbb{P}(X < 0) = 0$, este teorema, establece que:
 
 \[
-\mathbb{E}(X) = \bigints_{0}^{\infty}[1 -F_X(t)]dt = \bigints_{0}^{\infty}\mathbb{P}(x > t)dt.
+\mathbb{E}(X) = \bigints_{0}^{\infty}[1 -F_X(t)]dt = \bigints_{0}^{\infty}\mathbb{P}(X > t)dt.
 \]
 
 \subsection{Esperanza de funciones de variables aleatorias}
