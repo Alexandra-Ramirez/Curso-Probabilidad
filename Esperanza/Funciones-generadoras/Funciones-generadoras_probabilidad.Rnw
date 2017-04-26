@@ -913,12 +913,12 @@ desde que el integrando en la \'ultima integral es la funci\'on densidad de la d
 \vspace{0.2cm}
 
 \begin{ejemplo}
-\normalfont Si $X$ tiene una distribuci\'on de Poisson con par\'ametro $\lambda$: 
+\normalfont Si $X$ tiene una distribuci\'on de Poisson con par\'ametro $\lambda$ y funci\'on de masa de probabilidad: 
 
 \vspace{0.2cm}
 
 \[
-p_{X}(x) = \dfrac{\lambda^x e^{-\lambda}}{x!} \ \ x =0, 1,2, \dots
+p_{X}(x) = \dfrac{\lambda^x e^{-\lambda}}{x!} \ \ , x =0, 1,2, \dots
 \]
 
 \vspace{0.2cm}
@@ -927,7 +927,7 @@ p_{X}(x) = \dfrac{\lambda^x e^{-\lambda}}{x!} \ \ x =0, 1,2, \dots
 M_X(t) = \displaystyle\sum_{x = 0}^{\infty}e^{tx}\dfrac{\lambda^{x}e^{-\lambda}}{x!}
 \]
 
-Sea $a = e^t\lambda$ entonces obtenemos $M_X(s) = e^{\lambda(e^s -1)}$.
+Si realizamos el cambio de variable $a = e^t\lambda$, entonces obtenemos $M_X(t) = e^{\lambda(e^t -1)}$.
 
 \end{ejemplo}
 
@@ -1069,7 +1069,7 @@ En general la suma $S = X_1 + \cdots + X_n$ de $n$ variables aleatorias independ
 \vspace{0.2cm}
 
 \[
-\mathbb{M}_{X}(t) = \displaystyle\sum_{k =0}^{\infty}\dfrac{1}{k!}\mathbb{E}(X^k) \ \ \text{para} \ \ \vert t\vert < \delta.
+\mathbb{M}_{X}(t) = \displaystyle\sum_{k =0}^{\infty}\dfrac{1}{k!}t^k\mathbb{E}(X^k) \ \ \text{para} \ \ \vert t\vert < \delta.
 \]
 \end{teo}
 
