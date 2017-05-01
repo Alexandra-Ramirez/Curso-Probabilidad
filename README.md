@@ -81,7 +81,7 @@
  
  #### Lecturas: 
  
- * [Joint Distributions](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture09.pdf)
+ * [Joint Distributions](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture09.pdf).
  
  ### Esperanza de variables aleatorias
  
