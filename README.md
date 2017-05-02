@@ -82,6 +82,7 @@
  #### Lecturas: 
  
  * [Joint Distributions](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture09.pdf).
+ * [Notas acerca de variables aleatorias multivariadas(1)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_multivariadas/variables_multivariadas1/Variables_multivariadas1.pdf).
  
  ### Esperanza de variables aleatorias
  
