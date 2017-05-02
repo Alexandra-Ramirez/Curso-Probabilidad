@@ -1,0 +1,197 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.35\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Pr\'actica dirigida  10 \par
+Distribuciones multivariadas(1).
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Lista de ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item Una peque\~na universidad tiene $90$ profesores  hombres y 30 profesores mujeres. Un comit\'e ad hoc de cinco es seleccionado al azar para escribir la visi\'on y la misi\'on de la universidad. Sea $X$ e $Y$ el n\'umero de hombres y mujeres en este comit\'e, respectivamente.
+
+\begin{enumerate}
+\item Encuentra la funci\'on masa de probabilidad de $X$ e $Y$.
+\item Encuentra las funciones masa de probabilidad marginal $p_X$ y $p_Y$ de las variables aleatorias $X$ e $Y$.
+\end{enumerate}
+\item Rodamos un dado equilibrado y sea el resultado dado denotado por  $X$. A continuaci\'on, lanzar una moneda  $X$ veces y sea  $Y$ que  denote el n\'umero de sellos. ?` Cu\'al es la funci\'on de masa de probabilidad conjunta de $X$ e $Y$  y las funciones de masa de probabilidad marginal de $X$ e $Y$?.
+\item  Sea la funci\'on de masa de probabilidad conjunta de las variables aleatorias $X$ e $Y$, definida como:
+
+\[
+p_{X,Y}(x, y) = \begin{cases}
+\frac{1}{70}x(x +y)&\ \text{si}\ x =1,2,3\ \ y =3,4 \\
+0 & \text{en otros casos}.
+\end{cases}
+\]
+
+Encuentra $\mathbb{E}(X)$ e $\mathbb{E}(Y)$.
+\item Para $\lambda > 0$, sea:
+
+\[
+F_{X}(x,y) = \begin{cases}
+1 - \lambda e^{-\lambda(x + y)}&\ \text{si}\ x > 0, \ y > 0 \\
+0  & \text{en otros casos}.
+\end{cases}
+\]
+
+Determina si $F$ es una funci\'on de distribuci\'on  de probabilidad conjunta de dos variables aleatorias $X$ e $Y$.
+
+\item Un c\'irculo de radio $1$ se inscribe en un cuadrado de lados de longitud $2$. Un punto se selecciona al azar del cuadrado. ?` Cu\'al es la probabilidad de que est\'e dentro del c\'irculo?. Tenga en cuenta que por un punto que se selecciona al azar desde el cuadrado queremos decir que el punto se selecciona de una manera que todos los subconjuntos de iguales \'areas del cuadrado son igualmente probables de contener el punto.
+
+\item Un granjero decide construir un gallinero  en forma de tri\'angulo para sus pollos. El env\'ia a su hijo a cortar la madera y el ni\~no, sin pensar en el prop\'osito, hace dos cortes en dos puntos seleccionados al azar. ?` Cu\'ales son las posibilidades de que las tres piezas de madera que se obtienen puedan ser utilizadas para formar un gallinero triangular?.
+\item Sean $X$ e $Y$ variables aleatorias con una funci\'on densidad de probabilidad conjunta:
+
+\[
+f_{X,Y}(x, y) = \begin{cases}
+\frac{3}{2}(x^2 + y^2)& \ \text{si}\ 0 < x < 1,\ 0 < y < 1 \\
+0 & \text{en otros casos}.
+\end{cases}
+\]
+
+Encuentra $\mathbb{E}(X^2 + Y^2)$.
+
+\item Sean $X$ e $Y$ variables aleatorias con esperanza finitas. Muestra que si $\mathbb{P}(X \leq Y) = 1$, entonces $\mathbb{E}(X) \leq \mathbb{E}(Y)$.
+
+\item Supongamos que $h$ es la funci\'on densidad de probabilidad de una variable aleatoria continua. Sea la funci\'on densidad de probabilidad conjunta de dos variables aleatorias $X$ e $Y$ dada por:
+
+\[
+f(x, y) = h(x)h(y),\ \ x\in \mathbb{R}, \  \ y \in \mathbb{R}. 
+\]
+
+Prueba que $\mathbb{P}(X \geq Y)  =1/2$.
+
+\item Tres puntos M, N y L se colocan en un c\'irculo al azar e independientemente. ?` Cu\'al es la probabilidad de que MNL sea un \'angulo agudo?.
+
+\item Dos n\'umeros $x$ e $y$ se seleccionan al azar en el intervalo $(0,1)$. Para $i = 0,1,2$, determine la probabilidad de que el entero m\'as cercano a $x + y$ sea $i$.
+
+\item Sea $X$ e $Y$ variables aleatorias continuas con funci\'on densidad de probabilidad $f_{XY}(x, y)$. Sea $Z = Y/X, X \neq 0$. Prueba que la funci\'on densidad de probabilidad de $Z$ es dado por :
+
+\[
+f_Z(z) = \bigints_{-\infty}^{\infty}\vert x \vert f(x,y,z)dx.
+\]
+\item Sea la funci\'on de masa de probabilidad conjunta de las variables aleatorias $X$ e $Y$ es dado por:
+
+\[
+p_{X,Y}(x, y) = \begin{cases}
+\frac{1}{7}x^2y& \ \text{si}\ (x, y) = (1,1), (1,2), (2,1)\\
+0 & \text{en otras partes}.
+\end{cases}
+\]
+
+?` Son $X$ e $Y$ independientes?.
+
+\item Sean $X$ e $Y$, variables aleatorias independientes, teniendo como  funci\'on de masa de probabilidad:
+
+\[
+p_X(x) = \frac{1}{2}\biggl(\frac{2}{3}\biggr)^x, \ \ x = 1, 2,3, \dots
+\]
+
+Encuentra $\mathbb{P}(X = 1, Y = 3)$ y $\mathbb{P}(X + Y = 3)$.
+
+\item ?` Cu\'al es la probabilidad de que exista exactamente dos ni\~nas entre las siete primeras y exactamente cuatro ni\~nas entre los primeros $15$ bebes nacidos en un hospital en una semana determinada?. Suponga que los acontecimientos de  que un ni\~no nacido es una ni\~na o es un ni\~no  son equiprobables.
+
+\item Una moneda  es lanzada $n$ veces por Jessica y $n$ veces por C\'esar. ?` Cu\'al es la probabilidad de que obtengan el mismo n\'umero de caras?.
+
+\item Sea la funci\'on densidad de probabilidad conjunta de $X$ e $Y$  dada por:
+
+\[
+f_{X,Y}(x, y) = \begin{cases}
+8xy & \text{si}\ \ 0 \leq x < y  \leq 1 \\
+0 & \text{en otros casos}.
+\end{cases}
+\]
+
+Determine si $\mathbb{E}(XY) = \mathbb{E}(X)\mathbb{E}(Y)$.
+
+\item Sea la funci\'on densidad de probabilidad conjunta de $X$ e $Y$  definida como:
+\[
+f_{X,Y}(x, y) = \begin{cases}
+2e^{-(x + 2y)} & \text{si}\  x \geq 0, y\geq 0 \\
+0 & \text{en otros casos}.
+\end{cases}
+\]
+Encuentra $\mathbb{E}(X^2Y)$.
+
+\item Sean $X$ e $Y$ dos variables independientes con la misma funci\'on densidad de probabilidad, dada por:
+
+\[
+f(x) = \begin{cases}
+e^{-x} &\ \text{si}\ 0 < x  < \infty \\
+0 & \text{en otros casos}.
+\end{cases}
+\]
+
+Muestra que $g$, la funci\'on densidad de probabilidad de $X/Y$, es dada por:
+
+\[
+g(t) = \begin{cases}
+\frac{1}{(1 + t)^2} &\ \text{si}\ 0 < t  < \infty \\
+0 & t \leq 0.
+\end{cases}
+\]
+\item Sean  $X$ e $Y$ dos puntos aleatorios independientes del intervalo $(0,1)$. Calcula la funci\'on de distribuci\'on de probabilidad y la funci\'on de densidad de probabilidad de $\max(X, Y)/\min (X, Y)$.
+
+\item Sean $X$ e $Y$ variables positivas aleatorias positivas con una funci\'on densidad de probabilidad id\'entica $e^{-x}$ para $x > 0$. Encuentra la funci\'on densidad de probabilidad conjunta de $U = X + Y$ y $V = X/Y$.
+
+\item Sean  $X$ e $Y$ dos variables aleatorias uniformes, independientes sobre $(0,1)$. Muestra que las variables aleatorias $U = \cos(2\pi X)\sqrt{-2\ln Y}$ y $V = \sin (2\pi X)\sqrt{-2\ln Y}$ son variables aleatorias normales est\'andar independientes.
+
+\item Sean $X$ e $Y$ dos variables aleatorias continuas independientes positivas, con  funciones de densidad de probabilidad $f_1(x)$ y $f_2(y)$, respectivamente. Encuentra la funci\'on de densidad de probabilidad de $U = U/Y$.
+
+\item Demuestra  que si $X$ e $Y$ son variables aleatorias normales est\'andar independientes, entonces $X + Y$ y $X -Y$ son variables aleatorias independientes.
+
+\item Sean $X$ e $Y$ variables aleatorias  independientes (estrictamente positivas)  exponenciales cada una con par\'ametro $\lambda$ ?. ?` Son las variables aleatorias $X + Y$ y $X/Y$ independientes?.
+\end{enumerate}
+\end{document} 
+
