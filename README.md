@@ -1,7 +1,8 @@
 # Curso de elemental de teoria de probabilidades.
 
 **Fecha del examen Parcial**: 10 de mayo del 2017
-                               J3-162B 2-4PM.
+                               
+ J3-162B 2-4PM.
 
 ## Lecturas previas
 
