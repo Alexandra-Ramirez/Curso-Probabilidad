@@ -3,6 +3,7 @@
 **Fecha del examen Parcial**: 10 de mayo del 2017
                                
  ** Aula J3-162B**
+ 
  ** 14:00 -16:00 PM**.
 
 ## Lecturas previas
