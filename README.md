@@ -1,5 +1,7 @@
 # Curso de elemental de teoria de probabilidades.
 
+**Fecha del examen Parcial**: 10 de mayo del 2017 J3-162B 2-4PM.
+
 ## Lecturas previas
 
 - [Explained Visually: pi, Image Kernels...](http://setosa.io/ev/)
