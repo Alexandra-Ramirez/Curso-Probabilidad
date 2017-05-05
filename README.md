@@ -8,6 +8,7 @@
 
 ## Lecturas previas
 
+- [Seeing Theory: A visual introduction to probability and statistics](http://students.brown.edu/seeing-theory/).
 - [Explained Visually: pi, Image Kernels...](http://setosa.io/ev/)
 - [Set Theory a primer](https://jeremykun.com/2011/07/09/set-theory-a-primer/).
 - [Linear algebra a primer](https://jeremykun.com/2011/06/19/linear-algebra-a-primer/).
