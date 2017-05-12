@@ -1,0 +1,425 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\newcommand{\PR}{\mathbb{P}}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Problemas 2 \par
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Lista de ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item En un determinado pa\'is, la probabilidad es $49/50$ de que un avi\'on de combate seleccionado al azar regrese de una misi\'on sin percances. Jessica argumenta que esto significa que hay una misi\'on con un percance en cada $50$ vuelos consecutivos. Ella concluye que si un piloto de caza regresa con seguridad de $49$ misiones consecutivas, debe regresar a casa antes de su quincuag\'esima misi\'on. ?`Est\'a en lo correcto  Jessica? Explica por qu\'e si o por qu\'e no. Utiliza propiedades de la teoria de las probabilidades.
+\item  Sean $A$, $B$ y $C$ tres eventos. Muestra que:
+\[
+\mathbb{P}(A \cup B \cup C) = \mathbb{P}(A) + \mathbb{P}(B) + \mathbb{P}(C)
+\]
+
+si y s\'olo si $\mathbb{P}(A \cap B) = \mathbb{P}(A \cap C) = \mathbb{P}(B \cap C) = 0$
+
+\item Un profesor distraido escribi\'o  $n$ cartas y las sell\'o en sobres antes de escribir las direcciones en los sobres. Luego escribi\'o las $n$ direcciones en los sobres al azar. ?` Cu\'al es la probabilidad de que al menos una carta fue dirigida correctamente?.
+
+\item  Una moneda  se lanza $n$ veces. Calcula la probabilidad de no obtener caras sucesivas. Sugerencia: Construye una secuencia de tipo Fibonacci.
+\item Dos jugadores juegan el juego de \texttt{caras y sellos}, en el cual cada vez que en el lanzamiento de  una moneda cae cara, el jugador $A$ gana $1$ d\'olar  de $B$  y cada vez que cae sello , el jugador B gana $1$ de A. Supongamos que el jugador A tiene inicialmente un d\'olar y el jugador B tiene $b$ d\'olares. Si contin\'uan jugando este juego sucesivamente, 
+\begin{itemize}
+\item ?`Cu\'al es la probabilidad de que  A se arruine?.
+\item ?`Cu\'al es la probabilidad de que el juego siga para siempre sin que nadie gane?.
+\end{itemize}
+\item Una urna contiene 10 chips blancos y 12 chips rojos. Dos chips se extraen  al azar y sin mirar sus colores, se descartan. ?` Cu\'al es la probabilidad de que un tercer chip extraido sea rojo?.
+\item (1 pto) Una caja contiene $7$ bolas rojas y $13$ azules. Se seleccionan dos bolas al azar y se descartan sin que se vean sus colores. Si una tercera pelota es seleccionada  aleatoriamente y se observa que es roja, ?` cu\'al es la probabilidad de que ambas bolas descartadas sean azules?.
+\item Si dos dados  son lanzados seis veces, ?`cu\'al es la probabilidad de que la sexta suma obtenida no sea una repetici\'on?.
+\item  Un  dado  se lanza sucesivamente. Sea $X$ el n\'umero de lanzamientos hasta que cada uno de los seis posibles resultados ocurran al menos una vez. Halla la funci\'on de masa de probabilidad de $X$.
+\item  Una urna contiene $w$ chips blancos y $b$ chips azules. Un chip se extrae  al azar y luego se devuelve a la urna junto con $c> 0$ chips del mismo color. Este experimento se repite sucesivamente. Sea $X_n$ el n\'umero de chips blancos extraidos durante las primeras $n$ extracciones. Demuestra que $\mathbb{E}(X_n) = nw/(w + b)$.
+\item Sea X una variable aleatoria discreta. Sea $0 < s < r$. Demuestra que si existe el r- \'esimo momento absoluto de $X$, entonces tambi\'en existe el momento absoluto de orden $s$ de $X$.
+\item Sea $X$ una variable aleatoria con funci\'on densidad de probabilidad:
+
+\[
+f(x ) = \frac{1}{\pi(1 +x^2)}, \quad -\infty < x < \infty.
+\]
+
+Prueba que $\mathbb{E}(\vert X \vert^{\alpha})$ converge si $0 < \alpha < 1$ y diverge si $\alpha \geq 1$.
+\item  Sean $g$ y $h$ dos funciones densidad de probabilidad con funciones de distribuci\'on $G$ y $H$ respectivamente. Muestra que para $-1 \leq \alpha \leq 1$, la funci\'on:
+
+\[
+f(x, y) = g(x)h(y)(1 + \alpha[2G(x) - 1][2H(y) - 1]).
+\]
+
+es una funci\'on densidad de probabilidad conjunta de dos variables aleatorias. Prueba, que $g$ y $h$ son las funciones de densidad marginal de $f$.
+\item Los $2n$ asientos alrededor de una mesa circular est\'an numerados en sentido horario. Los hu\'espedes en la cena forman $n$ pares de rey y reina. Las reinas se sientan al azar en los asientos impares, con los reyes de manera aleatoria  entre ellas. Sea $N$ el n\'umero de reinas sentadas al lado de su rey. Encuentra la media y la varianza de $N$.
+\item Sea $X$ una variable aleatoria continua con funci\'on densidad de probabilidad:
+\[
+f(x) = \begin{cases}
+2/x^2 & \ \text{si}\ 1 < x < 2 \\
+0 & \text{en otros casos.}
+\end{cases}
+\]
+Encuentra la distribuci\'on  y la funci\'on de densidad de $Y = X^2$.
+\item  Contruye un contraejemplo, con variables aleatorias discretas; que si $\mathbb{E}(XY) = \mathbb{E}(X)\mathbb{E}(Y)$ entonces no se cumple que $X$ e $Y$ son independientes.
+\item  Demuestra que si X e Y son variables aleatorias normales est\'andar independientes, entonces $X + Y$ y $X - Y$ son variables aleatorias independientes.
+\item Si se cumple, para una variable aleatoria discreta $N$ con un conjunto de posible valores $\{1,2,3, \dots \}$ que $\mathbb{E}(N) = \sum_{i =1}^{\infty}\mathbb{P}(N \geq 1)$, prueba usando esta propiedad lo siguiente:
+
+Sean $\{ X_1, X_2,\dots X_n\}$ una secuencia de variables aleatorias independientes con $\mathbb{P}(X_j = i) = p_i(1 \leq j \leq n\ \text{y}\ i \geq 1)$. Sea $h_k = \sum_{i = k}^{\infty}p_i$, entonces:
+
+\[
+\mathbb{E}[\min(X_1, X_2,\dots X_n)] = \sum_{k =1}^{\infty}h_k^n.
+\]
+\item  Sea $X \sim N(\mu, \sigma^2)$. Prueba que $\mathbb{P}(\vert X -\mu\vert) > k\sigma$ no depende de $\mu$ o $\sigma$.
+\item  Si $X$ es una variable aleatoria, muestra que, para $\alpha > 1$ y $t > 0$,
+
+\[
+\mathbb{P}(X \geq \frac{1}{t}\ln \alpha) \leq \frac{1}{\alpha}\mathbb{M}_X(t).
+\]
+\item Una funci\'on generadora  de una secuencia de n\'umeros reales $a = \{ a_i: i = 0, 1, 2, \dots\}$ es definida como $G_a$
+
+\[
+G_a(s) = \sum_{i = 0}^{\infty}a_is^i
+\]
+
+para $s \in \mathbb{R}$ donde la suma converge.
+
+
+La \texttt{convoluci\'on} de una secuencia real $a = \{ a_i: i = 0, 1, 2, \dots\}$ y $b = \{b_i: i \geq 0 \}$ es la secuencia $c = \{c_i: i \geq 0  \}$, definida como:
+
+\[
+c_n = a_0b_n + a_1b_{n -1} + \cdots + a_nb_{0}
+\]
+
+y se escribe como $c = a* b$
+
+\begin{enumerate}
+	\item Si $a$ y $b$ tienen funciones generadoras $G_a$ y $G_b$, entonces la funci\'on generadora de $c$ es:
+	
+	\[
+	G_{c}(s) = G_{a}(s)G_{b}(s)
+	\]
+	
+	\item Prueba la identidad combinatoria 
+	
+	\[
+	\sum_{i}\binom{n}{i}^2 = \binom{2n}{n}
+	\]
+\end{enumerate}
+
+\item La \texttt{funci\'on generadora de probabilidad}  de una variable aleatoria $X$ es definida como la funci\'on generadora $G(s) = \mathbb{E}(s^X)$ de su funci\'on de masa de probabilidad. Por ser una serie de potencias:
+
+\begin{enumerate}
+	\item Existe un \texttt{radio de convergencia $R (\geq 0)$} tal que la suma converge absolutamente si $\vert s \vert  < R$ y diverge si $\vert s \vert > R$. La suma converge uniformemente  sobre los conjuntos  de a forma $\{s: \vert s \vert \leq R^{'} \}$ para $R^{'} < R$.
+	\item $G_a(s)$ puede ser derivable o integrable t\'ermino a t\'ermino alg\'un n\'umero de veces en el punto $s$ satisfaciendo $\vert s \vert  < R$.
+	\item Si $G_a(s) = G_b(s)$  para $\vert s \vert  < R^{'}$ donde $0  < R^{'} \leq R$ entonces $a_n = n_n$ para todo $n$. Adem\'as:
+	
+	\[
+	a_n = \frac{1}{n!}G_{a}^{(n)}(0).
+	\]
+\item Si $a_i \geq 0$ para todo $i$ y $G_{a}(s)$ es finito para $\vert s \vert < 1$, entonces $\lim_{s \rightarrow 1^{+}}G_{s} = \sum_{i = 0}^{\infty}a_i$ si la suma es finita o igual a $\infty$.
+
+\end{enumerate}
+
+
+\item Prueba lo siguiente:
+
+\begin{enumerate}
+	\item Si $X$ tiene una funci\'on generadora $G(s)$ entonces:
+	
+	\begin{itemize}
+		\item $\mathbb{E}(X) = G^{'}(1)$.
+		\item  En general $\mathbb{E}(X)[X(X -1)\dots (X - k + 1)] = G^{k}(1)$.
+	\end{itemize}
+\item Si $X$ e $Y$ son independientes entonces $G_{X + Y }(s)  = G_{X}(s)G_{Y}(s)$.
+\item Si $X_1, X_2, \dots, X_n$ son variables aleatorias independientes de Bernoulli, con param\'etro $p$, con suma $S = X_1 + X_2 + \cdots + X_n$. Prueba que
+
+\[
+G_S(s) = (q + ps)^n \ \ \ p +  q = 1
+\]
+
+En general prueba que la suma $S = X_1 + X_2 + \cdots X_n$ de variables independientes tomando valores no negativos tiene una funci\'on generadora  dada por:
+
+\[
+G_S = G_{X_1}G_{X_2}\dots G_{X_n}.
+\]
+\end{enumerate}
+
+\item Si $X_1, X_2, \dots $ es una secuencia de variables aleatorias independientes  identic\'amente distribuidas como una funci\'on generadora com\'un $G_X$ y $N \geq 0$ es una variable aleatoria que es independiente de las variables  $X_i$ y tiene una funci\'on generadora  $G_N$, entonces $S = X_1 + X_2 + \cdots X_N$ tiene una funci\'on generadora dada:
+
+\[
+G_{S}(s) = G_{N}(G_{X}(s))
+\]
+
+\item Se define la funci\'on generadora de momentos  de una variable aleatoria $X$ a la funci\'on $M_X = G_X(e ^t)$ :
+
+\begin{enumerate}
+	\item Prueba que para una variable aleatoria Poisson de param\'etro $\lambda$ se tiene:
+	
+	\[
+	M(t) = \exp(\lambda (e^t - 1)).
+	\]
+	
+	\item Sea $p_r > 0$ y $a_r \in \mathbb{R}$ para $1 \leq r \leq n$. ?` Cu\'al  de las siguientes expresiones es una funci\'on generadora de momentos y para que variable aleatoria?
+	
+	\[
+	M(t) = 1 + \sum_{r = 1}^{n}p_rt^r \ \ \ M(t) = \sum_{r = 1}^{n}p_re^{a_rt}.
+	\]
+	\item Sea $X$ una variable aleatoria geom\'etrica con param\'etro $p$. Muestra que la funci\'on generadora de momentos de $X$, es dada por:
+	
+	\[
+	M_X(t) = \frac{pe^t}{1 - qe^t}, \ \ \ q =  1 -p, \ \ t < -\ln q
+	\]
+	
+	Usa $M_{X}(t)$ para encontrar $\mathbb{E}(X)$ y $\mathbb{Var}(X)$.
+	
+	\item Sea $Z \sim N(0,1)$. Usa $M_Z(t) = e^{t^2/2}$ para calcular $\mathbb{E}(Z^N)$, donde $n$ es un n\'umero positivo.
+\end{enumerate}
+
+\item Sean $X$ e $Y$ variables aleatorias binomiales independientes con param\'etros $(n , p)$ y $(m, p)$ respectivamente. Calcula
+
+\[
+\mathbb{P}( X = i | X + Y = j)
+\]
+
+e interpreta el resultado.
+
+\item Un ascensor puede transportar hasta $3.500$ libras. El fabricante ha incluido un margen de seguridad de $500$ libras y  lista la capacidad  en $3000$ libras. La administraci\'on del edificio busca evitar accidentes al limitar el n\'umero de pasajeros en el ascensor. Si el peso de los pasajeros que utilizan el ascensor es $N(155, 625)$, ?`cu\'al es el n\'umero m\'aximo de pasajeros que pueden utilizar el ascensor si las probabilidades de exceder la capacidad nominal de $3000$  libras ha de ser mayor que $10.000$ a $3$?.
+
+
+\item En un gran aeropuerto internacional, un banco de cambio de divisas con un solo cajero est\'a abierto las $24$ horas del d\'ia, 7 d\'ias a la semana. Supongamos que en alg\'un tiempo $t = 0$, el banco est\'a libre de  clientes y  nuevos clientes llegan en momentos aleatorios $T_1, T_1 + T_2, T_1 + T_2 + T_3, \dots $ Donde $T_1, T_2, T_3,\dots $ son variables aleatorias  id\'enticamente distribuidas y  independientes con $\mathbb{T_i} = 1 / \lambda$. Cuando el cajero est\'a libre, el tiempo de servicio de un cliente que entra en el banco comienza a su llegada.
+
+De lo contrario, el cliente se une a la cola y espera para ser atendido en un primer momento para  dejar el banco despu\'es de ser atendido. Si el tiempo de servicio  del i-\'esimo cliente es  $S_i$, donde $S_1, S_2, S_3,\dots $ son variables aleatorias id\'enticamente distribuidas y  independientes con $\mathbb{E}(S_i) = 1/\mu $. 
+
+Muestra que si $\lambda < \mu $  entonces con probabilidad $1$, eventualmente, para un  periodo,  el banco deber\'ia no tener  de clientes de nuevo.
+
+
+\item Sea la funci\'on de masa de probabilidad conjunta de $X_1, X_2, \dots, X_r$ multinomial, es decir:
+
+\[
+p(x_1, x_2, \dots, x_r) = \frac{n!}{x_1!x_2!\cdots x_r!}p_1^{x_1}p_{2}^{x_2}\cdots p_r^{x_r},
+\]
+
+donde $x_1  + x_2 + \cdots + x_r = n$ y $p_1 + p_2 + \cdots + p_r = 1$. Muestra que para $k < r$, $X_1 + X_2 + \cdots X_r$ tiene una distribuci\'on binomial.
+
+
+\item
+
+\begin{enumerate}
+	\item Si una variable aleatoria $T$ tiene una distribuci\'on geom\'etrica, entonces:
+	
+	\[
+	\mathbb{P}(T > n + m | T >n) = \mathbb{P}(T > m).
+	\]
+	
+	para todo $n$ y $m$.
+	
+	\item Muestra el caso contrario: Si $T$ es una variable aleatoria discreta es tal que:
+	\[
+	\mathbb{P}(T > n + m | T >n) = \mathbb{P}(T > m).
+	\]
+	
+	para todo $n, m \in \mathbb{N}$, entonces $T$ tiene una distribuci\'on geom\'etrica.	
+	
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Supongamos que para un ensayo Bernoulli, $p$, la probabilidad de \'exito es desconocida. Sea $\varepsilon >0 $ y $\alpha >0 $. Prueba que el valor de esta probabilidad se al menos $1 - \alpha$, de que el error estimado sea menor que $\varepsilon$.
+\item Para una moneda $p$, la probabilidad de conseguir cara  es desconocida. Para estimar $p$,  lanzamos la moneda $3000$ veces y sea $\hat{p}$  la fracci\'on de veces que cae cara hacia arriba. Demuestra  que la probabilidad  de que al menos $0.90$ que  $\hat{p}$ estima  $p$ p est\'a en $\pm 0,03$.
+\end{enumerate}
+
+
+\item Sean $X$ y $Y$ variables que toman valores sobre $\{0, 1, 2, \dots \}$ tal que $X = Y + Z$ donde $Z$ es una variable aleatoria de Bernoulli con param\'etro $p \in (0, 1)$ independiente de $Y$. S\'olo una de las siguientes aseveraciones es verdad. ?` Cu\'al es ?:
+
+\begin{enumerate}
+	\item $X + Z$ y $Y + Z$ son independientes.
+	\item $X$ tiene los valores $2\mathbb{N}_{0} = \{ 0, 2, 4, \dots\}$.
+	\item El soporte de $Y$ es un subconjunto del soporte de $X$.
+	\item $\mathbb{E}[( X+ Y)Z] = \mathbb{E}[(X +Y)]\mathbb{E}(Z)$
+\end{enumerate}
+\item Se dice que una variable aleatoria $X$ es discreta si existe un conjunto finito o contable $S \subset \mathbb{R}$ tal que $\mathbb{P}(X \in S)  = 1$. El conjunto $S$ m\'as peque\~no con esa propiedad se llama \texttt{soporte } de $X$.
+
+Si $X$ y $Y$ son variables aleatorias de Bernoulli con el mismo param\'etro $p = \frac{1}{2}$. ?` Puede el soporte de su suma ser igual a $\{0, 1\}$. ?`Qu\'e sucede  en el caso en que $p$ no es necesariamente  igual a $p = \frac{1}{2}$?.
+
+
+\item Suponiendo que $f:[0,1] \rightarrow [0,1]$ es una funci\'on continua. Muestra un \texttt{m\'etodo probabilistico } para evaluar $\bigintsss_{0}^{1}f(x) dx$, usando la \texttt{Ley Fuerte de los Grandes N\'umeros}.
+
+\item Sea $X_1, X_2, \dots $ una secuencia de variables aleatorias con funciones de distribuci\'on $F_1, F_2, \dots$ y las funciones generadoras de momentos $M_{X_1}(t), M_{X_2}(t), \dots$ respectivamente. Sea $X$ una variable aleatoria con funci\'on de distribuci\'on $F$ y funci\'on generadora de momentos $M_X(t)$.
+
+Si para todos los valores de $t$, $M_{X_n}(t)$ converge a $M_{X}(t)$ entonces en los puntos de continuidad de $F$, $F_n$ converge a $F$.
+
+
+
+\item Resuelve lo siguiente:
+
+\begin{enumerate}
+	\item Prueba que se cumple  $n! \sim \sqrt{2\pi n}n^ne^{-n}$ o lo que es lo mismo
+	
+	\[
+	\lim_{n \rightarrow \infty}\dfrac{n!}{\sqrt{2\pi n}n^ne^{-n}}
+	\]
+	
+	\item Sea $\{X_1, X_2, \dots  \}$ una secuencia de variables aleatorias normal est\'andar independientes. Sea $S_n = X_1^2 + X_2^2 + \cdots X_n^2$. Encuentra
+	
+	\[
+	\lim_{n \rightarrow \infty}\mathbb{P}(S_n \leq n + \sqrt{2n}).
+	\] 
+\end{enumerate}
+\item Sea una secuencia $X_1, X_2, \dots$ de variables aleatoria binarias tomando valores en el conjunto $\{0, 1\}$. Sea $Y$ una variable aleatoria continua que toma valores en $[0, 1]$. Relacionamos $X$ e $Y$ asumiendo que $Y$ es el n\'umero real cuya representaci\'on binaria es $0.X_1X_2X_3\dots$, es decir
+
+\[
+Y = \sum_{k = 1}^{\infty}2^{-k}X_k
+\]
+
+\begin{enumerate}
+	\item Suponiendo que $X_i$ forman un proceso de Bernoulli con param\'etro $\frac{1}{2}$. Muestra que $Y$ es distibuida uniformemente (considera la probabilidad del evento $(i - 1)/2^k < Y < i/2^k$, donde $i$ y $k$ son enteros positivos).
+	\item Suponiendo que $Y$ es distibuida uniformemente. Muestra que las $X_i$ forman un proceso de Bernoulli con param\'etro $\frac{1}{2}$.
+\end{enumerate}
+\item  Un \texttt{proceso estoc\'astico} $\{ X_n\}_{n \in \mathbb{N}_0}$ es un \texttt{camino aleatorio simple} si
+
+\begin{enumerate}
+	\item $X_0 = 0$,
+	\item El incremento $X_{n + 1} - X_n$ es independiente de $(X_0, X_1, \dots, X_n)$ para cada $n \in \mathbb{N}_{0}$ y 
+	\item  El incremento $X_{n + 1} - X_n$ cumple que
+	
+	\[
+	\PR(X_{n + 1} - X_n = 1) = \PR(X_{n + 1} - X_n = -1) = \frac{1}{2}
+	\]
+\end{enumerate}
+
+Sea el espacio muestral $\Omega$ :
+
+\[
+\Omega = [0, 1] \times [0,1]\times \cdots = [0, 1]^{\infty}
+\]
+
+y sea la secuencia  $\omega = (\omega_{0}, \omega_{1}, \omega_{2}, \dots)$ de n\'umeros reales en $[0,1]$, un elemento de $\Omega$. Para $n \in \mathbb{N}_{0}$, sea la funci\'on $\gamma_n: \Omega \rightarrow [0,1]$, definida como
+
+\[
+\gamma_{n}(\omega) = \omega_{n}
+\]
+
+Para esta secuencia, definimos una nueva secuencia $\{ \xi_{n}\}_{n \in \mathbb{N}} $ de variables aleatorias:
+
+\[
+\xi_{n} = \begin{cases}
+1 & \gamma \geq \frac{1}{2}\\
+-1 & \text{en otros casos}
+\end{cases}
+\]
+
+Si escribimos: 
+
+\[
+X_0 = 0, \ \ X_n = \sum_{k = 1}^{n}\xi_{k}, \ \ n\in \mathbb{N}.
+\]
+
+\vspace{0.2cm}
+
+Prueba que la secuencia $\{ X_n\}_{n \in \mathbb{N}_{0}}$, definida anteriormente es un \texttt{camino aleatorio}.
+
+\item Escribamos una definici\'on m\'as general de \texttt{camino aleatorio simple}:
+
+\begin{enumerate}
+	\item $X_0 = 0$,
+	\item El incremento $X_{n + 1} - X_n$ es independiente de $(X_0, X_1, \dots, X_n)$ para cada $n \in \mathbb{N}$ y 
+	\item   la variable aleatoria  $X_{n + 1} - X_n$ toman los valores de $-1$ y $1$ con probabilidad $q = 1 -p $ y $p$. Algunos textos describen esto como que la variable aleatoria tiene la distribuci\'on
+	
+	\[
+	\begin{pmatrix}
+	- 1 &  1 \\
+	 q & p
+	\end{pmatrix}
+	\]
+	
+Y si $p = \frac{1}{2}$, se dice que el camino aleatorio es \texttt{sim\'etrico}.
+
+\vspace{0.3cm}
+
+Prueba lo siguiente: Si $\{ X_n\}_{n \in \mathbb{N}_{0}}$ un camino aleatorio sim\'etrico. Para un $n \in  \mathbb{N}$ el camino aleatorio \texttt{promedio} sobre el intervalo $[0, n]$ es definido por:
+
+\[
+A_n = \frac{1}{n}\sum_{k = 1}^{n}X_k
+\]
+
+\begin{itemize}
+	\item ?` Es $A_n$ un camino aleatorio simple (no necesariamente sim\'etrico)?.
+	\item Calcula la covarianza $\text{Cov}(X_k, X_l) = \mathbb{E}[(X_k - \mathbb{E}(X_k))(X_l - \mathbb{E}(X_l))]$, para $k \leq l \in \mathbb{N}$.
+	\item Calcula la varianza de $A_n$ para $n \in \mathbb{N}$. 
+\end{itemize}
+
+	
+\end{enumerate}
+\item Sea $\{ X_n\}_{n \in \mathbb{N}_{0}}$ un camino aleatorio sim\'etrico. ?` Cu\'al es la probabilidad que $X_n$ visite todos los puntos en el conjunto $\{1,2, 3, 4  \}$ al menos una vez durante el intervalo de tiempo $n \in \{ 0, \dots, 10\}$?.
+
+\item Sea $Y_1, Y_2, \dots$ variables aleatorias independientes, id\'enticamente distribuidas que toma valores en $[0, \infty)$. Si se coloca $Z_0 = 0, Z_1 = Y_1, Z_2 = Y_1 + Y_2, \dots$. Si $Z_n$ es el tiempo del n-\'esima llegada a una tienda (el proceso estoc\'astico $\{ Z_n: n \in \mathbb{N}\}$) es llamado \texttt{renewal process}. Sea $N_{t}$ el n\'umero de llegadas durante $(0, t]$.
+
+\begin{enumerate}
+	\item Muestra que:
+	
+	\[
+	\PR(N_t \geq n) = \PR(Z_n \leq t)
+	\]
+	
+	para todo $n \in \mathbb{N}$ y $t \in [0, \infty)$.
+	
+	\item Muestra que para \texttt{casi todo } $\omega$,
+	
+	\[
+	\lim_{t \rightarrow \infty}N_t(\omega) = + \infty
+	\]
+	
+	\item Si $Z_{N_{t}}$ es el tiempo de la \'ultima llegada antes del tiempo $t$ y $Z_{N_{t} + 1}$ es el tiempo de la pr\'oxima  llegada despu\'es  del tiempo $t$. Usa la ley fuerte de los grandes n\'umeros y el resultado anterior para probar que 
+	
+	\[
+	\lim_{t \rightarrow \infty}Z_{N_{t}}/N_{t} = a
+	\] 
+	
+	donde $a$ es el valor esperado de $Y$.
+\end{enumerate}
+\end{enumerate}
+\end{document} 
+
