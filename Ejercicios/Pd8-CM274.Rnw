@@ -88,7 +88,7 @@ p_X(x) = \mathbb{P}(X =x) = \begin{cases}
 Bas\'andose en estos datos, ?`es aceptable la afirmaci\'on del agente inmobiliario?.
 \item Sea $p$ la probabilidad de que una persona elegida al azar est\'e en contra del aborto y sea $X$ el n\'umero de personas contra el aborto en una muestra aleatoria de tama\~no $n$.
 
-Supongamos que, en una muestra aleatoria particular de $n$ personas, k est\'an contra el aborto. Demuestra que $\mathbb{P}(X = k)$ es el m\'aximo para $\hat{p} = k/n$. Es decir, $\hat{p}$ es el valor de $p$ que hace que el resultado $X = k$ m\'as probable.
+\item Supongamos que, en una muestra aleatoria particular de $n$ personas, k est\'an contra el aborto. Demuestra que $\mathbb{P}(X = k)$ es el m\'aximo para $\hat{p} = k/n$. Es decir, $\hat{p}$ es el valor de $p$ que hace que el resultado $X = k$ m\'as probable.
 
 \item Un pueblo de $100.000$ habitantes est\'a expuesto a una enfermedad contagiosa. Si la probabilidad de que una persona se infecte sea de $0,04$. ?` Cu\'al es la esperanza o valor esperado  de que las personas se infecten?.
 
