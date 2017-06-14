@@ -1,6 +1,6 @@
 # Curso de elemental de teoria de probabilidades.
 
-**Presentación del reporte de final de cursos **: 30 de junio del 2017
+**Presentación del reporte de final de cursos**: 30 de junio del 2017
                                
  **Aula Sala 1**
  
