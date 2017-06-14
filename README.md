@@ -1,8 +1,8 @@
 # Curso de elemental de teoria de probabilidades.
 
-**Fecha del examen Parcial**: 10 de mayo del 2017
+**Presentación del reporte de final de cursos **: 30 de junio del 2017
                                
- **Aula J3-162B**
+ **Aula Sala 1**
  
  **14:00 -16:00 PM**.
 
