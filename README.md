@@ -156,15 +156,15 @@
    * [The Central Limit Theorem](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture11.pdf).
    * [The central limit theorem and the law of large numbers](https://beta.rstudioconnect.com/kamermanpr/central-limit-n-large-numbers/central-limit-n-large-numbers.html).
    
- - Estimacion.
+ ###  Estimacion.
    * [Estimation](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture18.pdf).
    * [Estimation1](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture19.pdf)
- - Intervalos de confianza.
- - Prueba de hipótesis. 
- - Pruebas chi-cuadrados.
- - Estimadores suficientes.
- - Teorema de  Rao-Blackwell.
- - Teorema de Lehmann-Scheffé.
+ ### Intervalos de confianza.
+ ### Prueba de hipótesis. 
+ ### Pruebas chi-cuadrados.
+ ### Estimadores suficientes.
+ ### Teorema de  Rao-Blackwell.
+ ### Teorema de Lehmann-Scheffé.
  
 ## Libros y artículos
 
