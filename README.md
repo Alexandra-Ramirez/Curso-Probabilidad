@@ -128,27 +128,34 @@
  * [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
  * [Notas sobre desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
 
- - Transformaciones  de variables aleatorias.
+ ### Transformaciones  de variables aleatorias.
    * [Transformation of random variables](http://www2.econ.iastate.edu/classes/econ671/hallam/documents/Transformations.pdf)
    * [Derived distributions](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-436j-fundamentals-of-probability-fall-2008/lecture-notes/MIT6_436JF08_lec10.pdf).
- - El Jacobiano.
+   
+ ###  El Jacobiano.
    * [Geometry of transformations of random variables](https://www.stat.wisc.edu/courses/st309-larget/jacobian.pdf).
- - Funciones generadoras de momentos.
+   
+ ### Funciones generadoras de momentos.
    * [Moment generating function](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-436j-fundamentals-of-probability-fall-2008/lecture-notes/MIT6_436JF08_lec14.pdf).
- - Muestreo desde una población normal. 
+   
+ ### Muestreo desde una población normal. 
    * [Introducing the Normal Distribution](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture10.pdf).
-   * [ Review of Linear Algebra and an Introduction to The Multivariate Normal Distribution](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture22.pdf)
- - Las distribuciones  T y F.
+   * [ Review of Linear Algebra and an Introduction to The Multivariate Normal Distribution](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture22.pdf).
+   
+ ### Las distribuciones  T y F.
    * [Relationships among some univariate distributions](http://www.mi.fu-berlin.de/inf/groups/ag-tech/intern/19540-V-Simulation/Relationships_among_some_univariate_distributions.pdf). 
- - Estimadores  de orden.
+   
+ ### Estimadores  de orden.
    * [Order Statistics; Conditional Expectation](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture14.pdf).
- - Ley débil de los grandes números.
+ 
+ ### Ley débil de los grandes números.
    * [Cotas y desigualdades en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
    * [The Law of Small Numbers](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture12.pdf).
- - El teorema del Límite Central.
+  ###  El teorema del Límite Central.
    * [Cotas y desigualdades en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
    * [The Central Limit Theorem](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture11.pdf).
    * [The central limit theorem and the law of large numbers](https://beta.rstudioconnect.com/kamermanpr/central-limit-n-large-numbers/central-limit-n-large-numbers.html).
+   
  - Estimacion.
    * [Estimation](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture18.pdf).
    * [Estimation1](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture19.pdf)
