@@ -1,10 +1,6 @@
-# Curso de elemental de teoria de probabilidades.
+# Curso de elemental de teoria de probabilidades e inferencia estadística.
 
-**Presentación del reporte de final de cursos**: 30 de junio del 2017
-                               
- **Aula Sala 1**
- 
- **14:00 -16:00 PM**.
+
 
 ## Lecturas previas
 
@@ -13,6 +9,13 @@
 - [Set Theory a primer](https://jeremykun.com/2011/07/09/set-theory-a-primer/).
 - [Linear algebra a primer](https://jeremykun.com/2011/06/19/linear-algebra-a-primer/).
 - [The Riemann integral](https://www.countbayesie.com/blog/2015/8/3/the-riemann-integral).
+- [Seeing Theory: A visual introduction to probability and statistics](http://students.brown.edu/seeing-theory/).
+- [STA 101 Labs](http://www2.stat.duke.edu/~mc301/101_labs/).
+- [Lectures on Statistics Robert Ash](http://www.math.uiuc.edu/~r-ash/Stat.html).
+
+## Libro de referencia
+
+- Robert V. Hogg, Elliot A. Tanis, Dale L. Zimmerman, Probability and Statistical Inference  2015.
 
 ## Temas
 
@@ -125,19 +128,6 @@
  * [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
  * [Notas sobre desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
 
- # Inferencia estadística básica
-
-## Lecturas previas
- - [Seeing Theory: A visual introduction to probability and statistics](http://students.brown.edu/seeing-theory/).
- - [STA 101 Labs](http://www2.stat.duke.edu/~mc301/101_labs/).
- - [Lectures on Statistics Robert Ash](http://www.math.uiuc.edu/~r-ash/Stat.html).
-
-## Libro de referencia
- - Robert V. Hogg, Elliot A. Tanis, Dale L. Zimmerman, Probability and Statistical Inference  2015.
-
- 
-## Lista de temas
-
  - Transformaciones  de variables aleatorias.
    * [Transformation of random variables](http://www2.econ.iastate.edu/classes/econ671/hallam/documents/Transformations.pdf)
    * [Derived distributions](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-436j-fundamentals-of-probability-fall-2008/lecture-notes/MIT6_436JF08_lec10.pdf).
@@ -168,6 +158,7 @@
  - Estimadores suficientes.
  - Teorema de  Rao-Blackwell.
  - Teorema de Lehmann-Scheffé.
+ 
 ## Libros y artículos
 
 - Introduction to Probability, Dimitri P. Bertsekas y John N. Tsitsiklis, Athena Scientific, 2008.
