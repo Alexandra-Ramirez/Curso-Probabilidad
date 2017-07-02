@@ -10,17 +10,17 @@ La fecha de presentación  es  el dia  **viernes 23 de junio**, en formato pdf o
 
 Trabajos fuera de tiempo, no serán tomados en cuenta.  La lista de temas es:
 
-- Estrategias generales para el diseño de Algoritmos (**Enrique Zevallos Labarthe**)
+- Estrategias generales para el diseño de Algoritmos
     * Búsqueda exhaustiva.
     * Vuelta atrás.
     * Disminuir y conquistar.
     * Transformar y conquistar.
     * Greedy.
- - Técnicas de Análisis (**Jesús Condor Torres**)
+ - Técnicas de Análisis
     * Análisis de un algoritmo no recursivo. Ejemplo: Square Build-Up. 
     * Análisis de un algoritmo recursivo. Ejemplo: Torres de Hanoi.
     * Invariantes. Ejemplos.
- - Complejidad de Kolmogorov (**Diego Yupanqui Huamán**)
+ - Complejidad de Kolmogorov 
     * Complejidad algorítmica. Probabilidad algorítmica.
     * Razonamiento inductivo. 
     * Incompatibilidad e Incompresibilidad
@@ -30,20 +30,20 @@ Trabajos fuera de tiempo, no serán tomados en cuenta.  La lista de temas es:
     * Factorización LU, Cholesky y LDLT.
     * Eliminación de bloques. Complemento de Schur.
     * Algoritmos.
- - Descomposición QR, transformaciones de Householder y rotaciones Givens. Algoritmos (**Gerald Palomino Monge**)
- - El procedimiento de Gram-Schmdidt, descomposición QR, mínimos cuadrados. Algoritmos (**Alex Villalta Cueta**)
+ - Descomposición QR, transformaciones de Householder y rotaciones Givens. Algoritmos.
+ - El procedimiento de Gram-Schmdidt, descomposición QR, mínimos cuadrados. Algoritmos.
  - Métodos de Gradiente conjugado. Algoritmos y complejidad.
- - Métodos de subespacios de Krilov. Algoritmo de Arnoldi y Lanczos (**Carlos Espinoza Vicuña**)
+ - Métodos de subespacios de Krilov. Algoritmo de Arnoldi y Lanczos.
  - Descomposición por valores singulares (SVD). Algoritmos.
    * Métodos de subespacios : PCA, MDS, FDA y CCA.
    * Propiedades variacionales de autovalores y valores singulares.
    * Matrices diferenciales.
- - Algoritmos de Grafos (**Meiser Gamboa Cuello**)
+ - Algoritmos de Grafos 
    * Algoritmos del camino más corto: Dijstra, Floyd-Warshall.
    * Problema del árbol generador mínimo.
    * Algoritmo BFS y DFS. 
    * Algoritmo de Boruvka -Solling.
- - Flujo de redes (**Daniel Córdova Torres**)
+ - Flujo de redes 
    * Redes de transporte y cortes.
    * Teorema del máximo flujo y el mínimo corte.
    * Capacidad residual y red residual.
@@ -51,24 +51,24 @@ Trabajos fuera de tiempo, no serán tomados en cuenta.  La lista de temas es:
    * Tiempo de complejidad del Algoritmo de Ford-Fulkerson.
    * Algoritmo de Edmonds-Karp.
    
-  - Algoritmo PageRank (**Claudia Huacac Chiri**)
+  - Algoritmo PageRank
     * Importancia en la Web. Motores de búsqueda.
     * La web y la teoria de Grafos. 
     * Implementación.
- - El grafo aleatorio de Erdos-Renyi (**Jesus Eduardo Rodriguez Felices**)
+ - El grafo aleatorio de Erdos-Renyi 
     * Grafos aleatorios. 
     * El modelo de Erdos-Renyi.
     * Aplicaciones.
- - Prueba del teorema fundamental de Programación Lineal. El método del Simplex. Algoritmos (**Jorge Palacios Asenjo**)
+ - Prueba del teorema fundamental de Programación Lineal. El método del Simplex. Algoritmos.
  - Métodos de puntos interiores. Algoritmos. 
- - Test de primalidad de Miller-Rabin (**Kevin Molina Bejar**)
- - Grupos que actúan en conjuntos (**Nelson Jorge Condor**)
+ - Test de primalidad de Miller-Rabin.
+ - Grupos que actúan en conjuntos
    * Grupos de permutaciones. La rotación de un cuadrado.
    * El grupo simétrico. Ejemplos.
    * El grupo diedro. Ejemplos.
    * El ciclo de descomposición de una permutación.
  
- - Cadenas de Markov y Martingalas (**Benedic Anicama Navarro**)
+ - Cadenas de Markov y Martingalas 
     * Matrices de transición. Cadenas de Markov y grafos.
     * Cadenas de Markov irreducibles. Distribuciones invariantes.
     * Martingalas. Teorema de convergencia de Martingalas.
@@ -78,39 +78,39 @@ Trabajos fuera de tiempo, no serán tomados en cuenta.  La lista de temas es:
    * El principio de reflección. El teorema de Ballot.
    * Retorno al cero. 
    * Lema de Nelson. 
- - Métodos de Montecarlo (**Josias Ruegg Yupa**)
+ - Métodos de Montecarlo
     * Definiciones.
     * Método tradicional de integración de MonteCarlo.
     * Caso particular: Simulación de Variables aleatorias.
     * El método Bootstrap.
     * El método  Jackknife.
     
- - Procesamiento de señales (**Rommel Zavaleta Bueno**)
+ - Procesamiento de señales
     * La transformada discreta de Fourier. Las transformaciones de señales discretas.
     * Inversa y dualidad de la transformada discreta de Fourier.
     * FFT. Derivación.
     * La transformada de Fourier bidimensional y  marcaa de agua digital.
     * Imágenes híbridas.
- - Determinismo y Autómatas Finitos (**Juan Tuesta Llaja**)
+ - Determinismo y Autómatas Finitos
    * Computación. Autómatas finitos deterministicos(DFA) y no deterministicos (NFA). Automáta pushdown (PDA).
    * Máquinas de Turing.
    * Problema de la detención para máquinas de Turing.
    * El mundo de los autómatas celulares.
    
- - Lenguaje natural (**Daniel Hidalgo Chavez**)
+ - Lenguaje natural
    * Métricas en las palabras. Segmentación de palabras.
    * Criptoanálisis con N-gramas.
     
- - Análisis de regresión  y la distancia de Cook (**Lizeth Quispe Gutierrez**)
- - Problema de Waldegrave (**Edwin Uchupe Pipa**)
+ - Análisis de regresión  y la distancia de Cook.
+ - Problema de Waldegrave
    * Introducción a la teoria de Juegos.
    * Solucion del problema. Explicación.
    * El juego Le Her.
-  - Ingeniería de factores (**Alexandra Ramirez Flores**)
+  - Ingeniería de factores
     * Métodos de Filtrado.
     * Métodos de envoltura.
     * Métodos embebidos. Ejemplos.
-   - Grupos de algoritmos del Machine Learning (**Luis Vasquez Espinoza**)
+   - Grupos de algoritmos del Machine Learning 
      * Introducción al Machine Learning. Tipos de aprendizaje.
      * Métodos basados en regresión.
      * Algoritmos basados en distancia.
@@ -119,16 +119,16 @@ Trabajos fuera de tiempo, no serán tomados en cuenta.  La lista de temas es:
      * Algoritmos Bayesianos.
      * Algoritmos de agrupación.
      
-   - Análisis de componentes principales (PCA)(**Erick Lazón Vera**)
+   - Análisis de componentes principales (PCA)
      * Aplicacion. Eigenfaces para el reconocimiento facial.
      
-   - Análisis probabilistico y Algoritmos aleatorios (**Carlos Chauca Prinque**)
+   - Análisis probabilistico y Algoritmos aleatorios
      * Hiring.
      * Variable aleatoria indicador.
      * Algoritmos aleatorios. Ejemplos.
      * Análisis probabilistico y aplicaciones de la variable aleatoria indicador.
      
-   - Introducción a la Inteligencia artificial (**Angel Huiza Flores**)
+   - Introducción a la Inteligencia artificial 
      * Búsqueda heurística.
      * Algoritmo A*
      * Búsqueda con adversarios.
