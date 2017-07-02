@@ -1,6 +1,4 @@
-# Curso de elemental de teoria de probabilidades e inferencia estadística.
-
-
+# Curso de teoria de probabilidades e inferencia estadística.
 
 ## Lecturas previas
 
