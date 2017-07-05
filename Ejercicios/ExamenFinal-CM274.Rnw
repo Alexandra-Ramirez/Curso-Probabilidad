@@ -1,0 +1,291 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.35\linewidth}
+\begin{minipage}{0.6\linewidth}
+\textbf{Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274}\par
+ \par
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Examen Final}}
+
+\begin{itemize}
+\item Responde cada pregunta, justificando, los resultados utilizados. Cada pregunta del examen contiene el desarrollo de propiedades hechas en clase y en las notas de clase.
+\item Est\'a prohibido compatir cuadernos entre estudiantes. Si se trasgede esta regla, se eliminar\'a la utilizaci\'on de los cuadernos en el examen.
+\item Se prohiben, copias de todo \'indole, as\'i como el uso de libros electr\'onicos.
+\end{itemize}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+
+\item Resuelve los siguiente:
+
+\begin{enumerate}
+\item (1 pto) Sea $X \sim N(\mu, \sigma^2)$. Encuentra la funci\'on de distribuci\'on de probabilidad de $\vert X - \mu \vert$ y su valor esperado.
+\item (1 pto) Muestra que la media $\mu$, la mediana $m$ y la varianza $\sigma^2$ de una variable aleatoria continua $X$, satisface la siguiente desigualdad:
+
+\[
+(\mu - m)^2 \leq \sigma^2.
+\]
+
+\item (2 pto) Sean $X$ e $Y$ tienen la funci\'on densidad bivariada normal,
+
+\[
+f(x,y) = \frac{1}{2\pi\sqrt{1 - \rho^2}}\exp \Biggl\{-\frac{1}{2(1 - \rho^2)}(x^2 -2\rho xy + y^2) \Biggr\}.
+\]
+
+Muestra que $X$ y $Z = (Y -\rho X)/\sqrt{1 -\rho^2}$ son variables independientes $N(0,1)$ y deduce que ,
+
+\[
+\mathbb{P}(X > 0, Y > 0) = \frac{1}{4} + \frac{1}{2\pi}\sin^{-1}\rho.
+\]
+
+Si $Z = \max \{ X,Y \}$, muestra tambi\'en que $\mathbb{E}(Z) = \sqrt{(1 -\rho)/\pi}$ y $\mathbb{E}(Z^2) = 1$.
+\end{enumerate}
+
+\item  Responde las siguientes preguntas:
+
+\begin{enumerate}
+\item (1 pto) $X$ e $Y$ tienen densidad conjunta,
+
+\[
+f(x, y) = cx^{n_1 -1}(y -x)^{n_2 -1}e^{-y}\qquad \text{para}\qquad 0 < x < y  <  \infty.
+\]
+
+Encuentra (a) la constante $c$, (b) las distribuciones marginales de $X$ e $Y$.
+\item (1 pto) Si $X_1, X_2$ son variables aleatorias uniformes e independientes sobre el intervalo $(0,1)$, encuentra la densidades de (a)$X_1 + X_2$, (b) $X_1 -X_2$ (c) $\vert X_1 -X_2 \vert$, (d) = $X_1/X_2$.
+\item (1 pto) Dado $n$ n\'umeros aleatorios independientes $X_1, X_2, \dots, X_n$ desde $(0,1)$ llamados \texttt{n\'umeros pseudoaleatorios}, muestra que:
+
+\begin{itemize}
+\item $Y = -2\sum_{i =1}^{n}2\log X_1$, tiene una distribuci\'on $\chi^2$ con $2n$ grados de libertad.
+\item las variables,
+
+\begin{align*}
+\xi = - \sqrt{-2\log X_1}\cos(2\pi X_2), \\
+\eta = - \sqrt{-2\log X_1}\sin(2\pi X_2),
+\end{align*}
+
+son independientes $N(0,1)$.
+\end{itemize}
+\item (1 pto) Muestra que si $F(x, y)$ es la funci\'on de distribuci\'on de $X$ e $Y$, adem\'as que,
+
+\[
+Z = \max(X, Y) \qquad W = \min(X, Y),
+\]
+
+entonces,
+
+\[
+F_Z(z) = F(z, z), \qquad F_W(w) = F_X(w) + F_Y(w) -F(w, w).
+\]
+
+Si $F(x,y)$ es continua, encuentra las densidades de $Z$ y $W$.
+
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\item 
+Sea $\{X_1, X_2, X_3, \dots, X_n\}$ un conjunto de variables aleatorias independientes, id\'enticamente distribuidas con funci\'on de distribuci\'on y densidad com\'un $F$ y $f$ respectivamente. Sea $X_{(1)}$ el menor valor de $\{X_1, X_2, X_3, \dots, X_n\}$, $X_{(2)}$, el segundo menor valor, $X_{(3)}$, el tercero menor valor y en general, $X_{(k)} (1 \leq k \leq n)$ el k-\'esimo menor valor de  $\{X_1, X_2, X_3, \dots, X_n\}$. Entonces $X_{(k)}$ se le llama  k-\'esimo estad\'istico de orden y el conjunto $\{X_{(1)}, X_{(2)}, X_{(3)}, \dots, X_{(n)}\}$, se dice que consisten de los estad\'isticos de orden de $\{X_1, X_2, X_3, \dots, X_n\}$.
+
+\vspace{0.2cm}
+
+Por esta definici\'on, por ejemplo, si en un punto  $\omega$ del espacio muestral, $X_1(\omega) = 8, X_2(\omega) = 2, X_3(\omega) = 5$ y $X_4(\omega) = 6$, entonces los estad\'isticos de orden de  $\{X_1, X_2, X_3, X_4\}$ es $\{X_{(1)}, X_{(2)}, X_{(3)}, X_{(4)}\}$, donde, $X_{(1)}(\omega) = 2, X_{(2)}(\omega) = 5, X_{(3)}(\omega) = 6$ y $X_{(4)}(\omega) = 8$. La continuidad de $X_i$ implica que $\mathbb{P}(X_{(i)} = X_{(j)} = 0$. As\'i: 
+
+\[
+\mathbb{P}(X_{(1)} < X_{(2)} < X_{(3)} < \cdots X_{(n)}) = 1.
+\]
+
+\vspace{0.2cm}
+
+Hay algunas propiedades, con respecto al tema:
+
+\vspace{0.2cm}
+
+
+Si tenemos el conjunto  $\{X_{(1)}, X_{(2)}, \dots X_{(n)} \}$ los estimadores de orden de las variables aleatorias id\'enticamente distribuidas e independientes $X_1, X_2, \dots X_n$ con funciones de distribuci\'on de probabilidad y densidad $F$ y $f$ respectivamente. Entonces $F_k$ y $f_k$, las funciones distribuci\'on de probabilidad y densidad de $X_{(k)}$ respectivamente, est\'an dadas por:
+
+\begin{equation*}
+F_{k}(x) = \sum_{i = k}\binom{n}{i}[F(x)]^i[1 - F(x)]^{n - i}, \qquad - \infty < x < \infty.
+\end{equation*}
+
+y
+
+\begin{equation*}
+f_{k}(x) = \frac{n!}{(k -1)!(n -k)!}f(x)[F(x)]^{k -1}[1 - F(x)]^{n - k}, \qquad - \infty < x < \infty.
+\end{equation*}
+
+\vspace{0.2cm}
+
+Si tenemos el conjunto $\{X_{(1)}, X_{(2)}, \dots X_{(n)} \}$ los estimadores de orden de las variables aleatorias id\'enticamente distribuidas e independientes $X_1, X_2, \dots X_n$ con funciones de distribuci\'on de probabilidad y densidad $F$ y $f$ respectivamente. Entonces para $ x < y,  f_{ij}(x, y)$, la funci\'on densidad de probabilidad conjunta de $X_{(i)}$ y $X_{(j)} (i < j)$ es dada por:
+
+\[
+f_{ij}(x, y) = \frac{n!}{(i -1)!(j -i -1)!(n -j)}f(x)f(y)[F(x)]^{i -1}[F(y) - F(x)]^{j  - i -1}[1 -F(y)]^{n -j}.
+\]
+
+Esto es claro que para $x \geq y , f_{ij}(x, y) = 0$.
+
+\begin{enumerate}
+\item (1 ptos) Sean $X_1$ y $X_2$ dos variables aleatorias exponencial independientes cada una con param\'etro  $\lambda$. Muestra que $X_{(1)}$ y $X_{(2)} -X_{(1)}$ son independientes.
+
+\item (1 ptos) Sean $X_1, X_2$ y $X_3$ variables aleatorias independientes de $(0, 1)$. Encuentra la funci\'on de densidad de probabilidad y el valor esperado del rango medio de estas variables aleatorias $[X_{(1)} + X_{(2)}]/2$. 
+
+\item (1 pto) Sea $X_1,X_2, \dots, X_n$ variables aleatorias independientes exponenciales con par\'ametros $\lambda$ y sea $X_{(1)} \leq X_{(2)} \leq \cdots X_{(n)}$, sus estad\'isticos de orden. Muestra que:
+
+\[
+Y_1 = nX_{(1)}, \qquad Y_r = (n +1 -r)(X_{(r)} -X_{(r -1)}), \quad 1 < r \leq n,
+\]
+
+son tambi\'en independientes y tienen la misma distribuci\'on conjunta de las $X_i$.
+\end{enumerate}
+
+\item
+
+\begin{enumerate}
+\item (1 ptos) Sea $X$ una variable aleatoria que toma valores enteros no negativos y es asociado con una transformada de la forma:
+
+\[
+M_X(s) = c\cdot\frac{3 + 4e^{2s} + 2e^{3s}}{3 -e^s},
+\]
+
+donde $c$ es un escalar. Encuentra $\mathbb{E}(X)$ y $p_X(1)$.
+
+\item (1 pto) La funci\'on de matricial sim\'etrica $G(X)$ de la matriz $X$ de orden $m \times n$ es llamada convexa, si para cada par de matrices $X_1, X_2$ de matrices $m \times n$ y $0 \leq \lambda \leq 1$, satisface:
+
+\[
+G(\lambda X_1 + (1 - \lambda)X_2) \leq \lambda G(X_1) + (1 - \lambda)G(X_2),
+\]
+
+donde para matrices sim\'etricas $X, Y$ escribimos $X \geq Y$ si $X -Y$ es una matriz definida no negativa. Sea $X$ una variable aleatoria, esto es una matriz, cuyos elementos son variables aleatorias y $G$ una funci\'on matricial convexa. Entonces prueba que:
+
+\[
+G(\mathbb{E}X) \leq \mathbb{E}G(X).
+\]
+Tambi\'en para una matriz aleatoria positiva muestra que:
+
+\[
+\mathbb{E}(X^{-1}) \geq (\mathbb{E}(X))^{-1}.
+\]
+
+\item (1 pto) Muestra que si $\mathbb{E}(Y) < \infty$ y $Y > 0$, entonces,
+
+\[
+\mathbb{E}\log(Y) \leq \log \mathbb{E}(Y).
+\]
+
+Usa este resultado para probar, que si tenemos $X_1,X_2, \dots X_n$ variables aleatorias id\'enticamente distribuidas independientes, con $\mathbb{P}(X_i > 0) = 1$ y $\mathbb{V}(\log X_i) = \sigma^2$, se cumple, que para cada $\epsilon > 0$
+
+\[
+\mathbb{P}(e^{n[\mathbb{E}(\log Y_i) - \epsilon]} < X_1X_2\dots X_n < e^{n[\mathbb{E}(\log Y_i) + \epsilon]}) \geq 1 - \frac{\sigma^2}{n\epsilon^2}.
+\]
+
+Y as\'i deducimos,
+
+\[
+\mathbb{P}\Biggl(X_1X_2\dots X_n  < (\mathbb{E}Y_i)^ne^{n\epsilon}\Biggr) \geq 1 - \frac{\sigma^2}{n\epsilon^2}.
+\]
+
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item (1 pto) Para un entero positivo $n$, sea $\tau(n) = (2^k,i)$, donde $i$ es el resto de dividir $n$ por $2^k$, la mayor potencia de $2$. Por ejemplo $\tau(10) = (2^3,2), \tau(12) = (2^3,4), \tau(19) = (2^4,3)$ y $\tau(69) = (2^6,5)$. En un experimento un punto es seleccionado aleatoriamente en $[0,1]$. Para $n \geq 1, \tau(n) = (2^k,i)$, sea,
+
+\[
+X_n = \begin{cases}
+1 & \qquad \text{si la salida est\'a en }\quad \Biggl[\frac{i}{2^k}, \frac{i +1}{2^k}\Biggr]\\
+0 & \qquad \text{en otros casos}.
+\end{cases}
+\]
+
+Muestra que $X_n$ converge  a $0$ en probabilidad, mientras que no converge en ning\'un punto, y mucho menos en convergencia casi segura.
+
+\item (1 pto) En una secuencia de variables aleatorias $X_1, X_2, \dots, X_n, \dots$ supongamos que $X_k$, depende s\'olo de $X_{ k-1}, X_{k +1}$, pero que es independiente de todas las otras variables aleatorias $(k =2, 3, \dots)$. Muestra que si, la varianza es finita, entonces \texttt{la ley de los grandes n\'umeros d\'ebil} se cumple.
+
+\item (1 pto) Sean $X_1, X_2,\dots$ variables aleatorias independientes, id\'enticamente distribuidas con media $2$. Sean $Y_1, Y_2,\dots$ variables aleatorias independientes, id\'enticamente distribuidas con media $3$. Muestra que:
+
+\[
+\frac{X_1 +X_2 + \cdots + X_n}{Y_1 +Y_2+ \cdots + Y_n} \rightarrow \frac{2}{3}
+\]
+con probabilidad 1. ?`Importa si los $X_i$ son independientes del $Y_j$?.
+\end{enumerate}
+\item El \texttt{teorema de l\'imite central} en el contexto de Levy-Lindeberg, dice que si $\mathbb{E}(X_i) = \mu$ y $\mathbb{V}(X_i) = \sigma^2$, entonces:
+
+\[
+S_n^{*} = \frac{\sqrt{n}(\overline{X}_n - \mu)}{\sigma} = \frac{\sum_{i =1}^n(X_i - \mu)}{\sqrt{n}\sigma} \rightarrow N(0,1),
+\]
+
+Esto es, para cada $x$,
+
+\[
+\lim_{n \rightarrow \infty}\mathbb{P}(S_n^{*} \leq x) = \Phi(x) = \frac{1}{\sqrt{2\pi}}\bigints_{-\infty}^{x}e^{-u^2/2}du.
+\]
+
+\begin{enumerate}
+\item (1 pto) Sean $\{X_1,X_2,\dots\}$ una secuencia de variables aleatorias normales independientes. Sea $S_n =X_1^2 + X_2^2 + \cdots +X_n^2$. Encuentra:
+
+\[
+\lim_{n \rightarrow \infty}\mathbb{P}(S_n \leq n + \sqrt{n}).
+\]
+
+Sugerencia: Si $X_1,X_2, \dots, X_n$ son variables aleatorias normales independientes. Entonces $X =X_1^2 + X_2^2 + \cdots +X_n^2$ se refiere a una distribuci\'on chi-cuadrado con $n$ grados de libertad, es una distribuci\'on gamma con par\'ametros $(n/2, 1/2)$.
+
+\item (1 pto) Compara los resultados dados por la desigualdad de Chebyshev  y el teorema de l\'imite central, para las probabilidades,
+
+\[
+\mathbb{P}(-k < S_n^{*}\leq k)\qquad \text{para}\quad k =1,2, 3.
+\]
+
+\item (1 pto) Sea $X_1,X_2, \dots$ variables aleatorias independientes, con una funci\'on densidad com\'un $f(x) = 1/[2 \vert x \vert(\log \vert x \vert)^2]$ para $\vert x \vert < e^{-1}$. Muestra que las variables aleatorias $X_i$ tiene cero como media y tienen finita varianza, pero que no satisfacen el teorema de l\'imite central.
+\end{enumerate}
+\end{enumerate}
+\end{document} 
+
