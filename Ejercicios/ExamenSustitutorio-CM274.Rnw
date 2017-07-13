@@ -1,0 +1,144 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.35\linewidth}
+\begin{minipage}{0.6\linewidth}
+\textbf{Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274}\par
+ \par
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Examen Sustitutorio}}
+
+\begin{itemize}
+\item Responde cada pregunta, justificando, los resultados utilizados. Cada pregunta del examen contiene el desarrollo de propiedades hechas en clase y en las notas de clase.
+\item Est\'a prohibido compatir cuadernos entre estudiantes. Si se trasgede esta regla, se eliminar\'a la utilizaci\'on de los cuadernos en el examen.
+\item Se prohiben, copias de todo \'indole, as\'i como el uso de libros electr\'onicos.
+\end{itemize}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+
+
+\begin{enumerate}
+\item En un concurso, a los concursantes $A$, $B$ y $C$ se les pregunta a su vez, una pregunta cient\'ifica general. Si un concursante da una respuesta equivocada a una pregunta, se retira del juego. Los dos restantes seguir\'an compitiendo hasta que uno de ellos se retire. La \'ultima persona que queda ser\'a la ganadora. Supongamos que un concursante conoce la respuesta a una pregunta independientemente de los otros concursantes, con probabilidad $p$. Sea $CAB$ el evento de que $C$ se retira primero, $A$ despu\'es  y $B$ gana, con representaciones similares para otros casos. Calcula  y compara las probabilidades de $ABC$, $BCA$ y $CAB$.
+
+\item La funci\'on $F$ es la funci\'on de distribuci\'on de una variable aleatoria $X$, es dada por:
+
+\[
+F(t) = \begin{cases}
+0 & t < -1 \\
+(1/4)t + 1/4 & -1 \leq t < 0 \\
+1/2 & 0 \leq t < 1 \\
+(1/12)t + 7/12  & 1 \leq t < 2 \\
+1 & t\geq 2.
+\end{cases}
+\]
+
+\begin{enumerate}
+\item Dibuje el gr\'afico de $F$.
+\item Calcula la siguientes cantidades: $\mathbb{P}(X < 1), \mathbb{P}(X =1), \mathbb{P}(1 \leq X < 2), \mathbb{P}(X > 1/2), \mathbb{P}(X = 3/2)$ y $\mathbb{P}(1 < X \leq 6)$.
+\end{enumerate}
+\item Sea $X$ una variable aleatoria continua con una funci\'on densidad $f$. Decimos que $X$ es \texttt{sim\'etrica alrededor de $\alpha$} si para todo $x$,
+
+\[
+\mathbb{P}(X \geq \alpha + x) = \mathbb{P}(X \leq \alpha -x).
+\]
+
+\begin{enumerate}
+\item Prueba que $X$ es sim\'etrica alrededor de $\alpha$ si y s\'olo si para todo $x$, tenemos $f(\alpha -x )  = f(\alpha + x)$.
+
+\item Sea $X$ una variable aleatoria continua con funci\'on densidad de probabilidad:
+
+\[
+f(x) = \frac{1}{\sqrt{2 \pi}}e^{-(x -3)^2/2}, \ \ x \in \mathbb{R}.
+\]
+y sea $Y$ una variable aleatoria continua con funci\'on densidad de probabilidad:
+
+\[
+g(x) = \frac{1}{\pi[1 + (x -1)^2]}, \ \ x \in \mathbb{R}.
+\]
+
+Encuentra los puntos en los que $X$ e $Y$ son sim\'etricas.
+\end{enumerate}
+\item Construye  un grafo con exactamente $N$ nodos convenientemente enumerados desde el 1 hasta $N$. Pero este grafo es especial, dado que para cada nodo deben haber $K$ o menos aristas dirigidas hacia sus divisores propios. El el caso de que alg\'un nodo tenga s\'olo $k\leq K$ divisores propios, ese nodo tendr\'a exactamente $k$ aristas a esos $k$ divisores. Adem\'as note que si un nodo tiene $M>K$ divisores propios, entonces ese nodo tendr\'a exactamente $K$ aristas a alg\'un grupo de $K$ divisores propios de los $M$ disponibles. Un divisor propio de un entero $P$ es cualquier divisor de $P$ que sea menor estrictamente que $P$. Por ejemplo, $1$, $2$ y $3$ son divisores propios de $6$, pero $6$ no lo es.
+
+Dado el valor para $K$ y el n\'umero de nodos $N$ en el grafo, halla la expresi\'on que determinar\'a la cantidad de aristas que tendr\'a el grafo y la cantidad de formas en las que se puede dise\~nar el grafo con las condiciones dadas. Pruebe su expresi\'on desarrollando la respuesta para $N = 30$ y $K = 5 \mod 10^{9}+7$.
+
+\item La variable aleatoria $X$ es llamada \texttt{doble exponencial distribuida} si su funci\'on densidad es dada por:
+
+\[
+f(x) =ce^{-\vert x\vert},\quad -\infty < x < \infty
+\]
+\begin{enumerate}
+\item Encuentra el valor de $c$.
+\item Prueba  que $\mathbb{E}(X^{2n}) = (2n)!$ y $\mathbb{E}(X^{2n +1}) = 0$.
+\end{enumerate}
+\item Sean  $X$ e $Y$ dos variables aleatorias uniformes, independientes sobre $(0,1)$. Muestra que las variables aleatorias $U = \cos(2\pi X)\sqrt{-2\ln Y}$ y $V = \sin (2\pi X)\sqrt{-2\ln Y}$ son variables aleatorias normales est\'andar independientes.
+\item  Supongamos que un \texttt{mono inmortal} est\'a escribiendo constantemente en un procesador de textos que no se rompe, que dura para siempre y tiene una memoria infinita. Supongamos que el teclado del procesador de palabras tiene $m - 1$ tecla, una barra espaciadora para espacios en blanco y teclas separadas para diferentes s\'imbolos. Si el mono presiona uno de los $m$ s\'imbolos (incluida la barra de espacio) al azar, y si al final de cada l\'inea y al final de cada p\'agina, el procesador de palabras avanza a una nueva l\'inea y una nueva p\'agina por si mismo, ?` cu\'al es la probabilidad de que el mono finalmente escribir\'a la obras completas de Shakespeare en orden cronol\'ogico y sin errores?.
+
+\item 
+\begin{enumerate}
+	\item Sea $X_1, X_2, \cdots $ una secuencia de variables aleatorias Bernoulli con param\'etro $p$, independientes e id\'enticamente distribuidas. Prueba que para un $\epsilon > 0$, se tiene:
+	
+	\[
+	\mathbb{P}\Bigl( \Bigl\vert \frac{S_n}{n} - p \Bigr\vert \geq \epsilon\Bigr) \leq \frac{1}{4n\epsilon^2}
+	\]
+	
+	donde $S_n = X_1 + X_2 + \cdots X_n$.
+	\item Sea $X$ una variable aleatoria  no negativa. Prueba:
+	
+	\[
+	\mathbb{E}(X) \leq [\mathbb{E}(X^2)]^{\frac{1}{2}} \leq [\mathbb{E}(X^3)]^{\frac{1}{3}}\leq \dots
+	\]
+
+	\end{enumerate}
+\end{enumerate}
+\end{document} 
+
