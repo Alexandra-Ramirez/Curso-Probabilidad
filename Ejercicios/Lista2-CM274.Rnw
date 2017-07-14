@@ -76,7 +76,7 @@ si y s\'olo si $\mathbb{P}(A \cap B) = \mathbb{P}(A \cap C) = \mathbb{P}(B \cap 
 \item ?`Cu\'al es la probabilidad de que el juego siga para siempre sin que nadie gane?.
 \end{itemize}
 \item Una urna contiene 10 chips blancos y 12 chips rojos. Dos chips se extraen  al azar y sin mirar sus colores, se descartan. ?` Cu\'al es la probabilidad de que un tercer chip extraido sea rojo?.
-\item (1 pto) Una caja contiene $7$ bolas rojas y $13$ azules. Se seleccionan dos bolas al azar y se descartan sin que se vean sus colores. Si una tercera pelota es seleccionada  aleatoriamente y se observa que es roja, ?` cu\'al es la probabilidad de que ambas bolas descartadas sean azules?.
+\item  Una caja contiene $7$ bolas rojas y $13$ azules. Se seleccionan dos bolas al azar y se descartan sin que se vean sus colores. Si una tercera pelota es seleccionada  aleatoriamente y se observa que es roja, ?` cu\'al es la probabilidad de que ambas bolas descartadas sean azules?.
 \item Si dos dados  son lanzados seis veces, ?`cu\'al es la probabilidad de que la sexta suma obtenida no sea una repetici\'on?.
 \item  Un  dado  se lanza sucesivamente. Sea $X$ el n\'umero de lanzamientos hasta que cada uno de los seis posibles resultados ocurran al menos una vez. Halla la funci\'on de masa de probabilidad de $X$.
 \item  Una urna contiene $w$ chips blancos y $b$ chips azules. Un chip se extrae  al azar y luego se devuelve a la urna junto con $c> 0$ chips del mismo color. Este experimento se repite sucesivamente. Sea $X_n$ el n\'umero de chips blancos extraidos durante las primeras $n$ extracciones. Demuestra que $\mathbb{E}(X_n) = nw/(w + b)$.
