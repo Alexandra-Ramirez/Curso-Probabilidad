@@ -160,6 +160,7 @@
  ## Exámenes 
    * [Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
    * [Final](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenFinal-CM274.pdf) | [Solución (Final)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_FinalCM274.pdf).
+   * [Sustitutorio](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenSustitutorio-CM274.pdf) | [Solución (Sustitutorio)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuesta_SustitutorioCM274.pdf).
  
  
 ## Libros y artículos
