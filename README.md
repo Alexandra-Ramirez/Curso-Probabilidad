@@ -40,14 +40,14 @@
    -[Bayes Rule Book: chapter 1](http://jim-stone.staff.shef.ac.uk/BookBayes2012/bookbayesch01WithR.pdf).
    -[Bayes Rule with Lego](https://www.countbayesie.com/blog/2015/2/18/bayes-theorem-with-lego).
 
-### Combinatoria
- - Principio del conteo.
- - Permutaciones.
- - Permutaciones con reemplazo.
- - Permutaciones sin reemplazo.
- - Combinaciones sin reemplazo.
- - Combinaciones con reemplazo.
- - Ensayos de Bernoulli.
+* Combinatoria
+  - Principio del conteo.
+  - Permutaciones.
+  - Permutaciones con reemplazo.
+  - Permutaciones sin reemplazo.
+  - Combinaciones sin reemplazo.
+  - Combinaciones con reemplazo.
+  - Ensayos de Bernoulli.
 
 #### Lecturas
 
@@ -56,16 +56,16 @@
 * [Combinatorics problems](https://brilliant.org/math/combinatorics/).
 * [Combinatorics](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/Chapter3.pdf).
 
-### Variables aleatorias y funciones de distribución
+* Variables aleatorias y funciones de distribución
 
- - Variables aleatorias discretas y continuas.
- - PMF de una variable aleatoria discreta.
- - Función de distribución acumulativa.
- - Función densidad de probabilidad para una variable aleatoria continua.
- - Funciones de una variable aleatoria.
- - Variables aleatorias condicionadas.
+  - Variables aleatorias discretas y continuas.
+  - PMF de una variable aleatoria discreta.
+  - Función de distribución acumulativa.
+  - Función densidad de probabilidad para una variable aleatoria continua.
+  - Funciones de una variable aleatoria.
+  - Variables aleatorias condicionadas.
  
- #### Lecturas
+ * Lecturas
  
  * [Notas elementales  sobre  funciones](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funciones.pdf).
  * [Notas elementales de variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
@@ -77,14 +77,14 @@
  * [Visualising random variables](https://terrytao.wordpress.com/2016/05/13/visualising-random-variables/).
  
  
- ### Distribuciones conjuntas y condicionales
+ * Distribuciones conjuntas y condicionales
  
- * Distribuciones conjuntas.
- * Funciones de distribución acumulativas conjuntas.
- * Funciones de masa de probabilidad conjunta.
- * Función densidad de probabilidad conjunta.
- * Distribuciones condicionales conjuntas.
- * Convolución y la suma de variables aleatorias.
+  -Distribuciones conjuntas.
+  -Funciones de distribución acumulativas conjuntas.
+  -Funciones de masa de probabilidad conjunta.
+  -Función densidad de probabilidad conjunta.
+  -Distribuciones condicionales conjuntas.
+  -Convolución y la suma de variables aleatorias.
  
  #### Lecturas: 
  
