@@ -61,10 +61,6 @@
   - Funciones generadoras de probabilidad para variables aleatorias discretas.
   - Funciones generadora de momentos.
 
- 
-* Distribuciones especiales
-  - [Notas elementales sobre distribuciones discretas y continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Distribuciones/distribuciones.pdf).
-
 * Cotas y teoremas de Límites
  
   - Tipos de convergencia.
@@ -80,7 +76,7 @@
 * Notas de clases de Probabilidad básica
   - [Notas elementales de teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
   - [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
-  - [Notas sobre probabilidad condicional, eventos independientes, ley total de la probabilidad, regla de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
+  - [Notas sobre probabilidad condicional, ley total y regla de Bayes ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
   
 * Notas sobre Combinatoria
   - [Notas elementales  de  combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
@@ -96,6 +92,13 @@
   
 * Notas sobre esperanza de variables aleatorias
   - [Notas elementales sobre funciones generadores de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Funciones-generadoras/Funciones-generadoras_probabilidad.pdf).
+  - [Notas sobre esperanza y varianza de variables aleatorias](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Esperanza-varianza/Esperanza-varianza.pdf).
+  
+* Distribuciones especiales
+  - [Notas elementales sobre distribuciones discretas y continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Distribuciones/distribuciones.pdf).
+
+* Notas sobre cotas y teoremas de límites
+  - [Notas sobre desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
  
 ## Lecturas adicionales
 
@@ -126,6 +129,16 @@
   
 * Lecturas de distribuciones conjuntas y condicionales
   - [Joint Distributions](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture09.pdf).
+  
+* Lecturas sobre esperanza y varianza de variables aleatorias
+
+ - [Expectation and Variance from High School to Grad School](https://www.countbayesie.com/blog/2015/3/19/expectation-and-variance-from-high-school-to-grad-school).
+ - [Understanding Variance, Covariance, and Correlation](https://www.countbayesie.com/blog/2015/2/21/variance-co-variance-and-correlation).
+ - [Moments of a Random Variable Explained](https://www.countbayesie.com/blog/2015/4/23/why-so-square-jensens-inequality-and-moments-of-a-random-variable).
+  
+* Lecturas sobre cotas y teoremas de límites
+  - [Notas de Teoria de la Probabilidad de Terence Tao](https://terrytao.wordpress.com/2015/09/29/275a-notes-0-foundations-of-probability-theory/).
+ - [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
   
  ## Exámenes 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
