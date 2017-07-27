@@ -25,7 +25,9 @@
   - Eventos independientes.
   - Ley de la probabilidad total.
   - Regla de Bayes.
-* Combinatoria
+  
+* Combinatoria.
+
   - Principio del conteo.
   - Permutaciones.
   - Permutaciones con reemplazo.
@@ -34,7 +36,7 @@
   - Combinaciones con reemplazo.
   - Ensayos de Bernoulli.
   
-* Variables aleatorias y funciones de distribución
+* Variables aleatorias y funciones de distribución.
 
   - Variables aleatorias discretas y continuas.
   - PMF de una variable aleatoria discreta.
@@ -43,7 +45,7 @@
   - Funciones de una variable aleatoria.
   - Variables aleatorias condicionadas.
   
-* Distribuciones conjuntas y condicionales
+* Distribuciones conjuntas y condicionales.
 
   - Distribuciones conjuntas.
   - Funciones de distribución acumulativas conjuntas.
@@ -52,18 +54,18 @@
   - Distribuciones condicionales conjuntas.
   - Convolución y la suma de variables aleatorias.
  
-* Esperanza de variables aleatorias
+* Esperanza de variables aleatorias.
  
-  - Definiciones
+  - Definiciones.
   - Esperanza de funciones y variables aleatorias conjuntas.
   - Funciones generadoras de probabilidad para variables aleatorias discretas.
   - Funciones generadora de momentos.
 
  
-* Distribuciones especiales
+* Distribuciones especiales.
   - [Notas elementales sobre distribuciones discretas y continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Distribuciones/distribuciones.pdf).
 
-* Cotas y teoremas de Límites
+* Cotas y teoremas de Límites.
  
   - Tipos de convergencia.
   - Desigualdad de Markov.
@@ -73,14 +75,16 @@
   - Teorema del límite central.
   
   
-  * **Notas de clases**: 
+ ##  Notas de clases
+ 
+ * Notas de clases de Probabilidad básica
   - [Notas elementales de teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
   - [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
   - [Notas sobre probabilidad condicional, eventos independientes, ley total de la probabilidad, regla de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
  
-## Lecturas
+## Lecturas adicionales
 
-  * Lecturas sobre Probabilidad básica: 
+* Lecturas sobre Probabilidad básica: 
 
    - [Probability Spaces: An Illustrated Introduction](https://www.countbayesie.com/blog/2015/8/30/picture-guide-to-probability-spaces).
    - [Probability Theory a primer](https://jeremykun.com/2013/01/04/probability-theory-a-primer/). 
