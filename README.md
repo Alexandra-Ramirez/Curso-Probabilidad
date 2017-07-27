@@ -16,7 +16,7 @@
 
 ## Temas
 
-* Probabilidad básica
+* Probabilidad básica.
   - Espacio muestral y eventos.
   - Función probabilidad.
   - Modelo clásico sobre espacios finitos.
@@ -25,14 +25,17 @@
   - Eventos independientes.
   - Ley de la probabilidad total.
   - Regla de Bayes.
-  
+ 
+* Notas de clases: 
+ - [Notas elementales de teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
+ - [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
+ - [Notas sobre probabilidad condicional, eventos independientes, ley total de la probabilidad, regla de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
+ 
 * Lecturas sobre Probabilidad básica: 
 
-   - [Notas elementales de teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
+  
    - [Probability Spaces: An Illustrated Introduction](https://www.countbayesie.com/blog/2015/8/30/picture-guide-to-probability-spaces).
-   - [Probability Theory a primer](https://jeremykun.com/2013/01/04/probability-theory-a-primer/).
-   -[Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
-   - [Notas sobre probabilidad condicional, eventos independientes, ley total de la probabilidad, regla de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
+   - [Probability Theory a primer](https://jeremykun.com/2013/01/04/probability-theory-a-primer/). 
    - [Conditional probability: A Visual explanation by Victor Powell ](http://setosa.io/conditional/).
    - [Paradoxes of probability and other statistical strangeness ](https://theconversation.com/paradoxes-of-probability-and-other-statistical-strangeness-74440).
    - [The Monty Hall Problem A visual explanation by: Victor Powell](http://blog.vctr.me/monty-hall/).
