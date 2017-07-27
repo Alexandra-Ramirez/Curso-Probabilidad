@@ -74,12 +74,12 @@
  ##  Notas de clases
  
  * Notas de matemática 
-  - [Teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
-  - [Notas de funciones](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funciones.pdf).
-  - [Función medida](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funcion-medida.pdf).
-  - [Sumas y combinatoria](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/sumas.pdf).
-  - [Integración](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Integracion/Integracion.pdf).
-  - [Algebra lineal](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Algebra_lineal/Algebra_lineal.pdf).
+    - [Teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
+    - [Notas de funciones](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funciones.pdf).
+    - [Función medida](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funcion-medida.pdf).
+    - [Sumas y combinatoria](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/sumas.pdf).
+    -  [Integración](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Integracion/Integracion.pdf).
+    - [Algebra lineal](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Algebra_lineal/Algebra_lineal.pdf).
  
 * Notas de clases de Probabilidad básica
   - [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
