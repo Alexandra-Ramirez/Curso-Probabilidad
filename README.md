@@ -77,7 +77,7 @@
   
  ##  Notas de clases
  
- * Notas de clases de Probabilidad básica
+* Notas de clases de Probabilidad básica
   - [Notas elementales de teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
   - [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
   - [Notas sobre probabilidad condicional, eventos independientes, ley total de la probabilidad, regla de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
@@ -89,6 +89,13 @@
   - [Notas elementales  sobre  funciones](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funciones.pdf).
   - [Notas elementales de variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
   - [Notas elementales de variables aleatorias (segunda parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv1/Variables_aleatorias2.pdf).
+  
+* Notas sobre distribuciones conjuntas y condicionales
+  - [Notas acerca de variables aleatorias multivariadas(1)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_multivariadas/variables_multivariadas1/Variables_multivariadas1.pdf).
+  - [Notas acerca de variables aleatorias multivariadas((2)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_multivariadas/variables_multivariadas2.pdf).
+  
+* Notas sobre esperanza de variables aleatorias
+  - [Notas elementales sobre funciones generadores de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Funciones-generadoras/Funciones-generadoras_probabilidad.pdf).
  
 ## Lecturas adicionales
 
@@ -109,7 +116,7 @@
   - [Combinatorics problems](https://brilliant.org/math/combinatorics/).
   - [Combinatorics](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/Chapter3.pdf).
    
- * Lecturas sobre  variables aleatorias y funciones de distribución
+* Lecturas sobre  variables aleatorias y funciones de distribución
  
   - [Random Variables and Expectation with Robots and Stuff!](https://www.countbayesie.com/blog/2015/2/20/random-variables-and-expectation).
   - [Interrogating Probability Distributions](https://www.countbayesie.com/blog/2015/3/17/interrogating-probability-distributions).
