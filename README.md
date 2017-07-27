@@ -16,7 +16,7 @@
 
 ## Temario
 
-* Probabilidad básica.
+* Probabilidad básica
   - Espacio muestral y eventos.
   - Función probabilidad.
   - Modelo clásico sobre espacios finitos.
@@ -26,7 +26,7 @@
   - Ley de la probabilidad total.
   - Regla de Bayes.
   
-* Combinatoria.
+* Combinatoria
 
   - Principio del conteo.
   - Permutaciones.
@@ -36,7 +36,7 @@
   - Combinaciones con reemplazo.
   - Ensayos de Bernoulli.
   
-* Variables aleatorias y funciones de distribución.
+* Variables aleatorias y funciones de distribución
 
   - Variables aleatorias discretas y continuas.
   - PMF de una variable aleatoria discreta.
@@ -45,7 +45,7 @@
   - Funciones de una variable aleatoria.
   - Variables aleatorias condicionadas.
   
-* Distribuciones conjuntas y condicionales.
+* Distribuciones conjuntas y condicionales
 
   - Distribuciones conjuntas.
   - Funciones de distribución acumulativas conjuntas.
@@ -54,7 +54,7 @@
   - Distribuciones condicionales conjuntas.
   - Convolución y la suma de variables aleatorias.
  
-* Esperanza de variables aleatorias.
+* Esperanza de variables aleatorias
  
   - Definiciones.
   - Esperanza de funciones y variables aleatorias conjuntas.
@@ -62,10 +62,10 @@
   - Funciones generadora de momentos.
 
  
-* Distribuciones especiales.
+* Distribuciones especiales
   - [Notas elementales sobre distribuciones discretas y continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Distribuciones/distribuciones.pdf).
 
-* Cotas y teoremas de Límites.
+* Cotas y teoremas de Límites
  
   - Tipos de convergencia.
   - Desigualdad de Markov.
@@ -81,10 +81,18 @@
   - [Notas elementales de teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
   - [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
   - [Notas sobre probabilidad condicional, eventos independientes, ley total de la probabilidad, regla de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
+  
+* Notas sobre Combinatoria
+  - [Notas elementales  de  combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
+
+* Notas sobre  variables aleatorias y funciones de distribución
+  - [Notas elementales  sobre  funciones](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funciones.pdf).
+  - [Notas elementales de variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
+  - [Notas elementales de variables aleatorias (segunda parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv1/Variables_aleatorias2.pdf).
  
 ## Lecturas adicionales
 
-* Lecturas sobre Probabilidad básica: 
+* Lecturas sobre Probabilidad básica
 
    - [Probability Spaces: An Illustrated Introduction](https://www.countbayesie.com/blog/2015/8/30/picture-guide-to-probability-spaces).
    - [Probability Theory a primer](https://jeremykun.com/2013/01/04/probability-theory-a-primer/). 
@@ -95,7 +103,23 @@
    - [Bayes Rule Book: chapter 1](http://jim-stone.staff.shef.ac.uk/BookBayes2012/bookbayesch01WithR.pdf).
    - [Bayes Rule with Lego](https://www.countbayesie.com/blog/2015/2/18/bayes-theorem-with-lego).
    
+* Lecturas sobre Combinatoria
+
+  - [Books of proof Richard Hammack: Counting ](http://www.people.vcu.edu/~rhammack/BookOfProof/Counting.pdf).
+  - [Combinatorics problems](https://brilliant.org/math/combinatorics/).
+  - [Combinatorics](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/Chapter3.pdf).
+   
+ * Lecturas sobre  variables aleatorias y funciones de distribución
  
+  - [Random Variables and Expectation with Robots and Stuff!](https://www.countbayesie.com/blog/2015/2/20/random-variables-and-expectation).
+  - [Interrogating Probability Distributions](https://www.countbayesie.com/blog/2015/3/17/interrogating-probability-distributions).
+  - [The idea of a probability distribution](http://mathinsight.org/probability_distribution_idea).
+  - [The idea of a probability density function](http://mathinsight.org/probability_density_function_idea).
+  - [Visualising random variables](https://terrytao.wordpress.com/2016/05/13/visualising-random-variables/).
+  
+* Lecturas de distribuciones conjuntas y condicionales
+  - [Joint Distributions](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture09.pdf).
+  
  ## Exámenes 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
    * [ExamenFinal](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenFinal-CM274.pdf) | [Solución (Examen Final)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_FinalCM274.pdf).
