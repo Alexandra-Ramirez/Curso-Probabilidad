@@ -73,32 +73,38 @@
   
  ##  Notas de clases
  
+ * Notas de matemática 
+  - [Teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
+  - [Notas de funciones](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funciones.pdf).
+  - [Función medida](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funcion-medida.pdf).
+  - [Sumas y combinatoria](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/sumas.pdf).
+  - [Integración](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Integracion/Integracion.pdf).
+  - [Algebra lineal](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Algebra_lineal/Algebra_lineal.pdf).
+ 
 * Notas de clases de Probabilidad básica
-  - [Notas elementales de teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
   - [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
-  - [Notas sobre probabilidad condicional, ley total y regla de Bayes ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
+  - [Probabilidad condicional, ley total y regla de Bayes ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
   
 * Notas sobre Combinatoria
-  - [Notas elementales  de  combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
+  - [Combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
 
 * Notas sobre  variables aleatorias y funciones de distribución
-  - [Notas elementales  sobre  funciones](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funciones.pdf).
-  - [Notas elementales de variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
-  - [Notas elementales de variables aleatorias (segunda parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv1/Variables_aleatorias2.pdf).
+  - [Variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
+  - [Variables aleatorias (segunda parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv1/Variables_aleatorias2.pdf).
   
 * Notas sobre distribuciones conjuntas y condicionales
-  - [Notas acerca de variables aleatorias multivariadas(1)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_multivariadas/variables_multivariadas1/Variables_multivariadas1.pdf).
-  - [Notas acerca de variables aleatorias multivariadas((2)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_multivariadas/variables_multivariadas2.pdf).
+  - [Variables aleatorias multivariadas(1)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_multivariadas/variables_multivariadas1/Variables_multivariadas1.pdf).
+  - [Variables aleatorias multivariadas((2)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_multivariadas/variables_multivariadas2.pdf).
   
 * Notas sobre esperanza de variables aleatorias
-  - [Notas elementales sobre funciones generadores de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Funciones-generadoras/Funciones-generadoras_probabilidad.pdf).
-  - [Notas sobre esperanza y varianza de variables aleatorias](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Esperanza-varianza/Esperanza-varianza.pdf).
+  - [Funciones generadores de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Funciones-generadoras/Funciones-generadoras_probabilidad.pdf).
+  - [Esperanza y varianza de variables aleatorias](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Esperanza-varianza/Esperanza-varianza.pdf).
   
 * Distribuciones especiales
-  - [Notas elementales sobre distribuciones discretas y continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Distribuciones/distribuciones.pdf).
+  - [Distribuciones discretas y continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Distribuciones/distribuciones.pdf).
 
 * Notas sobre cotas y teoremas de límites
-  - [Notas sobre desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
+  - [Desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
  
 ## Lecturas adicionales
 
