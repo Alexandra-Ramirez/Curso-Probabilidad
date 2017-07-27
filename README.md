@@ -138,7 +138,7 @@
   
 * Lecturas sobre cotas y teoremas de límites
   - [Notas de Teoria de la Probabilidad de Terence Tao](https://terrytao.wordpress.com/2015/09/29/275a-notes-0-foundations-of-probability-theory/).
- - [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
+  - [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
   
  ## Exámenes 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
