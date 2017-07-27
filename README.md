@@ -25,20 +25,6 @@
   - Eventos independientes.
   - Ley de la probabilidad total.
   - Regla de Bayes.
- 
-* Lecturas: 
-
-   -[Notas elementales de teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
-   -[Probability Spaces: An Illustrated Introduction](https://www.countbayesie.com/blog/2015/8/30/picture-guide-to-probability-spaces).
-   -[Probability Theory a primer](https://jeremykun.com/2013/01/04/probability-theory-a-primer/).
-   -[Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
-   -[Notas sobre probabilidad condicional, eventos independientes, ley total de la probabilidad, regla de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
-   -[Conditional probability: A Visual explanation by Victor Powell ](http://setosa.io/conditional/).
-   -[Paradoxes of probability and other statistical strangeness ](https://theconversation.com/paradoxes-of-probability-and-other-statistical-strangeness-74440).
-   -[The Monty Hall Problem A visual explanation by: Victor Powell](http://blog.vctr.me/monty-hall/).
-   -[Conditional probability a primer](https://jeremykun.com/2013/03/28/conditional-partitioned-probability-a-primer/).
-   -[Bayes Rule Book: chapter 1](http://jim-stone.staff.shef.ac.uk/BookBayes2012/bookbayesch01WithR.pdf).
-   -[Bayes Rule with Lego](https://www.countbayesie.com/blog/2015/2/18/bayes-theorem-with-lego).
 
 * Combinatoria
   - Principio del conteo.
@@ -48,14 +34,7 @@
   - Combinaciones sin reemplazo.
   - Combinaciones con reemplazo.
   - Ensayos de Bernoulli.
-
-#### Lecturas
-
-* [Notas elementales  de  combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
-* [Books of proof Richard Hammack: Counting ](http://www.people.vcu.edu/~rhammack/BookOfProof/Counting.pdf).
-* [Combinatorics problems](https://brilliant.org/math/combinatorics/).
-* [Combinatorics](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/Chapter3.pdf).
-
+  
 * Variables aleatorias y funciones de distribución
 
   - Variables aleatorias discretas y continuas.
@@ -64,67 +43,35 @@
   - Función densidad de probabilidad para una variable aleatoria continua.
   - Funciones de una variable aleatoria.
   - Variables aleatorias condicionadas.
- 
- * Lecturas
- 
- * [Notas elementales  sobre  funciones](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funciones.pdf).
- * [Notas elementales de variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
- * [Notas elementales de variables aleatorias (segunda parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv1/Variables_aleatorias2.pdf).
- * [Random Variables and Expectation with Robots and Stuff!](https://www.countbayesie.com/blog/2015/2/20/random-variables-and-expectation).
- * [Interrogating Probability Distributions](https://www.countbayesie.com/blog/2015/3/17/interrogating-probability-distributions).
- * [The idea of a probability distribution](http://mathinsight.org/probability_distribution_idea).
- * [The idea of a probability density function](http://mathinsight.org/probability_density_function_idea).
- * [Visualising random variables](https://terrytao.wordpress.com/2016/05/13/visualising-random-variables/).
- 
- 
- * Distribuciones conjuntas y condicionales
- 
-  -Distribuciones conjuntas.
-  -Funciones de distribución acumulativas conjuntas.
-  -Funciones de masa de probabilidad conjunta.
-  -Función densidad de probabilidad conjunta.
-  -Distribuciones condicionales conjuntas.
-  -Convolución y la suma de variables aleatorias.
- 
- #### Lecturas: 
- 
- * [Joint Distributions](http://www.math.caltech.edu/%7E2016-17/2term/ma003/Notes/Lecture09.pdf).
- * [Notas acerca de variables aleatorias multivariadas(1)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_multivariadas/variables_multivariadas1/Variables_multivariadas1.pdf).
- * [Notas acerca de variables aleatorias multivariadas((2)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_multivariadas/variables_multivariadas2.pdf).
- 
- ### Esperanza de variables aleatorias
- 
- * Definiciones
- * Esperanza de funciones y variables aleatorias conjuntas.
- * Funciones generadoras de probabilidad para variables aleatorias discretas.
- * Funciones generadora de momentos.
+  
+* Distribuciones conjuntas y condicionales
 
- ####  Lecturas: 
-
-* [Notas elementales sobre funciones generadores de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Funciones-generadoras/Funciones-generadoras_probabilidad.pdf).
-* [Expectation and Variance from High School to Grad School](https://www.countbayesie.com/blog/2015/3/19/expectation-and-variance-from-high-school-to-grad-school).
-* [Understanding Variance, Covariance, and Correlation](https://www.countbayesie.com/blog/2015/2/21/variance-co-variance-and-correlation).
-* [Moments of a Random Variable Explained](https://www.countbayesie.com/blog/2015/4/23/why-so-square-jensens-inequality-and-moments-of-a-random-variable).
-
- ### Distribuciones
+  - Distribuciones conjuntas.
+  - Funciones de distribución acumulativas conjuntas.
+  - Funciones de masa de probabilidad conjunta.
+  - Función densidad de probabilidad conjunta.
+  - Distribuciones condicionales conjuntas.
+  - Convolución y la suma de variables aleatorias.
  
- * [Notas elementales sobre distribuciones discretas y continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Distribuciones/distribuciones.pdf).
+* Esperanza de variables aleatorias
+ 
+  - Definiciones
+  - Esperanza de funciones y variables aleatorias conjuntas.
+  - Funciones generadoras de probabilidad para variables aleatorias discretas.
+  - Funciones generadora de momentos.
 
- ### Cotas y teoremas de Límites
  
- * Tipos de convergencia.
- * Desigualdad de Markov.
- * Desigualdad de Chebychev.
- * Cotas de Chernoff.
- * Ley de los grandes números.
- * Teorema del límite central.
- 
- #### Lecturas 
- 
- * [Notas de Teoria de la Probabilidad de Terence Tao](https://terrytao.wordpress.com/2015/09/29/275a-notes-0-foundations-of-probability-theory/).
- * [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
- * [Notas sobre desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
+* Distribuciones especiales
+  - [Notas elementales sobre distribuciones discretas y continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Distribuciones/distribuciones.pdf).
 
+* Cotas y teoremas de Límites
+ 
+  - Tipos de convergencia.
+  - Desigualdad de Markov.
+  - Desigualdad de Chebychev.
+  - Cotas de Chernoff.
+  - Ley de los grandes números.
+  - Teorema del límite central.
  
  ## Exámenes 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
