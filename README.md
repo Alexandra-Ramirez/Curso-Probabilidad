@@ -1,4 +1,4 @@
-# Curso de teoria de probabilidades e inferencia estadística.
+##  Curso de teoria de probabilidades e inferencia estadística.
 
 ## Lecturas previas
 
@@ -16,7 +16,7 @@
 
 ## Temas
 
-###  Probabilidad básica
+* Probabilidad básica
  - Espacio muestral y eventos.
  - Función probabilidad.
  - Modelo clásico sobre espacios finitos.
@@ -26,19 +26,19 @@
  - Ley de la probabilidad total.
  - Regla de Bayes.
  
- ####  Lecturas: 
+* Lecturas: 
 
-* [Notas elementales de teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
- * [Probability Spaces: An Illustrated Introduction](https://www.countbayesie.com/blog/2015/8/30/picture-guide-to-probability-spaces).
- * [Probability Theory a primer](https://jeremykun.com/2013/01/04/probability-theory-a-primer/).
- * [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
- * [Notas sobre probabilidad condicional, eventos independientes, ley total de la probabilidad, regla de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
- * [Conditional probability: A Visual explanation by Victor Powell ](http://setosa.io/conditional/).
- * [Paradoxes of probability and other statistical strangeness ](https://theconversation.com/paradoxes-of-probability-and-other-statistical-strangeness-74440).
- * [The Monty Hall Problem A visual explanation by: Victor Powell](http://blog.vctr.me/monty-hall/).
- * [Conditional probability a primer](https://jeremykun.com/2013/03/28/conditional-partitioned-probability-a-primer/).
- * [Bayes Rule Book: chapter 1](http://jim-stone.staff.shef.ac.uk/BookBayes2012/bookbayesch01WithR.pdf).
- * [Bayes Rule with Lego](https://www.countbayesie.com/blog/2015/2/18/bayes-theorem-with-lego).
+  -[Notas elementales de teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
+  -[Probability Spaces: An Illustrated Introduction](https://www.countbayesie.com/blog/2015/8/30/picture-guide-to-probability-spaces).
+  -[Probability Theory a primer](https://jeremykun.com/2013/01/04/probability-theory-a-primer/).
+  -[Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
+  -[Notas sobre probabilidad condicional, eventos independientes, ley total de la probabilidad, regla de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
+  -[Conditional probability: A Visual explanation by Victor Powell ](http://setosa.io/conditional/).
+  -[Paradoxes of probability and other statistical strangeness ](https://theconversation.com/paradoxes-of-probability-and-other-statistical-strangeness-74440).
+  -[The Monty Hall Problem A visual explanation by: Victor Powell](http://blog.vctr.me/monty-hall/).
+  - [Conditional probability a primer](https://jeremykun.com/2013/03/28/conditional-partitioned-probability-a-primer/).
+  - [Bayes Rule Book: chapter 1](http://jim-stone.staff.shef.ac.uk/BookBayes2012/bookbayesch01WithR.pdf).
+ - [Bayes Rule with Lego](https://www.countbayesie.com/blog/2015/2/18/bayes-theorem-with-lego).
 
 ### Combinatoria
  - Principio del conteo.
