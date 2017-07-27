@@ -132,9 +132,9 @@
   
 * Lecturas sobre esperanza y varianza de variables aleatorias
 
- - [Expectation and Variance from High School to Grad School](https://www.countbayesie.com/blog/2015/3/19/expectation-and-variance-from-high-school-to-grad-school).
- - [Understanding Variance, Covariance, and Correlation](https://www.countbayesie.com/blog/2015/2/21/variance-co-variance-and-correlation).
- - [Moments of a Random Variable Explained](https://www.countbayesie.com/blog/2015/4/23/why-so-square-jensens-inequality-and-moments-of-a-random-variable).
+  - [Expectation and Variance from High School to Grad School](https://www.countbayesie.com/blog/2015/3/19/expectation-and-variance-from-high-school-to-grad-school).
+  - [Understanding Variance, Covariance, and Correlation](https://www.countbayesie.com/blog/2015/2/21/variance-co-variance-and-correlation).
+  - [Moments of a Random Variable Explained](https://www.countbayesie.com/blog/2015/4/23/why-so-square-jensens-inequality-and-moments-of-a-random-variable).
   
 * Lecturas sobre cotas y teoremas de límites
   - [Notas de Teoria de la Probabilidad de Terence Tao](https://terrytao.wordpress.com/2015/09/29/275a-notes-0-foundations-of-probability-theory/).
