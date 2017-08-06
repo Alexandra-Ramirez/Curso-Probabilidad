@@ -146,6 +146,10 @@
   - [Notas de Teoria de la Probabilidad de Terence Tao](https://terrytao.wordpress.com/2015/09/29/275a-notes-0-foundations-of-probability-theory/).
   - [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
   
+ ## Diapositivas
+ 
+ * [C1: Espacio muestral, eventos, función probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Clases/Clase1/Clase1.pdf).
+ 
  ## Exámenes 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
    * [ExamenFinal](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenFinal-CM274.pdf) | [Solución (Examen Final)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_FinalCM274.pdf).
@@ -193,3 +197,5 @@ Metropolis es una plantilla de Beamer, que involucra los siguientes pasos de ins
 * Mueva los archivos `*.sty` resultantes a la carpeta que contiene una presentación. Para usar Metropolis con muchas presentaciones, ejecuta  `make install` o mueva los archivos `*.sty` a una carpeta en una ruta TeX (puede requerir derechos `sudo`).
 
 * Utiliza el tema de su presentación declarando `\usetheme {metropolis}` en el preámbulo de un documento Beamer.
+
+  - Más  información detallada sobre el uso de Metropolis  [aquí](mirrors.ctan.org/macros/latex/contrib/beamer-contrib/themes/metropolis/doc/metropolistheme.pdf).
