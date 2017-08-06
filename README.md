@@ -182,3 +182,14 @@ c-lara@Lara:~$rm *.deb
 - [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
 - Using R and Rstudio for Data Management, Statistical and Graphics, Nicholas J. Horton and Ken Kleinman, CRC Press, 2015.
 
+### Metropolis 
+
+Metropolis es una plantilla de Beamer, que involucra los siguientes pasos de instalación:
+
+* Descargar el código con `git clone` del [repositorio de metropolis](https://github.com/matze/mtheme) o como un [archivo zip](https://github.com/matze/mtheme/archive/master.zip) de la última versión de desarrollo.
+
+* Compile los archivos de estilo ejecutando `make sty` dentro del directorio descargado. 
+
+* Mueva los archivos `*.sty` resultantes a la carpeta que contiene una presentación. Para usar Metropolis con muchas presentaciones, ejecuta  `make install` o mueva los archivos `*.sty` a una carpeta en una ruta TeX (puede requerir derechos `sudo`).
+
+* Utiliza el tema de su presentación declarando `\usetheme {metropolis}` en el preámbulo de un documento Beamer.
