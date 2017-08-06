@@ -1,4 +1,4 @@
-##  Curso de teoria de probabilidades e inferencia estadística.
+## Descripción del curso
 
 ## Lecturas previas
 
@@ -71,7 +71,7 @@
   - Teorema del límite central.
   
   
- ##  Notas de clases
+##  Notas de clases
  
  * Notas de matemática 
     - [Teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
@@ -146,7 +146,7 @@
   - [Notas de Teoria de la Probabilidad de Terence Tao](https://terrytao.wordpress.com/2015/09/29/275a-notes-0-foundations-of-probability-theory/).
   - [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
   
- ## Exámenes 
+## Exámenes 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
    * [ExamenFinal](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenFinal-CM274.pdf) | [Solución (Examen Final)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_FinalCM274.pdf).
    * [ExamenSustitutorio](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenSustitutorio-CM274.pdf) | [Solución (Examen Sustitutorio)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuesta_SustitutorioCM274.pdf).
