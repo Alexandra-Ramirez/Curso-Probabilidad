@@ -198,4 +198,4 @@ Metropolis es una plantilla de Beamer, que involucra los siguientes pasos de ins
 
 * Utiliza el tema de su presentación declarando `\usetheme {metropolis}` en el preámbulo de un documento Beamer.
 
-  - Más  información detallada sobre el uso de Metropolis  [aquí](mirrors.ctan.org/macros/latex/contrib/beamer-contrib/themes/metropolis/doc/metropolistheme.pdf).
+* Más  información detallada sobre el uso de Metropolis  [aquí](mirrors.ctan.org/macros/latex/contrib/beamer-contrib/themes/metropolis/doc/metropolistheme.pdf).
