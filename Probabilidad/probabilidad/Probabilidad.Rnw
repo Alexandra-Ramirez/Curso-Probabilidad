@@ -94,19 +94,19 @@ El \underline{espacio muestral} $\Omega$ de un experimento es el conjunto de tod
 \vspace{0.2cm}
 
 \begin{ejemplo}
-\normalfont En el experimento aleatorio de lanzar una moneda tres veces y observar los resultados el espacio muestral es el conjunto
+\normalfont En el experimento aleatorio de lanzar una moneda tres veces y observar los resultados el espacio muestral es el conjunto:
 
 \[
 \Omega=\{CCC,CCS,CSC,CSS,SCC,SCS,SSC,SSS\}.
 \]
 
-El evento 
+El evento
 
 \[
 A=\{CCC,CCS,CSS,CSC\}\subset \Omega
 \]
 
-describe \texttt{una cara se obtuvo en el lanzamiento de la primera moneda}. En este caso tanto el espacio muestral $\omega$ como el evento $A$ son conjuntos finitos.
+describe \texttt{una cara que se obtuvo en el lanzamiento de la primera moneda}. En este caso tanto el espacio muestral $\Omega$ como el evento $A$ son conjuntos finitos.
 
 \end{ejemplo}
 
@@ -259,7 +259,7 @@ Asignamos un n\'umero $\mathbb{P}(A)$ para cada evento $A$, llamada probabilidad
 \begin{enumerate}
 \item $\mathbb{P}(A) \geq 0$, \ \ \mbox{para todo} \ \ $A$.
 \item $\mathbb{P}(\Omega) = 1$.
-\item Sean $A_n, n \in \mathbb{P}$ es una secuencia de eventos disjuntos  por pares $(A_i \cap A_j = \emptyset)$ siempre que $i \neq j$, entonces
+\item Sean $A_n, n \in \mathbb{N}$ es una secuencia de eventos disjuntos  por pares $(A_i \cap A_j = \emptyset)$ siempre que $i \neq j$, entonces
 
 \[
 \mathbb{P}\Bigl(\bigcup\limits_{i= 1}^{\infty}A_i \Bigr) = \sum_{i = 1}^{\infty}\mathbb{P}(A_i).
@@ -348,7 +348,7 @@ En t\'erminos matem\'aticos, esto se afirma de la siguiente manera: Dado que la 
 
 Para cualquier  $\epsilon > 0$. En otras palabras, no importa lo peque\~no que elegimos $\epsilon$, la probabilidad de que la diferencia entre $n / N$ y $p$ sea mayor que $\epsilon$ tiende a cero cuando $N\rightarrow \infty$. El uso de frecuencias relativas como estimaciones de probabilidad puede justificarse matem\'aticamente
 
-El enfoque axiom?tico establece un peque\~o n\'umero de leyes o axiomas sobre los cuales se basa toda la teoria de la probabilidad. Fundamental a  este concepto es el hecho de que es posible manipular probabilidades usando la misma \'algebra l\'ogica con el cual los eventos mismos son manipulados, como se muestra en los axiomas mostrados anteriormente.
+El enfoque axiom\'atico establece un peque\~no n\'umero de leyes o axiomas sobre los cuales se basa toda la teoria de la probabilidad. Fundamental a  este concepto es el hecho de que es posible manipular probabilidades usando la misma \'algebra l\'ogica con el cual los eventos mismos son manipulados, como se muestra en los axiomas mostrados anteriormente.
 
 \vspace{0.5cm}
 
