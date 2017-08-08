@@ -16,16 +16,6 @@
 
 ## Temario
 
-* Probabilidad básica
-  - Espacio muestral y eventos.
-  - Función probabilidad.
-  - Modelo clásico sobre espacios finitos.
-  - Modelo clásico sobre espacios continuos.
-  - Probabilidad condicional.
-  - Eventos independientes.
-  - Ley de la probabilidad total.
-  - Regla de Bayes.
-  
 * Combinatoria
 
   - Principio del conteo.
@@ -35,6 +25,16 @@
   - Combinaciones sin reemplazo.
   - Combinaciones con reemplazo.
   - Ensayos de Bernoulli.
+  
+* Probabilidad básica
+  - Espacio muestral y eventos.
+  - Función probabilidad.
+  - Modelo clásico sobre espacios finitos.
+  - Modelo clásico sobre espacios continuos.
+  - Probabilidad condicional.
+  - Eventos independientes.
+  - Ley de la probabilidad total.
+  - Regla de Bayes.
   
 * Variables aleatorias y funciones de distribución
 
@@ -81,13 +81,13 @@
     -  [Integración](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Integracion/Integracion.pdf).
     - [Algebra lineal](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Algebra_lineal/Algebra_lineal.pdf).
  
+* Notas sobre Combinatoria
+  - [Combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
+
 * Notas de clases de Probabilidad básica
   - [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
   - [Probabilidad condicional, ley total y regla de Bayes ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
   
-* Notas sobre Combinatoria
-  - [Combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
-
 * Notas sobre  variables aleatorias y funciones de distribución
   - [Variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
   - [Variables aleatorias (segunda parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv1/Variables_aleatorias2.pdf).
