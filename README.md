@@ -154,8 +154,7 @@
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
    * [ExamenFinal](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenFinal-CM274.pdf) | [Solución (Examen Final)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_FinalCM274.pdf).
    * [ExamenSustitutorio](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenSustitutorio-CM274.pdf) | [Solución (Examen Sustitutorio)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuesta_SustitutorioCM274.pdf).
- 
- 
+
 ## Libros y artículos
 
 - Introduction to Probability, Dimitri P. Bertsekas y John N. Tsitsiklis, Athena Scientific, 2008.
