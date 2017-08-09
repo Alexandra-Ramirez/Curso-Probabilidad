@@ -60,8 +60,6 @@ Regla de Bayes\par
 
 \vspace {0.5cm}
 
-
-
 \section{Probabilidad condicional}
 
 \vspace{0.3cm}
