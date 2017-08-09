@@ -118,7 +118,7 @@ y todas las propiedades y intuiciones que se aplican a la funci\'on probabilidad
 
 \vspace{0.2cm}
 
-Como se mencion\'o anteriormente, las probabilidades condicionales son usualmente intuitivas. El siguiente ejemplo de (Feller, 1968), sin embargo, muestra una situaci\'on contra-intuitiva que implica probabilidades condicionales. Esto demuestra que la intuici?n no debe ser un sustituto de la computaci\'on rigurosa.
+Como se mencion\'o anteriormente, las probabilidades condicionales son usualmente intuitivas. El siguiente ejemplo de (Feller, 1968), sin embargo, muestra una situaci\'on contra-intuitiva que implica probabilidades condicionales. Esto demuestra que la intuici\'on no debe ser un sustituto de la computaci\'on rigurosa.
 
 
 \vspace{0.2cm}
@@ -329,10 +329,10 @@ $\mathbb{P}(\mbox{Progr4} |\mbox{no error})$
 \normalfont Dos eventos  $A$ y $B$ son independientes si  $\mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B)$.  Para tres eventos, $A, B$ y $C$ definimos los eventos independientes si
 
 \begin{align*}
-\mathbb{P}(A \cap B) &= \mathbb{P}(A)\cdot \mathbb{P}(B)\\
-\mathbb{P}(A \cap C) &= \mathbb{P}(A)\cdot \mathbb{P}(C)\\
-\mathbb{P}(B \cap C) &= \mathbb{P}(A)\cdot \mathbb{P}(C)\ \ \text{y} \\
-\mathbb{P}(A \cap B \cap C) &= \mathbb{P}(A)\cdot \mathbb{P}(B) \cdot \mathbb{P}(C)
+\mathbb{P}(A \cap B) &= \mathbb{P}(A)\mathbb{P}(B)\\
+\mathbb{P}(A \cap C) &= \mathbb{P}(A) \mathbb{P}(C)\\
+\mathbb{P}(B \cap C) &= \mathbb{P}(A)\mathbb{P}(C)\ \ \text{y} \\
+\mathbb{P}(A \cap B \cap C) &= \mathbb{P}(A)\mathbb{P}(B)\mathbb{P}(C)
 \end{align*}
 
 
@@ -371,11 +371,11 @@ para cada subconjunto $J$ de $I$.
 
 \vspace{0.5cm}
 
-Existe cierta confusi\'on entre eventos independientes y eventos mutuamente exclusivos. A menudo se habla de estos como \texttt{no tener ning?n efecto sobre el otro}, pero eso no es una caracterizaci\'on precisa en ambos casos. Debes tener  en cuenta que aunque los eventos mutuamente exclusivos no pueden ocurrir juntos, los eventos independientes deben ser capaces de ocurrir juntos.
+Existe cierta confusi\'on entre eventos independientes y eventos mutuamente exclusivos. A menudo se habla de estos como \texttt{no tener ning\'un efecto sobre el otro}, pero eso no es una caracterizaci\'on precisa en ambos casos. Debes tener  en cuenta que aunque los eventos mutuamente exclusivos no pueden ocurrir juntos, los eventos independientes deben ser capaces de ocurrir juntos.
 
 \vspace{0.2cm}
 
-Supongamos que ni $\mathbb{P}(A)$ ni $\mathbb{P}(B)$ es $0$ y que $A$ y $B$ son mutualmente exclusivos. Entonces $\mathbb{P}(A \cap B) = 0  \neq \mathbb{P}(A)\cdot \mathbb{P}(B)$. As\'i $A$ y $B$ no son independientes. Esto es equivalente  a la declaraci\'on que si $A$ y $B$ no pueden ser mutualmente exclusivos.
+Supongamos que ni $\mathbb{P}(A)$ ni $\mathbb{P}(B)$ es $0$ y que $A$ y $B$ son mutualmente exclusivos. Entonces $\mathbb{P}(A \cap B) = 0  \neq \mathbb{P}(A)\mathbb{P}(B)$. As\'i $A$ y $B$ no son independientes. Esto es equivalente  a la declaraci\'on que si $A$ y $B$ no pueden ser mutualmente exclusivos.
 
 \end{defi}
 
@@ -418,11 +418,11 @@ S S S S   & & B  \\
 
 \vspace{0.2cm}
 
-Entonces $\mathbb{P}(A) = 1/2$ y $\mathbb{P}(B) = 1/2$, mientras que $C$ consiste de $6$ puntos con exactamente dos caras y dos sellos. As\'i $P(C) = 6/16 = 3/8$. Ahora $\mathbb{P}(A \cap B) =\frac{4}{16} = \frac{1}{4} = \mathbb{P}(A)\cdot \mathbb{P}(B); \mathbb{P}(A \cap C) = \frac{3}{16} = \mathbb{P}(A)\cdot \mathbb{P}(C)$ y $\mathbb{P}(B \cap C) = \frac{3}{16} =  \mathbb{P}(B)\cdot \mathbb{P}(C)$. Por tanto los eventos $A, B$ y $C$ son independientes por pares.
+Entonces $\mathbb{P}(A) = 1/2$ y $\mathbb{P}(B) = 1/2$, mientras que $C$ consiste de $6$ puntos con exactamente dos caras y dos sellos. As\'i $P(C) = 6/16 = 3/8$. Ahora $\mathbb{P}(A \cap B) =\frac{4}{16} = \frac{1}{4} = \mathbb{P}(A)\mathbb{P}(B); \mathbb{P}(A \cap C) = \frac{3}{16} = \mathbb{P}(A) \mathbb{P}(C)$ y $\mathbb{P}(B \cap C) = \frac{3}{16} =  \mathbb{P}(B) \mathbb{P}(C)$. Por tanto los eventos $A, B$ y $C$ son independientes por pares.
 
 \vspace{0.2cm}
 
-El evento $A \cap B \cap C$ consiste de dos puntos $CSSC$ y $CCSS$ con probabilidad $2/16 = 1/8$. As\'i $\mathbb{P}(A \cap B \cap C) \neq \mathbb{P}(A)\cdot \mathbb{P}(B)\cdot \mathbb{P}(B)$ y as\'i $A, B$ y $C$ no son independientes.
+El evento $A \cap B \cap C$ consiste de dos puntos $CSSC$ y $CCSS$ con probabilidad $2/16 = 1/8$. As\'i $\mathbb{P}(A \cap B \cap C) \neq \mathbb{P}(A) \mathbb{P}(B) \mathbb{P}(B)$ y as\'i $A, B$ y $C$ no son independientes.
 \end{ejemplo}
 
 
@@ -442,7 +442,7 @@ La siguiente definici\'on generaliza la independencia de una colecci\'on arbitra
 
 \vspace{0.3cm}
 
-La independencia puede surgir de dos maneras distintas. Por ejemplo al lanzar una moneda dos veces, asumimos que los lanzamientos son indepedientes, lo que se \texttt{traduce}, en que las monedas \texttt{no tienen memoria del primer lanzamiento}. En otro caso, derivamos la independencia verificando $\mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B)$. Por ejemplo, en el lanzamiento de un dado, sea $A = \{ 2, 4, 6 \}$ y sea $B = \{1, 2, 3, 4\}$, entonces $A \cap B = \{2, 4\},  \mathbb{P}(A\cap B) = 2/6 = \mathbb{P}(A)\mathbb{P}(B) = (1/2)\cdot(2/3)$ y as\'i $A$ y $B$ son independientes. En este casono asumimos que $A$ y $B$ son independientes.
+La independencia puede surgir de dos maneras distintas. Por ejemplo al lanzar una moneda dos veces, asumimos que los lanzamientos son independientes, lo que se \texttt{traduce}, en que las monedas \texttt{no tienen memoria del primer lanzamiento}. En otro caso, derivamos la independencia verificando $\mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B)$. Por ejemplo, en el lanzamiento de un dado, sea $A = \{ 2, 4, 6 \}$ y sea $B = \{1, 2, 3, 4\}$, entonces $A \cap B = \{2, 4\},  \mathbb{P}(A\cap B) = 2/6 = \mathbb{P}(A)\mathbb{P}(B) = (1/2)(2/3)$ y as\'i $A$ y $B$ son independientes. En este casono asumimos que $A$ y $B$ son independientes.
 
 \vspace{0.2cm}
 
@@ -504,7 +504,7 @@ Ahora $\mathbb{P}(A_1) = 1/3$. $A_2$ ocurre si tenemos la secuencia persona 1 pi
 \vspace{0.2cm}
 
 \begin{ejemplo}
-\normalfont Se lanza  dos cartas de una baraja, sin reemplazo. Sea $A$ el evento de que el primera carta  es el As de Tr\'eboles y sea $B$ el evento de que la segunda corta  es la Reina de Diamantes. Entonces $\mathbb{P}(A \cap B) = \mathbb{P}(A)\mathbb{P}(B|A) = (1/52) \times (1/51).$
+\normalfont Se lanza  dos cartas de una baraja, sin reemplazo. Sea $A$ el evento de que el primera carta  es el as de tr\'eboles y sea $B$ el evento de que la segunda corta  es la reina de diamantes. Entonces $\mathbb{P}(A \cap B) = \mathbb{P}(A)\mathbb{P}(B|A) = (1/52) \times (1/51).$
 
 <<foo8, comment = NA, prompt =TRUE, eval= TRUE>>=
 (1/51) * (1/52)
@@ -643,7 +643,7 @@ Sea $A$ el evento en el que se  llega tarde y $B$ sea el evento que llueva. El p
 
 \begin{align*}
 \mathbb{P}(A) &= \mathbb{P}(A | B)\mathbb{P}(B) + \mathbb{P}(A|B^c)\mathbb{P}(B^c)\\
-& = \frac{1}{5}\cdot \frac{2}{5} + \frac{3}{5}\cdot\frac{3}{5} = \frac{11}{25}.
+& = \frac{1}{5}\times \frac{2}{5} + \frac{3}{5}\times\frac{3}{5} = \frac{11}{25}.
 \end{align*}
 
 \end{ejemplo}
@@ -798,7 +798,7 @@ La clave est\'a en entender que se nos da $\mathbb{P}(A|B_j)$ y se nos pide enco
 \vspace{0.2cm}
 
 \[
-\mathbb{P}(B|A) = \frac{\mathbb{P}(A|B)\mathbb{B}}{\mathbb{P}(A)}.
+\mathbb{P}(B|A) = \frac{\mathbb{P}(A|B)\mathbb{P}(B)}{\mathbb{P}(A)}.
 \]
 \end{ejemplo}
 
