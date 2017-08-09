@@ -16,16 +16,6 @@
 
 ## Temario
 
-* Combinatoria
-
-  - Principio del conteo.
-  - Permutaciones.
-  - Permutaciones con reemplazo.
-  - Permutaciones sin reemplazo.
-  - Combinaciones sin reemplazo.
-  - Combinaciones con reemplazo.
-  - Ensayos de Bernoulli.
-  
 * Probabilidad básica
   - Espacio muestral y eventos.
   - Función probabilidad.
@@ -35,6 +25,16 @@
   - Eventos independientes.
   - Ley de la probabilidad total.
   - Regla de Bayes.
+  
+* Combinatoria
+
+  - Principio del conteo.
+  - Permutaciones.
+  - Permutaciones con reemplazo.
+  - Permutaciones sin reemplazo.
+  - Combinaciones sin reemplazo.
+  - Combinaciones con reemplazo.
+  - Ensayos de Bernoulli.
   
 * Variables aleatorias y funciones de distribución
 
