@@ -162,7 +162,7 @@ Los prerequisitos para este curso son:
   - [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
   
 ### Diapositivas
- 
+ * [C0: Introducción al curso](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase0/Clase0.pdf).
  * [C1: Espacio muestral, eventos, función probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase1/Clase1.pdf).
  * [C2: Combinatoria para probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase2/Clase2.pdf).
  * [C3: Probabilidad condicional, independencia,regla total, teorema de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase3/Clase3.pdf).
