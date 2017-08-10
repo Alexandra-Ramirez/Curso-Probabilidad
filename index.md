@@ -190,9 +190,9 @@ Los prerequisitos para este curso son:
   
 ## Software
 
-La práctica de la estadística moderna es computacionalmente intensiva, pero este curso no es especialmente así, pero se tendrá que utilizar computadoras para hacer algunas de las asignaciones.
+La práctica de la estadística moderna es computacionalmente intensiva, pero para este curso no es especialmente así, pero se tendrá que utilizar computadoras para hacer algunas  asignaciones.
 
-En este curso se utilizará el lenguaje de programación estadística R (la alternativa de código abierto al lenguaje  S de AT&T). Tal vez este [video](https://www.youtube.com/watch?v=Dx4IFguczgI) que te muestre las ventajas y desventajas del lenguaje, te animen a aprenderlo.
+En este curso se utilizará el lenguaje de programación  R (la alternativa de código abierto al lenguaje  S de AT&T). Tal vez este [video](https://www.youtube.com/watch?v=Dx4IFguczgI) que te muestre las ventajas y desventajas del lenguaje, te animen a aprenderlo.
 
 El curso complementario de este curso acerca de R, se encuentra [aquí](http://c-lara.github.io/Curso-R/).
 
