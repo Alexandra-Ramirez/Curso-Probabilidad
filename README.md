@@ -1,5 +1,14 @@
 ##  Curso de teoria de probabilidades e inferencia estadística.
 
+CM274 es un curso introductorio  a las ideas fundamentales y técnicas de la teoria de probabilidades e inferencia estadística.
+
+Los prerequisitos para este curso son:
+
+- Cálculo diferencial, integral y de varias variables.
+- Álgebra lineal.
+- Alguna familiariedad con un lenguaje de programación como Mathematica, Matlab, NumPy, Octave, R es asumida.
+
+
 ## Lecturas previas
 
 - [Seeing Theory: A visual introduction to probability and statistics](http://students.brown.edu/seeing-theory/).
