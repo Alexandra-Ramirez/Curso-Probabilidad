@@ -8,7 +8,6 @@ Los prerequisitos para este curso son:
 - Álgebra lineal.
 - Alguna familiariedad con un lenguaje de programación como Mathematica, Matlab, NumPy, C, R es asumida.
 
-
 ### Lecturas previas
 
 - [Seeing Theory: A visual introduction to probability and statistics](http://students.brown.edu/seeing-theory/).
