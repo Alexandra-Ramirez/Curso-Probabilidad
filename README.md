@@ -21,10 +21,6 @@
   - Función probabilidad.
   - Modelo clásico sobre espacios finitos.
   - Modelo clásico sobre espacios continuos.
-  - Probabilidad condicional.
-  - Eventos independientes.
-  - Ley de la probabilidad total.
-  - Regla de Bayes.
   
 * Combinatoria
 
@@ -34,7 +30,16 @@
   - Permutaciones sin reemplazo.
   - Combinaciones sin reemplazo.
   - Combinaciones con reemplazo.
-  - Ensayos de Bernoulli.
+  - Ensayos de Bernoulli. 
+
+* Conceptos fundamentales de probabilidad
+
+  - Probabilidad condicional.
+  - Eventos independientes.
+  - Ley de la probabilidad total.
+  - Regla de Bayes.
+  
+
   
 * Variables aleatorias y funciones de distribución
 
@@ -73,7 +78,7 @@
   
  ##  Notas de clases
  
- * Notas de matemática 
+* Notas de matemática 
     - [Teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
     - [Notas de funciones](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funciones.pdf).
     - [Función medida](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funcion-medida.pdf).
@@ -81,11 +86,13 @@
     -  [Integración](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Integracion/Integracion.pdf).
     - [Algebra lineal](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Algebra_lineal/Algebra_lineal.pdf).
  
-* Notas sobre Combinatoria
-  - [Combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
-
 * Notas de clases de Probabilidad básica
   - [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
+  
+* Notas sobre Combinatoria
+  - [Combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
+  
+* Conceptos fundamentales de probabilidad
   - [Probabilidad condicional, ley total y regla de Bayes ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
   
 * Notas sobre  variables aleatorias y funciones de distribución
