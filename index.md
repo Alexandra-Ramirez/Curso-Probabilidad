@@ -1,6 +1,15 @@
-## Descripción del curso
+##  Curso de teoria de probabilidades e inferencia estadística.
 
-## Lecturas previas
+CM274 es un curso introductorio  a las ideas fundamentales y técnicas de la teoria de probabilidades e inferencia estadística.
+
+Los prerequisitos para este curso son:
+
+- Cálculo diferencial, integral y de varias variables.
+- Álgebra lineal.
+- Alguna familiariedad con un lenguaje de programación como Mathematica, Matlab, NumPy, C, R es asumida.
+
+
+### Lecturas previas
 
 - [Seeing Theory: A visual introduction to probability and statistics](http://students.brown.edu/seeing-theory/).
 - [Explained Visually: pi, Image Kernels...](http://setosa.io/ev/)
@@ -10,7 +19,7 @@
 - [STA 101 Labs](http://www2.stat.duke.edu/~mc301/101_labs/).
 - [Lectures on Statistics Robert Ash](http://www.math.uiuc.edu/~r-ash/Stat.html).
 
-## Libro de referencia
+### Libro de referencia
 
 - Robert V. Hogg, Elliot A. Tanis, Dale L. Zimmerman, Probability and Statistical Inference  2015.
 
@@ -21,10 +30,6 @@
   - Función probabilidad.
   - Modelo clásico sobre espacios finitos.
   - Modelo clásico sobre espacios continuos.
-  - Probabilidad condicional.
-  - Eventos independientes.
-  - Ley de la probabilidad total.
-  - Regla de Bayes.
   
 * Combinatoria
 
@@ -34,7 +39,16 @@
   - Permutaciones sin reemplazo.
   - Combinaciones sin reemplazo.
   - Combinaciones con reemplazo.
-  - Ensayos de Bernoulli.
+  - Ensayos de Bernoulli. 
+
+* Conceptos fundamentales de probabilidad
+
+  - Probabilidad condicional.
+  - Eventos independientes.
+  - Ley de la probabilidad total.
+  - Regla de Bayes.
+  
+
   
 * Variables aleatorias y funciones de distribución
 
@@ -71,9 +85,9 @@
   - Teorema del límite central.
   
   
-##  Notas de clases
+ ###  Notas de clases
  
- * Notas de matemática 
+* Notas de matemática 
     - [Teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
     - [Notas de funciones](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funciones.pdf).
     - [Función medida](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funcion-medida.pdf).
@@ -83,11 +97,13 @@
  
 * Notas de clases de Probabilidad básica
   - [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
-  - [Probabilidad condicional, ley total y regla de Bayes ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
   
 * Notas sobre Combinatoria
   - [Combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
-
+  
+* Conceptos fundamentales de probabilidad
+  - [Probabilidad condicional, ley total y regla de Bayes ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
+  
 * Notas sobre  variables aleatorias y funciones de distribución
   - [Variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
   - [Variables aleatorias (segunda parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv1/Variables_aleatorias2.pdf).
@@ -106,7 +122,7 @@
 * Notas sobre cotas y teoremas de límites
   - [Desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
  
-## Lecturas adicionales
+### Lecturas adicionales
 
 * Lecturas sobre Probabilidad básica
 
@@ -146,13 +162,19 @@
   - [Notas de Teoria de la Probabilidad de Terence Tao](https://terrytao.wordpress.com/2015/09/29/275a-notes-0-foundations-of-probability-theory/).
   - [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
   
-## Exámenes 
+ ### Diapositivas
+ 
+ * [C1: Espacio muestral, eventos, función probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase1/Clase1.pdf).
+ * [C2: Combinatoria para probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase2/Clase2.pdf).
+ * [C3: Probabilidad condicional, independencia,regla total, teorema de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase3/Clase3.pdf).
+ * [C4: Variables aleatorias discretas]().
+ 
+ ### Exámenes 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
    * [ExamenFinal](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenFinal-CM274.pdf) | [Solución (Examen Final)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_FinalCM274.pdf).
    * [ExamenSustitutorio](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenSustitutorio-CM274.pdf) | [Solución (Examen Sustitutorio)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuesta_SustitutorioCM274.pdf).
- 
- 
-## Libros y artículos
+
+### Libros y artículos
 
 - Introduction to Probability, Dimitri P. Bertsekas y John N. Tsitsiklis, Athena Scientific, 2008.
 - Probability, Markov Chains, Queues, and Simulation (Princeton University Press) William J. Stewart (2009).
@@ -169,6 +191,12 @@
   
 ## Software
 
+La práctica de la estadística moderna es computacionalmente intensiva, pero este curso no es especialmente así, pero se tendrá que utilizar computadoras para hacer algunas de las asignaciones.
+
+En este curso se utilizará el lenguaje de programación estadística R (la alternativa de código abierto al lenguaje  S de AT&T). Tal vez este [video](https://www.youtube.com/watch?v=Dx4IFguczgI) que te muestre las ventajas y desventajas del lenguaje, te animen a aprenderlo.
+
+El curso complementario de este curso acerca de R, se encuentra [aquí](http://c-lara.github.io/Curso-R/).
+
 ### R y Rstudio
 
 [R](https://www.cran.r-project.org/) y [RStudio](https://www.rstudio.com/) . RStudio es un IDE para R. Es software libre con licencia GPLv3 y se puede ejecutar sobre distintas plataformas  o incluso desde la web usando [RStudio Server](https://support.rstudio.com/hc/en-us/articles/200552306-Getting-Started).
@@ -182,3 +210,16 @@ c-lara@Lara:~$rm *.deb
 - [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
 - Using R and Rstudio for Data Management, Statistical and Graphics, Nicholas J. Horton and Ken Kleinman, CRC Press, 2015.
 
+### Metropolis 
+
+Metropolis es una plantilla de Beamer, que involucra los siguientes pasos de instalación:
+
+* Descargar el código con `git clone` del [repositorio de metropolis](https://github.com/matze/mtheme) o como un [archivo zip](https://github.com/matze/mtheme/archive/master.zip) de la última versión de desarrollo.
+
+* Compile los archivos de estilo ejecutando `make sty` dentro del directorio descargado. 
+
+* Mueva los archivos `*.sty` resultantes a la carpeta que contiene una presentación. Para usar Metropolis con muchas presentaciones, ejecuta  `make install` o mueva los archivos `*.sty` a una carpeta en una ruta TeX (puede requerir derechos `sudo`).
+
+* Utiliza el tema de su presentación declarando `\usetheme {metropolis}` en el preámbulo de un documento Beamer.
+
+* Más  información detallada sobre el uso de Metropolis  [aquí](mirrors.ctan.org/macros/latex/contrib/beamer-contrib/themes/metropolis/doc/metropolistheme.pdf).
