@@ -182,11 +182,11 @@ Los prerequisitos para este curso son:
 
 - [Notas de Probabilidad y Estadística de KC. Border CALTECH](http://www.math.caltech.edu/%7E2015-16/2term/ma003/).
 -  Algunos canales de YouTube para aprender Estadistica y Probabilidad:
-  * [Probability Spaces: An Illustrated Introduction](https://www.countbayesie.com/).
-  * [Brandon Foltz](https://www.youtube.com/user/BCFoltz).
-  * [jbstatistics](https://www.youtube.com/user/jbstatistics).
-  * [Analytics University](https://www.youtube.com/channel/UC2XO4HDxzfMOZIV1l795g1Q).
-  * [NPTEL HRD](https://www.youtube.com/user/nptelhrd).
+    * [Probability Spaces: An Illustrated Introduction](https://www.countbayesie.com/).
+    * [Brandon Foltz](https://www.youtube.com/user/BCFoltz).
+    * [jbstatistics](https://www.youtube.com/user/jbstatistics).
+    * [Analytics University](https://www.youtube.com/channel/UC2XO4HDxzfMOZIV1l795g1Q).
+    * [NPTEL HRD](https://www.youtube.com/user/nptelhrd).
   
 ## Software
 
