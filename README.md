@@ -9,7 +9,7 @@ Los prerequisitos para este curso son:
 - Alguna familiariedad con un lenguaje de programación como Mathematica, Matlab, NumPy, Octave, R es asumida.
 
 
-## Lecturas previas
+### Lecturas previas
 
 - [Seeing Theory: A visual introduction to probability and statistics](http://students.brown.edu/seeing-theory/).
 - [Explained Visually: pi, Image Kernels...](http://setosa.io/ev/)
@@ -19,7 +19,7 @@ Los prerequisitos para este curso son:
 - [STA 101 Labs](http://www2.stat.duke.edu/~mc301/101_labs/).
 - [Lectures on Statistics Robert Ash](http://www.math.uiuc.edu/~r-ash/Stat.html).
 
-## Libro de referencia
+### Libro de referencia
 
 - Robert V. Hogg, Elliot A. Tanis, Dale L. Zimmerman, Probability and Statistical Inference  2015.
 
@@ -85,7 +85,7 @@ Los prerequisitos para este curso son:
   - Teorema del límite central.
   
   
- ##  Notas de clases
+ ###  Notas de clases
  
 * Notas de matemática 
     - [Teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
@@ -122,7 +122,7 @@ Los prerequisitos para este curso son:
 * Notas sobre cotas y teoremas de límites
   - [Desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
  
-## Lecturas adicionales
+### Lecturas adicionales
 
 * Lecturas sobre Probabilidad básica
 
@@ -162,16 +162,16 @@ Los prerequisitos para este curso son:
   - [Notas de Teoria de la Probabilidad de Terence Tao](https://terrytao.wordpress.com/2015/09/29/275a-notes-0-foundations-of-probability-theory/).
   - [Probabilistic bounds a primer](https://jeremykun.com/2013/04/15/probabilistic-bounds-a-primer/).
   
- ## Diapositivas
+ ### Diapositivas
  
  * [C1: Espacio muestral, eventos, función probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Clases/Clase1/Clase1.pdf).
  
- ## Exámenes 
+ ### Exámenes 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
    * [ExamenFinal](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenFinal-CM274.pdf) | [Solución (Examen Final)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_FinalCM274.pdf).
    * [ExamenSustitutorio](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenSustitutorio-CM274.pdf) | [Solución (Examen Sustitutorio)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuesta_SustitutorioCM274.pdf).
 
-## Libros y artículos
+### Libros y artículos
 
 - Introduction to Probability, Dimitri P. Bertsekas y John N. Tsitsiklis, Athena Scientific, 2008.
 - Probability, Markov Chains, Queues, and Simulation (Princeton University Press) William J. Stewart (2009).
