@@ -6,7 +6,7 @@ Los prerequisitos para este curso son:
 
 - Cálculo diferencial, integral y de varias variables.
 - Álgebra lineal.
-- Alguna familiariedad con un lenguaje de programación como Mathematica, Matlab, NumPy, Octave, R es asumida.
+- Alguna familiariedad con un lenguaje de programación como Mathematica, Matlab, NumPy, C, R es asumida.
 
 
 ### Lecturas previas
@@ -187,6 +187,10 @@ Los prerequisitos para este curso son:
   * [NPTEL HRD](https://www.youtube.com/user/nptelhrd).
   
 ## Software
+
+La práctica de la estadística moderna es computacionalmente intensiva, pero este curso no es especialmente así, pero se tendrá que utilizar computadoras para hacer algunas de las asignaciones.
+
+En este curso se utilizará el lenguaje de programación estadística R (la alternativa de código abierto al lenguaje  S de AT&T). Tal vez este [video](https://www.youtube.com/watch?v=Dx4IFguczgI) que te muestre las ventajas y desventajas del lenguaje, te animen a aprenderlo.
 
 ### R y Rstudio
 
