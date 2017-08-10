@@ -164,7 +164,10 @@ Los prerequisitos para este curso son:
   
  ### Diapositivas
  
- * [C1: Espacio muestral, eventos, función probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Clases/Clase1/Clase1.pdf).
+ * [C1: Espacio muestral, eventos, función probabilidad]().
+ * [C2: Combinatoria para probabilidad]().
+ * [C3: Probabilidad condicional, independencia,regla total, teorema de Bayes]().
+ * [C4: Variables aleatorias discretas]().
  
  ### Exámenes 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
@@ -191,6 +194,8 @@ Los prerequisitos para este curso son:
 La práctica de la estadística moderna es computacionalmente intensiva, pero este curso no es especialmente así, pero se tendrá que utilizar computadoras para hacer algunas de las asignaciones.
 
 En este curso se utilizará el lenguaje de programación estadística R (la alternativa de código abierto al lenguaje  S de AT&T). Tal vez este [video](https://www.youtube.com/watch?v=Dx4IFguczgI) que te muestre las ventajas y desventajas del lenguaje, te animen a aprenderlo.
+
+El curso complementario de este curso acerca de R, se encuentra [aquí](http://c-lara.github.io/Curso-R/).
 
 ### R y Rstudio
 
