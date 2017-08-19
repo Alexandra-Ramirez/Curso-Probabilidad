@@ -176,6 +176,8 @@ Los prerequisitos para este curso son:
 
 ### Libros y artículos
 
+- The Probability Lifesaver: All the Tools You Need to Understand Chance (Princeton Lifesaver Study Guides)  	
+Steven J. Miller 2017.
 - Introduction to Probability, Dimitri P. Bertsekas y John N. Tsitsiklis, Athena Scientific, 2008.
 - Probability, Markov Chains, Queues, and Simulation (Princeton University Press) William J. Stewart (2009).
 - All of Statistics  A Concise Course in Statistical Inference Larry Wasserman (Springer Texts in Statistics) (2003).
