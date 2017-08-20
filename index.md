@@ -175,6 +175,8 @@ Los prerequisitos para este curso son:
  * [C10: Desigualdades en probabilidad]().
  * [C11: Distribuciones conjuntas, independencia]().
  * [C12: Covarianza y Correlacion]().
+ * [C13: Repaso1]().
+ * [C14: Repaso2]().
  
 ### Exámenes 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
