@@ -176,6 +176,8 @@ Los prerequisitos para este curso son:
  * [C10: Desigualdades en probabilidad]().
  * [C11: Distribuciones conjuntas, independencia]().
  * [C12: Covarianza y Correlacion]().
+ * [C13: Repaso 1]().
+ * [C14: Repaso 2]().
  
  ### Exámenes anteriores
  
