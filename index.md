@@ -167,6 +167,14 @@ Los prerequisitos para este curso son:
  * [C2: Combinatoria para probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase2/Clase2.pdf).
  * [C3: Probabilidad condicional, independencia,regla total, teorema de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase3/Clase3.pdf).
  * [C4: Variables aleatorias discretas]().
+ * [C5: Variables aleatorias discretas:esperanza y varianza]().
+ * [C6: Variables aleatorias continuas]().
+ * [C7: Principales variablea aleatorias continuas]().
+ * [C8: Transformaciones de variables aleatorias continuas]().
+ * [C9: Teorema del Límite Central y la Ley de los grandes números]().
+ * [C10: Desigualdades en probabilidad]().
+ * [C11: Distribuciones conjuntas, independencia]().
+ * [C12: Covarianza y Correlacion]().
  
 ### Exámenes 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
