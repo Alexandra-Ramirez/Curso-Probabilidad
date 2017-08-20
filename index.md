@@ -205,30 +205,3 @@ La práctica de la estadística moderna es computacionalmente intensiva, pero pa
 En este curso se utilizará el lenguaje de programación  R (la alternativa de código abierto al lenguaje  S de AT&T). Tal vez este [video](https://www.youtube.com/watch?v=Dx4IFguczgI) que te muestre las ventajas y desventajas del lenguaje, te animen a aprenderlo.
 
 El curso complementario de este curso acerca de R, se encuentra [aquí](http://c-lara.github.io/Curso-R/).
-
-### R y Rstudio
-
-[R](https://www.cran.r-project.org/) y [RStudio](https://www.rstudio.com/) . RStudio es un IDE para R. Es software libre con licencia GPLv3 y se puede ejecutar sobre distintas plataformas  o incluso desde la web usando [RStudio Server](https://support.rstudio.com/hc/en-us/articles/200552306-Getting-Started).
-
-
-```bash
-c-lara@Lara:~$ wget https://download1.rstudio.org/rstudio-0.99.893-amd64.deb
-c-lara@Lara:~$sudo dpkg -i *.deb
-c-lara@Lara:~$rm *.deb
-``` 
-- [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
-- Using R and Rstudio for Data Management, Statistical and Graphics, Nicholas J. Horton and Ken Kleinman, CRC Press, 2015.
-
-### Metropolis 
-
-Metropolis es una plantilla de Beamer, que involucra los siguientes pasos de instalación:
-
-* Descargar el código con `git clone` del [repositorio de metropolis](https://github.com/matze/mtheme) o como un [archivo zip](https://github.com/matze/mtheme/archive/master.zip) de la última versión de desarrollo.
-
-* Compile los archivos de estilo ejecutando `make sty` dentro del directorio descargado. 
-
-* Mueva los archivos `*.sty` resultantes a la carpeta que contiene una presentación. Para usar Metropolis con muchas presentaciones, ejecuta  `make install` o mueva los archivos `*.sty` a una carpeta en una ruta TeX (puede requerir derechos `sudo`).
-
-* Utiliza el tema de su presentación declarando `\usetheme {metropolis}` en el preámbulo de un documento Beamer.
-
-* Más  información detallada sobre el uso de Metropolis  [aquí](mirrors.ctan.org/macros/latex/contrib/beamer-contrib/themes/metropolis/doc/metropolistheme.pdf).
