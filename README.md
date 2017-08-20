@@ -168,8 +168,17 @@ Los prerequisitos para este curso son:
  * [C2: Combinatoria para probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase2/Clase2.pdf).
  * [C3: Probabilidad condicional, independencia,regla total, teorema de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase3/Clase3.pdf).
  * [C4: Variables aleatorias discretas]().
+ * [c5: Variables aleatorias discretas:esperanza y varianza]().
+ * [c6: Variables aleatorias continuas]().
+ * [c7: Principales variablea aleatorias continuas]().
+ * [c8: Transformaciones de variables aleatorias continuas]().
+ * [c9: Teorema del Límite Central y la Ley de los grandes números]().
+ * [c10: Desigualdades en probabilidad]().
+ * [c11: Distribuciones conjuntas, independencia]().
+ * [c12: Covarianza y Correlacion]().
  
- ### Exámenes 
+ ### Exámenes anteriores
+ 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
    * [ExamenFinal](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenFinal-CM274.pdf) | [Solución (Examen Final)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_FinalCM274.pdf).
    * [ExamenSustitutorio](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenSustitutorio-CM274.pdf) | [Solución (Examen Sustitutorio)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuesta_SustitutorioCM274.pdf).
