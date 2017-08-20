@@ -178,11 +178,11 @@ Los prerequisitos para este curso son:
  * [C13: Repaso1]().
  * [C14: Repaso2]().
  
- ### Avance
+### Avance
  
  | Semana             |        Avance de curso                      | Lista de ejercicios (dirigidas)        |
 |:------------------:|:-------------------------------------------:|:--------------------------------------:|
-|          1         | Probabilidad básica Combinatoria CLI para R |                                        |
+|          1         |Probabilidad básica Combinatoria CLI para R |                                        |
 |          2         |                                             |                                        |
 |          3         |                                             |                                        |
 |          4         |                                             |                                        |
