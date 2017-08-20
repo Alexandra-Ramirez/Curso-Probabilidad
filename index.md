@@ -179,28 +179,30 @@ Los prerequisitos para este curso son:
  * [C14: Repaso2]().
  
 ### Avance
+
+| Semana             |                                                                                                                          Avance de curso                                                                                                                                        | Lista de ejercicios (dirigidas)        |
+|:------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------:|
+|          1         | - [Probabilidad básica](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase1/Clase1.pdf) - Combinatoria ((https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase2/Clase2.pdf).) - CLI para R(http://rpubs.com/C-LaraAvila/296904). |                                        |
+|          2         |                                                                                                                                                                                                                                                                                 |                                        |
+|          3         |                                                                                                                                                                                                                                                                                 |                                        |
+|          4         |                                                                                                                                                                                                                                                                                 |                                        |
+|          5         |                                                                                                                                                                                                                                                                                 |                                        |
+|          6         |                                                                                                                                                                                                                                                                                 |                                        |
+|          7         |                                                                                                                                                                                                                                                                                 |                                        |
+|          8         |                                                                                                                                                                                                                                                                                 |                                        |
+|          9         |                                                                                                                                                                                                                                                                                 |                                        |
+|         10         |                                                                                                                                                                                                                                                                                 |                                        |
+|         11         |                                                                                                                                                                                                                                                                                 |                                        |
+|         12         |                                                                                                                                                                                                                                                                                 |                                        |
+|         13         |                                                                                                                                                                                                                                                                                 |                                        |
+|         14         |                                                                                                                                                                                                                                                                                 |                                        |
+|         15         |                                                                                                                                                                                                                                                                                 |                                        |
+|         16         |                                                                                                                                                                                                                                                                                 |                                        |
+|         17         |                                                                                                                                                                                                                                                                                 |                                        |
+|         18         |                                                                                                                                                                                                                                                                                 |                                        |
+|         19         |                                                                                                                                                                                                                                                                                 |                                        |
  
- | Semana             |        Avance de curso                      | Lista de ejercicios (dirigidas)        |
-|:------------------:|:-------------------------------------------:|:--------------------------------------:|
-|          1         |Probabilidad básica Combinatoria CLI para R |                                        |
-|          2         |                                             |                                        |
-|          3         |                                             |                                        |
-|          4         |                                             |                                        |
-|          5         |                                             |                                        |
-|          6         |                                             |                                        |
-|          7         |                                             |                                        |
-|          8         |                                             |                                        |
-|          9         |                                             |                                        |
-|         10         |                                             |                                        |
-|         11         |                                             |                                        |
-|         12         |                                             |                                        |
-|         13         |                                             |                                        |
-|         14         |                                             |                                        |
-|         15         |                                             |                                        |
-|         16         |                                             |                                        |
-|         17         |                                             |                                        |
-|         18         |                                             |                                        |
-|         19         |                                             |                                        |
+
  
 ### Exámenes 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
