@@ -40,7 +40,7 @@ Los prerequisitos para este curso son:
 
 ## Temario
 
-* Probabilidad básica
+### Probabilidad básica
   - Espacio muestral y eventos.
   - Función probabilidad.
   
@@ -51,7 +51,7 @@ Los prerequisitos para este curso son:
   - Modelo clásico sobre espacios finitos.
   - Modelo clásico sobre espacios continuos.
   
-* Combinatoria
+###  Teoria del conteo
 
 ¿ De cuántas maneras se puede barajar un mazo de cartas?
 
@@ -65,20 +65,18 @@ Los prerequisitos para este curso son:
  
   - Permutaciones.
   
-    - Permutaciones con reemplazo.
-    - Permutaciones sin reemplazo.
+      - Permutaciones con reemplazo.
+      - Permutaciones sin reemplazo.
   - Combinatoria.
-    - Combinaciones sin reemplazo.
+      - Combinaciones sin reemplazo.
+      - Combinaciones con reemplazo.
   
- Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi 
+  Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi 
   
    <iframe width="360" height="240" src="http://www.youtube.com/embed/XMriWTvPXHI"> </iframe>
- 
-  
-    - Combinaciones con reemplazo.
   - Ensayos de Bernoulli. 
 
-* Conceptos fundamentales de probabilidad
+### Conceptos fundamentales de probabilidad
 
   - Probabilidad condicional.
   - Eventos independientes.
@@ -92,7 +90,7 @@ Los prerequisitos para este curso son:
   
 
   
-* Variables aleatorias y funciones de distribución
+###  Variables aleatorias y funciones de distribución
 
   - Variables aleatorias discretas y continuas.
   
