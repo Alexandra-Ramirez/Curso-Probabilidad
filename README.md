@@ -31,7 +31,7 @@ Los prerequisitos para este curso son:
   - Modelo clásico sobre espacios finitos.
   - Modelo clásico sobre espacios continuos.
   
-* Combinatoria
+* Teoria del conteo para probabilidades
 
   - Principio del conteo.
   - Permutaciones.
@@ -77,10 +77,10 @@ Los prerequisitos para este curso son:
 
 * Cotas y teoremas de Límites
  
-  - Tipos de convergencia.
   - Desigualdad de Markov.
   - Desigualdad de Chebychev.
   - Cotas de Chernoff.
+  - Tipos de convergencia.
   - Ley de los grandes números.
   - Teorema del límite central.
   
@@ -98,8 +98,8 @@ Los prerequisitos para este curso son:
 * Notas de clases de Probabilidad básica
   - [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
   
-* Notas sobre Combinatoria
-  - [Combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
+* Notas sobre teoria del conteo para probabilidad
+  - [Teoria del conteo  en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
   
 * Conceptos fundamentales de probabilidad
   - [Probabilidad condicional, ley total y regla de Bayes ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
