@@ -54,7 +54,7 @@ Los prerequisitos para este curso son:
   - Modelo clásico sobre espacios finitos.
   - Modelo clásico sobre espacios continuos.
   
- ###  Teoria del conteo para probabilidad
+### Teoria del conteo para probabilidad
 
   - ¿ De cuántas maneras se puede barajar un mazo de cartas?
 
@@ -72,12 +72,14 @@ Los prerequisitos para este curso son:
   - Combinatoria.
       * Combinaciones sin reemplazo.
       * Combinaciones con reemplazo.
+  - Video de como calcular la probabilidad con o sin reemplazo
+       <iframe width="360" height="240" src="http://www.youtube.com/embed/uKTjh-6PFjo"> </iframe>
   
    - Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi 
   
         <iframe width="360" height="240" src="http://www.youtube.com/embed/XMriWTvPXHI"> </iframe>
   
-  - Ensayos de Bernoulli. 
+   - Ensayos de Bernoulli. 
 
 ### Conceptos fundamentales de probabilidad
 
@@ -108,6 +110,12 @@ Los prerequisitos para este curso son:
   
   - PMF de una variable aleatoria discreta.
   - Función de distribución acumulativa.
+  - Video acerca de la distribución de Bernoulli
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/bT1p5tJwn_0"> </iframe> 
+  
+  - Video acerca de la distribución de Binomial
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/qIzC1-9PwQo"> </iframe> 
+  
   - Función densidad de probabilidad para una variable aleatoria continua.
   - Funciones de una variable aleatoria.
   - Variables aleatorias condicionadas.
@@ -127,6 +135,8 @@ Los prerequisitos para este curso son:
   - Video sobre esperanza y varianza de variables aleatorias discretas
   
       <iframe width="360" height="240" src="http://www.youtube.com/embed/Vyk8HQOckIE"> </iframe> 
+  - Video sobre la media y varianza de la distribución de Bernoulli
+       <iframe width="360" height="240" src="http://www.youtube.com/embed/bC6WIpRgMuc"> </iframe> 
   
   - Esperanza de funciones y variables aleatorias conjuntas.
   - Funciones generadoras de probabilidad para variables aleatorias discretas.
