@@ -32,7 +32,7 @@ Los prerequisitos para este curso son:
 
 * La última banana: un experimento mental de probabilidad - Leonardo Barrichello 
 
-<iframe width="480" height="3600" src="http://www.youtube.com/embed/Kgudt4PXs28"> </iframe>
+<iframe width="480" height="360" src="http://www.youtube.com/embed/Kgudt4PXs28"> </iframe>
 
 ### Libro de referencia
 
