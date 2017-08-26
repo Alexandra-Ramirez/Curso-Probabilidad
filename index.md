@@ -38,7 +38,14 @@ Los prerequisitos para este curso son:
   
 * Combinatoria
 
+¿ De cuántas maneras se puede barajar un mazo de cartas?
+<iframe width="360" height="240" src="http://www.youtube.com/embed/uNS1QvDzCVw"> </iframe>
+
   - Principio del conteo.
+ ¿Hasta qué número puedes contar con los dedos? (Spoiler: mucho más que 10)
+ 
+ <iframe width="360" height="240" src="http://www.youtube.com/embed/UixU1oRW64Q"> </iframe>
+ 
   - Permutaciones.
   - Permutaciones con reemplazo.
   - Permutaciones sin reemplazo.
