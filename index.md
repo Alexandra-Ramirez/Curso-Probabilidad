@@ -40,28 +40,27 @@ Los prerequisitos para este curso son:
 
 ## Temario
 
-### Probabilidad básica
+* Probabilidad básica
   - Espacio muestral y eventos.
   - Función probabilidad.
+  - Video sobre probabilidad, eventos independientes e dependientes
   
-  Video sobre probabilidad, eventos independientes e dependientes
-  
-  <iframe width="360" height="240" src="http://www.youtube.com/embed/uzkc-qNVoOk"> </iframe>
+   <iframe width="360" height="240" src="http://www.youtube.com/embed/uzkc-qNVoOk"> </iframe>
   
   - Modelo clásico sobre espacios finitos.
   - Modelo clásico sobre espacios continuos.
   
-###  Teoria del conteo
+ * Teoria del conteo para probabilidad
 
-¿ De cuántas maneras se puede barajar un mazo de cartas?
+      - ¿ De cuántas maneras se puede barajar un mazo de cartas?
 
-<iframe width="360" height="240" src="http://www.youtube.com/embed/uNS1QvDzCVw"> </iframe>
+        <iframe width="360" height="240" src="http://www.youtube.com/embed/uNS1QvDzCVw"> </iframe>
 
   - Principio del conteo.
   
- ¿Hasta qué número puedes contar con los dedos? (Spoiler: mucho más que 10)
+      - ¿Hasta qué número puedes contar con los dedos? (Spoiler: mucho más que 10)
  
- <iframe width="360" height="240" src="http://www.youtube.com/embed/UixU1oRW64Q"> </iframe>
+        <iframe width="360" height="240" src="http://www.youtube.com/embed/UixU1oRW64Q"> </iframe>
  
   - Permutaciones.
   
@@ -71,32 +70,29 @@ Los prerequisitos para este curso son:
       - Combinaciones sin reemplazo.
       - Combinaciones con reemplazo.
   
-  Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi 
+      - Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi 
   
-   <iframe width="360" height="240" src="http://www.youtube.com/embed/XMriWTvPXHI"> </iframe>
+        <iframe width="360" height="240" src="http://www.youtube.com/embed/XMriWTvPXHI"> </iframe>
   - Ensayos de Bernoulli. 
 
-### Conceptos fundamentales de probabilidad
+* Conceptos fundamentales de probabilidad
 
   - Probabilidad condicional.
   - Eventos independientes.
   
-  Video sobre independencia
+  - Video sobre independencia
   
-  <iframe width="360" height="240" src="http://www.youtube.com/embed/pV3nZAsJxl0"> </iframe> 
+       <iframe width="360" height="240" src="http://www.youtube.com/embed/pV3nZAsJxl0"> </iframe> 
   
   - Ley de la probabilidad total.
   - Regla de Bayes.
   
-
-  
-###  Variables aleatorias y funciones de distribución
+* Variables aleatorias y funciones de distribución
 
   - Variables aleatorias discretas y continuas.
+  - Video sobre variables aleatorias discretas y distribuciones de probabilidad discreta
   
-  Video sobre variables aleatorias discretas y distribuciones de probabilidad discreta
-  
-  <iframe width="360" height="240" src="http://www.youtube.com/embed/0P5WRKihQ4E"> </iframe> 
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/0P5WRKihQ4E"> </iframe> 
   
   - PMF de una variable aleatoria discreta.
   - Función de distribución acumulativa.
@@ -116,9 +112,9 @@ Los prerequisitos para este curso son:
 * Esperanza de variables aleatorias
  
   - Definiciones.
-  Video sobre esperanza y varianza de variables aleatorias discretas
+  - Video sobre esperanza y varianza de variables aleatorias discretas
   
-  <iframe width="360" height="240" src="http://www.youtube.com/embed/Vyk8HQOckIE"> </iframe> 
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/Vyk8HQOckIE"> </iframe> 
   
   - Esperanza de funciones y variables aleatorias conjuntas.
   - Funciones generadoras de probabilidad para variables aleatorias discretas.
