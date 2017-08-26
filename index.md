@@ -8,7 +8,6 @@ Los prerequisitos para este curso son:
 - Álgebra lineal.
 - Alguna familiariedad con un lenguaje de programación como Mathematica, Matlab, NumPy, C, R es asumida.
 
-<iframe width="560" height="420" src="http://www.youtube.com/embed/bxe2T-V8XRs"> </iframe>
 
 ### Lecturas previas
 
@@ -46,6 +45,10 @@ Los prerequisitos para este curso son:
 
   - Probabilidad condicional.
   - Eventos independientes.
+  
+  Video sobre independencia
+  
+  <iframe width="560" height="420" src="http://www.youtube.com/embed/pV3nZAsJxl0"> </iframe> 
   - Ley de la probabilidad total.
   - Regla de Bayes.
   
@@ -72,6 +75,9 @@ Los prerequisitos para este curso son:
 * Esperanza de variables aleatorias
  
   - Definiciones.
+  Video sobre esperanza y varianza de variables aleatorias discretas
+  
+  <iframe width="560" height="420" src="http://www.youtube.com/embed/Vyk8HQOckIE"> </iframe> 
   - Esperanza de funciones y variables aleatorias conjuntas.
   - Funciones generadoras de probabilidad para variables aleatorias discretas.
   - Funciones generadora de momentos.
