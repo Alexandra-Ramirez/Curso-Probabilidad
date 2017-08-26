@@ -54,6 +54,7 @@ Los prerequisitos para este curso son:
   Video sobre independencia
   
   <iframe width="360" height="240" src="http://www.youtube.com/embed/pV3nZAsJxl0"> </iframe> 
+  
   - Ley de la probabilidad total.
   - Regla de Bayes.
   
@@ -88,6 +89,7 @@ Los prerequisitos para este curso son:
   Video sobre esperanza y varianza de variables aleatorias discretas
   
   <iframe width="360" height="240" src="http://www.youtube.com/embed/Vyk8HQOckIE"> </iframe> 
+  
   - Esperanza de funciones y variables aleatorias conjuntas.
   - Funciones generadoras de probabilidad para variables aleatorias discretas.
   - Funciones generadora de momentos.
