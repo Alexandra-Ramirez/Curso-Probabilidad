@@ -28,6 +28,11 @@ Los prerequisitos para este curso son:
 * Probabilidad básica
   - Espacio muestral y eventos.
   - Función probabilidad.
+  
+  Video sobre probabilidad, eventos independientes e dependientes
+  
+  <iframe width="360" height="240" src="http://www.youtube.com/embed/uzkc-qNVoOk"> </iframe>
+  
   - Modelo clásico sobre espacios finitos.
   - Modelo clásico sobre espacios continuos.
   
@@ -57,6 +62,11 @@ Los prerequisitos para este curso son:
 * Variables aleatorias y funciones de distribución
 
   - Variables aleatorias discretas y continuas.
+  
+  Video sobre variables aleatorias discretas y distribuciones de probabilidad discreta
+  
+  <iframe width="360" height="240" src="http://www.youtube.com/embed/0P5WRKihQ4E"> </iframe> 
+  
   - PMF de una variable aleatoria discreta.
   - Función de distribución acumulativa.
   - Función densidad de probabilidad para una variable aleatoria continua.
