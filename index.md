@@ -44,7 +44,7 @@ Los prerequisitos para este curso son:
 
 ## Temario
 
-* Probabilidad básica
+### Probabilidad básica
   - Espacio muestral y eventos.
   - Función probabilidad.
   - Video sobre probabilidad, eventos independientes e dependientes
@@ -54,33 +54,32 @@ Los prerequisitos para este curso son:
   - Modelo clásico sobre espacios finitos.
   - Modelo clásico sobre espacios continuos.
   
- * Teoria del conteo para probabilidad
+ ###  Teoria del conteo para probabilidad
 
-      - ¿ De cuántas maneras se puede barajar un mazo de cartas?
+  - ¿ De cuántas maneras se puede barajar un mazo de cartas?
 
-        <iframe width="360" height="240" src="http://www.youtube.com/embed/uNS1QvDzCVw"> </iframe>
+       <iframe width="360" height="240" src="http://www.youtube.com/embed/uNS1QvDzCVw"> </iframe>
 
   - Principio del conteo.
   
-      - ¿Hasta qué número puedes contar con los dedos? (Spoiler: mucho más que 10)
+  - ¿Hasta qué número puedes contar con los dedos? (Spoiler: mucho más que 10)
  
-        <iframe width="360" height="240" src="http://www.youtube.com/embed/UixU1oRW64Q"> </iframe>
+       <iframe width="360" height="240" src="http://www.youtube.com/embed/UixU1oRW64Q"> </iframe>
  
   - Permutaciones.
-  
-      - Permutaciones con reemplazo.
-      - Permutaciones sin reemplazo.
+      * Permutaciones con reemplazo.
+      * Permutaciones sin reemplazo.
   - Combinatoria.
-      - Combinaciones sin reemplazo.
-      - Combinaciones con reemplazo.
+      * Combinaciones sin reemplazo.
+      * Combinaciones con reemplazo.
   
-      - Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi 
+   - Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi 
   
         <iframe width="360" height="240" src="http://www.youtube.com/embed/XMriWTvPXHI"> </iframe>
   
   - Ensayos de Bernoulli. 
 
-* Conceptos fundamentales de probabilidad
+### Conceptos fundamentales de probabilidad
 
   - Probabilidad condicional.
   - Video sobre como calcular la probabilidad condicional
@@ -100,7 +99,7 @@ Los prerequisitos para este curso son:
       
        <iframe width="360" height="240" src="http://www.youtube.com/embed/5NMxiOGL39M"> </iframe> 
   
-* Variables aleatorias y funciones de distribución
+### Variables aleatorias y funciones de distribución
 
   - Variables aleatorias discretas y continuas.
   - Video sobre variables aleatorias discretas y distribuciones de probabilidad discreta
@@ -113,7 +112,7 @@ Los prerequisitos para este curso son:
   - Funciones de una variable aleatoria.
   - Variables aleatorias condicionadas.
   
-* Distribuciones conjuntas y condicionales
+###  Distribuciones conjuntas y condicionales
 
   - Distribuciones conjuntas.
   - Funciones de distribución acumulativas conjuntas.
@@ -122,7 +121,7 @@ Los prerequisitos para este curso son:
   - Distribuciones condicionales conjuntas.
   - Convolución y la suma de variables aleatorias.
  
-* Esperanza de variables aleatorias
+###  Esperanza de variables aleatorias
  
   - Definiciones.
   - Video sobre esperanza y varianza de variables aleatorias discretas
@@ -133,7 +132,7 @@ Los prerequisitos para este curso son:
   - Funciones generadoras de probabilidad para variables aleatorias discretas.
   - Funciones generadora de momentos.
 
-* Cotas y teoremas de Límites
+### Cotas y teoremas de Límites
  
   - Tipos de convergencia.
   - Desigualdad de Markov.
@@ -143,7 +142,7 @@ Los prerequisitos para este curso son:
   - Teorema del límite central.
   
   
-###  Notas de clases
+##  Notas de clases
  
 * Notas de matemática 
     - [Teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
