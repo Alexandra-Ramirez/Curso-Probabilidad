@@ -30,6 +30,10 @@ Los prerequisitos para este curso son:
 
 <iframe width="480" height="360" src="http://www.youtube.com/embed/sxYrzzy3cq8"> </iframe>
 
+* Frequentism and Bayesianism: What's the Big Deal? - SciPy 2014 - Jake VanderPlas 
+
+<iframe width="480" height="360" src="http://www.youtube.com/embed/KhAUfqhLakw"> </iframe>
+
 * La última banana: un experimento mental de probabilidad - Leonardo Barrichello 
 
 <iframe width="480" height="360" src="http://www.youtube.com/embed/Kgudt4PXs28"> </iframe>
@@ -86,6 +90,9 @@ Los prerequisitos para este curso son:
   
   - Ley de la probabilidad total.
   - Regla de Bayes.
+  - Video  esplicativo de la regla o  teorema de Bayes
+      
+       <iframe width="360" height="240" src="http://www.youtube.com/embed/5NMxiOGL39M"> </iframe> 
   
 * Variables aleatorias y funciones de distribución
 
@@ -143,7 +150,7 @@ Los prerequisitos para este curso son:
 * Notas de clases de Probabilidad básica
   - [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
   
-* Notas sobre Combinatoria
+* Notas sobre teoria del conteo en probabilidad
   - [Combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
   
 * Conceptos fundamentales de probabilidad
@@ -180,7 +187,7 @@ Los prerequisitos para este curso son:
    - [Bayes Rule Book: chapter 1](http://jim-stone.staff.shef.ac.uk/BookBayes2012/bookbayesch01WithR.pdf).
    - [Bayes Rule with Lego](https://www.countbayesie.com/blog/2015/2/18/bayes-theorem-with-lego).
    
-* Lecturas sobre Combinatoria
+* Lecturas sobre teoria del conteo en probabilidad
 
   - [Books of proof Richard Hammack: Counting ](http://www.people.vcu.edu/~rhammack/BookOfProof/Counting.pdf).
   - [Combinatorics problems](https://brilliant.org/math/combinatorics/).
@@ -210,7 +217,7 @@ Los prerequisitos para este curso son:
 ### Diapositivas
  * [C0: Introducción al curso](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase0/Clase0.pdf).
  * [C1: Espacio muestral, eventos, función probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase1/Clase1.pdf).
- * [C2: Combinatoria para probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase2/Clase2.pdf).
+ * [C2: Teoria del conteo para probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase2/Clase2.pdf).
  * [C3: Probabilidad condicional, independencia,regla total, teorema de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase3/Clase3.pdf).
  * [C4: Variables aleatorias discretas]().
  * [C5: Variables aleatorias discretas:esperanza y varianza]().
