@@ -1,0 +1,274 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.35\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Pr\'actica dirigida 6 Esperanza, Varianza\par
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Lista de ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item Lanzamos  una moneda  dos veces y sea  $X$  el n\'umero de caras obtenidas. ?` Cu\'al es la esperanza o el valor esperado  de X?.
+\item Escribimos los n\'umeros $a_1, a_2, \dots $ , para  bolas id\'enticas y las mezclamos  en una caja. ?`Cu\'al es el valor esperado de una bola seleccionada al azar?.
+\item El departamento de matem\'aticas de una universidad env\'ia $8$ a $12$ profesores a la reuni\'on anual de la Sociedad Matem\'atica Latinoamericana, que dura cinco dias. El hotel en el que se celebra la conferencia ofrece una tarifa  de un dolar por dia por persona, si las reservas se realizan $4$5 o m\'as dias de antelaci\'on, pero cobra un cargo de cancelaci\'on de $2$ dolares por persona. El departamento no est\'a seguro de cu\'antos profesores ir\'an.
+
+Sin embargo, de la experiencia pasada se sabe que la probabilidad de la asistencia de $i$ profesores  es $1/5$ para $i = 8, 9, 10, 11$  y $12$. Si la tarifa regular del hotel es $2a$ dolares por dia por persona. ?` Deber\'ia hacer el departamento alguna reserva?si es as\'i, ?` cu\'antos?.
+
+
+\item En la loteria de un determinado estado, los jugadores eligen seis enteros diferentes entre el $1$ y $49$, siendo el orden de selecci\'on irrelevante. La comisi\'on de la loteria entonces selecciona seis de estos n\'umeros al azar como los n\'umeros que deberian ser los ganadores. Un jugador gana el gran premio de $1,200,000$ soles, si los seis n\'umeros que ha seleccionado coinciden con los n\'umeros ganadores. Gana el segundo y tercer premio de $800$ y $35$ soles, respectivamente, si exactamente cinco y cuatro de sus seis n\'umeros seleccionados coinciden con los n\'umeros ganadores. ?` Cu\'al es la  esperanza  de la cantidad que un jugador gana en un juego?.
+
+
+\item En un juego, un jugador lanza una moneda sucesivamente hasta que consigue una \texttt{Cara}. Si esto ocurre en el $k$-\'esimo  lanzamiento, el jugador gana $2^k$ soles. Por lo tanto, si el resultado del primer lanzamiento  es cara, el jugador gana $2$ soles. Si el resultado del primer lanzamiento es sello y el  segundo lanzamiento es cara, el gana $4$. Si los resultados de los dos primeros lanzamientos son sellos, pero el tercero sale cara, ganar\'a $8$ soles  y as\'i sucesivamente. La pregunta es, para jugar este juego, ?` cu\'anto debe pagar una persona, que est\'a dispuesta a jugar este juego?.
+
+\item Sea $X_0$,  la cantidad de lluvia que caer\'a en los Estados Unidos el pr\'oximo dia de Navidad. Para $n>0$, sea $X_n$ la cantidad de lluvia que caer\'a en los Estados Unidos en Navidad, $n$ a\~nos despu\'es. Sea $N$ el menor n\'umero de a\~nos que transcurren antes de una lluvia de Navidad mayor que $X_0$. Supongamos que $P(X_i = X_j) = 0$ si $i \neq j$, los sucesos relativos a la cantidad de lluvia en dias de Navidad de diferentes a\~nos son independientes y los $X_n$ son id\'enticamente distribuidos. Hallar el valor esperado de $N$.
+
+\item Los aviones  de la fuerza \'area de  un pa\'is se numeran de $1$ a $N$. En una guerra este pa\'is pierde $n$ aviones aleatorios al enemigo. que descubre que los aviones capturados est\'an numerados. Si $X_1, X_2,\dots, X_n$ son los n\'umeros de aviones capturados, ?` qu\'e es $\mathbb{E}(\max X_i)$?. ?` C\'omo puede el enemigo usar $\mathbb{E}(\max X_i)$ para encontrar una estimaci\'on de $N$, el n\'umero total de aviones de ese pa\'is?.
+
+\item Una urna contiene $w$ chips blancos y $b$ chips azules. Un chip se extrae  al azar y luego se devuelve a la urna junto con $c> 0$ chips  del mismo color. Este experimento se repite sucesivamente. Sea $X_n$ el n\'umero de chips blancos sacados durante los primeros $n$ extracciones. Demuestre qua $\mathbb{E}(X_n) = nw/(w + b)$.
+
+\item Una urna contiene $w$ chips blancos y $b$ chips  azules.  Un chip se extrae al azar y luego se devuelve a la urna junto con $c> 0$ chips del mismo color. Demuestre que si $n = 2, 3, 4,\dots $ , tales experimentos se hacen, entonces en cada extracci\'on  la probabilidad de un chip blanco es todavia  $w/(w + b)$ y la probabilidad de un chip azul es $b/(w + b)$.  Este modelo se introdujo por primera vez en estudios preliminares de \texttt{enfermedades contagiosas},  \texttt{la propagaci\'on de epidemias}, as\'i como en   \texttt{propensi\'on a accidentes} de las matem\'aticas actuariales.
+
+\item Se sabe que $\displaystyle\sum_{x =1}^{\infty}1/x^2 =\pi^2/6$.
+
+\begin{enumerate}
+\item Muestra que $p(x) = 6/(\pi x)^2,\ x = 1, 2, 3, \dots$, es la funci\'on de masa de probabilidad de una variable aleatoria $X$.
+\item Prueba que $\mathbb{E}(X)$ no existe.
+\item Muestra que $p(x) = (\vert x \vert + 1)^2/27,\ x = -2, -1, 0, 1, 2$ es la funci\'on de masa de probabilidad de la variable aleatoria $X$.
+\item Calcula $\mathbb{E}(X), \mathbb{E}(\vert X \vert$ y $\mathbb{E}(2X^2 -5X + 7)$.
+\end{enumerate}
+\item La funci\'on distribuci\'on de una variable aleatoria $X$ es dado por:
+
+\[
+F(x) = \begin{cases}
+0 & \ x < -3 \\
+3/8 & \ -3 \leq x < 0 \\
+1/2 & \ 0 \leq x < 3 \\
+3/4 & \ 3 \leq x < 4 \\
+1 & \ x \geq 4
+\end{cases}
+\]
+
+\item Supongamos que, para una variable aleatoria discreta $X$, $\mathbb{E}(X) = 2$ y $\mathbb{E}[X(X -4)] = 5$. Encuentra la varianza y la desviaci\'on est\'andar de $-4X + 12$.
+
+\item Encuentra la varianza y la desviaci\'on est\'andar de una variable aleatoria $X$ con funci\'on distribuci\'on:
+
+\[
+F(x) = \begin{cases}
+0 &  \ x < -3 \\
+3/8 & \ -3 \leq x < 0 \\
+3/4 & \ 0 \leq x < 6 \\
+1 & \ x \geq 6.
+\end{cases}
+\]
+\item Sea $X$ un entero aleatorio, del conjunto $\{1, 2, \dots, N \}$. Encuentra $\mathbb{E}(X), \mathbb{V}(X)$ y la desviaci\'on est\'andar de $X$.
+
+
+\item Sean $X$ e $Y$ una variable aleatoria y $\omega$ un punto dado. Sea $t > 0$:
+
+\[
+\mathbb{P}(\vert Y - \omega \vert \leq t) \leq \mathbb{P}(\vert X - \omega \vert \leq t)
+\]
+
+entonces, decimos que $X$ es m\'as concentrado sobre $\omega$ que $Y$. 
+
+
+\vspace{0.2cm}
+
+Sea $X$ una variable definida como:
+
+\[
+\mathbb{P}(X = -1) = \mathbb{P}(X = 1) = 1/2. 
+\]
+
+Sea $Y$ una variable definida como:
+
+\[
+\mathbb{P}(Y = -10) = \mathbb{P}(Y = 10) = 1/2.
+\]
+
+?` Cu\'al  de las dos variables aleatorias es concentrada alrededor del $0$?. Explica tu respuesta.
+\item Para $n = 1, 2, 3, \dots$, sea $x_n = (-1)^n\sqrt{n}$. Sea $X$ una variable aleatoria discreta con un conjunto positivo de valores $A = \{x_n: n = 1, 2, 3, \dots \}$  y una funci \'on de masa de probabilidad 
+
+\[
+p(X_n) = \mathbb{P}(X = x_n) = \frac{6}{(\pi n)^2}.
+\]
+
+Muestra que inclusive si $\displaystyle \sum_{n =1}^{\infty}x_n^3p(x_n) < \infty$, $\mathbb{E}(X^3)$ no existe.
+
+\item Sean $X$ e $Y$ dos  variablea aleatoriaa discretas con un id\'entico conjunto posible de valores $A = \{a, b, c \}$, donde $a, b$ y $c$ son tres diferentes n\'umeros reales. Muestra que si $\mathbb{E}(X) = \mathbb{E}(Y)$ y $\mathbb{V}(X) = \mathbb{V}(Y)$, entonces $X$ e $Y$ son id\'enticamente distribuidas. Esto es:
+
+\[
+\mathbb{P}(X = t) = \mathbb{P}(Y = t)\ \ \text{para} \  t = a, b, c.
+\]
+
+\item Una variable aleatoria $X$ con funci\'on densidad:
+
+\[
+f(x) = \frac{1}{1 +x^2}, \ \ -\infty < x < \infty,
+\]
+
+es llamada una variable aleatoria de Cauchy.
+
+\begin{enumerate}
+\item Encuentra el valor de $c$.
+\item Muestra que el valor de $\mathbb{E}(X)$ no existe.
+\end{enumerate}
+\item Para alguna funci\'on de variable aleatoria continua $X$ con una funci\'on de distribuci\'on de probabilidad $F$ y densidad $f$. Prueba que se cumple:
+
+\[
+\mathbb{E}(X) = \bigints_{0}^{\infty}[1 - F(t)]dt - \bigints_{0}^{\infty}F(-t)dt.
+\]
+
+\item Un punto $x$ es seleccionado desde el intervalo $(0 ,\pi/4)$ aleatoriamente. Calcula $\mathbb{E}(\cos 2X)$ y $\mathbb{E}(\cos^2X)$. 
+
+\item Sea $X$ una variable aleatoria con funci\'on densidad de probabilidad:
+
+\[
+f(x) = \frac{1}{2}e^{-\vert x \vert}, \ \ -\infty < x < \infty.
+\]
+
+Calcula $\mathbb{V}(X)$.
+
+\item Supongamos que $X$, el tiempo de entrecruzamiento entre dos clientes que entran en una determinada oficina postal, satisface:
+
+\[
+\mathbb{P}(X > t) = \alpha e^{-\lambda t} + \beta e^{-\mu t},\ \ t\geq 0,
+\]
+
+donde $\alpha + \beta = 1, \alpha \geq 0, \beta \geq 0, \lambda > 0, \mu > 0$. Calcula el valor esperado de $X$.
+
+\item Sea $n \geq 1$, sea $X_n$ una variable aleatoria continua con funci\'on densidad de probabilidad, dado por:
+
+\[
+f_n(x) = \begin{cases}
+\frac{c_n}{x^{n + 1}} & x \geq c_n,\\
+0 & \text{en otros casos.}
+\end{cases}
+\]
+
+$X_n$ es llamada variable aleatoria de Pareto y son usadas para estudiar distribuciones de ingresos.
+
+\begin{enumerate}
+\item Calcula $c_n, n \geq  1$.
+\item Encuentra $\mathbb{E}(X_n), n \geq 1$.
+\item Determina la funci\'on densidad de $Z_n = \ln X_n, \ n\geq 1$.
+\item ?` Para qu\'e valores de $m$, $\mathbb{E}(X_{n}^{m +1})$ existe?.
+\end{enumerate}
+
+\item Sea $X$  una variable aleatoria continua con funci\'on densidad de probabilidad $f(x)$. Determina el valor de $y$, para el cual $\mathbb{E}(\vert x -y \vert)$ es m\'inimo.
+\item Sea $X$  una variable aleatoria continua con funci\'on densidad de probabilidad, dado por:
+
+\[
+f(x) = \begin{cases}
+\frac{1}{\pi}x\sin x & \ \text{si}\ 0 < x < \pi \\
+0 &  \text{en otros casos}.
+\end{cases}
+\]
+
+Prueba que :
+
+\[
+\mathbb{E}(X^{n +1}) + (n +1)(n +2)\mathbb{E}(X^{n -1}) = \pi^{n +1}.
+\]
+
+\item Sea $X$ una variable aleatoria continua con funci\'on densidad $f$. Muestra que si $\mathbb{E}(X)$ existe, entonces:
+
+\[
+\lim_{x \rightarrow -\infty}x\mathbb{P}(X \leq x) = \lim_{x \rightarrow \infty}x\mathbb{P}(X > x) = 0.
+\]
+
+\item Sea $X$ una variable aleatoria no negativa con funci\'on densidad $f$. Muestra que:
+
+\[
+\mathbb{E}(X^r) = \bigints_{0}^{\infty}rx^{r -1}\mathbb{P}(X > x)dx
+\]
+
+para alg\'un $r \geq 1$, para el cu\'al la esperanza es finita.
+
+\item Muestra que la media $\mu$, mediana $m$ y la varianza $\sigma^2$ de una variable aleatoria continua $X$, satisface $(\mu -m)^2 \leq \sigma^2$.
+
+\item Sea $X$ una variable aleatoria no negativa con un funci\'on distribuci\'on $F$. Definamos:
+
+\[
+I(t) = \begin{cases}
+1 & \ \text{si}\ X > t \\
+0 & \ \text{en otros casos.}
+\end{cases}
+\]
+
+\begin{enumerate}
+\item Prueba que $\bigints_{0}^{\infty}I(t) dx = X$.
+\item Si $X$ es una variable aleatoria continua, tomando valores no negativos, muestra que:
+
+\[
+\mathbb{E}(X) = \bigints_{0}^{\infty}[1 -F_X(x)]dx,
+\]
+
+cuando esta integral existe. Usa el resultado de la parte (a).
+\item Paraa $r > 0$, usa la parte (b) para probar que:
+
+\[
+\mathbb{E}(X^r) = r\bigints_{0}^{\infty}t^{r -1}[1 -F(t)]dt.
+\]
+\end{enumerate}
+\item Usa el resultado (b) del ejercicio anterior, para mostrar que:
+
+\[
+\mathbb{E}(g(X)) = \bigints_{-\infty}^{\infty}g(x)f_X(x)dx
+\]
+
+cuando $X$ y $g(X)$ son variables aleatorias continuas y $g:\mathbb{R}\rightarrow [0, \infty)$.
+\end{enumerate}
+\end{document} 
+

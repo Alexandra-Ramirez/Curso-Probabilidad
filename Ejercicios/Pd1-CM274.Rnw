@@ -1,0 +1,180 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.35\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Pr\'actica dirigida 1 Espacio muestrales, eventos\par 
+Probabilidad, propiedades de la funci\'on probabilidad\par
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Lista de ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item Define un espacio muestral para el experimento de elegir un n\'umero del intervalo
+$(0,20)$. Describe el evento de que dicho n\'umero es un entero.
+\item Se lanzan dos dados. Sea $E$ el evento en  que la suma de las salidad es impar y $F$ el evento de que al menos salga un  $1$. Interpretar los eventos $E\cap F, E^c \cap F$ y $E^cF^c$.
+\item Sea $P$ el conjunto de todos los subconjuntos de $A = \{1, 2\}$. Elegimos dos conjuntos distintos de forma aleatoria de $P$. Define un espacio  muestral para este experimento y describe los siguientes eventos
+
+
+\begin{enumerate}
+\item La intersecci\'on de los conjuntos elegidos al azar es vac\'ia.
+\item Los conjuntos son complementarios entre si.
+\item Uno de los conjuntos contiene m\'as elementos que el otro.
+\end{enumerate}
+
+\item La experiencia pasada muestra que cada nuevo libro de un determinado editor consigue al azar entre $4$ y $12\%$ del mercado. ?`Cu\'al es la probabilidad de que el pr\'oximo libro de este editor capture a lo m\'as el $6,35\%$ del mercado?.
+
+\item Prueba que el evento $B$ es imposible  si y s\'olo si para cada evento $A$,
+
+\[
+A = (B \cap A^c) \cup (B^c \cap A).
+\]
+
+\item Defina un espacio  muestral para el experimento de poner enorden aleatorio siete libros diferentes en un estante. Si tres de estos siete libros son un diccionario de tres vol\'umenes, describe el hecho de que estos vol\'umenes est\'en en orden ascendente lado a lado (es decir, el volumen I precede al volumen II y el volumen II precede al volumen III).
+
+\item Sea $\{A_1, A_2, A_3, \dots \}$ una secuencia de eventos. Encuentra una expresi\'on para el evento que infinitamente muchos de los $A_i$ se producen.
+
+\item Sea $\{A_1, A_2, A_3, \dots \}$ una secuencia de eventos de un espacio muestral $S$. Encuentra una secuencia $\{ B_1, B_2, B_3, \dots \}$ de eventos mutualmente exclusivos tal que para todo $n \geq 1, \bigcup_{i=1}^{n}A_i = \bigcup_{i=1}^{n}B_i$.
+
+\item ?` Cu\'al de las siguientes aseveraciones son ciertas?. Si la aseveraci\'on es cierta, realiza una prueba. Si es falsa escribe un contraejemplo.
+
+\begin{enumerate}
+\item Si $A$ es un evento con probabilidad $1$, entonces $A$ es un espacio muestral.
+\item Si $B$ es un evento con probabilidad $0$, entonces $B = \emptyset $.
+\end{enumerate}
+
+\item Sean $A$ y $B$ dos eventos. Muestra que si $\mathbb{P}(A) = 1$ y $\mathbb{P}(B) =1$, entonces $\mathbb{P}(A \cap B) = 1$. En general si $A_1, A_2, \dots, A_n$ son $n$ eventos. Muestra que si
+
+\[
+\mathbb{P}(A_1) = \mathbb{P}(A_2) = \cdots = \mathbb{P}(A_n) = 1,
+\]
+
+entonces $\mathbb{P}(A_1 \cap A_2 \cdots A_n) = 1$.
+
+
+\item 
+
+\begin{enumerate}
+\item Para una secuencia creciente o decreciente de eventos $\{E_n, n \geq 1 \}$, se cumple que
+
+\[
+\lim_{n \rightarrow \infty}\mathbb{P}(E_n) = \mathbb{P}(\lim_{n \rightarrow \infty}E_n).
+\]
+\item Supongamos que algunos individuos de una poblaci\'on producen descendientes del mismo tipo. Los descendientes de la poblaci\'on inicial son llamados de segunda generaci\'on, los \mbox{descendientes} de la segunda generaci\'on son llamados de tercera generaci\'on y as\'i sucesivamente. Si con \mbox{probabilidad} $\exp[-(2n^2 + 7)/(6n^2)]$ toda la poblaci\'on muere completamente por la n-\'esima generaci\'on  antes de producir cualquier descendencia ?`cu\'al es la probabilidad de que tal poblaci?n sobreviva para siempre?.
+\end{enumerate}
+
+\item Un punto es seleccionado al azar desde un intervalo $(0, 2000)$.?` Cu\'al es la probabilidad que este punto sea entero?.  
+\item Se selecciona aleatoriamente un punto del intervalo $(0,1)$ . ?`Cu\'al es la probabilidad de que el punto sea racional? ?` Cu\'al es la probabilidad de que el punto sea irracional?.
+
+\item Se elige aleatoriamente un n\'umero del conjunto de enteros $\{1,2,\dots, 1000\}$.?`Cu\'al es la probabilidad de que sea divisible por 3 o 5 (es decir, 3 o 5 o ambos)?.
+
+\item (Lema de Borel-Cantelli) Sea $\{ A_1, A_2, A_3, \dots \}$ una secuencia de eventos. Prueba que si la serie $\displaystyle \sum_{n =1}^{\infty}\mathbb{P}(A_n)$ converge, entonces $\mathbb{P}\Biggl(\bigcap_{m =1}^{\infty}\bigcup_{n = m}^{\infty}\Biggr) = 0$.
+
+\item El coeficiente de la ecuaci\'on cuadr\'atica $ax^2 + bx + c = 0 $se determina lanzando  un dado tres veces (el primer resultado es $a$, el segundo $b$ y el tercero $c$). Encuentra la probabilidad de que la ecuaci\'on no tenga ra\'ices reales.
+
+\item Extracto del programa de televisi\'on The Rockford Files:
+
+\begin{verbatim}
+      Rockford: Solo hay dos medicos en la ciudad. Las posibilidades 
+                de ambas  autopsias realizadas  por el mismo medico son 50-50.
+      Reportero: No, eso es solo para una autopsia. Para dos autopsias
+                 las posibilidades  son 25-75
+      Rockford: Tienes razon.
+\end{verbatim}
+?`Rockford estaba de acuerdo con el reportero? ?`Explica por qu\'e o por qu\'e no?.
+
+\item Una moneda se lanza $2n$ veces. ?`Cu\'al es la probabilidad de sacar exactamente $n$ caras? ?` C\'omo se comporta su respuesta cuando $n \rightarrow \infty$?.
+
+\item Supongamos que en una ciudad determinada el n\'umero de personas con el tipo sangu\'ineo \textbf{O} y del tipo sangu\'ineo \textbf{A} es aproximadamente el mismo. El n\'umero de personas con el tipo sangu\'ineo \textbf{B} es de $1/10$ de las que tienen el tipo sangu\'ineo \textbf{A} y el doble de las que tienen el tipo sangu\'ineo \textbf{AB}. Encuentra la probabilidad de que el siguiente beb\'e nacido en la ciudad tenga sangre de tipo \textbf{AB}.
+
+\item ?`Cu\'al de las siguientes afirmaciones es verdadera? Si una afirmaci\'on es verdadera, realiza una prueba y si es falsa, escribe  un contraejemplo.
+
+\begin{enumerate}
+\item Si $\mathbb{P}(A) + \mathbb{P}(B) + \mathbb{P}(C) =1$, entonces los eventos $A, B$ y $C$ son mutualmente exlusivos.
+\item Si $\mathbb{P}(A \cup B \cup C) = 1$, entonces $A, B$ y $C$ son eventos mutualmente exlusivos.
+\end{enumerate}
+
+\item Se lanza una bola en un cuadrado que se divide en $n$ cuadrados id\'enticos. La probabilidad de que la bola golpee el cuadrado de la  i-\'esima columna y la j-\'esima fila es $p_{ij}$, donde $\displaystyle\sum_{i =1}^{n}\sum_{j =1}^{n}p_{ij} = 1$ . En t\'erminos de $p_{ij}$, encuentre la probabilidad de que la bola golpee la j-\'esima l\'inea horizontal.
+
+\item
+
+\begin{enumerate}
+\item (Desigualdad de Boole) Sea $A_1, A_2, A_3, \dots $ una secuencia de eventos de un espacio muestral. Prueba que
+
+\[
+\mathbb{P}\Biggl(\bigcup_{n =1}^{\infty} \Biggr) \leq \sum_{n =1}^{\infty}\mathbb{P}(A_n)
+\]
+\item Sea $A_1, A_2, A_3, \dots $ una secuencia de eventos de un experimento. Prueba que
+
+\[
+\mathbb{P}\Biggl( \bigcap_{n =1}^{\infty}A_n\Biggr) \geq 1 - \sum_{n =1}^{\infty}\mathbb{P}(A_n^c).
+\]
+\end{enumerate}
+
+\item En un determinado pa\'is, la probabilidad es $49/50$ de que un avi\'on de combate seleccionado al azar regresa de una misi\'on sin percances. Mia argumenta que esto significa que hay una misi\'on con un percance en cada $50$ vuelos consecutivos. Ella concluye que si un piloto de caza regresa con seguridad de 49 misiones consecutivas, debe regresar a casa antes de su quincuag\'esima misi\'on. ?`Est\'a en lo correcto Mia? Explica por qu\'e si o por qu\'e no.
+
+\item Sea $\mathbb{P}$ una probabilidad definida en un espacio muestral $S$. Para eventos de $A$ de $S$ se define $\mathbb{Q}(A) = [\mathbb{P}(A)]^2$  y $\mathbb{R}(A) = \mathbb{P}(A)/2$. ?` Es $\mathbb{R}$ una probabilidad en S? ?` Por qu\'e si  o por qu\'e no?.
+
+\item (El problema del sombrero) Un juego comienza con un equipo de tres jugadores que entran en una habitaci\'on uno a la vez. Para cada jugador, se lanza una moneda. Si el resultado es cara, se coloca un sombrero rojo en la cabeza del jugador y si es sello, se coloca un sombrero azul en la cabeza del jugador. A los jugadores se les permite comunicarse antes de que el juego comience para  decidir  una estrategia.
+
+\vspace{0.2cm}
+
+Sin embargo, no se permite la comunicaci\'on despu\'es del inicio del juego. Los jugadores no pueden ver sus propios sombreros. Pero cada jugador puede ver los otros  sombreros de los otros  jugadores. Cada jugador tiene la opci\'on de adivinar el color de su sombrero o pasar.
+
+\vspace{0.2cm}
+
+El juego termina cuando los tres jugadores toman sus decisiones simult\'aneamente. El equipo gana si la suposici\'on de ning\'un jugador es incorrecta y por lo menos una estimaci\'on de un jugador es correcta. Obviamente el objetivo del equipo es desarrollar una estrategia que maximice la probabilidad de ganar. Una estrategia trivial para el equipo ser\'ia que dos de sus jugadores  pasen  y el tercer jugador adivine rojo o azul como \'el o ella desea. Esto le da al equipo un $50\%$ de posibilidades de ganar. ?`Puedes pensar en una estrategia que mejore las posibilidades de ganar del equipo?.
+\end{enumerate}
+
+\end{document} 
+

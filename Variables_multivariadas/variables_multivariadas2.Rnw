@@ -1,0 +1,1429 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bb}[1]{\textbf{#1}}
+\DeclareMathOperator{\rank}{\textbf{rango}}
+\DeclareMathOperator{\proy}{\textbf{proy}}
+\DeclareMathOperator{\nulll}{\textbf{nul}}
+\DeclareMathOperator{\diag}{\textbf{diag}}
+\DeclareMathOperator{\col}{\textbf{col}}
+\DeclareMathOperator{\fila}{\textbf{fila}}
+\DeclareMathOperator{\dimm}{dim}
+\DeclareMathOperator{\Traz}{Tr}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{teo}{{Teorema}}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Variables aleatorias multivariadas (2)\par
+\end{minipage}
+
+
+\vspace {0.5cm}
+
+
+\section{Esperanza para variables aleatorias multivariadas conjuntas}
+
+\vspace{0.5cm}
+
+Cuando $X$ e $Y$ son variables aleatorias distribuidas conjuntamente y $Z$ es una variable aleatoria que es una funci\'on de $X$ y $Y$, esto es : $Z = h(X,Y)$, entonces la esperanza de $Z$, puede ser encontrada directamente desde la distribuci\'on conjunta. Cuando $X$ y $Y$ son variables aleatorias discretas, se tiene:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(Z) = \sum_{\text{todo  x}}\sum_{\text{todo y}}h(x, y)p_{X,Y}(x, y),
+\]
+
+\vspace{0.2cm}
+
+Y cuando las variables son continuas se tiene:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(Z) = \bigints_{-\infty}^{\infty}\bigints_{-\infty}^{\infty}h(x,y)f_{X,Y}(x,y)dx dy.
+\]
+
+
+\begin{ejemplo}
+\normalfont Sean $X$ y $Y$ dos variables aleatorias continuas, cuya funci\'on densidad de probabilidad conjunta es:
+
+\[
+f_{X,Y}(x, y) = \begin{cases}
+1 - (x + y)/3, & 0 \leq x \leq 1,  0\leq y \leq 2, \\
+0 & \text{en otros casos}
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+Deseamos encontrar $\mathbb{E}(XY)$. Tenemos:
+
+\begin{align*}
+\mathbb{E}(XY) &= \int_{y = 0}^{2}\int_{x = 0}^{1}xy[1 - (x + y)/3]dx dy = \int_{y = 0}^{2}\int_{x = 0}^{1}\biggl(xy - \frac{x^2y}{3} -\frac{xy^2}{3} \biggr)dx dy\\
+&= \int_{y = 0}^{2}\bigg( \frac{x^2y}{2} -\frac{x^3y}{9} -\frac{x^2y^2}{6} \biggr)\biggr|_{x = 0}^{1}dy = \int_{y = 0}^{2}\biggl(\frac{y}{2} - \frac{y}{9} - \frac{y^2}{9}\biggr)dy \\
+& = \biggl(\frac{7y^2}{36} - \frac{y^3}{18} \biggr)\biggr|_{0}^{2} = \frac{12}{36} = 1/3
+\end{align*}
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+Si $X$ e $Y$ son variables aleatorias discretas y sea $g : \mathbb{R}^2 \rightarrow \mathbb{R}$  una funci\'on, entonces $Z = g(X,Y)$ es una variable aleatoria tambi\'en, definida  como $Z(\omega) = g(X(\omega),Y(\omega)$ para $\omega \in \mathbb{R}$. La esperanza de $Z$ puede ser calculada directamente desde la funci\'on $p_{X,Y}(x,y) = \mathbb{P}(X = X, Y =y)$ como lo indica el siguiente teorema:
+
+\vspace{0.2cm}
+
+\begin{teo}
+
+\normalfont Tenemos que:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(g(X,Y)) = \displaystyle\sum_{x \in \text{todo x}}\displaystyle\sum_{y \in \text{todo y}}g(x ,y)\mathbb{P}(X =x, Y=y)
+\]
+
+\vspace{0.2cm}
+
+siempre que esta suma converga absolutamente.
+\end{teo}
+
+\vspace{0.2cm}
+
+Una consecuencia importantes de este teorema, es que el operador $\mathbb{E}$ actua de manera lineal sobre el conjunto de las variables discretas. Es decir si $X$ e $Y$ son variables aleatorias discretas y $a, b \in \mathbb{R}$, entonces:
+
+\[
+\mathbb{E}(aX + bY) = a\mathbb{E}(X) + b\mathbb{E}(Y),
+\]
+
+\vspace{0.3cm}
+
+siempre que $\mathbb{E}(X)$ y  $\mathbb{E}(Y)$ existan. 
+
+\vspace{0.2cm}
+
+En efecto si $g(x, y) = ax + by$, por propiedad se tiene que :
+
+\begin{align*}
+\mathbb{E}(aX +bY) &= \sum_{x}\sum_{y}(ax + by)\mathbb{P}(X= x, Y = y)\\
+&= a\sum_{x}x\sum_{y}\mathbb{P}(X =x, Y =y) + b\sum_{y}y\sum_{x}\mathbb{P}(X =x, Y =y) \\
+& = a\sum_{x}x\mathbb{P}(X =x) + b\sum_{y}y\mathbb{P}(Y =y)\\
+& = a\mathbb{E}(X) + b\mathbb{E}(Y).
+\end{align*}
+
+\vspace{0.3cm}
+
+Dos variables aleatorias discretas $X$ e $Y$ son independientes si el par de eventos $\{X =x \}$ y $\{Y =y\}$ son independientes para todo $x, y \in \mathbb{R}$. Se escribe esta condici\'on como: 
+
+\[
+\mathbb{P}(X =x, Y = y) = \mathbb{P}(X =x)\mathbb{P}(Y =y) \ \ \ \text{para}\ \ x, y \in \mathbb{R}.
+\]
+
+\vspace{0.2cm}
+
+Las variables aleatorias que no son independientes, se llaman \texttt{dependientes}.
+
+\vspace{0.2cm}
+
+\begin{teo}
+\normalfont Las variables aleatorias  discretas $X$ e $Y$ son independientes si y s\'olo si existen las funciones $f,g : \mathbb{R} \rightarrow \mathbb{R}$ tal que se cumple que las funciones de masa de probabilidad conjunta de $X$ e $Y$ satisface:
+
+
+\begin{align}
+p_{X,Y}(x,y) = f(x)g(y)\ \ \ \text{para} \ \ x, y \in \mathbb{R}.
+\end{align}
+\end{teo}
+
+\vspace{0.2cm}
+
+Probemos que si se cumple la condici\'on (1) para las funciones $f$ y $g$ y $x \in X$ y $y \in Y$ tenemos por definici\'on de las funciones marginales de $X$ e $Y$: 
+
+
+\[
+p_{X}(x) = f(x)\displaystyle\sum_{y}g(y), \ \ p_{Y}(y) = g(y)\displaystyle\sum_{x}f(x)
+\]
+
+\vspace{0.2cm}
+
+Por propiedad:
+
+\vspace{0.2cm}
+
+\begin{align*}
+1 = \displaystyle\sum_{x,y}p_{X,Y}(x,y) &= \displaystyle\sum_{x,y}f(x)g(y)\\
+&= \displaystyle\sum_{x}f(x)\displaystyle\sum_{y}g(y)
+\end{align*}
+
+\vspace{0.2cm}
+
+Por tanto :
+
+\vspace{0.2cm}
+
+\begin{align*}
+p_{X,Y}(x,y) &= f(x)g(y) =f(x)g(y)\displaystyle\sum_{x}f(x)\displaystyle\sum_{y}g(y)\\
+&= p_{X}(x)p_{Y}(y).
+\end{align*}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Supongamos que $X$ e $Y$ son variables aleatorias tomando valores enteros no negativos, con funci\'on de masa de probabilidad conjunta:
+
+\vspace{0.2cm}
+
+\[
+p_{X,Y}(i, j) = \mathbb{P}(X = i, Y = j) = \frac{1}{i!j!}\lambda^i\mu^je^{-(\mu + \lambda)}\ \ \text{para}\ i, j = 0,1,2, \dots
+\]
+
+\vspace{0.2cm}
+
+Por el teorema anterior, $X$ e $Y$ son independientes.
+\end{ejemplo}
+
+
+\vspace{0.2cm}
+
+\begin{teo}
+\normalfont Si $X$ e $Y$ son variables aleatorias discretas independientes con esperanza $\mathbb{E}(X)$ y $\mathbb{E}(Y)$ entonces:
+
+\[
+\mathbb{E}(XY) = \mathbb{E}(X)\mathbb{E}(Y)
+\]
+
+\end{teo}
+
+\vspace{0.2cm}
+
+Por el teorema (1.1):
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{E}(XY) &= \displaystyle\sum_{x, y}xy\mathbb{P}(X = x, Y =y) \\
+&= \displaystyle\sum_{x,y}xy\mathbb{P}(X =x)\mathbb{P}(Y =y)\\
+&= \displaystyle\sum_{x}x\mathbb{P}(X = x)\displaystyle\sum_{y}y\mathbb{P}(Y = y) = \mathbb{E}(X)\mathbb{E}(Y)
+\end{align*}
+
+\vspace{0.2cm}
+
+El inverso de este teorema es falso, si $\mathbb{E}(XY) = \mathbb{E}(X)\mathbb{E}(Y)$ entonces $X$ e $Y$ son independientes como indica el siguiente ejemplo:
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Supongamos que $X$ tiene una distribuci\'on dada por:
+
+
+\[
+\mathbb{P}(X = -1) = \mathbb{P}(X = 0) = \mathbb{P}(X =1) = \frac{1}{3}
+\]
+
+\vspace{0.2cm}
+
+y $Y$ es dado por
+
+\vspace{0.2cm}
+
+\[
+Y = \begin{cases}
+ 0 & \text{si} \ \ X = 0\\
+ 1 & \text{si} \ \ X \neq 0
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+Si tomamos $\Sigma = \{-1, 0, 1 \}$ y $\mathbb{P}$ dado por $\mathbb{P}(-1) = \mathbb{P}(0) = \mathbb{P}(1) = \frac{1}{3} $ y sea $X(\omega) = \omega, Y(\omega) = \vert \omega \vert$. Entonces $X$ e $Y$ son dependientes:
+
+\[
+\mathbb{P}(X = 0, Y = 1) = 0
+\]
+
+\vspace{0.2cm}
+
+Pero,
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(X = 0)\mathbb{P}(Y =1) = \frac{1}{3}\cdot\frac{2}{3} = \frac{2}{9}
+\]
+
+\vspace{0.2cm}
+
+Por otro lado:
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{E}(XY) = \displaystyle\sum_{x, y}xy\mathbb{P}(X =x, Y =y)\\
+= (-1)\cdot\frac{1}{3} + 0\cdot\frac{1}{3} + 1\cdot\frac{1}{3} = 0
+\end{align*}
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(X)\mathbb{E}(Y) = 0\cdot\frac{2}{3} = 0
+\]
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+\begin{teo}
+\normalfont Las variables aleatorias $X$ e $Y$ son independientes si y s\'olo si
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(g(X)h(Y)) = \mathbb{E}(g(X))\mathbb{E}(h(Y))
+\]
+
+\vspace{0.2cm}
+
+para todas las funciones $g,h: \mathbb{R} \rightarrow \mathbb{R}$ en el cual las esperanzas existen.
+
+\vspace{0.2cm}
+
+\end{teo}
+
+
+
+\vspace{0.5cm}
+
+Para el caso en el que $X = (X_1, X_2, \dots, X_n)$ de variables aleatorias con $n > 2$. La familia $X$ se dice que es independiente si:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(X_1 =x_1, \dots, X_n =x_n) = \mathbb{P}(X_1 =x_1)\cdots\mathbb{P}(X_n =x_n)
+\]
+
+\vspace{0.2cm}
+
+Adem\'as $X_1, X_2, \dots, X_n$ son independientes si se cumple que:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(X_1, X_2, \cdots, X_n) = \mathbb{E}(X_1)\mathbb{E}(X_2)\cdots \mathbb{E}(X_n).
+\]
+
+\vspace{0.2cm}
+
+La familia $X$ es llamada \texttt{independiente por pares} si $X_i$ y $Y_j$ son independientes siempre que  $i \leq j$.
+
+
+\vspace{0.3cm}
+
+
+Observa que, cuando $X$ e $Y$ son variables independientes entonces $\mathbb{E}(XY) = \mathbb{E}(X)\mathbb{E}(Y)$, en el sentido continuo:
+
+\begin{align*}
+\mathbb{E}(XY)&= \bigints_{-\infty}^{\infty}\bigints_{-\infty}^{\infty}xyf_{XY}(x, y)dxdy = \bigints_{-\infty}^{\infty}\bigints_{-\infty}^{\infty}xyf_{X}(x)f_Y(y)dxdy \\
+&= \bigints_{-\infty}^{\infty}\bigints_{-\infty}^{\infty}xf_X(x)yf_Y(y)dxdy = \bigints_{-\infty}^{\infty}\mathbb{E}(X)yf_Y(y)dy = \mathbb{E}(X)\mathbb{E}(Y).
+\end{align*}
+
+
+\vspace{0.3cm}
+
+En el caso, en el cu\'al una variable aleatoria es definida como la suma de dos variables aleatorias, merece una especial atenci\'on:
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{E}(Z) = \mathbb{E}(X + Y) &= \bigints_{-\infty}^{\infty}\bigints_{-\infty}^{\infty}(x + y)f_{XY}(x, y)dxdy \\
+& = \bigints_{-\infty}^{\infty}\bigints_{-\infty}^{\infty}xf_{XY}(x, y)dxdy + \bigints_{-\infty}^{\infty}\bigints_{-\infty}^{\infty}yf_{XY}(x, y)dxdy\\
+& = \bigints_{-\infty}^{\infty}x\biggl[\bigints_{-\infty}^{\infty}f_{XY}(x, y)dy\biggr]dx + \bigints_{-\infty}^{\infty}y\biggl[\bigints_{-\infty}^{\infty}f_{XY}(x, y)dx\biggr]dy\\
+& = \bigints_{-\infty}^{\infty}xf_X(x)dx + \bigints_{-\infty}^{\infty}yf_{Y}(y)dy = \mathbb{E}(X) +\mathbb{E}(Y).
+\end{align*}
+
+\vspace{0.2cm}
+
+Debes notar  que esta propiedad, llamada propiedad de linealidad de la esperanza, determina si las variables aleatorias son independientes o no. En t\'erminos  generales, la esperanza de una suma de variables aleatorias es la suma de las esperanzas de esas variables aleatorias. Esto es, sean  $X_1, X_2,\dots, X_n$ un conjunto de $n$ variables aleatorias. Entonces:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(X_1 + X_2 + \cdots + X_n) = \mathbb{E}(X_1) + \mathbb{E}(X_2) + \cdots + \mathbb{E}(X_n).
+\]
+
+\vspace{0.2cm}
+
+El mismo resultado no se aplica a las varianzas: la varianza de una suma de dos variables aleatorias es igual a la suma de las varianzas s\'olo si las variables aleatorias son independientes. Para mostrar esto, sean $\mu_X = \mathbb{E}(X)$ y $\mu_Y = \mathbb{E}(Y)$. Entonces :
+
+\begin{align*}
+\mathbb{V}(X + Y) &= \mathbb{E}[(X + Y - \mu_X - \mu_Y )^2]\\
+&= \mathbb{E}[(X - \mu_X)^2] + 2\mathbb{E}[(X - \mu_X)(Y - \mu_Y )] + \mathbb{E}[(Y - \mu_Y )^2]\\
+&= \mathbb{E}[(X - \mu_X)^2] + \mathbb{E}[(Y - \mu_Y )^2] = \mathbb{V}(X) +  \mathbb{V}(Y ),
+\end{align*}
+
+\vspace{0.2cm}
+
+Donde hemos usado el hecho, de que cuando $X$ e $Y$ son independientes, se cumple:
+
+\[
+\mathbb{E}[(X - \mu_X)(Y - \mu_Y )] = \mathbb{E}(X - \mu_X)\mathbb{E}(Y - \mu_Y ) = 0,
+\]
+
+\vspace{0.2cm}
+
+desde, por ejemplo $\mathbb{E}(X - \mu_X) = \mathbb{E}(X) - \mathbb{E}(\mu_X) = \mu_X - \mu_X = 0$.
+
+\vspace{0.2cm}
+
+Para calcular la varianza de la suma de dos variables aleatorias $X$ e $Y$ que no son necesariamente independientes, utilizamos la relaci\'on $\mathbb{V}(X) = \mathbb{E}(X^2) - \mathbb{E}(X)^2$ y procedemos de la siguiente manera:
+
+\begin{align*}
+\mathbb{V}(X + Y ) &= \mathbb{E}(X + Y )^2 - (\mathbb{E}(X) + \mathbb{E}(Y))^2\\
+&= \mathbb{E}(X^2) + 2\mathbb{E}(XY) + \mathbb{E}(Y^2) - (\mathbb{E}[X])^2 - 2\mathbb{E}(X)\mathbb{E}(Y) - (E(Y))^2
+\end{align*}
+
+\vspace{0.2cm}
+
+y as\'i:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{V}(X + Y) = \mathbb{V}(X) + \mathbb{V}(Y) + 2(\mathbb{E}(XY) - \mathbb{E}(X)\mathbb{E}(Y)).
+\]
+
+\vspace{0.2cm}
+
+As\'i, la varianza de la suma de dos variables aleatorias es igual a la suma de las varianzas s\'olo si $\mathbb{E}(XY) -  \mathbb{E}(X)\mathbb{E}(Y)$ es cero. Este es el caso, por ejemplo, cuando $X$ e $Y$ son independientes. La cantidad $\mathbb{E}(XY) -  \mathbb{E}(X)\mathbb{E}(Y)$ se denomina covarianza de $X$ e $Y$ y se denota como:
+
+\vspace{0.2cm}
+
+\[
+\text{Cov}(X,Y) = \mathbb{E}(XY) -  \mathbb{E}(X)\mathbb{E}(Y).
+\]
+
+
+\vspace{0.2cm}
+
+La varianza de la suma de variables aleatorias $X_1, X_2, \dots, X_n$ es dada por la siguiente f\'ormula:
+
+\[
+\mathbb{V}(X_1 + X_2 + \dots + X_n) = \sum_{k =1}^{n}\mathbb{V}(X_k) + 2\sum_{j < k}\text{Cov}(X_i, X_j).
+\]
+
+
+\vspace{0.2cm}
+
+Agunas propiedades de la covarianza de dos variables aleatorias son:
+
+\begin{itemize}
+\item $\text{Cov}(\alpha X, \beta Y) = \alpha\beta\text{Cov}(X,Y)$,
+\item $\text{Cov}(X + \alpha, Y + \beta) = \text{Cov}(X,Y)$,
+\item $\text{Cov}(X , \alpha X + \beta) = \alpha \mathbb{V}(X)$.
+\end{itemize}
+
+\vspace{0.2cm}
+
+Donde $\alpha$ y $\beta$ son escalares. Como regla general, la covarianza es positiva si valores superiores a la media de $X$ est\'an asociados con valores por encima de la media de $Y$ o si valores por debajo de la media de $X$ est\'an asociados con valores por debajo de la media de $Y$. Si los valores superiores a la media de uno est\'an asociados con valores inferiores a la media del otro, entonces la covarianza ser\'a negativa. En ocasiones se plantean dificultades para interpretar la magnitud de la covarianza y por esta raz\'on, se utiliza una nueva cantidad, llamada \texttt{correlaci\'on}.
+
+As\'i como la desviaci\'on est\'andar de una variable aleatoria a menudo da una sensaci\'on mejor que la varianza para la desviaci\'on de una variable aleatoria desde el valor medio, la correlaci\'on de dos variables aleatorias normaliza la covarianza para hacerla sin unidad. La correlaci\'on de dos variables aleatorias se define como:
+
+\vspace{0.2cm}
+
+\[
+\text{Corr}(X,Y) = \frac{\text{Cov}(X,Y)}{\sigma_X\sigma_y}.
+\]
+
+\vspace{0.2cm}
+
+Donde $\sigma_X$ y $\sigma_Y$ son la desviaci\'on est\'andar de $X$ e $Y$ respectivamente. Para dos variables aleatorias, se tiene $-1 \leq \text{Corr}(X, Y) \leq 1$.
+
+\vspace{0.2cm}
+
+
+\begin{ejemplo}
+\normalfont Calculemos la covarianza y la correlaci\'on de  dos variables aleatorias $X$ e $Y$ cuya funci\'on de densidad de probabilidad conjunta es:
+
+\[
+f_{X,Y}(x, y) = \begin{cases}
+6x,  & 0 < x < y < 1 \\
+0 & \text{en otros casos}.
+\end{cases}
+\]
+
+
+Hallemos $\mathbb{E}(XY), \text{Cov}(X, Y), \text{Corr}(X, Y), \mathbb{E}(X + Y)$ y $\mathbb{V}(X + Y)$.
+
+\vspace{0.2cm}
+
+Comenzamos por calcular la funci\'on de densidad marginal de $X$ e $Y$  y de estos resultados,  calculamos la esperanza y la varianza de $X$ y de $Y$. Con esta informaci\'on podemos calcular los elementos solicitados:
+
+\vspace{0.2cm}
+
+\[
+f_X(x) = \bigints_{-\infty}^{\infty}f_{XY}(x,y)dy = \bigints_{x}^{1}6xdy =  x(x -1), \ 0 \leq x \leq 1,
+\]
+
+y cero en otros casos.
+
+\[
+f_Y(y) = \bigints_{-\infty}^{\infty}f_{XY}(x,y)dx = \bigints_{0}^{y}6xdx =  3y^2, \ 0 \leq y \leq 1,
+\]
+
+y cero en otros casos.
+
+\begin{align*}
+\mathbb{E}(X) &= \bigints_{-\infty}^{\infty}xf_X(x)dx = \bigints_{0}^{1}6x^2(1 -x)dx = 1/2. \\
+\mathbb{E}(Y) &= \bigints_{-\infty}^{\infty}xyf_Y(y)dy = \bigints_{0}^{1}3y^3dy = 3/4.\\
+\mathbb{E}(X^2) &= \bigints_{-\infty}^{\infty}x^2f_X(x)dx = \bigints_{0}^{1}6x^3(1 -x)dx = 3/10, \\
+\mathbb{E}(Y^2) &= \bigints_{-\infty}^{\infty}y^2f_Y(y)dy = \bigints_{0}^{1}3y^4dy = 3/5, \\
+\end{align*}
+
+Tambi\'en:
+
+\begin{align*}
+\mathbb{V}(X) = \mathbb{E}(X^2) - \mathbb{E}(X)^2 = 3/10 - 1/4 =  1/20, \\
+\mathbb{V}(Y) = \mathbb{E}(Y^2) - \mathbb{E}(Y)^2 = 3/5 - 9/16 =  3/80,
+\end{align*}
+
+\vspace{0.2cm}
+
+Ahora estamos en posici\'on para calcular las cantidades requeridas:
+
+\[
+\mathbb{E}(XY) = \bigints_{x = 0}^1\bigints_{y = x}^16x^2ydydx = \bigints_{0}^{1}3x^2y^2\biggl|_{y = x}^{1}dx = \bigints_{0}^{1}(3x^2 - 3x^4)dx = 2/5.
+\]
+
+\[
+\text{Cov}(X, Y) = \mathbb{E}(XY) - \mathbb{E}(X)\mathbb{E}(Y) = 2/5 - 1/2 \times 3/4 = 1/40
+\]
+
+\vspace{0.2cm}
+
+\[
+\text{Corr}(X, Y) = \frac{\text{Cov}(X,Y)}{\sigma_X\sigma_Y}= \frac{1/40}{\sqrt{1/20}\sqrt{3/80}} = \frac{1}{\sqrt{3}} = \sqrt{3}/3.
+\]
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(X + Y) = \mathbb{E}(X) + \mathbb{E}(Y) = 1/2 + 3/4 = 5/4.
+\]
+
+\vspace{0.2cm}
+
+\[
+\mathbb{V}(X + Y) = \mathbb{V}(X) + \mathbb{V}(Y) + 2 \text{Cov}(X, Y ) = 1/20 + 3/80 + 1/20 = 11/80.
+\]
+
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+La covarianza de dos variables aleatorias $X$ e $Y$ captura el grado en que est\'an correlacionadas. $X$ e $Y$ no est\'an correlacionados si $\mathbb{E}(XY) = \mathbb{E}(X) \mathbb{E}(Y)$. Si, por ejemplo, $X$ e $Y$ son independientes, entonces $\mathbb{E}(XY) = \mathbb{E}(X) \mathbb{E}(Y)$ y $X$ e $Y$ tampoco est\'an correlacionados. Sin embargo, si $X$ e $Y$ no est\'an correlacionados, no necesariamente se sigue  que son tambi\'en independientes.
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Sean  $X$ e $Y$ dos variables aleatorias discretas con funci\'on de masa de probabilidad conjunta dada por:
+
+\vspace{0.2cm}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l cc  c|c}
+\hline
+      & X = -1 & X = 0 & X=1 & $p_Y(y)$ \\
+      \hline
+Y = -1 & 1/12   &3/12 &1/12  & 5/12 \\
+Y =  0 & 1/12   &0/12 &1/12  & 2/12  \\
+Y =  1 & 1/12   &3/12 &1/12  & 5/12 \\
+\hline
+$p_X(x)$ & 3/12   &6/12 &3/12 & 1 \\
+\hline
+\end{tabular}
+\end{table}
+
+\vspace{0.2cm}
+
+Desde esta tabla tenemos:
+
+\[
+\mathbb{E}(X) = -1 \times 3/12 + 1 \times 3/12 = 0,\ \  \mathbb{E}(Y) = -1 \times 5/12 + 1 \times 5/12 = 0.
+\]
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}(XY) = (-1)(-1)1/12 + (-1)(1)1/12 + (1)(-1)1/12 + (1)(1)1/12 = 0.
+\]
+\end{ejemplo}
+
+Se sigue entonces, que $X$ y $Y$ son no correlacionadas, pues $\mathbb{E}(XY) - \mathbb{E}(X)\mathbb{E}(Y)$, pero ellas son dependientes:
+
+\[
+p_{X,Y}(0,0) = 0 \neq p_{X}(0)p_{Y}(0) = 6/12 \times 2/12.
+\]
+
+\vspace{0.2cm}
+
+En resumen,  $X$ y $Y$ son no correlacionadas, si $\text{Corr}(X,Y) = 0$ o si $\text{Cov}(X,Y) = 0$ o si  $\mathbb{E}(XY) = \mathbb{E}(X) \mathbb{E}(Y)$. Las variables aleatorias independientes no est\'an correlacionadas, pero las variables aleatorias no correlacionadas no son necesariamente son  independientes.
+
+\vspace{0.2cm}
+
+
+
+Consideremos ahora la varianza de la diferencia de dos variables aleatorias $X$ e $Y$:
+
+\[
+\mathbb{V}(X - Y) = \mathbb{V}(X) + \mathbb{V}(Y) - 2(\mathbb{E}(XY) - \mathbb{E}(X)\mathbb{E}(Y)) 
+\]
+
+que se obtiene sustituyendo $X + Y$ por $X - Y$ en la f\'ormula de la varianza de una suma. As\'i, la varianza de la suma de dos variables aleatorias tambi\'en es igual a la varianza de su diferencia, si no est\'an correlacionadas.
+
+\vspace{0.3cm}
+
+Sean  $X_1, X_2,\dots, X_n$,  $n$ variables aleatorias independientes cuyas funciones de distribuci\'on acumulativa est\'an dadas por $F_{X_1}(x), F_{X_2}(x),\dots, F_{X_n}(x)$, respectivamente. Deseamos calcular las funciones de distribuci\'on que se definen como el m\'aximo y el m\'inimo de estas $n$ variables aleatorias. En otras palabras, buscamos la funci\'on de distribuci\'on de las variables aleatorias $X_{\text{max}}$ y $X_{\text{min}}$ definidas como:
+
+\vspace{0.2cm}
+
+\[
+X_{\text{max}} = \max(X_1, X_2,\dots, X_n)\ \ \text{y}\ \ X_{\text{min}} =  \min(X_1, X_2,\dots, X_n).
+\]
+
+\vspace{0.2cm}
+
+Debes observar que $X_{\text{max}} \leq x$ si y s\'olo si $X_i \leq x_i$ para todo $i = 1,2, \dots, n$ y por tanto:
+
+\[
+F_{\text{max}}(x) = \mathbb{P}(X_1 \leq x, X_2 \leq x, \dots, X_n \leq x).
+\]
+
+
+\vspace{0.2cm}
+
+As\'i, desde nuestra aseveraci\'on de que las  $n$ variables son independientes, se sigue que :
+
+\[
+F_{\text{max}}(x) = \prod_{i = 1}^{n}\mathbb{P}(X_i \leq x) = \prod_{i =1}^{n}F_{X_i}(x).
+\]
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Comparemos el tiempo esperado para realizar tres tareas dependientes de datos en un sistema inform\'atico multiprocesador y el tiempo esperado para realizar estas tareas en un solo procesador. Sean $X_1, X_2$ y $X_3$ las variables aleatorias que describen los tiempos necesarios para realizar las tres tareas y debido a la dependencia de los datos, supongamos adem\'as que cada una tiene una distribuci\'on acumulativa (exponencial) id\'entica dada por:
+
+\[
+F_{X_i} = 1 - e^{-t/4},\ \ i = 1,2,3.
+\]
+
+
+\vspace{0.2cm}
+
+As\'i, el tiempo medio de procesamiento para cada una de las tres tareas es dado por $\mathbb{E}(X_i) = 4$. Sea $X$ la variable aleatoria que describe el tiempo necesario para completar las tres tareas. Dado que las tres tareas del multiprocesador finalizar\'an tan pronto como se complete el \'ultimo de ellos, tenemos $X = \max \{X_1, X_2, X_3\}$. As\'i, la funci\'on de distribuci\'on acumulativa de $X$ es:
+
+
+\[
+F_X(t) = (1 - e^{-t/4})^3
+\]
+
+y la funci\'on densidad, obtenida diferenciando $F_X(t)$, es dado por:
+
+\[
+f_X(t) = 3(1 - e^{-t/4})^2(1/4)e^{-t/4} = \frac{3}{4}e^{-t/4}(1 - e^{-t/4})^2.
+\]
+
+Notemos  que la distribuci\'on del m\'aximo de un conjunto de variables aleatorias distribuidas exponencialmente no es exponencial. La esperanza  de $X$ puede ahora ser calculada. Teniendo en cuenta el resultado previamente calculado,
+
+\[
+\bigints_{0}^{\infty}\lambda te^{-\lambda t}dt = \frac{1}{\lambda}, \ t\geq 0,
+\]
+
+Obtenemos:
+
+\begin{align*}
+\mathbb{E}(X) &=  \frac{3}{4}\bigints_{0}^{\infty}e^{-t/4}(1 - e^{-t/4})^2 dt \\
+ &= 3\bigints_{0}^{\infty}\frac{t}{4}e^{-t/4}(1 - 2e^{-t/4} + e^{-t/2}) dt \\
+ & = 3\biggl(4 -2 + \frac{4}{9}\biggr) = 7.3333.
+\end{align*}
+
+\vspace{0.2cm}
+
+Observa que el c\'alculo del valor esperado para la \'ultima de las tres tareas a completar, es decir, $7.3333$, es bastante mayor que el tiempo esperado para completar cualquiera de las tareas, que son  $4$.
+
+En un solo procesador, la variable aleatoria que describe el tiempo total requerido ahora es dada por $X = X_1 + X_2 + X_3$ y calculamos la esperanza simplemente como:
+
+\[
+\mathbb{E}(X) = \sum_{i =1}^{3}\mathbb{E}(X_i) = 12.
+\]
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+Ahora consideramos, la variable aleatoria $X_{\text{min}} = \min (X_1, X_2, \dots, X_n)$. En este caso es f\'acil, primero calcular $\mathbb{P}(X_{\text{min}}) > x$  y formamos $F_{\text{min}}(x)$, desde la relaci\'on:
+
+\[
+F_{\text{min}}(x) = 1 -\mathbb{P}(X_{\text{min}} > x).
+\]
+
+\vspace{0.2cm}
+
+Si $X_{\text{min}} > x$ si y s\'olo si $X_i > x$ para todo $i = 1,2,\dots, n$ y por tanto:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(X_{\text{min}} > x) = \mathbb{P}(X_1 > x, X_2 > x,\dots X_n > x).
+\]
+
+\vspace{0.2cm}
+
+Una vez m\'as, volviendo a la independencia de las $n$ variables aleatorias $X_1, X_2,\dots, X_n$, tenemos:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(X_{\text{min}} > x) = \prod_{i =1}^n\mathbb{P}(X_i > x) = \prod_{i =1}^{n}(1- F_i(x))
+\]
+
+y as\'i:
+
+\[
+F_{\text{min}}(x) = 1 -\prod_{i =1}^{n}(1- F_i(x)).
+\]
+
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Encuentra la distribuci\'on del tiempo hasta que termine la primera de las tres tareas en el sistema inform\'atico multiprocesador del ejemplo anterior. La variable aleatoria $X$ que describe esta situaci\'on está dada por $X = \min\{X_1, X_2, X_3\}$ y su funci\'on de distribuci\'on acumulativa est\'a dada por:
+
+\[
+F_X(t) = 1 -e^{-t/4}e^{-t/4}e^{-t/4} = 1 -e^{-3t/4}, \ t \geq 0.
+\]
+
+As\'i, el tiempo medio para que la primera tarea se termine es igual a $4/3$, que es considerablemente menor que la media de cualquiera de las tareas individuales.
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+Obs\'ervese, en el ejemplo anterior, que la distribuci\'on obtenida como m\'inimo del conjunto de tres distribuciones exponenciales es en si misma una distribuci\'on exponencial. Esto es v\'alido en general: a diferencia del m\'aximo de un conjunto de distribuciones exponenciales, el m\'inimo de un conjunto de distribuciones exponenciales es en si misma una distribuci\'on exponencial.
+
+\vspace{0.5cm}
+
+\section{Distribuciones condicionales}
+
+\vspace{0.2cm}
+
+
+Si $X$ y $Y$ son discretas, con funci\'on de masa de probabilidad conjunta $p_{XY}(x,y)$, entonces la \texttt{funci\'on de masa de probabilidad  condicional} de $X$ dado que el evento $Y = y$  se define como: 
+
+\vspace{0.2cm}
+
+\begin{equation}
+p_{Y|X}(y|x) = \mathbb{P}(Y = y| X=x) = \frac{\mathbb{P}(Y = y, X=x)}{\mathbb{P}(X = x)} = \frac{p_{X,Y}(x,y)}{p_{Y}(y)}
+\end{equation}
+
+\vspace{0.2cm}
+
+si se cumple que  $p_{X}(x) > 0$. En otras palabras, elegimos un valor espec\'ifico para $y$ y encontramos $\mathbb{P}(X = x|Y=y)$ como  funci\'on de $x$.
+
+\vspace{0.2cm}
+
+De la ecuaci\'on anterior, se tiene el siguiente resultado:
+
+\[
+p_{X|Y}(x,y) = p_{Y}(y)p_{X|Y}(x|y)\ \text{para} \ p_Y(y) > 0.
+\]
+
+
+De manera similar se cumple:
+
+\[
+p_{X|Y}(x,y) = p_{X}(x)p_{Y|X}(y|x)\ \text{para} \ p_X(x) > 0.
+\]
+
+De esta manera, podemos calcular la funci\'on de masa de probabilidad conjunta de $X$ e $Y$, a partir de sus distribuciones marginales y sus funciones de masa de probabilidad condicional. El procedimiento se aplica si las variables aleatorias son independientes o no. Si son independientes, entonces:
+
+\[
+p_{X|Y}(x|y) = p_X(x)\ \text{y}\ p_{Y|X}(y|x) = p_{Y}(y)
+\]
+
+y $p_{X|Y}(x,y) = p_X(x)p_Y(y)$.
+
+\vspace{0.2cm}
+
+Tambi\'en las probabilidades marginales, se pueden formar como:
+
+\[
+p_X(x) = \sum_{\text{todo y}}p_{XY}(x, y) =  \sum_{\text{todo y}}p_{X|Y}(x|y)p_Y(y),
+\]
+
+que es otra forma del teorema de probabilidad total. Continuando con el caso discreto de dos variables aleatorias discretas, podemos formar la funci\'on de distribuci\'on acumulativa condicional como:
+
+\[
+F_{X|Y}(x|y) = \mathbb{P}(X \leq x| Y = y) = \frac{\mathbb{P}(X \leq x, Y =y)}{\mathbb{P}(Y = y)}
+\]
+
+para todos los posibles valores de $x$ e $y$ para el cual $\mathbb{P}(Y =y)> 0$. Esta funci\'on tambi\'en puede ser obtenida, desde la funci\'on de masa de probabilidad condicional como:
+
+\[
+F_{X|Y}(x|y) = \frac{\sum_{u \leq x}p_{XY}(u,y)}{p_Y(y)} = \sum_{u \leq x}p_{X|Y}(u|y).
+\]
+
+\begin{ejemplo}
+\normalfont Sean $X$ e $Y$ dos variables aleatorias discretas con funci\'on de masa de probabilidad  conjunta:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l cc  c|c}
+\hline
+      & X = -1 & X = 0 & X=1 & $p_Y(y)$ \\
+      \hline
+Y = -1 & 1/12   &3/12 &1/12  & 5/12 \\
+Y =  0 & 1/12   &0/12 &1/12  & 2/12  \\
+Y =  1 & 1/12   &3/12 &1/12  & 5/12 \\
+\hline
+$p_X(x)$ & 3/12   &6/12 &3/12 &  \\
+\hline
+\end{tabular}
+\end{table}
+
+Calculemos $\mathbb{P}(X =x | Y=1)$ tenemos:
+
+\begin{align*}
+\mathbb{P}(X = -1|Y =1) &= \mathbb{P}(X = -1,Y =1)/\mathbb{P}(Y =1) = (1/12)/(5/12)= 1/5,\\
+\mathbb{P}(X = 0|Y =1) &= \mathbb{P}(X = 0,Y =1)/\mathbb{P}(Y =1) = (3/12)/(5/12)= 3/5,\\
+\mathbb{P}(X = 1|Y =1) &= \mathbb{P}(X = 1,Y =1)/\mathbb{P}(Y =1) = (1/12)/(5/12)= 1/5.
+\end{align*}
+
+Obs\'ervese que para cada valor diferente que puede asumir $Y$, obtenemos una funci\'on de masa de probabilidad diferente $p_{XY}(x|y)$. En el ejemplo (2.1), se pueden obtener tres funciones de densidad de probabilidad diferentes correspondientes a $y = -1, 0, 1$, s\'olo la \'ultima  $(Y = 1)$ fue calculada. 
+
+\vspace{0.2cm}
+
+Calculamos la funci\'on de distribuci\'on acumulativa condicional de $X$, dado $Y =1$:
+
+\[
+F_{X|Y}(x|1) = \begin{cases}
+\qquad \qquad \qquad   0 & x < -1 \\
+\qquad \qquad 12/5 \times 1/12 = 1/5& -1 \leq x < 0\\
+\qquad 12/5 \times (1/12 + 3/12) = 4/5 & 0 \leq x < 1 \\
+12/5 \times (1/12 + 3/12 + 1/12) = 1, & x \geq 1.
+\end{cases}
+\]
+\end{ejemplo}
+
+\vspace{0.5cm}
+
+Para distribuciones continuas, no podemos calcular $\mathbb{P}(Y \leq y| X=x) $, de la f\'ormula $\mathbb{P}(A|B) = \mathbb{P}(A \cap B)/\mathbb{P}(B$, desde que $\mathbb{P}(B) = 0$( estamos condicionando el evento $\{X = x \}$ que tiene probabilidad $0$).  En lugar   de condicionar el evento $X = x$, condicionamos el evento $x \leq  X \leq x +\delta$ y tomamos l\'imite $\delta x \rightarrow 0^{+}$. As\'i:
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{P}(Y \leq y \vert x \leq  X \leq x +\delta) &= \dfrac{\mathbb{P}(Y \leq y,  x \leq  X \leq x +\delta)}{\mathbb{P}( x \leq  X \leq x +\delta)}\\
+& = \dfrac{\bigints_{u = x}^{x + \delta x} \bigints_{v = -\infty}^{y}f_{X,Y}(u,v)dudv}{\bigints_{x}^{x + \delta x}f_X(u) du}
+\end{align*}
+
+
+\vspace{0.2cm}
+
+Dividiendo el numerador y el denominados entre $\delta x$ y tomando l\'imite cuando $\delta x \rightarrow 0^{+}$, obtenemos:
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{P}(Y \leq y \vert x \leq  X \leq x +\delta) & \rightarrow \bigintsss_{-\infty}^{y}\dfrac{f_{X,Y}(x,y)}{f_{X}(x)}dv \\
+& = G(y)
+\end{align*}
+
+\vspace{0.2cm}
+
+$G$ es una funci\'on de distribuci\'on con una funci\'on densidad:
+
+\[
+g(y) = \dfrac{f_{X,Y}(x,y)}{f_{X}(x)}\ \ \ \ \text{para}\ y \in \mathbb{R}.
+\]
+
+
+\vspace{0.2cm}
+
+Llamamos  a $G$ y $g$ la \texttt{funci\'on de distribuci\'on condicional} y la \texttt{funci\'on densidad condicional} de $Y$ dado que $X$ es igual a $x$, para valores de $x$ tal que $f_{X}(x) > 0$.
+
+\vspace {0.2cm}
+
+\begin{defi}
+\normalfont La \texttt{funci\'on densidad condicional } de $Y$ dado que $X =x$, denotada por $f_{Y\vert X}(\cdot \vert x)$ es definida como:
+
+\vspace{0.2cm}
+
+\begin{equation}
+f_{Y|X}(y|x) = \dfrac{f_{X|Y}(x,y)}{f_{X}(x)}
+\end{equation}
+
+\vspace{0.2cm}
+
+para $y \in \mathbb{R}$ y $x$ que cumplen que  $f_{X}(x) > 0$.
+
+\end{defi}
+
+
+\vspace{0.2cm}
+
+Enfatizamos que expresiones como $\mathbb{P}(Y \leq y \vert X = x)$ no se puede ser interpretada de la manera usual, usando la f\'ormula para $\mathbb{P}(A|B)$. La \'unica forma de darle significado a esta cantidad es hacer una nueva definici\'on de  $\mathbb{P}(Y \leq y \vert X = x)$ como la funci\'on distribuci\'on condicional $G(y)$ de $Y$ dado $X =x$.
+
+
+\vspace{0.2cm}
+
+Si $X$ e $Y$ son independientes, entonces $f_{X,Y}(x ,y) = f_{X}(x)f_{Y}(y)$. Por definici\'on $f_{Y\vert X}(y\vert x) = f_{Y}(y)$, lo que dice que es irrelevante la informaci\'on de  $X$, cuando se estudia $Y$.
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Sean $X$ y $Y$ variables aleatorias, con  distribuci\'on uniforme sobre un cuadrado unidad. As\'i se cumple que  $f_{X|Y}(x|y) = 1$, para $0 \leq x \leq 1$ y $0$ en otros casos. Dado $Y =y$,  $X$ tienen una distribuci\'on uniforme en $(0.1)$, se puede  escribir  como $X|Y = y \sim \mbox{Uniforme}(0,1)$.
+
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Supongamos que $X \sim \mbox{Uniforme}(0,1)$. Despu\'es de obtener un valor de $X$, generamos $Y|X = x \sim \mbox{Uniforme}(x,1)$. La distribuci\'on marginal de $Y$ se puede calcular a partir de:
+
+\[
+f_{X}(x) = \begin{cases}
+1 & \mbox{si}\ \ 0 \leq x \leq 1\\
+0 & \mbox{ en otros casos}.
+\end{cases}
+\]
+
+luego por definici\'on tenemos:
+
+\[
+f_{Y|X}(y|x) = \begin{cases}
+\dfrac{1}{1 -x}& \mbox{si}\ \ 0 < x < y < 1 \\
+0 & \mbox{en otros casos}.
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+As\'i :
+
+\[
+f_{X,Y}(x,y) = f_{Y|X}(y|x)f_{X}(x) = \begin{cases}
+\dfrac{1}{1 -x}& \mbox{si}\ \ 0 < x < y < 1 \\
+0 & \mbox{en otros casos}.
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+La distribuci\'on marginal para $Y$ es:
+
+\[
+f_{Y}(y) = \int_{0}^{y}f_{X,Y}(x,y)dx = \int_{0}^{y}\dfrac{dx}{1 -x} = -\int_{1}^{1- y}\dfrac{du}{u} = -\log(1-y)
+\]
+
+\vspace{0.2cm}
+
+para $0 < y < 1$.
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont  Sea: 
+
+
+\[
+f(x, y) = \begin{cases}
+x + y & \text{si} \ \ 0 \leq x \leq 1,  0 \leq y \leq 1 \\
+0 & \text{en otros casos}.
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+Encontremos $\mathbb{P}(X < 1/4 \vert Y = 1/3)$. Como $f_{Y}(y) = y + (1/2)$, tenemos:
+
+\[
+f_{X\vert Y}(x\vert y) = \dfrac{f_{X,Y}(x,y)}{f_{Y}(y)} = \dfrac{x + y}{y + \frac{1}{2}}
+\]
+
+
+As\'i:
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{P}\Bigl(X < \frac{1}{4}\Bigr\vert Y = \frac{1}{3} \Bigr) & = \bigintsss_{0}^{1/4}f_{X\vert Y}\Bigl(x \  \Bigl\vert \ \frac{1}{3}\Bigr)dx \\
+& = \bigintsss_{0}^{1/4}\dfrac{x + \frac{1}{3}}{\frac{1}{3} + \frac{1}{2}}dx = \dfrac{\frac{1}{32} + \frac{1}{12}}{\frac{1}{3} + \frac{1}{2}} = \dfrac{11}{80}.
+\end{align*}
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Sean $X$ e $Y$ variables aleatorias con una funci\'on densidad conjunta dada por:
+
+
+\[
+f_{XY}(x, y) = \begin{cases}
+2e^{-x -y} & \text{si}\ \  0 < x < y < \infty \\
+0  & \text{en otros casos}
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+Las funciones marginales, para cada variable aleatoria son:
+
+\vspace{0.2cm}
+
+\begin{align*}
+f_{X}(x) &= 2e^{-2x}  \hspace{0.8cm}  \text{para}\  x >0 \\
+f_{Y}(y) &= 2e^{-y}(1- e^{-y})\ \ \  \text{para}\  y > 0
+\end{align*}
+
+
+\vspace{0.2cm}
+
+La funci\'on densidad condicional de $Y$ dado $X = x(>0)$ es dada por:
+
+\vspace{0.2cm}
+
+\[
+f_{Y\vert X}(y \vert x) = \dfrac{2e^{-x - y}}{2e^{-2x}} = e^{x -y }\ \ \text{para}\ \ y > x
+\]
+
+\vspace{0.2cm}
+
+La funci\'on densidad condicional de $X$ dado $Y = y$, se puede expresar como:
+
+\[
+f_{X\vert Y}(x \vert y) = \dfrac{e^{-x}}{1 - e^{-y}} \ \ \text{para}\ \ 0 < x < y.
+\]
+
+\vspace{0.2cm}
+
+En ambos casos, la funciones densidades son iguales a $0$ si $x > y$.
+
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Calcula la funci\'on densidad de probabilidad marginal condicional $f_{X|Y}(x|Y =y)$ desde la siguiente funci\'on de densidad conjunta de dos variables aleatorias $X$ e $Y$:
+
+\[
+f_{X,Y}(x, y) = \begin{cases}
+e^{-y}, & 0< x < y < \infty \\
+0 & \text{en otros casos}.
+\end{cases}
+\]
+
+Primero calculemos la funci\'on de densidad de probabilidad marginal. Tenemos:
+
+\[
+f_X(x) = \bigints_{x}^{\infty}e^{-y}dy = -e^{-y}\biggl\vert_{x}^{\infty} = e^{-x}.
+\]
+
+desde que $f_X(x) > 0$, s\'olo cuando $y  > x$. La otra funci\'on marginal es m\'as simple. Tenemos:
+
+\[
+f_Y(y) = \bigints_{0}^{y}e^{-y}dx = ye^{-y}.
+\]
+
+\vspace{0.2cm}
+
+Formemos ahora la distribuci\'on marginal condicional $f_{Y|X}(x|Y=y)$. Desde la ecuaci\'on (3),
+
+\[
+f_{Y|X}(x|Y=y) = \frac{e^{-y}}{ye^{-y}} = \frac{1}{y},\ \text{para}\ 0 < x < y.
+\]
+
+\vspace{0.2cm}
+
+Esta funci\'on densidad condicional es uniformemente distribuida en $(0.y)$.
+
+\vspace{0.2cm}
+
+Correspondiendo a la ecuaci\'on (2), podemos reescribir a ecuaci\'on  (3) como:
+
+\begin{equation*}
+f_{X,Y}(x, y) = f_Y(y)f_{X|Y}(x|y) = f_X(x)f_{Y|X}(y|x)\ \ \text{para} \ 0 < f_Y(y) < \infty, \ 0 < f_X(x) < \infty.
+\end{equation*}
+\end{ejemplo}
+
+Cuando $X$ e $Y$ son variables aleatorias independientes, entonces:
+
+\[
+f_{X,Y}(x,y)= f_X(x)f_Y(y).
+\]
+
+y de esto se sigue que:
+
+\[
+f_{Y|X}(y|x) = f_Y(y).
+\]
+
+\begin{ejemplo}
+\normalfont Sea $X$ uniformemente distribuida en $[0,1]$ y sea $Y$ uniformemente distribuida en $[0,X]$. Calculamos la funci\'on de densidad de probabilidad conjunta de $X$ e $Y$. La declaraci\'on del problema nos permite escribir:
+
+\begin{align*}
+f_X(x) = 1, & 0 \leq x \leq 1, \\
+f_{Y|X}(y|x) = 1/x, & 0 \leq y \leq x.
+\end{align*}
+
+Por tanto, usando (4), obtenemos la funci\'on de densidad de probabilidad condicional, como:
+
+\[
+f_{X,Y}(x, y) = f_X(x)f_{Y|X}(y|x) = 1 \times 1/x = 1/x,\quad 0 \leq y \leq x \leq 1.
+\]
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+Hay una serie de otros resultados que pueden obtenerse de la definici\'on de la funci\'on de densidad conjunta.  Por ejemplo, podemos calcular la densidad marginal de $X$ en t\'erminos de la densidad condicional como:
+
+\[
+f_X(x) = \bigints_{-\infty}^{\infty}f(x, y)dy= \bigints_{-\infty}^{\infty}f_Y(y)f_{X|Y}(x|y)dy,
+\]
+
+lo cu\'al es el an\'alogo al teorema de la probabilidad total. Podemos tambi\'en obtener, una analog\'ia a la Regla de Bayes como:
+
+\[
+f_{Y|X}(y|x) = \frac{f_Y(y)f_{X|Y}(x|y)}{\bigints_{-\infty}^{\infty}f_Y(y)f_{X|Y}(x|y)dy}.
+\]
+
+Finalmente,desde la ecuaci\'on (3), definimos la funci\'on de distribuci\'on acumulativa condicional como:
+
+\[
+F_{X|Y}(x|y) = \mathbb{P}(X \leq x| Y =y) = \frac{\bigints_{-\infty}^{x}f(u,y)du}{f_Y(y)} = \bigints_{-\infty}^{x}f_{X|Y}(u|y)du.
+\]
+
+\begin{ejemplo}
+\normalfont Retornamos el ejemplo (2.7), calculamos la distribuci\'on marginal de $Y$ y la funci\'on de densidad probabilidad condicional de $X$ dado $Y$. En efecto:
+
+\[
+f_Y(y) = \bigints_{-\infty}^{\infty}f_{X,Y}(x,y)dx = \bigints_{y}^{1}\frac{1}{x}dx = -\ln y.
+\]
+
+\vspace{0.2cm}
+
+y 
+
+\vspace{0.2cm}
+
+\[
+f_{X|Y}(x|y) = \frac{f_{X,Y}(x, y)}{f_Y(y)} = \frac{1/x}{-\ln y}, \ y \leq x \leq 1.
+\]
+\end{ejemplo}
+
+\vspace{0.5cm}
+
+\subsection{Esperanza condicional y varianza}
+
+\vspace{0.2cm}
+
+En el  caso de esperanza condicional, supongamos que $X$ e $Y $ son variables aleatorias continuas conjuntas, con densidad $f_{X,Y}$y que se nos d\'a $X = x$. A la luz de esta informaci\'on , la nueva funci\'on   densidad de $Y$ es la funci\'on densidad condicional $f_{Y\vert X}(\cdot \vert x)$.
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont La \texttt{esperanza condicional de $Y$ dado $X = x$} escrita como $\mathbb{E}(Y \vert X=x)$ es de la media de la funci\'on densidad condicional: 
+
+\[
+\mathbb{E}(Y \vert X =x) = \bigintsss_{-\infty}^{\infty}yf_{Y\vert X}(y \vert x)dy = \bigintsss_{-\infty}^{\infty}y\dfrac{f_{X,Y}(x, y)}{f_{X}(x)}dy,
+\]
+
+\vspace{0.2cm}
+
+v\'alido para alg\'un valor de $x$ que cumple $f_{X}(x) > 0$. De manera anal\'oga, dada una funci\'on de densidad condicional conjunta $f_{X|Y}(x|y)$ de las variables aleatorias $X$ e $Y$, podemos formar la esperanza condicional de $X$ dado $Y$ como:
+
+
+\[
+\mathbb{E}(X \vert Y =y) = \bigintsss_{-\infty}^{\infty}yf_{X\vert Y}(x \vert y)dx = \bigintsss_{-\infty}^{\infty}x\dfrac{f_{X,Y}(x, y)}{f_{Y}(y)}dy, \ \ 0 < f_Y(y) < \infty.
+\]
+
+
+M\'as generalmente, la esperanza  condicional de una funci\'on $h$ de $X$ e $Y$ viene dada por:
+
+\[
+\mathbb{E}[h(X,Y)|Y =y] = \bigints_{-\infty}^{\infty}h(x,y)f_{X|Y}(x|y)dx.
+\]
+
+Cuando $X$ e $Y$ son variables aleatorias discretas, tenemos:
+
+\[
+\mathbb{E}(X|Y = y) = \sum_{\text{todo x}}x\mathbb{P}(X= x|Y=y) = \sum_{\text{todo x}}xp_{X|Y}(x|y),
+\]
+
+y si $h$ es una funci\'on de $X$ e $Y$, entonces:
+
+\[
+\mathbb{E}[h(X|Y)|Y =y] = \sum_{\text{todo x}}h(x,y)p_{X|Y}(x|y).
+\]
+
+\end{defi}
+
+Posiblemente la aplicaci\'on m\'as \'util de la esperanza condicional sea el siguiente teorema, una variante del teorema de la partici\'on que nos permite calcular $\mathbb{E}(Y)$ en situaciones donde la esperanza condicional $\mathbb{E}(Y|X = x)$ son f\'acilmente calculables.
+
+\vspace{0.3cm}
+
+\begin{teo}
+\normalfont Si $X$  e $Y$ son variables aleatorias continuas conjuntas, entonces:
+
+\[
+\mathbb{E}(Y) = \bigintsss\mathbb{E}(Y \vert X =x)f_{X}(x)dx
+\]
+
+\vspace{0.2cm}
+
+donde la integral est\'a definida para los valores de $x$, tal que $f_{X}(x) > 0$. En otras palabras, al calcular $\mathbb{E}(Y)$ podemos fijar primero el valor de $X$ y luego promediar  sobre este valor m\'as tarde.
+
+
+\vspace{0.2cm}
+
+
+En efecto:
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{E}(Y) &= \bigintsss yf_{Y}(y)dy = \bigintsss\bigintsss yf_{X,Y}(x, y)dxdy \\
+&= \bigintsss\bigintsss yf_{Y \vert X}(y \vert x)f_{X}(x)dxdy \\
+&= \bigintsss \Bigl(\bigintsss yf_{Y\vert X}(y \vert x)dy \Bigr)f_{X}(x)dx
+\end{align*}
+
+
+\vspace{0.2cm}
+
+Desde que $\mathbb{E}(Y \vert X)$ es una variable aleatoria, tiene una media $\mathbb{E}[\mathbb{E}(Y \vert X)]$ que puede ser calculada usando las siguientes propiedades:
+
+
+\begin{align*}
+\mathbb{E}[\mathbb{E}(Y \vert X)] = \begin{dcases}
+\displaystyle\sum_{x}\mathbb{E}(Y\vert X = x)p_{X}(x)  & \ \ \text{X discreta}\\
+\bigintsss_{-\infty}^{\infty}\mathbb{E}(Y\vert X = x)f_{X}(x)  & \ \ \text{X continua}.
+\end{dcases}
+\end{align*}
+\end{teo}
+
+\vspace{0.5cm}
+
+\begin{teo}
+\normalfont Este resultado  llamado \texttt{ley de iteraci\'on de esperanzas }  se cumple para toda variable aleatoria:
+
+
+\[
+\mathbb{E}[\mathbb{E}(Y \vert X)] = \mathbb{E}(Y) \ \ \text{y} \ \ \mathbb{E}[\mathbb{E}(X \vert Y)] = \mathbb{E}(X)
+\]
+
+
+\vspace{0.2cm}
+
+
+De forma general, para alguna funci\'on $r(X, Y)$, tenemos:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{E}[\mathbb{E}(r(X,Y) \vert X)] = \mathbb{E}(r(X,Y)).
+\]
+
+Probemos la primera ecuaci\'on:
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{E}(\mathbb{E}(Y \vert X)) = \bigintsss\mathbb{E}(Y \vert X =x)f_{X}(x)dx &= \bigintsss\bigintsss yf(y \vert x)dyf(x)dx \\
+&= \bigintsss\bigintsss yf(y \vert x)f(x)dxdy = \bigintsss\bigintsss yf(x, y)dxdy = \mathbb{E}(Y) 
+\end{align*}
+
+\end{teo}
+
+\vspace{0.5cm}
+
+\begin{ejemplo}
+\normalfont Sea una barra de longitud $l$. Dividimos la barra en un punto que se elige al azar y de manera uniforme en su longitud, y mantenemos la pieza que contiene el extremo izquierdo de la barra. A continuaci\'on, repetimos el mismo proceso con la pieza  que nos qued\'o. ?`Cu\'al es la esperanza de la longitud  prevista de las piezas que  quedan  despu\'es de romper dos veces la pieza?
+
+\vspace{0.2cm}
+
+Sea $Y$ la longitud de la pieza de la barra, despu\'es de que se rompe por primera vez. Sea $X$ la longitud despu\'es de que se rompe la barra por segunda vez. Asi tenemos $\mathbb{E}(X \vert Y) = Y/2$, desde que el punto de ruptura es escogido de manera uniforme sobre una pieza de longitud $Y$. De manera similar, tenemos que $\mathbb{E}(Y) = l/2$. As\'i:
+
+
+\[
+\mathbb{E}(X) = \mathbb{E}[\mathbb(X \vert Y)] = \mathbb{E}(Y/2) = \dfrac{\mathbb{E}(Y)}{2} = \frac{l}{4}.
+\]
+
+\end{ejemplo}
+
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont Para dos variables aleatorias $X$ e $Y$, la varianza condicional de $Y$ dado $X =x$  es definida como:
+
+\[
+\mathbb{V}(Y|X) = \mathbb{E}[(Y - \mathbb{E}[Y|X])^2| X],
+\]
+
+o por la siguiente f\'ormula equivalente, que es algunas veces m\'as \'util:
+
+\[
+\mathbb{E}(Y|X) = \mathbb{E}(Y^2|X) - (\mathbb{E}(Y|X))^2.
+\]
+
+Tambi\'en se tiene:
+
+\[
+\mathbb{V}(Y) = \mathbb{E}[\mathbb{V}(Y|X)] + \mathbb{V}[\mathbb{E}(Y|X)].
+\]
+\end{defi}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Sean $X$ y $Y$ dos variables aleatorias continuas, cuya funci\'on de probabilidad de densidad conjunta es dada por:
+
+\[
+f_{X,Y}(x,y) = \begin{cases}
+1 - (x + y)/3, & 0 \leq x \leq 1,\ 0 \leq y \leq 2 \\
+0 & \text{en otros casos}.
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+Encontremos $\mathbb{E}(X|Y = 0.5)$ y $\mathbb{E}(Y|X = 0.5)$. Esto requiere un conocimiento de la distribuci\'on marginal de $X$ e $Y$, como tambi\'en las distribuciones marginales, as\'i que empezamos calculando esas cantidades. Tenemos :
+
+\vspace{0.2cm}
+
+\[
+f_X(x) = \bigints_{-\infty}^{\infty}f_{X,Y}(x,y)dy = \bigints_{y = 0}^{2}[1 - (x + y)/3]dy = 4/3 -2x/3,\ \ 0 \leq x \leq 1,
+\]
+
+y
+
+
+\[
+f_Y(y) = \bigints_{-\infty}^{\infty}f_{X,Y}(x,y)dx = \bigints_{x = 0}^{1}[1 - (x + y)/3]dx = 5/6 -y/3,\ \ 0 \leq y \leq 2.
+\]
+
+
+\vspace{0.2cm}
+
+Tambi\'en:
+
+\begin{align*}
+f_{X|Y}(x|0.5) &= \frac{f_{X,Y}(x, 0.5)}{f_Y(0.5)} = \frac{1 - x/3 -0.5/3}{5/6 -0.5/3} = 5/4- x/2,\\
+f_{Y|X}(y|0.5) &= \frac{f_{X,Y}(0.5, y)}{f_X(0.5)} = \frac{1 - 0.5/3 -y/3}{4/3 -1/3} = 5/6- y/3.
+\end{align*}
+
+Los resultados requeridos pueden formarse ahora:
+
+\begin{align*}
+\mathbb{E}(X|Y = 0.5) &= \bigints_{-\infty}^{\infty}xf_{X|Y}(x|0.5)dx = \bigints_{0}^{1}x\biggl(\frac{5}{4} - \frac{x}{2}\biggr)dx \biggl(\frac{5x^2}{8} - \frac{x^3}{6}\biggr)\Biggr\vert_{0}^{1} = 11/24, \\
+\mathbb{E}(Y|X = 0.5) &= \bigints_{-\infty}^{\infty}yf_{Y|X}(y|0.5)dy = \bigints_{0}^{2}x\biggl(\frac{5}{6} - \frac{y}{3}\biggr)dy \biggl(\frac{5y^2}{12} - \frac{y^3}{9}\biggr)\Biggr\vert_{0}^{2} = 7/9.
+\end{align*}
+\end{ejemplo}
+
+
+\vspace{0.2cm}
+
+
+\begin{ejemplo}
+
+\normalfont Retornamos al ejemplo (1.4) y encontremos $\mathbb{E}(Y|x)$. Por conveniencia, reescribimos la funci\'on densidad conjunta y los c\'alculos anteriores de la densidad marginal de $X$. Estas eran:
+
+\[
+f_{X,Y}(x, y) = \begin{cases}
+6x, & 0< x < y < 1, \\
+0 & \text{en otros casos}.
+\end{cases}
+\]
+
+y
+
+\[
+f_X(x) = 6x(x -1), \ 0 \leq x \leq 1,
+\]
+
+respectivamente. Ahora calculamos $\mathbb{E}(Y|x)$ como:
+
+\[
+\mathbb{E}(Y|x) = \bigints_{-\infty}^{\infty}yf_{Y|X}(y|x)dy = \bigints_{y = x}^{1}\frac{6xy}{6x(1 -x)}dy = \frac{1}{1 -x}\bigints_{y =x}^{1}ydy = \frac{1 + x}{2}.
+\]
+\end{ejemplo}
+
+
+\vspace{0.2cm}
+
+En general, para un \texttt{vector aleatorio}, $X = (X_1,\dots, X_n)$ donde $X_1, \dots, X_n$ son variables aleatorias, es posible definir las funciones marginales, condicionales  etc,  de la misma manera que las distribuciones bivariadas.  En este caso se denota la densidad del vector aleatorio como $f(x_1,\dots,x_n)$.
+
+\vspace{0.2cm}
+
+
+Decimos que $X_1,\dots, X_n$ son independientes si, para cada $A_1, \dots, A_n$
+
+\vspace{0.2cm}
+
+\begin{align*}
+\mathbb{P}(X_1 \in A_1,  \dots, X_n \in A_n) = \prod_{i=1}^{n}\mathbb{P}(X_i \in A_i).
+\end{align*}
+
+\vspace{0.2cm}
+
+Es suficiente verificar que $f(x_1,\dots, x_n) = \prod_{i = 1}^{n}f_{X_{i}}(x_i) $.
+
+
+\vspace{0.2cm}
+
+Si $X_1,\dots X_n$ son independientes y cada uno de ellos tiene la misma distribuci\'on marginal con  una funci\'on de distribuci\'on cumulativa $F$, decimos que $X_1, \dots, X_n$ son id\'enticamente distribuidas e independientes y escribimos como:
+
+\[
+X_1, \dots, X_n \sim F
+\]
+
+\vspace{0.3cm}
+
+Si $F$ tiene densidad $f$, escribimos tambi\'en $X_1, \dots, X_n \sim f$. 
+
+
+
+\end{document}

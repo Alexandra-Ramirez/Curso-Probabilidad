@@ -1,0 +1,568 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.35\linewidth}
+\begin{minipage}{0.6\linewidth}
+\textbf{Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274}\par
+ \par
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Respuestas al examen parcial}}
+
+
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\textbf{Soluci\'on 1}
+
+\begin{itemize}
+\item  Jessica se equivoca. Considera los siguientes $50$ vuelos. Para $1 \leq i \leq 50$, sea $A_i$, el evento en que  $i$ \'esima misi\'on se completar\'a sin contratiempos. Entonces $\bigcap_{i=1}^{50}A_i$, es el evento en que todas las pr\'oximas $50$ misiones se completar\'an con \'exito. Probemos que $\mathbb{P}\Biggl(\bigcap_{i=1}^{50}A_i\Biggr) > 0$. Esto prueba que Jessica est\'a equivocada. Se debe notar  que la probabilidad de la ocurrencia simult\'anea de cualquier n\'umero de $A_i^c$ es distinto de cero.
+
+Adem\'as, consideremos un conjunto de $E$ consistiendo de $n (n \leq 50)$ de los $A_i^c$. Es razonable suponer que la probabilidad de la ocurrencia simult\'anea de los eventos en  $E$ es estrictamente menor que la probabilidad de la ocurrencia simult\'anea de los sucesos de cualquier subconjunto de $E$. Usando estos hechos, del principio de  inclusi\'on-exclusi\'on, tenemos:
+
+\[
+\mathbb{P}\Biggl(\bigcup_{i=1}^{50}A_i^c\Biggr) \leq \sum_{i =1}^{50}\mathbb{P}(A_i^c) = \sum_{i =1}^{50}\frac{1}{50} =1. 
+\]
+
+As\'i por la Ley de Morgan,
+
+\[
+\mathbb{P}\Biggl(\bigcap_{i=1}^{50}A_i\Biggr) = 1- \mathbb{P}\Biggl(\bigcup_{i=1}^{50}A_i^c\Biggr) > 1 -1 > 0.  
+\]
+\item Si $\mathbb{P}(A \cap B) = \mathbb{P}(A\cap C) = \mathbb{P}(B \cap C) = 0$. Entonces $\mathbb{P}(A \cap B \cap C) = 0$. Desde que $A \cap B \cap C \subseteq A \cap B$. Eso implica que:
+
+\[
+\mathbb{P}(A \cup B \cup C) = \mathbb{P}(A) + \mathbb{P}(B) + \mathbb{P}(C).
+\]
+
+Suponiendo la \'ultima igualdad, implica que 
+
+\begin{equation}
+\mathbb{P}(A \cap B) + \mathbb{P}(B \cap C) + [\mathbb{P}(A \cap C) - \mathbb{P}(A\cap B \cap C)] = 0.
+\end{equation}
+
+Desde que $\mathbb{P}(A \cap C) - \mathbb{P}(A \cap B \cap C) \geq 0$, tenemos la suma de tres cantidades distintas de cero igual a $0$, as\'i cada una de ellas es igual a cero. Esto es:
+
+\begin{equation}
+\mathbb{P}(A \cap B) = 0 \quad \mathbb{P}(B \cap C) = 0, \quad \mathbb{P}(A \cap C) = \mathbb{P}(A \cap B \cap C).
+\end{equation}
+
+Reescribiendo (1) como :
+
+\[
+\mathbb{P}(A \cap B) + \mathbb{P}(A \cap C) + [\mathbb{P}(B \cap C) - \mathbb{P}(A\cap B \cap C)] = 0.
+\]
+
+el mismo argumento implica que,
+
+\begin{equation}
+\mathbb{P}(A \cap B) = 0 \quad \mathbb{P}(A \cap C) = 0, \quad \mathbb{P}(B \cap C) = \mathbb{P}(A \cap B \cap C).
+\end{equation}
+
+Comparando (2) y (3), tenemos:
+
+\[
+\mathbb{P}(A \cap B) = \mathbb{P}(B \cap C) = \mathbb{P}(A \cap C) = 0.
+\]
+\item El n\'umero total de formas en que uno puede escribir $n$ direcciones en $n$ sobres es $n!$. Por lo que el espacio muestral  contiene $n!$ puntos. Ahora calculamos el n\'umero de resultados en el cual  al menos un sobre se trata correctamente. 
+
+Para hacer esto, sea $E_i$ el evento de que la $i$  \'esima carta es direccionada correctamente,  entonces $E_1 \cup E_2 \cup 
+\cdots \cup E_n $ es el evento de que al menos una  carta es direccionada correctamente. Para calcular $\mathbb{P}(E_1 \cup E_2 \cup \cdots \cup E_n)$, utilizamos el principio de inclusi\'on-exclusi\'on, desde que $\mathbb{P}(E_1 \cup E_2 \cup \cdots \cup E_n) $ hay $n$ t\'erminos de la forma $\mathbb{P}(E_i)$, $\binom{n}{2}$ t\'erminos de la forma $\mathbb{P}(E_i \cap E_j)$, $\binom{n}{3}$ t\'erminos de la forma $\mathbb{P}(E_i \cap E_j \cap E_k)$ y as\'i.
+
+\begin{align*}
+\mathbb{P}(E_1 \cup E_2 \cup \cdots \cup E_n) &= n\frac{(n -1)!}{n!} - \binom{n}{2}\frac{(n -2)!}{n!} + \cdots  + \\
+&(-1)^{n -2}\binom{n}{n -1}\frac{[n - (n -1)]!}{n!} + (-1)^{n -1}\binom{n}{n}\frac{1}{n!}.
+\end{align*}
+
+Esta expresi\'on simplificada, es de la forma:
+
+\[
+\mathbb{P}(E_1 \cup E_2 \cup \cdots \cup E_n) = 1 - \frac{1}{2!} + \frac{1}{3!} - \frac{1}{4!}+ \cdots + \frac{(-1)^{n -1}}{n!}.
+\]
+\item  Sea $x_i$ el n\'umero de secuencia de $C$  y $S$ de longitud $i$, sin sucesivas caras. El conjunto de todas las secuencias de caras $(C)$y sellos $(S)$ de longitud $i$, sin caras sucesivas, son obtenidas agregando un $S$ en la parte final de todas las secuencia longitud $i -1$ o $SC$ en la parte final de todas las secuencia longitud $i -2$. Por  tanto:
+
+\[
+x_i = x_{i -1} + x_{i -2}, \quad i \geq 2.
+\]
+
+Por teoria de recurrencia, la soluci\'on de esta ecuaci\'on es $x_i = A\Bigl(\frac{1 + \sqrt{5}}{2}\Bigr)^i  + B\Bigl(\frac{1 - \sqrt{5}}{2}\Bigr)^i $ y usando las condiciones iniciales $x_0 = 1$ y $x_2 = 2$, obtenemos $A = \frac{5 + 3\sqrt{5}}{10}$ y $A = \frac{5 - 3\sqrt{5}}{10}$. As\'i la respuesta es:
+
+\[
+\frac{x_n}{2^n} = \frac{1}{10 \times 2^{2n}}\Bigl[(5 + 3\sqrt{5})(1 + \sqrt{5})^n + (5 - 3\sqrt{5})(1 - \sqrt{5})^n \Bigr].
+\]
+\end{itemize}
+
+\textbf{Soluci\'on 2}
+
+\begin{itemize}
+\item Sea $E$ el evento de que A ser\'a arruinado si \'el o ella comienza con $i$ d\'olares y sea $p_i = \mathbb{P}(E)$. Nuestro objetivo es calcular $p_a$. Para ello, definimos $F$ como el evento que $A$ gana el primer juego. Entonces:
+
+\[
+\mathbb{P}(E) = \mathbb{P}(E|F)\mathbb{P}(F) + \mathbb{P}(E|F^c)\mathbb{P}(F^c).
+\]
+
+En esta f\'ormula, $\mathbb{P}(E|F)$ es la probabilidad que $A$ se arruine, dado que gana el primer juego; as\'i  $\mathbb{P}(E|F)$ es la probabilidad que $A$ si el capital es $i +1$, esto es, $\mathbb{P}(E|F) = p_{i +1}$. De manera similar, $\mathbb{P}(E|F^c) = p_{i -1}$. As\'i:
+
+\begin{equation}
+p_i = p_{i +1}\cdot\frac{1}{2} + p_{i -1}\cdot\frac{1}{2}.
+\end{equation}
+
+Ahora $p_0 = 1$, ya que si $A$ comienza con $0$ d\'olares, el o ella ya est\'a arruinado. Adem\'as, si el capital de $A$ alcanza $a + b$, entonces $B$ se arruina. Luego $p_{a + b} = 0$. Por lo tanto, tenemos que resolver el sistema de ecuaciones recursivas (4), sujeto a las condiciones de  $p_0 = 1$ y $p_{a + b} = 0$. Para ello, observe que (4) implica que:
+
+\[
+p_{i +1} - p_{i} = p_{i} - p_{i -1}.
+\]
+
+As\'i, colocando $p_1 - p_0 = \alpha$, conseguimos:
+
+\begin{align*}
+p_1 &=  p_0 + \alpha \\
+p_2 &= p_1 + \alpha = p_0 + \alpha +\alpha = p_0 +2\alpha \\
+p_3 &= p_2 + \alpha = p_0 + 2\alpha +\alpha = p_0 +3\alpha \\
+& \vdots & \\
+p_i  &= p_0 + i\alpha \\
+& \vdots
+\end{align*}
+
+Ahora $p_0 =1$, da $p_i = 1  + i\alpha$. Pero $p_{a +b} = 0$, as\'i $0 = 1 + (a + b)\alpha$. Esto produce $\alpha = -1/(a + b)$, por lo tanto:
+
+\[
+p_i = 1 - \frac{i}{a +b} = \frac{a + b -i}{a + b}.
+\]
+
+En particular, $p_a = b/(a + b)$. As\'i la probabilidad de que $A$ sea arruinado  es $b/(a + b)$. El mismo m\'etodo se puede utilizar con modificaciones obvias para calcular $q_i$, la probabilidad de que $B$ se arruine si  comienza con $i$ d\'olares. El resultado es:
+
+\[
+q_i = \frac{a + b -i}{a + b}.
+\]
+
+Desde que $B$ empieza con $b$ d\'olares, estar\'a arruinado con probabilidad $q_b = a/(a + b)$. As\'i la probabilidad, que el juego sigue de manera indefinida, sin que nadie gane es $1 - (q_b + p_a)$.  Pero $1 - (q_b + p_a) = 1 - a/(a +b) - b/(a +b) = 0$. Por lo tanto, si este juego se juega sucesivamente, eventualmente $A$ se arruina o $B$ se arruina.
+\item Para $i \geq 1$, sea $R_i$ el evento que el i \'esimo  chip que se extrae es rojo y $W_i$ el evento que el chip extraido sea blanco. Intuitivamente, debe quedar claro que los dos chips descartados no proporcionan informaci\'on, por lo que $\mathbb{P}(R_3) = 12/22$, es igual que si fuera el primer chip extra\'ido de la urna. Para probar esto matem\'aticamente, ten  en cuenta que $\{R_2W_1, W_2R_1, R_2R_1, W_2W_1\}$ es una partici\'on del espacio muestral, por lo tanto:
+
+\begin{align}
+\mathbb{P}(R3) = \mathbb{P}(R_3|R_2W_1)\mathbb{P}(R_2W_1) + \mathbb{P}(R_3|W_2R_1)P(W_2R_1) \nonumber \\
++ \mathbb{P}(R_3|R_2R_1)\mathbb{P}(R_2R_1) + \mathbb{P}(R_3|W_2W_1)\mathbb{P}(W_2W_1).
+\end{align}
+
+Ahora:
+
+\begin{align*}
+\mathbb{P}(R_2W_1) = \mathbb{P}(R_2|W_1)\mathbb{P}(W_1) = \frac{12}{22}\times \frac{10}{22} = \frac{20}{77}\\
+\mathbb{P}(W_2R_1) = \mathbb{P}(W_2|R_1)\mathbb{P}(R_1) = \frac{10}{21}\times \frac{12}{22} = \frac{20}{77}\\
+\mathbb{P}(R_2R_1) = \mathbb{P}(R_2|R_1)\mathbb{P}(R_1) = \frac{11}{21}\times \frac{12}{22} = \frac{22}{77}
+\end{align*}
+
+y
+
+\[
+\mathbb{P}(W_2W_1) = \mathbb{P}(W_2|W_1)\mathbb{P}(W_1) = \frac{9}{21}\times \frac{10}{22} = \frac{15}{77}\\
+\]
+
+Sustituyendo eso valores en la ecuaci\'on (5), conseguimos $\mathbb{P}(R_3) = \frac{11}{20}\times \frac{20}{77} + \frac{11}{20}\times \frac{20}{77} + \frac{12}{20}\times \frac{15}{77} = \frac{12}{22}$.
+
+\item Sean $BB$, $BR$ y $RR$, los eventos en que las bolas desechadas son azul y azul, azul y rojo, rojo y rojo, respectivamente. Tambi\'en, sea $R$ el evento de que la tercera pelota seleccionada sea roja. Dado que $\{BB, BR, RR\}$ es una partici\'on del espacio muestral, la f\'ormula de Bayes puede usarse para calcular $\mathbb{P}(BB | R)$.
+
+\[
+\mathbb{P}(BB |R)= \frac{\mathbb{P}(R|BB)\mathbb{P}(BB)}{\mathbb{P}(R|BB)\mathbb{P}(BB) + \mathbb{P}(R|BR)\mathbb{P}(BR) + \mathbb{P}(R|RR)\mathbb{P}(RR)}
+\]
+
+Ahora:
+
+\[
+\mathbb{P}(BB |B) = \frac{13}{20}\times \frac{12}{19} = \frac{39}{95}, \quad \mathbb{P}(RR |R) = \frac{7}{20}\times \frac{6}{19} = \frac{21}{190},
+\]
+
+Y as\'i:
+
+\[
+\mathbb{P}(BR) = \frac{13}{20}\times \frac{7}{19} +  \frac{7}{20}\times \frac{13}{19} = \frac{91}{190},
+\]
+
+donde la \'ultima ecuaci\'on sigue ya que $BR$ es la uni\'on de dos eventos disjuntos:  la primera bola descartada era azul, la segunda era roja y viceversa. As\'i:
+
+\[
+\mathbb{P}(BB |R) = \frac{\frac{7}{18} \times \frac{39}{95}}{\frac{7}{18} \times \frac{39}{95} + \frac{6}{18} \times \frac{91}{190} + \frac{5}{18} \times \frac{21}{190}} \approx 0.46.
+\]
+\end{itemize}
+
+\textbf{Soluci\'on 3}
+
+\begin{itemize}
+\item Sea $A_i$ el suceso que la sexta suma obtenida es $i, i = 2, 3, \dots, 12$. Sea $B$ el suceso que la sexta suma obtenida no es una repetici\'on. Por la ley de probabilidad total:
+
+\[
+\mathbb{P}(B) = \sum_{i =2}^{12}\mathbb{P}(B|A_i)\mathbb{P}(A_i).
+\]
+
+Se debe notar, que en esta suma, para $i =2$ y $i =12$ son iguales. Esto es verdad, tambi\'en, para los t\'erminos $ i= 3$ y $11$, para los t\'erminos $i =4$ y $10$, para los t\'erminos $i =5$ y $9$, para los t\'erminos $i =6$ y $8$. Por lo que se tiene:
+
+\begin{align*}
+\mathbb{P}(B) &= 2\Biggl[\sum_{i =2}^{6}\mathbb{P}(B|A_i)\mathbb{P}(A_i)\Biggr] + \mathbb{P}(B|A_7)\mathbb{P}(A_7)\\
+ &= 2\Biggl[\Biggl(\frac{35}{36}\Biggr)^5\Biggl(\frac{1}{36}\Biggr) +  \Biggl(\frac{34}{36}\Biggr)^5\Biggl(\frac{2}{36}\Biggr)+ \Biggl(\frac{33}{36}\Biggr)^5\Biggl(\frac{3}{36}\Biggr) + \Biggl(\frac{32}{36}\Biggr)^5\Biggl(\frac{4}{36}\Biggr) \\
+  &+ \Biggl(\frac{31}{36}\Biggr)^5 \Biggl(\frac{5}{36}\Biggr) \Biggr]   + \Biggl(\frac{30}{36}\Biggr)^5\Biggl(\frac{6}{36}\Biggr) = 0.5614. 
+\end{align*}
+\item Para $1 \leq i \leq 6$, sea $E_i$, el evento que la salida $i$, no ocurre durante los primeros lanzamientos del dado. Entonces:
+
+\[
+\mathbb{P}(X > n) = \mathbb{P}\Biggl (\bigcup_{i =1}^{6}E_i\Biggr).
+\]
+
+Para calcular $\mathbb{P}(E_1 \cup E_2 \cup \dots E_6)$, usamos el principio de inclusi\'on y exclusi\'on. Para hace esto, calculamos las probabilidades, de todas las posibles intersecciones, de los eventos $E_1, \dots, E_6$, m\'as las probabilidades que se obtienen al intersectar un n\'umero impar de eventos y sustraer todas las probabilidades que se obtienen al intersectar un n\'umero par de eventos. Claramente, hay $\binom{6}{1}$ t\'erminos de la forma $\mathbb{P}(E_i)$,  $\binom{6}{2}$ t\'erminos de la forma $\mathbb{P}(E_i \cap E_j)$, $\binom{6}{3}$ t\'erminos de la forma $\mathbb{P}(E_i \cap E_j \cap E_k)$ y as\'i sucesivamente. Ahora, para todo $i, \mathbb{P}(E_i) = (5/6)^n$; para todo $i$ y $j$,  $\mathbb{P}(E_i \cap E_j) = (4/6)^n$; para todo $i, j$ y $k$,   $\mathbb{P}(E_i \cap E_j \cap E_k) = (3/6)^n$ y as\'i sucesivamente. As\'i:
+
+\begin{align*}
+\mathbb{P}(X > n) &= \mathbb{P}(E_1 \cup E_2 \cup \dots E_6) \\
+&= \binom{6}{1}\biggl(\frac{5}{6}\biggr)^n - \binom{6}{2}\biggl(\frac{4}{6}\biggr)^n + \binom{6}{3}\biggl(\frac{3}{6}\biggr)^n - \binom{6}{4}\biggl(\frac{2}{6}\biggr)^n+ \binom{6}{5}\biggl(\frac{1}{6}\biggr)^n\\
+&= 6\biggl(\frac{5}{6}\biggr)^n - 15\biggl(\frac{4}{6}\biggr)^n + 20\biggl(\frac{3}{6}\biggr)^n - 15\biggl(\frac{2}{6}\biggr)^n+ 6\biggl(\frac{1}{6}\biggr)^n.
+\end{align*}
+
+Sea $p$, la funci\'on de masa de probabilidad  de $X$. El conjunto de posibles valores  de $X$, es $\{ 6, 7, 8, \dots \}$ y adem\'as que:
+
+\begin{align*}
+p(n) &= \mathbb{P}(X =n) = \mathbb{P}(X > n -1) - \mathbb{P}(X > n )\\
+ &= \biggl(\frac{5}{6}\biggr)^{n-1} - 5\biggl(\frac{4}{6}\biggr)^{n -1} + 10\biggl(\frac{3}{6}\biggr)^{n -1} - 10\biggl(\frac{2}{6}\biggr)^{n -1} + 5\biggl(\frac{1}{6}\biggr)^{n-1}, \quad n \geq 6.
+\end{align*}
+
+\item Para $n \geq 1$, sea $p_n$, la funci\'on de masa de probabilidad de $X_n$. Probemos por inducci\'on que $\mathbb{E}(X_n) = nw/(w + b)$. Para $n =1$,
+
+\[
+\mathbb{E}(X_1) = 0 \cdot \frac{b}{w +b} + 1\cdot\frac{w}{w + b} = \frac{w}{w +b}.
+\]
+
+Supongamos que $\mathbb{E}(X_n) = nw/(w + b)$, para alg\'un entero $n \geq 1$. Para demostrar que $\mathbb{E}(X_{n +1}) = (n +1)w/(w + b)$, se debe notar que:
+
+\begin{equation}
+\mathbb{E}(X_{n +1}) = \sum_{k = 0}^{n +1}kp_{n +1}(k) = (n +1)p_{n + 1}(n +1) + \sum_{k = 1}^{n +1}kp_{n +1}(k).
+\end{equation}
+
+Ahora:
+
+\begin{align}
+p_{n + 1}(n +1) &= \mathbb{P}(X_{n +1} = n +1) \nonumber \\
+&= \mathbb{P}(X_{n +1} = n +1|X_n = n)\mathbb{P}(X_n = n)\nonumber \\
+&=\frac{w +nc}{w + b + nc}p_n(n)
+\end{align}
+
+y para $1 \leq k \leq n$,
+
+\begin{align}
+p_{n +1}(k) &= \mathbb{P}(X_{n +1} = k) =  \mathbb{P}(X_{n +1} = k|X_n = k) \mathbb{P}(X_{n} = k) \nonumber\\
+&+ \mathbb{P}(X_{n +1} = k|X_n = k -1) \mathbb{P}(X_{n} = k -1) \nonumber\\
+&= \frac{b + (n -k)c}{w + b + nc}p_{n}(k) + \frac{w +(k -1)c}{w + b +nc}p_n(k -1).
+\end{align}
+
+En la ecuaci\'on (6), sustituyendo (7) por $p_{n +1}(n +1)$ y (8) para $ p_{n +1}(k$, obtenemos:
+
+\begin{equation}
+\mathbb{E}(X_{n +1}) = \frac{(n +1)(w +nc)}{w + b +nc} + \sum_{k =1}^{n}\frac{k[b + (n -k)c]}{w + b  +nc}p_n(k) +  \sum_{k =1}^{n}\frac{k[w + (k -1)c]}{w + b  +nc}p_n(k - 1).
+\end{equation}
+
+Pero:
+
+\begin{align}
+ \sum_{k =1}^{n}\frac{k[w + (k -1)c]}{w + b  +nc}p_n(k - 1) &= \frac{1}{w +b + nc}\sum_{k = 0}^{n -1}(k +1)(w +kc)p_n(k) \nonumber\\
+ &= \frac{1}{w + b + nc}\Biggl[\sum_{k =1}^{n -1}k(w + kc + c)p_n(k) + w\sum_{k = 0}^{n -1}p_n(k) \Biggr]\nonumber\\
+ &= \frac{1}{w + b + nc}\Biggl[\sum_{k =1}^{n }k(w + kc + c)p_n(k) + w\sum_{k = 1}^{n }p_n(k) - n(w + nc +c)p_n(n) - wp_n(n) \Biggr].
+\end{align}
+
+Relacionando (9) y(10), producen lo necesario, para completar la prueba:
+
+\begin{align*}
+\mathbb{E}(X_{n +1}) &= \frac{(n +1)(w + nc) -n(w + nc +c)}{w + b +nc}p_n(n) \\
+&+ \sum_{k =1}{n}\frac{k[b + (n -k)c] + k(w +kc+ c)}{w +b +nc}p_n(k) + \frac{w}{w + b +nc}\\
+&= \frac{w +b +nc +c}{w +b + nc}\sum_{k =1}^{n}kp_n(k) + \frac{w}{w +b + nc}\\
+&= \frac{w +b +nc +c}{w +b + nc}\mathbb{E}(X_n) + \frac{w}{w +b + nc}\\
+&=  \frac{w +b +nc +c}{w +b + nc}\cdot\frac{nw}{w +b} + \frac{w}{w +b + nc} = \frac{(n +1)w}{w +b}.
+\end{align*}
+\end{itemize}
+
+\textbf{Soluci\'on 4}
+
+\begin{itemize}
+\item Para $0 < s < r$, se tiene:
+
+\[
+\vert x\vert^s \leq \max(1, \vert x \vert^r) \leq 1 + \vert x\vert^r, \quad \forall x \in \mathbb{R}.
+\]
+
+Sea $A$ el conjunto de todos los posibles valores de $X$ y sea $p$ la funci\'on de masa de probabilidad. Desde que el $r$ \'esimo absoluto de $X$ existe, $\sum_{x \in A}\vert x\vert^rp(x) < \infty$. Ahora:
+
+\begin{align*}
+\sum_{x \in A}\vert x\vert^sp(x) &\leq \sum_{x \in A}(1 + \vert x \vert^r)p(x)\\
+ &= \sum_{x \in A}p(x) + \sum_{x \in A}\vert x\vert^rp(x) = 1 + \sum_{x \in A}\vert x\vert^rp(x) < \infty,
+\end{align*}
+implica que el momento absoluto de orden $s$ de $X$ tambi\'en existe.
+\item Se debe notar que:
+
+\[
+\mathbb{E}(\vert X \vert^{\alpha}) = \bigints_{-\infty}^{\infty}\frac{\vert x \vert^{\alpha}}{\pi(1 + x^2)}dx = \frac{2}{\pi}\bigints_{0}^{\infty}\frac{x^{\alpha}}{(1 + x^2)}dx
+\]
+
+desde que el integrando es una funci\'on par. Ahora para $0 <  \alpha< 1$,
+
+\[
+\bigints_{0}^{\infty}\frac{x^{\alpha}}{1 + x^2}dx = \bigints_{0}^{1}\frac{x^{\alpha}}{1 + x^2}dx + \bigints_{1}^{\infty}\frac{x^{\alpha}}{1 + x^2}dx.
+\]
+
+La primera integral en el lado derecho es convergente. Para mostrar que el segundo t\'ermino es convergente, se debe notar que:
+
+\[
+\frac{x^{\alpha}}{1 + x^2}dx \leq \frac{x^{\alpha}}{x^2} = \frac{1}{x^{2 -\alpha}}. 
+\]
+
+Por tanto:
+
+\[
+\bigints_{1}^{\infty}\frac{x^{\alpha}}{1 + x^2}dx \leq \bigints_{1}^{\infty}\frac{1}{x^{2 - \alpha}}dx = \frac{1}{1 - \alpha} < \infty.
+\]
+
+Para $\alpha \geq 1$,
+
+\[
+\bigints_{0}^{\infty}\frac{x^{\alpha}}{1 + x^2}dx \geq \bigints_{1}^{\infty}\frac{x^{\alpha}}{1 + x^2}dx \geq \bigints_{1}^{\infty}\frac{x}{(1 + x^2)}dx = \Biggl[\frac{1}{2}\ln(1 + x^2) \Biggr]_{1}^{\infty} = \infty.
+\]
+
+As\'i $\bigints_{0}^{\infty}\frac{x^{\alpha}}{1 + x^2}dx$  diverge.
+\item Sea $G$ y $g$, las funciones de distribuci\'on y densidad de $Y$, respectivamente. Por definici\'on:
+
+\[
+G(t) = \mathbb{P}(Y \leq t) = \mathbb{P}(X^2 \leq t) = \mathbb{P}(-\sqrt{t} \leq X \leq \sqrt{t})
+\]
+
+y esto produce:
+
+\[
+G(t) = \begin{cases}
+0 & \qquad t < 1 \\
+\mathbb{P}(1 \leq X \leq \sqrt{t})& \qquad 1 \leq t \leq 4 \\
+1 & \qquad t \geq 4.
+\end{cases}
+\]
+
+Ahora:
+
+\[
+\mathbb{P}(1 \leq X \leq \sqrt{t}) = \bigints_{1}^{\sqrt{t}}\frac{2}{x^2}dx = \Biggl[ -\frac{2}{x}\Biggr]_{1}^{\sqrt{t}} = 2 - \frac{2}{\sqrt{t}}.
+\]
+
+Por tanto:
+
+\[
+G(t) = \begin{cases}
+0 & \qquad t < 1 \\
+2 - \frac{2}{\sqrt{t}}& \qquad 1 \leq t \leq 4 \\
+1 & \qquad t \geq 4.
+\end{cases}
+\]
+
+La funci\'on densidad de $Y$, $g$, se encuentra derivando $G$:
+
+\[
+g(t) = G^{'}(t) = \begin{cases}
+\frac{1}{t\sqrt{t}} & \text{si}\quad 1 \leq t \leq 4 \\
+0 & \text{en otros casos}.
+\end{cases}
+\]
+
+\item Sea $A_i$ el evento de que el i \'esimo par de rey y reina est\'an ubicados de manera adyacente. Entonces:
+
+\begin{equation}
+N = \sum_{i =1}^{n}1_{A_i},
+\end{equation}
+
+As\'i:
+
+\[
+\mathbb{E}(N) = \sum_{i =1}^{n}\mathbb{E}(1_A) = \sum_{i =1}^{n}\mathbb{P}(A_i) = n\mathbb{P}(A_1),
+\]
+
+por simetria. Por conteo $\mathbb{P}(A_1) = 2/n$ y as\'i $\mathbb{E}(N) = n(2/n) = 2$ independiente del valor de $n$. Para encontrar la varianza, debemos calcular $\mathbb{E}(N^2)$. Por (11) tenemos:
+
+\begin{equation}
+\mathbb{E}(N^2) = \mathbb{E}\Biggl(\sum_{i}1_{A_i} + 2\sum_{i < j}1_{A_i \cap A_j}\Biggr) = n\mathbb{P}(A_1) + n(n -1)\mathbb{P}(A_1 \cap A_2).
+\end{equation}
+
+Usando probabilidad condicional:
+
+\begin{align*}
+\mathbb{P}(A_1 \cap A_2) &= \mathbb{P}(A_1)\mathbb{P}(A_2|A_1) \\
+ &= \frac{2}{n}\Biggl(\frac{1}{n -1}\cdot\frac{1}{n -1} + \frac{n -2}{n -1}\cdot\frac{2}{n -1}\Biggr) = \frac{2(2n -3)}{n(n -1)^2}
+\end{align*}
+
+donde los dos t\'erminos corresponden a si la segunda reina se encuentra o no junto a la primera pareja. De las ecuaciones anteriores:
+
+\begin{equation*}
+\mathbb{E}(N^2) = 2 + n(n -1)\cdot\frac{2(2n -3)}{n(n -1)^2},
+\end{equation*}
+
+y as\'i, la varianza de $N$ es igual a $\mathbb{E}(N^2) -\mathbb{E}(N)^2 = \frac{2( n -2)}{n -1}$.
+\item Supongamos que $X$ tienen una distribuci\'on dada por:
+
+\[
+\mathbb{P}(X = -1) = \mathbb{P}(X = 0) = \mathbb{P}(X =1) = \frac{1}{3}
+\]
+
+y adem\'as $Y$ dada como:
+
+\[
+Y = \begin{cases}
+0 & \text{si}\quad X  =0 \\
+1 & \text{si}\quad  X \neq 0
+\end{cases}
+\]
+
+Un espacio muestral con dos variables aleatorias que tengan esas distribuciones, puede ser dado por $\Omega = \{-1, 0, 1 \}$, el espacio de eventos es dado por todos los subconjuntos de $\Omega$, $\mathbb{P}$ es dado por $\mathbb{P}(-1) = \mathbb{P}(0) = \mathbb{P}(1) = \frac{1}{3}$ y $X(\omega) = \omega, Y(\omega) = \vert \omega \vert$. Entonces $X$ e $Y$ son dependientes, pues se cumple lo siguiente:
+
+\[
+\mathbb{P}(X = 0, Y =1) = 0
+\]
+
+pero :
+
+\[
+\mathbb{P}(X = 0)\mathbb{P}(Y =1) = \frac{1}{3}\cdot\frac{2}{3} = \frac{2}{9}.
+\]
+
+Por otro lado:
+
+\begin{align*}
+\mathbb{E}(XY) = \sum_{x, y}xy\mathbb{P}(X= x, Y =y)\\
+ = (-1)\cdot\frac{1}{3} + 0\cdot\frac{1}{3} + 1\cdot\frac{1}{3} = 0
+\end{align*}
+
+y 
+
+\[
+\mathbb{E}(X)\mathbb{E}(Y) = 0\cdot\frac{2}{3} = 0.
+\]
+\end{itemize}
+
+\textbf{Soluci\'on 5}
+
+\begin{itemize}
+
+\item Sea $U  = X +Y$ y $V = X - Y$. Sea $g(u,v)$, la funci\'on densidad de probabilidad conjunta de $U$ y $V$. Mostremos que $g(u,v) = g_{U}(u)g_V(v)$. Para hacer esto, sea $f(x ,y)$ la funci\'on de densidad de probabilidad conjunta de $X$ e $Y$. Entonces
+
+\[
+f(x, y) = \frac{1}{2\pi}e^{-(x^2 + y^2)/2},\qquad -\infty < x \infty, -\infty < y \infty.
+\]
+
+El sistema de dos ecuaciones, dos inc\'ognitas:
+
+\[
+\begin{cases}
+x + y = u \\
+x -y = v
+\end{cases}
+\]
+
+define una correspondencia $1-1$ desde el plano $x-y$ y el plano $u -v$ y tiene una \'unica soluci\'on:
+
+\[
+\begin{cases}
+x  = \frac{u + v}{2} \\
+y = \frac{ u -v}{2}
+\end{cases}
+\]
+
+
+As\'i:
+
+\[
+\mathbf{J} = \begin{bmatrix}
+1/2 & 1/2 \\
+1/2 & -1/2
+\end{bmatrix} = -\frac{1}{2} \neq 0.
+\]
+
+Por el teorema de cambio de variable:
+
+\begin{align*}
+g(u, v) &= f(\frac{u + v}{2}, \frac{u - v}{2})\vert \mathbf{J}\vert \\
+ &= \frac{1}{4\pi}\exp\Bigl[-\frac{(\frac{u + v}{2})^2 + (\frac{u -v}{2})^2}{2} \Bigr] = \frac{1}{4\pi}e^{-(u^2 + v^2)/4}, \quad -\infty < u, v < \infty.
+\end{align*}
+
+Esto da:
+
+\begin{align*}
+g_U(u) =  \frac{1}{4\pi}\bigints_{-\infty}^{\infty}e^{-(u^2 + v^2)/4}dv = \frac{1}{4\pi}e^{-u^2/4}\bigints_{-\infty}^{\infty}e^{-v^2/4}dv\\
+= \frac{1}{2\sqrt{\pi}}e^{-u^2/4}\bigints_{-\infty}^{\infty}\frac{1}{2\sqrt{\pi}}e^{-v^2/4}dv = \frac{1}{2\sqrt{\pi}}e^{-u^2/4}, \qquad -\infty < u \infty,
+\end{align*}
+
+donde la \'ultima igualdad se sigue, pues $\frac{1}{2\sqrt{\pi}}e^{-v^2/4}$, es la funci\'on densidad de probabilidad de una variable aleatoria normal con media $0$ y varianza $2$. As\'i la integral sobre todo el intervalo $(-\infty, \infty)$ es 1.  De manera similar:
+
+\[
+g_V(v) = \frac{1}{2\sqrt{\pi}}e^{-v^2/2}, \qquad -\infty < v \infty.
+\]
+
+Desde que $g(u ,v) = g_U(u)g_V(v)$, $U$ y $V$ son variables aleatorias normales independientes cada una con media $0$ y varianza $2$.
+\item Por el resultado dado en el problema:
+
+\begin{align*}
+\mathbb{E}\Biggl[\min(X_1, X_2, \dots X_n) \Biggr] &= \sum_{k =1}^{\infty}\mathbb{P}(X_1,X_2, \dots, X_n) \geq k) \\
+&= \sum_{k =1}^{\infty}\mathbb{P}(X_1 \geq k, X_2 \geq k, \dots, X_n \geq k)\\
+&= \sum_{k =1}^{\infty}\mathbb{P}(X_1 \geq k)\mathbb{P}(X_2 \geq k)\cdots \mathbb{P}(X_n \geq k)\\
+&= \sum_{k =1}^{\infty}[\mathbb{P}(X_1) \geq k]^n = \sum_{k =1}^{\infty}\Biggl[\Biggl(\sum_{k=1}^{\infty} p_i \Biggr)^n \Biggr] = \sum_{k =1}^{n}h_{k}^n.
+\end{align*}
+\item Tenemos que:
+
+\begin{align*}
+\mathbb{P}(\vert X - \mu \vert > k\sigma) &= \mathbb{P}( X - \mu  > k\sigma) + \mathbb{P}(X - \mu  <  -k\sigma) = \mathbb{P}(Z > k) + \mathbb{P}(Z < -k)\\
+&= [1 -\Phi(k)] + [1 - \Phi(k)] = 2[1 -\Phi(k)].
+\end{align*}
+
+Esto muestra que $\mathbb{P}(\vert X - \mu \vert > k\sigma)$ no depende de $\mu$ o $\sigma$.
+\item Por la desigualdad de Markov,
+
+\[
+\mathbb{P}\Biggl( X \geq \frac{1}{t}\ln \alpha \Biggr) = \mathbb{P}(tX \geq \ln \alpha) = \mathbb{P}(e^{tX} \geq \alpha)\leq \frac{\mathbb{E}(e^{tX})}{\alpha} = \frac{1}{\alpha}\mathbb{M}_{X}(t).
+\]
+\end{itemize}
+\end{document} 
+

@@ -1,0 +1,928 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bb}[1]{\textbf{#1}}
+\DeclareMathOperator{\rank}{\textbf{rango}}
+\DeclareMathOperator{\proy}{\textbf{proy}}
+\DeclareMathOperator{\nulll}{\textbf{nul}}
+\DeclareMathOperator{\diag}{\textbf{diag}}
+\DeclareMathOperator{\col}{\textbf{col}}
+\DeclareMathOperator{\fila}{\textbf{fila}}
+\DeclareMathOperator{\dimm}{dim}
+\DeclareMathOperator{\Traz}{Tr}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+M\'etodos de conteo \par
+\end{minipage}
+
+
+\vspace {0.5cm}
+
+\section{Combinatoria}
+
+\vspace{0.3cm}
+
+En muchos de los ejemplos que hemos visto hasta ahora, ha sido necesario determinar el n\'umero de maneras en que un evento  puede ocurrir, as\'i, conociendo la probabilidad de cada una de esas ocurrencias y los axiomas de la funci\'on probabilidad podemos calcular la probabilidad del evento.
+
+
+\vspace{0.2cm}
+
+Existen muchas t\'ecnicas, basadas en la ley de probabilidad total para contar todas las posibilidades. Es usual describir este problema en t\'erminos de c\'omo se pueden elegir \texttt{bolas distinguibles} de una caja  asumiendo que la elecci\'on es \texttt{aleatoria}, es decir, cada bola en la caja es igualmente probable que se elija.
+
+\vspace{0.2cm}
+
+Alternativamente, el problema puede ser expresado en t\'erminos de c\'omo se pueden insertar \texttt{bolas indistinguibles} en cajas distinguibles. 
+
+\vspace{0.2cm}
+
+Esta primera forma  se llama \textbf{problema de selecci\'on}  y la  \'ultima forma  se llama \textbf{problema de asignaci\'on}. Formularemos nuestra notas en t\'erminos del problema de selecci\'on.
+
+\vspace{0.2cm}
+
+En el contexto del problema de selecci\'on, una vez que se ha elegido una de las bolas distinguibles de la caja  y antes de la selecci\'on de la bola siguiente, se debe tomar una decisi\'on sobre qu\'e se debe hacer con la primera bola elegida. Si se vuelve a colocar en la caja, se dice que la selecci\'on se \underline{hace con reemplazo} \footnote{with replacement}. En este caso, la misma bola puede ser elegida una segunda vez, luego una tercera vez, y una cuarta vez, y as\'i sucesivamente. La segunda posibilidad es que la bola sea puesta a un lado y nunca vuelva a la caja. En este caso, la selecci\'on se \underline{hace sin reemplazo} \footnote{ without replacement}.
+
+\vspace{0.2cm}
+
+Un \'ultimo punto se refiere al \texttt{orden} en que se seleccionan las bolas. En algunos casos, este orden es importante. Por ejemplo, puede ser necesario saber si una bola negra fue elegida antes o despu\'es de la bola blanca. Cuando el orden es importante, el t\'ermino es de  \textbf{permutaci\'on}. En otros casos, todo lo que se necesita  saber es que  se eligi\'o una bola negra y una bola blanca y no el orden en que fueron elegidos. Esto se conoce como una \textbf{combinaci\'on}.
+
+\vspace{0.5cm}
+
+\subsection{Principio del conteo}
+
+\vspace{0.2cm}
+Ocasionalmente, se encuentran espacios muestrales para los cuales los puntos del espacio muestral son igualmente probables. Si este es el caso y si el espacio muestral $S$ contiene n puntos, entonces, puesto que la probabilidad total en el espacio muestral es $1$, cada punto tiene una probabilidad $1/n$. Si denotamos los puntos mutuamente exclusivos en A por $a_i, i = 1,2,3,\dots, n$, entonces la probabilidad de un evento A, es la suma de las probabilidades de los puntos del espacio  muestral en A. Es decir:
+
+\[
+\mathbb{P}(A) = \sum_{a_i \in A}\mathbb{P}(a_i) = \sum_{a_i \in A}\frac{1}{n}
+\]
+
+\vspace{0.2cm}
+
+as\'i,
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(A) = \frac{\text{N\'umero de puntos de A}}{n} = \frac{\text{N\'umero de puntos de A}}{\text{N\'umero de puntos de S}}
+\]
+
+
+\vspace{0.2cm}
+
+Con el fin de considerar  problemas que conducen a espacios muestrales con puntos igualmente probables, debemos  considerar algunas t\'ecnicas para contar conjuntos de puntos. Estas t\'ecnicas proporcionan algunos problemas desafiantes.
+
+Se advierte  que  se debe tener cuidado al concluir que s\'olo porque un espacio muestral tiene $n$ puntos, cada punto tiene probabilidad $1/n$. Por ejemplo, si un viaje en avi\'on  se completa de forma segura o no, se hace evidente  que estos eventos no tienen cada uno una probabilidad $1/2!$ Las t\'ecnicas de conteo consideradas en este caso  se basan en dos principios de conteo fundamentales relativos a  eventos mutuamente exclusivos A y B
+
+\begin{itemize}
+\item \texttt{Principio 1} Si los eventos $A$ y $B$ pueden ocurrir en $n$  y $m$ maneras respectivamente, entonces $A$ y $B$ pueden ocurrir juntos de $n\cdot m$ maneras.
+\item \texttt{Principio 2} Si los eventos $A$ y $B$ pueden ocurrir en $n$  y $m$ maneras respectivamente, entonces $A$ o $B$ pueden ocurrir juntos de $n + m$ maneras.
+\end{itemize}
+
+El Principio 1 se establece f\'acilmente ya que A puede ocurrir de n maneras y luego debe ser seguida por cada manera  en que B puede ocurrir. Un diagrama de \'arbol, mostrado en la siguiente figura ilustra el resultado.
+
+El Principio 2 simplemente usa la palabra \texttt{o} en un sentido exclusivo.
+
+\vspace{0.2cm}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=9cm]{c1}
+\end{figure}
+
+\vspace{0.5cm}
+
+\subsection{Permutaciones}
+
+\vspace{0.3cm}
+
+Una disposici\'on (arreglo ) de \'items, tambi\'en llamada una \texttt{secuencia ordenada} de \'items , se dice que es una permutaci\'on de los \'items. Una secuencia ordenada de $n$ \'items  se llama una $n$-permutaci\'on.
+
+\vspace{0.2cm}
+
+Con $n$ \'items  distintos, hay $n!$ permutaciones posibles. Este es el n\'umero de diferentes maneras en que los n \'items distintos pueden ser colocados, ordenados .
+
+
+\vspace{0.3cm}
+
+
+\begin{ejemplo}
+\normalfont Si se tienen tres letras diferentes $A, B$ y $C$ hay $3! = 6$ permutaciones (arreglos, disposiciones), a saber
+
+\[
+ABC, \ ACB,\ BAC,\ BCA,\ CAB,\ CBA
+\]
+
+Debes observar  que no s\'olo hay tres elementos (items) distintos $A$, $B$ y $C$, sino que tambi\'en hay tres lugares diferentes en los que pueden colocarse, es decir, la primera, segunda y tercera posici\'on de una cadena de tres letras. Por esta raz\'on, se considera que $ABC$ es una permutaci\'on diferente de $ACB$. 
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+Ahora consideremos el n\'umero de permutaciones que pueden generarse a partir de elementos que no son todos distintos.
+
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Consideremos la palabra OXO. Esta vez no todas las letras son distintas. Hay dos O y una X y s\'olo se pueden encontrar tres arreglos diferentes, a saber:
+
+\[
+OXO, \ XOO,\ OOX
+\]
+
+Puesto que el car\'acter O aparece dos veces, el n\'umero $n! = 3!$  obtenido con $n = 3$ caracteres distintos debe ser dividido por $2!$. En este caso, tenemos $3!/ 2! = 3$ arreglos.
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Consideremos la palabra PUPPY. Si los cinco caracteres fueran distintos, el n\'umero de permutaciones que se obtendr\'ia seria $5!$. Sin embargo, como el car\'acter P aparece tres veces en PUPPY, el $5!$ debe ser dividido por $3!$, para obtener $5!/3! = 5\times  4 = 20$. El n\'umero de diferentes maneras en que los caracteres de la palabra PUPPY se pueden colocar o disponer  es por lo tanto $20$.
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Consideremos la palabra NEEDED, que contiene tres E, dos D y
+una  N. El n\'umero de diferentes maneras en que los caracteres en esta palabra puede ser dispuestos es:
+
+\[
+\frac{6!}{2! \times 3!} = 60
+\]
+
+\vspace{0.3cm}
+
+Por lo tanto, el n\'umero de permutaciones que se  pueden obtener de $n$ \'items, no todos los cuales son distintos, puede obtenerse asumiendo primero que todos los \'items son distintos (lo que nos da $n!$) y  luego  para cada elemento m\'ultiple se divide por el factorial de su multiplicidad.
+\end{ejemplo}
+
+\subsection{Permutaciones con reemplazos}
+
+\vspace{0.2cm}
+
+En el caso de permutaciones con reemplazo, nuestro objetivo es contar el n\'umero de formas en que se pueden seleccionar $k$ bolas entre $n$ bolas distinguibles. Despu\'es de cada bola es elegida y sus caracter\'isticas son registradas, se sustituye en la caja y se elige la bola siguiente.
+
+\vspace{0.2cm}
+
+Una forma alternativa de afirmar esto es decir que despu\'es de cada bola es seleccionada, la bola es puesta a un lado y una bola que es id\'entica a ella toma su lugar en la caja. De esta manera es posible que la misma bola sea elegida muchas veces.
+
+\vspace{0.2cm}
+
+Si $k = 1$(se elige una bola), entonces el n\'umero de permutaciones posibles es $n$, ya que cualquiera de las $n$ bolas puede ser elegida. Si $k = 2$, entonces cualquiera de las $n$ bolas puede ser elegida como la primera bola y luego reemplazada en la caja. Para cada una de estas $n$ elecciones de la  primera bola, la siguiente bola elegida puede ser tambi\'en cualquiera de las $n$ bolas distinguibles y por lo tanto el n\'umero de permutaciones cuando $k = 2$ es $n\times n = n^2$. Este razonamiento puede continuar y  demostrar que el n\'umero de permutaciones obtenidas para cualquier $k$ es $n^k$.
+
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont El n\'umero de c\'odigos de cuatro d\'igitos que se pueden obtener utilizando el sistema de n\'umeros decimales (con diez d\'igitos de $0$ a $9$ inclusive) es $10^4 = 10.000$. Estos son los c\'odigos que van desde $0000$ hasta $9999$.
+
+\vspace{0.2cm}
+
+Supongamos ahora que hay $n_1$ maneras de elegir un primer elemento (\'item ) y $n_2$ formas de elegir un segundo elemento(\'item). Entonces el n\'umero de pares ordenados distintos es igual a $n_1n_2$. 
+
+\vspace{0.2cm}
+
+En t\'erminos de bolas distinguibles en cajas, esto puede ser visto como el n\'umero de maneras en que una bola puede ser elegida de una primera caja que contiene $n_1$ bolas distinguibles y una segunda bola elegida de una segunda caja que contiene $n_2$ bolas distinguibles. La extensi\'on a m\'as de dos \'items  diferentes es inmediata.
+
+\vspace{0.2cm}
+
+Si hay $n_i$ formas de elegir un \'item i, para $i = 1,2,\dots, k$ , entonces el n\'umero de k-tuplas ordenadas distintas es igual a $n_1n_2\dots n_k$.
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Supongamos que una camisa se puede elegir entre $n_1 = 12$ camisas diferentes y una corbata de $n_2 = 20$ corbatas  diferentes. Entonces el n\'umero de combinaciones de camisas y corbatas es  $n_1n_2 = 240$.
+\end{ejemplo}
+
+\subsection{Permutaciones sin reemplazos}
+
+\vspace{0.2cm}
+
+Pasemos ahora al problema de contar el n\'umero de diferentes permutaciones obtenidas al seleccionar $k$ bolas de entre $n$ bolas distinguibles en el caso de que una vez que se elija una bola en  particular, esta  no se devuelve a la caja. Esto es igual al n\'umero de secuencias ordenadas de $k$ objetos distinguibles, es decir, el n\'umero de $k$-permutaciones, que se pueden obtener a partir de $n$ objetos distinguibles. 
+
+\vspace{0.2cm}
+
+Denotamos a este n\'umero como  $P(n, k)$ y asignamos los valores $P(n, 0) = 1, n = 0,1,\dots $, por convenci\'on.
+
+\vspace{0.2cm}
+
+Decimos que $P(n, k)$ es el n\'umero de permutaciones de $n$ objetos tomados $k$ a la vez.
+
+\vspace{0.2cm}
+
+Si $k = 1$, entonces cualquier bola puede ser elegida y el n\'umero total de permutaciones  simplemente es  $n$. Si $k = 2$, entonces cualquiera de las $n$ bolas puede ser elegida como la primera, para cada una de estas $n$ elecciones posibles, quedan $n - 1$ bolas en la caja, cualquiera de las cuales puede ser elegida como la segunda. As\'i, el n\'umero total de permutaciones para $k = 2$ es igual a $n (n - 1)$. Con k = 3, hay $n$ posibilidades diferentes para la primera bola,  $n-1$ para la  segunda y $n-2$ para la  tercero, lo que da $P (n, 3) = n (n -1) (n -2 )$.
+
+\vspace{0.2cm}
+
+Podemos ahora generalizar esto a cualquier arbitrario $k \leq n $ para obtener:
+
+\[
+P(n,k) = n(n - 1)(n - 2)\dots(n - k + 1) =\frac{n!}{(n - k)!}.
+\]
+
+\vspace{0.3cm}
+
+Existen varias relaciones entre los valores de $P(n, k)$ para diferentes valores de los par\'ametros $n$ y $k$. 
+
+\vspace{0.3cm}
+
+Por ejemplo:
+
+\vspace{0.2cm}
+
+\[
+P(n,k) = nP(n - 1,k - 1),\ \  k = 1,2,\dots,n,\ \  n = 1,2,\dots
+\]
+
+\vspace{0.2cm}
+
+Podemos explicar esta f\'ormula de la siguiente manera: La primera bola elegida puede ser cualquiera de las $n$ bolas distinguibles. Esto deja $n -1$ bolas a partir de las cuales $k- 1$  deben ser elegidas, el n\'umero de maneras en que $k-1$ bolas se pueden elegir de $n - 1$ es igual a $P(n- 1, k -1)$.
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Sea $n = 4, k = 3$ y distinguimos las cuatro bolas por medio de las  letras A, B, C y  D. Tenemos $P(4,3) = 4 \times 3 \times 2 = 24$.
+
+\vspace{0.2cm}
+
+Esas 24 posibilidades, est\'an dadas por:
+
+\begin{verbatim}
+           ABC, ABD, ACB, ACD, ADB, ADC,
+           BAC, BAD, BCA, BCD, BDA, BDC,
+           CAB, CAD, CBA, CBD, CDA, CDB,
+           DAB, DAC, DBA, DBC, DCA, DCB.
+\end{verbatim}
+
+Debes observar  que distinguimos entre  ABC y ACB, ya que el orden es importante, pero no incluimos la misma letra m\'as de una vez (por ejemplo, AAB no est\'a presente), esto es por  que una vez  que las letras son usadas no pueden ser utilizadas de nuevo.
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Supongamos que deseamos encontrar el n\'umero de formas en que un c\'odigo de cuatro d\'igitos, en el que todos los d\'igitos son diferentes, puede ser seleccionado. Dado que trabajamos con diez d\'igitos (0 a 9), el primer d\'igito puede ser cualquiera de los diez, el segundo cualquiera de los nueve restantes, y as\'i sucesivamente. Continuando de esta manera, vemos que el n\'umero total de permutaciones es $10\times 9 \times 8 \times 7$  que naturalmente es el mismo valor cuando se calcula directamente con la f\'ormula:
+
+\[
+P(10,4) = \frac{10!}{(10 -4)!} = 5040.
+\]
+\end{ejemplo}
+
+
+\vspace{0.3cm}
+
+
+Los problemas como estos se formulan frecuentemente como preguntas de probabilidad,por ejemplo, para encontrar la probabilidad de que un c\'odigo de cuatro d\'igitos generado al azar tenga todos los d\'igitos diferentes. Como acabamos de ver, el n\'umero total de c\'odigos de cuatro d\'igitos que tienen todos los d\'igitos diferentes es $5.040$, mientras que el n\'umero total de n\'umeros de cuatro d\'igitos es $10.000$. Si se supone que todas las opciones de c\'odigo de cuatro d\'igitos son igualmente probables, entonces la probabilidad de obtener uno en el que todos los d\'igitos son diferentes es $5.040 /10.000$ o aproximadamente $0.5$.
+
+\vspace{0.2cm}
+
+Tales preguntas nos obligan a encontrar el tama\~no del espacio muestral de permutaciones sin reemplazo y compararlo con el tama\~no del espacio de muestra con reemplazo. Obviamente, esto s\'olo funciona correctamente cuando todas las opciones son igualmente probables (selecci\'on aleatoria).
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont  Si los passwords pueden consistir de $6$ letras, encuentra la probabilidad que aleatoriamente un password, pueda ser elegido y que no tenga letras repetidas. 
+ 
+ \vspace{0.3cm}
+ 
+ En este caso el n\'umero posible de passwords es $26^6$ y el n\'umero casos favorables es $\binom{26}{6}$ y la  probabilidad  de escoger palabras no repetidas es $\frac{\binom{26}{6}}{26^6}$ y esto c\'alculo puede hacerse usando R
+ 
+ \vspace{0.2cm}
+ 
+  
+ <<foo4, comment = NA, prompt =TRUE, eval= TRUE>>=
+prod(26:21)/26^6
+@
+
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Supongamos que $r$ palomas que regresan de una carrera  tienen la misma probabilidad de entrar en cualquiera de  $n$ nidos de acogida, donde $n > r$ . Nos gustar\'ia saber la probabilidad de que todas las palomas terminen en nidos diferentes?.
+
+\vspace{0.2cm}
+
+Sea $k_1$ el nido donde entra  la primera paloma, $k_2$ donde entra  la segunda paloma  y as\'i sucesivamente. Tenemos $1 \leq  k_i \leq n$, para $i = 1,2,\dots, r$. El n\'umero total de posibilidades disponibles para las palomas es igual a $N = n^r$, ya que la paloma n\'umero $1$ puede volar a cualquiera de los $n$ nidos y lo mismo para la paloma n\'umero $2$  y as\'i sucesivamente. Esta es la situaci\'on de las permutaciones con reemplazo. 
+
+\vspace{0.2cm}
+
+Decimos que cada una de estas $N$ opciones posibles es igualmente probable. Por lo tanto, existen  $n^r $ disposiciones distintas y equiprobables de las palomas en los $n$ nidos. Estos $n^r$ eventos son los eventos elementales que constituyen el espacio muestral del experimento.
+
+\vspace{0.2cm}
+
+Sea  $A$   el evento en que todas las palomas terminan en nidos diferentes. Este evento ocurre si todos los $k_i, i = 1,2,\dots, k_r$  son distintos: cada paloma vuela en un nido diferente. Esta es la situaci\'on de la permutaci\'on sin reemplazo.
+
+\vspace{0.2cm}
+
+La primera paloma puede entrar en cualquiera de los $n$ nidos, la segunda puede entrar en cualquiera de los $n- 1$ nidos restantes y as\'i sucesivamente. El n\'umero de posibles formas en que las $r$ palomas se pueden disponer en los $n$ nidos de manera que ninguno comparte un nido es  dado por $n (n - 1) \dots (n - r + 1)$. Este es el n\'umero de salidas  que resultan en el evento A  y dado que hay un total de $n^r$ resultados equiprobables en el espacio muestral, la probabilidad de A debe ser:
+
+\[
+\mathbb{P}(A) = \frac{n(n -1)\cdots (n - r +1)}{n^r} = \frac{n!/(n -r)!}{n^r} = \frac{\text{conteo sin reemplazo}}{\text{conteo con reemplazo}}.
+\]
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Considere el  \texttt{problema del cumplea\~nos}, el de determinar la probabilidad de que entre un grupo de $k$ personas al menos dos tengan el mismo cumplea\~nos (dia y mes solamente). 
+
+\vspace{0.2cm}
+
+Para encontrar la probabilidad de que al menos dos personas tengan el mismo cumplea\~nos, es m\'as f\'acil calcular el complemento de este evento, la probabilidad de que no haya dos individuos que tengan el mismo cumplea\~nos. Si asumimos que un a\~no tiene 365 dias, entonces el n\'umero de permutaciones con reemplazo es de  $365^k$ . Este es el tama\~no del espacio  muestral desde el cual se toman todas las posibles permutaciones de cumplea\~nos. El n\'umero de permutaciones sin reemplazo es $365!/ (365 - k)!$. Este es el n\'umero de salidas  en el espacio muestral en el que no hay dos cumplea\~nos en la permutaci\'on que sean los mismos. La probabilidad de no encontrar entre  $k$ personas  dos con el mismo cumplea\~nos esta dado por la siguiente proporci\'on entonces:
+
+\begin{align*}
+\frac{365!/(365 - k)!}{365^k} &= \frac{365}{365}\times \frac{364}{365} \times \frac{363}{365}\times \cdots \times \frac{365 -k + 1}{365}\\
+&=\Biggr( 1 - \frac{1}{365}\Biggl)\Biggr( 1 - \frac{2}{365}\Biggl)\cdots \Biggr( 1 - \frac{k -1}{365}\Biggl)
+\end{align*}
+
+Se puede notar que  en una clase con 23 estudiantes, la probabilidad de que  dos estudiantes no tengan el mismo cumplea\~nos es menos del $50\%$.
+\end{ejemplo}
+
+
+\vspace{0.2cm}
+
+
+\begin{ejemplo}
+\normalfont Resolvamos los siguiente :
+
+\begin{itemize}
+\item En una fiesta de cinco estudiantes, calcula  la probabilidad, que al menos dos tengan el mismo (dia/mes) de cumplea\~nos, asumiendo que el a\~no tiene $365$ dias.
+\item La probabilidad que dos estudiantes en una clase tengan el mismo cumplea\~nos es al menos el $75\%$. ?` Cu\'al es el m\'inimo tama\~no de la clase?. 
+\end{itemize}
+
+ En efecto:
+ 
+ \begin{align*}
+ \mbox{P (todos tiene diferentes cumplea\~nos)} = \frac{\binom{36}{5}}{365^{5}}, \\
+ \mbox{P(Al menos dos tiene el mismo cumplea\~nos)}= 1 - \frac{\binom{36}{5}}{365^{5}}.
+ \end{align*}
+ 
+ En R,
+ 
+\vspace{0.2cm}
+ 
+<<fooA1, comment = NA, prompt =TRUE, eval= TRUE>>=
+k <- 5
+prod(365:(365-k+1))/365^k    # todos diferentes
+1 -prod(365:(365-k+1))/365^k  # al menos dos cumplen el mismo dia
+@
+
+\vspace{0.2cm}
+
+ $\mbox{P(al menos 2 en el mismo k )} = 1 -\frac{\binom{365}{k}}{365^{k}}$. Escogemos un $k$ tal que $1 -\frac{\binom{365}{k}}{365^{k}} \geq 0.75$. En efecto $k$ se encuentra entre $30$ y $40$. Podemos inferir que $k$ est\'a muy cerca de $30$. 
+
+\vspace{0.2cm}
+
+<<fooA2, comment = NA, prompt =TRUE, eval= TRUE>>=
+k<-30 
+1-prod(365:(365-k+1))/365^k  # al menos dos cumplen el mismo dia
+k<-31
+1-prod(365:(365-k+1))/365^k  # al menos dos cumplen el mismo dia
+k<-32
+1-prod(365:(365-k+1))/365^k  # al menos dos cumplen el mismo dia
+@
+
+\vspace{0.2cm}
+
+El m\'inimo $k$ es $32$. Es necesario una clase de  $32$ o  m\'as para estar asegurar al $75\%$, de que dos estudiantes tienen  el mismo dia de cumplea\~nos.
+
+\end{ejemplo}
+
+
+
+\subsection{Combinaciones sin reemplazos}
+
+\vspace{0.2cm}
+
+Sea al caso en el que las bolas se seleccionan sin reemplazo, pero el orden en que se seleccionan no tiene importancia. Lo \'unico que importa es que se han elegido algunas bolas y la forma  en  que se seleccionaron  no es de inter\'es.
+
+\vspace{0.2cm}
+
+Por ejemplo, podemos haber elegido una bola verde, una bola roja y una bola negra, pero  no sabemos o no nos preocupamos cu\'al de estas tres fue elegida primera, segunda o tercera. Sea  $C(n, k)$ que  denota  el n\'umero de maneras en que se pueden seleccionar $k$ bolas sin reemplazo e independientemente de su orden en una caja que contiene $n$ bolas. Este s\'imbolo se dice que es el n\'umero de combinaciones de $n$ elementos tomados $k$ a la vez,  no teniendo en cuenta el orden.
+
+\vspace{0.2cm}
+
+Como vimos anteriormente, cualquier colecci\'on de k \'items distintos puede ser colocada en $k!$ diferentes permutaciones. Por ejemplo, con $k = 3$  y usando las letras ABC, tenemos  $3! = 6$ permutaciones.
+
+\begin{verbatim}
+      ABC   ACB   BAC   BCA   CAB  CBA
+\end{verbatim}
+
+\vspace{0.2cm}
+
+Estas son todas diferentes permutaciones porque el orden es importante. Si el orden no es importante, entonces la \'unica informaci\'on que necesitamos es que haya un A, un B y un C. Todas las $3!$ permutaciones producen entonces  una sola combinaci\'on. Esto nos proporciona un medio para relacionar permutaciones sin reemplazo a combinaciones sin reemplazo. 
+
+\vspace{0.2cm}
+
+
+Dado que cualquier secuencia de $k$ \'items puede ser dispuesta  en $k!$ permutaciones, se deduce que debe haber $k!$ veces m\'as permutaciones (sin reemplazo) de $k$ \'items  distintos de lo que hay en  combinaciones (sin reemplazo), ya que el orden  importa en permutaciones, pero no en combinaciones. En otras palabras, debemos tener:
+
+\[
+k!C(n,k) = P(n,k) \ \ \text{para}\ \   n = 0,1,2,\dots \ \ \text{y}\ \  k = 0,1,\dots, n.
+\]
+
+\vspace{0.2cm}
+
+Esto conduce a:
+
+\[
+C(n, k) = \frac{P(n ,k)}{k!} = \frac{n!}{k!(n -k)!}\ \ \text{para}\ \ n = 0, 1, 2, \dots \ \ \text{y}\ \ k = 0,1,\dots, n.
+\]
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Sean A, B, C, D y E cinco elementos distinguibles de los cuales dos deben ser escogidos (lo cual implica, sin reemplazo, y no importa cu\'al viene primero: es decir, una combinaci\'on). El n\'umero de formas en que estos dos pueden ser elegidos est\'a dado por $C(5,2) = 5!/(2!3!) = 10$. Estos son los resultados:
+
+\begin{verbatim}
+        AB    AC   AD   AE
+              BC   BD   BE
+                   CD   CE
+                        DE
+\end{verbatim}
+
+\vspace{0.2cm}
+
+Si las elecciones se hacen de forma aleatoria, entonces la probabilidad de obtener una  de estas diez combinaciones es $1/10$ . Calculemos la probabilidad de elegir exactamente uno de (A, B) y uno de (C, D, E). Este es el evento que contiene las salidad $\{AC, AD, AE, BC, BD, BE\}$. El n\'umero de formas en que tal combinaci\'on puede aparecer es el producto del n\'umero de maneras en que podemos elegir uno de dos (es decir $C(2,1)$) por el n\'umero de maneras que podemos elegir uno de los tres restantes (es decir $C(3,1)$). La probabilidad de tal elecci\'on es entonces:
+
+\[
+\frac{C(2, 1)\times C(3, 1)}{C(5, 2)} = \frac{2!/(1!1!)\times 3!/(1!2!)}{5!/(2!3!)} = \frac{2 \times 3}{10} =0.6.
+\]
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+
+$C(n, k)$ se denomina \underline{coeficiente binomial} ya que  es el coeficiente del t\'ermino $p^k q^{n-k}$ en la expansi\'on del binomio $(p + q)^n$. Formas alternativas para escribir este coeficiente binomial son:
+
+\[
+C(n , k) = C_{k}^{n} = \binom{n}{k}.
+\]
+
+\vspace{0.3cm}
+
+Para calcular los coeficientes binomiales, se cumple que:
+
+\begin{align*}
+\binom{n}{k} & = \frac{n!}{k!(n - k)!} = \frac{n}{k}\Biggl(\frac{(n -1)!}{(k -1)!(n -k)!} \Biggr)\\
+& = \frac{n}{k}\Biggl(\frac{(n -1)!}{(k -1)!([n -1] -[k -1])!}\Biggr) = \frac{n}{k}\binom{n - 1}{k -1}
+\end{align*}
+
+\vspace{0.2cm}
+
+Lo que conduce a, 
+
+\vspace{0.2cm}
+
+\[
+\binom{n}{k} = \frac{n}{k}\times\frac{n -1}{k -1}\times \cdots \times \frac{n - (k -1)}{k - (k -1)} = \displaystyle \prod_{j =1}^{k}\frac{n - j + 1}{j}.
+\]
+
+
+\vspace{0.2cm}
+
+y esta expresi\'on  computacionalmente es m\'as eficiente   que formar factoriales y tomar razones.
+
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Calculemos el n\'umero de maneras de escoger $5$ numeros de $40$ y la probabilidad de que eso ocurra.
+ 
+ 
+<<fooJ1, comment = NA, prompt =TRUE, eval= TRUE>>=
+prod(40:36)/prod(5:1)
+1/choose(40,5)
+@
+\end{ejemplo}
+
+\vspace{0.5cm}
+
+Los coeficientes binomiales poseen un gran n\'umero de propiedades interesantes, de las cuales s\'olo cuatro se enumeran a continuaci\'on. Para $0 \leq j \leq k \leq n$ se cumple:
+
+\begin{itemize}
+\item $\binom{n}{k} = \binom{n}{n - k}$.
+\item $\binom{n}{k} = \frac{n}{k}\binom{n -1}{k -1}$.
+\item $\binom{n}{k} = \binom{n -1}{k} + \binom{n -1}{k -1}$.
+\item $\binom{n}{k}\binom{k}{j} = \binom{n}{j}\binom{n - j}{k - j}$.
+\end{itemize}
+
+\vspace{0.5cm}
+
+Consideremos ahora el problema de colocar $k$ bolas distinguibles en $n$ cajas diferentes de tal manera que el n\'umero de bolas en la caja $i$ sea $k_i$ para $i = 1,2, \dots, n$.
+
+\vspace{0.2cm}
+
+Asumimos que $\displaystyle \sum_{i =1}^n k_i = k$ , de modo que cada bola se pone en una de las cajas y de manera que no queda ninguna. El n\'umero de combinaciones obtenidas al seleccionar las primeras $k_1$ bolas para la caja 1 es $C(k, k_1)$. Esto deja  $k -k_1$ bolas, de las cuales $k_2$ son escogidas y colocadas en la caja 2. El n\'umero de combinaciones obtenidas al seleccionar estas $k_2$ bolas  de las  $k - k_1$ bolas es $C(k- k_1, k_2)$, de modo que el total obtenido de las  dos primeras cajas es $C(k, k_1)\times C(k - k_1, k_2)$.
+
+\vspace{0.2cm}
+
+Esto deja ahora $k - k_1 - k_2$ de los cuales $k_3$ deben ser elegidos y puesto en la caja 3.  Continuando de esta manera, vemos que el n\'umero total de combinaciones est\'a dado por:
+
+\[
+C(k, k_1)\times C(k -k_1, k_2) \times C(k -k_1 - k_2, k_3)\times \cdots \times C\Biggl( k - \sum_{i =1}^{n -1}k_i, k_n\Biggr),
+\]
+
+\vspace{0.2cm}
+
+donde $ C( k - \sum_{i =1}^{n -1}k_i, k_n) = C(k_n, k_n)$. Sustituyendo en la f\'ormula para los n\'umeros de combinaci\'on tenemos:
+
+\begin{align*}
+\frac{k!}{k_1!( k - k_1)!} \times \frac{(k -k_1)!}{k_2!( k - k_1 -k_2)!} \times  \frac{(k -k_1 -k_2)!}{k_2!( k - k_1 -k_2 - k_3)!}\times \cdots \\
+=\frac{k!}{k_1!k_2!\cdots k_n!}\equiv \binom{k}{k_1, k_2,\dots k_n}.
+\end{align*}
+
+\vspace{0.2cm}
+
+Estos son los llamados \underline{coeficientes multinomiales}. Cuando $k = k_1 + k_2$ tenemos:
+
+\[
+\binom{k}{k_1, k_2} = \binom{k}{k_1} = \binom{k}{k_2}.
+\]
+
+
+\vspace{0.3cm}
+
+
+\begin{ejemplo}
+\normalfont Calculemos el n\'umero de maneras en que cinco cartas pueden ser repartidas desde una baraja de 52 cartas. Puesto que no importa en qu\'e orden se reparten las cartas, el problema es con combinaciones en lugar de permutaciones, por lo que la respuesta es $C(52,5) = 2,598,960$. Sea K el evento de que hay exactamente tres reyes entre las cartas seleccionadas. El n\'umero de salidas que resultan en el evento K es el producto de $C(4,3)$ y $C(48,2)$  ya que tres reyes deben ser sacados de cuatro cartas y dos cartas de los 48 restantes. La probabilidad de obtener exactamente tres reyes es:
+
+\[
+\frac{C(4,3) \times C(48, 2)}{C(52, 5)} = 0.001736.
+\]
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Durante el control de calidad de un lote de 144 artefactos, 12 son elegidos al azar y inspeccionados. Si alguno de los 12 est\'a defectuoso, el lote es rechazado,  de lo contrario se acepta. Deseamos calcular la probabilidad de que un lote que contenga 10 artefactos defectuosos sea aceptado.
+
+\vspace{0.2cm}
+
+El n\'umero de formas en que el inspector puede elegir los 12 elementos para la inspecci\'on es el n\'umero de combinaciones de 144 elementos tomados 12 a la vez y por lo tanto es igual a:
+
+\[
+N = C(144, 12) = \frac{144!}{12!132!}.
+\]
+
+\vspace{0.2cm}
+
+Se nos dice que todos son equiprobables,ya que el inspector elige los 12 aparatos al azar.
+
+\vspace{0.2cm}
+
+Sea A el evento de que el lote es aceptado, es decir, ninguno de los $10$ artefactos defectuosos aparece en la muestra de 12 escogida por el inspector. Esto significa que los 12 artefactos seleccionados pertenecen a los 134 buenos. El n\'umero de formas en que esto puede suceder, denotado por $N(A)$ es:
+
+\[
+N(A) = C(134, 12) = \frac{134!}{12!122!}
+\]
+
+Se sigue entonces
+
+\[
+\mathbb{P}(A) = \frac{N(A)}{N} = \frac{134!12!132!}{12!122!144!} = 0.4066.
+\]
+\end{ejemplo}
+
+\subsection{Combinaciones con reemplazo}
+
+\vspace{0.2cm}
+
+S\'olo queda determinar el n\'umero de combinaciones posibles, cuando se seleccionan $k$ bolas con reemplazo de una caja que contiene $n$ bolas distinguibles. Se puede demostrar que esto es id\'entico al problema de contar el n\'umero de combinaciones cuando se seleccionan $k$ bolas sin sustituci\'on de una caja que contiene un total de $n + k- 1$ bolas distinguibles, es decir:
+
+\[
+\frac{(n + k -1)!}{(n -1)!k!}.
+\]
+
+\vspace{0.3cm}
+
+Es \'util describir diferentes escenarios que resultan en el mismo n\'umero de combinaciones. Consideremos, por ejemplo, el que hemos estado utilizando hasta ahora, el de contar el n\'umero de diferentes combinaciones posibles al seleccionar k bolas de una caja que contiene n bolas distinguibles. 
+
+\vspace{0.2cm}
+
+Como ejemplo, veamos el caso que  $n = 4$  y diferenciamos las bolas con las letras  A, B, C y D. Si elegimos k = 3 entonces la f\'ormula nos dice que hay $(4+ 3- 1)!/(3! \times 3!) = 20$ combinaciones diferentes. Estas son:
+
+\begin{verbatim}
+    AAA   AAB   AAC   AAD  ABB  ABC  ABD   ACC  ACD   ADD
+                           BBB  BBC  BBD   BCC  BCD   BDD
+                                           CCC  CCD   CDD
+                                                      DDD.
+\end{verbatim}
+
+\vspace{0.2cm}
+
+Debes de observar  que, aunque las cuatro bolas se distinguen, la misma bola puede aparecer m\'as de una vez en una combinaci\'on dada. Esto se debe a que despu\'es de que una bola ha sido elegida, esta  se sustituye y se puede elegir una vez m\'as. Observa  tambi\'en que no incluimos combinaciones como BAA o CBA porque con combinaciones, el orden no es importante y estas son equivalentes a AAB y ABC, respectivamente.
+
+\vspace{0.2cm}
+
+Un segundo escenario equivalente cambia las cosas. Se puede demostrar que contar el n\'umero de combinaciones en la selecci\'on de k  bolas de una caja de n bolas distinguibles es equivalente a contar el n\'umero de combinaciones obtenidas al distribuir $k$ bolas indistinguibles entre $n$ cajas distinguibles.
+
+\vspace{0.2cm}
+
+Este es el problema de asignaci\'on mencionado anteriormente. Consid\'erese el ejemplo con $n = 4$ cajas y $k = 3$  bolas y  que las cuatro cajas distinguibles sean representadas por un vector de cuatro componentes enteras, que se distinguen de acuerdo con su posici\'on en el vector. Las 20 combinaciones diferentes se dan entonces como:
+
+\begin{verbatim}
+          (0 0 0 3) (1 0 0 2) (2 0 0 1) (3 0 0 0)
+          (0 0 1 2) (1 0 1 1) (2 0 1 0)
+          (0 0 2 1) (1 0 2 0) (2 1 0 0)
+          (0 0 3 0) (1 1 0 1)
+          (0 1 0 2) (1 1 1 0)
+          (0 1 1 1) (1 2 0 0)
+          (0 1 2 0)
+          (0 2 0 1)
+          (0 2 1 0)
+          (0 3 0 0)
+\end{verbatim}
+
+\vspace{0.2cm}
+
+donde, por ejemplo, $(1 \ 0\  0\  2)$ indica que una bola est\'a en la caja 1 y dos bolas est\'an en la caja 4 y no somos capaces de distinguir entre las bolas. En este caso, necesitamos distinguir entre, por ejemplo, $(1\  0 \ 0\  2)$ y $(2\  0\  0\  1)$ ya que en el primer caso, la primera caja contiene una bola y la cuarta dos bolas, mientras que en la segunda, la primera caja contiene dos bolas y la cuarta s\'olo una bola.
+
+\vspace{0.2cm}
+
+Este \'ultimo escenario es \'util para determinar el n\'umero de estados en ciertos \textbf{modelos de redes de colas} y \textbf{cadenas de Markov}. El problema es determinar el n\'umero de formas en que k clientes id\'enticos pueden ser distribuidos entre $n$ centros de cola diferentes. Esto es equivalente a que el n\'umero de vectores enteros de longitud n que satisfacen las restricciones
+
+\[
+(k_1, k_2, \dots, k_n)\ \ \text{con}\ \ 0 \leq k_i \leq k \ \text{y}\ \ \sum_{i = 1}^{n}k_i = k
+\]
+
+es dado por:
+
+\[
+\frac{(n + k -1)!}{(n -1)!k!}.
+\]
+
+
+\vspace{0.2cm}
+
+
+Resumimos las cuatro posibilidades mencionadas a continuaci\'on, utilizando un ejemplo de cuatro elementos distinguibles, llamados A, B, C y D, tomados dos a la vez bajo las diversas posibilidades.
+
+\begin{itemize}
+
+\item Permutaci\'on con reemplazo
+\begin{verbatim}
+    AA AB AC AD
+    BA BB BC BD
+    CA CB CC CD
+    DA DB DC DD     
+\end{verbatim}
+\item Permutaci\'on sin reemplazo
+\begin{verbatim}
+    AB  AC AD
+  BA    BC BD
+  CA CB   CD
+  DA DB DC
+\end{verbatim}
+\item Combinaci\'on con  reemplazo
+\begin{verbatim}
+    AA AB AC AD
+       BB BC BD
+          CC CD
+             DD
+\end{verbatim}
+\item Combinaci\'on sin reemplazo
+\begin{verbatim}
+    AB AC AD
+       BC BD
+          CD
+\end{verbatim}
+\end{itemize}
+
+
+\subsection{Ensayos de Bernoulli}
+
+\vspace{0.2cm}
+
+Vimos anteriormente que en un s\'olo lanzamiento de una moneda, la probabilidad de conseguir caras es la mitad. Ahora consideremos lo que sucede cuando esta moneda es lanzada $n$ veces. 
+
+\vspace{0.2cm}
+
+Un elemento del espacio  muestral se puede escribir como $(s_1, s_2,\dots, s_n)$, es decir, una cadena de longitud $n$ en la que cada letra $s_i$ es $s_i = C$ o $s_i = S, i = 1, 2,\dots, n$. Se sigue  que el tama\~no del espacio muestral es $2^n$ y que todos los eventos elementales en este espacio son equiprobables ya que cada lanzamiento  es independiente de todos los lanzamientos anteriores. As\'i,  la probabilidad de obtener todas las caras es $2^{-n}$ y es la misma que la de obtener todos los sellos o exactamente $k$ caras seguidas por $n - k$ sellos  para $0 \leq k \leq  n$.
+
+\vspace{0.2cm}
+
+
+Sea A el evento en la que hay exactamente $k$ caras entre los $n$ lanzamientos. El n\'umero de salidas en el evento A es $C(n, k)$, que es el n\'umero de maneras  en que las $k$ posiciones conteniendo C pueden seleccionarse en una cadena de longitud n. La probabilidad de obtener exactamente $k$ caras en $n$ lanzamientos de la moneda se da por:
+
+\[
+\binom{n}{k}2^{-n}.
+\]
+
+\vspace{0.2cm}
+
+Ahora modificamos los resultados o el caso en el que la moneda no es una moneda justa. Supongamos que la probabilidad de obtener caras en un lanzamiento de la moneda es dada por  $p$ y la probabilidad de obtener sello es $q$  donde $p + q =1$.  El espacio muestral es el mismo que antes, s\'olo cambian las probabilidades de los eventos elementales.
+
+\vspace{0.2cm}
+
+La probabilidad de lanzar $n$ caras es $p\times p \times \dots \times p = p^n$,  la de lanzar n sellos  es $q \times q \times \dots \times q = q^n$ y la probabilidad de lanzar k caras seguidas por $n-k$ sellos  es $p \times \dots \times p \times q \times \dots \times q = p^kq^{n-k}$.
+
+\vspace{0.2cm}
+
+La probabilidad de que cualquier resultado individual tenga $k$ caras y $ n - k$ sellos  en alg\'un orden tambi\'en es dado por $p^kq^{n - k}$, porque los valores p y q  pueden intercambiarse. La probabilidad de obtener exactamente $k$ caras en $n$ lanzamientos se da  como:
+
+\[
+\binom{n}{k}p^kq^{n -k}.
+\]
+
+\vspace{0.2cm}
+
+Sustituyendo $p = q = 1/2$  da el mismo resultado anterior. Debemos notar que si sumamos sobre todos los valores posibles de k obtenemos desde el \underline{teorema binomial} que debe ser el caso para una asignaci\'on de probabilidad adecuada.
+
+
+\[
+1 = (p + q)^n = \sum_{k =0}^{n}\binom{n}{k}p^kq^{n -k},
+\]
+
+\vspace{0.2cm}
+Secuencias de n repeticiones independientes de un experimento de probabilidad como este se denominan \underline{secuencias de Bernoulli}. A menudo los resultados de cada ensayo, en lugar de ser denominados caras y sellos, se llaman \'exito y fracaso, o bueno y defectuoso y as\'i sucesivamente, dependiendo de la aplicaci\'on particular en cuesti\'on.
+
+
+\begin{ejemplo}
+\normalfont Un experimento tiene probabilidad de \'exito igual a $0.7$. Determinemos la probabilidad de tres \'exitos y dos fracasos en una secuencia de cinco ensayos independientes del experimento.
+
+\vspace{0.2cm}
+
+Sea la probabilidad de \'exito denotada por $p$ y la probabilidad de fracaso por $q = 1- p$. La probabilidad de obtener tres \'exitos y dos fracasos es igual a $p^3q^2 = 0,7^3 \times 0,3^ 2 = 0,03087$. El n\'umero de maneras en que esto puede suceder, esto es, el n\'umero de resultados con exactamente tres \'exitos, es $C(5,3) = 10$. As\'i, la respuesta que buscamos es igual a $0.3087$. 
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Consideremos un canal de comunicaci\'on binario que env\'ia palabras codificadas en n bits. La probabilidad de que un s\'olo bit sea recibido correctamente es p. La probabilidad de que se reciba un error es  $q = 1- p$. Utilizando las funciones de correcci\'on de c\'odigo, es posible corregir tantos  $e$ errores por palabra enviada. Determinemos la probabilidad de que la transmisi\'on de cualquier palabra sea exitosa, suponiendo que la transmisi\'on de bits individuales es independiente.
+
+\vspace{0.2cm}
+
+Para resolver este problema, observe que, siempre y cuando el n\'umero de bits en error sea e o menos, la palabra se recibir\'a correctamente. La probabilidad de que la palabra sea recibida teniendo exactamente k bits en error se da como:
+
+\[
+\binom{n}{k}(1 - p)^kp^{n -k}
+\]
+
+Por tanto la probabilidad que la palabra sea correctamente recibida es:
+
+\vspace{0.2cm}
+
+\[
+\sum_{k = 0}^{e}\binom{n}{k}(1 - p)^kp^{n -k}.
+\]
+
+\vspace{0.2cm}
+
+
+Obs\'ervese que en una secuencia de n ensayos independientes con probabilidad de \'exito igual a p, la probabilidad de $n_1$ \'exitos y $n_2$ fracasos, con $n = n_1 + n_2$  viene dado por:
+
+
+\[
+\binom{n}{n_1}p^{n_1}(1 -p)^{n - n_1} = \binom{n}{n_2}(1 -p)^{n_2}p^{n -n_2}  ,
+\]
+\end{ejemplo}
+
+\vspace{0.5cm}
+
+Los ensayos de Bernoulli aparecen a menudo en el contexto del \texttt{modelado de  confiabilidad}. Un sistema es  representado por un conjunto de componentes independientes, cada uno de los cuales tiene su propia probabilidad de \'exito. Los componentes pueden organizarse en series en las que la salida de un componente  se convierte en la entrada para el  siguiente. El \'exito se consigue si se obtiene un resultado exitoso con cada uno de los componentes de la serie. Si alguno de los componentes falla, entonces todo el sistema falla. 
+
+
+\vspace{0.2cm}
+
+Alternativamente, los componentes pueden estar dispuestos en paralelo y se logra un resultado satisfactorio si uno o m\'as de los componentes logra completar correctamente su tarea. El prop\'osito de disponer componentes en paralelo es a menudo aumentar la confiabilidad general del sistema: en el caso de  que un componente que falla los otros siguen funcionando y un resultado exitoso para el sistema como un todo sigue siendo posible.
+
+\vspace{0.2cm}
+
+Tambi\'en son posibles las  combinaciones de componentes en serie y en paralelo. Consideremos el caso de $n$ componentes en serie, en las que la probabilidad de \'exito de cada componente es $p$. La probabilidad de que la operaci\'on completa tenga \'exito es igual a la probabilidad de que todos los componentes $n$ funcionen correctamente y es  igual a $p^n$. La probabilidad de que la operaci\'on general no tenga \'exito es $1 - p^n$.
+
+\vspace{0.2cm}
+
+Ahora consideremos  el caso cuando  $n$ componentes se colocan en paralelo y se logra el \'exito si \texttt{al menos uno de los componentes} tiene \'exito. En este caso, es m\'as f\'acil calcular primero la probabilidad del evento que de la operaci\'on del sistema  no sea un \'exito y luego calcular la probabilidad del complemento de este evento. En general, en las preguntas relacionadas con la probabilidad, a menudo es \texttt{m\'as f\'acil calcular la probabilidad de intersecci\'on de eventos que computar la uni\'on de un conjunto de eventos}.
+
+\vspace{0.2cm}
+
+El uso de las t\'ecnicas de complementaci\'on y la ley de DeMorgan con frecuencia nos permiten elegir la opci\'on m\'as f\'acil. En la situaci\'on actual, se produce un fallo del sistema si todos los $n$ componentes  fallan (todos implican intersecci\'on, mientras que al menos uno implica uni\'on). La probabilidad de fallo en un sistema de $n$ componentes dispuestos en paralelo, en el que la probabilidad de fallo de cada componente es $1 - p$ es igual a $(1- p)^ n$. A partir de esto podemos calcular la probabilidad de \'exito de todo el sistema: $1 - (1 - p)^n$.
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont En entornos cr\'iticos, no es raro que varias computadoras realicen exactamente la misma secuencia de tareas de modo que si falla un equipo, la misi\'on no se ve comprometida.
+
+\vspace{0.2cm}
+
+La misi\'on continuar\'a y se considerar\'a exitosa, siempre y cuando por lo menos una de las computadoras ejecute sus tareas correctamente. Considere un sistema en el cual tres computadoras realizan la misma secuencia de seis tareas una despu\'es de la otra. Las pruebas de consistencia se integran en cada tarea.
+
+\vspace{0.2cm}
+
+Se supone que una computadora funciona correctamente si su estado satisface las pruebas de consistencia. Sea $0.04$ la probabilidad de que una computadora no cumpla la prueba de consistencia durante cualquier tarea . Queremos calcular la probabilidad de que la misi\'on sea exitosa.
+
+\vspace{0.2cm}
+
+Esta situaci\'on puede representarse como un modelo de fiabilidad que consta de tres partes en paralelo (las tres computadoras) y en la que cada parte contiene seis componentes en serie. Sea $p = 0,96$ la probabilidad de que una computadora satisfaga la prueba de consistencia en cualquier tarea dada. Entonces, la probabilidad de que una sola computadora complete satisfactoriamente las seis tareas es igual a $p^6 = 0.7828$, por otro lado, $p^{'}= 1 - p^6$ es la probabilidad de que no. 
+
+Dado que hay tres equipos en paralelo, la probabilidad de que los tres fallan es $(1 - p^{'})^3 = 0.01025$. Luego la probabilidad de una misi\'on exitosa $1 -(1 - p^{'})^3 = 0.9897$.
+\end{ejemplo}
+
+\vspace{0.5cm}
+
+El concepto de un ensayo de Bernoulli puede ser generalizado a partir de dos resultados posibles a muchos resultados posibles. Supongamos que en lugar de dos posibilidades (caras y sellos,  $0$ y $1$ , \'exito  y fracaso) hay $m$ posibilidades $h_1, h_2, \dots h_m$ con probabilidades $p_1, p 2, \dots, p_m$ y $\displaystyle \sum_{j =1}^{m}p_j = 1$.
+
+En cada ensayo, puede ocurrir una y s\'olo una de las $m$ posibilidades. Esta vez el espacio muestral consta de $n$-tuplas, en el cual cada elemento en una de las $m$ opciones $h_i, i =1,2, \dots, m$. Supongamos por ejemplo que el n\'umero de ensayos es $n = 6$ y que el n\'umero posible de salidas de cada ensayo es $m = 4$. Denotemos las diferentes salidas por $a, b, c$ y $d$. Algunos posibles elementos del espacio muestral son:
+
+
+\vspace{0.2cm}
+
+\begin{verbatim}
+      (a, a, a, a, a, a), (c, a, d, d, a, b), (a, b, b, c, c, c), ....
+\end{verbatim}
+
+\vspace{0.2cm}
+
+Consideremos ahora esos los elementos particulares del espacio muestral para los cuales $h_i$ se produce $n_i$ veces, para $i =1,2, \dots, m$. Debemos tener que $\displaystyle \sum_{j =1}^m n_j = n$. Por ejemplo, sea $n_1 = 2, n_2 = 2, n_3 = 0$ y $n_4$, algunas posibilidades son:
+
+\vspace{0.2cm}
+
+\begin{verbatim}
+      (a, b, b, d, d, d), (b, a, d, d, d, b), (d, a, d, d, b, b), ....
+\end{verbatim}
+
+\vspace{0.2cm}
+
+El n\'umero total de eventos elementales que tienen la propiedad de que $h_i$ ocurre $n_i$ veces, sujeto a las condiciones anteriores, viene dado por el \underline{coeficiente multinomial:}
+
+\vspace{0.2cm}
+
+\[
+\binom{n}{n_1, n_2, \dots, n_m} = \frac{n!}{n_1!n_2!\dots n_m!}.
+\]
+
+\vspace{0.2cm}
+
+En general, el n\'umero de formas de colocar $h_1$ en $n_1$ ranuras, $h_2$ en $n_2$ ranuras y as\'i sucesivamente, con $\displaystyle \sum_{j =1}^m n_j = m$ es dado por el coeficiente multinomial. La probabilidad  de ocurrencia de alg\'un evento elemental es dado por $p_1^{n_1}, p_2^{n_2}, \cdots p_{m}^{n_m}$ y as\'i la probabilidad que $h_i$ ocurre $n_1$ veces, $h_2$ ocurre $n_2$ veces y as\'i sucesivamente es dado por:
+
+\vspace{0.2cm}
+
+\[
+p(n_1, n_2, \dots, n_m) = \frac{n!}{n_1!n_2!\dots n_m!}p_1^{n_1}, p_2^{n_2}, \cdots p_{m}^{n_m}.
+\]
+
+\vspace{0.3cm}
+
+
+\begin{ejemplo}
+\normalfont Una clase introductoria de nivel de postgrado en probabilidad aplicada tiene 10 estudiantes de pregrado, 30 estudiantes de maestr\'ia y 20 estudiantes de doctorado. Durante las horas de oficina del profesor, los estudiantes llegan de forma independiente a buscar respuestas. ?`Cu\'al es la probabilidad de que, de los \'ultimos ocho estudiantes que visitan al profesor, dos fueran estudiantes de pregrado, cinco fueran de maestr\'ia y uno fuera de doctorado?
+
+Asumimos que la probabilidad de que un estudiante de pregrado busque al profesor durante las horas de oficina es $10/60$, la de un estudiante de maestr\'ia $30/60$ y la de un estudiante de doctorado $20/60$. En este caso la respuesta requerida es dada por:
+
+\[
+\binom{8}{2, 5, 1}\biggl(\frac{10}{60}\biggr)^2\biggl(\frac{30}{60}\biggr)^5\biggl(\frac{20}{60}\biggr) = \frac{7}{144}.
+\]
+\end{ejemplo}
+
+\vspace{0.5cm}
+
+\section{Referencias}
+
+
+\begin{enumerate}
+\item Probability, Stochastic Processes, and Queueing Theory:The Mathematics of Computer Performance Modeling Nelson, Randolph  chapter 3.
+\item Lecture 3: Learning to count; Binomial Distribution, Introduction to Probability and Statistics Karl Border 2016.
+\item Introduction to Probability Dimitri  P.  Bertsekas and John N. Tsitsiklis Athena Scientific ,  Belmont ,  Massachusetts 2008 chapter 1 \textbf{Counting}.
+\end{enumerate}
+\end{document}

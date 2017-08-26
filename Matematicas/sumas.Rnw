@@ -1,0 +1,423 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bb}[1]{\textbf{#1}}
+\DeclareMathOperator{\rank}{\textbf{rango}}
+\DeclareMathOperator{\proy}{\textbf{proy}}
+\DeclareMathOperator{\nulll}{\textbf{nul}}
+\DeclareMathOperator{\diag}{\textbf{diag}}
+\DeclareMathOperator{\col}{\textbf{col}}
+\DeclareMathOperator{\fila}{\textbf{fila}}
+\DeclareMathOperator{\dimm}{dim}
+\DeclareMathOperator{\Traz}{Tr}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Notas de matem\'aticas \par
+\end{minipage}
+\vspace{0.5cm}
+
+
+\section{Sumas, combinatorias  }
+
+\vspace{0.5cm}
+
+Hay varios de tipos de suma que se encuentran en probabilidad y estad\'istica
+
+\vspace{0.3cm}
+
+\begin{defi}
+\normalfont Una funci\'on que tiene derivadas, de todos los \'ordenes en $x = b$, puede ser expandido en la siguiente  \underline{serie de Taylor}:
+
+\vspace{0.2cm}
+
+\[
+f(x) = f(b) + \frac{f^{'}(b)}{1!}(x -b)+ \frac{f^{''}(b)}{2!}(x -b)^2 + \frac{f^{''}(b)}{3!}(x -b)^3 + \cdots .
+\]
+
+
+\vspace{0.2cm}
+
+Si $b = 0$, obtenemos un caso especial, llamado a menudo, una \underline{serie de Maclaurin }
+
+\vspace{0.2cm}
+
+\[
+f(x) = f(0) + \frac{f^{'}(0)}{1!}x+ \frac{f^{''}(b)}{2!}x^2 + \frac{f^{''}(b)}{3!}x^3 + \cdots .
+\]
+
+\vspace{0.2cm}
+
+Por ejemplo si $ f(x) = e^x$, todas las derivadas de $f(x) = e^x$ son $f^{(r)}(x) = e^x$, entonces $f^{(r)}(0) = 1$, para $r = 1, 2, 3, \dots$. As\'i la expansi\'on de Maclaurin de $f(x) = e^x$ es 
+
+
+\vspace{0.2cm}
+
+
+\[
+e^x = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots
+\]
+
+\vspace{0.2cm}
+
+
+El siguente test para  series 
+
+
+\[
+\lim_{n \rightarrow \infty}\Biggl\vert \frac{x^n/n!}{x^{n -1}/(n -1)!}\Biggr\vert = \lim_{n \rightarrow \infty}\Biggl\vert \frac{x}{n} \Biggr\vert = 0
+\]
+
+prueba que, la expansi\'on de Maclaurin de $e^x$ converge para todos los valores de $x$. Por ejemplo se tiene 
+
+\vspace{0.2cm}
+
+\[
+e = 1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \cdots
+\]
+
+y
+
+\[
+e^{-1} = 1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \cdots + \frac{(-1)^n}{n!} + \cdots
+\]
+\end{defi}
+
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+
+\normalfont Consideremos
+
+\vspace{0.2cm}
+
+\begin{align*}
+f(x) &= \ln(1 + x)\\
+f^{'}(x) &= (1 +x)^{-1},\\
+f^{''}(x) &= (-1)(1 +x)^{-2},\\
+f^{'''}(x) &= (-1)(-2)(1 +x)^{-3},\\
+& \vdots
+\end{align*}
+
+As\'i $f^{(r)}(0) = (-1)^{r -1}(r -1)!$ y 
+
+\vspace{0.2cm}
+
+\begin{align*}
+\ln(1 +x) &= \frac{0!}{1!}x - \frac{1!}{2!}x^2 +  \frac{2!}{3!}x^3 -  \frac{3!}{4!}x^4 + \cdots \\
+&= x -\frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots
+\end{align*}
+
+el cual converge para $-1 < x < 1$.
+\end{ejemplo}
+\vspace{0.2cm}
+
+
+\begin{defi}
+\normalfont Consideremos la siguiente expresi\'on 
+
+\[
+h(w) = (1- w)^{-r},
+\]
+
+donde $r$ es un entero positivo
+
+\begin{align*}
+h^{'}(w) &= r(1 - w)^{-(r + 1)}, \\
+h^{''}(w) &= (r)(r +1)(1 - w)^{-(r + 2)}, \\
+h^{'''}(w) &= (r)(r +1)(r + 2)(1 - w)^{-(r + 3)},\\
+& \vdots
+\end{align*}
+
+En general $h^{(k)}(0) = (r)(r -1)\cdots (r +k -1) = (r +k -1)!/(r - 1)!$. As\'i
+
+\begin{align*}
+(1 -w)^{-r} &= 1 + \frac{( r + 1 -1)!}{(r -1)! 1!}w + \frac{( r + 2 -1)!}{(r -1)! 2!}w^2 + \cdots + \frac{( r + k -1)!}{(r -1)! k!}w^k + \cdots \\
+ &= \sum_{k = 0}^{\infty}\binom{r + k - 1}{r - 1}w^k.
+\end{align*}
+
+Esta expresi\'on es conocida como \underline{serie binomial negativa}. Usando, el test anterior, obtenemos
+
+
+\vspace{0.2cm}
+
+\[
+\lim_{n \rightarrow \infty}\Biggl\vert \frac{w^n(r + n -1)!/[(r -1)!n!]}{w^{n -1}(r + n -2)!/[(r -1)!(n - 1)!]}  \Biggr\vert = \lim_{n \rightarrow \infty}\Biggl\vert \frac{w(r + n -1)}{n}\Biggr\vert = \vert w \vert.
+\]
+
+
+\vspace{0.2cm}
+
+As\'i la serie converge cuando $\vert w \vert < 1$.
+\end{defi}
+
+
+\vspace{0.3cm}
+
+
+\begin{defi}
+\normalfont Un caso especial de la serie binomial negativa, ocurre cuando $r = 1$. En este caso, obtenemos la bien conocida \underline{serie geom\'etrica}
+
+\vspace{0.2cm}
+
+\[
+(1 - w)^{-1} =  1 +w  + w^2 + w^3 + \cdots
+\]
+
+siempre que $-1 < w < 1$. Las serie diverge si $\vert w \vert \geq 1$.
+
+\vspace{0.2cm}
+
+Una serie de la misma forma, excepto que consta de finitos t\'erminos, es llamada una \underline{serie geom\'etrica finita}. 
+
+Para $ w \neq   1$, la suma  es
+
+\[
+s_n = \sum_{k = 0}^{n - 1}aw^k = \dfrac{a(1 - w^{n })}{1 -w}.
+\]
+\end{defi}
+
+\vspace{0.2cm}
+
+
+\begin{defi}
+\normalfont La serie $\displaystyle \sum_{n =1}^{\infty}1/n^c$ converge para $c > 1$ y diverge para $c \leq 1$. Para $c = 1$, esta es llamada \underline{serie arm\'onica}. La suma de los primeros $n$ t\'erminos de la serie arm\'onica puede ser aproximada usando
+
+\[
+\sum_{k =1}^{n}\frac{1}{k} \approx \log(n) + \gamma
+\]
+
+para $n \rightarrow \infty$, donde $\gamma \approx 0.57721\dots$.
+\end{defi}
+
+\vspace{0.5cm}
+
+Las definiciones en combinatorias muchas veces est\'an restringidas a valores enteros. Sin embargo estas expresiones, se pueden expresar de forma m\'as general y, en ocasiones, tendremos que recurrir a valores no enteros para el \'indice superior de los  coeficientes binomiales. Un caso frecuente es el de $\binom{1/2}{k}$, que se define
+
+\begin{align*}
+\binom{1/2}{k} &= \frac{(1/2)\cdot (1/2 - 1)\cdots (1/2 - (k -1))\cdot(1/2 -k)!}{k!(1/2 -k)!}\\
+&= (1/2)^k(-1)^{k -1}\frac{1\cdot 3\cdots 2k -3}{k!}, \ \ k = 1,2, \dots
+\end{align*}
+
+donde $\binom{1/2}{0} = 1$. La ecuaci\'on anterior puede ser simplificada como
+
+\begin{align}
+\binom{1/2}{k} &= (1/2)^k(-1)^{k -1}\frac{1\cdot 3\cdots 2k -3}{k!}\frac{2\cdots 2(k -1)}{2\cdots 2(k -1)} \nonumber\\
+&= \frac{1}{k}\frac{(-1)^{k-1}}{2^{2k -1}}\binom{2(k - 1)}{k - 1}, \ \ k \geq 1.
+\end{align}
+
+\vspace{0.2cm}
+
+De manera similar, tenemos
+
+\vspace{0.2cm}
+
+\begin{equation}
+\binom{-1/2}{k} = (-1)^k\binom{2k}{k}2^{-2k},\ \ k = 0,1, \dots
+\end{equation}
+
+
+\vspace{0.2cm}
+
+
+\begin{defi}
+\normalfont La \underline{f\'ormula binomial} para un entero no negativo $n$ es 
+
+\[
+(x + y)^n = \sum_{i = 0}^n\binom{n}{i}x^iy^{n - i}
+\]
+
+
+Nota que es resultado no est\'a restringido para enteros. Para generalizar este resultado, hacemos uso de la f\'ormula de Newton, para alg\'un valor $a$
+
+\vspace{0.2cm}
+
+\begin{align*}
+(1 +t)^a &= 1 + \binom{a}{1}t + \binom{a}{2}t^2 + \cdots, \ -1 < t < 1 \\
+ &= \sum_{k = 0}^{\infty}\frac{a_k}{k!}t^k.
+\end{align*}
+
+\vspace{0.2cm}
+
+Las expansiones de potencia para ra\'ices cuadradas se expresan convenientemente de esta manera, como se muestra a continuaci\'on
+
+\[
+\sqrt{1 + t} = \sum_{i = 0}^{\infty}\binom{1/2}{i}t^i = 1 +\sum_{i = 1}^{\infty}\frac{1}{i}\binom{2(i -1)}{i - 1}\frac{(-1)^{i -1}t^i}{2^{2i -1}}
+\]
+
+donde usamos (1) y 
+
+\[
+\sqrt{1 + t} = \sum_{i = 0}^{\infty}\binom{-1/2}{i}t^i = \sum_{i = 0}^{\infty}(-1)^i\binom{2i}{i}\frac{t^i}{2^{2i}},
+\]
+
+donde hemos usado (2).
+\end{defi}
+
+\vspace{0.3cm}
+
+
+Mucho  de matem\'aticas y  estad\'isticas tienen que ver  con  el \underline{reconocimiento de patrones} por ejemplo ver la estructura esencial de un problema, el reconocimiento de cuando un problema es esencialmente el mismo que Otro problema (s\'olo en una forma distinta), notar la simetr\'ia, etc. 
+
+En efecto supongamos que tenemos la serie $\displaystyle\sum_{k = 0}^{\infty}e^{tk}e^{-\lambda}\lambda^k/k!$ con $\lambda$  una constante positiva. El valor $e^{-\lambda}$ se puede sacar de la suma y  la estructura de la serie coincide exactamente con la estructura de la serie de Taylor para $e^x$. Por tanto
+
+\[
+\sum_{k = 0}^{\infty}\frac{e^{tk}e^{-\lambda}\lambda^k}{k!} = e^{-\lambda}\sum_{k = 0}^{\infty}\frac{(\lambda e^t)^k}{k!} = e^{-\lambda}e^{\lambda e^t} = e^{\lambda(e^t -1)}, 
+\]
+
+\vspace{0.2cm}
+
+v\'alido para todo real $t$.
+
+\vspace{0.2cm}
+
+Similarmente, supongamos que queremos calcular la serie de Taylor para $1/(1 -x^3)$ alrededor de  $x = 0$. Ser\'ia tedioso comenzar a tomar las derivadas  de esta funci\'on, en su lugar, tenga en cuenta que esta funci\'on es una reminiscencia del resultado de sumar una serie geom\'etrica 
+
+\[
+\frac{1}{1 - x^3} = \sum_{n = 0}^{\infty}x^{3n},
+\]
+
+v\'alido para $\vert x^3 \vert < 1$ (que es equivalente a $\vert x \vert$ < 1). 
+
+\vspace{0.2cm}
+
+Lo que importa es la estructura, no los nombres que usamos para variables!.
+\vspace{0.5cm}
+
+\section{Algunos resultados}
+
+\vspace{0.2cm}
+
+
+\begin{pros}
+\normalfont Supongamos que $0 \leq a_n \leq b_n$ \ \ \text{para todo}\ \ $n$. Entonces si $\displaystyle\sum_{n =1}^{\infty} b_n$ converge, tambi\'en converge   $\displaystyle\sum_{n =1}^{\infty} a_n$.
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Si $a_n, b_n > 0$ y $\lim_{n \rightarrow \infty}a_n/b_n = c \neq 0$, entonces  $\displaystyle\sum_{n =1}^{\infty} a_n$ converge si y s\'olo si converge $\displaystyle\sum_{n =1}^{\infty} b_n$.
+\end{pros}
+
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont (Prueba del cociente) Sea  $a_n > 0$ para todo $n$ y sup\'ongase que 
+
+\[
+\lim_{n \rightarrow \infty}\frac{a_{n + 1}}{a_n} = r
+\]
+
+Entonces $\displaystyle\sum_{n =1}^{\infty} a_n$ converge si $r < 1$. Por otra parte, si $r > 1$, entonces los t\'erminos $a_n$ no tienden a $0$, de modo que $\displaystyle\sum_{n =1}^{\infty} a_n$ diverge.
+\end{pros}
+
+\vspace{0.2cm}
+
+Un incoveniente de la prueba del cociente es el hecho de que $\lim_{n \rightarrow \infty}a_{n +1}/a_{n}$ puede ser dificil determinar e incluso puede no existir. Una deficiencia m\'as seria, que aparece con regularidad, es el hecho de que el l\'imite puede ser igual a uno. Es este caso donde no se puede sacar ninguna conclusi\'on, por ejemplo si $a_n = 1/n$ o en el caso de $\displaystyle\sum_{n = 1}^{\infty}(1/n)^2$ que converge, aun cuando
+
+\[
+\lim_{n \rightarrow \infty}\dfrac{\Bigl(\dfrac{1}{n + 1}\Bigr)^2}{\Bigl(\dfrac{1}{n}\Bigr)^2} = 1.
+\]
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont (Prueba de la integral) Sup\'ongase que $f$ es positiva y decreciente sobre $[1, \infty)$ y que $f(n) = a_n$ para todo $n$. Entonces $\displaystyle\sum_{n =1}^{\infty} a_n$ converge si y s\'olo si el l\'imite 
+
+\[
+\bigintss_{1}^{\infty}f = \lim_{A \rightarrow \infty}\bigintss_{1}^{A}f
+\]
+
+existe.
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Sea $p > 0$, la convergencia de $\displaystyle \sum_{n =1}^{\infty}1/n^p$ es equivalente, seg\'un la prueba de la integral, a la existencia de
+
+\[
+\bigintss_{1}^{\infty}\dfrac{1}{x^p} dx
+\]
+
+Ahora bien,
+
+\[
+\bigintss_{1}^{A}\dfrac{1}{x^p}dx = \begin{cases}
+-\frac{1}{(p - 1)}\cdot \frac{1}{A^{ p-1}} + \frac{1}{p -1},& p\neq 1 \\
+\log  A, &  P =1
+\end{cases}
+\]
+
+Esto indica que $ \lim_{A \rightarrow \infty}\bigintss_{1}^{A}1/x^p dx$ existe si $p >1$, pero no si $p \leq 1$. 
+
+As\'i  $\displaystyle \sum_{n =1}^{\infty}1/n^p$ converge precisamente para $p  > 1$. En particular  $\displaystyle \sum_{n =1}^{\infty}1/n$ diverge.
+\end{ejemplo}
+
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont La serie $\displaystyle\sum_{n =1}^{\infty} a_n$ es \underline{absolutamente convergente} si la serie $\displaystyle\sum_{n =1}^{\infty}\vert a_n\vert$ es convergente. 
+\end{defi}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Toda serie absolutamente convergente es convergente. Adem\'as, una serie es absolutamente convergente si y s\'olo si la serie formada con sus t\'erminos positivos y la serie formada con sus t\'erminos negativos son ambas convergentes.
+\end{pros}
+
+\vspace{0.5cm}
+
+\section{Referencias}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item Calculus, Michael Spivak, Editorial Reverte 1992.
+\item Randolph Nelson, Probability, Stochastic Processes and Queueing Theory, Springer 1995.
+\item Probability, An introduction with statistical applications, John J. Kinney 2015.
+\end{enumerate}
+\end{document}

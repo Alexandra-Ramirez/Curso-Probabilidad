@@ -1,0 +1,157 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.35\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Pr\'actica dirigida 4 Variables aleatorias (1)\par 
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Lista de ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item Dos dados  son lanzados y el valor absoluto de la diferencia de los resultados se denota por $X$.
+
+?` Cu\'ales son los valores posibles de $X$ y las probabilidades asociadas con esos valores?.
+
+\item De una urna que contiene $5$ chips rojos, $5$ blancos y $5$  azules,  sacamos dos chips al azar. Por cada chip azul ganamos $1$ sol , por cada chip blanco ganamos $2$ soles, pero por cada chip rojo perdemos  $3$ soles. Si $X$ representa la cantidad que ganamos o perdemos. ?`Cu\'ales son los posibles valores de $X$ y las probabilidades asociadas a eso valores?.
+
+\item En una sociedad de poblaci\'on $N$, la probabilidad es  $p$  que una persona tenga cierta enfermedad  independientemente de otras. Sea $X$ el n\'umero de personas que deben ser examinadas hasta que se encuentre una persona con la enfermedad, $X = 0$ si no se encuentra a nadie con la enfermedad. 
+
+?` Cu\'ales son los posibles valores de X?. Determina las probabilidades asociadas con estos valores.
+
+\item La funci\'on $F$ es la funci\'on de distribuci\'on de una variable aleatoria $X$, es dada por:
+
+\[
+F(t) = \begin{cases}
+0 & t < -1 \\
+(1/4)t + 1/4 & -1 \leq t < 0 \\
+1/2 & 0 \leq t < 1 \\
+(1/12)t + 7/12  & 1 \leq t < 2 \\
+1 & t\geq 2.
+\end{cases}
+\]
+
+\begin{enumerate}
+\item Dibuje el gr\'afico de $F$.
+\item Calcula la siguientes cantidades: $\mathbb{P}(X < 1), \mathbb{P}(X =1), \mathbb{P}(1 \leq X < 2), \mathbb{P}(X > 1/2), \mathbb{P}(X = 3/2)$ y $\mathbb{P}(1 < X \leq 6)$.
+\end{enumerate}
+\item Sea $X$ una variable aleatoria con una funci\'on de distribuci\'on  $F$. Para $p (0 < p < 1)$, $Q_p$ se dice que es un cuantil de orden $p$ si:
+
+\[
+F(Q_{p^{\--}}) \leq p \leq F(Q_p).
+\]
+
+En un determinado pa\'is, la tasa a la que el precio del petr\'oleo por gal\'on cambia de un a\~no a otro tiene la siguiente funci\'on de distribuci\'on:
+
+\[
+F(x) = \frac{1}{1 + e^{-x}}, \ \ -\infty < x < \infty.
+\]
+
+Encuentra $Q_{0.50}$ llamada \texttt{mediana} de $F$; $Q_{0.25}$ es llamado el primer cuartil de $F$ y $Q_{0.75}$ llamado el tercer cuartil de $F$. Interpreta esas cantidades.
+
+\item Una variable aleatoria es llamada sim\'etrica alrededor de $0$ si para todo $x \in \mathbb{R}$,
+
+\[
+\mathbb{P}(X \geq x) = \mathbb{P}(X \leq -x).
+\]
+
+Prueba que si $X$ es sim\'etrica alrededor de $0$, entonces para todo $t > 0$, la funci\'on de distribuci\'on $F$ satisface las siguientes relaciones:
+
+\begin{enumerate}
+\item $\mathbb{P}(\vert X \vert \leq t) = 2F(t) -1$.
+\item $\mathbb{P}(\vert X \vert > t) = 2(1 - F(t))$.
+\item $\mathbb{P}(X = t) = F(t) + F( -t) - 1$.
+\end{enumerate}
+\item La aerol\'inea $A$ tiene vuelos cada $45$ minutos desde el aeropuerto de Lima  hasta Arequipa. Un pasajero que quiere tomar uno de estos vuelos llega al aeropuerto en un momento al azar. Supongamos que $X$ es el tiempo de espera para este pasajero. Encuentra la funci\'on de distribuci\'on de $X$. Se debe asumir  que los asientos est\'an siempre disponibles para estos vuelos.
+
+\item Una calculadora cient\'ifica puede generar n\'umeros aleatorios de dos d\'igitos. Es decir, podemos elegir un n\'umero al azar del conjunto $\{00, 01, 02,\dots , 99\}$. Para obtener un n\'umero aleatorio del conjunto $\{4, 5,\dots , 18\}$, muestra  que tenemos que seguir generando n\'umeros aleatorios de  dos d\'igitos hasta obtener uno entre $4$ y $18$.
+
+\item En una ciudad hay $40$ taxis, numerados del  $1$ al  $40$. Tres taxis llegan al azar a  una estaci\'on para recoger pasajeros. ?` Cu\'al es la probabilidad de que el n\'umero de al menos uno de los taxis sea menor de 5?.
+
+\item Sea $X$ un punto seleccionado aleatoriamente del intervalo $(0, 3)$. ?` Cu\'al es la probabilidad de que $X^2 -5x + 6 > 0$?.
+
+\item Sea $X$ un punto aleatorio seleccionado del intervalo $(0, 1)$. Calcula $F$, la funci\'on de distribuci\'on de $Y = X/(1 + X)$ y dibuje su gr\'afica.
+
+\item En el experimento de lanzar  un dado  dos veces, sea X el m\'aximo de los dos n\'umeros obtenidos. Determine y dibuja la funci\'on de masa de probabilidad y la funci\'on de distribuci\'on de $X$.
+
+\item Sea $X$ el n\'umero de nacimientos en un hospital hasta que nazca la primera ni\~na. Determina la funci\'on de masa de probabilidad y la funci\'on de distribuci\'on de $X$. Asume  que la probabilidad es $1/2$ que un bebe nacido es una ni\~na.
+
+\item Sea $X$ el n\'umero de n\'umeros aleatorios seleccionados de $\{0, 1, 2,\dots, 9\}$ independientemente hasta que se elija 0. Encuentre las funciones de masa de probabilidad de $X$ e $Y = 2X + 1$.
+
+\item Un valor $i$ se dice ser el modo de una variable aleatoria discreta si este maximiza la funci\'on de masa de probabilidad $p(x)$ de $X$. Encuentra los modos de las variables aleatorias $X$ y $Y$ con funciones de masa de probabilidad:
+
+\[
+p(x) = \Bigl(\frac{1}{2} \Bigr), \ \ x = 1, 2, 3, \dots,
+\]
+
+y 
+
+\[
+q(y) = \frac{4!}{y!(4 -y)!}\Bigl(\frac{1}{4} \Bigr)^4\Bigl(\frac{3}{4} \Bigr)^{4 - y},\ \ y = 0, 1, 2, 3, 4.
+\]
+
+respectivamente.
+
+\item Sea $p(x) = 3/4(1/4)^x, x = 0, 1, 2, 3, \dots$, la funci\'on de masa de probabilidad de una variable aleatoria $X$. Encuentra $F$, la funci\'on de distribuci\'on de $X$ y realiza un bosquejo de su gr\'afico.
+
+\item En lanzamientos  sucesivos de un dado justo, sea $X$ el n\'umero de lanzamientos hasta que aparezca el primer $6$. Determine la funci\'on de masa de probabilidad y la funci\'on de distribuci\'on de  $X$.
+
+\item Un d\'igito binario o \texttt{bit} es un cero o uno. El lenguaje ensamblador de una  computadora puede generar bits aleatorios independientes. Sea $X$ el n\'umero de bits aleatorios independientes que se generar\'an hasta que se obtengan tanto $0$ como $1$. Encuentre la funci\'on de masa de probabilidad de $X$.
+
+\item Todos los domingos, Marlene llama a Liz para ver si  jugar\'a tenis con ella ese dia. Si Liz no ha jugado tenis con ella desde $i$  domingos atr\'as, la probabilidad de que le diga que si  es $i/k, k \geq 2, i = 1, 2,\dots, k$. Por lo tanto, si, Liz no juega al tenis con Marlene por $k - 1$ domingos consecutivos, entonces jugar\'a con ella el pr\'oximo domingo con probabilidad $1$. Sea $Z$ el n\'umero de semanas que Liz tarda en jugar de nuevo con Marlene, desde la \'ultima vez que jugaron.  Encuentra la funci\'on de masa de probabilidad de $Z$.
+
+\item Un dado  se lanza sucesivamente. Sea $X$ el n\'umero de lanzamientos hasta que cada uno de los seis posibles resultados ocurran al menos una vez. Encuentra la funci\'on de masa de probabilidad de $X$.
+\end{enumerate}
+
+\end{document} 
+

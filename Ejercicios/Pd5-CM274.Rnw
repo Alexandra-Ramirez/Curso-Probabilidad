@@ -1,0 +1,247 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.35\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Pr\'actica dirigida 5 Variables aleatorias (2)\par 
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Lista de ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item La experiencia ha demostrado que al caminar en un cierto parque, el tiempo $X$, en minutos, de  ver dos personas fumando tiene una funci\'on de densidad de la forma:
+
+\[
+f(x) = \begin{cases}
+\lambda xe^{-x} &  x > 0 \\
+0 & \text{en otros casos}.
+\end{cases}
+\]
+
+\begin{enumerate}
+\item Calcula el valor de $\lambda$.
+\item Encuentra la funci\'on de distribuci\'on de probabilidad de $X$.
+\item ?` Cu\'al es la probabilidad que Jessica, que acaba de ver a una persona fumando, vea a otra persona fumando en $2$ a $5$ minutos, ?` en al menos  $7$ minutos?.
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item Realiza un gr\'afico  de la funci\'on:
+
+\[
+f(x) = \begin{cases}
+\frac{1}{2} - \frac{1}{4}\vert x - 3 \vert  & 1 \leq x \leq 5 \\
+0 & \text{en otros casos},
+\end{cases}
+\]
+\item Encuentra $F$, la funci\'on distribuci\'on de $X$ y muestra que es continua.
+\item Realiza un gr\'afico de $F$.
+\end{enumerate}
+\item La funci\'on densidad de probabilidad de una variable aleatoria $X$ es dado por:
+
+\[
+f(x) = \begin{cases}
+\frac{c}{\sqrt{1 -x^2}} & -1 < x < 1 \\
+0 & \text{en otros casos.}
+\end{cases}
+\]
+
+\begin{enumerate}
+\item Calcula el valor de $c$.
+\item Encuentra la funci\'on de distribuci\'on de probabilidad de $X$.
+\end{enumerate}
+\item Sea $X$ una variable aleatoria continua con funci\'on densidad y distribuci\'on $f$ y $F$ respectivamente. Asumiendo que $\alpha \in \mathbb{R}$ es un punto en el c\'ual,  $\mathbb{P}(X \leq \alpha) < 1$, prueba que:
+
+\[
+h(x) = \begin{cases}
+\frac{f(x)}{1 - F(\alpha)} & \ \text{si}\ \ x \geq \alpha \\
+0 & \ \text{si}\ x < \alpha,
+\end{cases}
+\]
+
+es tambi\'en una funci\'on densidad de probabilidad.
+
+\item Sea $X$ una variable aleatoria continua con una funci\'on densidad $f$. Decimos que $X$ es \texttt{sim\'etrica alrededor de $\alpha$} si para todo $x$,
+
+\[
+\mathbb{P}(X \geq \alpha + x) = \mathbb{P}(X \leq \alpha -x).
+\]
+
+\begin{enumerate}
+\item Prueba que $X$ es sim\'etrica alrededor de $\alpha$ si y s\'olo si para todo $x$, tenemos $f(\alpha -x )  = f(\alpha + x)$.
+
+\item Sea $X$ una variable aleatoria continua con funci\'on densidad de probabilidad:
+
+\[
+f(x) = \frac{1}{\sqrt{2 \pi}}e^{-(x -3)^2/2}, \ \ x \in \mathbb{R}.
+\]
+y sea $Y$ una variable aleatoria continua con funci\'on densidad de probabilidad:
+
+\[
+g(x) = \frac{1}{\pi[1 + (x -1)^2]}, \ \ x \in \mathbb{R}.
+\]
+
+Encuentra los puntos en los que $X$ e $Y$ son sim\'etricas.
+\end{enumerate}
+
+\item Sea $X$ un n\'umero aleatorio de $(0,1)$. Encuentra la funci\'on densidad de probabilidad de $Y = 1/X$.
+
+\item Sea $X$ una variable aleatoria con funci\'on densidad:
+
+\[
+f(x) = \frac{e^{-\vert x \vert}}{2},\ \ -\infty < x < \infty
+\]
+
+Encuentra $\mathbb{P}(-2 < X < 1)$.
+\item Sea $X$ una variable de aleatoria continua con una funci\'on densidad de probabilidad,
+
+\[
+f(x) = \begin{cases}
+2/x^2 & \ \text{si}\ 1 < x  < 2 \\
+0 \ \text{en otros casos},
+\end{cases}
+\]
+
+Encuentra las funciones de distribuci\'on y densidad de $Y = X^2$.
+
+\item (M\'etodo de las transformaciones) Sea $X$ una variable aleatoria continua con funci\'on densidad $f_X$ y el conjunto de valores posibles $A$. Para la funci\'on invertible $h : A \rightarrow \mathbb{R}$, sea $Y = h(X)$ una variable aleatoria con el conjunto de valores posibles $B = h(A) = \{ h(a): a \in A\}$. Supongamos  que la inversa de $y =h(x)$ es la funci\'on $x = h^{-1}(y)$, que es diferenciable para todos los valores de $y \in B$. Entonces, demuestra que, $f_Y$ es la funci\'on densidad de $Y$, es dada por:
+
+\[
+f_Y(y) = f_X(h^{-1}(y))\vert (h^{-1})^{'}(y) \vert, \ \ y\in B.
+\]
+
+\item Sea $X$ una variable aleatoria con funci\'on densidad.
+
+\[
+f_X(x) = \begin{cases}
+2e^{-2x}&\ \text{si}\ x > 0 \\
+0 & \text{en otros casos.}
+\end{cases}
+\]
+Usando el m\'etodo de las transformaciones, encuentra la funci\'on densidad de probabilidad de $Y = \sqrt{X}$.
+
+\item Sea $X$ una variable aleatoria continua con funci\'on densidad de probabilidad:
+
+\[
+f_X(x) = \begin{cases}
+4x^3  &\ \text{si}\ 0 < x \leq 1 \\
+0 & \text{en otros casos.}
+\end{cases}
+\]
+Usando el m\'etodo de las transformaciones, encuentra la funci\'on densidad de probabilidad de $Y = 1 -3X^2$.
+
+\item Sea $f$ la funci\'on densidad de probabilidad deuna variable aleatoria $X$. En t\'erminos de $f$, calcula la funci\'on de densidad de probabilidad de $X^2$.
+
+\item Sea $X$ e $Y$ variables aleatorias independientes con una funci\'on de distribuci\'on com\'un $F$ y una funci\'on de densidad $f$. Muestra que $V = \max \{X, Y \}$ tiene una funci\'on distribuci\'on $\mathbb{P}(V \leq x) = F(x)^2$ y funci\'on densidad $f_V(x) = 2f(x)F(x),\ x \in \mathbb{R}$. Encuentre la funci\'on densidad de $U = \min \{X, Y \}$.
+
+\item Sea $X$ uniformemente distribuida en $[0, \frac{1}{2}\pi]$. Encuentra la funci\'on densidad de $Y = \sin X$.
+\item Encuentra la funci\'on densidad de $Y = \sin^{-1} X$ cuando:
+\begin{enumerate}
+\item $X$ es uniformemente distribuido en $[0,1]$.
+\item $X$  es uniformemente distribuido en $[-1,1]$.
+\end{enumerate}
+
+\item La funci\'on de masa de probabilidad de valor entero,  se define como
+
+\[
+\begin{cases}
+1/4, & x = -2 \\
+1/8, & x = -1 \\
+1/8, & x = 0, \\
+1/2, & x = 1, \\
+0, & \text{en otros casos}.
+\end{cases}
+\]
+
+Calcula $p_{X|B}(x)$, donde $B$ es el evento en que la variable aleatoria $X$ toma valores impares.
+\item Sea $X$ una variable aleatoria continua con funci\'on densidad de probabilidad dado por:
+
+\[
+f_X(x) = \begin{cases}
+(1/2)e^{-x/2} & \ \text{si}\ x \geq 0 \\
+0 & \ \text{en otros casos.} 
+\end{cases}
+\]
+
+Sea $B$ el evento $X < 1$, calcula $f_{X|X < 1}(x)$.
+
+\item Sea $X$ una variable aleatoria continua, cuya funci\'on de probabilidad es dada por:
+
+\[
+f_X(x) = \begin{cases}
+\alpha(1 + x)^{-3} & \  x \geq 0 \\
+0 & \ \text{en otros casos.} 
+\end{cases}
+\]
+
+Encuentra la densidad condicional $f_{X|0.25 \leq X \leq 0.5}(x)$. Verifica  que tu respuesta es correcta, integrando $f_{X|0.25 \leq X \leq 0.5}(x)$ con respecto a $x$ entre los l\'imites $0.25$ y $0.5$ y mostrando que el valor resultante es $1$.
+
+
+\item Sea $X$ una variable aleatoria positiva con funci\'on densidad $f$ y funci\'on distribuci\'on $F$. Definimos la funci''on de Hazard $H(x) = -\log[1- F(x)$ y la raz\'on de Hazard como:
+
+\[
+r(x) = \lim_{h \rightarrow 0^{+}}\frac{1}{h}\mathbb{P}(X \leq x + h| X > x), \ \  x\geq 0.
+\]
+
+Muestra que:
+
+\begin{enumerate}
+\item $r(x) = H^{'}(x) = f(x)/[1 -F(x)]$.
+\item Si $r(x)$ aumenta con $x$, entonces $H(x)/x$ aumenta con $x$.
+\item $H(x)/x$ aumenta con $x$ si y s\'olo si  $[1 -F(x)]^{\alpha} \leq 1 -F(\alpha x)$ para todo $0 \leq \alpha \leq 1$,
+\item Si $H(x)/x$ aumenta con $x$, entonces $H(x + y) \geq H(x) + H(y)$, para todo $x, y \geq 0$.
+\end{enumerate}
+
+\item ?` Es verdad que si $\displaystyle\sum_{i =1}^{n} \alpha_i = 1, \ \alpha \geq 0, \ \forall i$ y $f_{i}, \ i=1, 2, \dots, n$ una secuencia de funciones densidades, entonces $\displaystyle\sum_{i =1}^{n} \alpha_if_i$ es una funci\'on densidad de probabilidad?.
+\end{enumerate}
+\end{document} 
+

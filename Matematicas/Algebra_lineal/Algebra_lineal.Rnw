@@ -1,0 +1,1107 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bb}[1]{\textbf{#1}}
+\DeclareMathOperator{\rank}{\textbf{rango}}
+\DeclareMathOperator{\proy}{\textbf{proy}}
+\DeclareMathOperator{\nulll}{\textbf{nul}}
+\DeclareMathOperator{\diag}{\textbf{diag}}
+\DeclareMathOperator{\col}{\textbf{col}}
+\DeclareMathOperator{\fila}{\textbf{fila}}
+\DeclareMathOperator{\dimm}{dim}
+\DeclareMathOperator{\Traz}{Tr}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Notas de matem\'aticas \par
+\end{minipage}
+\vspace{0.5cm}
+
+
+\section{Algebra Lineal }
+
+\vspace{0.5cm}
+
+\subsection{Conceptos b\'asicos}
+
+\vspace{0.5cm}
+
+\begin{defi}
+\normalfont Una matriz $A$ es un array bidimensional de n\'umeros reales. Los elementos de $A$ est\'an indexados por sus filas y columnas: $a_{ij}$ es el elemento en la $i$ \'esima fila y la $j$ \'esima columna. El conjunto de todas las matrices $n$ por $m$ se denota como  $\R^{n\times m}$. La transpuesta de   una matriz $A \in \R^{n\times m}$ es $A^{T} \in \R^{m\times n}$   definida como $[a^{T}]_{ij} =  a_{ji}$. Los vectores son un caso especial de matrices con una fila o una columna.
+
+\begin{eqnarray*}
+A=\begin{pmatrix}
+a_{11} & a_{12} & \ldots &  a_{1m}\\
+a_{21} & \ddots &\ddots  & a_{2m}\\
+\vdots & \ddots & \ddots &\vdots\\
+a_{n1} & \ldots & \ldots & a_{nm}
+\end{pmatrix} = [a_{ij}]_{n\times m}
+\end{eqnarray*}
+\end{defi}
+
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont Multiplicando una matriz $A$ por un escalar $c\in \R$ es definido
+
+\[
+[cA]_{ij} =  ca_{ij}
+\]
+
+La adici\'on de dos matrices $A$ y $B$ del mismo tama\~no es definido como
+
+\[
+[A+B]_{ij} =  a_{ij}+b_{ij}.
+\]
+
+\end{defi}
+
+\begin{defi}
+\normalfont Una matriz que tiene el mismo n\'umero de filas y columnas se denomina matriz cuadrada. Los elementos diagonales de una matriz cuadrada $A$ son $a_{11},\dots, a_{nn}$. Una matriz diagonal es una matriz cuadrada cuyos elementos fuera de la diagonal son cero. Una matriz diagonal cuyos elementos diagonales son todos $1$ se llama matriz de identidad y se denota  $\bb I$. Dado un vector de valores diagonales $\bb v$ denotamos la matriz diagonal correspondiente como $\bb{diag ( v)}$.
+\end{defi}
+
+\begin{defi}
+\normalfont Una matriz triangular superior es una matriz cuadrada, en el cual todos los elementos por debajo de la diagonal son cero. Una matriz triangular inferior es una matriz cuadrada, en el cual todos los elementos por encima de la diagonal son cero. Una matriz triangular es una matriz triangular inferior o una matriz triangular superior.
+\end{defi}
+
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont El producto de una matriz $A\in\R^{n\times m}$ y una matriz $B\in\R^{m\times k}$ es la matriz $AB \in\R^{n\times k}$, definida como
+
+\[
+[AB]_{ij}=\sum_{r=1}^m a_{ir} b_{rj}.
+\]
+\end{defi}
+
+Se cumple las siguientes operaciones
+
+\begin{itemize}
+	\item {Asociatividad}: $(AB)C=A(BC)$
+	\item {Distributividad}: $A(B+C)=AB+AC$
+	\item {No Conmutatividad}: Si $A=[a_{ij}]_{n\times p}$ y $B=[b_{ij}]_{p\times m}$, por definici\'on tenemos $AB=[c_{ij}]_{n\times m}$; sin embargo, $BA$ no est\'a definido si $n\neq m$. En el caso $m=n$,  $AB=[c_{ij}]_{n\times n}$ y $BA=[c_{ij}]_{p\times p}$ pero no necesariamente $n=p$, es decir $AB\neq BA$ en general.
+\end{itemize}
+
+\vspace{0.2cm}
+
+ Las multiplicaciones repetidas se denotan usando un exponente, por ejemplo $AA= A^2$ y $AA^k = A^{k + 1}$.
+
+\begin{ejemplo}
+\normalfont Para $A\in\R^{n\times m}$, $\bb x \in \R^{m\times 1}$ y $\bb y \in \R^{1\times n}$, tenemos 
+
+\begin{align*}
+A\bb x &\in \R^{n\times 1},&  [A\bb x]_{i}&=\sum_{r=1}^m a_{ir}x_r\\
+\bb y A &\in\R^{1\times m},&  [\bb y A]_{i}&=\sum_{r=1}^n y_r a_{ri}\\ 
+{\bb y} A \bb x &\in\R^{1\times 1},& {\bb y} A \bb x &= \sum_{i=1}^n\sum_{j=1}^m y_ia_{ij}x_j.
+\end{align*}
+
+Si $n = m$, tenemos
+
+\begin{align*}
+{\bb x}^{T} A \bb x  &\in\R^{1\times 1} & {\bb x}^{T} A \bb x &= \sum_{i=1}^n\sum_{j=1}^n x_iA_{ij}x_j.
+\end{align*}
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont Para dos vectores $\bb x\in\R^{n\times 1}, \bb y\in\R^{m\times 1}$, definimos el \underline{producto exterior} como
+
+\[
+\bb x \otimes \bb y  =  \bb x {\bb y}^{T} \in\R^{n\times m},
+\]
+
+y si $n = m$, definimos el \underline{producto interno}  como
+
+\[
+\langle \bb x,\bb y\rangle =  {\bb x}^{T}\bb y = {\bb y}^{T}\bb x\in\R.
+\]
+\end{defi}
+
+\vspace{0.2cm}
+
+
+\begin{defi}
+\normalfont Nos referimos al vector $\sum_{i=1}^n \alpha_i \bb v^{(n)}$, donde $\alpha_1,\ldots,\alpha_n\in\R$ como una combinaci\'on lineal de los vectores ${\bb v}^{(1)},\ldots, {\bb v}^{(n)}$.
+\end{defi}
+
+\begin{defi}
+\normalfont Los vectores ${\bb v}^{(1)},\ldots, {\bb v}^{(n)}$ es dicen que son linealmente independientes, si la expresi\'on $\sum_i \alpha_i {\bb v}^{(i)}=0$ implica que los $\alpha_i=0$ para todo $i$. Los vectores que no son linealmente independientes  se dicen que son linealmente dependientes. La definici\'on implica que si ${\bb v}^{(1)},\ldots, {\bb v}^{(n)}$ son linealmente dependientes, entonces ${\bb v}^{(i)}$ puede ser expresado como una combinaci\'on lineal de los vectores restantes.
+\end{defi}
+
+
+\vspace{0.2cm}
+
+
+\begin{ejemplo}
+\normalfont Los vectores ${\bb e}^{(i)}\in\R^{n\times 1}$ definido por $e^{(i)}_j=1$ si $i = j$ y $0$ en otros casos, $i = 1, \dots, n$ son linealmente indepedientes. Desde que cada vector $\bb v$,
+
+\[
+\bb v = \sum v_i {\bb e}^{(i)},
+\]
+
+el conjunto de todas las combinaciones  de $\bb e^{(i)}, i=1,\ldots,n$ es $\R^n$. Los vectores $\bb e^{(i)}, i=1,\ldots,n$ forman una \underline{base est\'andar} de $\R^n$.
+\end{ejemplo}
+
+
+\vspace{0.2cm}
+
+Desde la multiplicaci\'on matricial,  vemos que multiplicar una matriz por un vector de columna $A\bb v$ produce un vector columna que es una combinaci\'on lineal de las columnas de $A$. Adem\'as, la multiplicaci\'on matricial  $AB$ es una matriz cuyas columnas son cada una, una combinaci\'on lineal de los vectores de columna de $A$.
+
+\vspace{0.2cm}
+
+La siguiente proposici\'on ayuda a explicar por qu\'e las matrices y el \'algebra lineal son tan importantes
+
+
+\vspace{0.3cm}
+
+\begin{pros}
+\normalfont Cualquier transformaci\'on lineal $T:\R^n\to\R^m$ se realiza mediante la multiplicaci\'on matricial $T(\bb v) = A\bb v$ para alg\'un $A\in\R^{m\times n}$. Por el contrario, la aplicaci\'on  $\bb v\mapsto A\bb v$ es una transformaci\'on lineal.
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont La inversa  de una matriz cuadrada $A$ es la matriz $A^{-1}$ tal que $AA^{-1}=A^{-1}A=I$. Una matriz $A$ para el cual la inversa existe es llamada no singular. En otro caso es llamada singular.
+\end{defi}
+
+\begin{pros}
+\normalfont La inversa de una matriz no singular es \'unica.
+\end{pros}
+
+\vspace{0.2cm}
+
+Una de las aplicaciones de la inversi\'on de la matriz es resolver sistemas lineales de ecuaciones. Dado el sistema de ecuaciones $A\bb x=\bb y$ donde $A$, $\bb y$ son conocidos y $\bb x$ no se conoce, podemos resolver para $\bb x$ invirtiendo la matriz
+
+\[
+\bb x=A^{-1}A\bb x=A^{-1}\bb y.
+\]
+
+As\'i $A^{-1}\bb y$ es el vector de coeficientes  de la expansi\'on de $\bb y$ en una combinaci\'on lineal usando las columnas de $A$.
+\vspace{0.2cm}
+
+
+
+\begin{pros}
+\normalfont Para dos matrices $A, B$, tenemos $(AB)^{T}=B^{T}A^{T}$. Similarmente, para matrices no singulares $A, B$, tenemos $(AB)^{-1}=B^{-1}A^{-1}$.
+\end{pros}
+\begin{pros}
+\normalfont Para una matriz no singular  $A$, tenemos
+
+\[
+(A^{T})^{-1}=(A^{-1})^{T}.
+\]
+\end{pros}
+
+
+\begin{defi}
+\normalfont Una matriz $A$ es ortogonal si es una matriz cuadrada, cuyas columnas son vectores ortononormales, o equivalentemente $A$ satisface $AA^{T}=I$.
+\end{defi}
+
+\begin{pros}
+\normalfont La multiplicaci\'on por una matriz ortogonal preserva el producto interno y las normas
+
+\begin{align*}
+\langle \bb v,\bb w\rangle &= \langle A\bb v,A\bb w\rangle\\
+\Vert A\bb x\Vert &=\Vert \bb x\Vert.
+\end{align*}
+\end{pros}
+
+Como consecuencia de la proposici\'on anterior, el mapeo de vectores multiplicado por una matriz ortogonal preserva el \'angulo entre los dos vectores . Adem\'as, la preservaci\'on de la norma implica que la multiplicaci\'on de un vector por una matriz ortogonal preserva la distancia entre el vector y el origen. Por lo tanto, podemos interpretar el mapeo $\bb x \rightarrow A\bb x$ para una matriz ortogonal $A$  como la rotaci\'on o la reflexi\'on en $n$ dimensiones.
+
+
+\begin{defi}
+\normalfont El producto de Kronecker de dos matrices $A\in\R^{m\times m}$ y $B\in\R^{n\times n}$ es
+
+\begin{align*}
+A\otimes B=
+\begin{pmatrix}
+a_{11}B& a_{12}B& \cdots& a_{1m}B\\
+a_{21}B& a_{22}B& \cdots& a_{2m}B\\
+\vdots& \vdots & \vdots& \vdots\\
+a_{m1}B& a_{22}B& \cdots& a_{mm}B
+\end{pmatrix}
+\end{align*}
+
+donde $a_{ij}B$ es la matriz que corresponde  al producto de un escalar y una matriz.
+\end{defi}
+
+\vspace{0.2cm}
+
+El producto Kronecker es consistente con la definici\'on anterior de  producto externo de dos vectores $\bb v\otimes \bb w$
+
+\[
+\bb u\otimes \bb v = \bb u {\bb v}^{T}.
+\]
+\vspace{0.5cm}
+
+\subsection{Rango y nulidad }
+
+\vspace{0.3cm}
+
+\begin{defi}
+\normalfont El espacio lineal generado por los vectores $S=\{{\bb v}^{(1)},\ldots, {\bb v}^{(n)}\}$ es el conjunto de todas las combinaciones lineales de vectores en $S$ . Una \underline{base de un espacio lineal}  $S$ es cualquier conjunto de vectores linealmente independientes que lo genere. La dimensi\'on $\dim S$ de un espacio lineal $S$ es el tama\~no de su base.
+
+\end{defi}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont El espacio $\R^n$ es generado por la base est\'andar ${\bb e}^{(i)}, i=1,\ldots,n$. Desde que los vectores de la base est\'andar son linealmente independientes, ellos forman una base para $\R^n$. Otras posible base para $\R^n$ es $\{{\bb u}^{(i)}: i=1,\ldots,n\}$ donde ${\bb u}^{(i)}$ es definido como $u^{(i)}_j=1$ si $j \leq i$ y $0$ en otros casos.
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont El \underline{espacio columna } de una matriz $A\in\R^{n\times m}$ es el espacio $\col(A)$ generado por las columnas de $A$ o de forma equivalente
+
+\[
+\col(A)=\{A\bb v: \bb v\in\R^{m\times 1}\}\subset \R^n.
+\]
+
+Nos referimos a $\dim \col(A)$ como el \underline{rango} del espacio columna de $A$. El \underline{espacio fila } de  $A\in\R^{n\times m}$ es el espacio $\fila(A)$ generado por las filas  de $A$. El \underline{espacio nulo} o \texttt{kernel} de $A\in\R^{n\times m}$ es
+
+\[
+\nulll(A)=\{\bb v:A\bb v=\bb 0\}\subset \R^m.
+\]
+\end{defi}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Para una matriz $A$,
+
+\[
+\dim\col(A)=\dim\fila(A).
+\]
+
+Se denota a este n\'umero como $\rank(A)$.
+
+
+\vspace{0.3cm}
+
+En efecto consideremos  una matriz $A$ con $\dim\col (A) = r$ y colocamos  los $r$ vectores generando  $\col (A)$ como columnas de una matriz $C$. Dado que las columnas de $A$ son una combinaci\'on lineal de las columnas de $C$ tenemos $A = CR$ para alguna matriz $R$ con $r$ filas. Cada fila de $A = CR$ es una combinaci\'on lineal de las filas de $R$ y por lo tanto el espacio fila de $A$ es un subconjunto del espacio de fila de $R$ cuya dimensi\'on est\'a acotada  por $r$. 
+
+La desigualdad inversa se obtiene aplicando el mismo argumento pero a la matriz transpuesta $A^T$.
+
+\end{pros}
+
+
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont Sea una matriz $A\in\R^{n\times m}$, es una matriz de  \underline{rango completo} si $m \neq n$ y para el cu\'al $\rank(A)=\min(n,m)$.
+\end{defi}
+
+\vspace{0.2cm}
+\begin{pros}
+\normalfont $\rank(AB)\leq \min (\rank A,\rank B)$
+\end{pros}
+
+\vspace{0.2cm}
+
+En efecto, desde que las columnas de $AB$ son una combinaci\'on lineal de las columnas de $A$, $\rank(AB)\leq \rank(A)$. De manera similar, las filas de $AB$ son combinaciones lineales de las filas de $B$, $\rank(AB)\leq \rank(B)$.
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Para matrices no singulares $P, Q$, tenemos
+
+\[
+\rank(PAQ) = \rank(A).
+\]
+\end{pros}
+
+
+\vspace{0.2cm}
+
+Aplicando la proposici\'on anterior, tenemos
+
+\begin{align*}
+	\rank(PAQ) &\leq \rank(AQ)\leq \rank (A),\\ 
+	\rank(A) &= \rank(IAI)=\rank(P^{-1}PAQQ^{-1})\leq \rank(PAQ).
+\end{align*}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Para una matriz $A\in\mathbb{R}^{m\times n}$
+
+\[
+\rank(A)+\dimm(\nulll(A))=n.
+\]
+\end{pros}
+
+\begin{pros}
+\normalfont 
+
+\[
+\rank(A)=\rank(A^{T})=\rank(AA^{T})=\rank(A^{T}A).
+\]
+
+\vspace{0.3cm}
+
+Desde que $A\bb x=0$ implica que $A^{T}A\bb x=0$ y desde que $A^{T}A\bb x$ implica $\bb xA^{T}A\bb x=0$, se tiene $A\bb x=0$, de lo que se cumple $\nulll(A)=\nulll(A^{T}A)$. Desde que ambas matrices tienen el mismo n\'umero de columnas, las preposiciones previas  implican que $\rank(A)=\rank(A^{T}A)$.
+
+Aplicando el mismo argumento a $A^{T}$ se muestra que $\rank(A^{T})=\rank(AA^{T})$. De la preposici\'on $1.6$ se tiene $\rank(A)=\rank(A^{T})$. Lo que prueba el resultado.
+\end{pros}
+
+
+
+\vspace{0.5cm}
+
+\subsection{Autovalores, autovectores, determinantes y traza}
+
+\vspace{0.3cm}
+
+\begin{defi}
+\normalfont Sean $A\in\mathbb{R}^{n\times n}$ y $\bb v\in\mathbb{R}^n$ distinto de cero, se dice que $\bb v$ es autovector de $A$ si
+	
+
+\begin{eqnarray*}
+A\bb v=\lambda \bb v, & \mbox{ para alg\'un } \lambda\in\mathbb{R}.
+	\end{eqnarray*}
+
+Se dice que $\lambda$ es el autovalor de $A$, correspondiente a $\bb v$. El \underline{espectro}  de una matriz $A$ es el conjunto de todos los autovalores.
+
+\vspace{0.2cm}
+
+A partir de la definici\'on, podemos tener las siguientes observaciones
+
+\vspace{0.2cm}
+
+\begin{enumerate}
+\item La definici\'on implica que los autovalores y autovectores de $A$ son soluciones de la ecuaci\'on vectorial $(A-\lambda I)\bb v=0$.
+\item El vector $\bb v$ puede ser soluci\'on  de $(A-\lambda I)\bb v=0$ si $\dim\nulll(A-\lambda I)\geq 1$, implicando que $(A-\lambda I)$ es una matriz singular.
+\item Si $\bb v$ es un autovector de $A$, entonces lo es $c\bb v$ (con el mismo autovalor).
+\end{enumerate} 
+\end{defi}
+
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont Consideremos el conjunto de los n\'umeros $\{ 1, 2, \dots, n\}$. Una permutaci\'on es una \mbox{determinada} ordenaci\'on de sus elementos. Si $S = \{ 1,2, \dots, n\} $ una \texttt{permutaci\'on} de orden $\bb n$ del conjunto $S$ es una funci\'on biyectiva $\sigma: S \rightarrow S$, de manera que una permutaci\'on $\sigma:  S \rightarrow S$ se puede escribir como
+
+\vspace{0.2cm}
+
+\[
+\begin{pmatrix}
+1 & 2 & \dots & n \\
+\sigma(1) & \sigma(2) & \dots & \sigma(n) 
+\end{pmatrix}
+\]
+
+
+\vspace{0.2cm} 
+
+Por ejemplo, para el conjunto $S: \{1, 2, 3\}$, se tienen $6$ permutaciones :
+
+\vspace{0.2cm}
+
+$(1,2,3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2,1)$. 
+
+
+\vspace{0.2cm}
+
+El producto de dos permutaciones $\pi\sigma$ es definido por la funci\'on de composici\'on $\pi \circ \sigma$. El conjunto de todas las permutaciones de orden $\bb n$ es denotado por $\Delta_n$.
+\end{defi}
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont Un par $a,b\in\{1,\ldots,n\}$ es una inversi\'on de una permutaci\'on $\sigma \in \Delta_n $ si $a < b$ pero $\sigma(b) < \sigma(a)$. 
+
+En otras palabras, la funci\'on $\sigma$ invierte el orden natural de $a, b$. El n\'umero de inversiones de una \mbox{permutaci\'on} se llama \underline{paridad}. Las permutaciones con una \underline{paridad par} se llaman \underline{pares} y las permutaciones con una \underline{paridad impar} se llaman \underline{impares}.
+
+El signo de una permutaci\'on $\sigma $ es denotado por $s(\sigma)$, es igual a $1$ si $\sigma $ es par y $-1$ si $\sigma$ es impar.
+\end{defi}
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont El determinante de una matriz cuadrada $A\in \mathbb{R}^{n\times n}$ es definida como
+
+\[
+\det A=\sum_{\sigma\in\Delta_n} \,s(\sigma) \,A_{1,\sigma(1)}A_{2,\sigma(2)}\cdots A_{n,\sigma(n)}  .
+\]
+
+\vspace{0.2cm}
+
+La definici\'on anterior establece que el determinante es una suma de muchos t\'erminos, cada uno un producto de los elementos de la matriz de cada fila y con diferentes columnas. La suma alterna entre sumar y restar estos productos, dependiendo de la paridad de la permutaci\'on.
+\end{defi}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont El determinante  de una matriz $A$ de orden $2 \times 2$ es
+
+\[
+\det A=a_{11}a_{22}-a_{12}a_{21}.
+\]
+
+Hay dos precisamente dos permutaciones en $\Delta_2$; la identidad $\sigma_1 (\sigma_1(i) = i)$ y $\sigma_2 (\sigma_2(1)=2,  \sigma_2(2)=1)$. La permutaci\'on identidad tiene cero inversiones y por tanto es par. La permutaci\'on $\sigma_2$ tiene una inversi\'on (el par $(1,2)$ y por lo tanto es impar).
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+
+\begin{ejemplo}
+\normalfont El determinante de una $A$ de orden $3 \times 3$ es
+
+\begin{align*} 
+\det A = a_{11}a_{22}a_{33}-a_{11}a_{23}a_{32}-a_{12}a_{21}a_{33}  +a_{1,2}a_{2,3}a_{3,1} \\ 
+   +a_{1,3}a_{2,1}a_{3,2} - a_{1,3}a_{2,2}a_{3,1}.
+\end{align*}
+
+El primer t\'ermino corresponde a la permutaci\'on  identidad, que es par. Los siguientes dos t\'erminos corresponde a permutaciones con una sola inversi\'on ($(2,3)$ en el primer caso y $(1,2)$ en el segundo caso), haci\'endolos impares. Los dos t\'erminos siguientes tienen dos inversiones que hacen  pares $((2,3)$ y $(1,3)$ en el primer caso y $(1,2)$ y $(1,3)$ en el segundo caso). El \'ultimo t\'ermino tiene tres inversiones que lo hacen impar $((1,2), (1,3) , (2,3))$.
+\end{ejemplo}
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont El determinante de un matriz triangular es el producto de los elementos de la diagonal.
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Las siguientes propiedades se cumplen
+
+\begin{enumerate}
+\item $\det I =  1 $.
+\item $\det A$ es una funci\'on linear del $j$-\'esimo vector columna $\bb v=(A_{1j},\ldots,A_{nj})$, suponiendo que otras columnas se mantienen fijas.
+\item Si $A^{'}$ es obtenida desde $A$ intercambiando dos columnas, entonces $\det A=-\det A^{'}$.
+\item Si $A$ tienes dos columnas iguales, entonces $\det A = 0$.
+\item $\det (A)=\det( A^{T})$.
+\end{enumerate}
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Para dos matrices cuadradas $A, B$ tenemos
+
+\begin{align*} 
+\det (BA)&=\det B\det A \\ \det (A^{-1})&=(\det A)^{-1}.
+\end{align*}
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Una matriz cuadrada es singular si y s\'olo si su determinante es cero.
+\end{pros}
+
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont El polinomio caracter\'istico de una matriz cuadrada $A$ es la funci\'on
+
+\[
+f(\lambda) = \det(\lambda I-A), \qquad \lambda\in\R.
+\]
+
+\begin{enumerate}
+\item Los autovalores son las ra\'ices del polinomio caracter\'istico
+
+\[
+f(\lambda)=\det(\lambda I-A)=0.
+\]
+\item Si tenemos los autovalores $\lambda_1,\ldots,\lambda_k$ son conocidos, obtenemos los autovectores, resolviendo el sistema de ecuaciones lineales
+
+\[
+(A-\lambda_i I){\bb v}^{(i)}=\bb 0,\qquad i=1,\ldots,k.
+\]
+\item Desde que los autovalores $\lambda_1,\ldots,\lambda_n$ son las ra\'ices el polinomio caracter\'istico $f(\lambda)$, puede ser escrito como el siguiente producto
+
+
+\begin{align*} 
+	f(\lambda) = \det(\lambda I-A) = \prod_i (\lambda-\lambda_i).
+\end{align*}
+
+\end{enumerate}
+\end{defi}
+
+\vspace{0.2cm}
+
+
+\begin{defi}
+\normalfont La traza de una matriz cuadrada  $A\in\mathbb{R}^{n\times n}$ como
+
+\begin{eqnarray*}
+	\Traz(A) = \sum_{i=1}^{n}a_{ii}, & \;\mbox{ donde } A=[a_{ij}]_{n\times n}.
+	\end{eqnarray*}
+	
+\end{defi}
+
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Las siguientes propiedades de la traza, se cumplen, $c\in \R$
+
+\begin{align*}
+\Traz(A+B)&=\Traz(A)+\Traz(B)\\
+\Traz(AB) &=\Traz(BA) \\
+c\Traz(A) & =\Traz(cA)
+\end{align*}
+\end{pros}
+
+
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont La norma de Frobenius de una matriz $A$ es la norma Euclideana de un vector obtenido, concatenando las columnas de la matriz en un vector
+
+\[
+\Vert A\Vert_F = \sqrt{\sum_i\sum_j a_{ij}^2}.
+\]
+\end{defi}
+
+\vspace{0.2cm}
+
+Desde que los elementos de la diagonal de $AA^T$, son las suma de cuadrados  de las filas de $A$ y los elementos de la diagonal de $A^TA$ son la suma de cuadrados  de la columnas de $A$, tenemos
+
+\[
+\Vert A\Vert_F  = \sqrt{\Traz(A^{T}A)}=\sqrt{\Traz(AA^{T})}.
+\]
+
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Para una matriz $A$ y una matriz ortogonal $U$,
+
+\[
+\Vert UA\Vert _F=\Vert A\Vert_F.
+\]
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Si $A$ es una matriz cuadrada con autovalores $\lambda_i, i=1,\ldots,n$
+
+\begin{align*}
+ \Traz A&=\sum_{i=1}^n \lambda_i\\
+ \det A&=\prod_{i=1}^n \lambda_i.
+\end{align*}
+
+\vspace{0.2cm}
+
+En efecto, expresando el polinomio caracter\'istico $f(\lambda)$ como producto $\prod_i(\lambda-\lambda_i)$, tenemos
+
+\begin{align*}
+0 = f(\lambda) = \prod_{i=1}^n (\lambda-\lambda_i)=\lambda^n - \lambda^{n-1} \sum_{i=1}^n \lambda_i + \cdots + (-1)^n \prod_{i=1}^n \lambda_i.
+\end{align*}
+
+\vspace{0.2cm}
+
+Si multiplicamos una columna por $-1$ invertimos el signo del determinante. Se sigue entonces $\det A=(-1)^n\det(-A)$ y como $f(0) = \det (-A) = (-1)^n\prod\lambda_i$, se tiene que $\det A=\prod_{i=1}^n \lambda_i$.
+
+\vspace{0.2cm}
+
+Sustituyendo la definici\'on del determinante en $\det(\lambda I-A)$, los t\'erminos de potencias $\lambda^{n -1}$ resultan de una multiplicaci\'on de los t\'erminos  diagonales $\prod_{i=1}^{n} (\lambda-a_{ii})$. M\'as especificamente, hay $n$ t\'erminos conteniendo una potencia $\lambda_{n -1}$ en la expansi\'on del determinante $-a_{11}\lambda^{n-1},\ldots,-a_{11}\lambda^{n-1}$.
+
+\vspace{0.2cm}
+
+Coleccionando, esos t\'erminos, conseguimos que el coeficiente asociado con $\lambda_{n -1}$ en el polinomio caracter\'istico es $-\Traz(A)=\sum_{i=1}^{n} a_{ii}$. Comparando esto al coeficiente de $\lambda^{n -1}$ en la ecuaci\'on de arriba, tenemos $\Traz (A)=\sum\lambda_i$.
+\end{pros}
+
+
+\vspace{0.3cm}
+
+\begin{defi}
+\normalfont Sean  dos matrices $A$ y $B$, se dicen que son \underline{similares}, si existe una matriz invertible $S$ tal que $S^{-1}AS = B$.
+\end{defi}
+
+
+\vspace{0.2cm}
+
+
+\begin{pros}
+\normalfont Matrices similares tienen los mismos autovalores.
+\end{pros}
+
+
+\vspace{0.3cm}
+
+\begin{defi}
+\normalfont Si $A$ es similar a una matriz diagonal, esto es, existe una matriz invertible $S$ tal que $S^{-1}AS = D$ donde $D$ es una matriz diagonal, entonces se dice que $A$ es \underline{diagonalizable}.
+\end{defi}
+
+\vspace{0.3cm}
+
+\begin{pros}
+\normalfont (Teorema de Diagonalizabilidad) Una matriz $A\in\mathbb{R}^{m\times n}$ es \underline{diagonalizable} si y s\'olo si tiene $n$ autovectores independientes.
+
+\vspace{0.2cm}
+
+Supongamos que $A$ es diagonalizable. Entonces $A = SDS^{-1}$,  para una matriz diagonal $D$ y una matriz invertible $S$. Supongamos que $\bb x^{0}$ es un vector. La ecuaci\'on $\bb x^{(t +1)} = A\bb x^{(t)}$ define los vectores $\bb x^{(1)}, \bb x^{(2)}, \bb x^{(3)}, \dots$. Entonces 
+
+\begin{align*}
+\bb x^{(t)} &= \underbrace{AA\cdots A}_{t\ \  veces}\bb x^{(0)}\\
+ &= (SDS^{-1})(SDS^{-1})\cdots (SDS^{-1})\bb x^{(0)}\\
+ &= SD^TS^{-1} \bb x^{(0)}
+\end{align*}
+
+Sea $\bb u^{(t)}$ la representaci\'on de coordenadas de $\bb x^{(t)}$ en t\'erminos de las columnas  de $S$. Entonces tenemos la ecuaci\'on $\bb u^{(t +1)} = D\bb u^{(t)}$. Por tanto
+
+\begin{align*}
+\bb u^{(t)} &= \underbrace{DD\cdots D}_{t \ \ veces}\bb u^{(0)}\\
+& = D^t\bb u^{(0)}
+\end{align*}
+
+\begin{align*}
+\text{Si}\ \ D = \begin{pmatrix}
+\lambda_1  & & \\
+&  \ddots & \\
+&  & \lambda_n
+\end{pmatrix}\ \  \text{entonces}\ \  D^T = \begin{pmatrix}
+\lambda^T_1  & & \\
+&  \ddots & \\
+&  & \lambda^T_n
+\end{pmatrix}
+\end{align*} 
+\end{pros} 
+
+\vspace{0.5cm}
+
+
+\begin{pros}
+\normalfont (Descomposici\'on Espectral) Para una matriz $A$ sim\'etrica, tenemos
+
+\begin{align*}
+U^{T} A U = \diag(\boldsymbol{\lambda}) \qquad A = U\diag(\boldsymbol\lambda)U^T,
+\end{align*}
+
+\vspace{0.2cm}
+
+donde $\boldsymbol\lambda $ es el vector de autovalores y $U$ es una matriz ortogonal cuyas columnas son los autovectores correspondientes.
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Una matriz ortogonal cuadrada no es singular y tiene un determinante $+1$ \'o $-1$.
+\end{pros}
+
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Una matriz cuadrada es ortogonal si y s\'olo si $A^{-1} = A^T$. Adem\'as $A$ es ortogonal si y s\'olo si $A^T$ es ortogonal.
+\end{pros}
+
+
+\vspace{0.5cm}
+
+Toda transformaci\'on lineal $T$ se realiza mediante una operaci\'on de multiplicaci\'on matricial: $T(\bb x)=A\bb x$. Si $A$ es ortogonal, la aplicaci\'on $\bb x\rightarrow A\bb x$ puede interpretarse como una \underline{rotaci\'on} o \underline{reflexi\'on geom\'etrica} alrededor del eje $y$ la aplicaci\'on  $\bb x\rightarrow A^{T}\bb x= A^{-1}\bb x$ es la rotaci\'on o reflexi\'on inversa.
+
+\vspace{0.2cm}
+
+Si $A$ es diagonal, la aplicaci\'on $\bb x\rightarrow A\bb x$ puede interpretarse como estirar algunas dimensiones y comprimir  otras dimensiones.
+
+
+\vspace{0.2cm}
+
+Aplicando la descomposici\'on espectral a una matriz $A$ sim\'etrica, obtenemos una descomposici\'on de $A$ como un producto de tres matrices $U \diag(\boldsymbol\lambda) U^{T}$. Esto implica que la transformaci\'on lineal $T(\bb x)=A\bb x$ puede ser vista como una secuencia de tres transformaciones lineales: la primera inicia una rotaci\'on o reflexi\'on, la segunda  escala las dimensiones y la tercera es otra rotaci\'on o reflexi\'on.
+
+\vspace{0.3cm}
+
+
+
+\begin{pros}
+\normalfont Para una matriz sim\'etrica $A,  \rank(A)$ es igual al n\'umero de valores propios distintos de cero.
+\end{pros}
+
+\vspace{0.2cm}
+
+
+\begin{pros}
+\normalfont Para una matriz $A\in\mathbb{R}^{n\times n}$ sim\'etrica tiene $n$ autovectores ortonormales y $\col(A)$ es generado por los autovectores correspondientes  a autovalores distintos de ceros.
+\end{pros}
+
+
+\vspace{0.5cm}
+
+\subsection{Matrices definidas positivas}
+
+\vspace{0.3cm}
+
+\begin{defi}
+\normalfont Una matriz cuadrada $A\in\R^{n\times n}$ es \underline{semidefinida positiva} si 
+
+\[
+{\bb v}^{T}A{\bb v}\geq 0, \qquad \forall \bb v \in\R^{n}
+\]
+
+y \underline{definida positiva} si la desigualdad se mantiene con igualdad s\'olo para vectores $\bb v=\bb 0$. Una matriz cuadrada  $A\in\R^{n\times n}$ es \underline{semidefinida negativa} si 
+
+\[
+{\bb v}^{T}A{\bb v}\leq 0, \qquad \forall \bb v \in\R^{n}
+\]
+
+y \underline{definida negativa} si la desigualdad se mantiene con igualdad s\'olo para vectores $\bb v=\bb 0$
+\end{defi}
+
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Una matriz sim\'etrica es semidefinida positiva  si y s\'olo si todos los autovalores  no son negativos. Es semidefinida positiva si y s\'olo si todos los autovalores no son positivos. Es definida positiva si y s\'olo si todos los valores propios son positivos. Es definida negativa si y s\'olo si todos los autovalores son negativos.
+
+
+\vspace{0.2cm}
+
+En efecto $\bb v$ un vector arbitrario. Por la descomposici\'on espectral, se tiene 
+
+\[
+\bb v^{T} A\bb v= (\bb v^{T} U)\diag(\boldsymbol\lambda)(U^{T}\bb v)=\sum_{i=1}^n \lambda_i([\bb v^{T} U]_i)^2
+\]
+
+\vspace{0.2cm}
+
+donde $U$ es una matriz conteniendo  los $n$ autovectores ortogonales de $A$. La expresi\'on anterior es no negativa para todo $\bb v$ si y s\'olo si $\lambda_i\geq 0$ para todo $i=1,\ldots,n$. Los otros resultados se prueban de manera similar.
+
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Las matrices definitivas positivas y negativas positivas son necesariamente no singulares.
+\end{pros}
+
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Una  matriz sim\'etrica de rango $r$ es semidefinida positiva si y s\'olo si existe una matriz cuadrada $R$ de rango $r$ tal que $A = R^TR$. Si A es definida positiva entonces $R$ es singular.
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Si $A$ es definida positiva, entonces $A^{-1}$ lo es tamb\'en.
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Los elementos de la diagonal de una matriz definida positiva, son todos positivos.
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Si $A$ es definida positiva, entonces existe la matriz ra\'iz cuadrada $A^{1/2}$ que cumple $A^{1/2}A^{1/2}=A$.
+
+\vspace{0.2cm}
+
+Sea $A$ una matriz definida positiva con autovalores positivos. usando la descomposici\'on espectral, tenemos
+
+\begin{align*}
+  A&= U^{T} \diag(\lambda_1,\ldots,\lambda_n) U \\ &=
+ (U^{T} \diag(\sqrt{\lambda_1},\ldots,\sqrt{\lambda_n})
+   U)(U^{T}
+   \diag(\sqrt{\lambda_1},\ldots,\sqrt{\lambda_n})U) \\&= A^{1/2} A^{1/2}.
+\end{align*}
+\end{pros}
+
+\vspace{0.5cm}
+
+
+\subsection{Algunas descomposiciones}
+
+\vspace{0.5cm}
+
+\begin{defi}
+	
+\normalfont Sea $v\in\R^n$ y $P$ un subespacio de $\R^n$, se define la proyecci\'on ortogonal de $v$ sobre $P$ como $w=\proy_{\;P}(v)\in S$  tal que
+
+	\begin{eqnarray*}
+	\vert w-v\Vert \leq \Vert z-v\Vert  & \mbox{ para todo }z\in S.
+	\end{eqnarray*}
+
+\end{defi}
+
+\vspace{0.3cm}
+
+\begin{defi}
+\normalfont Dado $\{u_1,u_2,\ldots,u_m\}$ base de un subespacio $S\subset\R^n$ y sea $ v\in \R^n$, entonces la proyecci\'on ortogonal de $v$ sobre $S$ es
+	
+\begin{eqnarray*}
+\proy_{\;S}(v)= U(U^TU)^{-1}U^Tv & \mbox{ donde }U=\begin{bmatrix}
+u_1 & \ldots & u_m.
+\end{bmatrix}
+\end{eqnarray*}
+	
+\vspace{0.2cm}
+	
+	$P=U(U^TU)^{-1}U^T$ se conoce como \underline{ matriz de proyecci\'on}.
+	
+\end{defi}
+	
+\vspace{0.3cm}
+	
+\begin{defi}
+ \normalfont (Descomposici\'on ortogonal) Dado $\{u_1,u_2,\ldots,u_m\}$ una base ortogonal de un subespacio $S\subset\R^n$ y sea $ v\in \R^n$, entonces la proyecci\'on ortogonal de $v$ sobre $S$ es
+
+
+	\begin{eqnarray*}
+	\proy_{\;S}(v)=\dfrac{v\cdot u_1}{\Vert u_1\Vert ^2}u_1+\dfrac{v\cdot u_2}{\Vert u_2\Vert ^2}u_2+\ldots + \dfrac{v\cdot u_m}{\Vert u_m\Vert ^2}u_m.
+	\end{eqnarray*}
+	
+\vspace{0.2cm}
+
+Si $\{u_1,u_2,\ldots,u_m\}$ es una base ortonormal entonces:
+\vspace{0.3cm}
+
+
+\begin{eqnarray*}
+\proy_{\;S}(v)=(v\cdot u_1)u_1+(v\cdot u_2)u_2+\ldots + (v\cdot u_m)u_m
+\end{eqnarray*}
+
+
+
+Por propiedad  $\proy_{\;S}(v)=U(U^TU)^{-1}U^Tv$, donde $U=\begin{bmatrix}
+	u_1 &\ldots & u_m
+	\end{bmatrix}$. 
+
+\vspace{0.2cm}
+
+Dado que el conjunto $\{u_1,u_2,\ldots,u_m\}$ es ortogonal entonces $u_i^Tu_j=0$ para todo $i\neq j$, luego
+
+\vspace{0.2cm}
+
+\begin{eqnarray*}
+(U^TU)^{-1} = \left(\begin{bmatrix}
+u_1^T\\
+	\vdots\\
+	u_m^T
+	\end{bmatrix}\begin{bmatrix}
+	u_1 & \ldots & u_m
+	\end{bmatrix}\right)^{\!\!\!\!\!-1} = \left(\begin{bmatrix}
+	 \Vert u_1\Vert ^2 & \ldots &0\\
+	 \vdots & \ddots & \vdots\\
+	 0 & \ldots & \Vert u_m\Vert ^2
+	\end{bmatrix}\right)^{\!\!\!\!\!-1} = \begin{bmatrix}
+	\dfrac{1}{\Vert u_1\vert ^2} & \ldots &0\\
+	\vdots & \ddots & \vdots\\
+	0 & \ldots & \dfrac{1}{\vert u_m\Vert ^2}
+	\end{bmatrix}
+	\end{eqnarray*}
+	
+	\vspace{0.2cm}
+	
+	Luego,
+	
+	\vspace{0.2cm}
+	
+	\begin{eqnarray*}
+	\proy_{\;S}(v) &= & \begin{bmatrix}
+	u_1 & \ldots & u_m
+	\end{bmatrix}\begin{bmatrix}
+	\dfrac{1}{\Vert u_1\Vert ^2} & \ldots &0\\
+	\vdots & \ddots & \vdots\\
+ 	0 & \ldots & \dfrac{1}{\Vert u_m\Vert ^2}
+	\end{bmatrix}\begin{bmatrix}
+	u_1^T\\
+	\vdots\\
+	u_m^T\\
+	\end{bmatrix}v
+	=  \begin{bmatrix}
+	u_1 & \ldots & u_m
+	\end{bmatrix}\begin{bmatrix}
+	\dfrac{u_1^Tv}{\Vert u_1\Vert ^2} \\
+	\vdots\\
+	\dfrac{u_m^Tv}{\Vert u_m\Vert ^2}
+	\end{bmatrix}\nonumber
+	\end{eqnarray*}
+
+\vspace{0.2cm}
+
+Por tanto $\proy_{\;S}(v)=\sum_{i=1}^{m}\dfrac{v\cdot u_i}{\Vert u_i\vert ^2}u_i$. Si $\{u_1,\ldots,u_m\}$ es un conjunto ortogonal entonces $\Vert u_i\vert=1$, por lo que $\proy_{\;S}(v)=\sum_{i=1}^{m}(v\cdot u_i)u_i$.
+\end{defi}
+
+
+\vspace{0.5cm}
+
+\begin{pros}
+
+\normalfont Si $\bb v$ es un autovector, con valor propio $\lambda\neq 0$, de $A^{T}A$, luego $A\bb v$ es un autovector con el mismo valor propio $\lambda$ de $AA^{T}$.
+
+\vspace{0.2cm}
+
+En efecto sea $\bb v$ es un autovector de $A^{T}A$ y $\lambda\neq 0$ su autovalor correspondiente, entonces $A^{T}A\bb v=\lambda \bb v$. Luego multiplicando por $A$ a la izquierda, a la anterior expresi\'on
+	
+\vspace{0.2cm}
+
+	$$\begin{array}{cccc}
+	&A(A^{T}A\bb v)&=&A(\lambda \bb v)\\
+	\Rightarrow& AA^{T}(A\bb v)&=&\lambda (A\bb v).
+	\end{array}$$
+	
+\vspace{0.2cm}
+
+Por lo que $A\bb v$ es autovector de $AA^T$ y $\lambda\neq 0$ su autovector correspondiente.
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{pros}
+\normalfont Sea $A\in\R^{n\times n}$, entonces $A^TA$ no tiene autovalores negativos.
+
+\vspace{0.2cm}
+
+Para verificar este resultado, sea $\bb u$ un autovector de $A^TA$ y $\lambda$ su autovalor correspondiente, entonces $A^TA\bb u=\lambda \bb u$, luego
+	
+\vspace{0.2cm}
+
+$$\begin{array}{rcl}
+	 \bb u^T(A^TA\bb u)&=&u^T(\lambda \bb u)\\
+	(\bb u^TA^T)A\bb u&=&\lambda \bb u^T\bb u\\
+	(A\bb u)^TA\bb u&=&\lambda \Vert \bb u\Vert\\
+	\vert A\bb u\Vert ^2&=&\lambda \vert \bb u\vert^2\\
+	0\leq \dfrac{\Vert A\bb u\Vert^2}{\Vert \bb u\Vert^2}&=&\lambda\\
+	\end{array}$$
+\end{pros}
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont Si tenemos una matriz $A\in\R^{n\times m}$, se definen los \underline{valores singulares} de $A$ como las ra\'ices cuadradas de los eigenvalores de $A^TA$ y de $AA^T$.
+
+\end{defi}
+
+
+\vspace{0.5cm}
+
+\begin{pros}
+\normalfont Para una matriz $A\in\R^{n\times m}$, tenemos
+
+\[
+A=U\Sigma V^{T}, \qquad \text{donde}
+\]
+
+\begin{itemize}
+\item $U\in\R^{n\times n}$ es una matriz ortogonal cuyas columnas son los autovectores de $AA^T$..
+\item $V\in \R^{m\times m}$ es una matriz ortogonal cuyas columnas son los autovectores de $A^TA$.
+\item $\Sigma\in \R^{n\times m}$ es una matriz de ceros, excepto, los primeros $r$ elementos de la diagonal $\sigma_i,\  i = 1, \dots, r$, es decir los valores singulares.
+\end{itemize}
+
+
+Se asume en este resultado que los valores singulares se ordenan en forma  descendente y los autovectores se ordenan seg\'un el orden descendente de sus autovalores.
+
+\[
+A = U
+\Sigma V^{T}, \ \ \ \text{donde }\ \ \  \Sigma =  \begin{pmatrix}
+\sigma_1 &  \\ 
+& \ddots & \\
+& & \sigma_r
+\end{pmatrix}, \ \  \sigma_1 \geq  \cdots \geq \sigma_m \geq 0,
+\]
+
+Cuando $A$ tiene rango completo, los valores singulares son estrictamente positivos y
+
+\[
+A = U\begin{pmatrix}
+\Sigma & 0
+\end{pmatrix}V^{T} \qquad \text{o}\qquad A = U\begin{pmatrix}
+\Sigma \\
+0
+\end{pmatrix}V^{T}
+\]
+
+\end{pros}
+
+
+
+\vspace{0.2cm}
+
+\begin{cor}
+\normalfont Si denotamos el valor singular por $\boldsymbol \sigma$, se cumple
+
+\[
+\Vert A\Vert_F=\Vert\boldsymbol\sigma\Vert.
+\]
+\end{cor}
+
+\vspace{0.3cm}
+
+La descripci\'on intuitiva de la descomposici\'on espectral indica que cualquier transformaci\'on lineal $T: \R^n \rightarrow \R^n$ correspondiente a una multiplicaci\'on por una matriz sim\'etrica es equivalente a una rotaci\'on o una  reflexi\'on, seguida de un  escalamiento de los ejes y  seguida de una rotaci\'on o reflexi\'on inversa. 
+
+\vspace{0.2cm}
+
+La t\'ecnica \underline{SVD} generaliza esta interpretaci\'on a matrices no sim\'etricas e incluso no cuadradas. Cualquier transformaci\'on lineal $T:\R^m \rightarrow \R^n$ se puede descomponer como una secuencia de una rotaci\'on o reflexi\'on, seguida por un escalamiento de los ejes, seguida por otra rotaci\'on o escalamiento.
+
+\vspace{0.2cm}
+
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=16cm]{svd}
+\end{figure}
+
+\vspace{0.2cm}
+
+Geom\'etricamente, esto implica que la aplicaci\'on  $\bb x\rightarrow A\bb x$ transforma una esfera en una elipse. Las orientaciones de los ejes de la elipse son proporcionadas por las columnas de $U$, $V$ y el alargamiento de los diferentes ejes de la elipse se determinan con  los valores singulares, como indica la figura anterior.
+
+\vspace{0.5cm}
+
+
+\section{Referencias}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item Coding the Matrix, Philip Klein, Newtonian Press,  2013.
+\item Probability, The Analysis of Data, volumen 1 Guy Lebanon. 
+\item Linear Algebra Done Right Sheldon Axler 2015.
+\end{enumerate}
+\end{document}

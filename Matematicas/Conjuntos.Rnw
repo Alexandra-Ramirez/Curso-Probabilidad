@@ -1,0 +1,469 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Notas de matem\'aticas \par
+\end{minipage}
+\vspace{0.5cm}
+
+
+\section{Teoria de conjuntos}
+
+\vspace{0.5cm}
+
+\begin{defi} 
+ \normalfont Un conjunto es una colecci\'on desordenada de elementos.
+\end{defi}
+
+\vspace{0.2cm}
+
+Por ejemplo, $\{a,-2,5\}$ es el conjunto que contiene los elementos $a, -2$ y $5$. Alternativamente, \mbox{describimos} un conjunto especificando una determinada condici\'on cuyos elementos satisfacen, por ejemplo $\{x: x^2 = 1\}$ es el conjunto que contiene los elementos $1$ y $-1$ (suponiendo que x es un n\'umero real).
+
+\vspace{0.2cm}
+
+\begin{enumerate}
+\item No hay importancia para el orden en que aparecen los elementos de un conjunto. As\'i, $\{1,2,3\}$, es el mismo conjunto que  $\{3,2,1\}$.
+\item  Un elemento puede aparecer en un conjunto o no, pero puede no aparecer m\'as de una vez. Los conjuntos se indican t\'ipicamente mediante una letra may\'uscula, por ejemplo $A$ o $B$.
+\item Es posible que los elementos de un conjunto sean conjuntos , por ejemplo $\{1,2, \{3,4\}\}$ es un conjunto que contiene tres elementos (dos escalares y un conjunto). 
+\end{enumerate}
+
+\begin{defi}
+\normalfont Si $a$ es un elemento en un conjunto $A$, escribimos $a \in A$. Si $a$ no es un elemento de $A$, escribimos $a \notin A$. El conjunto vacio denotado por $\emptyset$ \'o $\{ \}$ no contiene elementos.
+\end{defi}
+
+\begin{defi}
+\normalfont Un conjunto $A$ con un n\'umero finito de elementos se denomina conjunto finito y su tama\~no (n\'umero de elementos) se denota como $\vert A \vert$. Un conjunto con un n\'umero infinito de elementos se denomina conjunto infinito.
+\end{defi}
+
+\begin{defi}
+\normalfont Denotaremos $A \subset B$ si todos los elementos de $A$ est\'an tambi\'en en $B$. Denotamos $A = B $ si $A\subset B $  y $B \subset A $  lo que implica que los dos conjuntos son id\'enticos. La diferencia entre dos conjuntos $A - B$ es el conjunto de elementos en $A$ pero no en $B$. El complemento de un conjunto $A$ con respecto a un conjunto $\Omega$ es $A^c = \Omega - A$ (podemos omitir el conjunto $\Omega$ si es obvio en un contexto particular ). La diferencia sim\'etrica entre dos conjuntos $A$, $B$ es
+
+\[
+A \triangle B = \{x: x\in A - B \ \text{\'o}\ \ x \in B -A \}
+\]
+\end{defi}
+
+\begin{ejemplo}
+\normalfont Tenemos $\{1,2,3\} - \{3,4\} = \{1,2 \}$ y $\{1,2,3\} \triangle \{3,4\} = \{1,2,4\}$. Suponiendo $\Omega = \{1,2,3,4,5\}$, tenemos $\{1,2,3\}^c = \{4,5\}$.
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+En muchos casos consideramos conjuntos indexados por un conjunto finito o infinito. Por ejemplo $U_a, a \in A$ representa m\'ultiples conjuntos, un conjunto para cada elemento de $A$.
+
+\begin{defi}
+\normalfont Para m\'ultiples conjuntos $U_a, a \in A$, definimos las operaciones de uni\'on e intersecci\'on, como sigue
+
+\begin{align*}
+\bigcup_{a \in A} U_a &= \{u: u \in U_a \ \ \text{para uno  o m\'as} \ \ a \in A   \} \\
+\bigcap_{a \in A} U_a &= \{u: u \in U_a \ \ \text{para todo} \ \ a \in A   \}. 
+\end{align*}
+\end{defi}
+
+\begin{ejemplo}
+\normalfont A continuaci\'on se presentan tres ejemplos de conjuntos m\'ultiples, $U_a, a \in A$.  El primer \mbox{ejemplo} muestra dos conjuntos: $\{1\}$ y $\{2\}$. El segundo ejemplo muestra varios conjuntos: $\{1, -1\}, \{2, -2\}, \{3, -3\}$, y as\'i sucesivamente. El tercer ejemplo muestra m\'ultiples conjuntos, cada uno de los cuales contiene todos los n\'umeros reales entre dos n\'umeros naturales consecutivos.
+
+\begin{align*}
+U_i &= \{i \}, & &   i\in A = \{ 1, 2\}\\
+U_i &= \{i, -1 \},  & & i\in A = \mathbb{N} =  \{ 1, 2, \dots\}\\
+U_a &= \{a + r:  0 \leq r \leq 1 \}, &  &  a \in A = \mathbb{N} = \{ 1, 2, \dots\}
+\end{align*}
+\end{ejemplo}
+
+\begin{defi}
+\normalfont  Los conjuntos $U_a, a \in A$ son \underline{mutualmente disjuntos} si $\bigcap_{a \in A} U_a  = \emptyset$ y son \underline {disjuntos dos a dos} si $a \neq b$ implica que $U_a \cap U_b = \emptyset$. La uni\'on de conjuntos disjuntos dos a dos $U_a, a \in A$ es denotado algunas veces como $\uplus_{a \in A}U_a$.
+\end{defi}
+
+\begin{ejemplo}
+\normalfont Si $A_1 = \{1 \}, A_2 = \{1, 2 \}, A_3 = \{1, 2, 3\}$, tenemos
+
+\begin{align*}
+\{A_i:i \in \{1,2,3\}\} &= \{\{1\}, \{ 1, 2\}, \{1, 2, 3 \}\}\\
+\bigcup_{i \in \{1, 2, 3\}} &= \{1, 2, 3 \} \\
+\bigcap_{i \in \{1, 2, 3\}} &= \{1 \}
+\end{align*}
+\end{ejemplo}
+
+\begin{pros}
+\normalfont Para todos los conjuntos $A, B, C \subset \Omega$
+
+\begin{enumerate}
+\item La uni\'on e intersecci\'on son conmutativas y distributivas.
+\begin{align*}
+A \cup B = B \cup A  & & (A \cup B) \cup C = A \cup (B \cup C) \\
+A \cap B = B \cap A  & &  (A \cap B) \cap C = A \cap (B \cap C)
+\end{align*}
+\item $(A^c)^c = A, \ \ \emptyset ^c = \Omega, \ \ \Omega^c = \emptyset$.
+\item $\emptyset \subset A$.
+\item $A \subset A$.
+\item $A \subset B$ y $B \subset C$ implica que $A \subset C$.
+\item $A \subset B$ si y s\'olo si  $B^c \subset A^c$.
+\item $ A \cup A = A = A \cap A$.
+\item $A \cup \Omega = \Omega,$ \ \ $A \cap \Omega = A$.
+\item $A \cup \emptyset =  A$, \ \ $A \cap \emptyset = \emptyset$.
+\end{enumerate}
+\end{pros}
+
+\begin{defi}
+\normalfont El \underline{conjunto potencia} de un conjunto $A$, es el conjunto de todos los subconjuntos de $A$, incluyendo el conjunto vacio $\emptyset$ y $A$. Este conjunto es denotado por $2^ A$.
+\end{defi}
+
+\begin{pros}
+\normalfont Si $A$ es un conjunto finito entonces
+
+\[
+\vert 2^A \vert = 2^{\vert A \vert}
+\]
+\end{pros}
+
+\begin{ejemplo}
+\begin{align*}
+2^{\{a, b \}} &= \{\emptyset, \{a, b \}, \{a\}, \{b\} \}\\
+\vert 2^{\{a, b \}} \vert &= 4 \\
+\sum_{A \in 2^{\{a, b \}}}\vert A \vert  &= 0 +  2 + 1 + 1 = 4
+\end{align*}
+\end{ejemplo}
+
+\begin{pros}
+\normalfont (Ley distributiva de conjuntos)
+\begin{align*}
+\Biggl( \bigcup_{a \in A} U_a  \bigcap C \Biggr) = \bigcup_{a \in A} \Biggl(U_a \bigcap C \Biggr)\\
+\Biggl( \bigcap_{a \in A} U_a  \bigcup C \Biggr) = \bigcap_{a \in A} \Biggl(U_a \bigcup C \Biggr)
+\end{align*}
+\end{pros}
+
+\begin{pros}
+\begin{align*}
+S - \bigcup_{a \in A} U_a = \bigcap_{a \in A}(S -U_a)\\
+S - \bigcap_{a \in A} U_a = \bigcup_{a \in A}(S -U_a)
+\end{align*}
+\end{pros}
+
+\begin{pros}
+\normalfont (Ley de Morgan)
+
+\begin{align*}
+\Biggl( \bigcup_{a \in A} U_a\Biggr)^c  = \bigcap_{a \in A}U_a^c \\
+\Biggl( \bigcap_{a \in A} U_a\Biggr)^c  = \bigcup_{a \in A}U_a^c
+\end{align*}
+\end{pros}
+
+
+\vspace{0.3cm}
+
+\begin{defi}
+\normalfont El conjunto de los n\'umeros naturales, enteros y racionales se escriben de la siguiente \mbox{manera}, para todo lo que sigue
+
+\begin{align*}
+\mathbb{N} &= \{1,2,3,\ldots\}\\
+\mathbb{Z} &= \{\ldots,-1,0,1,\ldots\}\\
+\mathbb{Q} &= \{p/q:p\in\mathbb{Z},q\in\mathbb{Z}\setminus\{0\}\}.
+\end{align*}
+
+\vspace{0.2cm}
+
+El conjunto de los n\'umeros reales es denotado por $\mathbb{R}$.
+
+\end{defi}
+\vspace{0.3cm}
+
+\begin{defi}
+\normalfont Denotaremos los intervalos cerrados, abiertos y semiabiertos entre $a ,b \in \mathbb{R}$ como
+
+\begin{align*}
+[a,b) &= \{x\in\mathbb{R} : a \leq x < b \}\\
+(a,b] &= \{x\in\mathbb{R} : a <  x \leq b \}\\
+[a,b) &= \{x\in\mathbb{R} : a \leq x < b \}\\
+(a,b] &= \{x\in\mathbb{R} : a <  x \leq b \}
+\end{align*}
+\end{defi}
+
+\begin{ejemplo}
+\begin{align*}
+\bigcup_{n\in\mathbb{N}}[0,n/(n+1))&=[0,1),\\
+\bigcap_{n\in\mathbb{N}} [0,n/(n+1))&=[0,1/2).
+\end{align*}
+\end{ejemplo}
+
+
+\vspace{0.2cm}
+
+
+\begin{defi}
+\normalfont El producto cartesiano de dos conjuntos $A$ y $B$ es denotado por 
+
+\[
+A\times B=\{(a,b):a\in A,b\in B\}
+\]
+
+De manera similar, generalizamos el producto cartesiano de $n \in \mathbb{N}$ conjuntos. Producto cartesiano repetido del mismo conjunto,  denotado como
+
+\[
+A^n= A\times \cdots\times A, \qquad n\in\mathbb{N},
+\]
+
+es el conjunto de vectores $n $ dimensional, cuyos componentes son los elementos de $A$. 
+\end{defi}
+
+\begin{ejemplo}
+\normalfont $R^n$ es el conjunto de vectores $n $ dimensional, cuyos componentes son los n\'umeros reales.
+\end{ejemplo}
+
+
+\vspace{0.2cm}
+
+
+\begin{defi}
+\normalfont Una relaci\'on $R$ sobre un conjunto $A$  es un subconjunto de $A \times A$, es decir un conjunto de pares de elementos de $A$. Si $(a,b) \in \mathbb{R}$, denotamos $a \sim b$ y si $(a, b) \notin \mathbb{R}$, denotamos $ a \not\sim b$. Una relaci\'on es reflexiva si $a \sim a$ para todo $a \in A$. Es sim\'etrica si $a \sim b$ implica $b \sim a$ para todo $a,b \in A$. Es transitiva si $a \sim b$ y $b \sim c$ implica que $a \sim c$ para todo $a, b, c \in A$. Una relaci\'on de equivalencia es una relaci\'on que es reflexiva, sim\'etrica y transitiva.
+\end{defi}
+
+\begin{ejemplo}
+\normalfont Considere la relaci\'on, donde $a \sim b$ si $a \leq b$ sobre $\mathbb{R}$, esta relaci\'on es reflexiva y transitiva, pero no es sim\'etrica.
+
+Si tenemos la relaci\'on $a  = b$ sobre $\mathbb{Z}$ esta es una relaci\'on de equivalencia.
+\end{ejemplo}
+
+\begin{defi}
+\normalfont El conjunto $U_a, a \in A$ forma una \underline{partici\'on} de $U$ si
+
+\[
+\biguplus_{\alpha\in A} U_{\alpha} = U.
+\]
+
+En otras palabras, la uni\'on de conjuntos disjuntos dos a dos $U_a, a \in A$ es $U$. Los conjuntos $U_a$ son llamados \underline{clases de equivalencia}.
+
+Una relaci\'on de equivalencia $\sim$ sobre $A$ induce una partici\'on de $A$, como sigue: $a \sim b$ si y s\'olo si $a$ y $b$ est\'an en la misma clase de equivalencia.
+\end{defi}
+
+\begin{ejemplo}
+\normalfont Considere el conjunto $A$ de todas las ciudades y la relaci\'on $a \sim b$ si las ciudades $a, b$ est\'an en el mismo pa\'is. Esta relaci\'on es reflexiva, sim\'etrica y transitiva, y por lo tanto es una relaci\'on de equivalencia. Esta relaci\'on de equivalencia induce una partici\'on de todas las ciudades en clases de equivalencia compuestas por todas las ciudades del mismo pa\'is. El n\'umero de clases de equivalencia es el n\'umero de pa\'ises.
+\end{ejemplo}
+
+\vspace{0.5cm}
+
+La generalizaci\'on  del tama\~no de un conjunto $A$ a conjuntos infinitos, puede hacerse notando que dos conjuntos finitos $A, B$ tienen el mismo tama\~no si y s\'olo si existe una biyecci\'on entre ellos, y generalizando esta noci\'on a conjuntos infinitos.
+
+
+\vspace{0.3cm}
+
+
+\begin{defi}
+\normalfont Dos conjuntos $A$ y $B$ (finito o infinito ) tienen la misma \underline{cardinalidad}, denotado por $A \sim B$ si existe una biyecci\'on entre ellos.  La cardinalidad define una relaci\'on de equivalencia. La relaci\'on de cardinalidad divide as\'i el conjunto de todos los conjuntos en clases de equivalencia que contienen conjuntos con la misma cardinalidad. Para cada n\'umero natural $k \in \mathbb{N}$ tenemos una clase de equivalencia que contiene todos los conjuntos finitos de ese tama\~no. Pero tambi\'en hay otras clases de equivalencia que contienen conjuntos infinitos, la m\'as importante es la clase de equivalencia que contiene los n\'umeros naturales $\mathbb{N}$.
+\end{defi}
+
+\begin{defi}
+\normalfont Sea $A$  un conjunto infinito. Si $A \sim \mathbb{N}$, entonces $A$ es infinito contable. Si $A \not\sim \mathbb{N}$ entonces $A$ es un conjunto infinito no contable.
+\end{defi}
+
+\begin{pros}
+\normalfont Cada subconjunto infinito $E$ de un conjunto contable infinito $A$ es infinito contable.
+\end{pros}
+
+\begin{pros}
+\normalfont Una uni\'on contable de conjuntos infinitos contables es contable infinita.
+\end{pros}
+
+
+\begin{cor}
+\normalfont Si $A$ es infinito contable entonces lo es tambi\'en $A^n$, para $n \in \mathbb{N}$.
+\end{cor}
+
+
+Se puede demostrar que los conjuntos infinito contables son los conjuntos \texttt{m\'as peque\~nos} (en t\'erminos de la definici\'on  de cardinalidad) entre todos los conjuntos infinitos. En otras palabras, si $A$ es infinito no contable , entonces existe una funci\'on sobreyectiva  $f: A \rightarrow \mathbb{N}$ pero no una funci\'on sobreyectiva $f: \mathbb{N} \rightarrow A$.
+
+\begin{pros}
+\normalfont (Ejercicio) Asumiendo que $a < b$ y $d \in \mathbb{N}$,
+
+\begin{align*}
+  \mathbb{N}&\sim \mathbb{Z}\sim \mathbb{Q}\\
+  \mathbb{N}& \not\sim [a,b]\\
+  \mathbb{N}& \not\sim (a,b)\\
+  \mathbb{N}& \not\sim \mathbb{R}\\
+  \mathbb{N}& \not\sim \mathbb{R}^d.
+\end{align*}
+\end{pros}
+
+
+\begin{defi}
+\normalfont La expansi\'on binaria de un n\'umero $r \in [0,1]$ es definida como $0.b_1b_2, \dots$ donde $b_n \in \{0, 1 \}, n \in \mathbb{N}$ y 
+
+\[
+r=\sum_{n\in\mathbb{N}} b_n 2^{-n}.
+\]
+\end{defi}
+
+\begin{ejemplo}
+\normalfont La expansi\'on binaria de $1/4$ es $0.01$ y la expansi\'on binaria de $3/4$ es $0.11 = 1/2 + 1/4$.
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont Sean $A$ y $R$ dos conjuntos. La notaci\'on $A^R$ denota un producto cartesiano de copias m\'ultiples de $A$, una copia para cada elemento del conjunto $R$. En otras palabras, $A^R$ es el conjunto de todas las funciones de $R$ a $A$. La notaci\'on $A^\infty$ denota $A^{\mathbb{N}}$, un producto de copias  infinitas contables  de $A$.
+\end{defi}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont El conjunto $\mathbb{R}^{\infty}$ es el conjunto de todas las secuencias sobre la recta real $\mathbb{R}$.
+
+\[
+\mathbb{R}^{\infty} = \{(a_1,a_2,a_2,\ldots,): a_n\in\mathbb{R} \text{ para todo  }n\in\mathbb{N}\}
+\]
+
+y el conjunto $\{0, 1 \}^{\infty}$ es el conjunto de todas las secuencias binarias infinitas. El conjunto $\mathbb{R}^{[0,1]}$ es el producto cartesiano de m\'ultiples copias de los n\'umeros reales; una copia para cada elemento del intervalo $[0,1]$ o en otras palabras el conjunto de todas las funciones desde $[0,1]$ a $\mathbb{R}$.
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont El conjunto $\{0,1\}^A$ es el conjunto de todas las funciones de $A$ a $\{0,1\}$, cada una de estas funciones implica una selecci\'on de un subconjunto arbitrario de $A$ (los elementos seleccionados se asignan a $1$ y los elementos restantes se asignan a $0$). Una interpretaci\'on similar puede darse a conjuntos de tama\~no $2$ que son diferentes de $\{0,1\}$. Si tenemos $\vert B \vert = 2$, entonces $B^A$ corresponde al conjunto  potencia $2^A$.
+\end{ejemplo}
+
+\vspace{0.5cm}
+
+
+\begin{defi}
+\normalfont Para una secuencia de conjuntos $A_n , n \in \mathbb{N}$, definimos
+
+\begin{align*}
+\inf_{k\geq n} A_k &= \bigcap_{k=n}^{\infty} A_k\\
+\sup_{k\geq n} A_k &= \bigcup_{k=n}^{\infty} A_k\\
+\liminf_{n\to\infty} A_n &= \bigcup_{n\in\mathbb{N}}\,\,  \inf_{k\geq n} A_k = \bigcup_{n\in\mathbb{N}}\,\,\bigcap_{k=n}^{\infty} A_k \\
+\limsup_{n\to\infty} A_n &= \bigcap_{n\in\mathbb{N}} \,\,\sup_{k\geq n} A_k =  \bigcap_{n\in\mathbb{N}} \,\, \bigcup_{k=n}^{\infty} A_k.
+\end{align*}
+\end{defi}
+
+\vspace{0.2cm}
+
+Aplicando la ley de Morgan, se tiene
+
+\[
+\left(\liminf_{n\to\infty} A_n\right)^c =  \limsup_{n\to\infty} A_n^c
+\]
+\begin{defi}
+
+\normalfont Sea una secuencia de conjuntos $A_n, n \in \mathbb{N}$, tenemos que $\liminf_{n\to\infty} A_n=\limsup_{n\to\infty} A_n$ y definimos el l\'imite de $A_n, n \in \mathbb{N}$ como
+
+\[
+\lim_{n\to\infty} A_n=\liminf_{n\to\infty} A_n=\limsup_{n\to\infty} A_n,
+\]
+
+La notaci\'on $A_n \rightarrow A$ es equivalente a la notaci\'on $\lim_{n\to\infty} A_n=A$.
+\end{defi}
+\begin{ejemplo}
+\normalfont Para una secuencia de conjuntos $A_k = [0, k/(k + 1))$, tenemos
+
+\begin{align*}
+\inf_{k\geq n} A_k &= [0,n/(n+1))\\
+\sup_{k\geq n} A_k &=  [0,1) \\
+\limsup_{n\to\infty} A_n &= [0,1)\\
+\liminf_{n\to\infty} A_n &= [0,1)\\
+\lim A_n&=[0,1).\end{align*}
+\end{ejemplo}
+
+
+\vspace{0.3cm}
+
+Tenemos las siguientes interpretaciones del $\liminf$ y $\limsup$
+
+
+\begin{pros}
+\normalfont Sea una secuencia de subconjuntos $A_n, n \in \mathbb{N}$ de $\Omega$. Entonces
+\begin{align*}
+\limsup_{n\to\infty} A_n &= \left\{\omega\in\Omega\,:\,\sum_{n\in\mathbb{N}} I_{A_n}(\omega)=\infty\right\}\\
+\liminf_{n\to\infty} A_n &= \left\{\omega\in\Omega\,:\,\sum_{n\in\mathbb{N}} I_{A_n^c}(\omega)<\infty\right\}.
+\end{align*}
+
+En otras palabras, $\limsup_{n\rightarrow \infty}A_n$ es el conjunto de $\omega \in \Omega $ que aparecen infinitamente a en la secuencia $A_n$, y $\liminf_{n\rightarrow \infty}A_n$ es el conjunto de $\omega \in \Omega$ que siempre aparecen en la secuencia $A_n$ excepto por  un n\'umero finito de veces.
+\end{pros}
+
+\vspace{0.3cm}
+
+
+En efecto si $\omega\in \limsup_{n\to\infty} A_n$, entonces por definici\'on para todo $n$ existe un $k_n$ tal que $w \in A_{k_n}$. Para ese $\omega$ tenemos $\sum_{n\in\mathbb{N}} I_{A_n}(\omega)=\infty$. Por otro lado, si $\sum_{n\in\mathbb{N}} I_{A_n}(\omega)=\infty$, entonces existe una secuencia, $k_1, k_2, \dots$ tal que $w \in A_{k_n}$, implicando que para todo $n \in \mathbb{N}, \omega\in \cup_{i\geq n} A_i$. La prueba del segundo caso es similar.
+
+\begin{cor}
+\[
+\liminf_{n\to\infty} A_n \subset \limsup_{n\to\infty} A_n.
+\]
+\end{cor}
+
+\vspace{0.3cm}
+
+\begin{defi}
+\normalfont Una secuencia de conjuntos $A_n, n \in \mathbb{N}$, es \underline{mon\'otona no-decreciente } si $A_1 \subset A_2 \subset A_3 \subset \cdots $  y \underline{mon\'otona no-creciente } si $\cdots A_3 \subset A_2 \subset A_1$. Denotamos esto como $A_n\nearrow$ y $A_n\searrow$ respectivamente. Si $\lim A_n = A$, denotamos esto como  $A_n\nearrow A$ y $A_n\searrow A$ respectivamente.
+\end{defi}
+
+\begin{pros}
+\normalfont Si $A_n \nearrow$ entonces $\lim_{n\to\infty} A_n=\cup_{n\in\mathbb{N}} A_n$ y si $A_n \searrow$, entonces
+$\lim_{n\to\infty} A_n=\cap_{n\in\mathbb{N}} A_n$.
+\end{pros}
+
+\vspace{0.2cm}
+
+En efecto, para la primera parte de la proposici\'on, debemos probar que $A_n$ es  \underline{mon\'otona no-decreciente }, entonces $\limsup A_n=\liminf A_n=\cup_n A_n$. Desde que $A_i \subset A_{i +1}$, tenemos $\cap_{k\geq n} A_k=A_n$ y
+
+\begin{align*}
+\liminf_{n\to\infty} A_n &= \bigcup_{n\in\mathbb{N}} \bigcap_{k\geq n} A_k = \bigcup_{n\in\mathbb{N}} A_n\\
+\limsup_{n\to\infty} A_n &= \bigcap_{n\in\mathbb{N}} \bigcup_{k\geq n} A_k \subset  \bigcup_{k\in\mathbb{N}} A_k = \liminf_{n\to\infty} A_n \subset \limsup_{n\to\infty} A_n.
+\end{align*}
+
+\begin{cor}
+\normalfont Sea $B_n=\cup_{k\geq n}A_k$ y $C_n=\cap_{k\geq n}A_k$ son secuencias mon\'otonas, entonces
+
+\begin{align*}
+\liminf_{n\to\infty} A_n &= \lim_{n\to\infty} \inf_{k\geq n} A_n\\
+\limsup_{n\to\infty} A_n &= \lim_{n\to\infty} \sup_{k\geq n} A_n.
+\end{align*}
+\end{cor}
+
+\section{Referencias}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item Book of Proof,  2013 by Richard Hammack Second Edition.
+\item Probability, The Analysis of Data, volumen 1 Guy Lebanon. 
+\end{enumerate}
+\end{document}

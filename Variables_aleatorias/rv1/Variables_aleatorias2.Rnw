@@ -1,0 +1,979 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{subfig}
+\usepackage{graphicx}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bb}[1]{\textbf{#1}}
+\DeclareMathOperator{\rank}{\textbf{rango}}
+\DeclareMathOperator{\proy}{\textbf{proy}}
+\DeclareMathOperator{\nulll}{\textbf{nul}}
+\DeclareMathOperator{\diag}{\textbf{diag}}
+\DeclareMathOperator{\col}{\textbf{col}}
+\DeclareMathOperator{\fila}{\textbf{fila}}
+\DeclareMathOperator{\dimm}{dim}
+\DeclareMathOperator{\Traz}{Tr}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{teo}{{Teorema}}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Funciones de variables aleatorias, Independencia \par
+Variables aleatorias condicionadas.
+\end{minipage}
+
+
+\vspace {0.8cm}
+
+\section{Distribuciones continuas }
+ 
+ 
+ Algunas de la m\'as importantes variables aleatorias continuas, se listan a continuaci\'on:
+ 
+ \subsection{La familia Normal}
+ 
+ De acuerdo con el teorema del l\'imite central, la distribuci\'on limitante de la suma estandarizada un gran n\'umero de variables aleatorias independientes,es la distribuci\'on normal.
+ 
+ \vspace{0.2cm}
+ 
+ 
+ La densidad de $N(\mu, \sigma^2)$ es:
+ 
+ \[
+ f_{\mu, \sigma^2}(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x -\mu)^2}{2\sigma^2}}
+ \]
+ 
+ \vspace{0.2cm}
+ 
+ 
+La \texttt{distribuci\'on normal est\'andar} tiene media $\mu = 0$ y $\sigma^2 = 1$, as\'i la funci\'on densidad:
+
+\[
+f(x ) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}.
+\]
+
+
+\vspace{0.4cm}
+
+El CDF de esta variable aleatoria, se denota como $\Phi$ y se define como:
+
+\[
+\Phi(t) = \frac{1}{\sqrt{2\pi}}\bigints_{-\infty}^{t}e^{-\frac{x^2}{2}} dx.
+\]
+
+\vspace{0.3cm}
+
+\textbf{(Familia Normal)} Si $Z$ es una variable normal est\'andar, entonces:
+
+\[
+\sigma Z + \mu  \sim N(\mu, \sigma^2)
+\]
+
+y si 
+
+\[
+X \sim N(\mu, \sigma^2), \ \ \text{entonces}\  \frac{x - \mu}{\sigma} \sim N(0,1)
+\]
+
+\vspace{0.2cm}
+
+Si $X$ y $Z$ son normales e independientes, entonces $aX + bZ$ es tambi\'en normal.
+
+
+
+
+\subsection{La familia Exponencial}
+
+La familia Exponencial se usa para modelar tiempos de espera. Una variable aleatoria exponencial \texttt{Exponencial ($\lambda$)} tiene una densidad:
+
+\[
+f(t) = \lambda e^{-\lambda t}
+\]
+
+y un CDF: 
+
+\[
+F(t) = 1 -e^{-\lambda t}.
+\]
+
+\vspace{0.2cm}
+
+Si definimos la funci\'on (Survival function):
+
+\[
+G(t) = 1 -F(t) = e^{-\lambda t}.
+\]
+
+Entonces la tasa de Hazard $f(t)/G(t)$ es igual a $\lambda$.
+
+
+
+\vspace{0.2cm}
+
+La familia Exponencial tiene la \textbf{Propiedad de Markov} o \texttt{memoryless}:
+
+\[
+\mathbb{P}(T < t +s | T > t) = \mathbb{P}(T > s).
+\]
+
+\vspace{0.2cm}
+
+
+\subsection{La familia Gamma}
+
+La familia  de distribuciones \texttt{Gamma(r, $\lambda$)} es vers\'atil. La distribuci\'on de la suma de $r$  variables aleatorias \texttt{Exponencial($\lambda$)} independientes, la distribuci\'on del $r$- \'esimo tiempo de llegada  en un proceso de Poisson con tasa de llegada $\lambda$ es la distribuci\'on  \texttt{Gamma(r, $\lambda$)}.
+
+La distribuci\'on de la suma de cuadrados de $n$ distribuciones  normales est\'andar independientes, la distribuci\'on $\chi^2(n)$ es la distribuci\'on  \texttt{Gamma(1/2, 1/2)}.
+
+\vspace{0.3cm}
+
+La distribuci\'on  \texttt{Gamma(r, $\lambda$)}  en general ($r > 0, \lambda > 0$), tiene una densidad dado por:
+
+\[
+f(t) = \frac{\lambda^r}{\Gamma(r)}t^{r -1}e^{-\lambda t}\ \ (t > 0).
+\]
+
+\vspace{0.2cm}
+
+
+\subsection{Distribuci\'on de Cauchy}
+
+Si $X$ e $Y$ son normales est\'andar independientes, entonces $Y/X$ tiene una distribuci\'on de Cauchy. La distribuci\'on de Cauchy, es la distribuci\'on de la tangente de un \'angulo aleatoriamente seleccionado desde $[-\pi, \pi]$.
+
+\vspace{0.2cm}
+
+La densidad es:
+
+\[
+f(x) = \frac{1}{\pi(1 + x^2)},
+\]
+
+
+\vspace{0.3cm}
+
+y el CDF:
+
+\vspace{0.2cm}
+
+
+\[
+F(t) = \frac{1}{\pi}\arctan(t) + \frac{1}{2}.
+\]
+
+\vspace{0.2cm}
+
+
+\begin{align*}
+\int_{-\infty}^{\infty}f(x)dx = \frac{1}{\pi}\int_{-\infty}^{\infty}\frac{dx}{(1 + x^2)} =  \frac{1}{\pi}\int_{-\infty}^{\infty}\frac{d\tan^{-1}(x)}{dx}\\ =
+\frac{1}{\pi}[\tan^{-1}(\infty) - \tan^{-1}(-\infty)] 
+&=  \frac{1}{\pi}[\frac{\pi}{2} - (-\frac{\pi}{2})] = 1.
+\end{align*}
+
+
+
+\subsection{Distribuci\'on uniforme}
+
+Una variable aleatoria continua $X$ que es igualmente probable que tome  cualquier valor en un rango de valores $(a, b)$, con $a <b$, da lugar a la distribuci\'on uniforme. Dicha distribuci\'on est\'a uniformemente distribuida en su rango. Algunas veces se denota como $X \sim \text{Uniforme}(a,b)$.
+
+\vspace{0.3cm}
+
+La funci\'on densidad de la distribuci\'on es:
+
+\[
+f(x) = \begin{cases}
+\frac{1}{b -a} & x \in [a,b] \\
+0 & \text{en otros casos}.
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+El CDF es:
+
+\vspace{0.2cm}
+
+
+\[
+F(x) = \begin{cases}
+\frac{x- a}{b -a} & x \in [a,b] \\
+0 & \text{en otros casos}.
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+
+
+\subsection{Distribuci\'on beta}
+
+$X$ tiene una distribuci\'on $\mbox{Beta}$ con par\'ametros $\alpha > 0$  y $\beta > 0$, denotado por $X \sim \mbox{Beta}(\alpha, \beta)$, si
+
+
+\vspace{0.2cm}
+
+\[
+f(x) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha -1}(1 -x)^{\beta -1}, \ \ 0< x < 1.
+\]
+
+
+
+\vspace{0.2cm}
+
+
+\subsection{La distribuci\'on $\chi^2(n)$}
+
+Sea $Z_1, \dots, Z_n$ variables aleatorias normales est\'andar. La distribuci\'on Chi-cuadrado con $n$ grados de libertad, $\chi^2(n)$ es la distribuci\'on de:
+
+\[
+R_n^2 =Z_1^2 +\cdots + Z_n^2.
+\]
+
+\vspace{0.2cm}
+
+La funci\'on densidad de esta distribuci\'on, est\'a dado por:
+
+\[
+f_{R_n^2}(t) = \frac{1}{2^{n/2}\Gamma(n/2)}t^{(n/2) -1}e^{-t/2}, \ \ (t > 0), 
+\]
+
+y escribimos:
+
+\[
+R_n^2 \sim \chi^2(n).
+\]
+
+\vspace{0.3cm}
+
+Se sigue de la definici\'on  que si $X$ e $Y$ son independientes y $X \sim \chi^2(n)$ y $Y \sim \chi^2(m)$, entonces:
+
+\[
+(X + Y) \sim \chi^2(n + m).
+\]
+
+\vspace{0.2cm}
+
+
+Esta es una distribuci\'on importante en estad\'istica inferencial y es la base de la prueba de ajustes chi-cuadrado y el m\'etodo de estimaci\'on de  m\'inimos de  chi-cuadrado.
+
+\vspace{0.2cm}
+
+Si hay $m$ resultados posibles de un experimento y sea $p_i$ la probabilidad de que el resultado $i$ ocurre. Si el experimento se repite independientemente $N$ veces, sea $N_i$ el n\'umero de veces que se observa el resultado $i$, por lo que $N = N_1 + \cdots + N_m$. Entonces la estad\'istica del chi-cuadrado:
+
+\vspace{0.2cm}
+
+\[
+\sum_{i =1}^{n}\frac{(N_i - Np_i)^2}{Np_i},
+\]
+
+\vspace{0.2cm}
+
+converge en distribuci\'on cuando $N \rightarrow$ a  una distribuci\'on $\chi^2(m -1)$ con $ m -1$ grados de libertad.
+
+\section {Funciones de variables aleatorias}
+
+
+\vspace{0.3cm}
+
+Como se sabe, una variable aleatoria $X$ es una funci\'on que asigna valores de $\R$ para cada resultado o salida de un espacio muestral. Dada una variable aleatoria $X$ podemos definir otras variables aleatorias que son funciones de $X$. Por ejemplo, la variable aleatoria $Y$ definida como  $2X$ toma cada resultado en el espacio muestral y le asigna un real que es igual al doble del valor que $X$ le asigna. La variable aleatoria $Y = X^2$ asigna un resultado que es el cuadrado del valor que $X$ le asigna y as\'i sucesivamente.
+
+\vspace{0.2cm}
+
+En general, si una variable aleatoria $X$ asigna el valor $x$ a un resultado y si $g(X)$ es una funci\'on de $X$, entonces $Y = g(X)$ es una variable aleatoria y se le asigna el valor $g(x)$ a ese resultado. Se dice que la variable aleatoria $Y$ es una variable aleatoria derivada. Esto es, si $X$ es una variable aleatoria, entonces $X^2, e^X$ y $\sin(X)$ son variables aleatorias, como $g(X)$ para una funci\'on $g : \R \rightarrow \R$.
+
+\vspace{0.2cm}
+
+
+Por ejemplo, imaginemos que  dos equipos de baloncesto ($A$ y $B$) est\'an jugando un partido de siete partidos, y que X sea el n\'umero de victorias para el equipo $A$ (as\'i que $X \sim  \texttt{Binomial}(7,1/2)$ si los equipos est\'an igualados y los juegos son independientes). Sea $g(x) = 7$ y $h(x) = 1$ si $x\geq 4$ y $h(x) = 0$ si $x < 4$. Entonces $g(X) = 7 -X$  es el n\'umero de victorias para el equipo $B$ y $h(X)$ es el indicador de que el equipo $A$ gana la mayor\'ia de los juegos. Puesto que $X$ es una variable aleatoria,  $g(X)$ y  $h(X)$ son tambi\'en variables aleatorias.
+
+\begin{defi}
+\normalfont Para un experimento con un espacio muestral $\Omega$, una variable aleatoria $X$ y una funci\'on  $g : \R \rightarrow \R$, $g(X)$ es una variable aleatoria que mapea $s$ a $g(X(s)$ para todo $s \in \Omega$.
+\end{defi}
+
+\vspace{0.2cm}
+
+Sea $g(X) = \sqrt{X}$, la siguiente figura muestra que $g(X)$ es la composici\'on de las funciones $X$ y $g$.En esta figura, la variable aleatoria $X$ es definida sobre un espacio muestral con $6$ elementos y tiene los posibles valores $0, 1$ y $4$. La funci\'on $g$ es la ra\'iz cuadrada. Componiendo $X$ y $g$ nos da la variable aleatoria $g(X) = \sqrt{X}$ que tiene los valores $0, 1$ y $2$.
+ 
+\vspace{0.3cm}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=13cm]{v1}
+\end{figure}
+
+
+\vspace{0.2cm}
+
+
+Consideremos ahora el caso de una variable aleatoria discreta $X$ cuya funci\'on de masa de probabilidad es $p_X(x)$. Dada una funci?n $g(X)$ de $X$, nos gustar\'ia encontrar la funci\'on de masa de probabilidad de la variable aleatoria $Y = g(X)$, es decir, buscamos encontrar $p_Y(y)$.
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+
+\normalfont Sea $X$ una variable aleatoria discreta con funci\'on de probabilidad, dada por,
+
+\[
+p_X(x) = \begin{cases}
+1/10 & x = 1, \\
+2/10 & x = 2, \\
+3/10 & x = 3, \\
+4/10 & x = 4, \\
+0 & \text{en otros casos.}
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+Con esta variable aleatoria, cada resultado en el espacio muestral es mapeado a uno de los cuatro n\'umeros reales $1$, $2$, $3$ o $4$. Considere ahora la variable aleatoria $Y = 2X$. En este caso cada resultado se mapea en uno de los enteros $2$, $4$, $6$ y  $8$. Pero ?` qu\'e pasa con la funci\'on de masa de probabilidad de Y?.
+
+\vspace{0.2cm}
+
+Es evidente que, si la probabilidad de que $X$ asigne un resultado en $1$ sea $1/10$, entonces la probabilidad de que $Y$ asigne  un resultado en $2$ tambi\'en debe ser $1/10$, si $X$ otra vez  asigna un resultado en $2$ con probabilidad $2/10$, entonces, esta debe ser  tambi\'en  la probabilidad de que $Y$ asigne un resultado en $4$ y as\'i sucesivamente. En este ejemplo espec\'ifico, tenemos:
+
+\vspace{0.2cm}
+
+\[
+p_Y(y) = \mathbb{P}(Y = g(x)) = \mathbb{P}(X =x) = p_X(x).
+\]
+
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+El caso anterior se da cuando  $g$ es una funci\'on  uno a uno o inyectiva. El caso en el que $Y=g(X)$ con $g$ inyectiva se ilustra en las siguientes  tablas:
+
+\begin{figure}[ht]%
+    \centering
+    \subfloat[PMF de X]{{\includegraphics[width=5cm]{v2}}}
+    \qquad
+    \subfloat[PMF de Y]{{\includegraphics[width=5cm]{v3}}}
+\end{figure}
+
+\vspace{0.2cm}
+
+La idea es que si los distintos valores posibles de $X$ son $x_1, x 2, \dots $ con probabilidades
+$p_1, p_2,\dots $ (respectivamente), entonces los distintos valores posibles de $Y$ son $g(x_1), g(x_2),\dots$, con la misma lista $p_1, p_2, \dots$, de probabilidades.
+ 
+ 
+\begin{ejemplo}
+\normalfont Una part\'icula se mueve $n$ pasos en una l\'inea num\'erica. La part\'icula comienza en $0$ y en cada paso se  mueve $1$ unidad a la derecha o a la izquierda, con probabilidades iguales. Supongamos que todos los pasos son independientes. Sea $Y$ la posici\'on de la part\'icula despu\'es de $n$ pasos. Hallemos  el  PMF de $Y$.
+
+\vspace{0.2cm}
+
+En efecto si consideramos cada paso como un  ensayo de Bernoulli, donde ir por la  derecha se considera un \'exito e ir a la izquierda se considera un fracaso. Entonces el n\'umero de pasos que la part\'icula toma a la derecha es una variable aleatoria $\texttt{Binomial}(n, 1/2)$, que podemos nombrar como  $X$. Si $X = j$, entonces la part\'icula ha tomado $j$ pasos a la derecha y $n -j$ pasos a la izquierda, dando una posici?n final de $j - (n -j) = 2j -n$. As\'i podemos expresar  $Y$ como una funci\'on inyectiva de $X$, a saber $Y = 2X -n$ y desde que $X$ toma valores en $\{0,1, 2,\dots, n \}$, $Y$ toma valores en $\{-n, 2 -n, 4 -n, \dots, n \}$.
+
+\vspace{0.2cm}
+
+El PMF de $Y $ puede ser calculado desde el PMF de $X$:
+
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(Y =k) = \mathbb{P}(2X- n = k) = \mathbb{P}(X = (n + k)/2) = \binom{n}{\frac{n +k}{2}}\biggl(\frac{1}{2}\biggr)^n.
+\]
+
+si $k$ es un entero entre $-n$ y $n$ (inclusive) tal que $n + k$ es un n\'umero par.
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+Sin embargo, como muestra el siguiente ejemplo, no siempre se da el anterior caso:
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Sea $X$ una variable aleatoria discreta, con una  funci\'on de masa de probabilidad dada por:
+
+\[
+p_X(x) = \begin{cases}
+1/10 & x = -2, \\
+2/10 & x = -1, \\
+3/10 & x = 1, \\
+4/10 & x = 2, \\
+0 & \text{en otros casos.}
+\end{cases}
+\]
+
+Con esta variable aleatoria $X$, cada resultado en el espacio  muestral, es asignado  a uno de los cuatro n\'umeros reales $-2, -1, 1$ \'o $2$. Consideramos  la variable aleatoria derivada $Y = X^2$. En este caso, cada resultado se le asigna  $1$ \'o  $4$. Si $X$ asigna un resultado  $-1$ \'o $1$ , entonces $Y$ asignar\'a ese resultado a $1$, mientras que si $X$ asigna un resultado a $-2$ \'o $2$, entonces $Y$ asignar\'a ese resultado a $4$.
+
+\vspace{0.2cm}
+
+La variable aleatoria $Y$ tiene la siguiente funci\'on de masa de probabilidad, que no es la misma que  la de $X$:
+
+\[
+p_y(y) = \begin{cases}
+2/10 + 3/10  & y = 1, \\
+1/10 +  4/10 & y = 4, \\
+0 & \text{en otros casos.}
+\end{cases}
+\]
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+Estos ejemplos ilustran la regla de que la funci\'on de masa de probabilidad de una variable aleatoria de  $Y$ , que es una funci\'on de una variable aleatoria $X$, es igual a la funci\'on de masa de probabilidad de $X$, si $g(x_1)\neq g(x_2)$ cuando $x_1 \neq x_2$. De lo contrario la funci\'on de masa de probabilidad de $Y$ se obtiene de la relaci\'on general (general en el sentido de que tambi\'en cubre el caso anterior):
+
+\[
+p_Y(y) = \sum_{x: g(x)= y}p_{X}(x).
+\]
+
+\vspace{0.2cm}
+Aqu\'i la suma es sobre todos los $x$, para el cu\'al $g(x) = y$.
+
+\vspace{0.3cm}
+
+\begin{ejemplo}
+\normalfont Sea $X$ una variable aleatoria discreta, que es definida sobre los enteros en el intervalo $[-3, 4]$. Sea la funci\'on de masa de probabilidad de $X$:
+
+\[
+p_X(x) = \begin{cases}
+0.05 & x \in \{-3, 4 \}, \\
+0.10 & x \in \{-2, 3\}, \\
+0.15 & x \in  \{ -1,2\}, \\
+0.20 & x \in  \{0, 1\}, \\
+0 & \text{en otros casos.}
+\end{cases}
+\]
+
+Encontremos la funci\'on de masa de probabilidad  de la variable aleatoria $Y$, definida como $Y = X^2 -\vert X \vert$.
+
+\vspace{0.2cm}
+
+Como los posibles valores de $X$ son dados por $[-3, -2, -1, 0, 1, 2, 3, 4]$, se sigue que los valores de $Y$ son $[6, 2, 0, 0, 0, 2, 6, 12]$ y as\'i el rango de $Y$ es $[0,2,6, 12]$. Esto permite calcular la funci\'on de masa de probabilidad de $Y$ como:
+
+\[
+p_Y(y) = \begin{cases}
+0.15 + 0.20 + 0.20 = 0.55 & \text{si}\ y = 0 \ \ \  (g(x) = y \ \text{para}\  x = -1,0,1)\\
+0.10 + 0.15 = 0.25 & \text{si}\  y = 2\ \ \  (g(x) = y \ \text{para}\ x = -2,2),\\
+0.05 + 0.10 = 0.15 & \text{si}\ y =6 \ \ \ (g(x) = y \ \text{para}\ x = -3,3), \\
+0.05 = 0.05 & \text{si} \ y =12 \ \ \ (g(x) = y \ \text{para}\ x = 4),\\
+0 & \text{en otros casos.}
+\end{cases}
+\]
+\end{ejemplo}
+
+\begin{ejemplo}
+\normalfont Continuando con el \texttt{Ejemplo 1.2}, sea $D$ la distancia de la part\'icula, desde el origen despu\'es de $n$ pasos. Asumiendo  que $n$ es par. Encontremos el PMF de $D$.
+
+\vspace{0.2cm}
+
+Podemos es escribir $D = \vert Y \vert$, esta es una funci\'on de $Y$, pero no es inyectiva. El evento $D =0$, es el mismo que el evento $Y = 0$. Para $k = 2, 4,\dots, n$, el evento $D = k$ es el mismo evento $\{ Y = k\} \cup \{Y = -k\}$. 
+
+
+\vspace{0.2cm}
+
+
+As\'i el PMF de $D$ es:
+
+\begin{align*}
+\mathbb{P}(D = 0) &= \binom{n}{\frac{n}{2}}\biggl(\frac{1}{2}\biggr),\\
+\mathbb{P}(D = k) &= \mathbb{P}(Y = k) + \mathbb{P}(Y = -k) = 2\binom{n}{\frac{n +k}{2}}\biggl(\frac{1}{2}\biggr),
+\end{align*}
+
+para $k = 2, 4,\dots, n$. En el paso final, usamos la simetria para ver que $\mathbb{P}(Y =k) = \mathbb{P}(Y = -k)$. 
+\end{ejemplo}
+
+\vspace{0.3cm}
+
+En el caso de variables aleatorias continuas, un enfoque es empezar con la funci\'on de distribuci\'on acumulativa  de $g(X)$ y trasladar  el evento $g(X) \leq y$ en un evento equivalente que implica $X$. Para una funci\'on general $g$, debemos expresar de forma acertada  $g(X) \leq y$ en t\'erminos de $X$ y no hay una f\'ormula f\'acil para eso. Pero cuando $g$ es continua y estrictamente creciente, podemos encontrar una expresi\'on conveniente, si  $g(X) \leq y $ es lo mismo que $X \leq g^{-1}(y)$ y  as\'i tenemos que:
+
+\vspace{0.2cm}
+
+\[
+F_{g(X)}(y) = \mathbb{P}(g(X) \leq y) = \mathbb{P}(X \leq g^{-1}(y)) = F_{X}(g^{-1}y).
+\]
+
+\vspace{0.2cm}
+
+Entonces podemos diferenciar con respecto a $y$ para obtener el PDF de $g(X)$. Esto da una versi\'on unidimensional de la f\'ormula de cambio de variables, que se generaliza a transformaciones invertibles en m\'ultiples dimensiones.
+
+\vspace{0.2cm}
+
+\begin{teo}
+\normalfont (Cambio de variable en una dimensi\'on) Sea $X$ una variable aleatoria continua con PDF $f_X$ y sea $Y = g(X)$, donde $g$ es diferenciable y estrictamente creciente (o estrictamente creciente). Entonces el PDF de $Y$ es dado por:
+
+\[
+f_Y(y) = f_X(x)\biggl\vert\frac{dx}{dy} \biggr\vert,
+\]
+
+donde $x = g^{-1}(y)$.
+\end{teo}
+
+\vspace{0.2cm}
+
+Sea $g$  una funci\'on estrictamente creciente. El CDF de Y es:
+
+\[
+F_{Y}(y) = \mathbb{P}(Y \leq y) = \mathbb{P}(g(X) \leq y) = \mathbb{P}(X \leq g^{-1}(y)) = F_{X}(g^{-1}(y)) = F_X(x),
+\]
+
+\vspace{0.2cm}
+
+As\'i por la regla de la cadena, el PDF de $Y$ es:
+
+\[
+f_Y(y) = f_X(x)\frac{dx}{dy}.
+\]
+
+La prueba  para $g$ estrictamente decreciente es an\'alogo. En ese caso el PDF, termina como, $-f_X(x)\frac{dx}{dy}$, que no es negativa, desde que $\frac{dx}{dy} < 0$ si $g$ es estrictamente decreciente. Usando $\biggl\vert\frac{dx}{dy} \biggr\vert$ como en la declaraci\'on del teorema, abarca ambos casos.
+
+\vspace{0.2cm}
+
+
+\begin{defi}
+\normalfont El soporte de una variable aleatoria continua $X$ y su distribuci\'on, es el conjunto de todos los puntos $x$ donde $f_X(x) > 0$.
+\end{defi}
+
+\vspace{0.2cm}
+\begin{ejemplo}
+\normalfont La funci\'on de distribuci\'on acumulativa de una variable aleatoria exponencial $X$ con param\'etro $\lambda$ es dado por:
+
+\[
+\mathbb{P}(X \leq x) = \begin{cases}
+1 - e^{-\lambda x}, & \  x\geq 0 \\
+0 & \text{ en otro caso.}
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+Calculemos la funci\'on de distribuci\'on acumulativa y la funci\'on de densidad de una variable aleatoria $Y$, definida como $Y = X^2$. Nosotros tenemos:
+
+\[
+\mathbb{P}(Y \leq y) = \mathbb{P}(X^2 \leq y) = \mathbb{P}(X \leq \sqrt{y}) = 1 -e^{-\lambda \sqrt{y}}\ \ \text{para}\ y \geq 0.
+\]
+
+\vspace{0.2cm}
+
+Podemos calcular la funci\'on densidad de $Y$, por diferenciaci\'on. As\'i tenemos:
+
+\vspace{0.2cm}
+
+\[
+f_Y(y) = \frac{d}{dy}\mathbb{P}(Y \leq y) = \lambda e^{-\lambda y^{1/2}}\times \frac{1}{2}y^{-1/2} = \frac{\lambda}{2\sqrt{y}}e^{-\lambda \sqrt{y}}\ \ \text{para}\ y > 0.
+\]
+
+\vspace{0.2cm}
+
+En experimentos de simulaci\'on es frecuente que se tenga acceso a secuencias de n\'umeros aleatorios que se distribuyen uniformemente en el intervalo $(0,1)$, pero lo que realmente se requiere son n\'umeros aleatorios de una distribuci\'on no uniforme. En particular, en teoria  de colas, a menudo se necesitan n\'umeros aleatorios que se distribuyen de acuerdo con una distribuci\'on exponencial (negativa). Este \'ultimo ejemplo muestra c\'omo se pueden obtener tales n\'umeros.
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Sea $X \sim N(0,1), Y = e^X$. Usemos el teorema de cambio de variable para encontrar el PDF de $Y$, desde que $g(x) = e^X$ es estrictamente creciente. Sea $y = e^X$, As\'i $x = \log y$ y $dy/dx = e^x$. Entonces:
+
+\[
+f_Y(y) = f_X(x)\biggl\vert \frac{dx}{dy} \biggr\vert = \varphi(x)\frac{1}{e^x} = \varphi(\log y)\frac{1}{y}, \ y > 0.
+\]
+
+\vspace{0.2cm}
+
+Ten en cuenta que despu\'es de aplicar la f\'ormula de cambio de variables, escribimos todo a la derecha en t\'erminos de $y$ y especificamos el soporte \footnote{Si $X$ es una variable aleatoria discreta, el conjunto finito o infinito contable de valores $x$ tal que $\mathbb{P}(X = x)> 0$, es llamado soporte de $X$.} de la distribuci\'on. Para determinar el soporte, s\'olo observamos que cuando $x$ var\'ia desde $-\infty$ a $\infty$, $e^X$ var\'ia desde $0$ a $\infty$.
+
+\vspace{0.2cm}
+
+Podemos obtener el mismo resultado trabajando a partir de la definici\'on de la funci\'on de distribuci\'on acumulativa, transladando el evento $Y \leq y$ en un evento equivalente involucrando $X$. Para $y> 0$,
+
+\[
+F_Y(y) = \mathbb{P}(Y \leq y) = \mathbb{P}(e^X \leq y) = \mathbb{P}(X \leq \log y) = \Phi(\log y),
+\]
+
+\vspace{0.2cm}
+
+y as\'i el PDF, otra vez es:
+
+\[
+f_Y(y) = \frac{d}{dy}\Phi(\log Y) = \varphi(\log y)\frac{1}{y}, \ y> 0.
+\]
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Sea la funci\'on densidad de probabilidad de una variable aleatoria $X$, es dado por:
+
+\[
+f_X(x) = \begin{cases}
+\alpha/x^5, & 1 \leq x < \infty \\
+0 & \text{en otros casos.}
+\end{cases}
+\]
+
+Sea una nueva variable aleatoria definida como $Y = 1/X$. Encontremos la funci\'on densidad de $Y$.
+
+\vspace{0.2cm}
+
+Primero responderemos a la pregunta usando el enfoque est\'andar. Nuestra primera tarea es calcular el valor de $\alpha $. Ya que debemos tener:
+
+\[
+1 = \bigints_{-\infty}^{\infty}f_X(x) dx = \bigints_{1}^{\infty}\frac{\alpha}{x^5} dx= -\alpha\frac{x^{-4}}{4}\biggl\vert_{1}^{\infty} = \frac{\alpha}{4},
+\]
+
+y por propiedad $\alpha = 4$. La funci\'on distribuci\'on acumulativa de $X$, ahora se puede calcular como:
+
+\[
+F_X(x) = \bigints_{1}^{x}f_X(t)dt = \bigints_{1}^{x}\frac{4}{t^5}dt = -t^{-4}\biggl\vert_{1}^{x} = 1 - \frac{1}{x^4}, \ x\geq 1.
+\]
+
+\vspace{0.2cm}
+
+Ahora, usando probabilidades y observando que el rango de $Y$ es $(0, 1]$, podemos calcular la distribuci\'on acumulativa de $Y$ como:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(Y \leq y) = \mathbb{P}(1/X \leq y) = \mathbb{P}(X \geq 1/y) = 1 -\mathbb{P}(X < 1/y) = 1 -F_X(1/y) = y^4, \ \text{para}\ \ 0 < Y \leq 1.
+\]
+
+\vspace{0.2cm}
+
+Finalmente, calculamos la funci\'on densidad de $Y$, tomando derivadas. As\'i obtenemos:
+
+\vspace{0.2cm}
+
+\[
+f_Y(y) = \frac{d}{dy}F_Y(y) = \frac{d}{dy}y^4 = 4y^3, \ 0 < y \leq 1.
+\]
+
+\vspace{0.2cm}
+
+Utilizando el teorema de cambio de variables, cuando $y = 1/x$ y as\'i $x = 1/y$, obtenemos 
+
+\[
+f_Y(y) = \frac{4}{(1/y)^5}\biggl\vert \frac{-1}{y^2}\biggr\vert = 4y^3 
+\]
+
+como antes. 
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont Sea $X$ una variable aleatoria continua con PDF, $f_X$ y sea $Y = a +bX$, con $b \neq 0$. Sea $y = a +bx$, el espejo de la relaci\'on entre $Y$ y $X$. Entonces $\frac{dy}{dx} = b$ y as\'i el PDF de $Y$ es:
+
+\vspace{0.2cm}
+
+\[
+f_Y(y) = f_X(x)\biggl\vert \frac{dx}{dy}\biggr\vert = f_X\biggl(\frac{y -a}{b}\biggr)\frac{1}{\vert b \vert}.
+\]
+\end{ejemplo}
+
+\section{Independencia de variables aleatorias}
+
+\vspace{0.2cm}
+
+As\'i como tuvimos la noci\'on de independencia de  eventos, podemos definir la independencia de las variables aleatorias. Intuitivamente, si dos variables aleatorias $X$ e $Y$ son independientes, entonces conocer el valor de $X$ no da ninguna informaci\'on sobre el valor de $Y$ y viceversa. La siguiente definici\'on, formaliza esta idea.
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont La variables aleatorias $X$ e $Y$ se dice que son independientes si:
+
+\[
+\mathbb{P}(X \leq x, Y \leq y) = \mathbb{P}(X \leq x)\mathbb{P}(Y \leq y),
+\]
+
+\vspace{0.2cm}
+
+para todo $y \in \mathbb{R}$. En el caso discreto, este caso es equivalente a la condici\'on:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(X = x, Y = y) = \mathbb{P}(X = x)\mathbb{P}(Y = y),
+\]
+
+para todo $x, y$ con $x$ en el soporte de $X$ y $y$ en el soporte de $Y$.
+\end{defi}
+
+\vspace{0.2cm}
+
+La definici\'on para m\'as variables aleatorias es an\'alogo:
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont La variables aleatorias $X_1,\dots X_n$ son independientes si:
+
+\[
+\mathbb{P}(X_1 \leq x_1, \dots, X_n \leq x_n) = \mathbb{P}(X_1 \leq x_1)\dots \mathbb{P}(X_n \leq x_n )
+\]
+
+para todo $x_1, \dots, x_n \in \mathbb{R}$. Para infinitas variables aleatorias, decimos que son independientes si cada subconjunto finito de las variables aleatorias es independiente.
+\end{defi}
+
+\vspace{0.2cm}
+
+Comparando esto con el criterio de independencia de $n$ eventos, puede parecer extra\~o que la independencia de $X_1,\dots, X _n$  variables aleatorias requiera s\'olo una igualdad, mientras que para la independencia de  eventos necesitamos verificar la independencia de pares para todos los $\binom{n}{2}$ pares, independencia de a tres paras las $\binom{n}{3}$  triples y as\'i sucesivamente.
+
+\vspace{0.2cm}
+
+Sin embargo, al examinar m\'as detenidamente la definici\'on, vemos que la independencia de variables aleatorias requiere que la igualdad se cumpla para  todos los posibles $x_1,\dots, x_n$ infinitamente muchas condiciones.Si podemos encontrar una \'unica lista de valores $x_1, \dots, x_n$ para el cu\'al la igualdad falla, entonces $X_1,\dots, X_n$ no son independientes.
+
+\vspace{0.2cm}
+
+\begin{ejemplo}
+\normalfont En el lanzamiento de dos dados, si $X$ es el n\'umero del primer dado y $Y$ es el n\'umero del segundo dado, entonces $X +Y$ no es independiente de $X- Y$. Para ver esto, debes notar  que:
+
+\[
+0 = \mathbb{P}(X + Y =12, X -Y =-1) \neq \mathbb{P}(X + Y  =12)\mathbb{P}(X - Y = 1) = \frac{1}{36}\cdot\frac{5}{36}.
+\]
+
+\vspace{0.2cm}
+
+Desde que hemos encontrado un par de valores $(s,d)$, para el cual:
+
+\[
+\mathbb{P}(X + Y =s, X -Y =-d) \neq \mathbb{P}(X + Y =s)\mathbb{P}(X - Y = d)
+\]
+
+\vspace{0.2cm}
+
+$X +Y$ y $X- Y$ son dependientes. Esto tambi\'en tiene sentido intuitivamente: sabiendo que la  suma de los dados es $12$ nos dice que su diferencia debe ser $0$, por lo que los variables aleatorias  proporcionan informaci\'on de cada una de ellas.
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+\begin{defi}
+\normalfont Las variables que son independientes y tienen las misma distribuci\'on, se les llama independientes y id\'enticamente distribuidas o \texttt{i.i.d} o \texttt{I.I.D}.
+
+\vspace{0.2cm}
+
+"Independiente" e "id\'enticamente distribuidos"   son dos conceptos a menudo confundidos pero completamente diferentes. Las variables aleatorias son independientes si no proporcionan informaci?n entre s\'i; se distribuyen de forma id\'entica si tienen el mismo PMF (o equivalentemente, el mismo CDF). Si dos variables aleatorias son independientes no tiene nada que ver con que  si tienen o no la misma distribuci\'on. Podemos tener variables aleatorias:
+
+\begin{itemize}
+\item Independientes e id\'enticamente distribuidas: Sea $X$ el resultado del lanzamiento de un dado, y sea $Y$ el resultado del lanzamiento independiente de un segundo de dado . Entonces $X$ e $Y$ son \texttt{i.i.d}.
+
+\item Independientes y no id\'enticamente distribuidas: Sea $X$ el resultado del lanzamiento de  un dado y sea $Y$ el precio de cierre de la bolsa de valores de Lima  (un \'indice burs\'atil) en un mes a partir de ahora. Entonces $X$ e $Y$ no proporcionan ninguna informaci\'on sobre cada una   y $X$ e $Y$ no tienen la misma distribuci\'on.
+
+\item Dependientes e id\'enticamente distribuidas: Sea $X$ el n\'umero de caras en $n$  lanzamientos independientes de una moneda y sea $Y$ el n\'umero de sellos en esos mismos $n$ lanzamientos. Entonces $X$ e $Y$ son ambas distribuidas por  $\texttt{Binomial}(n, 1/2)$, pero son altamente dependientes: si sabemos $X$, entonces conocemos $Y$  perfectamente.
+
+\item Dependientes y no id\'enticamente distribuidas: Sea $X$ el indicador de si el partido mayoritario retiene el control de la c\'amara de Representantes en los Estados Unidos despu?s de las pr\'oximas elecciones y sea $Y$ la calificaci\'on de favorabilidad promedio del partido mayoritario en las encuestas tomadas  a un mes de la elecci\'on. Entonces $X$ e $Y$ son dependientes y $X$ e $Y$ no tienen la misma distribuci\'on.
+\end{itemize}
+\end{defi}
+
+\section{Variable aleatoria condicionada}
+
+\vspace{0.2cm}
+
+Un evento $A$ puede ser condicionado por un evento $B$ diferente y  la probabilidad asignada a $A$ puede cambiar, permanecer igual o incluso llegar a cero como resultado de saber que el evento $B$ ocurre. Escribimos anteriormento $\mathbb{P}(A|B)$ como la probabilidad del evento $A$ dado el evento $B$. Debido a que una variable aleatoria $X$ define eventos en un espacio muestral, se sigue que las probabilidades asignadas a variables aleatorias tambi\'en pueden cambiar al saber que un cierto evento $B$ ha ocurrido.
+
+\vspace{0.2cm}
+
+El evento $[X = x]$ contiene todos los resultados que son asignados por la variable aleatoria $X$ al n\'umero real $x$ y su probabilidad, $\mathbb{P}(X =x)$, es igual a la suma de las probabilidades de estos resultados. Sabiendo que un evento $B$ ha ocurrido se puede alterar $\mathbb{P}(X =x)$,  para todos los valores posibles de $x$. La probabilidad condicional $\mathbb{P}(X =x|B)$,  se define cuando $\mathbb{P}(B) > 0$. 
+
+\vspace{0.2cm}
+
+Cuando la variable aleatoria $X$ es discreta, $\mathbb{P}(X =x|B)$  se denomina funci\'on de masa de probabilidad condicional de $X$ y se denota como $p_{X|B}(x)$. De nuestra definici\'on previa de probabilidad condicional para dos eventos, podemos escribir:
+
+\vspace{0.2cm}
+
+\[
+p_{X|B}(x) = \frac{\mathbb{P}([X =x] \cap B)}{\mathbb{P}(B)}
+\]
+
+\vspace{0.2cm}
+
+En muchos ejemplos, el evento $[X =x]$ est\'a contenido en el evento $B$ o su intersecci\'on de $[X=x]$ y $B$ es el evento nulo. En el primer caso tenemos:
+
+\vspace{0.2cm}
+
+\[
+p_{X|B}(x) = \frac{p_X(x)}{\mathbb{P}(B)}\ \text{si}\ [X =x]\subset B
+\]
+
+\vspace{0.2cm}
+
+Mientras que el segundo caso tenemos : $[X =x] \cap B = \emptyset$ y as\'i $p_{X|B}(x) = 0$.
+
+\vspace{0.3cm}
+
+Estos conceptos se trasladan de manera natural a variables aleatorias que son continuas. Para una variable aleatoria continua $X$ y un evento $B$, podemos escribir:
+
+\vspace{0.2cm}
+
+\[
+f_{X|B}(x)dx = \mathbb{P}(x < X \leq x + dx| B) = \frac{\mathbb{P}([x< X \leq x +dx]\cap B)}{\mathbb{P}(B)}.
+\]
+
+
+\vspace{0.2cm}
+
+As\'i
+
+\vspace{0.2cm}
+
+
+\[
+f_{X|B}(x) = \begin{cases}
+f_X(x)/\mathbb{P}(B) & \ \text{si}\ [X =x] \subset B \\
+0 & \ \text{si}\ [X =x]\cap B = \emptyset
+\end{cases}
+\]
+
+\begin{ejemplo}
+\normalfont Sea $X$ la variable aleatoria que cuenta el n\'umero de puntos obtenidos cuando se lanzan dos dados. La funci\'on de masa de probabilidad para $X$ es:
+
+\vspace{0.3cm}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=13cm]{v4}
+\end{figure}
+
+
+\vspace{0.2cm}
+
+Sea $B$ el evento de que el lanzamiento da un n\'umero  par de puntos  en uno de los dados y un n\'umero impar  en el otro dado. Se sigue que el evento $B$ contiene $18$ resultados. Cada resultado es un par con la propiedad de que el primero puede ser cualquiera de los seis n\'umeros, pero el segundo debe ser uno de los tres n\'umeros pares (si el primero es impar) o uno de tres n\'umeros impares (si el primero es par). Como todos los resultados son igualmente probables, tenemos que  $\mathbb{P}(B)= 1/2$. 
+
+\vspace{0.2cm}
+
+Dado este evento calculamos la funci\'on de masa de probabilidad condicional $p_{X|B}$. Desde que la intersecci\'on de $B$ y $[X=x]$, cuando $x$ es un n\'umero par es vac\'io, se sigue que la probabilidad de que la suma siendo  un n\'umero par es cero.
+
+\vspace{0.2cm}
+
+Para valores impares de $x$, el evento $[X =x]$ est\'a enteramente contenido dentro del evento $B$. Por tanto si resumimos, todos estos resultados, tenemos que la funci\'on de masa de probabilidad condicional es obtenida como:
+
+
+\[
+p_{X|B}(x) = \begin{cases}
+p_X(x)/\mathbb{P}(B), & \ \ x = 3, 5, 7, 9, 11, \\
+0 &\ \ \text{en otros casos,}
+\end{cases}
+\]
+
+y es presentada en forma tabular de la siguiente manera:
+
+\vspace{0.3cm}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=13cm]{v5}
+\end{figure}
+\end{ejemplo}
+
+\vspace{0.2cm}
+
+Si $B_i, i =1, 2, \dots, n$ es un conjunto mutualmente exclusivos y colectivamente exhaustivos (espacio de eventos), entonces se cumple:
+
+\[
+p_X(x) = \sum_{i =1}^{n}p_{X|B_i}(x)\mathbb{P}(B_i)
+\]
+
+\vspace{0.2cm}
+
+El resultado se sigue, de aplicar la ley de Probabilidad de Total al evento $[X =x]$.
+
+\begin{ejemplo}
+\normalfont Sea $X$ una variable aleatoria con funci\'on densidad dada por:
+
+\[
+f_X(x) = \begin{cases}
+(1/2)e^{-x/2} & \ \text{si}\ x \geq 0 \\
+0 & \text{en otros casos.}
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+Sea $B$ el evento que $X < 1$ y deseamos encontrar $f_{X|X < 1}(x)$. Para ello, calculemos $\mathbb{P}(X < 1)$ como:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(X < 1) = \bigints_{0}^{1}(1/2)e^{-x/2}dx = -e^{-x/2}\biggl\vert_{0}^{1} = 1 -e^{-1/2}.
+\]
+
+\vspace{0.2cm}
+
+La funci\'on densidad de probabilidad condicional de $X$ es entonces dado por:
+
+\begin{align*}
+f_{X| X < 1}(x)& = \begin{cases}
+f_X(x)/\mathbb{P}(X < 1)& \ \text{para}\ 0\leq x < 1, \\
+0 &\ \text{en otro caso,}
+\end{cases} \\
+&= \begin{cases}
+(1/2)e^{-x/2}/(1 -e^{-1/2}) &\ \text{para}\ 0 \leq x < 1 \\
+0 &\ \text{en otro caso,}
+\end{cases}
+\end{align*}
+
+\vspace{0.2cm}
+
+La funci\'on  de distribuci\'on acumulativa condicional, $F_{X|B}(x|B)$, de una variable aleatoria $X$, dado que $B$ ha ocurrido, es definida como:
+
+\vspace{0.2cm}
+
+\[
+F_{X|B}(x|B) = \frac{\mathbb{P}(X \leq x, B)}{\mathbb{P}(B)}
+\]
+
+donde $(X \leq x, B)$ es la intersecci\'on de los eventos $[X \leq x]$ y $B$. Adem\'as se tiene que:
+
+\vspace{0.2cm}
+
+\[
+F_{X|B}(-\infty| B) = 0 \ \ \text{y}\ \ F_{X|B}(\infty| B) = 1 
+\]
+
+\vspace{0.2cm}
+
+Tambi\'en:
+
+\[
+\mathbb{P}(x_1 < X \leq x_2|B) = F_{X|B}(x_2|B) -F_{X|B}(x_1|B) = \frac{\mathbb{P}([x_1 < X \leq x_2], B)}{\mathbb{P}(B)}.
+\]
+
+\vspace{0.2cm}
+
+La funci\'on densidad condicional, puede ser obtenida como la derivada:
+
+\[
+f_{X|B}(x|B) = \frac{d}{dx}F_{X|B}(x|B)
+\]
+
+\vspace{0.2cm}
+
+que debe ser no negativa y debe tener un \'area igual a $1$.
+\end{ejemplo}
+\end{document}
