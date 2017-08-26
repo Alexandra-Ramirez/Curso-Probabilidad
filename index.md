@@ -19,6 +19,16 @@ Los prerequisitos para este curso son:
 - [STA 101 Labs](http://www2.stat.duke.edu/~mc301/101_labs/).
 - [Lectures on Statistics Robert Ash](http://www.math.uiuc.edu/~r-ash/Stat.html).
 
+### Videos interesantes
+
+* How statistics can be misleading - Mark Liddell 
+
+<iframe width="560" height="420" src="http://www.youtube.com/embed/uzkc-qNVoOk"> </iframe>
+
+* La última banana: un experimento mental de probabilidad - Leonardo Barrichello 
+
+<iframe width="560" height="420" src="http://www.youtube.com/embed/Kgudt4PXs28"> </iframe>
+
 ### Libro de referencia
 
 - Robert V. Hogg, Elliot A. Tanis, Dale L. Zimmerman, Probability and Statistical Inference  2015.
@@ -52,6 +62,12 @@ Los prerequisitos para este curso son:
   - Permutaciones con reemplazo.
   - Permutaciones sin reemplazo.
   - Combinaciones sin reemplazo.
+  
+  Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi 
+  
+   <iframe width="360" height="240" src="http://www.youtube.com/embed/XMriWTvPXHI"> </iframe>
+ 
+  
   - Combinaciones con reemplazo.
   - Ensayos de Bernoulli. 
 
