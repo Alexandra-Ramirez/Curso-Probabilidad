@@ -77,11 +77,17 @@ Los prerequisitos para este curso son:
       - Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi 
   
         <iframe width="360" height="240" src="http://www.youtube.com/embed/XMriWTvPXHI"> </iframe>
+  
   - Ensayos de Bernoulli. 
 
 * Conceptos fundamentales de probabilidad
 
   - Probabilidad condicional.
+  - Video sobre como calcular la probabilidad condicional
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/H02B3aMNKzE"> </iframe> 
+  - Video sobre ejemplos de probabilidad condicional
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/MDzbD2Ay5b4"> </iframe> 
+      
   - Eventos independientes.
   
   - Video sobre independencia
