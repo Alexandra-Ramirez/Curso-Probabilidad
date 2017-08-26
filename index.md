@@ -143,11 +143,13 @@ Los prerequisitos para este curso son:
   - Funciones generadora de momentos.
 
 ### Cotas y teoremas de Límites
- 
-  - Tipos de convergencia.
+  
   - Desigualdad de Markov.
+  - Video acerca de la desigualdad de Markov
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/sp9RF0zH-SU"> </iframe> 
   - Desigualdad de Chebychev.
   - Cotas de Chernoff.
+  - Tipos de convergencia.
   - Ley de los grandes números.
   - Teorema del límite central.
   
