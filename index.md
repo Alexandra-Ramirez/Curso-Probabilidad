@@ -8,7 +8,7 @@ Los prerequisitos para este curso son:
 - Álgebra lineal.
 - Alguna familiariedad con un lenguaje de programación como Mathematica, Matlab, NumPy, C, R es asumida.
 
-<iframe width="560" height="420" src="http://www.youtube.com/embed/bxe2T-V8XRs"></iframe>
+<iframe width="560" height="420" src="http://www.youtube.com/embed/bxe2T-V8XRs"> </iframe>
 
 ### Lecturas previas
 
