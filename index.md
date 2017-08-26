@@ -18,6 +18,8 @@ Los prerequisitos para este curso son:
 - [STA 101 Labs](http://www2.stat.duke.edu/~mc301/101_labs/).
 - [Lectures on Statistics Robert Ash](http://www.math.uiuc.edu/~r-ash/Stat.html).
 
+<iframe width="560" height="315" src="http://www.youtube.com/embed/PWf4WUoMXwg" frameborder="0"> </iframe>
+
 ### Libro de referencia
 
 - Robert V. Hogg, Elliot A. Tanis, Dale L. Zimmerman, Probability and Statistical Inference  2015.
