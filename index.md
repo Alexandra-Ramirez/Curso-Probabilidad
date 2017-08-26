@@ -21,13 +21,18 @@ Los prerequisitos para este curso son:
 
 ### Videos interesantes
 
+* What's so sexy about math? - Cédric Villani 
+
+<iframe width="480" height="360" src="http://www.youtube.com/embed/Kc0Kthyo0hU"> </iframe>
+
+
 * How statistics can be misleading - Mark Liddell 
 
-<iframe width="560" height="420" src="http://www.youtube.com/embed/uzkc-qNVoOk"> </iframe>
+<iframe width="480" height="360" src="http://www.youtube.com/embed/sxYrzzy3cq8"> </iframe>
 
 * La última banana: un experimento mental de probabilidad - Leonardo Barrichello 
 
-<iframe width="560" height="420" src="http://www.youtube.com/embed/Kgudt4PXs28"> </iframe>
+<iframe width="480" height="3600" src="http://www.youtube.com/embed/Kgudt4PXs28"> </iframe>
 
 ### Libro de referencia
 
@@ -59,16 +64,18 @@ Los prerequisitos para este curso son:
  <iframe width="360" height="240" src="http://www.youtube.com/embed/UixU1oRW64Q"> </iframe>
  
   - Permutaciones.
-  - Permutaciones con reemplazo.
-  - Permutaciones sin reemplazo.
-  - Combinaciones sin reemplazo.
   
-  Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi 
+    - Permutaciones con reemplazo.
+    - Permutaciones sin reemplazo.
+  - Combinatoria.
+    - Combinaciones sin reemplazo.
+  
+ Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi 
   
    <iframe width="360" height="240" src="http://www.youtube.com/embed/XMriWTvPXHI"> </iframe>
  
   
-  - Combinaciones con reemplazo.
+    - Combinaciones con reemplazo.
   - Ensayos de Bernoulli. 
 
 * Conceptos fundamentales de probabilidad
