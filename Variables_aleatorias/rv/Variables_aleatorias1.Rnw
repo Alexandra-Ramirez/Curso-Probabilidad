@@ -1024,7 +1024,7 @@ La funci\'on de masa de probabilidad es $p_X(x) =1$ para $x = a$ y $0$ en otros 
 
 \[
 p_X(x) = \begin{cases}
-1/k & \mbox{para} \ 1, \dots ,k\\
+1/k & \mbox{para} \ x = 1, \dots ,k\\
 0 & \mbox{ en otros casos.}
 \end{cases}
 \]
