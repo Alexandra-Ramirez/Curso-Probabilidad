@@ -89,7 +89,7 @@ h6 {
 }
 
 p {
-  margin: 40px 0 15px 0;
+  margin: 10px 0 15px 0;
 }
 
 footer p {
@@ -386,8 +386,8 @@ Small Device Styles
   }
 
   .inner {
-    min-width: 320px;
-    max-width: 480px;
+    min-width: 480px;
+    max-width: 560px;
   }
 
   #project_title {
@@ -434,8 +434,8 @@ Small Device Styles
   }
 
   .inner {
-    min-width: 240px;
-    max-width: 320px;
+    min-width: 480px;
+    max-width: 560px;
   }
 
   #project_title {
@@ -467,8 +467,8 @@ Small Device Styles
   }
 
   code, pre {
-    min-width: 240px;
-    max-width: 320px;
+    min-width: 480px;
+    max-width: 560px;
     font-size: 11px;
   }
 
