@@ -1,3 +1,5 @@
+# Introducción a la probabilidad y la inferencia estadística
+
 ##  Descripción del curso
 
 CM274 es un curso introductorio  a las ideas fundamentales y técnicas de la teoria de probabilidades e inferencia estadística.
