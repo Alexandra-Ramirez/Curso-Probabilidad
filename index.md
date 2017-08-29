@@ -42,7 +42,8 @@ Los prerequisitos para este curso son:
 
 ### Libro de referencia
 
-- Robert V. Hogg, Elliot A. Tanis, Dale L. Zimmerman, Probability and Statistical Inference  2015.
+- Introduction to Probability, Statistics, and Random Processes, Hossein Pishro-Nik Kappa Research, LLC (August 24, 2014). El sitio web que acompaña al libro se encuentra  [aquí](https://www.probabilitycourse.com/).
+
 
 ## Temario
 
@@ -260,6 +261,7 @@ Los prerequisitos para este curso son:
 
 ### Libros y artículos
 
+- Robert V. Hogg, Elliot A. Tanis, Dale L. Zimmerman, Probability and Statistical Inference  2015.
 - Introduction to Probability, Dimitri P. Bertsekas y John N. Tsitsiklis, Athena Scientific, 2008.
 - Probability, Markov Chains, Queues, and Simulation (Princeton University Press) William J. Stewart (2009).
 - All of Statistics  A Concise Course in Statistical Inference Larry Wasserman (Springer Texts in Statistics) (2003).
