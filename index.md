@@ -251,12 +251,20 @@ Los prerequisitos para este curso son:
  * [C13: Repaso1]().
  * [C14: Repaso2]().
  
+### Tareas
+
+ * [Tarea 1](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Tareas/Tarea1.pdf).
+ * [Tarea 2](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Tareas/Tarea2.pdf).
+ * [Tarea 3](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Tareas/Tarea3.pdf).
+ * [Tarea 4](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Tareas/Tarea4.pdf).
+ 
 ### Ejercicios 
 
  * [Lista 1 de ejercios para el curso CM274](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista1-CM274.pdf).
  * [Lista 2 de ejercios para el curso CM274](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista2-CM274.pdf).
  * [Lista 3 de ejercios para el curso CM274](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista3-CM274.pdf).
  * [Lista 4 de ejercios para el curso CM274](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista4-CM274.pdf).
+
 
 ### Exámenes 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
