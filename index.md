@@ -251,8 +251,12 @@ Los prerequisitos para este curso son:
  * [C13: Repaso1]().
  * [C14: Repaso2]().
  
-### Lista de ejercicios
+### Ejercicios 
 
+ * [Lista 1 de ejercios para el curso CM274](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista1-CM274.pdf).
+ * [Lista 2 de ejercios para el curso CM274](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista2-CM274.pdf).
+ * [Lista 3 de ejercios para el curso CM274](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista3-CM274.pdf).
+ * [Lista 4 de ejercios para el curso CM274](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista4-CM274.pdf).
 
 ### Exámenes 
    * [Examen Parcial](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/ExamenParcial-CM274.pdf) | [Solución (Examen Parcial)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Respuestas_parcialCM274.pdf).
