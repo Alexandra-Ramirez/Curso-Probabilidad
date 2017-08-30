@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Problemas 1 \par
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Lista de ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+
+\item Un dado de seis caras se carga de tal manera que cada cara par es dos veces m\'as probable que cada cara impar. Construye  un modelo probabil\'istico para un solo lanzamiento de este dado y encuentra la probabilidad de que un $1$, $2$ o $3$ se presentar\'a.
+\item Una cierta familia tiene $6$ ni\~nos, consistiendo en $3$ muchachos y $3$ muchachas. Asumiendo que el orden de los nacimientos son igualmente probables, ?`cu\'al es la probabilidad de que los tres hijos mayores sean las $3$ chicas?.
+
+\item Una ciudad con $6$ distritos tiene $6$ robos en una semana en particular. Suponiendo que los robos se localizan de manera aleatoria, con todas las posibilidades de que donde ocurri\'o un robo es igualmente probable. ?`Cu\'al es la probabilidad de que alg\'un distrito haya tenido m\'as de un robo?.
+\item Los alces habitan en un cierto bosque. Hay $N$ alces, de los cuales una simple muestra aleatoria de tama\~no $n$ son capturados y etiquetados (\texttt{muestra aleatoria simple} significa que todos los $\binom{N}{n}$ conjuntos de $n$ alces son igualmente probables). Los alces capturados son devueltos a la poblaci\'on  y luego se lanza una nueva muestra, esta vez con el tama\~no $m$. Este es un m\'etodo importante que es ampliamente utilizado en ecolog\'ia, conocido como \texttt{captura-recaptura}. 
+
+?`Cu\'al es la probabilidad de que exactamente $k$ de los $m$ alces en la nueva muestra se etiquet\'o previamente?. (Suponga que un alce que fue capturado antes no se vuelve m\'as o menos probable que sea capturado de nuevo.)
+
+\item Un frasco contiene $r$ bolas rojas y $g$ bolas verdes, donde $r$ y $g$ son n\'umeros enteros positivos fijados. Una bola es sacada del tarro aleatoriamente (con todas las posibilidades igualmente probables) y entonces una segunda bola se saca  aleatoriamente.
+
+\begin{itemize}
+\item Explica intuitivamente por qu\'e la probabilidad de que la segunda bola sea verde es la misma que la probabilidad de que la primera pelota sea verde.
+\item Define la notaci\'on para el espacio muestral del problema y util\'izalo para calcular las probabilidades de $(a)$ y muestra que son iguales.
+
+\item Supongamos que hay $16$ bolas en total y que la probabilidad de que las dos bolas sean del mismo color es la misma que la probabilidad de que sean colores diferentes. ?`Qu\'e son $r$ y $g$ (enumera todas las posibilidades)?.
+
+\end{itemize}
+
+\item Alicia asiste a un peque\~no colegio en el que cada  clase es s\'olo una vez a la semana. Ella est\'a decidiendo entre $30$ clases que no se superponen. Hay $6$ clases para elegir de cada dia de la semana, de lunes a viernes. Confiando en la benevolencia de la aleatoriedad, Alicia decide registrarse en $7$ clases seleccionadas al azar de los $30$, con todas las opciones igualmente probables. 
+
+?`Cu\'al es la probabilidad de que ella tenga clases todos los dias, de lunes a viernes? (Este problema se puede hacer directamente usando la definici\'on de probabilidad, o usando el principio inclusi\'on-exclusi\'on.)
+
+\item Prueba que para tres eventos $A, B$ y $C$, se cumple
+
+\[
+\mathbb{P}(A \cap B \cap C) \geq \mathbb{P}(A) + \mathbb{P}(B) + \mathbb{P}(C) - 2.
+\]
+Generaliza el resultado.
+
+
+\item Encuentra una forma de probar esta igualdad, a trav\'es de una secuencia de pasos, utilizando los axiomas de la probabilidad,
+
+\[
+\mathbb{P}((A \cap B^{c}) \cup (A^c \cup B)) = \mathbb{P}(A) + \mathbb{P}(B) - 2\mathbb{P}(A \cap B).
+\]
+\item Considere el experimento cuyo espacio muestral es toda la l\'inea real.
+
+\begin{itemize}
+\item Sea $\{a_n\}$ es una secuencia creciente de n\'umeros crecientes que converge a $a$ y $\{ b_n\}$ una secuencia decreciente que converge a $b$. Muestra que
+
+\[
+\lim_{n \rightarrow \infty}\mathbb{P}([a_n, b_n]) = \mathbb{P}([a. b]).
+\]
+\item Sea $\{a_n \}$ una secuencia decreciente que que converge a $a$ y $\{ b_n\}$ una secuencia creciente que converge a $b$. Es cierto que
+
+\[
+\lim_{n \rightarrow \infty}\mathbb{P}([a_n, b_n]) = \mathbb{P}([a. b])?.
+\]
+\end{itemize}
+\end{enumerate}
+
+
+\end{document} 
