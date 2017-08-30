@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Problemas 2 \par
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Lista de ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+
+\item
+\begin{itemize}
+\item ?`Cu\'antas maneras hay de dividir a una docena de personas en $3$ equipos, donde un equipo tiene 2 personas y los otros dos equipos tienen $5$ personas cada uno ?.
+
+\item ?`Cu\'antas maneras hay de dividir a una docena de personas en $3$ equipos, donde cada equipo tiene 4 personas?.
+\end{itemize}
+
+\item
+
+\begin{itemize}
+\item ?`Cu\'antos caminos hay desde el punto $(0, 0)$ hasta el punto $(110, 111)$ en el plano de manera  que cada paso consiste en ir una unidad hacia arriba o una unidad hacia la derecha?.
+
+\item ?` Cu\'antos caminos hay desde $(0, 0)$ a $(210, 211)$, donde cada paso consiste en ir una unidad hacia arriba o una unidad a la derecha  y el camino tiene que pasar por $(110, 111)$?.
+\end{itemize}
+\item Muestra que 
+
+\[
+P(n , k) = P(n -1, k) + kP(n -1, k -1), \ k = 1,2, \dots, n,\ n =1, 2,\dots
+\]
+
+Interpreta este resultado en t\'erminos de permutaciones de $n$ \'items tomados $k$ a la vez.
+
+\item Una baraja de $52$ cartas es distribuida al azar a cuatro jugadores para que cada uno reciba 13 cartas. ?`Cu\'al es la probabilidad de que cada jugador tenga un as?.
+
+\item Muestra que para los enteros $n$ y $k$ con $n \geq k$,
+
+\[
+\binom{n}{k} +  \binom{n}{ k -1} = \binom{n + 1}{k},
+\]
+
+Interpreta el resultado.
+
+\item Se selecciona aleatoriamente un n\'umero del conjunto $\{0000, 0001, 0002,\dots , 9999\}$. ?`Cu\'al es la probabilidad de que la suma de los dos primeros d\'igitos del n\'umero seleccionado sea igual a la suma de sus dos \'ultimos d\'igitos?.
+
+\item Una caja contiene cinco bolas azules y ocho rojas. Claudio y Cesareo comienzan a sacar las bolas de la caja, respectivamente, una a la vez, al azar y sin reemplazo hasta que se saca una pelota azul. ?`Cu\'al es la probabilidad de que Cesareo saque la pelota azul?.
+
+\item Un tren consta de $n$ coches. Cada uno de los pasajeros ($m> n$) elegir\'a un coche al azar para subir. ?`Cu\'al es la probabilidad de que (a) haya al menos un pasajero en cada carro; (b) exactamente $r$ ($r <n$) de los coches permanezcan desocupados?.
+\item 
+\begin{itemize}
+\item Interpreta el resultado
+
+\[
+\binom{k}{k} + \binom{k +1}{k}+ \binom{k + 2}{k}+ \cdots + \binom{n}{k} = \binom{n +1}{k +1},
+\]
+
+donde $n$ y $k$ son enteros positivos con $n \geq k$. 
+
+\item Supongamos que un gran paquete de gomitas de ositos Haribo,  puede tener entre $30$ y $50$ gomitas de  ositos. Hay 5 deliciosos sabores: pi\~na (claro), frambuesa (rojo), naranja (naranja), fresa (verde, misteriosamente) y lim\'on (amarillo). Hay $0 $ sabores no deliciosos. ?`Cu\'antas posibilidades hay para la composici\'on de un paquete de gomitas de ositos?.
+\end{itemize}
+\item Demuestra que, a medida que el tama\~no $n$ de la poblaci\'on, la diferencia entre el n\'umero de combinaciones sin reemplazo para un n\'umero fijo de \'items $k$ es igual al n\'umero de combinaciones con reemplazo.
+\end{enumerate}
+
+
+\end{document} 
