@@ -106,6 +106,8 @@ Los prerequisitos para este curso son:
   
 ### Variables aleatorias y funciones de distribución
 
+  - Video introductorio sobre variables aleatorias
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/S_obHZJZ5EM"> </iframe> 
   - Variables aleatorias discretas y continuas.
   - Video sobre variables aleatorias discretas y distribuciones de probabilidad discreta
   
@@ -154,7 +156,11 @@ Los prerequisitos para este curso son:
   - Cotas de Chernoff.
   - Tipos de convergencia.
   - Ley de los grandes números.
+  - Video acerca de los casinos y la ley de los grandes números
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/RXY-WN0ahiw"> </iframe> 
   - Teorema del límite central.
+  - Conejitos, Dragones y el Mundo "Normal": Teorema del Límite Central
+     <iframe width="360" height="240" src="http://www.youtube.com/embed/jvoxEYmQHNM"> </iframe> 
   
   
 ##  Notas de clases
