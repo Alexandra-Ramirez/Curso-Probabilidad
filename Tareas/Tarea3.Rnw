@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Problemas 3 \par
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Lista de ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item Una moneda muestra cara  con una probabilidad $p$, o un sello con probabilidad $1 - p$. Se lanza repetidamente hasta que aparezca la primera cara. Halla $\mathbb{P}(E)$, la probabilidad del evento $E$ de que la primera cara aparezca en un n\'umero par de lanzamientos.
+
+\item Se lanza un  un dado repetidamente. ?`Cu\'al es la probabilidad de encontrar un seis por primera vez en un n\'umero impar de lanzamientos?.
+
+\item Dos monedas, $A$ y $B$, que muestran caras con probabilidades respectivas $\alpha$ y $\beta$, se distribuyen alternativamente, dando $ABABAB\dots$. Encuentra la probabilidad del evento $E$ en que $A$ es la primera moneda en  mostrar una cara.
+
+\item Erika y Jessica est\'an jugando un partido de tenis y el juego est\'a en deuce. Erika gana cualquier punto con probabilidad $p$, independientemente de cualquier otro punto. ?`Cu\'al es la probabilidad de que gane el juego?.
+
+\item Una mujer est\'a embarazada de gemelos. Los gemelos pueden ser id\'enticos o mellizos (no id\'enticos). En general, $1/3$ de los gemelos nacidos son id\'enticos. Obviamente, los gemelos id\'enticos deben ser del mismo sexo, los gemelos fraternos (mellizos) pueden o no ser. Supongamos que los gemelos id\'enticos tienen la misma probabilidad de ser ambos ni\~nos o ambas ni\~nas, mientras que para los mellizos todas las posibilidades son igualmente probables. Dada la informaci\'on anterior, ?`cu\'al es la probabilidad de que los gemelos de la mujer sean id\'enticos?.
+
+\item Una familia tiene $3$ hijos, creativamente llamados $A$, $B$ y $C$.
+
+\begin{itemize}
+\item Discute intuitivamente (pero claramente) si el evento \texttt{A es mayor  que B} es independiente del evento \texttt{A es mayor que C}.
+\item Halla la probabilidad de que $A$ sea mayor que $B$, dado que $A$ es mayor que $C$.
+\end{itemize}
+\item ?`Es posible que un evento sea independiente de s\'i mismo? Si es as\'i, ?`cu\'al es el caso?.
+\item
+
+\begin{itemize}
+\item Considere la siguiente versi\'on de $7$ puertas del problema de Monty Hall. Hay $7$ puertas, detr\'as de una de las cuales hay un coche (que quieres) y detr\'as de las otras puertas hay cabras (que no quieres). Inicialmente, todas las posibilidades son igualmente probables de donde est\'a el coche. Eliges una puerta. Monty Hall a continuaci\'on, abre $3$ puertas con cabras  y le ofrece la opci\'on de cambiar a cualquiera de las $3$ puertas restantes.
+
+Si  Monty Hall sabe qu\'e puerta tiene el coche, siempre abrir\'a $3$ puertas con cabras y ofrecer\'a la opci\'on de cambiar, adem\'as  que Monty elige con igual probabilidades de todas sus opciones las puertas con cabras para abrir. ?`Deber\'ias cambiar?. ?`Cu\'al es  la probabilidad de \'exito si  se cambia a una de las $3$ puertas restantes?.
+
+\item Generalizamos al problema de Monty Hall donde hay $n \geq 3$ puertas, de las cuales Monty abre $m$ puertas de cabra, con $1 \leq m \leq  n - 2$.
+\end{itemize}
+
+\item Es posible tener eventos $A$, $B$, $C$ tales que $\mathbb{P}(A |C)  < \mathbb{P}(B| C)$  y $\mathbb{P}(A | C^c) < \mathbb{P}(B | C^c)$, sin embargo $\mathbb{P}(A)> \mathbb{P} (B)$?. Es decir, $A$ es menos probable que $B$ dado que $C$ es verdadera  y tambi\'en es menos probable que $B$ dado que $C$ es falso, sin embargo, $A$ es m\'as probable que $B$ si no se nos da ninguna informaci\'on sobre $C$. Muestra que esto es imposible o encuentra un contraejemplo con $A$, $B$ y $C$.
+\end{enumerate}
+
+
+\end{document} 
+
