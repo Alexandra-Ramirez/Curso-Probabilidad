@@ -118,9 +118,6 @@ Los prerequisitos para este curso son:
  
 * Notas de clases de Probabilidad básica
   - [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
-  - Video sobre probabilidad, eventos independientes e dependientes
-  
-   <iframe width="360" height="240" src="http://www.youtube.com/embed/uzkc-qNVoOk"> </iframe>
   
 * Notas sobre teoria del conteo en probabilidad
   - [Combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
@@ -143,10 +140,8 @@ Los prerequisitos para este curso son:
       <iframe width="360" height="240" src="http://www.youtube.com/embed/H02B3aMNKzE"> </iframe> 
   - Video sobre ejemplos de probabilidad condicional
       <iframe width="360" height="240" src="http://www.youtube.com/embed/MDzbD2Ay5b4"> </iframe> 
-
   - Video sobre independencia 
-  
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/pV3nZAsJxl0"> </iframe> 
+  <iframe width="360" height="240" src="http://www.youtube.com/embed/pV3nZAsJxl0"> </iframe> 
   - Video  esplicativo de la regla o  teorema de Bayes
       <iframe width="360" height="240" src="http://www.youtube.com/embed/5NMxiOGL39M"> </iframe>
   
@@ -174,16 +169,12 @@ Los prerequisitos para este curso son:
   - [Esperanza y varianza de variables aleatorias](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Esperanza-varianza/Esperanza-varianza.pdf).
   - Video sobre esperanza y varianza de variables aleatorias discretas
       <iframe width="360" height="240" src="http://www.youtube.com/embed/Vyk8HQOckIE"> </iframe> 
-  - Video sobre la media y varianza de la distribución de Bernoulli
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/bC6WIpRgMuc"> </iframe> 
   
 * Distribuciones especiales
   - [Distribuciones discretas y continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Distribuciones/distribuciones.pdf).
 
 * Notas sobre cotas y teoremas de límites
   - [Desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
-  - Video acerca de la desigualdad de Markov
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/sp9RF0zH-SU"> </iframe> 
   - Video acerca de los casinos y la ley de los grandes números
       <iframe width="360" height="240" src="http://www.youtube.com/embed/RXY-WN0ahiw"> </iframe> 
    - Conejitos, Dragones y el Mundo "Normal": Teorema del Límite Central
