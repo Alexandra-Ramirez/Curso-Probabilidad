@@ -66,10 +66,8 @@ Los prerequisitos para este curso son:
 
 ### Conceptos fundamentales de probabilidad
 
-  - Probabilidad condicional.
-      
+  - Probabilidad condicional.     
   - Eventos independientes.
-  
   - Ley de la probabilidad total.
   - Regla de Bayes. 
   
@@ -95,8 +93,6 @@ Los prerequisitos para este curso son:
 ###  Esperanza de variables aleatorias
  
   - Definiciones.
- 
-  
   - Esperanza de funciones y variables aleatorias conjuntas.
   - Funciones generadoras de probabilidad para variables aleatorias discretas.
   - Funciones generadora de momentos.
@@ -104,36 +100,69 @@ Los prerequisitos para este curso son:
 ### Cotas y teoremas de Límites
   
   - Desigualdad de Markov.
-  
   - Desigualdad de Chebychev.
   - Cotas de Chernoff.
   - Tipos de convergencia.
   - Ley de los grandes números.
-  
   - Teorema del límite central.
  
-##  Notas de clases
+##  Notas y videos para las  clases
  
 * Notas de matemática 
     - [Teoria de conjuntos](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Conjuntos.pdf).
     - [Notas de funciones](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funciones.pdf).
     - [Función medida](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Funcion-medida.pdf).
     - [Sumas y combinatoria](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/sumas.pdf).
-    -  [Integración](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Integracion/Integracion.pdf).
+    - [Integración](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Integracion/Integracion.pdf).
     - [Algebra lineal](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Matematicas/Algebra_lineal/Algebra_lineal.pdf).
  
 * Notas de clases de Probabilidad básica
   - [Conceptos básicos de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad/Probabilidad.pdf).
+  - Video sobre probabilidad, eventos independientes e dependientes
+  
+   <iframe width="360" height="240" src="http://www.youtube.com/embed/uzkc-qNVoOk"> </iframe>
   
 * Notas sobre teoria del conteo en probabilidad
   - [Combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
+  - ¿ De cuántas maneras se puede barajar un mazo de cartas?
+
+       <iframe width="360" height="240" src="http://www.youtube.com/embed/uNS1QvDzCVw"> </iframe>
+
+  - ¿Hasta qué número puedes contar con los dedos? (Spoiler: mucho más que 10)
+       <iframe width="360" height="240" src="http://www.youtube.com/embed/UixU1oRW64Q"> </iframe>
+  - Video de como calcular la probabilidad con o sin reemplazo
+       <iframe width="360" height="240" src="http://www.youtube.com/embed/uKTjh-6PFjo"> </iframe>
+  
+  - Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi 
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/XMriWTvPXHI"> </iframe>
+
   
 * Conceptos fundamentales de probabilidad
   - [Probabilidad condicional, ley total y regla de Bayes ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
+  - Video sobre como calcular la probabilidad condicional
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/H02B3aMNKzE"> </iframe> 
+  - Video sobre ejemplos de probabilidad condicional
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/MDzbD2Ay5b4"> </iframe> 
+
+  - Video sobre independencia
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/pV3nZAsJxl0"> </iframe> 
+  - Video  esplicativo de la regla o  teorema de Bayes
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/5NMxiOGL39M"> </iframe>
+  
   
 * Notas sobre  variables aleatorias y funciones de distribución
   - [Variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
+  - Video introductorio sobre variables aleatorias
+     <iframe width="360" height="240" src="http://www.youtube.com/embed/S_obHZJZ5EM"> </iframe> 
+  - Video sobre variables aleatorias discretas y distribuciones de probabilidad discreta
+     <iframe width="360" height="240" src="http://www.youtube.com/embed/0P5WRKihQ4E"> </iframe> 
+
   - [Variables aleatorias (segunda parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv1/Variables_aleatorias2.pdf).
+  - Video acerca de la distribución de Bernoulli
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/bT1p5tJwn_0"> </iframe> 
+  - Video acerca de la distribución de Binomial
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/qIzC1-9PwQo"> </iframe> 
+
   
 * Notas sobre distribuciones conjuntas y condicionales
   - [Variables aleatorias multivariadas(1)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_multivariadas/variables_multivariadas1/Variables_multivariadas1.pdf).
@@ -142,12 +171,22 @@ Los prerequisitos para este curso son:
 * Notas sobre esperanza de variables aleatorias
   - [Funciones generadores de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Funciones-generadoras/Funciones-generadoras_probabilidad.pdf).
   - [Esperanza y varianza de variables aleatorias](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Esperanza-varianza/Esperanza-varianza.pdf).
+  - Video sobre esperanza y varianza de variables aleatorias discretas
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/Vyk8HQOckIE"> </iframe> 
+  - Video sobre la media y varianza de la distribución de Bernoulli
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/bC6WIpRgMuc"> </iframe> 
   
 * Distribuciones especiales
   - [Distribuciones discretas y continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Distribuciones/distribuciones.pdf).
 
 * Notas sobre cotas y teoremas de límites
   - [Desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
+  - Video acerca de la desigualdad de Markov
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/sp9RF0zH-SU"> </iframe> 
+  - Video acerca de los casinos y la ley de los grandes números
+      <iframe width="360" height="240" src="http://www.youtube.com/embed/RXY-WN0ahiw"> </iframe> 
+   - Conejitos, Dragones y el Mundo "Normal": Teorema del Límite Central
+     <iframe width="360" height="240" src="http://www.youtube.com/embed/jvoxEYmQHNM"> </iframe> 
  
 ### Lecturas adicionales
 
