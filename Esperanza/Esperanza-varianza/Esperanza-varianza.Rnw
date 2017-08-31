@@ -831,5 +831,5 @@ donde $\alpha_i, \ i=1,2,\dots, n$ son constantes, entonces:
 
 \vspace{0.2cm}
 
-Se debe observar que las variables aleatorias $X_1, X_2, \dots X_n$ no se necesitan ser independientes. Sin embargo, este resultado no se aplica generalmente a funciones que $h$ no es lineal.
+Se debe observar que las variables aleatorias $X_1, X_2, \dots X_n$ no se necesitan ser independientes. Sin embargo, este resultado no se aplica generalmente a funciones $h$ que no son lineales.
 \end{document}
