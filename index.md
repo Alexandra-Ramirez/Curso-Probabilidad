@@ -170,13 +170,14 @@ Los prerequisitos para este curso son:
   
 * Distribuciones especiales
   - [Distribuciones discretas y continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Distribuciones/distribuciones.pdf).
+  - Conejitos, Dragones y el Mundo "Normal": Teorema del Límite Central
+     <iframe width="360" height="240" src="http://www.youtube.com/embed/jvoxEYmQHNM"> </iframe> 
 
 * Notas sobre cotas y teoremas de límites
   - [Desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
   - Video acerca de los casinos y la ley de los grandes números
       <iframe width="360" height="240" src="http://www.youtube.com/embed/RXY-WN0ahiw"> </iframe> 
-   - Conejitos, Dragones y el Mundo "Normal": Teorema del Límite Central
-     <iframe width="360" height="240" src="http://www.youtube.com/embed/jvoxEYmQHNM"> </iframe> 
+   
  
 ### Lecturas adicionales
 
