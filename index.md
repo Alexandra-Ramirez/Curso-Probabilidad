@@ -140,8 +140,6 @@ Los prerequisitos para este curso son:
       <iframe width="360" height="240" src="http://www.youtube.com/embed/H02B3aMNKzE"> </iframe> 
   - Video sobre ejemplos de probabilidad condicional
       <iframe width="360" height="240" src="http://www.youtube.com/embed/MDzbD2Ay5b4"> </iframe> 
-  - Video sobre independencia 
-  <iframe width="360" height="240" src="http://www.youtube.com/embed/pV3nZAsJxl0"> </iframe> 
   - Video  esplicativo de la regla o  teorema de Bayes
       <iframe width="360" height="240" src="http://www.youtube.com/embed/5NMxiOGL39M"> </iframe>
   
