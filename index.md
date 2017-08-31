@@ -49,77 +49,36 @@ Los prerequisitos para este curso son:
 ### Probabilidad básica
   - Espacio muestral y eventos.
   - Función probabilidad.
-  - Video sobre probabilidad, eventos independientes e dependientes
-  
-   <iframe width="360" height="240" src="http://www.youtube.com/embed/uzkc-qNVoOk"> </iframe>
-  
   - Modelo clásico sobre espacios finitos.
   - Modelo clásico sobre espacios continuos.
   
 ### Teoria del conteo para probabilidad
 
-  - ¿ De cuántas maneras se puede barajar un mazo de cartas?
-
-       <iframe width="360" height="240" src="http://www.youtube.com/embed/uNS1QvDzCVw"> </iframe>
-
   - Principio del conteo.
-  
-  - ¿Hasta qué número puedes contar con los dedos? (Spoiler: mucho más que 10)
- 
-       <iframe width="360" height="240" src="http://www.youtube.com/embed/UixU1oRW64Q"> </iframe>
- 
   - Permutaciones.
       * Permutaciones con reemplazo.
       * Permutaciones sin reemplazo.
   - Combinatoria.
       * Combinaciones sin reemplazo.
       * Combinaciones con reemplazo.
-  - Video de como calcular la probabilidad con o sin reemplazo
-       <iframe width="360" height="240" src="http://www.youtube.com/embed/uKTjh-6PFjo"> </iframe>
-  
-   - Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi 
-  
-        <iframe width="360" height="240" src="http://www.youtube.com/embed/XMriWTvPXHI"> </iframe>
   
    - Ensayos de Bernoulli. 
 
 ### Conceptos fundamentales de probabilidad
 
   - Probabilidad condicional.
-  - Video sobre como calcular la probabilidad condicional
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/H02B3aMNKzE"> </iframe> 
-  - Video sobre ejemplos de probabilidad condicional
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/MDzbD2Ay5b4"> </iframe> 
       
   - Eventos independientes.
   
-  - Video sobre independencia
-  
-       <iframe width="360" height="240" src="http://www.youtube.com/embed/pV3nZAsJxl0"> </iframe> 
-  
   - Ley de la probabilidad total.
-  - Regla de Bayes.
-  - Video  esplicativo de la regla o  teorema de Bayes
-      
-       <iframe width="360" height="240" src="http://www.youtube.com/embed/5NMxiOGL39M"> </iframe> 
+  - Regla de Bayes. 
   
 ### Variables aleatorias y funciones de distribución
 
-  - Video introductorio sobre variables aleatorias
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/S_obHZJZ5EM"> </iframe> 
+  
   - Variables aleatorias discretas y continuas.
-  - Video sobre variables aleatorias discretas y distribuciones de probabilidad discreta
-  
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/0P5WRKihQ4E"> </iframe> 
-  
   - PMF de una variable aleatoria discreta.
   - Función de distribución acumulativa.
-  - Video acerca de la distribución de Bernoulli
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/bT1p5tJwn_0"> </iframe> 
-  
-  - Video acerca de la distribución de Binomial
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/qIzC1-9PwQo"> </iframe> 
-  
   - Función densidad de probabilidad para una variable aleatoria continua.
   - Funciones de una variable aleatoria.
   - Variables aleatorias condicionadas.
@@ -136,11 +95,7 @@ Los prerequisitos para este curso son:
 ###  Esperanza de variables aleatorias
  
   - Definiciones.
-  - Video sobre esperanza y varianza de variables aleatorias discretas
-  
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/Vyk8HQOckIE"> </iframe> 
-  - Video sobre la media y varianza de la distribución de Bernoulli
-       <iframe width="360" height="240" src="http://www.youtube.com/embed/bC6WIpRgMuc"> </iframe> 
+ 
   
   - Esperanza de funciones y variables aleatorias conjuntas.
   - Funciones generadoras de probabilidad para variables aleatorias discretas.
@@ -149,19 +104,14 @@ Los prerequisitos para este curso son:
 ### Cotas y teoremas de Límites
   
   - Desigualdad de Markov.
-  - Video acerca de la desigualdad de Markov
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/sp9RF0zH-SU"> </iframe> 
+  
   - Desigualdad de Chebychev.
   - Cotas de Chernoff.
   - Tipos de convergencia.
   - Ley de los grandes números.
-  - Video acerca de los casinos y la ley de los grandes números
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/RXY-WN0ahiw"> </iframe> 
+  
   - Teorema del límite central.
-  - Conejitos, Dragones y el Mundo "Normal": Teorema del Límite Central
-     <iframe width="360" height="240" src="http://www.youtube.com/embed/jvoxEYmQHNM"> </iframe> 
-  
-  
+ 
 ##  Notas de clases
  
 * Notas de matemática 
