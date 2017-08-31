@@ -18,8 +18,7 @@ Los prerequisitos para este curso son:
 - [Set Theory a primer](https://jeremykun.com/2011/07/09/set-theory-a-primer/).
 - [Linear algebra a primer](https://jeremykun.com/2011/06/19/linear-algebra-a-primer/).
 - [The Riemann integral](https://www.countbayesie.com/blog/2015/8/3/the-riemann-integral).
-- [STA 101 Labs](http://www2.stat.duke.edu/~mc301/101_labs/).
-- [Lectures on Statistics Robert Ash](http://www.math.uiuc.edu/~r-ash/Stat.html).
+
 
 ### Videos interesantes
 
@@ -292,6 +291,8 @@ Los prerequisitos para este curso son:
     * [jbstatistics](https://www.youtube.com/user/jbstatistics).
     * [Analytics University](https://www.youtube.com/channel/UC2XO4HDxzfMOZIV1l795g1Q).
     * [NPTEL HRD](https://www.youtube.com/user/nptelhrd).
+- [Lectures on Statistics Robert Ash](http://www.math.uiuc.edu/~r-ash/Stat.html).
+
   
 ## Software
 
