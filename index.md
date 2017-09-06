@@ -37,7 +37,7 @@ Los prerequisitos para este curso son:
 
 * How Bayes  Inference  work
 
-      <iframe width="480" height="360" src="http://www.youtube.com/embed/5NMxiOGL39M"> </iframe>
+  <iframe width="480" height="360" src="http://www.youtube.com/embed/5NMxiOGL39M"> </iframe>
 
 ### Libro de referencia
 
@@ -128,17 +128,13 @@ Los prerequisitos para este curso son:
   
 * Conceptos fundamentales de probabilidad
   - [Probabilidad condicional, ley total y regla de Bayes ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
-  - Video sobre como calcular la probabilidad condicional
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/H02B3aMNKzE"> </iframe> 
-  - Video sobre ejemplos de probabilidad condicional
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/MDzbD2Ay5b4"> </iframe> 
+  - [How to Calculate Conditional Probability](https://youtu.be/H02B3aMNKzE). 
+  - [Boy Girl Conditional Probability](https://youtu.be/MDzbD2Ay5b4).
  
   
 * Notas sobre  variables aleatorias y funciones de distribución
   - [Variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
-  - Video sobre variables aleatorias discretas y distribuciones de probabilidad discreta
-     <iframe width="360" height="240" src="http://www.youtube.com/embed/0P5WRKihQ4E"> </iframe> 
-
+  - [Introduction to Discrete Random Variables and Discrete Probability Distributions](https://youtu.be/0P5WRKihQ4E).
   - [Variables aleatorias (segunda parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv1/Variables_aleatorias2.pdf).
   
 * Notas sobre distribuciones conjuntas y condicionales
