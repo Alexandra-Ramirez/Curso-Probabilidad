@@ -121,9 +121,6 @@ Los prerequisitos para este curso son:
   
 * Notas sobre teoria del conteo en probabilidad
   - [Combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
-  - ¿ De cuántas maneras se puede barajar un mazo de cartas?
-
-       <iframe width="360" height="240" src="http://www.youtube.com/embed/uNS1QvDzCVw"> </iframe>
 
   - ¿Hasta qué número puedes contar con los dedos? (Spoiler: mucho más que 10)
        <iframe width="360" height="240" src="http://www.youtube.com/embed/UixU1oRW64Q"> </iframe>
@@ -146,17 +143,10 @@ Los prerequisitos para este curso son:
   
 * Notas sobre  variables aleatorias y funciones de distribución
   - [Variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
-  - Video introductorio sobre variables aleatorias
-     <iframe width="360" height="240" src="http://www.youtube.com/embed/S_obHZJZ5EM"> </iframe> 
   - Video sobre variables aleatorias discretas y distribuciones de probabilidad discreta
      <iframe width="360" height="240" src="http://www.youtube.com/embed/0P5WRKihQ4E"> </iframe> 
 
   - [Variables aleatorias (segunda parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv1/Variables_aleatorias2.pdf).
-  - Video acerca de la distribución de Bernoulli
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/bT1p5tJwn_0"> </iframe> 
-  - Video acerca de la distribución de Binomial
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/qIzC1-9PwQo"> </iframe> 
-
   
 * Notas sobre distribuciones conjuntas y condicionales
   - [Variables aleatorias multivariadas(1)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_multivariadas/variables_multivariadas1/Variables_multivariadas1.pdf).
