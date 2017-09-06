@@ -37,7 +37,12 @@ Los prerequisitos para este curso son:
 
 * How Bayes  Inference  work
 
-  <iframe width="480" height="360" src="http://www.youtube.com/embed/5NMxiOGL39M"> </iframe>
+<iframe width="480" height="360" src="http://www.youtube.com/embed/5NMxiOGL39M"> </iframe>
+  
+* Bunnies, Dragons and the 'Normal' World: Central Limit Theorem | The New York Times
+
+<iframe width="480" height="360" src="http://www.youtube.com/embed/jvoxEYmQHNM"> </iframe> 
+
 
 ### Libro de referencia
 
@@ -144,18 +149,15 @@ Los prerequisitos para este curso son:
 * Notas sobre esperanza de variables aleatorias
   - [Funciones generadores de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Funciones-generadoras/Funciones-generadoras_probabilidad.pdf).
   - [Esperanza y varianza de variables aleatorias](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Esperanza-varianza/Esperanza-varianza.pdf).
-  - Video sobre esperanza y varianza de variables aleatorias discretas
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/Vyk8HQOckIE"> </iframe> 
+  - [The Expected Value and Variance of Discrete Random Variables](https://youtu.be/Vyk8HQOckIE). 
   
 * Distribuciones especiales
   - [Distribuciones discretas y continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Distribuciones/distribuciones.pdf).
-  - Conejitos, Dragones y el Mundo "Normal": Teorema del Límite Central
-     <iframe width="360" height="240" src="http://www.youtube.com/embed/jvoxEYmQHNM"> </iframe> 
-
+     
 * Notas sobre cotas y teoremas de límites
   - [Desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
-  - Video acerca de los casinos y la ley de los grandes números
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/RXY-WN0ahiw"> </iframe> 
+  - [The reason casinos always win: meet the law of large numbers](https://youtu.be/RXY-WN0ahiw).
+     
    
  
 ### Lecturas adicionales
@@ -225,10 +227,10 @@ Los prerequisitos para este curso son:
  
 ### Ejercicios 
 
- * [Lista 1 de ejercios para el curso CM274](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista1-CM274.pdf).
- * [Lista 2 de ejercios para el curso CM274](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista2-CM274.pdf).
- * [Lista 3 de ejercios para el curso CM274](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista3-CM274.pdf).
- * [Lista 4 de ejercios para el curso CM274](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista4-CM274.pdf).
+ * [Lista 1 de ejercicios](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista1-CM274.pdf).
+ * [Lista 2 de ejercicios](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista2-CM274.pdf).
+ * [Lista 3 de ejercicios](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista3-CM274.pdf).
+ * [Lista 4 de ejercicios](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Ejercicios/Lista4-CM274.pdf).
 
 
 ### Exámenes 
