@@ -39,7 +39,7 @@ Los prerequisitos para este curso son:
 
 <iframe width="480" height="360" src="http://www.youtube.com/embed/5NMxiOGL39M"> </iframe>
   
-* Bunnies, Dragons and the 'Normal' World: Central Limit Theorem | The New York Times
+* Bunnies, Dragons and the 'Normal' World: Central Limit Theorem
 
 <iframe width="480" height="360" src="http://www.youtube.com/embed/jvoxEYmQHNM"> </iframe> 
 
