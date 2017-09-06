@@ -35,9 +35,9 @@ Los prerequisitos para este curso son:
 
 <iframe width="480" height="360" src="http://www.youtube.com/embed/KhAUfqhLakw"> </iframe>
 
-* La última banana: un experimento mental de probabilidad - Leonardo Barrichello 
+* How Bayes  Inference  work
 
-<iframe width="480" height="360" src="http://www.youtube.com/embed/Kgudt4PXs28"> </iframe>
+      <iframe width="480" height="360" src="http://www.youtube.com/embed/5NMxiOGL39M"> </iframe>
 
 ### Libro de referencia
 
@@ -121,14 +121,9 @@ Los prerequisitos para este curso son:
   
 * Notas sobre teoria del conteo en probabilidad
   - [Combinatoria en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Combinatoria/Combinatoria.pdf).
-
-  - ¿Hasta qué número puedes contar con los dedos? (Spoiler: mucho más que 10)
-       <iframe width="360" height="240" src="http://www.youtube.com/embed/UixU1oRW64Q"> </iframe>
-  - Video de como calcular la probabilidad con o sin reemplazo
-       <iframe width="360" height="240" src="http://www.youtube.com/embed/uKTjh-6PFjo"> </iframe>
-  
-  - Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi 
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/XMriWTvPXHI"> </iframe>
+  - [¿Hasta qué número puedes contar con los dedos? (Spoiler: mucho más que 10)](https://youtu.be/UixU1oRW64Q).
+  - [How to Calculate Probability With and Without Replacement V2](https://youtu.be/uKTjh-6PFjo).
+  - [Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi](https://youtu.be/XMriWTvPXHI).
 
   
 * Conceptos fundamentales de probabilidad
@@ -137,9 +132,7 @@ Los prerequisitos para este curso son:
       <iframe width="360" height="240" src="http://www.youtube.com/embed/H02B3aMNKzE"> </iframe> 
   - Video sobre ejemplos de probabilidad condicional
       <iframe width="360" height="240" src="http://www.youtube.com/embed/MDzbD2Ay5b4"> </iframe> 
-  - Video  esplicativo de la regla o  teorema de Bayes
-      <iframe width="360" height="240" src="http://www.youtube.com/embed/5NMxiOGL39M"> </iframe>
-  
+ 
   
 * Notas sobre  variables aleatorias y funciones de distribución
   - [Variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
