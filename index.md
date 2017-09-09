@@ -158,7 +158,12 @@ Los prerequisitos para este curso son:
   - [Desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
   - [The reason casinos always win: meet the law of large numbers](https://youtu.be/RXY-WN0ahiw).
      
-   
+
+### Horario de clases
+
+  - Lunes 12-14 PM J3-162 (Pŕacticas)
+  - Martes 14-16 PM R1-411 (Teoria)
+  - Miércoles 14-16 PM R1-450 (Teoria)
  
 ### Lecturas adicionales
 
