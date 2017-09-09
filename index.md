@@ -161,7 +161,7 @@ Los prerequisitos para este curso son:
 
 ### Horario de clases
 
-  - Lunes 12-14 PM J3-162 (Pŕacticas)
+  - Lunes 12-14 PM J3-162 (Prácticas)
   - Martes 14-16 PM R1-411 (Teoria)
   - Miércoles 14-16 PM R1-450 (Teoria)
  
