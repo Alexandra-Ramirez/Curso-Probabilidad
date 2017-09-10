@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Problemas  \par
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Lista de ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item ?`Existen variables aleatorias discretas $X$ e $Y$ tales que $\mathbb{E}(X)> 100\mathbb{E}(Y)$ pero $Y$ es mayor que $X$ con probabilidad al menos $0.99$?.
+
+\item Una pareja decide seguir teniendo hijos hasta que tener  al menos un ni\~no y al menos una ni\~na. Supongamos que nunca tienen gemelos, y que las pruebas  son independientes con la probabilidad $1/2$ de un ni\~no  y que son lo suficientemente f\'ertiles como para seguir produciendo hijos indefinidamente. ?`Cu\'al es el n\'umero esperado de ni\~nos?.
+
+\item Sea $V = \min(X, Y)$ el menor de $X$ e $Y$, y sea $W = \max(X, Y)$ el mayor de $X$ e $Y$. As\'i que si $X$ concretiza a $x$ e $Y$ concretiza a $y$, entonces $V$ concretiza  al $\min(x, y)$ y $W$ concretiza al $\max(x, y)$. Halla $\mathbb{E}(V) + \mathbb{E}(W)$.
+
+\item Calvin y Hobbes juegan un partiddo con una serie de juegos, donde Calvin tiene probabilidad $p$ de ganar cada juego (independientemente). Ellos juegan con una regla llamada  \texttt{ganar por dos}, donde el primer jugador que gana dos juegos m\'as que su oponente gana el partido. Encuentra el n\'umero esperado de juegos participados.
+\item Una distribuci\'on discreta tiene la  propiedad $A$, si para  variable aleatoria $X$ con esa distribuci\'on, $\mathbb{P}(X \geq j + k|X \geq j) = \mathbb{P}(X \geq k)$  para todos los enteros no negativos $j$, $k$.
+
+\begin{itemize}
+\item  Si $X$ tiene una distribuci\'on con la propiedad $A$, con $CDF$  $F$ y $PMF$ $p_i = \mathbb{P}(X = i)$, encuentra una expresi\'on para $P (X \geq  j + k)$ en t\'erminos de $F(j)$, $F(k)$, $p_j$, $p_k$.
+\item Nombre una distribuci\'on discreta que tiene la propiedad $A$. Justifica tu respuesta con una clara interpretaci\'on en palabras o con un c\'alculo.
+\end{itemize}
+\item Un grupo de $50$ personas est\'an comparando sus cumplea\~nos (como de costumbre, asumen que sus cumplea\~nos son independientes, no son el $29$ de febrero, etc.). Encuentra el valor esperado de los pares de personas con el mismo cumplea\~nos y el valor esperado de d\'ias en el a\~no en el que al menos dos de estas personas nacieron.
+
+\item Sea $X \sim \text{Geometrica}(p)$ y $t$ una constante. Encuentra $\mathbb{E}(e^{tX})$ como una funci\'on de $t$.
+
+\item La circunferencia de un c\'irculo se colorea con tinta roja y azul tal que $2/3$ de la circunferencia es roja y $1/3$ es azul. Demuestra  que no importa cu\'an complicado sea el esquema de coloraci\'on, hay una manera de inscribir un cuadrado en el c\'irculo de manera que al menos tres de las cuatro esquinas del cuadrado toquen tinta roja.
+
+\item Se  especifican  diez puntos en el plano. Si se  tiene diez monedas circulares (del mismo radio). Muestra que se puede colocar las monedas en el plano (sin apilarlas) para que los diez puntos est\'en cubiertos.
+
+\item  Cinco personas acaban de ganar un premio de $100$ d\'olares, y est\'an decidiendo c\'omo dividir ese dinero entre ellos. Suponga que se usan todos los d\'olares son usados, si centavos. As\'i por ejemplo, dar $50$ d\'olares a la primera persona y $ 10$ d\'olares a la segunda es diferente de viceversa.
+
+\begin{itemize}
+\item ?`Cu\'antas maneras hay de dividir los $100$ d\'olares, de modo que cada uno obtenga por lo menos  10 d\'olares?.
+\item Suponga que los $100$  d\'olares se dividen al azar, con todas las asignaciones posibles contadas en (a) igualmente probables. Encuentre la cantidad esperada de dinero que recibe la primera persona.
+\item Sea $A_j$ el evento en que la j \'esima persona recibe m\'as que la primera persona (para $2 \leq j \leq 5$), cuando los $100$ d\'olares son asignados aleatoriamente como en el \'item anterior. ?` Son $A_2$ y $A_3$ independientes?.
+\end{itemize}
+\item Sean $X$ y $Y$ variables aleatorias de Poisson y $T =  X +Y$. Suponiendo que $X$ e $Y$ no son independientes y de hecho $X = Y$. ?`Es verdad que $T \sim \text{Poisson}(\lambda)$?.
+\item Para $X \sim \text{Poisson}(\lambda)$, encuentra $\mathbb{E}(X!)$.
+\item Si el n\'umero de peces  en un cierto lago es una variable aleatoria $\text{Poisson}(\lambda)$. Preocupado por no haber ning\'un pez en absoluto, un estad\'istico agrega un pez al lago. Sea $Y$ el n\'umero resultante de peces (por lo que $Y$ es $1$ m\'as una variable aleatoria de $\text{Poisson}(\lambda)$)
+
+\begin{itemize}
+\item Encuentra $\mathbb{E}(Y^2)$ y $\mathbb{E}(1/Y)$.
+\end{itemize}
+
+\item Un grupo de $n$ personas juegan \texttt{secreto1} de la siguiente manera: cada uno pone su nombre en un trozo de papel en un sombrero, escoge un nombre al azar del sombrero (sin reemplazo) y luego compra un regalo para esa persona. Por desgracia, pasan por alto la posibilidad de sacar su propio nombre, por lo que algunos tienen que comprar regalos para ellos mismos. Suponiendo  que $n \geq 2$.
+
+\begin{itemize}
+\item Encuentra el valor esperado del n\'umero $X$ de personas que escogen sus propios nombres.
+\item Encuentra el n\'umero esperado de pares de personas, $A$ y $B$, de modo que $A$ elija el nombre de $B$ y $B$ elija el nombre de $A$ (donde $A = B$ y el orden no importa).
+\item Sea $X$ el n\'umero de personas que escogen sus propios nombres. ?`Cu\'al es la distribuci\'on aproximada de $X$ si $n$ es grande (especifique el valor o los valores del par\'ametro)? ?` Cu\'al  es el valor de $\mathbb{P}(X = 0)$ cuando $n \rightarrow \infty$.
+\end{itemize}
+\end{enumerate}
+
+
+\end{document} 
