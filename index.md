@@ -230,6 +230,11 @@ Los prerequisitos para este curso son:
  * [Tarea 2](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Tareas/Tarea2.pdf).
  * [Tarea 3](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Tareas/Tarea3.pdf).
  * [Tarea 4](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Tareas/Tarea4.pdf).
+ * [Tarea 5](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Tareas/Tarea5.pdf).
+ * [Tarea 6](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Tareas/Tarea6.pdf).
+ * [Tarea 7](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Tareas/Tarea7.pdf).
+ * [Tarea 8](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Tareas/Tarea8.pdf).
+ * [Tarea 9](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Tareas/Tarea9.pdf).
  
 ### Ejercicios 
 
