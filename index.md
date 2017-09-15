@@ -213,7 +213,7 @@ Los prerequisitos para este curso son:
  * [C3: Probabilidad condicional, independencia,regla total, teorema de Bayes](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase3/Clase3.pdf).
  * [C4: Variables aleatorias discretas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase4/Clase4.pdf).
  * [C5a: Variables aleatorias discretas:esperanza ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase5a/Clase5a.pdf).
- * [C5b: Variables aleatorias discretas: varianza ]().
+ * [C5b: Variables aleatorias discretas: varianza ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase5b/Clase5b.pdf).
  * [C6: Variables aleatorias continuas]().
  * [C7: Principales variablea aleatorias continuas]().
  * [C8: Transformaciones de variables aleatorias continuas]().
