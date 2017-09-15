@@ -127,9 +127,6 @@ para cada subconjunto $J$ de $I$.
 \vspace{0.2cm}
 
 
-
-
-
  M\'ultiples eventos $A_{\theta}, \theta \in \Theta$ son independientes por pares si cada par de eventos es independiente.  M\'ultiples eventos $A_{\theta}, \theta \in \Theta$ son independientes si para cada $k > 0$ y para cada k-subconjunto de distintos eventos $A_{\theta_1},\ldots,A_{\theta_k}$, tenemos}
 	
 	\[
@@ -325,7 +322,7 @@ En efecto, obtenemos la regla de Bayes de resultados anteriores sobre la probabi
 \end{frame}
 
 \begin{frame}{Ejemplo explicativo}
-\small{Considere una prueba de rutina de detecci\'on de una enfermedad. Supongamos que la frecuencia de la enfermedad en la población (tasa b\'asica) es del $0,5\%$. La prueba es muy precisa con un $5\%$ de tasa de falsos positivos y un $10\%$ de tasa de falsos negativos. Si se  toma la prueba y es  positivo. ?`Cu\'al es la probabilidad de que se tenga la enfermedad?
+\small{Considere una prueba de rutina de detecci\'on de una enfermedad. Supongamos que la frecuencia de la enfermedad en la poblaci\'on (tasa b\'asica) es del $0,5\%$. La prueba es muy precisa con un $5\%$ de tasa de falsos positivos y un $10\%$ de tasa de falsos negativos. Si se  toma la prueba y es  positivo. ?`Cu\'al es la probabilidad de que se tenga la enfermedad?
 	
 Haremos el c\'alculo tres veces: usando \underline{\'arboles}, \underline{tablas} y \underline{s\'imbolos}. Utilizamos la siguiente notaci\'on para los eventos relevantes:
 
@@ -336,19 +333,19 @@ Haremos el c\'alculo tres veces: usando \underline{\'arboles}, \underline{tablas
 \item $T-$ = 'prueba negativa'.
 \end{itemize}
 
-Se nos da $\mathbb{P}(D +) = .005$ y por lo tanto $\mathbb{P}(D-) = .995$. Las tasas falsas positivas y falsas negativas son (por definici\'on) probabilidades condicionales.
+Se nos da $\mathbb{P}(D +) = 0.005$ y por lo tanto $\mathbb{P}(D-) = 0.995$. Las tasas falsas positivas y falsas negativas son (por definici\'on) probabilidades condicionales.
 }
 \end{frame}
 
 \begin{frame}{Ejemplo explicativo (1)}
 \small{	
 \[
-\mathbb{P}(\text{falso positivo}) = \mathbb{P}(T+|D-) = .95\quad \text{y}\quad \mathbb{P}(\text{falso negativo}) = \mathbb{P}(T-|D+) = .1.
+\mathbb{P}(\text{falso positivo}) = \mathbb{P}(T+|D-) = 0.05\quad \text{y}\quad \mathbb{P}(\text{falso negativo}) = \mathbb{P}(T-|D+) = 0.1.
 \]
 		
 Las probabilidades complementarias se conocen como las  tasas negativas y  positivas verdaderas:
 \[
-\mathbb{P}(T-|D-) = 1 - \mathbb{P}(T+|D-) = 0.95 \quad \text{y}\quad   \mathbb{P}(T+|D+) = 1 - \mathbb{P}(T-|D+) = .9.
+\mathbb{P}(T-|D-) = 1 - \mathbb{P}(T+|D-) = 0.95 \quad \text{y}\quad   \mathbb{P}(T+|D+) = 1 - \mathbb{P}(T-|D+) = 0.9.
 \]	
 }
 \underline{\textbf{\'Arboles:}}Todas estas probabilidades se pueden mostrar muy bien en un \'arbol.
@@ -369,27 +366,27 @@ La pregunta pide la probabilidad de que una persona tenga la enfermedad dado que
 Se dan las dos probabilidades en el numerador. Calculamos el denominador $\mathbb{P}(T +)$ utilizando la ley de probabilidad total. Usando el \'arbol s\'olo tenemos que sumar las probabilidades para cada uno de los nodos marcados con $T+$.
 
 \[
-\mathbb{P}(T +) = .995 \times .05 + .005 \times  .9 = .05425
+\mathbb{P}(T +) = 0.995 \times 0.05 + 0.005 \times  0.9 = 0.05425
 \]
 
 As\'i,
 
 \[
-\mathbb{P}(D+|T +) = \frac{.9 \times .005}{0.5425} = 0.082949 \approx 8.3\%.
+\mathbb{P}(D+|T +) = \frac{0.9 \times 0.005}{0.5425} = 0.082949 \approx 8.3\%.
 \]	
 }
 \end{frame}
 \begin{frame}{Ejemplo explicativo (3)}
 \small\underline{\textbf{Tablas :}}{ Otro truco que es \'util para calcular las probabilidades es hacer una tabla. Vamos a repetir el ejemplo anterior usando una tabla construida con $10000$ personas totales divididas de acuerdo con las probabilidades en este ejemplo.
 
-Construimos la tabla como sigue. Elegimos un n\'umero, digamos $10000$ personas  y colocamos  como el total general en la parte inferior derecha. Usando $\mathbb{P}(D +) = .005$ calculamos que $50$ de las $10000$ personas est\'an enfermas ($D+$). Del mismo modo $9950$ personas son saludables ($D-$). En este punto, la tabla se ve as\'i:
+Construimos la tabla como sigue. Elegimos un n\'umero, digamos $10000$ personas  y colocamos  como el total general en la parte inferior derecha. Usando $\mathbb{P}(D +) = 0.005$ calculamos que $50$ de las $10000$ personas est\'an enfermas ($D+$). Del mismo modo $9950$ personas son saludables ($D-$). En este punto, la tabla se ve as\'i:
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=4.5cm]{g8}
 \end{figure}
 
-Usando $P(T+|D +) = .9$ podemos calcular que el n\'umero de personas enfermas que dieron positivo en el $90\%$ de $50$ o $45$.
+Usando $P(T+|D +) = 0.9$ podemos calcular que el n\'umero de personas enfermas que dieron positivo en el $90\%$ de $50$ o $45$.
 }
 \end{frame}
 
@@ -414,7 +411,7 @@ Usando la tabla completa podemos calcular:
 \begin{align*}
 \mathbb{P}(D+|T +)  &=  \frac{\mathbb{P}(T+|D +)\cdot \mathbb{P}(D+ )}{\mathbb{P}(T+)} \\
 					&= \frac{\mathbb{P}(T+|D +)\cdot \mathbb{P}(D+ )}{\mathbb{P}(T+|D+)\mathbb{P}(D+)+ \mathbb{P}(T+|D-)\mathbb{P}(D-)}\\
-					&= \frac{.9 \times .005}{.9 \times .005 + .05 \times .995}\\
+					&= \frac{0.9 \times 0.005}{0.9 \times 0.005 + 0.05 \times 0.995}\\
 					&= 8.3\%
 \end{align*}	
 }
