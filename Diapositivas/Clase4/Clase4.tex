@@ -183,7 +183,7 @@ Podemos describir una variable aleatoria enumerando sus posibles valores y las p
 \begin{table}[]
 	\centering
 	\begin{tabular}{ccccccc}
-		valor  a:    & 0    & 1    & 2    & 3    & 5    & 6     \\
+		valor  a:    & 1    & 2    & 3    & 4    & 5    & 6     \\
 		PMF    p(a): & 1/36 & 3/36 & 5/36 & 7/36 & 9/36 & 11/36
 	\end{tabular}
 \end{table}
@@ -337,7 +337,7 @@ Como se muestra en la siguiente figura:
 
 \begin{frame}{Distribuciones espec\'ificas}
 	
-\textbf{\textcolor{blue}{Distribuciones de Bernoulli}}
+\textbf{\textcolor{blue}{Distribuci\'on de Bernoulli}}
 
 \underline{Modelo:}  La distribuci\'on de Bernoulli modela ensayos  en un experimento que puede resultar en \'exito o fracaso. Esta es la distribuci\'on m\'as importante y tambi\'en es la m\'as simple. Una variable aleatoria $X$ tiene una distribuci\'on de Bernoulli con  par\'ametro $p$ si:
 
@@ -356,7 +356,7 @@ La terminolog\'ia general es decir que  $X$ es $1$ en los \'exitos y $0$ en los 
 }
 \end{frame}
 
-\begin{frame}{Distribuciones de Bernoulli}
+\begin{frame}{Distribuciones espec\'ificas}
 Aqu\'i se muestran  la tabla y los gr\'aficos del PMF y del CDF para la distribuci\'on de $\textbf{Bernoulli} (1/2)$ 
 
 \begin{figure}
@@ -383,7 +383,7 @@ Aqu\'i se muestran  la tabla y los gr\'aficos del PMF y del CDF para la distribu
 
 \end{frame}
 
-\begin{frame}{Distribuciones de Bernoulli(1)}
+\begin{frame}{Distribuciones espec\'ificas}
 En general los gr\'aficos del PMF y el CDF para una distribuci\'on de Bernoulli, son de la forma:
 
 \begin{figure}
@@ -409,7 +409,10 @@ En general los gr\'aficos del PMF y el CDF para una distribuci\'on de Bernoulli,
 \end{figure}
 \end{frame}
 
-\begin{frame}{Distribuciones de binomiales}
+\begin{frame}{Distribuciones espec\'ificas}
+	
+\textbf{\textcolor{blue}{Distribuci\'on de Binomial}}
+
 \small{La distribuci\'on $\text{Binomial}(n, p)$, o $\text{Bin}(n, p)$, modela el n\'umero de \'exitos en $n$ ensayos independientes de $\text{Bernoulli}(p)$.
 
 Aqu\'i hay una jerarqu\'ia. Un solo ensayo  de Bernoulli es, digamos, un lanzamiento de una moneda. Un solo ensayo binomial consta de $n$ ensayos de Bernoulli. Para el lanzamiento  de una moneda, el espacio muestral para un ensayo de Bernoulli es $\{H, T\}$. El espacio muestral para un ensayo binomial son todas las secuencias de caras  y sellos de longitud $n$. Del mismo modo, una variable aleatoria de Bernoulli toma los valores $0$ y $1$ y una variable aleatoria binomial toma los valores $0, 1, 2,\dots n$.
@@ -423,7 +426,7 @@ Aqu\'i hay una jerarqu\'ia. Un solo ensayo  de Bernoulli es, digamos, un lanzami
 }
 \end{frame}
 
-\begin{frame}{Distribuciones de Binomiales(1)}
+\begin{frame}{Distribuciones espec\'ificas}
 \small{Describimos $X \sim \text{Binomial}(n, p)$ d\'andonos sus valores y probabilidades. Para la notaci\'on usaremos $k$ para indicar un n\'umero arbitrario entre $0$ y $n$.
 	
 Recordamos que \texttt{n elige k} = $\binom{n}{k}$, es el n\'umero de maneras de elegir $k$ cosas de una colección de $n$ cosas y tiene la f\'ormula
@@ -453,7 +456,8 @@ Aqu\'i hay una tabla para la PMF de una variable aleatoria $\text{Binomial}(n, k
 }
 \end{frame}
 
-\begin{frame}{Explicaci\'on de las probabilidades binomiales}
+\begin{frame}{Distribuciones espec\'ificas}
+	
 \small{ Para concretar, sean $n = 5$ y $k = 2$  (el argumento para valores arbitrarios $n$ y $k$ es id\'entico). Entonces $X \sim \text{Binomial}(5, p)$ y queremos calcular $p(2)$. El largo camino para calcular $p(2)$ es enumerar todas las maneras de obtener exactamente $2$ caras en $5$ lanzamientos  de monedas y sumar sus probabilidades. La lista tiene 10 entradas:
 	
 CCSSS, CSCSS, CSSCS, CSSSC, SCCSS, SCSCS, SSSSC, SSCCS, SSCSC,
@@ -472,7 +476,7 @@ Por  tanto, la probabilidad total de exactamente $2$ caras  es la suma de $10$ p
 }
 \end{frame}
 
-\begin{frame}{Explicaci\'on de las probabilidades binomiales(1)}
+\begin{frame}{Distribuciones espec\'ificas}
 \small{Esto nos guia, la manera m\'as corta de hacer el c\'alculo. Tenemos que contar el n\'umero de secuencias con exactamente $2$ caras. Para hacer esto necesitamos elegir $2$ de los lanzamientos para ser caras y los $3$ restantes para ser sellos. El n\'umero de tales secuencias es el n\'umero de formas de  elegir $2$ de $5$ cosas, es decir, $\binom{5}{2}$.
 	
 Dado que cada secuencia tiene la misma probabilidad, $p^2(1 - p)^3$, obtenemos la probabilidad de exactamente $2$ caras $p(2) = \binom{5}{2}p^2(1 - p)^3$.
@@ -498,7 +502,9 @@ Aqu\'i algunos gr\'aficos de la  funci\'on de masa de probabilidad binomial}
 	\end{minipage}
 \end{figure}
 \end{frame}
-\begin{frame}{Distribuciones geom\'etricas}
+\begin{frame}{Distribuciones espec\'ificas}
+\textbf{\textcolor{blue}{Distribuci\'on geom\'etrica}}
+
 \small{Una distribuci\'on geom\'etrica modela el n\'umero de sellos antes de la primera cara en una secuencia de lanzamientos  de  monedas (ensayos de Bernoulli).
 	
 \vspace{0.2cm}
@@ -522,7 +528,7 @@ Aqu\'i algunos gr\'aficos de la  funci\'on de masa de probabilidad binomial}
 	
 }
 \end{frame}
-\begin{frame}{Distribuciones geom\'etricas(1)}
+\begin{frame}{Distribuciones espec\'ificas}
 \small{La variable aleatoria $X$ sigue una distribuci\'on geom\'etrica con par\'ametro $p$ si:
 	
 \begin{itemize}
@@ -543,7 +549,7 @@ Denotamos esto por $X \sim \text{Geometrica(p)}$. En forma de tabla tenemos:
 La distribuci\'on geom\'etrica es un ejemplo de una distribuci\'on discreta que toma un n\'umero infinito de valores posibles.	
 }
 \end{frame}
-\begin{frame}{Distribuciones geom\'etricas(2)}
+\begin{frame}{Distribuciones espec\'ficas}
 \small{Las cosas pueden ser confusas cuando trabajamos con \'exitos y fracasos, ya que tal vez queramos modelar el n\'umero de \'exitos antes del primer fracaso o quiz\'as queramos el n\'umero de fracasos antes del primer \'exito. Para mantener las cosas rectas directamente se puede traducir al lenguaje neutral del n\'umero de sellos antes de la primeras caras.
 		
 \begin{figure}
@@ -562,7 +568,7 @@ El gr\'afico muestra el PMF y el CDF de la distribuci\'on \texttt{Geometrica(1/3
 }
 \end{frame}
 
-\begin{frame}{Distribuciones geom\'etricas(2)}
+\begin{frame}{Distribuciones espec\'ificas}
 	\small{
 \textbf{Ejemplo 11:}
 
@@ -576,7 +582,10 @@ Supongamos que los habitantes de una isla planean a sus familias teniendo beb\'e
 	
 \end{frame}
 
-\begin{frame}{Distribuciones  uniforme discreta}
+\begin{frame}{Distribuciones  espec\'ificas}
+
+\textbf{\textcolor{blue}{Distribuci\'on uniforme discreta}}
+
 La distribuci\'on uniforme discreta modela cualquier situacion en la que todos los resultados sean igualmente probables.
 
 \[
