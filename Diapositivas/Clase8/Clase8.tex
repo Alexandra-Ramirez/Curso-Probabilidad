@@ -1,0 +1,238 @@
+\documentclass[10pt]{beamer}
+\usetheme{metropolis}  
+\usecolortheme{dove}
+\usepackage{hyperref}
+\usepackage{bigints}
+\usepackage{amsmath}
+\title{Introducci\'on a la probabilidad y estad\'istica CM274}
+ \usepackage[spanish]{babel}
+ \decimalpoint
+\date{\today}
+\author{C\'esar Lara Avila}
+\institute{\url{https://github.com/C-Lara}}
+\begin{document}
+  \maketitle
+  \section{8 . Transformaciones de variables aleatorias }
+  
+\begin{frame}{Transformaciones}
+\small {Las transformaciones de las variables aleatorias aparecen por todas partes en  estad\'istica.
+
+\vspace{0.3cm}
+
+\begin{itemize}
+\item \textcolor{blue}{\textbf{Conversi\'on de unidades:}} en una dimensi\'on, la estandarizaci\'on y las transformaciones a escala-localizaci\'on   pueden ser herramientas \'utiles para aprender acerca de toda una familia de distribuciones.
+
+
+Un cambio de \textcolor{orange}{escala-localizaci\'on} es lineal, convirtiendo una variable aleatoria $X$ a la variable aleatoria  $Y = aX + b$ donde $a$ y $b$ son constantes (con $a> 0$). 
+
+\item \textcolor{red}{\textbf{Sumas y promedios como res\'umenes :}} Es com\'un en  estad\'istica resumir $n$ observaciones por su sumas o promedios. Si llevamos  $X_1,\dots , X_n$ en la suma $T = X_1 + \cdot + X_n$ o la media muestral  $\overline{X}_n = T/ n$ tenemos  una transformaci\'on de $R^n$ a $R$.
+
+\vspace{0.2cm}
+
+El t\'ermino para una suma de variables aleatorias independientes es \textcolor{violet}{convoluci\'on}.
+\end{itemize}
+
+}
+
+\end{frame}
+
+\begin{frame}{Transformaciones}
+\small{
+\begin{itemize}
+\item \textcolor{yellow}{\textbf{Valores extremos:}} En muchos contextos, podemos estar interesados en la distribuci\'on de las observaciones m\'as extremas. Para la preparaci\'on para desastres, las agencias gubernamentales pueden estar preocupadas por la inundaci\'on o terremoto m\'as extremos en un per\'iodo de $100$ a\~nos; en finanzas, un administrador de portafolio con una visi\'on  hacia la gesti\'on de riesgo querr\'a saber el peor $1\%$ o $5\%$ de los rendimientos del portafolio.
+
+\vspace{0.2cm}
+
+En estas aplicaciones, nos interesa el m\'aximo o m\'inimo de un conjunto de observaciones.
+
+\vspace{0.2cm}
+	
+La transformaci\'on que ordena observaciones, llevando $X_1,\dots, X_n$ en el \textcolor{green}{orden estad\'istico}  $\min(X 1,\dots, X_n),\dots , \max(X_1,\dots, X_n)$, es una transformaci\'on de $R^n$ a $R^n$ que no es invertible.
+\end{itemize}
+
+\vspace{0.2cm}
+
+Con unas pocas distribuciones b\'asicas, podemos definir otras distribuciones usando transformaciones.  Por ejemplo las distribuciones, \textcolor{red}{Beta} y \textcolor{red}{Gamma}, son generalizaciones de las distribuciones   uniforme y exponencial.
+}
+
+\end{frame}
+\begin{frame}{Algunos resultados importantes: caso discreto}
+\small{
+\begin{itemize}
+\item Si nos encontramos en el caso discreto, obtenemos el PMF de $g(X)$ trasladando el evento $g(X) = y$ en un evento equivalente involucrando $X$. Para ello, buscamos todos los valores $x$ tales que $g(x) = y$; siempre que $X$ sea igual a cualquiera de estas $x$, ocurrir\'a el evento $g(X) = y$. Esto da la f\'ormula:
+
+\[
+\mathbb{P}(g(X) = y) = \sum_{x: g(x) = y}\mathbb{P}(X = x).
+\]
+
+Para una funci\'on  $g$ inyectiva, la situaci\'on es particularmente simple, porque s\'olo hay un valor de $x$ tal que $g(x) = y$, a saber $g^{-1}(y)$. Entonces podemos usar
+
+\[
+\mathbb{P}(g(X) = y) = \mathbb{P}(X = g^{-1}(y))
+\]
+
+\vspace{0.2cm}
+
+para convertir entre los PMF de $X$ y $g(X)$.
+\end{itemize}
+		
+}
+
+\end{frame}
+
+\begin{frame}{Algunos resultados importantes: caso continuo}
+\small{
+\begin{itemize}
+\item  En el caso continuo, un enfoque universal es partir de la CDF de $g(X)$ y trasladar el evento $g(X) \leq y$  en un evento equivalente que involucra a $X$. Para una funci\'on general $g$, tenemos  que pensar cuidadosamente sobre c\'omo expresar $g(X) \leq y$  en t\'erminos de $X$  y no hay una f\'ormula f\'acil que podamos conectar.
+
+Pero cuando $g$ es \textcolor{orange}{continua} y \textcolor{orange}{estrictamente creciente}, la traslaci\'on es f\'acil: $g(X) \leq y$ es el mismo como $X \leq g^{-1}(y)$, as\'i
+
+
+\[
+F_{g(X)}(y) = \mathbb{P}(g(X) \leq y) = \mathbb{P}(X \leq g^{-1}(y)) = F_X(g^{-1}(y)).
+\]
+\end{itemize}
+
+\vspace{0.2cm}
+
+Entonces podemos diferenciar con respecto a $y$ para obtener el $PDF$ de $g(X)$. Esto da una versi\'on unidimensional de la \textcolor{green}{f\'ormula de cambio de variables}, que se generaliza a transformaciones invertibles en m\'ultiples dimensiones.
+}			
+\end{frame}
+
+\begin{frame}{Cambio de variable}
+\small{\textcolor{yellow}{\textbf{(Cambio de variable en una dimensi\'on)}}. Sea $X$ una una variables aleatoria continua, con PDF $f_X$  y sea $Y = g (X)$, donde $g$ es diferenciable y estrictamente creciente (o estrictamente decreciente). Entonces el PDF de $Y$ es dado por
+
+\[
+f_Y(y) = f_X(x)\biggl \vert \frac{dx}{dy}\biggr\vert,  
+\]
+
+donde $x = g^{-1}(y)$. El soporte de $Y$ es todo $g(x)$ con $x$ en el soporte de $X$.
+
+\vspace{0.2cm}
+
+
+En efecto:
+
+
+Sea $g$ es estrictamente creciente. El CDF de $Y$ es
+
+\[
+F_Y(y)(y) = \mathbb{P}(Y \leq y) = \mathbb{P}(g(X) \leq y) = \mathbb{P}(X \leq g^{-1}(y)) = F_X(g^{-1}(y)) = F_X(x),
+\]
+
+}
+
+\end{frame}
+
+\begin{frame}{Cambio de variable}
+\small{Luego  por la regla de la cadena, el PDF de $Y$ es
+	
+	\[
+	f_Y(y) = f_X(x)\frac{dx}{dy}.
+	\]
+
+La prueba para $g$ estrictamente decreciente es an\'aloga. En ese caso el PDF termina como  $-f_X(x)\frac{dx}{dy}$, que es no negativo ya que $\frac{dx}{dy} <0$ si $g$ es estrictamente decreciente. Usando $\vert \frac{dx}{dy}\vert$, cubre ambos casos.
+
+
+Al aplicar la f\'ormula de cambio de variable, podemos elegir si se calcula $\frac{dy}{dx}$ o calcular $\frac{dx}{dy}$ y luego tomar el rec\'iproco. De cualquier manera, al final deber\'iamos expresar el PDF de $Y$ como una funci\'on de $y$. 
+
+La f\'ormula de cambio de variables (en el caso de que $g$ estrictamente creciente) es f\'acil de recordar cuando se escribe en la forma
+
+\[
+f_Y(y)dy = f_X(x)dx,
+\]
+
+que tiene una simetr\'ia est\'eticamente agradable.
+}
+\end{frame}
+
+\begin{frame}{Ejemplos}
+\small{ \textcolor{blue}{\textbf{Ejemplo 1:}} Sea $X \sim N(0,1), Y = e^X$, usemos la f\'ormula de cambio de variable para encontrar el PDF  de $y$.
+	
+En efecto:
+
+Desde que $g(x)  = e^x$ es estrictamente creciente. Sea $y = e^x$, as\'i $x = \log y$ y $dy/dx = e^x$. Entonces
+
+\[
+f_Y(y) = f_X(x)\biggl\vert  \frac{dx}{dy}\biggr\vert  =\varphi(x)\frac{1}{e^x} = \varphi(\log y)\frac{1}{y}, \quad y >0.
+\]
+
+\vspace{0.2cm}
+
+
+Ten en cuenta que despu\'es de aplicar la f\'ormula de cambio de variable, escribimos todo a la derecha en t\'erminos de $y$ y luego  especificamos el soporte de la distribuci\'on. Para determinar el soporte, s\'olo observamos que como $x$ var\'ia desde $-\infty$ a $\infty$,  $e^x$ oscila entre $0$ y $\infty$.
+
+Podemos obtener el mismo resultado trabajando a partir de la definici\'on del CDF, trasladando el evento $Y \leq y$  en un evento equivalente involucrando $X$.
+}
+\end{frame}
+
+\begin{frame}{Ejemplos}
+\small{ Para $y> 0$,
+	
+\[
+F_Y(y) = \mathbb{P}(Y \leq y) = \mathbb{P}(e^X \leq y) = \mathbb{P}(X \leq \log y) = \Phi(\log y),
+\]
+
+as\'i el PDF otra vez
+
+\[
+f_Y(y) = \frac{d}{dy}\Phi(\log y) = \varphi(\log y)\frac{1}{y}, \quad y > 0.
+\]
+
+\textcolor{blue}{\textbf{Ejemplo 2:}} Sea $X \sim N(0, 1), Y = X^2$.  La distribuci\'on de $Y$ es un ejemplo de una distribuci\'on \textcolor{red}{Chi-cuadrada}. Para encontrar el PDF de $Y$, ya no podemos aplicar la f\'ormula de cambio de variables porque $g(x) = x^2$ no es uno a uno; en lugar de eso, empezamos revisando  la CDF.
+
+Dibujando el gr\'afico de $y = g(x) = x^2$, podemos ver que el evento $X^2 \leq  y$ es equivalente al evento $-\sqrt{y} \leq X \leq \sqrt{y}$.
+}
+\end{frame}
+
+\begin{frame}{Ejemplos}
+\small{ Entonces
+	
+	\[
+	F_Y(y) = \mathbb{P}(X^2 \leq y) = \mathbb{P}(-\sqrt{y} \leq X \leq \sqrt{y}) = \Phi(\sqrt{y}) - \Phi(-\sqrt{y}) = 2\Phi{\sqrt{y}} -1,
+	\]
+	
+	
+ As\'i
+
+\[
+F_Y(y) = \mathbb{P}(X^2 \leq y) = 2 \varphi(\sqrt{y})\cdot y^{-1/2} = \varphi(\sqrt{y})y^{-1/2}, \quad y > 0.
+\]	
+
+Tambi\'en podemos usar la f\'ormula de cambio de variable para encontrar el PDF de una transformaci\'on de escala-localizaci\'on.	
+
+ \textcolor{blue}{\textbf{Ejemplo 3:}} Sea $X$ una variable aleatoria que tiene un PDF $f_X$ y sea $Y = a +bX$ con $b \neq 0$. Sea $y = a + bx$, para reflejar la relaci\'on entre $Y$ y $X$. Entonces $\frac{dy}{dx} = b$, as\'i el PDF de $Y$ es
+ 
+ \[
+ f_Y(y) = f_X(x)\biggl \vert \frac{dx}{dy}\biggr \vert = f_X\biggl(\frac{y -a}{b} \biggr)\frac{1}{\vert b\vert}.
+ \]
+	
+}
+
+\end{frame}
+
+\begin{frame}{Ejemplos}
+\small{ \textcolor{blue}{\textbf{Ejemplo 4:}} Sea $X \sim \text{Exponencial}(\lambda)$, as\'i $f_X(x) = \lambda e^{-\lambda x}$ sobre $[0, \infty]$. Calculemos la densidad de $Y = X^2$.
+	
+Usemos la f\'ormula de cambio de variable,
+
+$y = x^2 \rightarrow dy = 2x dx \rightarrow dx = \frac{dy}{2\sqrt{y}}$. 
+
+Luego tenemos que:  $f_X(x)dx = \lambda e^{-\lambda x}dx = \lambda e^{-\lambda \sqrt{y}}\frac{dy}{2\sqrt{y}} = f_Y(y)dy$.
+
+$\therefore f_Y(y) = \frac{\lambda }{2\sqrt{y}}e^{-\lambda \sqrt{y}}$.  
+
+
+\textcolor{blue}{\textbf{Ejemplo 5:}} Asumamos que $X \sim N(\mu, \sigma^2)$. Muestra que $Z = \frac{X - \mu}{\sigma}$ es normal est\'andar, esto es, $Z \sim N(0,1)$.
+
+Mostremos los c\'alculos
+
+\qquad \qquad $z = \frac{x - \mu}{\sigma } \rightarrow dz = \frac{dx}{\mu} \rightarrow dx  = \sigma dz$. Entonces
+
+$f_X(x)dx = \frac{1}{\sigma \sqrt{2\pi}}e^{-(x - \mu)^2/(2\sigma^2)} dx = \frac{1}{\sigma \sqrt{2\pi}}e^{-z^2/2}\sigma dz =  \frac{1}{\sqrt{2\pi}}e^{-z^2/2} dz = f_Z(z)dz$.
+
+
+$\therefore f_Z(z) = \frac{1}{\sqrt{2\pi}}e^{-z^2/2}$. Esto muestra que $Z$ es normal est\'andar.
+}
+\end{frame}
+\end{document}
