@@ -19,8 +19,9 @@ Los prerequisitos para este curso son:
 - [STA 101 Labs](http://www2.stat.duke.edu/~mc301/101_labs/).
 - [Lectures on Statistics Robert Ash](http://www.math.uiuc.edu/~r-ash/Stat.html).
 
-### Libro de referencia
+### Libros de referencia
 
+- Probability, Markov Chains, Queues, and Simulation (Princeton University Press) William J. Stewart (2009).
 - Introduction to Probability, Statistics, and Random Processes, Hossein Pishro-Nik Kappa Research, LLC (August 24, 2014). El sitio web que  acompaña al libro se encuentra [aquí](https://www.probabilitycourse.com/).
 
 
@@ -194,7 +195,6 @@ Los prerequisitos para este curso son:
 - The Probability Lifesaver: All the Tools You Need to Understand Chance (Princeton Lifesaver Study Guides)  	
 Steven J. Miller 2017.
 - Introduction to Probability, Dimitri P. Bertsekas y John N. Tsitsiklis, Athena Scientific, 2008.
-- Probability, Markov Chains, Queues, and Simulation (Princeton University Press) William J. Stewart (2009).
 - All of Statistics  A Concise Course in Statistical Inference Larry Wasserman (Springer Texts in Statistics) (2003).
 - [Introduction to Probability ](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html).
 
