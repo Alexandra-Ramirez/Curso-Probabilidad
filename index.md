@@ -215,7 +215,7 @@ Los prerequisitos para este curso son:
  * [C5a: Variables aleatorias discretas:esperanza ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase5a/Clase5a.pdf).
  * [C5b: Variables aleatorias discretas: varianza ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase5b/Clase5b.pdf).
  * [C6: Variables aleatorias continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase6/Clase6.pdf).
- * [C7: Principales variables aleatorias continuas]().
+ * [C7: Principales variables aleatorias continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase7/Clase7.pdf).
  * [C8: Transformaciones de variables aleatorias](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase8/Clase8.pdf).
  * [C9 : Esperanza, varianza y desviación estándar de variables aleatoria continuas]().
  * [C10: Momentos]().
