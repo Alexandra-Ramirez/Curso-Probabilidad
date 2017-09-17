@@ -216,7 +216,7 @@ Los prerequisitos para este curso son:
  * [C5b: Variables aleatorias discretas: varianza ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase5b/Clase5b.pdf).
  * [C6: Variables aleatorias continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase6/Clase6.pdf).
  * [C7: Principales variablea aleatorias continuas]().
- * [C8: Transformaciones de variables aleatorias continuas]().
+ * [C8: Transformaciones de variables aleatorias](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Diapositivas/Clase8/Clase8.pdf).
  * [C9: Teorema del Límite Central y la Ley de los grandes números]().
  * [C10: Desigualdades en probabilidad]().
  * [C11: Distribuciones conjuntas, independencia]().
