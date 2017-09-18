@@ -169,7 +169,7 @@ Los prerequisitos para este curso son:
 * Notas sobre cotas y teoremas de límites
   - [Desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
   - [The reason casinos always win: meet the law of large numbers](https://youtu.be/RXY-WN0ahiw).
-  - El tratamiento de la paradoja de la inspección se derivada de un artículo de Sheldon Ross, [The inspection paradox](http://ben-israel.rutgers.edu/711/Ross-Inspection.pdf).
+  - La paradoja de la inspección se derivada de un artículo de Sheldon Ross, [The inspection paradox](http://ben-israel.rutgers.edu/711/Ross-Inspection.pdf).
  
      
 
