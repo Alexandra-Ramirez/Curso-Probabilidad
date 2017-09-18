@@ -1,4 +1,12 @@
-##  Curso de teoria de probabilidades e inferencia estadística.
+#  Curso de teoria de probabilidades e inferencia estadística CM-274
+
+
+## Sitio web del curso
+
+http://c-lara.github.io/Curso-Probabilidad/
+
+
+### Introducción
 
 CM274 es un curso introductorio  a las ideas fundamentales y técnicas de la teoria de probabilidades e inferencia estadística.
 
