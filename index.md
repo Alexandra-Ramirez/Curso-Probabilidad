@@ -130,18 +130,24 @@ Los prerequisitos para este curso son:
   - [¿Hasta qué número puedes contar con los dedos? (Spoiler: mucho más que 10)](https://youtu.be/UixU1oRW64Q).
   - [How to Calculate Probability With and Without Replacement V2](https://youtu.be/uKTjh-6PFjo).
   - [Secretos matemáticos del triángulo de Pascal - Wajdi Mohamed Ratemi](https://youtu.be/XMriWTvPXHI).
+  - [Twelvefold way](https://en.wikipedia.org/wiki/Twelvefold_way).
 
   
 * Conceptos fundamentales de probabilidad
   - [Probabilidad condicional, ley total y regla de Bayes ](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Probabilidad/probabilidad1/probabilidad1.pdf).
   - [How to Calculate Conditional Probability](https://youtu.be/H02B3aMNKzE). 
   - [Boy Girl Conditional Probability](https://youtu.be/MDzbD2Ay5b4).
+  - [The problem of points](https://probabilityandstats.wordpress.com/2016/11/06/the-problem-of-points/).
+  - Aquí hay unas lecturas interesantes  acerca de los tribunales de justicia y la probabilidad condicional.
+      * [A formula for justice ](https://www.theguardian.com/law/2011/oct/02/formula-justice-bayes-theorem-miscarriage).
+      * [Court of Appeal bans Bayesian probability (and Sherlock Holmes)](https://understandinguncertainty.org/court-appeal-bans-bayesian-probability-and-sherlock-holmes).
  
   
 * Notas sobre  variables aleatorias y funciones de distribución
   - [Variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
   - [Introduction to Discrete Random Variables and Discrete Probability Distributions](https://youtu.be/0P5WRKihQ4E).
   - [Variables aleatorias (segunda parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv1/Variables_aleatorias2.pdf).
+  - [How long are you going to live?!!!](https://understandinguncertainty.org/node/76).
   
 * Notas sobre distribuciones conjuntas y condicionales
   - [Variables aleatorias multivariadas(1)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_multivariadas/variables_multivariadas1/Variables_multivariadas1.pdf).
@@ -149,15 +155,22 @@ Los prerequisitos para este curso son:
   
 * Notas sobre esperanza de variables aleatorias
   - [Funciones generadores de probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Funciones-generadoras/Funciones-generadoras_probabilidad.pdf).
+  - [Libro  de Herbert Wilf ](https://www.math.upenn.edu/~wilf/gfology2.pdf) en su libro puedes leer sobre muchas cosas extrañas y maravillosas que se pueden hacer con funciones generadoras. Capítulo 1.
   - [Esperanza y varianza de variables aleatorias](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Esperanza/Esperanza-varianza/Esperanza-varianza.pdf).
   - [The Expected Value and Variance of Discrete Random Variables](https://youtu.be/Vyk8HQOckIE). 
+  - [An Explanation of Borel’s Paradox That You Can Understand*](http://gandenberger.org/2013/07/22/borels-paradox/)
+  - Lista de ejemplos de métodos probabilísticos en combinatoria en el siguiente [enlace](http://www.math.cmu.edu/~ploh/docs/math/mop2008/prob-comb-soln.pdf).
+  - [Stochastic ordering](https://en.wikipedia.org/wiki/Stochastic_ordering).
   
 * Distribuciones especiales
   - [Distribuciones discretas y continuas](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Distribuciones/distribuciones.pdf).
+  - [Univariate Distribution Relationships,](http://www.math.wm.edu/~leemis/2008amstat.pdf). Paper de L. M. Leemis y J. T. McQueston. En este paper puedes encontrar explicaciones de las diversas relaciones entre las distribuciones  que se indican por las flechas.
      
 * Notas sobre cotas y teoremas de límites
   - [Desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
   - [The reason casinos always win: meet the law of large numbers](https://youtu.be/RXY-WN0ahiw).
+  - El tratamiento de la paradoja de la inspección se derivada de un artículo de Sheldon Ross, [The inspection paradox](http://ben-israel.rutgers.edu/711/Ross-Inspection.pdf).
+ 
      
 
 ### Horario de clases
