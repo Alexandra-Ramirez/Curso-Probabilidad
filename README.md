@@ -3,7 +3,7 @@
 
 ###  Sitio web del curso
 
-http://c-lara.github.io/Curso-Probabilidad/
+* http://c-lara.github.io/Curso-Probabilidad/
 
 
 ### Introducción
