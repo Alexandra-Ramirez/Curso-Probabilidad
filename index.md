@@ -245,6 +245,11 @@ Los prerequisitos para este curso son:
  * [C15: Repaso1]().
  * [C16: Repaso2]().
  
+ 
+### Problemas y retos
+ 
+ * [Retos 1](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Problemas-retos/Problemas_Reto1_CM274.pdf).
+ 
 ### Tareas
 
  * [Tarea 1](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Tareas/Tarea1.pdf).
