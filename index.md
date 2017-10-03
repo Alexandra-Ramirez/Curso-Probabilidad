@@ -50,7 +50,7 @@ Los prerequisitos para este curso son:
 - Introduction to Probability, Statistics, and Random Processes, Hossein Pishro-Nik Kappa Research, LLC (August 24, 2014). El sitio web que acompaña al libro se encuentra  [aquí](https://www.probabilitycourse.com/).
 
 
-## Temario
+## Temario general
 
 ### Probabilidad básica
   - Espacio muestral y eventos.
