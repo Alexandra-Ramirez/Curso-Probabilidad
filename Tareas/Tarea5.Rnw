@@ -65,7 +65,7 @@ Problemas  \par
 
 \item Sea $V = \min(X, Y)$ el menor de $X$ e $Y$, y sea $W = \max(X, Y)$ el mayor de $X$ e $Y$. As\'i que si $X$ concretiza a $x$ e $Y$ concretiza a $y$, entonces $V$ concretiza  al $\min(x, y)$ y $W$ concretiza al $\max(x, y)$. Halla $\mathbb{E}(V) + \mathbb{E}(W)$.
 
-\item Calvin y Hobbes juegan un partiddo con una serie de juegos, donde Calvin tiene probabilidad $p$ de ganar cada juego (independientemente). Ellos juegan con una regla llamada  \texttt{ganar por dos}, donde el primer jugador que gana dos juegos m\'as que su oponente gana el partido. Encuentra el n\'umero esperado de juegos participados.
+\item Calvin y Hobbes juegan un partido con una serie de juegos, donde Calvin tiene probabilidad $p$ de ganar cada juego (independientemente). Ellos juegan con una regla llamada  \texttt{ganar por dos}, donde el primer jugador que gana dos juegos m\'as que su oponente gana el partido. Encuentra el n\'umero esperado de juegos participados.
 \item Una distribuci\'on discreta tiene la  propiedad $A$, si para  variable aleatoria $X$ con esa distribuci\'on, $\mathbb{P}(X \geq j + k|X \geq j) = \mathbb{P}(X \geq k)$  para todos los enteros no negativos $j$, $k$.
 
 \begin{itemize}
@@ -87,7 +87,7 @@ Problemas  \par
 \item Suponga que los $100$  d\'olares se dividen al azar, con todas las asignaciones posibles contadas en (a) igualmente probables. Encuentre la cantidad esperada de dinero que recibe la primera persona.
 \item Sea $A_j$ el evento en que la j \'esima persona recibe m\'as que la primera persona (para $2 \leq j \leq 5$), cuando los $100$ d\'olares son asignados aleatoriamente como en el \'item anterior. ?` Son $A_2$ y $A_3$ independientes?.
 \end{itemize}
-\item Sean $X$ y $Y$ variables aleatorias de Poisson y $T =  X +Y$. Suponiendo que $X$ e $Y$ no son independientes y de hecho $X = Y$. ?`Es verdad que $T \sim \text{Poisson}(\lambda)$?.
+\item Sean $X$ y $Y$ variables aleatorias de Poisson y $T =  X +Y$. Suponiendo que $X$ e $Y$ no son independientes y de hecho $X = Y$. ?`Es verdad que $T \sim \text{Poisson}(2\lambda)$?.
 \item Para $X \sim \text{Poisson}(\lambda)$, encuentra $\mathbb{E}(X!)$.
 \item Si el n\'umero de peces  en un cierto lago es una variable aleatoria $\text{Poisson}(\lambda)$. Preocupado por no haber ning\'un pez en absoluto, un estad\'istico agrega un pez al lago. Sea $Y$ el n\'umero resultante de peces (por lo que $Y$ es $1$ m\'as una variable aleatoria de $\text{Poisson}(\lambda)$)
 
@@ -99,7 +99,7 @@ Problemas  \par
 
 \begin{itemize}
 \item Encuentra el valor esperado del n\'umero $X$ de personas que escogen sus propios nombres.
-\item Encuentra el n\'umero esperado de pares de personas, $A$ y $B$, de modo que $A$ elija el nombre de $B$ y $B$ elija el nombre de $A$ (donde $A = B$ y el orden no importa).
+\item Encuentra el n\'umero esperado de pares de personas, $A$ y $B$, de modo que $A$ elija el nombre de $B$ y $B$ elija el nombre de $A$ (donde $A \neq B$ y el orden no importa).
 \item Sea $X$ el n\'umero de personas que escogen sus propios nombres. ?`Cu\'al es la distribuci\'on aproximada de $X$ si $n$ es grande (especifique el valor o los valores del par\'ametro)? ?` Cu\'al  es el valor de $\mathbb{P}(X = 0)$ cuando $n \rightarrow \infty$.
 \end{itemize}
 \end{enumerate}
