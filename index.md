@@ -248,7 +248,7 @@ Los prerequisitos para este curso son:
  
 ### Problemas y retos
  
- * [Retos 1](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Problemas-retos/Problemas_Reto1_CM274.pdf).
+ * [Problemas retos 1](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Problemas-retos/Problemas_Reto1_CM274.pdf).
  
 ### Tareas
 
