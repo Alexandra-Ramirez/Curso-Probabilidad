@@ -147,6 +147,8 @@ Los prerequisitos para este curso son:
   - [Variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
   - [Introduction to Discrete Random Variables and Discrete Probability Distributions](https://youtu.be/0P5WRKihQ4E).
   - [Variables aleatorias (segunda parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv1/Variables_aleatorias2.pdf).
+  - [The Simple Random Walk Gordan Zitkovic](https://www.ma.utexas.edu/users/gordanz/notes/lecture4.pdf).
+  - [Survivor and Hazard Functions](http://people.stat.sfu.ca/~raltman/stat402/402L32.pdf).
   - [How long are you going to live?!!!](https://understandinguncertainty.org/node/76).
   
 * Notas sobre distribuciones conjuntas y condicionales
@@ -168,6 +170,7 @@ Los prerequisitos para este curso son:
      
 * Notas sobre cotas y teoremas de límites
   - [Desigualdades y teoremas limites en probabilidad](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Cotas-Teoria_limites/Desigualdades_teoremas_limites.pdf).
+  - [Behold! Jensen's Inequality](http://mark.reid.name/blog/behold-jensens-inequality.html).
   - [The reason casinos always win: meet the law of large numbers](https://youtu.be/RXY-WN0ahiw).
   - La paradoja de la inspección se derivada de un artículo de Sheldon Ross, [The inspection paradox](http://ben-israel.rutgers.edu/711/Ross-Inspection.pdf).
  
