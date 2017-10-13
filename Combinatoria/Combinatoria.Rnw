@@ -112,7 +112,7 @@ as\'i,
 
 Con el fin de considerar  problemas que conducen a espacios muestrales con puntos igualmente probables, debemos  considerar algunas t\'ecnicas para contar conjuntos de puntos. Estas t\'ecnicas proporcionan algunos problemas desafiantes.
 
-Se advierte  que  se debe tener cuidado al concluir que s\'olo porque un espacio muestral tiene $n$ puntos, cada punto tiene probabilidad $1/n$. Por ejemplo, si un viaje en avi\'on  se completa de forma segura o no, se hace evidente  que estos eventos no tienen cada uno una probabilidad $1/2!$ Las t\'ecnicas de conteo consideradas en este caso  se basan en dos principios de conteo fundamentales relativos a  eventos mutuamente exclusivos A y B
+Se debe tener cuidado al concluir que s\'olo porque un espacio muestral tiene $n$ puntos, cada punto tiene probabilidad $1/n$. Por ejemplo, si un viaje en avi\'on  se completa de forma segura o no, se hace evidente  que estos eventos no tienen cada uno una probabilidad $1/2!$ Las t\'ecnicas de conteo consideradas en este caso  se basan en dos principios de conteo fundamentales relativos a  eventos mutuamente exclusivos A y B
 
 \begin{itemize}
 \item \texttt{Principio 1} Si los eventos $A$ y $B$ pueden ocurrir en $n$  y $m$ maneras respectivamente, entonces $A$ y $B$ pueden ocurrir juntos de $n\cdot m$ maneras.
