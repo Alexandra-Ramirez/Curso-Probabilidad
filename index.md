@@ -147,7 +147,7 @@ Los prerequisitos para este curso son:
   - [Variables aleatorias (primera parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv/Variables_aleatorias1.pdf).
   - [Introduction to Discrete Random Variables and Discrete Probability Distributions](https://youtu.be/0P5WRKihQ4E).
   - [Variables aleatorias (segunda parte)](https://github.com/C-Lara/Curso-Probabilidad/blob/master/Variables_aleatorias/rv1/Variables_aleatorias2.pdf).
-  - [The Simple Random Walk Gordan Zitkovic](https://www.ma.utexas.edu/users/gordanz/notes/lecture4.pdf).
+  - Notas de   [The Simple Random Walk](https://www.ma.utexas.edu/users/gordanz/notes/lecture4.pdf) de Gordan Zitkovic.
   - [Survivor and Hazard Functions](http://people.stat.sfu.ca/~raltman/stat402/402L32.pdf).
   - [How long are you going to live?!!!](https://understandinguncertainty.org/node/76).
   
