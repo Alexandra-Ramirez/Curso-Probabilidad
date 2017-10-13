@@ -6,7 +6,7 @@ Esta lista de temas complementarios, son acerca de tópicos que no se tratarán 
 
 ### Fechas y forma  de presentación
 
-La fecha de presentación  es  el dia  **viernes 23 de junio**, en formato pdf o html, utilizando [Rstudio](https://www.rstudio.com/) y [Rmarkdown](http://rmarkdown.rstudio.com/) hasta las 16:00pm, en el Laboratorio1. 
+La fecha de presentación  es   en formato pdf o html, utilizando [Rstudio](https://www.rstudio.com/) y [Rmarkdown](http://rmarkdown.rstudio.com/) hasta las 16:00pm, en el Laboratorio1. 
 
 Trabajos fuera de tiempo, no serán tomados en cuenta.  La lista de temas es:
 
