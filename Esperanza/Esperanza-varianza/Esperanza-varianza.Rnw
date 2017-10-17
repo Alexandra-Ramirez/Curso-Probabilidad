@@ -189,7 +189,7 @@ Los momentos centrales son tambi\'en importantes. Ellos son los momentos de la d
 El segundo momento central es llamada \texttt{varianza} de la variable aleatoria $X$ y es escrita como:
 
 \[
-\mathbb{V}(X) = \mathbb{E}[(X - \mathbb{E}(X))^2] = \begin{cases}
+\text{Var}(X) = \mathbb{E}[(X - \mathbb{E}(X))^2] = \begin{cases}
 \bigints_{-\infty}^{\infty}(x - \mathbb{E}(X))^2f_X(x)dx &\ \text{si X es continua}\\
 \sum_{i}(x_i - \mathbb{E}(X))^2p_i  &\ \ \text{si X es discreta}
 \end{cases}
@@ -200,7 +200,7 @@ El segundo momento central es llamada \texttt{varianza} de la variable aleatoria
 Una f\'ormula usada para la varianza es:
 
 \[
-\mathbb{V}(x) = \mathbb{E}(X^2) - [\mathbb{E}(X)]^2.
+\text{Var}(x) = \mathbb{E}(X^2) - [\mathbb{E}(X)]^2.
 \]
 
 \vspace{0.2cm}
@@ -214,7 +214,7 @@ C_X = \frac{\sigma_X}{\mathbb{E}(X)},
 y su  utilidad reside en el hecho de que es una medida adimensional de la variabilidad de $X$ . A menudo, en lugar del coeficiente de variaci\'on, se usa el \texttt{coeficiente de variaci\'on cuadr\'atico}, que se define como:
 
 \[
-C_X^2 = \frac{\mathbb{V}(X)}{(\mathbb{E}(X))^2}.
+C_X^2 = \frac{\text{Var}(X)}{(\mathbb{E}(X))^2}.
 \]
 
 
@@ -245,7 +245,7 @@ El c\'alculo de la varianza de $X$, se procede como sigue:
 \vspace{0.2cm}
 
 \begin{align*}
-\mathbb{V}(X) &= \sum_{i =2}^{12}(x_i - 7)^2p_i \\
+\text{Var}(X) &= \sum_{i =2}^{12}(x_i - 7)^2p_i \\
 &=  5^2\frac{1}{36} + 4^2\frac{2}{36} + 3^2\frac{3}{36}+ 2^2\frac{4}{36} +  1^2\frac{5}{36} +  0^2\frac{6}{36} +  1^2\frac{5}{36} +  2^2\frac{4}{36} +  3^3\frac{3}{36} +  4^2\frac{2}{36} +  5^2\frac{1}{36} = 5.8333.
 \end{align*}
 
@@ -280,7 +280,7 @@ Sea el tiempo transcurrido entre la colocaci\'on de una orden y su entrega sea e
 
 \vspace{0.2cm}
 
-Por tanto $\mathbb{V}(X) = 1075- (32.5)^2 = 18.75$ y as\'i $\delta_X = \sqrt{\mathbb{V}(X)} = 4.33$.
+Por tanto $\text{Var}(X) = 1075- (32.5)^2 = 18.75$ y as\'i $\delta_X = \sqrt{\text{Var}(X)} = 4.33$.
 
 \vspace{0.2cm}
 
@@ -374,7 +374,7 @@ En este caso, la esperanza es dada por:
 y su varianza se calcula como:
 
 \begin{align*}
-\mathbb{V}(M) = \bigints_{0}^{\infty}(x - \mathbb{E}(M))^2e^{-x}dx  = \bigints_{0}^{\infty}(x -1)^2e^{-x}dx \\
+\text{Var}(M) = \bigints_{0}^{\infty}(x - \mathbb{E}(M))^2e^{-x}dx  = \bigints_{0}^{\infty}(x -1)^2e^{-x}dx \\
 = \bigints_{0}^{\infty}x^2e^{-x}dx - 2\bigints_{0}^{\infty}xe^{-x}dx + \bigints_{0}^{\infty}e^{-x}dx = 2 -2 + 1,
 \end{align*}
 
