@@ -321,7 +321,7 @@ Posiblemente los valores m\'as importantes  que surgen a partir de la definici\'
 \vspace{0.2cm}
 
 \[
-\mathbb{V}(X) = \mathbb{E}([X - \mathbb{E}(X)]^2)
+\text{Var}(X) = \mathbb{E}([X - \mathbb{E}(X)]^2)
 \]
 
 
@@ -332,7 +332,7 @@ Una relaci\'on importante  entre la varianza y el momento de  $X$, se puede dist
 \vspace{0.2cm}
 
 \begin{align*}
-\mathbb{V}(X) &= \mathbb{E}(X^2 -2X\mathbb{E}(X) + \mathbb{E}(X)^2)\\
+\text{Var}(X) &= \mathbb{E}(X^2 -2X\mathbb{E}(X) + \mathbb{E}(X)^2)\\
 &= \mathbb{E}(X^2) -2\mathbb{E}(X)^2 + \mathbb{E}(X)^2 \\
 & = \mathbb{E}(X^2) -\mathbb{E}(X)^2.
 \end{align*}
@@ -365,7 +365,7 @@ De la proposici\'on  anterior, calcular los momentos de $X$ se pueden realizar d
 \begin{enumerate}
 \item $\mathbb{E}(X) = \mathbb{G}_{X}^{'}(1)$.
 \item $\mathbb{E}(X^2) = \mathbb{E}(X[X -1] +X) = \mathbb{E}(X[X -1]) + \mathbb{E}(X) = \mathbb{G}_{X}^{''}(1) + \mathbb{G}_{X}^{'}(1)$.
-\item $\mathbb{V}(X) =  \mathbb{G}_{X}^{''}(1) + \mathbb{G}_{X}^{'}(1) - \mathbb{G}_{X}(1)^2$.
+\item $\text{Var}(X) =  \mathbb{G}_{X}^{''}(1) + \mathbb{G}_{X}^{'}(1) - \mathbb{G}_{X}(1)^2$.
 \end{enumerate}
 
 \vspace{0.3cm}
@@ -376,7 +376,7 @@ De la proposici\'on  anterior, calcular los momentos de $X$ se pueden realizar d
 \begin{align*}
 \mathbb{E}(X) = &\mathbb{G}_{X}^{'}(1) = \frac{1}{p}\\
 \mathbb{E}(X^2) = &\mathbb{G}_{X}^{''}(1) + \mathbb{G}_{X}^{'}(1) = \frac{q +1}{p^2}\\
-\mathbb{V}(X) = & \frac{q}{p^2}
+\text{Var}(X) = & \frac{q}{p^2}
 \end{align*}
 
 \end{ejemplo}
@@ -642,7 +642,7 @@ As\'i $\{f_a: -1 \leq a \leq 1 \}$ es una colecci\'on de distintas funciones den
 La varianza de una variable aleatoria $X$ es definida como:
 
 \[
-\mathbb{V}(X) = \mathbb{E}([X- \mu]^2), 
+\text{Var}(X) = \mathbb{E}([X- \mu]^2), 
 \]
 
 \vspace{0.2cm}
@@ -664,7 +664,7 @@ En un caso extremo cuando $X$ es \texttt{concentrado} en alg\'un punto. En este 
 si aplicamos la ecuaci\'on anterior a $Y = X - \mu$, tenemos el siguiente resultado:
 
 \[
-\mathbb{V}(X) \ \ \text{si s\'olo si} \ \ \mathbb{P}(X = \mu) =1 
+\text{Var}(X) \ \ \text{si s\'olo si} \ \ \mathbb{P}(X = \mu) =1 
 \]
 
 \vspace{0.2cm}
@@ -672,20 +672,20 @@ si aplicamos la ecuaci\'on anterior a $Y = X - \mu$, tenemos el siguiente result
 de esta forma la varianza cero significa que \texttt{no hay dispersi\'on en lo absoluto}. Algunas propiedades  de la varianza son las siguientes:
 
 \begin{itemize}
-\item $\mathbb{V}(X) = \mathbb{E}([X- \mu]^2) = \mathbb{E}(X^2) - \mu^2$ donde $\mathbb{E}(X) = \mu$.
-\item $\mathbb{V}(aX + b) = a^2\mathbb{V}(X)$.
+\item $\text{Var}(X) = \mathbb{E}([X- \mu]^2) = \mathbb{E}(X^2) - \mu^2$ donde $\mathbb{E}(X) = \mu$.
+\item $\text{Var}(aX + b) = a^2\text{Var}(X)$.
 \end{itemize}
 
 \vspace{0.2cm}
 
-La varianza como medida de dispersi\'on tiene una propiedad no deseable: no es lineal en el sentido de que la varianza de $aX$ es $a^2$ veces la varianza de $X$, por esta raz\'on es preferible trabajar con la \texttt{desviaci\'on est\'andar} de $X$, definido como $\sqrt{\mathbb{V}(X)}$.
+La varianza como medida de dispersi\'on tiene una propiedad no deseable: no es lineal en el sentido de que la varianza de $aX$ es $a^2$ veces la varianza de $X$, por esta raz\'on es preferible trabajar con la \texttt{desviaci\'on est\'andar} de $X$, definido como $\sqrt{\text{Var}(X)}$.
 
 \vspace{0.2cm}
 
-En t\'erminos de $\mathbb{V}(X)$ y $\mathbb{V}(Y)$, la expresi\'on de $\mathbb{V}(X + Y) $ es de la forma:
+En t\'erminos de $\text{Var}(X)$ y $\text{Var}(Y)$, la expresi\'on de $\text{Var}(X + Y) $ es de la forma:
 
 \[
-\mathbb{V}(X + Y) = \mathbb{V}(X) + 2\mathbb{E}([X -\mathbb{E}(X)][Y -\mathbb{E}(Y)]) +\mathbb{V}(Y)
+\text{Var}(X + Y) = \text{Var}(X) + 2\mathbb{E}([X -\mathbb{E}(X)][Y -\mathbb{E}(Y)]) +\text{Var}(Y)
 \]
 
 Es conveniente tener una palabra especial para el t\'ermino medio en la \'ultima expresi\'on y para ello definimos la \texttt{covarianza} de  $X$ e $Y$.
@@ -713,8 +713,8 @@ Podemos agregar algunas propiedades m\'as, de la varianza y covarianza:
 \vspace{0.2cm}
 
 \begin{itemize}
-\item $\mathbb{V}(X +Y) = \mathbb{V}(X) + 2cov(X,Y) + \mathbb{V}(Y)$
-\item Si $X$ y $Y$ son independientes : $cov(X,Y) = 0$ y $\mathbb{V}(X + Y) = \mathbb{V}(X) + \mathbb{V}(Y)$.
+\item $\text{Var}(X +Y) = \text{Var}(X) + 2cov(X,Y) + \text{Var}(Y)$
+\item Si $X$ y $Y$ son independientes : $cov(X,Y) = 0$ y $\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)$.
 \end{itemize}
 
 
@@ -733,12 +733,12 @@ La principal desventaja de la covarianza como medida de dependencia de $X$ e $Y$
 \vspace{0.2cm}
 
 \[
-\rho(X,Y) = \dfrac{cov(X ,Y)}{\sqrt{\mathbb{V}(X)\mathbb{V}(Y)}}
+\rho(X,Y) = \dfrac{cov(X ,Y)}{\sqrt{\text{Var}(X)\text{Var}(Y)}}
 \]
 
 \vspace{0.2cm}
 
-siempre que la \'ultima cantidad exista y $\mathbb{V}(X)\mathbb{V}(Y) \neq 0$.
+siempre que la \'ultima cantidad exista y $\text{Var}(X)\text{Var}(Y) \neq 0$.
 
 \end{defi}
 
@@ -775,19 +775,19 @@ siempre que las esperanzas existan.
 Para probar el \texttt{Teorema 1.1}, se coloca  $U = X - \mathbb{E}(X)$ y $V = Y - \mathbb{E}(Y)$, en la desigualdad de Cauchy-Schwarz, para hallar que:
 
 \[
-cov(X,Y)^2 \leq \mathbb{V}(X)\mathbb{V}(Y).
+cov(X,Y)^2 \leq \text{Var}(X)\text{Var}(Y).
 \]
 
 Lo que concluye con el resultado.
 
 \vspace{0.3cm}
 
-Sea $a = \mathbb{V}(X)$, $b = 2cov(X,Y)$, $c = \mathbb{V}(Y)$  y supongamos que $\rho(X,Y) \pm 1$. Entonces tenemos que  $\mathbb{V}(X)\mathbb{V}(Y) \neq 0$ y 
+Sea $a = \text{Var}(X)$, $b = 2cov(X,Y)$, $c = \text{Var}(Y)$  y supongamos que $\rho(X,Y) \pm 1$. Entonces tenemos que  $\text{Var}(X)\text{Var}(Y) \neq 0$ y 
 
 \vspace{0.2cm}
 
 \[
-b^2 - 4ac = 4\mathbb{V}(X)\mathbb{V}(Y)[\rho(X,Y)^2 - 1] = 0
+b^2 - 4ac = 4\text{Var}(X)\text{Var}(Y)[\rho(X,Y)^2 - 1] = 0
 \]
 
 \vspace{0.2cm}
