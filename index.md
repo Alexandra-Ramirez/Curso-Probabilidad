@@ -112,7 +112,7 @@ Los prerequisitos para este curso son:
   - Ley de los grandes números.
   - Teorema del límite central.
   
- ### Algunos tópicos de teoria de las  probabilidades
+###  Algunos tópicos de teoria de las  probabilidades
 
   - Caminos aleatorios.
   - Procesos de ramificación.
