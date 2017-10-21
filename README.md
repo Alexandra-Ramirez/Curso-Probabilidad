@@ -85,8 +85,12 @@ Los prerequisitos para este curso son:
   - Ley de los grandes números.
   - Teorema del límite central.
   
-  
+* Algunos tópicos de probabilidades
 
+  - Caminos aleatorios.
+  - Procesos de ramificación.
+  - Ua breve introducción a la simulación.
+  
 ## Software
 
 La práctica de la estadística moderna es computacionalmente intensiva, pero para  este curso no es especialmente así, pero se tendrá que utilizar computadoras para hacer algunas  asignaciones.
