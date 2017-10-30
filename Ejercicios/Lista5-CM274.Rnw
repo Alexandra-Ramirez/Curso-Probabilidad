@@ -1,0 +1,316 @@
+\documentclass[8pt]{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.35\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Pr\'actica dirigida   \par.
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Lista de ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+\begin{enumerate}
+\item Sean $x \in \mathbb{R}$ y $n \in \{0,1, \dots \}$, entonces 
+
+\[
+\binom{z}{m} = \begin{cases}
+\frac{\Gamma(z +1)}{m!\Gamma(z -m +1)} & \qquad \quad \text{si}\ \   m \leq z \\
+(-1)^m\frac{\Gamma(m -z)}{m!\Gamma(-z)} & \qquad \quad \text{si}\ \  z < 0 \\
+(-1)^{[[m -z]]}\frac{\Gamma(z +1)\Gamma(m -z)}{m!}\frac{\langle z \rangle (1 -\langle z \rangle)}{\Gamma(1 + \langle z \rangle)\Gamma(2 -\langle z \rangle)} & \qquad \text{si}\ \  0 \leq z < m
+\end{cases}
+\]
+en donde $\langle z \rangle$ representa a la parte decimal de $z$, $\Gamma$, la funci\'on gamma y $[[m -z]]$ a la parte entera de $m -z$.
+
+\item Prueba los siguientes resultados
+
+\begin{enumerate}
+\item (F\'ormula de Wallis)
+
+\[
+\lim_{n \rightarrow \infty }\frac{2\cdot 2\cdot 4 \cdot 4 \cdot 6 \cdot 6 \cdots (2n)2n}{1 \cdot 3  \cdot 3 \cdot 5 \cdot 5 \cdots (2n -1)(2n -1)(2n +1)} = \frac{\pi}{2}.
+\]
+
+\item 
+
+\[
+\lim_{n \rightarrow \infty}\frac{2^{2n}(n!)^2}{(2n)!\sqrt{n}} = \sqrt{\pi}.
+\]
+
+\item Sea $n \in \mathbb{N}$, entonces
+
+\[
+\frac{1}{2}\ln(1 + \frac{1}{n}) = \frac{1}{2n +1} + \frac{1}{3}\frac{1}{(2n + 1)^3} + \frac{1}{3}\frac{1}{(2n + 1)^5} + \cdots
+\]
+
+\item (F\'ormula de Stirling) Sea $n \in \mathbb{N}$, entonces
+
+\[
+n! = \sqrt{2\pi}n^ne^{-n}\sqrt{n}e^{\theta n}, \qquad \text{en donde }\qquad \frac{1}{12n +1} < \theta_n < \frac{1}{12n}.
+\]
+\end{enumerate}
+
+\item 
+
+\begin{enumerate}
+\item Sea $X$ una variable aleatoria que toma un n\'umero finito de valores $(x_i, 1 \leq i \leq n)$ , con masa de probabilidad $\mathbb{P}(X =x) = f(x)$. Supongamos que  $(a_i, 1 \leq i \leq n)$ tal que $a_i > 0$ para $1 \leq i \leq n$ y $\sum_{i =1}^{n}a_i = 1$. Muestra que,
+
+\[
+-\sum_{i =1}^{n}f(i)\log a_i \geq - \sum_{i =1}^n f(i)\log f(i)
+\]
+ y que la igualdad se cumple si y s\'olo si $a_i = f(i)$ para todo $i$.
+ 
+ \item Las variables aleatorias $X$ e $Y$ toman un n\'umero finito de valores y tienen una masa conjunta $f(x,y)$. Definimos
+ 
+\[
+I(X,Y) = \sum_x\sum_yf(x,y)\log\Biggl(\frac{f(x,y)}{f_X(x)f_Y(y)}\Biggr).
+\]
+
+Muestra que $I \geq 0$ y que la igualdad se cumple si  $X$ e $Y$ son independientes.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item Sea  X una  variable aleatoria binomial con  par\'ametros $n$ y $p$, tal que $np = \lambda$. Muestra que  para un $k$ fijo,  $n \rightarrow \infty$ con $\lambda$ fijo, se cumple
+
+\[
+\mathbb{P}(X = k) \rightarrow \frac{1}{k!}\lambda^ke^{-\lambda}.
+\]
+
+\item Durante $1979 -1981$, en Bristol, $1103$ carteros sufrieron $215$ mordiscos de perro. Un total de $191$ carteros fueron mordidos, de los cuales 145 fueron mordidos solo una vez. ?`Cu\'al deber\'ia ser el lema del cartero: \texttt{una vez mordido, dos veces nervioso}  o  \texttt{una vez mordido, dos veces mordido}?.
+\end{enumerate}
+\item Los t\'erminos $t_k = \binom{n}{k}p^k(1 -p)^k$, de una distribuci\'on binomial, crecen con $k$ hasta alcanzar su m\'aximo valor cuando $np + p -1 \leq k + np + p$, despu\'es de lo cual decrecen con $k$.
+
+\item Sea $\Omega$ un experimento aleatorio y $A$ un evento relativo a ese experimento, de probabilidad igual a $p$. Consideremos un nuevo experimento aleatorio consistente en la repetici\'on indefinida del experimento $\Omega$, de tal manera que cada repetici\'on es independiente de las otras. Sea $X_n$ el n\'umero de veces que ocurre el evento $A$ en las primeras $n$ repeticiones del experimento y $\epsilon $ un n\'umero positivo arbitrario, entonces
+
+\[
+\lim_{n \rightarrow \infty}\mathbb{P}\biggl[\biggl \vert  \frac{X_n}{n} - p \biggr \vert   > \epsilon  \Biggr] = 0
+\]
+
+\item Para cada $n \in \mathbb{N}$, sea $X$ una variable aleatoria con distribuci\'on binomial de param\'etros $n$ y $p \in (0,1)$. Dados $a$ y $b$ dos n\'umeros reales tales que $a < b$, definimos, para cada entero no negativo $k$ tal que $np + a\sqrt{npq} \leq k \leq np + b\sqrt{npq}$, $x_{k,n} = \frac{k -np}{\sqrt{npq}}$, entonces
+
+\[
+\lim_{n \rightarrow \infty}\frac{\mathbb{P}(X_n = k)}{\frac{1}{\sqrt{2\pi} \sqrt{npq}}\exp{\{-\frac{1}{2}x^2_{k,n}\}}} = 1 \qquad \text{uniformemente en k}.
+\]
+
+Usa el anterior resultado para el caso, en el que tenemos un entero no negativo tal que $k \leq n$, para probar que se cumple,
+
+\[
+\lim_{n \rightarrow \infty}\mathbb{P}(X_n = k) = 0 \qquad \text{uniformemente en k}.
+\]
+
+\item (Teorema integral de Moivre-Laplace) Sean $a$ y $b$ dos n\'umeros reales tales que $a < b$ y para cada $n \in \mathbb{N}$, sea $X_n$ una variable aleatoria con distribuci\'on binomial de param\'etros $n$ y $p \in (0,1)$. Entonces,
+
+\[
+\lim_{n \rightarrow \infty}\mathbb{P}\biggl(a <  \frac{X_n - np}{\sqrt{npq}} < b \biggr) = \frac{1}{\sqrt{2\pi}}\bigintss_{a}^{b}e^{-\frac{1}{2}x^2}dx.
+\]
+
+Utiliza este teorema de Moivre-Laplace para estimar la probabilidad de que en m\'as $10000$ d\'gitos, seleccionados al azar, el n\'umero $7$ no aparezca m\'as de 985 veces.
+
+
+\item Sea $X$ una variable aleatoria con distribuci\'on normal de param\'etros $\mu = 2.4$ y $\sigma^2 = 1.6$. Encuentra $\mathbb{P}(2 < X < 3), \mathbb{P}(-1 < X < 0.5), \mathbb{P}(X > -1.5)$ y $\mathbb{P}(X >3.1)$.
+
+\item Sea $X$ una variable aleatoria con distribuci\'on exponencial de par\'ametro $\lambda$ y sea $M > 0$. Encuentra $\mathbb{E}[\min(X,M)]$.
+
+\item En una estaci\'on meteorol\'ogica se cuenta con un tipo de aparato de medici\'on, el cual tiene un tiempo de vida que se distribuye exponencialmente, de tal manera que su tiempo promedio de vida es de $1000$ horas. 
+
+Si se utilizan $10$ de estos aparatos de forma consecutiva, uno de ellos despu\'es de que el anterior ya no funciona, a) ?` cu\'al es la probabilidad de que algunos de los aparatos estar\'a funcionando despu\'es de $1000$ horas?, b) si despu\'es de $5000$ horas todav\'ia est\'a funcionando algunos de los aparatos, ?` cu\'al es la probabilidad de que alguno de ellos siga funcionando despu\'es de $10000$ horas m\'as?.
+
+
+\item 
+\begin{enumerate}
+\item Sea $X$ una variable aleatoria con funci\'on de distribuci\'on $F_X$, $Y$ una variable aleatoria con distribuci\'on uniforme en el intervalo $(0,1)$ y definimos la funci\'on $d:(0,1) \rightarrow \mathbb{R}$ mediante la relaci\'on $d(t) = \inf\{s \in \mathbb{R}: F_X(s) \geq t \}$, entonces la funci\'on de distribuci\'on de la variable aleatoria $d(Y)$ es $F_X$. ?` Qu\'e sucede en el caso estricto?.
+\item Sea $X$ una variable aleatoria con distribuci\'on geom\'etrica de param\'etro $p$, entonces
+
+\[
+F_X(x) = \begin{cases}
+\ 0 & \qquad \text{si}\ x <  0 \\
+\sum_{k = 0}^{[[x]]}p(1 - p)^k & \qquad \text{si}\ x \geq  0
+\end{cases}
+\]
+donde $[[ x ]]$ es el mayor entero menor o igual a $x$. 
+
+Prueba si $U$ tiene distribuci\'on uniforme en el intervalo $(0,1)$, entonces $\biggl[\biggl[\frac{\ln(1 -U)}{\ln(1 -p)}\biggr]\biggr]$ tienen distribuci\'on geom\'etrica con param\'etrica $p$.
+
+\item Sea $X$ una variable aleatoria con distribuci\'on Poisson de param\'etro $\lambda$, entonces,
+
+\[
+F_X(x) = \begin{cases}
+\ 0 & \qquad \text{si}\ x <  0 \\
+\sum_{k = 0}^{[[x]]}\frac{\lambda^k e^{-\lambda}}{k!} & \qquad \text{si}\ x \geq  0
+\end{cases}
+\]
+donde $[[x]]$ es el mayor entero menor o igual a $x$. 
+
+Prueba si $U$ tiene distribuci\'on uniforme en el intervalo $(0,1)$, entonces,
+
+\[
+c(Y) = \inf\{j \in \{0,1, \dots \}: \sum_{k = 0}^{j} \frac{\lambda^ke^{-\lambda}}{k!} > Y \}
+\]
+tiene distribuci\'on de Poisson con param\'etro $\lambda$.
+\end{enumerate}
+
+\item Sea $X$ una variable aleatoria con funci\'on de distribuci\'on dada por:
+
+\[
+F_X(x) = \begin{cases}
+\  0 & \qquad \text{si}\  x < \frac{1}{2}\\
+\frac{1}{10} x &\qquad  \text{si}\  \frac{1}{2} \leq x < 2\\
+\frac{1}{10} x^2 &\qquad  \text{si}\  2  \leq x < 3\\
+\quad 1 & \qquad \text{si}\  x \geq 3.
+\end{cases}
+\]
+
+Encuentra la esperanza de $X$.
+
+\item Sea $X$ una variable aleatoria con funci\'on de distribuci\'on dada por,
+
+\[
+F_X(x) = \begin{cases}
+\ 0 & \qquad \text{si}\ x < 0 \\
+\frac{1}{5}(x +1) & \qquad \text{si}\ 0 \leq x < 1 \\
+\frac{1}{5}(x +2) & \qquad \text{si}\ 1 \leq x < 2 \\
+1 &\qquad \text{si}\ x \geq 2
+\end{cases}
+\]
+Encuentra las esperanzas de $X$ y $X^2$.
+
+\item Sea $X$ una variable aleatoria con funci\'on densidad dada por,
+
+\[
+f_X(x) = \begin{cases}
+\frac{6}{\pi^2x^2}&\qquad x \in \{1, 3, \dots \} \cup \{-2, -4, \dots \}\\
+\quad 0 & \qquad \text{en otro caso}.
+\end{cases}
+\]
+?` Est\'a definida la esperanza de X?.
+\item Muestra que la integral $\bigintss_{-\infty}^{\infty}\vert x - m \vert f(x)dx$ se vuelve m\'inima cuando $m$ es la mediana de la distribuci\'on con densidad $f$.
+
+
+\item Si $\mathbb{E}(X) = \mathbb{E}(X^2) = 0$, prueba que $\mathbb{P}(X = 0) = 1$.
+
+\item Sea $n \in \mathbb{N}$, $X$ una variable aleatoria tal que $X^n$ tiene esperanza finita y $p$ un polinomio de grado $n$, entonces
+
+\[
+\mathbb{E}(p(X)) = p(0)+ \int_{0}^{\infty}p^{'}(x)[1- F(x)]dx - \int_{-\infty}^{0}p^{'}(x)F_X(x)dx.
+\]
+
+\item
+
+\begin{enumerate}
+\item Si $X$ es una variable aleatoria que es uniformemente distribuida entre $-1$ y $1$, encuentra el PDF de $\sqrt{\vert X \vert}$ y el PDF de $-\ln \vert X \vert$.
+\item Encuentra el PDF de $e^X$ en t\'erminos del PDF de $X$. Muestra el resultado en el caso donde $X$ es uniformememente distribuida entre $0$ y $1$.
+\item Encuentra el PDF de $\vert X \vert^{1/3}$ y $\vert X \vert^{1/4}$ en t\'erminos del PDF de $X$.
+\end{enumerate}
+\item Las variables aleatorias $X, Y$ y $Z$ son independientes y uniformemente distribuidas entre cero y uno. Encuentra el PDF de $X + Y + Z$.
+\item Sea $X$ e $Y$ variables aleatorias con correlaci\'on $\rho$. Muestra que $\mathbb{E}(\text{Var}(Y|X)) \leq (1 -\rho^2)\text{Var}Y$.
+
+\item Considera a un jugador que en cada apuesta gana o pierde su apuesta con probabilidades $p$ y $1 -p$, independientemente de las apuestas anteriores. Cuando $p > 1/2$,  un sistema de juego , conocido como la estrategia de Kelly, es apostar siempre la fracci\'on $2p -1 $ de la fortuna actual. Calcula la esperanza de la fortuna  despu\'es de $n$ apuestas, comenzando con $x$ unidades y empleando la estrategia de Kelly.
+
+\item Muestra que para una variable aleatoria discreta o continua $X$ y alguna funci\'on $g(Y)$ de otra variable aleatoria $Y$, tenemos $\mathbb{E}(Xg(Y)|Y) = g(Y)\mathbb{E}(X|Y)$.
+\item Sean $X_{(1)}, X_{(2)}, \dots, X_{(n)}$ los estad\'isticas de orden de una familia de variables aleatorias independientes con una funci\'on de distribuci\'on continua com\'un F. Demuestra que
+
+\[
+Y_n = [F(X_{(n)})]^n, \qquad Y_r =\Biggl[\frac{F(X_{(r)})}{F(X_{(r + 1)}}\Biggr],\qquad  1 \leq r < n,
+\]
+
+son independientes y uniformemente distribuidas en $[0, 1]$.
+
+\item Supongamos que una variable aleatoria, satisface
+
+\[
+\mathbb{E}(X) =0, \quad  \mathbb{E}(X^2) = 1, \quad \mathbb{E}(X^3)= 0, \quad \mathbb{E}(X^4) = 3
+\]
+
+y sea
+
+\[
+Y = a +bX +cX^2
+\]
+
+Encuentra el coeficiente de correlaci\'on $\rho(X,Y)$.
+
+\item Sea $X$ una variable aleatoria con funci\'on densidad dada
+
+\[
+f(x) = \begin{cases}
+\frac{1}{4}& \quad \text{si}\ x \in \{ -1, 1\} \\
+\frac{1}{2}& \quad \text{si}\  x = 0 \\
+0 & \quad \text{en otro caso}
+\end{cases}
+\]
+
+y sea $Z$ un variable aleatoria, independiente de $X$, con distribuci\'on uniforme en en el conjunto $\{-1, 1 \}$. Definimos la variable aleatoria $Y$ de la siguiente manera:
+
+\[
+Y = \begin{cases}
+Z & \quad \text{si}\ X=0 \\
+0 & \quad \text{en otros caso}
+\end{cases}
+\]
+
+Muestra que $X$ e $Y$ son independientes y que se cumple $\text{Cov}(X,Y) = 0$.
+
+
+\item Si el sol sale  durante $n$ dias consecutivos, ?`cu\'al es la probabilidad de que salga ma\~nana, si se sabe  que la salida o no del sol es una variable aleatoria de Bernoulli?.
+
+\item Consideremos el experimento aleatorio consistente en la elecci\'on al azar de un n\'umero real en el intervalo $(0,1)$ y sea $X$ el n\'umero que se obtiene.?` Cu\'al es la probabilidad de que a) $X$ sea un n\'umero racional? y b) X pertenezca al conjunto de Cantor?.
+
+\item Si el n-\'esimo momento de la variable aleatoria $X$ con funci\'on de distribuci\'on $F$ existe, muestra que 
+
+\begin{align*}
+\mathbb{E}(X -c)^k &= k\bigintss_{c}^{\infty}(x -c)^{k -1}[1 - F(x)]dx \\
+ &- k\bigintss_{-\infty}^{c}(x -c)^{k -1}F(x) dx, \qquad 1 \leq k \leq n. 
+\end{align*}
+
+\item Para cualquier $n \in \mathbb{N}$, encuenta el momento de orden $n$ de una variable aleatoria con distribuci\'on normal est\'andar.
+\end{enumerate}
+\end{document} 
+
