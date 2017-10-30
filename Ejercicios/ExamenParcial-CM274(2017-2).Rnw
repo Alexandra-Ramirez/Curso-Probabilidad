@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.35\linewidth}
+\begin{minipage}{0.6\linewidth}
+\textbf{Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274}\par
+ \par
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Examen Parcial}}
+
+\begin{itemize}
+\item Responde cada pregunta, justificando, los resultados utilizados. Cada pregunta del examen contiene el desarrollo de propiedades hechas en clase y en las notas de clase, as\'i como el conocimiento de cursos anteriores.
+\item Est\'a prohibido la utilizaci\'on de  cuadernos entre los estudiantes participantes.
+\item La prueba dura 3 horas. 
+\item Se prohiben, copias de todo \'indole, as\'i como el uso de libros electr\'onicos.
+\end{itemize}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item (2ptos) Sea $\beta > 1$, $p_1, p_2, \dots$, denota n\'umeros primos y sea $N(1), N(2),\dots$ variables aleatorias independientes, $N(i)$ teniendo funci\'on de masa de probabilidad $\mathbb{P}(N(i) = k) = (1 - \gamma_i)\gamma_i^k$ para $k \geq 0$, donde $\gamma_i = p_i^{-\beta}$, para todo $i$.
+
+Muestra que $M = \prod_{i =1}^{\infty}p_i^{N(i)}$ es un n\'umero aleatorio con funci\'on de masa de probabilidad $\mathbb{P}(M = m)= Cm^{-\beta}$ para $m \geq 1$, donde $C$ es una constante satisfaciendo
+
+\[
+C = \prod_{i =1}^{\infty}\Biggl(1 - \frac{1}{p_i^{\beta}}\Biggr) = \Biggl(\sum_{m =1}^{\infty}\frac{1}{m^{\beta}}\Biggr)^{-1}. 
+\]
+
+\item (2ptos) Sean $X$ e $Y$ dos variables aleatorias discretas con id\'entico conjunto de posibles valores $A = \{a_1, a_2, \dots, a_n\}$, donde $a_1, a_2, \dots a_n$ son diferentes n\'umeros reales. Muestra que si
+
+\[
+\mathbb{E}(X^r) = \mathbb{E}(Y^r),\quad r =1, 2, \dots, n -1,
+\]
+
+entonces $X$ e $Y$ son id\'enticamente distribuidas. Esto es,
+
+\[
+\mathbb{P}(X =t) = \mathbb{P}(Y = t)\quad \text{para}\ t = a_1, a_2,\dots, a_n. 
+\]
+\item (2ptos) Cada miembro de un grupo de $n$ jugadores tira un dado.
+
+\begin{enumerate}
+\item Para cualquier par de jugadores que lanzen el mismo n\'umero, el grupo suma 1 punto. Encuentra la media y la varianza de la puntuaci\'on total del grupo.
+\item  Encuentre la media y la varianza de la puntuaci\'on total si cualquier par de jugadores que lanzan  el mismo n\'umero   anotan ese n\'umero.
+\end{enumerate}
+
+\item (2ptos) Encuentra la probabilidad que dada una fracci\'on $m/n$ (donde $m$ y $n$ son enteros) es irreducible.
+
+\item (3ptos) El problema de los \texttt{menages} plantea la siguiente pregunta. Algunos consideran deseable que los hombres y las mujeres alternen cuando est\'an sentados en una mesa circular. Si $n$ parejas est\'an sentadas al azar de acuerdo con esta regla, muestra que la probabilidad de que nadie se sienta junto a su pareja es
+
+\[
+\frac{1}{n!}\sum_{k = 0}^{n}(-1)^k\frac{2n}{2n - k}\binom{2n - k}{k}(n -k)!
+\]
+
+Puede resultar \'util mostrar primero que el n\'umero de formas de seleccionar $k$ pares no superpuestos de asientos adyacentes es $\binom{2n -k}{k}2n(2n - k)^{-1}$.
+
+\item (3ptos) Sea $p >0 , q > 0$ tal que $p^{-1} + q^{-1} = 1$ y $X, Y$ variables aleatorias positivas. Entonces 
+
+\[
+\mathbb{E}(XY) \leq[\mathbb{E}(X^p)]^{1/p}[\mathbb{E}(Y^q)]^{1/q}.
+\]
+
+Muestra tambi\'en que 
+
+\[
+g(t) = \log \mathbb{E}(\vert X \vert^t) 
+\]
+
+es una funci\'on convexa. Entonces muestra que $[\mathbb{E}(\vert X \vert^t)]^{1/t}$ es una funci\'on creciente en $t$.
+
+\item (3ptos) A una clase de ingenier\'ia que tiene $2n -3 $ estudiantes varones y tres mujeres, hay $n$ puestos de trabajo disponibles. Para asignar cada puesto de trabajo a dos estudiantes, el profesor forma $n$ equipos uno a la vez, cada uno compuesto por dos estudiantes seleccionados al azar. En este proceso, sea $X$ el n\'umero total de estudiantes seleccionados cuando aparece el primer equipo formado por un hombre y una mujer. Encuentra la funci\'on de masa de probabilidad y el valor esperado  de $X$.
+
+\item (3 ptos) Sean $\{I_r: 1 \leq r \leq n \ \}$ variables aleatorias Bernoulli  independientes con respectivos param\'etros $\{p_r: 1 \leq r \leq n \}$ satisfaciendo $p_r \leq c  < 1$ para todo $r$ y alg\'un $c$. Sea $\lambda = \sum_{r = 1}^{n}p_r$ y $X = \sum_{r =1}^{n}X_r$. Muestra que 
+
+\[
+\mathbb{P}(X = k) = \frac{\lambda^ke^{-\lambda}}{k!}\Biggl\{ 1 + O\Biggl(\lambda \max_{r}p_r + \frac{k^2}{\lambda}\max p_r \Biggr)\Biggr\}.
+\]
+
+\end{enumerate}
+\end{document} 
+
