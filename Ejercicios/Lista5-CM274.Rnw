@@ -310,7 +310,7 @@ Muestra que $X$ e $Y$ son independientes y que se cumple $\text{Cov}(X,Y) = 0$.
  &- k\bigintss_{-\infty}^{c}(x -c)^{k -1}F(x) dx, \qquad 1 \leq k \leq n. 
 \end{align*}
 
-\item Para cualquier $n \in \mathbb{N}$, encuenta el momento de orden $n$ de una variable aleatoria con distribuci\'on normal est\'andar.
+\item Para cualquier $n \in \mathbb{N}$, encuentra el momento de orden $n$ de una variable aleatoria con distribuci\'on normal est\'andar.
 \end{enumerate}
 \end{document} 
 
