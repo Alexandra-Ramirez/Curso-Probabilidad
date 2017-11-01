@@ -1,0 +1,464 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.35\linewidth}
+\begin{minipage}{0.6\linewidth}
+\textbf{Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274}\par
+ \par
+\end{minipage}
+\vspace{0.8cm}
+
+%\maketitle
+\textbf{\Large{Respuestas al examen parcial (2017-2)}}
+
+
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\textbf{Soluci\'on 1}
+
+\vspace{0.3cm}
+
+Cualquier entero positivo $m$ tiene una factorizaci\'on \'unica en la forma $m = \prod_{i}p_i^{m(i)}$ para enteros no negativos $m(1), m(2), \dots$ As\'i
+
+\[
+\mathbb{P}(M = m) = \prod_{i}\mathbb{P}(N(i) = m(i)) = \prod_{i}\Biggl(1 - \frac{1}{p_i^\beta}\Biggr)\frac{1}{p_i^{\beta m(i)}} = C\Biggl(\prod_{i}p_i^{-m(i)}\Biggr)^{\beta} = \frac{C}{m^{\beta}}
+\]
+
+donde $C = \prod_i (1 - p_i^{-\beta})$. Ahora $\sum_m \mathbb{P}(M = m) = 1$, as\'i $C^{-1} = \sum_m m^{-\beta}$.
+
+\vspace{0.3cm}
+
+\textbf{Soluci\'on 2}
+
+Sea,
+
+\begin{align*}
+\mathbb{P}(X = a_1) = p_1, \quad   \mathbb{P}(X = a_2) = p_2, \quad  \dots, \quad \mathbb{P}(X = a_n) & = p_n; \\
+\mathbb{P}(Y = a_1) = q_1, \quad  \mathbb{P}(Y = a_2) = q_2, \quad \dots, \quad  \mathbb{P}(X = a_n) & = q_n;
+\end{align*}
+
+Tambi\'en
+
+\[
+p_1 + p_2 + \cdots + p_n = q_1 +q_2 + \cdots + q_n = 1. 
+\]
+
+Esto implica que,
+
+\[
+(p_1 -q_1) + (p_2 - q_2)+ \cdots + (p_n -q_n)  =0.
+\]
+
+
+\vspace{0.2cm}
+
+Las relaciones $\mathbb{E}(X^r) = \mathbb{E}(Y^r)$, para $r = 1, 2, \dots, n - 1$ implica que,
+
+\begin{align*}
+a_1p_1 + a_2p_2 + \cdots + a_np_n &= a_1q_1 + a_2q_2 + \cdots + a_nq_n, \\
+a_1^2p_1 + a_2^2p_2 + \cdots + a_n^2p_n &= a_1^2q_1 + a_2^2q_2 + \cdots + a_n^2q_n, \\
+\vdots \\
+a_1^{n -1}p_1 + a_2^{n -1}p_2 + \cdots + a_n^{n -1}p_n &= a_1^{n -1}q_1 + a_2^{n -1}q_2 + \cdots + a_n^{n -1}q_n,
+\end{align*}
+
+Esta y la relaci\'on anterior nos dan las siguientes $n$ ecuaciones y las $n$ inc\'ognitas, $p_1 -q_1, p_2 - q_2, \dots, p_n - q_n$, cuya forma matricial es
+
+\begin{equation}
+\begin{pmatrix}
+1 & 1 & 1 & \dots & 1 \\ 
+a_1 & a_{2} & a_{3} & \dots & a_{n} \\
+a_1^2 & a_2^2 & a_3^2 & \dots & a_{n}^2\\
+\vdots & \vdots & \vdots & & \vdots \\
+a_1^{n -1} & a_{2}^{n -1} & a_{3}^{n -1} & \dots & a_{n}^{n -1}
+\end{pmatrix}\begin{pmatrix}
+p_1 -q_1 \\
+p_2 -q_2 \\
+p_3 - q_3\\
+\vdots \\
+p_n -q_n
+\end{pmatrix} = \begin{pmatrix}
+0 \\
+0\\
+0\\
+\vdots \\
+0
+\end{pmatrix}
+\end{equation}
+
+Ahora
+
+\[
+\det \begin{pmatrix}
+1 & 1 & 1 & \dots & 1 \\ 
+a_1 & a_{2} & a_{3} & \dots & a_{n} \\
+a_1^2 & a_2^2 & a_3^2 & \dots & a_{n}^2\\
+\vdots & \vdots & \vdots & & \vdots \\
+a_1^{n -1} & a_{2}^{n -1} & a_{3}^{n -1} & \dots & a_{n}^{n -1}
+\end{pmatrix} = \prod_{j = n, n -1,\dots, 2}(a_j - a_i) \neq 0,\quad \text{si}\ i < j.
+\]
+
+desde que todos los $a_i$ son todos diferentes. La f\'ormula para el determinante de este tipo de matrices es bien conocida. Estos se conocen como determinantes de Vandermonde. El determinante anterior es distinto de cero implica que la matriz
+
+\[
+\begin{pmatrix}
+1 & 1 & 1 & \dots & 1 \\ 
+a_1 & a_{2} & a_{3} & \dots & a_{n} \\
+a_1^2 & a_2^2 & a_3^2 & \dots & a_{n}^2\\
+\vdots & \vdots & \vdots & & \vdots \\
+a_1^{n -1} & a_{2}^{n -1} & a_{3}^{n -1} & \dots & a_{n}^{n -1}
+\end{pmatrix} 
+\]
+
+es invertible. As\'i para la soluci\'on para la ecuaci\'on (1) es
+
+\[
+p_1 - q_1 = p_2 - q_2 = \cdots p_n - q_n = 0
+\]
+
+Por tanto $p_1 = q_1, p_2 = q_2, \dots, p_n = q_n$, implica que $X $ e $Y$ son igualmente distribuidas.
+
+
+\vspace{0.3cm}
+
+\textbf{Soluci\'on 3}
+
+\vspace{0.2cm}
+
+a) Sea $I_{ij}$ la funci\'on indicador de que los jugadores $i$ y $j$ lanzen el mismo n\'umero. Entonces
+
+\[
+\mathbb{E}(I_{ij}) = \mathbb{P}(I_{ij} =1) = \sum_{i =1}^{6}(\frac{1}{6})^2 = \frac{1}{6}, \quad i \neq j.
+\]
+
+La puntuaci\'on total del grupo es $S = \sum_{i < j}I_{ij}$, tal que
+
+\[
+\mathbb{E}(S) = \sum_{i < j}\mathbb{E}(i_{ij}) = \frac{1}{6}\binom{n}{2}.
+\]
+
+Aseveramos que la familia $\{I_{ij}: i < j\} $ es independiente por pares. EL c\'alculo para esto es como sigue: si $i< j < k$ entonces
+
+\[
+\mathbb{E}(I_{ij}I_{jk}) = \mathbb{P}(i,j, k \ \text{lanzan el mismo n\'umero}) = \sum_{i =1}^{6}(\frac{1}{6})^3 = \frac{1}{36} = \mathbb{E}(I_{ij})\mathbb{E}(I_{jk}).
+\]
+
+As\'i,
+
+\[
+\text{Var}(S) = \text{Var}\biggl(\sum_{i < j}I_{ij}\biggr) = \sum_{i < j}\text{Var}(I_{ij}) = \binom{n}{2}\text{Var}(I_{12})
+\]
+
+por simetr\'ia. Pero $\text{Var}(I_{12}) = \frac{1}{6}(1 - \frac{1}{6}$.
+
+\vspace{0.2cm}
+
+b) Sea $X_{ij}$ la puntuaci\'on com\'un de jugadores $i$ y $j$, tal que $X_{ij} =0$ si sus puntuaciones son diferentes. Esta  vez la puntuaci\'on total es $S = \sum_{i < j}X_{ij}$ y
+
+\[
+\mathbb{E}(S) = \binom{n}{2}\mathbb{E}(X_{12}) = \binom{n}{2}\frac{1}{6}\cdot\frac{7}{2} = \frac{7}{12}\binom{n}{2}.
+\]
+
+Los $X_{ij}$ no son independientes por pares y debes resolverlo de esta manera,
+
+\begin{align*}
+\text{Var}(S) &= \mathbb{E}\biggl\{ \biggl( \sum_{i < j}X_{ij}\biggr)^2\biggr\} - \mathbb{E}(S)^2 \\
+&= \binom{n}{2}\mathbb{E}(X_{12}^2) + \binom{n}{3}\mathbb{E}(X_{12}X_{23}) + \Biggl\{\binom{n}{2}^2 - \binom{n}{2} - \binom{n}{3} \Biggr\}\mathbb{E}(X_{12})^2 - (\frac{7}{12})^2\binom{n}{2}^2 \\
+&= \frac{315}{144}\binom{n}{2} + \frac{35}{432}\binom{n}{3}.
+\end{align*}
+
+\vspace{0.3cm}
+
+
+\textbf{Soluci\'on 4}
+
+\vspace{0.3cm}
+
+Sea $A/B$ la fracci\'on racional y $a$ un entero. Los posibles residuos de la divisi\'on de $A$ por $a$ son $0, 1, \dots, a -1$. As\'i la probabilidad que $A$ es divisible por $a$ es $1/a$. De manera similar para $B$. Por tanto la probabilidad que ambos $A$ y $B$ sean divisibles por  $a$ es $1/a^2$.
+
+\vspace{0.2cm}
+
+La fracci\'on $A/B$ es una fracci\'on  irreducible si y s\'olo si ambos $A$ y $B$ no son divisibles por uno de los n\'umeros primos $2, 3, 5, \dots$. As\'i la probabilidad requerida  es dada por
+
+\[
+p = \biggl(1 - \frac{1}{2^2}\biggr) \biggl(1 - \frac{1}{3^2}\biggr) \biggl(1 - \frac{1}{5^2}\biggr)\cdots = \frac{6}{\pi^2}.
+\]
+
+Esto es obtenido notando que
+
+\[
+\frac{1}{p}\sum_{a, b, c, \dots}\frac{1}{(2^a \dot 3^b \dot 5^c \cdots)^2 } = \sum_{n =1}^{\infty}\frac{1}{n^2} = \frac{\pi^2}{6}
+\]
+
+donde la suma se extiende sobre todos los enteros no negativos $a, b, c,\dots$ y tomando en cuenta que para alg\'un entero positivo $n$ es de la forma $n = 2^a \cdot 3^b \cdot 5^c \cdots$.
+
+\vspace{0.3cm}
+
+
+
+\textbf{Soluci\'on 5}
+
+\vspace{0.3cm}
+
+Etiquetamos los asientos $1, 2, \dots, 2n$ en el sentido de las agujas del reloj. En beneficio  de la definici\'on, dictamos que el asiento $1$ sea ocupado por una mujer; esto determina el sexo del ocupante de cualquier otro asiento.
+
+Para $1 \leq k \leq  2n$, sea $A_k$ el evento donde los asientos $k, k + 1$ est\'an ocupados por una de las parejas (identificamos el asiento $2n + 1$ con el asiento $1$). La probabilidad requerida es
+
+\[
+\mathbb{P}\Biggl(\bigcap_{1}^{2n}A_i^c\Biggr) = 1 -\mathbb{P}\Biggl(\bigcup_{1}^{2n}A_i\Biggr) = 1 -\sum_{i}\mathbb{P}(A_i) + \sum_{i < j}\mathbb{P}(A_i \cap A_j) - \cdots.
+\]
+
+
+\vspace{0.2cm}
+
+Ahora $\mathbb{P}(A_i) = n( n - 1)!^2/n!^2$, ya que hay $n$ parejas que pueden ocupar los asientos $i$ y $i + 1$, $(n -1)!$ formas de distribuir las $n - 1$ mujeres restantes  y $(n - 1)!$ formas de distribuir los $n - 1$ hombres restantes. Del mismo modo, si $1 \leq i < j \leq 2n$, entonces
+
+\[
+\mathbb{P}(A_i \cap A_j) = \begin{cases}
+n(n -1)\frac{(n -2)!^2}{n!^2} &\ \text{si}\ \vert i - j\vert \neq 1 \\
+0 &\ \text{si}\ \vert i -j \vert =1,
+\end{cases}
+\]
+
+\vspace{0.2cm}
+
+sujeto a $\mathbb{P}(A_1 \cap A_{2n}) = 0$. En general,
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}(A_{i_1} \cap A_{i_2}\cap \cdots \cap A_{i_k}) = \frac{n!}{(n - k)!}\frac{(n -k)!^2}{n!^2} = \frac{(n -k)!}{n!}
+\]
+
+\vspace{0.2cm}
+
+si $i_1 < i_2 < \cdots i_k$ y $i_{j +1} - i_{j} \geq 2$ para $1 \leq j < k$ y $2n + i_1 - i_k \geq 2$. En otro caso esta probabilidad  es $0$. As\'i
+
+
+\[
+\mathbb{P}\Biggl(\bigcap_{1}^{2n}A_i^c \Biggr) = \sum_{k = 0}^{n}(-1)^k\frac{(n -k)!}{n!}S_{k,n}
+\]
+
+donde $S_{k,n}$ es el n\'umero de maneras de escoger, $k$  pares de asientos adyacentes que no se superponen.
+
+\vspace{0.2cm}
+
+Finalmente, calculamos $S_{k, n}$. Consideramos primero el n\'umero $N_{k, m}$ de formas de escoger $k$ pares de asientos adyacentes no superpuestos de una l\'inea (en lugar de un c\'irculo) de $m$ asientos etiquetados como $1, 2, \dots , m$. Hay una  correspondencia uno a uno entre el conjunto de tales disposiciones y el conjunto de vectores de tama\~no $(m - k)$  que contienen $k$ unos y $(m - 2k)$ ceros.
+
+\vspace{0.2cm}
+
+Para resolver  esto, tomamos esa  disposici\'on de asientos y cuenta $0$ para un asiento no elegido y $1$ para un par de asientos elegidos, el resultado es un vector mencionado anteriormente. De manera  inversa, tomamos dicho vector, lee sus elementos en orden y construye la disposici\'on de los asientos en la que cada $0$ corresponde a un asiento no elegido y cada $1$ corresponde a un par elegido. Se sigue que $N_{k, m} = \binom{m -k}{k}$.
+
+\vspace{0.2cm}
+
+Cambiando a $S_{k, n}$, se elige o no el par $2n$, $1$ si se elige y $0$ si no. Si se elige, se requieren otros $k - 1$ pares de una l\'inea de $2n - 2$ asientos. Si no se elige, se requieren $k$ pares de una l\'inea de $2n$ asientos. Por lo tanto
+
+\[
+S_{k,n} = N_{k -1, 2n -2} + N_{k, 2n} = \binom{2n - k -1}{k -1} + \binom{2n -k}{k} = \binom{2n -k}{k}\frac{2n}{2n - k}.
+\]
+
+\vspace{0.3cm}
+
+\textbf{Soluci\'on 6}
+
+\vspace{0.3cm}
+
+La funci\'on $g(x) = \log x$ es c\'oncava para $x > 0$, luego para un $\lambda (0 \leq \lambda \leq 1)$
+
+\[
+\lambda \log x_1 + (1 - \lambda)\log x_2 \leq \log (\lambda x_1 + (1 - \lambda)x_2).
+\]
+
+As\'i
+
+\[
+x_1^{\lambda}x_2^{1 - \lambda} \leq \lambda x_1 + (1 - \lambda)x_2,
+\]
+
+y colocando $\lambda = p^{-1}, 1 - \lambda = q^{-1}, x_1 = X^p/\mathbb{E}(X^p), x_2 = Y^q/\mathbb{E}(Y^q)$, obtenemos
+
+\[
+\frac{X}{[\mathbb{E}(X^p)]^{1/p}} + \frac{Y}{[\mathbb{E}(Y^p)]^{1/p}} \leq \lambda \frac{X^p}{\mathbb{E}(X^p)} + (1 - \lambda)\frac{Y^q}{\mathbb{E}(Y^q )}.
+\]
+
+\vspace{0.2cm}
+
+Tomando esperanza en ambos lados de la ecuaci\'on anterior tenemos el resultado pedido. Si $p = q = 1/2$, tenemos la desigualdad de Cauchy-Schwarz.
+
+\vspace{0.2cm}
+
+Si aplicamos el resultado anterior  con $p = q =1/2$, para las variables aleatorias $\vert X \vert^{(t + h)/2}$ y $\vert X \vert^{(t -h)/2}$, tenemos
+
+\begin{equation}
+\mathbb{E}^2(\vert X \vert^t) \leq \mathbb{E}(\vert X \vert^{t + h})\mathbb{E}(\vert X \vert^{t - h}), \qquad  0 \leq h \leq t.
+\end{equation}
+
+Colocando $t_1 = t + h, t_2 = t -h$, la ecuaci\'on (2) llega a ser
+
+\[
+\mathbb{E}^2[\vert X \vert^{(t_1 + t_2)/2}] \leq \mathbb{E}(\vert X \vert^{t_1})\mathbb{E}(\vert X \vert^{t_2}),
+\]
+
+o tomando logaritmos.
+
+\[
+2\log \mathbb{E}[\vert X \vert^{(t_1 + t_2)/2}] \leq \log \mathbb{E}(\vert X\vert^{t_1}) + \log \mathbb{E}(\vert X \vert^{t_2}).
+\]
+
+Si escribimos $g(t) = \log \mathbb{E}(\vert X \vert^t$, se tiene
+
+\[
+g\Biggl(\frac{t_1 + t_2}{2}\Biggr) \leq \frac{1}{2}g(t_1) + \frac{1}{2}g(t_2),
+\]
+
+luego $g(t)$ es convexa y continua. Desde $g(0 ) = 0$, la pendiente $g(t)/t$ de la l\'inea que conecta el origen con el punto $(t, g(t))$ incrementa cuando $t$ incrementa y as\'i
+
+\[
+e^{g(t)/t} = [\mathbb{E}(\vert X \vert ^t)]^{1/t}.
+\]
+
+
+es una funci\'on creciente de $t$.
+
+
+\vspace{0.3cm}
+
+\textbf{Soluci\'on 7}
+
+\vspace{0.3cm}
+
+En un caso particular dado en el seminario. 
+
+Pongamos a los estudiantes en alg\'un  orden aleatorio. Supongamos que los dos primeros alumnos forman el primer equipo, el tercero y el cuarto forman el segundo equipo, el quinto y el sexto forman el tercer equipo  y as\'i sucesivamente. Definimos  $F$ para \texttt{femenino} y $M$ para \texttt{masculino}.
+
+Dado que nuestro inter\'es es el g\'enero de los estudiantes, el n\'umero total de maneras en que podemos formar $13$ equipos, cada uno compuesto por dos estudiantes, es igual al n\'umero de permutaciones distinguibles de una secuencia de $23$ $M$ y tres $F$ que es igual a $\frac{26!}{23!3!} = \binom{26}{3}$.
+
+El conjunto de valores posibles de la variable aleatoria $X$ es $\{2, 4,\dots , 26\}$. Para calcular las probabilidades asociadas con estos valores, debes tener  en cuenta que para $k = 1, 2,\dots, 13, X = 2k$ si y s\'olo si ocurre uno de los siguientes eventos:
+
+\begin{itemize}
+ \item A: Uno de los primeros $k-1$ equipos  es un equipo femenino-femenino, el equipo $k$-\'esimo es un equipo masculino-femenino o femenino-masculino, y los equipos restantes son todos equipos masculino-masculino.
+\item B: Los primeros  $k - 1$ equipos  son todos masculino-masculino y el equipo $k$-\'esimo es un equipo masculino-femenino o femenino-masculino.
+\end{itemize}
+
+Para encontrar $\mathbb{P}(A)$, ten en cuenta que para que ocurra $A$, hay $k-1$ posibilidades de que uno de los primeros  $k-1$ equipos sea un equipo femenino-femenino, dos posibilidades para que el $k$-\'esimo equipo (masculino-femenino y femenino- masculino) y una posibilidad para que los equipos restantes sean todos masculino-masculino. Por lo tanto,
+
+\[
+\mathbb{P}(A) = \frac{2(k -1)}{\binom{26}{3}}.
+\]
+
+Para encontrar $\mathbb{P}(B)$, ten en cuenta que para que ocurra $B$, existe una posibilidad para los primeros $k - 1$ de que todos sean masculino-masculino, dos posibilidades para el  $k$-\'esimo equipo: masculino-femenino y femenino-masculino.
+
+El n\'umero de posibilidades para los $13-k$ equipos  restantes es igual al n\'umero de permutaciones distinguibles de dos $F$ y $(26-2k) -2 M$, que es por propiedad $\frac{(26 -2k)!}{2!(26 -2k -2)!} = \binom{26 -2k}{2}$.Por tanto,
+
+\[
+\mathbb{P}(B) = \frac{2\binom{26 -2k}{2}}{\binom{26}{3}}
+\]
+
+\vspace{0.2cm}
+
+Y as\'i, para $1 \leq k \leq 13$,
+
+\[
+\mathbb{P}(X = 2k) = \mathbb{P}(A) + \mathbb{P}(B) = \frac{2\binom{2(k -1) + 26 -2k}{2}  }{\binom{26}{3}} = \frac{1}{650}k^2 -\frac{1}{26}k + \frac{1}{4}.
+\]
+
+En general se cumple  para $1 \leq k \leq n,$
+
+\[
+\mathbb{P}(x = 2k) = \frac{2(k -1) + 2\binom{2n -2k}{2}}{\binom{2n}{3}}.
+\]
+
+
+As\'i $\mathbb{E}(X) = \sum_{k =1}^{n}2k\mathbb{P}(X = 2k) = \frac{(n +1)^2}{2n -1} $. 
+
+\vspace{0.3cm}
+
+
+\textbf{Soluci\'on 8}
+
+\vspace{0.3cm}
+
+Empezamos,
+
+\[
+\lambda^k = \biggl(\sum_i p_i \biggr)^k = \sum_{r_1,r_2,\dots, r_k}p_{r_1}p_{r_2}\cdots p_{r_k} \geq k!\sum_{\{r_1, \dots, r_k\}}p_{r_1}p_{r_2}\cdots p_{r_k},
+\]
+
+
+donde la \'ultima suma es sobre todo los subconjuntos $\{r_1,\dots, r_k \}$ de $k$ elementos distintos de $\{1, 2, \dots, n\}$.
+
+Luego,
+
+\begin{align*}
+\lambda^k & \leq k!\sum_{\{r_1, \dots, r_k\}}p_{r_1}p_{r_2}\cdots p_{r_k} + \binom{k}{2}\sum_ip_i^2 \sum_{r_1, \dots, r_{k -2}}p_{r_1}p_{r_2}\cdots p_{r_{k -2}} \\
+& \leq k!\sum_{r_1, \dots, r_k}p_{r_1}p_{r_2}\cdots p_{r_k} + \binom{k}{2}\max_i p_i\biggl(\sum_{j}p_j\biggl)^{k -1}
+\end{align*}
+
+As\'i
+
+\begin{equation}
+\sum_{\{r_1, \dots, r_k\}}p_{r_1}p_{r_2}\cdots p_{r_k} = \frac{\lambda^k}{k!}\Biggl \{1 + O\Biggl(\frac{k^2}{\lambda}\max_i p_i \Biggr) \Biggr\}.
+\end{equation}
+
+\vspace{0.2cm}
+
+Por el teorema de Taylor aplicada a  la funci\'on $\log(1 -x)$, existe un $\theta_r$ satisfaciendo $0 <   \theta_r < \{2(1 -c)^2)\}^{-1}$ tal que 
+
+\begin{equation}
+\prod_{r = 1}^{n}(1 - p_r) = \prod_{r}\exp\{-p_r -\theta_rp_r^2\} = \exp\{-\lambda - \lambda O(\max_i p_i) \}.
+\end{equation}
+
+Finalmente 
+
+\[
+\mathbb{P}(X =k) = \Biggl(\prod_r (1 -p_r) \Biggr)\sum_{\{r_1,\dots, r_k \}}\frac{p_{r_1}\cdots p_{r_k}}{(1 - p_{r_1})\cdots (1 -p_{r_k})}
+\]
+
+Luego de (3) y (4) se obtiene el resultado pedido.
+\end{document} 
+
