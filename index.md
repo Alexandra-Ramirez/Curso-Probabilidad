@@ -118,6 +118,8 @@ Los prerequisitos para este curso son:
   - Procesos de ramificación.
   - Ua breve introducción a la simulación.
  
+###  Una breve introducción a la Inferencia estadística y Bayesiana.
+
 ##  Notas y videos para las  clases
  
 * Notas de matemática 
@@ -180,8 +182,7 @@ Los prerequisitos para este curso son:
   - [The reason casinos always win: meet the law of large numbers](https://youtu.be/RXY-WN0ahiw).
   - La paradoja de la inspección se derivada de un artículo de Sheldon Ross, [The inspection paradox](http://ben-israel.rutgers.edu/711/Ross-Inspection.pdf).
  
-     
-
+    
 ### Horario de clases
 
   - Lunes 12-14 PM J3-162 B (Prácticas)
